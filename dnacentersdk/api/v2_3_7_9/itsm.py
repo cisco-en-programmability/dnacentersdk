@@ -32,7 +32,6 @@ from ...utils import (
     check_type,
     dict_from_items_with_values,
     dict_of_str,
-    
 )
 
 
@@ -65,11 +64,9 @@ class Itsm(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def get_cmdb_sync_status(self,
-                             date=None,
-                             status=None,
-                             headers=None,
-                             **request_parameters):
+    def get_cmdb_sync_status(
+        self, date=None, status=None, headers=None, **request_parameters
+    ):
         """This API allows to retrieve the detail of CMDB sync status.It accepts two query parameter "status","date".The
         supported values for status field are "Success","Failed","Unknown" and date field should be in "YYYY-MM-
         DD" format. By default all the cmdb sync status will be send as response and based on the query
@@ -100,21 +97,17 @@ class Itsm(object):
         check_type(status, str)
         check_type(date, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'status':
-                status,
-            'date':
-                date,
+            "status": status,
+            "date": date,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -122,20 +115,22 @@ class Itsm(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/cmdb-sync/detail')
+        e_url = "/dna/intent/api/v1/cmdb-sync/detail"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_eb1bf346225a4ba24f18408ffca7c9_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_eb1bf346225a4ba24f18408ffca7c9_v2_3_7_9", json_data
+        )
 
-    def get_failed_itsm_events(self,
-                               instance_id=None,
-                               headers=None,
-                               **request_parameters):
+    def get_failed_itsm_events(
+        self, instance_id=None, headers=None, **request_parameters
+    ):
         """Used to retrieve the list of integration events that failed to create tickets in ITSM .
 
         Args:
@@ -161,19 +156,16 @@ class Itsm(object):
         check_type(headers, dict)
         check_type(instance_id, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'instanceId':
-                instance_id,
+            "instanceId": instance_id,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -181,21 +173,22 @@ class Itsm(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/integration/events')
+        e_url = "/dna/intent/api/v1/integration/events"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_da70082b298a5a908edb780a61bd4ca6_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_da70082b298a5a908edb780a61bd4ca6_v2_3_7_9", json_data
+        )
 
-    def retry_integration_events(self,
-                                 headers=None,
-                                 payload=None,
-                                 active_validation=True,
-                                 **request_parameters):
+    def retry_integration_events(
+        self, headers=None, payload=None, active_validation=True, **request_parameters
+    ):
         """Allows retry of multiple failed ITSM event instances. The retry request payload can be given as a list of
         strings: ["instance1","instance2","instance3",..] A minimum of one instance Id is mandatory. The list of
         failed event instance Ids can be retrieved using the 'Get Failed ITSM Events' API in the 'instanceId'
@@ -225,21 +218,19 @@ class Itsm(object):
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = payload or []
         if active_validation:
-            self._request_validator('jsd_cfb1d6e52878d057740de275896_v2_3_7_9')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_cfb1d6e52878d057740de275896_v2_3_7_9"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -247,17 +238,20 @@ class Itsm(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/integration/events')
+        e_url = "/dna/intent/api/v1/integration/events"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_cfb1d6e52878d057740de275896_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_cfb1d6e52878d057740de275896_v2_3_7_9", json_data
+        )
+
 
 # Alias Functions
-

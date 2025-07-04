@@ -32,7 +32,6 @@ from ...utils import (
     check_type,
     dict_from_items_with_values,
     dict_of_str,
-    
 )
 
 
@@ -65,13 +64,15 @@ class Compliance(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def get_compliance_status_(self,
-                               compliance_status=None,
-                               device_uuid=None,
-                               limit=None,
-                               offset=None,
-                               headers=None,
-                               **request_parameters):
+    def get_compliance_status_(
+        self,
+        compliance_status=None,
+        device_uuid=None,
+        limit=None,
+        offset=None,
+        headers=None,
+        **request_parameters
+    ):
         """Return compliance status of device(s). .
 
         Args:
@@ -98,20 +99,24 @@ class Compliance(object):
         Documentation Link:
         https://developer.cisco.com/docs/dna-center/#!get-compliance-status
         """
-        return self.get_compliance_status(compliance_status=compliance_status,
-                                          device_uuid=device_uuid,
-                                          limit=limit,
-                                          offset=offset,
-                                          headers=headers,
-                                          **request_parameters)
+        return self.get_compliance_status(
+            compliance_status=compliance_status,
+            device_uuid=device_uuid,
+            limit=limit,
+            offset=offset,
+            headers=headers,
+            **request_parameters
+        )
 
-    def get_compliance_status(self,
-                              compliance_status=None,
-                              device_uuid=None,
-                              limit=None,
-                              offset=None,
-                              headers=None,
-                              **request_parameters):
+    def get_compliance_status(
+        self,
+        compliance_status=None,
+        device_uuid=None,
+        limit=None,
+        offset=None,
+        headers=None,
+        **request_parameters
+    ):
         """Return compliance status of device(s). .
 
         Args:
@@ -144,25 +149,19 @@ class Compliance(object):
         check_type(offset, int)
         check_type(limit, int)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'complianceStatus':
-                compliance_status,
-            'deviceUuid':
-                device_uuid,
-            'offset':
-                offset,
-            'limit':
-                limit,
+            "complianceStatus": compliance_status,
+            "deviceUuid": device_uuid,
+            "offset": offset,
+            "limit": limit,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -170,24 +169,29 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/compliance')
+        e_url = "/dna/intent/api/v1/compliance"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_a1de7ff46fa5da09c5051c06ad07f2c_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_a1de7ff46fa5da09c5051c06ad07f2c_v2_3_7_9", json_data
+        )
 
-    def run_compliance(self,
-                       categories=None,
-                       deviceUuids=None,
-                       triggerFull=None,
-                       headers=None,
-                       payload=None,
-                       active_validation=True,
-                       **request_parameters):
+    def run_compliance(
+        self,
+        categories=None,
+        deviceUuids=None,
+        triggerFull=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Run compliance check for device(s). .
 
         Args:
@@ -221,33 +225,27 @@ class Compliance(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'triggerFull':
-                triggerFull,
-            'categories':
-                categories,
-            'deviceUuids':
-                deviceUuids,
+            "triggerFull": triggerFull,
+            "categories": categories,
+            "deviceUuids": deviceUuids,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_a0a8d545698d1d59a9be90e51_v2_3_7_9')\
-                .validate(_payload)
+            self._request_validator("jsd_a0a8d545698d1d59a9be90e51_v2_3_7_9").validate(
+                _payload
+            )
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -255,22 +253,22 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/compliance/')
+        e_url = "/dna/intent/api/v1/compliance/"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_a0a8d545698d1d59a9be90e51_v2_3_7_9', json_data)
+        return self._object_factory("bpm_a0a8d545698d1d59a9be90e51_v2_3_7_9", json_data)
 
-    def get_compliance_status_count(self,
-                                    compliance_status=None,
-                                    headers=None,
-                                    **request_parameters):
+    def get_compliance_status_count(
+        self, compliance_status=None, headers=None, **request_parameters
+    ):
         """Return Compliance Status Count .
 
         Args:
@@ -296,19 +294,16 @@ class Compliance(object):
         check_type(headers, dict)
         check_type(compliance_status, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'complianceStatus':
-                compliance_status,
+            "complianceStatus": compliance_status,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -316,24 +311,29 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/compliance/count')
+        e_url = "/dna/intent/api/v1/compliance/count"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_c37ce8136584f9e2ed471fc896ef9_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_c37ce8136584f9e2ed471fc896ef9_v2_3_7_9", json_data
+        )
 
-    def get_compliance_detail(self,
-                              compliance_status=None,
-                              compliance_type=None,
-                              device_uuid=None,
-                              limit=None,
-                              offset=None,
-                              headers=None,
-                              **request_parameters):
+    def get_compliance_detail(
+        self,
+        compliance_status=None,
+        compliance_type=None,
+        device_uuid=None,
+        limit=None,
+        offset=None,
+        headers=None,
+        **request_parameters
+    ):
         """Return Compliance Detail .
 
         Args:
@@ -370,27 +370,20 @@ class Compliance(object):
         check_type(offset, int)
         check_type(limit, int)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'complianceType':
-                compliance_type,
-            'complianceStatus':
-                compliance_status,
-            'deviceUuid':
-                device_uuid,
-            'offset':
-                offset,
-            'limit':
-                limit,
+            "complianceType": compliance_type,
+            "complianceStatus": compliance_status,
+            "deviceUuid": device_uuid,
+            "offset": offset,
+            "limit": limit,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -398,21 +391,26 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/compliance/detail')
+        e_url = "/dna/intent/api/v1/compliance/detail"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_adeaeb8157da972efb7b91e1e2cb_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_adeaeb8157da972efb7b91e1e2cb_v2_3_7_9", json_data
+        )
 
-    def get_compliance_detail_count(self,
-                                    compliance_status=None,
-                                    compliance_type=None,
-                                    headers=None,
-                                    **request_parameters):
+    def get_compliance_detail_count(
+        self,
+        compliance_status=None,
+        compliance_type=None,
+        headers=None,
+        **request_parameters
+    ):
         """Return  Compliance Count Detail .
 
         Args:
@@ -442,21 +440,17 @@ class Compliance(object):
         check_type(compliance_type, str)
         check_type(compliance_status, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'complianceType':
-                compliance_type,
-            'complianceStatus':
-                compliance_status,
+            "complianceType": compliance_type,
+            "complianceStatus": compliance_status,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -464,20 +458,20 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/compliance/detail/count')
+        e_url = "/dna/intent/api/v1/compliance/detail/count"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_d3d38fed534f5aeaa80f5a8c63694708_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_d3d38fed534f5aeaa80f5a8c63694708_v2_3_7_9", json_data
+        )
 
-    def compliance_remediation(self,
-                               id,
-                               headers=None,
-                               **request_parameters):
+    def compliance_remediation(self, id, headers=None, **request_parameters):
         """Remediates configuration compliance issues. Compliance issues related to 'Routing', 'HA Remediation', 'Software
         Image', 'Securities Advisories', 'SD-Access Unsupported Configuration', 'Workflow', etc. will not be
         addressed by this API. Warning: Fixing compliance mismatches could result in a possible network flap. .
@@ -501,23 +495,19 @@ class Compliance(object):
             https://developer.cisco.com/docs/dna-center/#!compliance-remediation
         """
         check_type(headers, dict)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
 
         with_custom_headers = False
@@ -526,21 +516,23 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/compliance/networkDevices/{id}/issues'
-                 + '/remediation/provision')
+        e_url = (
+            "/dna/intent/api/v1/compliance/networkDevices/{id}/issues"
+            + "/remediation/provision"
+        )
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.post(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_a233477d86a459eab3c5e9352c1c9d3e_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_a233477d86a459eab3c5e9352c1c9d3e_v2_3_7_9", json_data
+        )
 
-    def device_compliance_status(self,
-                                 device_uuid,
-                                 headers=None,
-                                 **request_parameters):
+    def device_compliance_status(self, device_uuid, headers=None, **request_parameters):
         """Return compliance status of a device. .
 
         Args:
@@ -562,20 +554,17 @@ class Compliance(object):
             https://developer.cisco.com/docs/dna-center/#!device-compliance-status
         """
         check_type(headers, dict)
-        check_type(device_uuid, str,
-                   may_be_none=False)
+        check_type(device_uuid, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'deviceUuid': device_uuid,
+            "deviceUuid": device_uuid,
         }
 
         with_custom_headers = False
@@ -584,25 +573,30 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/compliance/{deviceUuid}')
+        e_url = "/dna/intent/api/v1/compliance/{deviceUuid}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_da8e5cdd435db0b1da1684be8f15b8_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_da8e5cdd435db0b1da1684be8f15b8_v2_3_7_9", json_data
+        )
 
-    def compliance_details_of_device(self,
-                                     device_uuid,
-                                     category=None,
-                                     compliance_type=None,
-                                     diff_list=None,
-                                     remediation_supported=None,
-                                     status=None,
-                                     headers=None,
-                                     **request_parameters):
+    def compliance_details_of_device(
+        self,
+        device_uuid,
+        category=None,
+        compliance_type=None,
+        diff_list=None,
+        remediation_supported=None,
+        status=None,
+        headers=None,
+        **request_parameters
+    ):
         """Return compliance detailed report for a device. .
 
         Args:
@@ -649,30 +643,23 @@ class Compliance(object):
         check_type(diff_list, bool)
         check_type(status, str)
         check_type(remediation_supported, bool)
-        check_type(device_uuid, str,
-                   may_be_none=False)
+        check_type(device_uuid, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'category':
-                category,
-            'complianceType':
-                compliance_type,
-            'diffList':
-                diff_list,
-            'status':
-                status,
-            'remediationSupported':
-                remediation_supported,
+            "category": category,
+            "complianceType": compliance_type,
+            "diffList": diff_list,
+            "status": status,
+            "remediationSupported": remediation_supported,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'deviceUuid': device_uuid,
+            "deviceUuid": device_uuid,
         }
 
         with_custom_headers = False
@@ -681,26 +668,31 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/compliance/{deviceUuid}/detail')
+        e_url = "/dna/intent/api/v1/compliance/{deviceUuid}/detail"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_b70e1b6a2f51a59690669a4b2fd3f0_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_b70e1b6a2f51a59690669a4b2fd3f0_v2_3_7_9", json_data
+        )
 
-    def get_field_notice_network_devices(self,
-                                         limit=None,
-                                         network_device_id=None,
-                                         notice_count=None,
-                                         offset=None,
-                                         order=None,
-                                         scan_status=None,
-                                         sort_by=None,
-                                         headers=None,
-                                         **request_parameters):
+    def get_field_notice_network_devices(
+        self,
+        limit=None,
+        network_device_id=None,
+        notice_count=None,
+        offset=None,
+        order=None,
+        scan_status=None,
+        sort_by=None,
+        headers=None,
+        **request_parameters
+    ):
         """Get field notice network devices .
 
         Args:
@@ -741,31 +733,22 @@ class Compliance(object):
         check_type(sort_by, str)
         check_type(order, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'networkDeviceId':
-                network_device_id,
-            'scanStatus':
-                scan_status,
-            'noticeCount':
-                notice_count,
-            'offset':
-                offset,
-            'limit':
-                limit,
-            'sortBy':
-                sort_by,
-            'order':
-                order,
+            "networkDeviceId": network_device_id,
+            "scanStatus": scan_status,
+            "noticeCount": notice_count,
+            "offset": offset,
+            "limit": limit,
+            "sortBy": sort_by,
+            "order": order,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -773,22 +756,27 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/fieldNotices/results/networkDevices')
+        e_url = "/dna/intent/api/v1/fieldNotices/results/networkDevices"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_bf89c9e9897659e496ff2c2c2cfb8d35_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_bf89c9e9897659e496ff2c2c2cfb8d35_v2_3_7_9", json_data
+        )
 
-    def get_count_of_field_notice_network_devices(self,
-                                                  network_device_id=None,
-                                                  notice_count=None,
-                                                  scan_status=None,
-                                                  headers=None,
-                                                  **request_parameters):
+    def get_count_of_field_notice_network_devices(
+        self,
+        network_device_id=None,
+        notice_count=None,
+        scan_status=None,
+        headers=None,
+        **request_parameters
+    ):
         """Get count of field notice network devices .
 
         Args:
@@ -818,23 +806,18 @@ class Compliance(object):
         check_type(scan_status, str)
         check_type(notice_count, int)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'networkDeviceId':
-                network_device_id,
-            'scanStatus':
-                scan_status,
-            'noticeCount':
-                notice_count,
+            "networkDeviceId": network_device_id,
+            "scanStatus": scan_status,
+            "noticeCount": notice_count,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -842,21 +825,22 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/fieldNotices/results/networkDevices/c'
-                 + 'ount')
+        e_url = "/dna/intent/api/v1/fieldNotices/results/networkDevices/c" + "ount"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_f4a44a87cc51ffb9be1cb2a6bdfa68_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_f4a44a87cc51ffb9be1cb2a6bdfa68_v2_3_7_9", json_data
+        )
 
-    def get_field_notice_network_device_by_device_id(self,
-                                                     network_device_id,
-                                                     headers=None,
-                                                     **request_parameters):
+    def get_field_notice_network_device_by_device_id(
+        self, network_device_id, headers=None, **request_parameters
+    ):
         """Get field notice network device by device id .
 
         Args:
@@ -878,20 +862,17 @@ class Compliance(object):
             https://developer.cisco.com/docs/dna-center/#!get-field-notice-network-device-by-device-id
         """
         check_type(headers, dict)
-        check_type(network_device_id, str,
-                   may_be_none=False)
+        check_type(network_device_id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'networkDeviceId': network_device_id,
+            "networkDeviceId": network_device_id,
         }
 
         with_custom_headers = False
@@ -900,27 +881,34 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/fieldNotices/results/networkDevices/{'
-                 + 'networkDeviceId}')
+        e_url = (
+            "/dna/intent/api/v1/fieldNotices/results/networkDevices/{"
+            + "networkDeviceId}"
+        )
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_f9138e17f05f57fda724a4767aa35ad4_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_f9138e17f05f57fda724a4767aa35ad4_v2_3_7_9", json_data
+        )
 
-    def get_field_notices_affecting_the_network_device(self,
-                                                       network_device_id,
-                                                       id=None,
-                                                       limit=None,
-                                                       offset=None,
-                                                       order=None,
-                                                       sort_by=None,
-                                                       type=None,
-                                                       headers=None,
-                                                       **request_parameters):
+    def get_field_notices_affecting_the_network_device(
+        self,
+        network_device_id,
+        id=None,
+        limit=None,
+        offset=None,
+        order=None,
+        sort_by=None,
+        type=None,
+        headers=None,
+        **request_parameters
+    ):
         """Get field notices affecting the network device .
 
         Args:
@@ -958,32 +946,24 @@ class Compliance(object):
         check_type(limit, int)
         check_type(sort_by, str)
         check_type(order, str)
-        check_type(network_device_id, str,
-                   may_be_none=False)
+        check_type(network_device_id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'id':
-                id,
-            'type':
-                type,
-            'offset':
-                offset,
-            'limit':
-                limit,
-            'sortBy':
-                sort_by,
-            'order':
-                order,
+            "id": id,
+            "type": type,
+            "offset": offset,
+            "limit": limit,
+            "sortBy": sort_by,
+            "order": order,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'networkDeviceId': network_device_id,
+            "networkDeviceId": network_device_id,
         }
 
         with_custom_headers = False
@@ -992,23 +972,25 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/fieldNotices/results/networkDevices/{'
-                 + 'networkDeviceId}/notices')
+        e_url = (
+            "/dna/intent/api/v1/fieldNotices/results/networkDevices/{"
+            + "networkDeviceId}/notices"
+        )
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_f44a1efb2d0f53209fdc441a3bbf073f_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_f44a1efb2d0f53209fdc441a3bbf073f_v2_3_7_9", json_data
+        )
 
-    def get_count_of_field_notices_affecting_the_network_device(self,
-                                                                network_device_id,
-                                                                id=None,
-                                                                type=None,
-                                                                headers=None,
-                                                                **request_parameters):
+    def get_count_of_field_notices_affecting_the_network_device(
+        self, network_device_id, id=None, type=None, headers=None, **request_parameters
+    ):
         """Get count of field notices affecting the network device .
 
         Args:
@@ -1035,24 +1017,20 @@ class Compliance(object):
         check_type(headers, dict)
         check_type(id, str)
         check_type(type, str)
-        check_type(network_device_id, str,
-                   may_be_none=False)
+        check_type(network_device_id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'id':
-                id,
-            'type':
-                type,
+            "id": id,
+            "type": type,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'networkDeviceId': network_device_id,
+            "networkDeviceId": network_device_id,
         }
 
         with_custom_headers = False
@@ -1061,22 +1039,25 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/fieldNotices/results/networkDevices/{'
-                 + 'networkDeviceId}/notices/count')
+        e_url = (
+            "/dna/intent/api/v1/fieldNotices/results/networkDevices/{"
+            + "networkDeviceId}/notices/count"
+        )
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_af749446fd572cbad63745a6d55c5a_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_af749446fd572cbad63745a6d55c5a_v2_3_7_9", json_data
+        )
 
-    def get_field_notice_affecting_the_network_device_by_device_id_and_notice_id(self,
-                                                                                 id,
-                                                                                 network_device_id,
-                                                                                 headers=None,
-                                                                                 **request_parameters):
+    def get_field_notice_affecting_the_network_device_by_device_id_and_notice_id(
+        self, id, network_device_id, headers=None, **request_parameters
+    ):
         """Get field notice affecting the network device by device Id and notice id .
 
         Args:
@@ -1099,23 +1080,19 @@ class Compliance(object):
             https://developer.cisco.com/docs/dna-center/#!get-field-notice-affecting-the-network-device-by-device-id-and-notice-id
         """
         check_type(headers, dict)
-        check_type(network_device_id, str,
-                   may_be_none=False)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(network_device_id, str, may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'networkDeviceId': network_device_id,
-            'id': id,
+            "networkDeviceId": network_device_id,
+            "id": id,
         }
 
         with_custom_headers = False
@@ -1124,27 +1101,34 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/fieldNotices/results/networkDevices/{'
-                 + 'networkDeviceId}/notices/{id}')
+        e_url = (
+            "/dna/intent/api/v1/fieldNotices/results/networkDevices/{"
+            + "networkDeviceId}/notices/{id}"
+        )
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_f585d782d15b54b89e227ab1d01e6f57_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_f585d782d15b54b89e227ab1d01e6f57_v2_3_7_9", json_data
+        )
 
-    def get_field_notices(self,
-                          device_count=None,
-                          id=None,
-                          limit=None,
-                          offset=None,
-                          order=None,
-                          sort_by=None,
-                          type=None,
-                          headers=None,
-                          **request_parameters):
+    def get_field_notices(
+        self,
+        device_count=None,
+        id=None,
+        limit=None,
+        offset=None,
+        order=None,
+        sort_by=None,
+        type=None,
+        headers=None,
+        **request_parameters
+    ):
         """Get field notices .
 
         Args:
@@ -1185,31 +1169,22 @@ class Compliance(object):
         check_type(sort_by, str)
         check_type(order, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'id':
-                id,
-            'deviceCount':
-                device_count,
-            'type':
-                type,
-            'offset':
-                offset,
-            'limit':
-                limit,
-            'sortBy':
-                sort_by,
-            'order':
-                order,
+            "id": id,
+            "deviceCount": device_count,
+            "type": type,
+            "offset": offset,
+            "limit": limit,
+            "sortBy": sort_by,
+            "order": order,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1217,22 +1192,22 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/fieldNotices/results/notices')
+        e_url = "/dna/intent/api/v1/fieldNotices/results/notices"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_aa335c92d485537bab1126533ac8ed7_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_aa335c92d485537bab1126533ac8ed7_v2_3_7_9", json_data
+        )
 
-    def get_count_of_field_notices(self,
-                                   device_count=None,
-                                   id=None,
-                                   type=None,
-                                   headers=None,
-                                   **request_parameters):
+    def get_count_of_field_notices(
+        self, device_count=None, id=None, type=None, headers=None, **request_parameters
+    ):
         """Get count of field notices .
 
         Args:
@@ -1262,23 +1237,18 @@ class Compliance(object):
         check_type(device_count, int)
         check_type(type, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'id':
-                id,
-            'deviceCount':
-                device_count,
-            'type':
-                type,
+            "id": id,
+            "deviceCount": device_count,
+            "type": type,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1286,20 +1256,20 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/fieldNotices/results/notices/count')
+        e_url = "/dna/intent/api/v1/fieldNotices/results/notices/count"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_b172bd7cd55378bd25e4ae525a9179_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_b172bd7cd55378bd25e4ae525a9179_v2_3_7_9", json_data
+        )
 
-    def get_field_notice_by_id(self,
-                               id,
-                               headers=None,
-                               **request_parameters):
+    def get_field_notice_by_id(self, id, headers=None, **request_parameters):
         """Get field notice by Id .
 
         Args:
@@ -1321,20 +1291,17 @@ class Compliance(object):
             https://developer.cisco.com/docs/dna-center/#!get-field-notice-by-id
         """
         check_type(headers, dict)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
 
         with_custom_headers = False
@@ -1343,26 +1310,31 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/fieldNotices/results/notices/{id}')
+        e_url = "/dna/intent/api/v1/fieldNotices/results/notices/{id}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_fc5e9ea9a5acd9e461b88355330ee_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_fc5e9ea9a5acd9e461b88355330ee_v2_3_7_9", json_data
+        )
 
-    def get_field_notice_network_devices_for_the_notice(self,
-                                                        id,
-                                                        limit=None,
-                                                        network_device_id=None,
-                                                        offset=None,
-                                                        order=None,
-                                                        scan_status=None,
-                                                        sort_by=None,
-                                                        headers=None,
-                                                        **request_parameters):
+    def get_field_notice_network_devices_for_the_notice(
+        self,
+        id,
+        limit=None,
+        network_device_id=None,
+        offset=None,
+        order=None,
+        scan_status=None,
+        sort_by=None,
+        headers=None,
+        **request_parameters
+    ):
         """Get field notice network devices for the notice .
 
         Args:
@@ -1400,32 +1372,24 @@ class Compliance(object):
         check_type(limit, int)
         check_type(sort_by, str)
         check_type(order, str)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'networkDeviceId':
-                network_device_id,
-            'scanStatus':
-                scan_status,
-            'offset':
-                offset,
-            'limit':
-                limit,
-            'sortBy':
-                sort_by,
-            'order':
-                order,
+            "networkDeviceId": network_device_id,
+            "scanStatus": scan_status,
+            "offset": offset,
+            "limit": limit,
+            "sortBy": sort_by,
+            "order": order,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
 
         with_custom_headers = False
@@ -1434,23 +1398,29 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/fieldNotices/results/notices/{id}/net'
-                 + 'workDevices')
+        e_url = (
+            "/dna/intent/api/v1/fieldNotices/results/notices/{id}/net" + "workDevices"
+        )
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_e015bf018f55499a59aae5c54264bf4_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_e015bf018f55499a59aae5c54264bf4_v2_3_7_9", json_data
+        )
 
-    def get_count_of_field_notice_network_devices_for_the_notice(self,
-                                                                 id,
-                                                                 network_device_id=None,
-                                                                 scan_status=None,
-                                                                 headers=None,
-                                                                 **request_parameters):
+    def get_count_of_field_notice_network_devices_for_the_notice(
+        self,
+        id,
+        network_device_id=None,
+        scan_status=None,
+        headers=None,
+        **request_parameters
+    ):
         """Get count of field notice network devices for the notice .
 
         Args:
@@ -1477,24 +1447,20 @@ class Compliance(object):
         check_type(headers, dict)
         check_type(network_device_id, str)
         check_type(scan_status, str)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'networkDeviceId':
-                network_device_id,
-            'scanStatus':
-                scan_status,
+            "networkDeviceId": network_device_id,
+            "scanStatus": scan_status,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
 
         with_custom_headers = False
@@ -1503,22 +1469,25 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/fieldNotices/results/notices/{id}/net'
-                 + 'workDevices/count')
+        e_url = (
+            "/dna/intent/api/v1/fieldNotices/results/notices/{id}/net"
+            + "workDevices/count"
+        )
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_cffe4d51a6508e8c18de0d45d78294_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_cffe4d51a6508e8c18de0d45d78294_v2_3_7_9", json_data
+        )
 
-    def get_field_notice_network_device_for_the_notice_by_network_device_id(self,
-                                                                            id,
-                                                                            network_device_id,
-                                                                            headers=None,
-                                                                            **request_parameters):
+    def get_field_notice_network_device_for_the_notice_by_network_device_id(
+        self, id, network_device_id, headers=None, **request_parameters
+    ):
         """Get field notice network device for the notice by network device id .
 
         Args:
@@ -1541,23 +1510,19 @@ class Compliance(object):
             https://developer.cisco.com/docs/dna-center/#!get-field-notice-network-device-for-the-notice-by-network-device-id
         """
         check_type(headers, dict)
-        check_type(id, str,
-                   may_be_none=False)
-        check_type(network_device_id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
+        check_type(network_device_id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
-            'networkDeviceId': network_device_id,
+            "id": id,
+            "networkDeviceId": network_device_id,
         }
 
         with_custom_headers = False
@@ -1566,23 +1531,30 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/fieldNotices/results/notices/{id}/net'
-                 + 'workDevices/{networkDeviceId}')
+        e_url = (
+            "/dna/intent/api/v1/fieldNotices/results/notices/{id}/net"
+            + "workDevices/{networkDeviceId}"
+        )
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_e9343c828f586da856c48c8edee40b_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_e9343c828f586da856c48c8edee40b_v2_3_7_9", json_data
+        )
 
-    def get_field_notices_results_trend_over_time(self,
-                                                  limit=None,
-                                                  offset=None,
-                                                  scan_time=None,
-                                                  headers=None,
-                                                  **request_parameters):
+    def get_field_notices_results_trend_over_time(
+        self,
+        limit=None,
+        offset=None,
+        scan_time=None,
+        headers=None,
+        **request_parameters
+    ):
         """Get field notices results trend over time. The default sort is by scan time descending. .
 
         Args:
@@ -1613,23 +1585,18 @@ class Compliance(object):
         check_type(offset, int)
         check_type(limit, int)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'scanTime':
-                scan_time,
-            'offset':
-                offset,
-            'limit':
-                limit,
+            "scanTime": scan_time,
+            "offset": offset,
+            "limit": limit,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1637,20 +1604,20 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/fieldNotices/resultsTrend')
+        e_url = "/dna/intent/api/v1/fieldNotices/resultsTrend"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_a7065d7d9654a4015c6e961a_v2_3_7_9', json_data)
+        return self._object_factory("bpm_a7065d7d9654a4015c6e961a_v2_3_7_9", json_data)
 
-    def get_count_of_field_notices_results_trend_over_time(self,
-                                                           scan_time=None,
-                                                           headers=None,
-                                                           **request_parameters):
+    def get_count_of_field_notices_results_trend_over_time(
+        self, scan_time=None, headers=None, **request_parameters
+    ):
         """Get count of field notices results trend over time .
 
         Args:
@@ -1675,19 +1642,16 @@ class Compliance(object):
         check_type(headers, dict)
         check_type(scan_time, int)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'scanTime':
-                scan_time,
+            "scanTime": scan_time,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1695,19 +1659,22 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/fieldNotices/resultsTrend/count')
+        e_url = "/dna/intent/api/v1/fieldNotices/resultsTrend/count"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_f89484e88e57b292756b0c7e54b553_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_f89484e88e57b292756b0c7e54b553_v2_3_7_9", json_data
+        )
 
-    def creates_a_trial_for_field_notices_detection_on_network_devices(self,
-                                                                       headers=None,
-                                                                       **request_parameters):
+    def creates_a_trial_for_field_notices_detection_on_network_devices(
+        self, headers=None, **request_parameters
+    ):
         """Creates a trial for field notices detection on network devices. The consent to connect agreement must have been
         accepted in the UI for this to succeed. Please refer to the user guide at   for more details on consent
         to connect. .
@@ -1731,17 +1698,14 @@ class Compliance(object):
         """
         check_type(headers, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1749,19 +1713,22 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/fieldNotices/trials')
+        e_url = "/dna/intent/api/v1/fieldNotices/trials"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.post(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_be66c0a0582fa234daaa2019b6b6_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_be66c0a0582fa234daaa2019b6b6_v2_3_7_9", json_data
+        )
 
-    def get_trial_details_for_field_notices_detection_on_network_devices(self,
-                                                                         headers=None,
-                                                                         **request_parameters):
+    def get_trial_details_for_field_notices_detection_on_network_devices(
+        self, headers=None, **request_parameters
+    ):
         """Get trial details for field notices detection on network devices .
 
         Args:
@@ -1783,17 +1750,14 @@ class Compliance(object):
         """
         check_type(headers, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1801,20 +1765,22 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/fieldNotices/trials')
+        e_url = "/dna/intent/api/v1/fieldNotices/trials"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_d3893f52738eaf50a6732d2159_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_d3893f52738eaf50a6732d2159_v2_3_7_9", json_data
+        )
 
-    def triggers_a_field_notices_scan_for_the_supported_network_devices(self,
-                                                                        failed_devices_only=None,
-                                                                        headers=None,
-                                                                        **request_parameters):
+    def triggers_a_field_notices_scan_for_the_supported_network_devices(
+        self, failed_devices_only=None, headers=None, **request_parameters
+    ):
         """Triggers a field notices scan for the supported network devices. The supported devices are switches, routers and
         wireless controllers. If a device is not supported, the FieldNoticeNetworkDevice scanStatus will be
         Failed with appropriate comments. The consent to connect agreement must have been accepted in the UI for
@@ -1843,19 +1809,16 @@ class Compliance(object):
         check_type(headers, dict)
         check_type(failed_devices_only, bool)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'failedDevicesOnly':
-                failed_devices_only,
+            "failedDevicesOnly": failed_devices_only,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1863,20 +1826,22 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/fieldNotices/triggerScan')
+        e_url = "/dna/intent/api/v1/fieldNotices/triggerScan"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.post(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_fd0f9b4adc5572da4ccc64802a275f5_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_fd0f9b4adc5572da4ccc64802a275f5_v2_3_7_9", json_data
+        )
 
-    def get_config_task_details(self,
-                                parent_task_id,
-                                headers=None,
-                                **request_parameters):
+    def get_config_task_details(
+        self, parent_task_id, headers=None, **request_parameters
+    ):
         """Returns a config task result details by specified id .
 
         Args:
@@ -1898,22 +1863,18 @@ class Compliance(object):
             https://developer.cisco.com/docs/dna-center/#!get-config-task-details
         """
         check_type(headers, dict)
-        check_type(parent_task_id, str,
-                   may_be_none=False)
+        check_type(parent_task_id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'parentTaskId':
-                parent_task_id,
+            "parentTaskId": parent_task_id,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1921,22 +1882,27 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/network-device-config/task')
+        e_url = "/dna/intent/api/v1/network-device-config/task"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_cb73c1c44665d1ebbe934dd380f4f5e_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_cb73c1c44665d1ebbe934dd380f4f5e_v2_3_7_9", json_data
+        )
 
-    def commit_device_configuration(self,
-                                    deviceId=None,
-                                    headers=None,
-                                    payload=None,
-                                    active_validation=True,
-                                    **request_parameters):
+    def commit_device_configuration(
+        self,
+        deviceId=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """This operation would commit device running configuration to startup by issuing "write memory" to device .
 
         Args:
@@ -1964,29 +1930,25 @@ class Compliance(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'deviceId':
-                deviceId,
+            "deviceId": deviceId,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_ba40975123ed50daa2f9f599cdf2d911_v2_3_7_9')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_ba40975123ed50daa2f9f599cdf2d911_v2_3_7_9"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1994,28 +1956,33 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/network-device-config/write-memory')
+        e_url = "/dna/intent/api/v1/network-device-config/write-memory"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_ba40975123ed50daa2f9f599cdf2d911_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_ba40975123ed50daa2f9f599cdf2d911_v2_3_7_9", json_data
+        )
 
-    def get_network_bugs(self,
-                         device_count=None,
-                         id=None,
-                         limit=None,
-                         offset=None,
-                         order=None,
-                         severity=None,
-                         sort_by=None,
-                         headers=None,
-                         **request_parameters):
+    def get_network_bugs(
+        self,
+        device_count=None,
+        id=None,
+        limit=None,
+        offset=None,
+        order=None,
+        severity=None,
+        sort_by=None,
+        headers=None,
+        **request_parameters
+    ):
         """Get network bugs .
 
         Args:
@@ -2056,31 +2023,22 @@ class Compliance(object):
         check_type(sort_by, str)
         check_type(order, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'id':
-                id,
-            'deviceCount':
-                device_count,
-            'severity':
-                severity,
-            'offset':
-                offset,
-            'limit':
-                limit,
-            'sortBy':
-                sort_by,
-            'order':
-                order,
+            "id": id,
+            "deviceCount": device_count,
+            "severity": severity,
+            "offset": offset,
+            "limit": limit,
+            "sortBy": sort_by,
+            "order": order,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -2088,22 +2046,27 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/networkBugs/results/bugs')
+        e_url = "/dna/intent/api/v1/networkBugs/results/bugs"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_a3217129c2295b27838cf486a35626f8_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_a3217129c2295b27838cf486a35626f8_v2_3_7_9", json_data
+        )
 
-    def get_count_of_network_bugs(self,
-                                  device_count=None,
-                                  id=None,
-                                  severity=None,
-                                  headers=None,
-                                  **request_parameters):
+    def get_count_of_network_bugs(
+        self,
+        device_count=None,
+        id=None,
+        severity=None,
+        headers=None,
+        **request_parameters
+    ):
         """Get count of network bugs .
 
         Args:
@@ -2133,23 +2096,18 @@ class Compliance(object):
         check_type(device_count, int)
         check_type(severity, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'id':
-                id,
-            'deviceCount':
-                device_count,
-            'severity':
-                severity,
+            "id": id,
+            "deviceCount": device_count,
+            "severity": severity,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -2157,20 +2115,20 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/networkBugs/results/bugs/count')
+        e_url = "/dna/intent/api/v1/networkBugs/results/bugs/count"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_e1ec0f16d5e57cab08414ece382334d_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_e1ec0f16d5e57cab08414ece382334d_v2_3_7_9", json_data
+        )
 
-    def get_network_bug_by_id(self,
-                              id,
-                              headers=None,
-                              **request_parameters):
+    def get_network_bug_by_id(self, id, headers=None, **request_parameters):
         """Get network bug by Id .
 
         Args:
@@ -2192,20 +2150,17 @@ class Compliance(object):
             https://developer.cisco.com/docs/dna-center/#!get-network-bug-by-id
         """
         check_type(headers, dict)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
 
         with_custom_headers = False
@@ -2214,27 +2169,32 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/networkBugs/results/bugs/{id}')
+        e_url = "/dna/intent/api/v1/networkBugs/results/bugs/{id}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_a7663a127d59d9afc45d4daa0ba477_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_a7663a127d59d9afc45d4daa0ba477_v2_3_7_9", json_data
+        )
 
-    def get_network_bug_devices_for_the_bug(self,
-                                            id,
-                                            limit=None,
-                                            network_device_id=None,
-                                            offset=None,
-                                            order=None,
-                                            scan_mode=None,
-                                            scan_status=None,
-                                            sort_by=None,
-                                            headers=None,
-                                            **request_parameters):
+    def get_network_bug_devices_for_the_bug(
+        self,
+        id,
+        limit=None,
+        network_device_id=None,
+        offset=None,
+        order=None,
+        scan_mode=None,
+        scan_status=None,
+        sort_by=None,
+        headers=None,
+        **request_parameters
+    ):
         """Get network bug devices for the bug .
 
         Args:
@@ -2275,34 +2235,25 @@ class Compliance(object):
         check_type(limit, int)
         check_type(sort_by, str)
         check_type(order, str)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'networkDeviceId':
-                network_device_id,
-            'scanMode':
-                scan_mode,
-            'scanStatus':
-                scan_status,
-            'offset':
-                offset,
-            'limit':
-                limit,
-            'sortBy':
-                sort_by,
-            'order':
-                order,
+            "networkDeviceId": network_device_id,
+            "scanMode": scan_mode,
+            "scanStatus": scan_status,
+            "offset": offset,
+            "limit": limit,
+            "sortBy": sort_by,
+            "order": order,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
 
         with_custom_headers = False
@@ -2311,24 +2262,28 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/networkBugs/results/bugs/{id}/network'
-                 + 'Devices')
+        e_url = "/dna/intent/api/v1/networkBugs/results/bugs/{id}/network" + "Devices"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_d10f773fa5522384790bf1f198d861_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_d10f773fa5522384790bf1f198d861_v2_3_7_9", json_data
+        )
 
-    def get_count_of_network_bug_devices_for_the_bug(self,
-                                                     id,
-                                                     network_device_id=None,
-                                                     scan_mode=None,
-                                                     scan_status=None,
-                                                     headers=None,
-                                                     **request_parameters):
+    def get_count_of_network_bug_devices_for_the_bug(
+        self,
+        id,
+        network_device_id=None,
+        scan_mode=None,
+        scan_status=None,
+        headers=None,
+        **request_parameters
+    ):
         """Get count of network bug devices for the bug .
 
         Args:
@@ -2358,26 +2313,21 @@ class Compliance(object):
         check_type(network_device_id, str)
         check_type(scan_mode, str)
         check_type(scan_status, str)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'networkDeviceId':
-                network_device_id,
-            'scanMode':
-                scan_mode,
-            'scanStatus':
-                scan_status,
+            "networkDeviceId": network_device_id,
+            "scanMode": scan_mode,
+            "scanStatus": scan_status,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
 
         with_custom_headers = False
@@ -2386,22 +2336,24 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/networkBugs/results/bugs/{id}/network'
-                 + 'Devices/count')
+        e_url = (
+            "/dna/intent/api/v1/networkBugs/results/bugs/{id}/network" + "Devices/count"
+        )
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_c7afe7c0c5c2898eabb7cbbdc4ef4_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_c7afe7c0c5c2898eabb7cbbdc4ef4_v2_3_7_9", json_data
+        )
 
-    def get_network_bug_device_for_the_bug_by_network_device_id(self,
-                                                                id,
-                                                                network_device_id,
-                                                                headers=None,
-                                                                **request_parameters):
+    def get_network_bug_device_for_the_bug_by_network_device_id(
+        self, id, network_device_id, headers=None, **request_parameters
+    ):
         """Get network bug device for the bug by network device id .
 
         Args:
@@ -2425,23 +2377,19 @@ class Compliance(object):
             https://developer.cisco.com/docs/dna-center/#!get-network-bug-device-for-the-bug-by-network-device-id
         """
         check_type(headers, dict)
-        check_type(id, str,
-                   may_be_none=False)
-        check_type(network_device_id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
+        check_type(network_device_id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
-            'networkDeviceId': network_device_id,
+            "id": id,
+            "networkDeviceId": network_device_id,
         }
 
         with_custom_headers = False
@@ -2450,28 +2398,35 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/networkBugs/results/bugs/{id}/network'
-                 + 'Devices/{networkDeviceId}')
+        e_url = (
+            "/dna/intent/api/v1/networkBugs/results/bugs/{id}/network"
+            + "Devices/{networkDeviceId}"
+        )
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_c369b19255b95cffb73b8061e01a1f7d_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_c369b19255b95cffb73b8061e01a1f7d_v2_3_7_9", json_data
+        )
 
-    def get_network_bug_devices(self,
-                                bug_count=None,
-                                limit=None,
-                                network_device_id=None,
-                                offset=None,
-                                order=None,
-                                scan_mode=None,
-                                scan_status=None,
-                                sort_by=None,
-                                headers=None,
-                                **request_parameters):
+    def get_network_bug_devices(
+        self,
+        bug_count=None,
+        limit=None,
+        network_device_id=None,
+        offset=None,
+        order=None,
+        scan_mode=None,
+        scan_status=None,
+        sort_by=None,
+        headers=None,
+        **request_parameters
+    ):
         """Get network bug devices .
 
         Args:
@@ -2515,33 +2470,23 @@ class Compliance(object):
         check_type(sort_by, str)
         check_type(order, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'networkDeviceId':
-                network_device_id,
-            'scanMode':
-                scan_mode,
-            'scanStatus':
-                scan_status,
-            'bugCount':
-                bug_count,
-            'offset':
-                offset,
-            'limit':
-                limit,
-            'sortBy':
-                sort_by,
-            'order':
-                order,
+            "networkDeviceId": network_device_id,
+            "scanMode": scan_mode,
+            "scanStatus": scan_status,
+            "bugCount": bug_count,
+            "offset": offset,
+            "limit": limit,
+            "sortBy": sort_by,
+            "order": order,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -2549,23 +2494,28 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/networkBugs/results/networkDevices')
+        e_url = "/dna/intent/api/v1/networkBugs/results/networkDevices"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_f6011b1d24c53d1aa7dda9e0d3ee29b_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_f6011b1d24c53d1aa7dda9e0d3ee29b_v2_3_7_9", json_data
+        )
 
-    def get_count_of_network_bug_devices(self,
-                                         bug_count=None,
-                                         network_device_id=None,
-                                         scan_mode=None,
-                                         scan_status=None,
-                                         headers=None,
-                                         **request_parameters):
+    def get_count_of_network_bug_devices(
+        self,
+        bug_count=None,
+        network_device_id=None,
+        scan_mode=None,
+        scan_status=None,
+        headers=None,
+        **request_parameters
+    ):
         """Get count of network bug devices .
 
         Args:
@@ -2598,25 +2548,19 @@ class Compliance(object):
         check_type(scan_status, str)
         check_type(bug_count, int)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'networkDeviceId':
-                network_device_id,
-            'scanMode':
-                scan_mode,
-            'scanStatus':
-                scan_status,
-            'bugCount':
-                bug_count,
+            "networkDeviceId": network_device_id,
+            "scanMode": scan_mode,
+            "scanStatus": scan_status,
+            "bugCount": bug_count,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -2624,21 +2568,22 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/networkBugs/results/networkDevices/co'
-                 + 'unt')
+        e_url = "/dna/intent/api/v1/networkBugs/results/networkDevices/co" + "unt"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_aab9fd032d15280ac99b00b34600781_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_aab9fd032d15280ac99b00b34600781_v2_3_7_9", json_data
+        )
 
-    def get_network_bug_device_by_device_id(self,
-                                            network_device_id,
-                                            headers=None,
-                                            **request_parameters):
+    def get_network_bug_device_by_device_id(
+        self, network_device_id, headers=None, **request_parameters
+    ):
         """Get network bug device by device id .
 
         Args:
@@ -2661,20 +2606,17 @@ class Compliance(object):
             https://developer.cisco.com/docs/dna-center/#!get-network-bug-device-by-device-id
         """
         check_type(headers, dict)
-        check_type(network_device_id, str,
-                   may_be_none=False)
+        check_type(network_device_id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'networkDeviceId': network_device_id,
+            "networkDeviceId": network_device_id,
         }
 
         with_custom_headers = False
@@ -2683,27 +2625,34 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/networkBugs/results/networkDevices/{n'
-                 + 'etworkDeviceId}')
+        e_url = (
+            "/dna/intent/api/v1/networkBugs/results/networkDevices/{n"
+            + "etworkDeviceId}"
+        )
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_e2f8ce2370c6532da9181a319daf0fec_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_e2f8ce2370c6532da9181a319daf0fec_v2_3_7_9", json_data
+        )
 
-    def get_bugs_affecting_the_network_device(self,
-                                              network_device_id,
-                                              id=None,
-                                              limit=None,
-                                              offset=None,
-                                              order=None,
-                                              severity=None,
-                                              sort_by=None,
-                                              headers=None,
-                                              **request_parameters):
+    def get_bugs_affecting_the_network_device(
+        self,
+        network_device_id,
+        id=None,
+        limit=None,
+        offset=None,
+        order=None,
+        severity=None,
+        sort_by=None,
+        headers=None,
+        **request_parameters
+    ):
         """Get bugs affecting the network device .
 
         Args:
@@ -2741,32 +2690,24 @@ class Compliance(object):
         check_type(limit, int)
         check_type(sort_by, str)
         check_type(order, str)
-        check_type(network_device_id, str,
-                   may_be_none=False)
+        check_type(network_device_id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'id':
-                id,
-            'severity':
-                severity,
-            'offset':
-                offset,
-            'limit':
-                limit,
-            'sortBy':
-                sort_by,
-            'order':
-                order,
+            "id": id,
+            "severity": severity,
+            "offset": offset,
+            "limit": limit,
+            "sortBy": sort_by,
+            "order": order,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'networkDeviceId': network_device_id,
+            "networkDeviceId": network_device_id,
         }
 
         with_custom_headers = False
@@ -2775,23 +2716,30 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/networkBugs/results/networkDevices/{n'
-                 + 'etworkDeviceId}/bugs')
+        e_url = (
+            "/dna/intent/api/v1/networkBugs/results/networkDevices/{n"
+            + "etworkDeviceId}/bugs"
+        )
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_aea65ed8cb2e55fb8d7c40abf2352504_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_aea65ed8cb2e55fb8d7c40abf2352504_v2_3_7_9", json_data
+        )
 
-    def get_count_of_bugs_affecting_the_network_device(self,
-                                                       network_device_id,
-                                                       id=None,
-                                                       severity=None,
-                                                       headers=None,
-                                                       **request_parameters):
+    def get_count_of_bugs_affecting_the_network_device(
+        self,
+        network_device_id,
+        id=None,
+        severity=None,
+        headers=None,
+        **request_parameters
+    ):
         """Get count of bugs affecting the network device .
 
         Args:
@@ -2818,24 +2766,20 @@ class Compliance(object):
         check_type(headers, dict)
         check_type(id, str)
         check_type(severity, str)
-        check_type(network_device_id, str,
-                   may_be_none=False)
+        check_type(network_device_id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'id':
-                id,
-            'severity':
-                severity,
+            "id": id,
+            "severity": severity,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'networkDeviceId': network_device_id,
+            "networkDeviceId": network_device_id,
         }
 
         with_custom_headers = False
@@ -2844,22 +2788,25 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/networkBugs/results/networkDevices/{n'
-                 + 'etworkDeviceId}/bugs/count')
+        e_url = (
+            "/dna/intent/api/v1/networkBugs/results/networkDevices/{n"
+            + "etworkDeviceId}/bugs/count"
+        )
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_a3e7c7a84b195cf989715f228c4c3337_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_a3e7c7a84b195cf989715f228c4c3337_v2_3_7_9", json_data
+        )
 
-    def get_bug_affecting_the_network_device_by_device_id_and_bug_id(self,
-                                                                     id,
-                                                                     network_device_id,
-                                                                     headers=None,
-                                                                     **request_parameters):
+    def get_bug_affecting_the_network_device_by_device_id_and_bug_id(
+        self, id, network_device_id, headers=None, **request_parameters
+    ):
         """Get bug affecting the network device by device Id and bug id .
 
         Args:
@@ -2882,23 +2829,19 @@ class Compliance(object):
             https://developer.cisco.com/docs/dna-center/#!get-bug-affecting-the-network-device-by-device-id-and-bug-id
         """
         check_type(headers, dict)
-        check_type(network_device_id, str,
-                   may_be_none=False)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(network_device_id, str, may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'networkDeviceId': network_device_id,
-            'id': id,
+            "networkDeviceId": network_device_id,
+            "id": id,
         }
 
         with_custom_headers = False
@@ -2907,23 +2850,30 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/networkBugs/results/networkDevices/{n'
-                 + 'etworkDeviceId}/bugs/{id}')
+        e_url = (
+            "/dna/intent/api/v1/networkBugs/results/networkDevices/{n"
+            + "etworkDeviceId}/bugs/{id}"
+        )
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_beba27ea019536da45eef3cade3ab67_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_beba27ea019536da45eef3cade3ab67_v2_3_7_9", json_data
+        )
 
-    def get_network_bugs_results_trend_over_time(self,
-                                                 limit=None,
-                                                 offset=None,
-                                                 scan_time=None,
-                                                 headers=None,
-                                                 **request_parameters):
+    def get_network_bugs_results_trend_over_time(
+        self,
+        limit=None,
+        offset=None,
+        scan_time=None,
+        headers=None,
+        **request_parameters
+    ):
         """Get network bugs results trend over time. The default sort is by scan time descending. .
 
         Args:
@@ -2953,23 +2903,18 @@ class Compliance(object):
         check_type(offset, int)
         check_type(limit, int)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'scanTime':
-                scan_time,
-            'offset':
-                offset,
-            'limit':
-                limit,
+            "scanTime": scan_time,
+            "offset": offset,
+            "limit": limit,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -2977,20 +2922,22 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/networkBugs/resultsTrend')
+        e_url = "/dna/intent/api/v1/networkBugs/resultsTrend"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_ad7e992ab6a526196819e35eb0418a4_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_ad7e992ab6a526196819e35eb0418a4_v2_3_7_9", json_data
+        )
 
-    def get_count_of_network_bugs_results_trend_over_time(self,
-                                                          scan_time=None,
-                                                          headers=None,
-                                                          **request_parameters):
+    def get_count_of_network_bugs_results_trend_over_time(
+        self, scan_time=None, headers=None, **request_parameters
+    ):
         """Get count of network bugs results trend over time .
 
         Args:
@@ -3014,19 +2961,16 @@ class Compliance(object):
         check_type(headers, dict)
         check_type(scan_time, int)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'scanTime':
-                scan_time,
+            "scanTime": scan_time,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -3034,19 +2978,22 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/networkBugs/resultsTrend/count')
+        e_url = "/dna/intent/api/v1/networkBugs/resultsTrend/count"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_a240f89766435001b3ed25c3d23f0ffc_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_a240f89766435001b3ed25c3d23f0ffc_v2_3_7_9", json_data
+        )
 
-    def creates_a_trial_for_bugs_detection_on_network_devices(self,
-                                                              headers=None,
-                                                              **request_parameters):
+    def creates_a_trial_for_bugs_detection_on_network_devices(
+        self, headers=None, **request_parameters
+    ):
         """Creates a trial for bugs detection on network devices. The consent to connect agreement must have been accepted
         in the UI for this to succeed. Please refer to the user guide at   for more details on consent to
         connect. .
@@ -3070,17 +3017,14 @@ class Compliance(object):
         """
         check_type(headers, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -3088,19 +3032,22 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/networkBugs/trials')
+        e_url = "/dna/intent/api/v1/networkBugs/trials"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.post(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_c08d904cff256aca70a68901692a021_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_c08d904cff256aca70a68901692a021_v2_3_7_9", json_data
+        )
 
-    def get_trial_details_for_bugs_detection_on_network_devices(self,
-                                                                headers=None,
-                                                                **request_parameters):
+    def get_trial_details_for_bugs_detection_on_network_devices(
+        self, headers=None, **request_parameters
+    ):
         """Get trial details for bugs detection on network devices .
 
         Args:
@@ -3122,17 +3069,14 @@ class Compliance(object):
         """
         check_type(headers, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -3140,20 +3084,22 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/networkBugs/trials')
+        e_url = "/dna/intent/api/v1/networkBugs/trials"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_a3479f3b91c5b73bdfed9f1cb6f7bb5_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_a3479f3b91c5b73bdfed9f1cb6f7bb5_v2_3_7_9", json_data
+        )
 
-    def triggers_a_bugs_scan_for_the_supported_network_devices(self,
-                                                               failed_devices_only=None,
-                                                               headers=None,
-                                                               **request_parameters):
+    def triggers_a_bugs_scan_for_the_supported_network_devices(
+        self, failed_devices_only=None, headers=None, **request_parameters
+    ):
         """Triggers a bugs scan for the supported network devices. The supported devices are switches and routers. If a
         device is not supported, the NetworkBugsDevice scanStatus will be Failed with appropriate comments. .
 
@@ -3180,19 +3126,16 @@ class Compliance(object):
         check_type(headers, dict)
         check_type(failed_devices_only, bool)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'failedDevicesOnly':
-                failed_devices_only,
+            "failedDevicesOnly": failed_devices_only,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -3200,27 +3143,32 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/networkBugs/triggerScan')
+        e_url = "/dna/intent/api/v1/networkBugs/triggerScan"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.post(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_b6c0f7132f5a1485b7b564818354d8_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_b6c0f7132f5a1485b7b564818354d8_v2_3_7_9", json_data
+        )
 
-    def get_security_advisories_affecting_the_network_devices(self,
-                                                              cvss_base_score=None,
-                                                              device_count=None,
-                                                              id=None,
-                                                              limit=None,
-                                                              offset=None,
-                                                              order=None,
-                                                              security_impact_rating=None,
-                                                              sort_by=None,
-                                                              headers=None,
-                                                              **request_parameters):
+    def get_security_advisories_affecting_the_network_devices(
+        self,
+        cvss_base_score=None,
+        device_count=None,
+        id=None,
+        limit=None,
+        offset=None,
+        order=None,
+        security_impact_rating=None,
+        sort_by=None,
+        headers=None,
+        **request_parameters
+    ):
         """Get security advisories affecting the network devices .
 
         Args:
@@ -3264,33 +3212,23 @@ class Compliance(object):
         check_type(sort_by, str)
         check_type(order, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'id':
-                id,
-            'deviceCount':
-                device_count,
-            'cvssBaseScore':
-                cvss_base_score,
-            'securityImpactRating':
-                security_impact_rating,
-            'offset':
-                offset,
-            'limit':
-                limit,
-            'sortBy':
-                sort_by,
-            'order':
-                order,
+            "id": id,
+            "deviceCount": device_count,
+            "cvssBaseScore": cvss_base_score,
+            "securityImpactRating": security_impact_rating,
+            "offset": offset,
+            "limit": limit,
+            "sortBy": sort_by,
+            "order": order,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -3298,23 +3236,28 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/securityAdvisories/results/advisories')
+        e_url = "/dna/intent/api/v1/securityAdvisories/results/advisories"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_aef04c74f2745a6ca3960d6c466856cf_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_aef04c74f2745a6ca3960d6c466856cf_v2_3_7_9", json_data
+        )
 
-    def get_count_of_security_advisories_affecting_the_network_devices(self,
-                                                                       cvss_base_score=None,
-                                                                       device_count=None,
-                                                                       id=None,
-                                                                       security_impact_rating=None,
-                                                                       headers=None,
-                                                                       **request_parameters):
+    def get_count_of_security_advisories_affecting_the_network_devices(
+        self,
+        cvss_base_score=None,
+        device_count=None,
+        id=None,
+        security_impact_rating=None,
+        headers=None,
+        **request_parameters
+    ):
         """Get count of security advisories affecting the network devices .
 
         Args:
@@ -3347,25 +3290,19 @@ class Compliance(object):
         check_type(cvss_base_score, str)
         check_type(security_impact_rating, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'id':
-                id,
-            'deviceCount':
-                device_count,
-            'cvssBaseScore':
-                cvss_base_score,
-            'securityImpactRating':
-                security_impact_rating,
+            "id": id,
+            "deviceCount": device_count,
+            "cvssBaseScore": cvss_base_score,
+            "securityImpactRating": security_impact_rating,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -3373,21 +3310,22 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/securityAdvisories/results/advisories'
-                 + '/count')
+        e_url = "/dna/intent/api/v1/securityAdvisories/results/advisories" + "/count"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_a0ee1bc9fe825b49aaf57eb14b4c90cf_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_a0ee1bc9fe825b49aaf57eb14b4c90cf_v2_3_7_9", json_data
+        )
 
-    def get_security_advisory_affecting_the_network_devices_by_id(self,
-                                                                  id,
-                                                                  headers=None,
-                                                                  **request_parameters):
+    def get_security_advisory_affecting_the_network_devices_by_id(
+        self, id, headers=None, **request_parameters
+    ):
         """Get security advisory affecting the network devices by Id .
 
         Args:
@@ -3409,20 +3347,17 @@ class Compliance(object):
             https://developer.cisco.com/docs/dna-center/#!get-security-advisory-affecting-the-network-devices-by-id
         """
         check_type(headers, dict)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
 
         with_custom_headers = False
@@ -3431,28 +3366,32 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/securityAdvisories/results/advisories'
-                 + '/{id}')
+        e_url = "/dna/intent/api/v1/securityAdvisories/results/advisories" + "/{id}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_dca392c51998fec3821dfb312de_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_dca392c51998fec3821dfb312de_v2_3_7_9", json_data
+        )
 
-    def get_security_advisory_network_devices_for_the_security_advisory(self,
-                                                                        id,
-                                                                        limit=None,
-                                                                        network_device_id=None,
-                                                                        offset=None,
-                                                                        order=None,
-                                                                        scan_mode=None,
-                                                                        scan_status=None,
-                                                                        sort_by=None,
-                                                                        headers=None,
-                                                                        **request_parameters):
+    def get_security_advisory_network_devices_for_the_security_advisory(
+        self,
+        id,
+        limit=None,
+        network_device_id=None,
+        offset=None,
+        order=None,
+        scan_mode=None,
+        scan_status=None,
+        sort_by=None,
+        headers=None,
+        **request_parameters
+    ):
         """Get security advisory network devices for the security advisory .
 
         Args:
@@ -3493,34 +3432,25 @@ class Compliance(object):
         check_type(limit, int)
         check_type(sort_by, str)
         check_type(order, str)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'networkDeviceId':
-                network_device_id,
-            'scanMode':
-                scan_mode,
-            'scanStatus':
-                scan_status,
-            'offset':
-                offset,
-            'limit':
-                limit,
-            'sortBy':
-                sort_by,
-            'order':
-                order,
+            "networkDeviceId": network_device_id,
+            "scanMode": scan_mode,
+            "scanStatus": scan_status,
+            "offset": offset,
+            "limit": limit,
+            "sortBy": sort_by,
+            "order": order,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
 
         with_custom_headers = False
@@ -3529,24 +3459,31 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/securityAdvisories/results/advisories'
-                 + '/{id}/networkDevices')
+        e_url = (
+            "/dna/intent/api/v1/securityAdvisories/results/advisories"
+            + "/{id}/networkDevices"
+        )
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_d14f6e201c475f33a92d0222d76d40df_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_d14f6e201c475f33a92d0222d76d40df_v2_3_7_9", json_data
+        )
 
-    def get_count_of_security_advisory_network_devices_for_the_security_advisory(self,
-                                                                                 id,
-                                                                                 network_device_id=None,
-                                                                                 scan_mode=None,
-                                                                                 scan_status=None,
-                                                                                 headers=None,
-                                                                                 **request_parameters):
+    def get_count_of_security_advisory_network_devices_for_the_security_advisory(
+        self,
+        id,
+        network_device_id=None,
+        scan_mode=None,
+        scan_status=None,
+        headers=None,
+        **request_parameters
+    ):
         """Get count of security advisory network devices for the security advisory .
 
         Args:
@@ -3576,26 +3513,21 @@ class Compliance(object):
         check_type(network_device_id, str)
         check_type(scan_mode, str)
         check_type(scan_status, str)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'networkDeviceId':
-                network_device_id,
-            'scanMode':
-                scan_mode,
-            'scanStatus':
-                scan_status,
+            "networkDeviceId": network_device_id,
+            "scanMode": scan_mode,
+            "scanStatus": scan_status,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
 
         with_custom_headers = False
@@ -3604,22 +3536,25 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/securityAdvisories/results/advisories'
-                 + '/{id}/networkDevices/count')
+        e_url = (
+            "/dna/intent/api/v1/securityAdvisories/results/advisories"
+            + "/{id}/networkDevices/count"
+        )
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_d5fcf338dd95610a4a65c77888b8ed4_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_d5fcf338dd95610a4a65c77888b8ed4_v2_3_7_9", json_data
+        )
 
-    def get_security_advisory_network_device_for_the_security_advisory_by_network_device_id(self,
-                                                                                            id,
-                                                                                            network_device_id,
-                                                                                            headers=None,
-                                                                                            **request_parameters):
+    def get_security_advisory_network_device_for_the_security_advisory_by_network_device_id(
+        self, id, network_device_id, headers=None, **request_parameters
+    ):
         """Get security advisory network device for the security advisory by network device id .
 
         Args:
@@ -3642,23 +3577,19 @@ class Compliance(object):
             https://developer.cisco.com/docs/dna-center/#!get-security-advisory-network-device-for-the-security-advisory-by-network-device-id
         """
         check_type(headers, dict)
-        check_type(id, str,
-                   may_be_none=False)
-        check_type(network_device_id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
+        check_type(network_device_id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
-            'networkDeviceId': network_device_id,
+            "id": id,
+            "networkDeviceId": network_device_id,
         }
 
         with_custom_headers = False
@@ -3667,28 +3598,35 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/securityAdvisories/results/advisories'
-                 + '/{id}/networkDevices/{networkDeviceId}')
+        e_url = (
+            "/dna/intent/api/v1/securityAdvisories/results/advisories"
+            + "/{id}/networkDevices/{networkDeviceId}"
+        )
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_cb8be1c50ca9f2fe769cd27b2da_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_cb8be1c50ca9f2fe769cd27b2da_v2_3_7_9", json_data
+        )
 
-    def get_security_advisory_network_devices(self,
-                                              advisory_count=None,
-                                              limit=None,
-                                              network_device_id=None,
-                                              offset=None,
-                                              order=None,
-                                              scan_mode=None,
-                                              scan_status=None,
-                                              sort_by=None,
-                                              headers=None,
-                                              **request_parameters):
+    def get_security_advisory_network_devices(
+        self,
+        advisory_count=None,
+        limit=None,
+        network_device_id=None,
+        offset=None,
+        order=None,
+        scan_mode=None,
+        scan_status=None,
+        sort_by=None,
+        headers=None,
+        **request_parameters
+    ):
         """Get security advisory network devices .
 
         Args:
@@ -3732,33 +3670,23 @@ class Compliance(object):
         check_type(sort_by, str)
         check_type(order, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'networkDeviceId':
-                network_device_id,
-            'scanMode':
-                scan_mode,
-            'scanStatus':
-                scan_status,
-            'advisoryCount':
-                advisory_count,
-            'offset':
-                offset,
-            'limit':
-                limit,
-            'sortBy':
-                sort_by,
-            'order':
-                order,
+            "networkDeviceId": network_device_id,
+            "scanMode": scan_mode,
+            "scanStatus": scan_status,
+            "advisoryCount": advisory_count,
+            "offset": offset,
+            "limit": limit,
+            "sortBy": sort_by,
+            "order": order,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -3766,24 +3694,28 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/securityAdvisories/results/networkDev'
-                 + 'ices')
+        e_url = "/dna/intent/api/v1/securityAdvisories/results/networkDev" + "ices"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_b210c3633d5cfe8127056abae805c7_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_b210c3633d5cfe8127056abae805c7_v2_3_7_9", json_data
+        )
 
-    def get_count_of_security_advisory_network_devices(self,
-                                                       advisory_count=None,
-                                                       network_device_id=None,
-                                                       scan_mode=None,
-                                                       scan_status=None,
-                                                       headers=None,
-                                                       **request_parameters):
+    def get_count_of_security_advisory_network_devices(
+        self,
+        advisory_count=None,
+        network_device_id=None,
+        scan_mode=None,
+        scan_status=None,
+        headers=None,
+        **request_parameters
+    ):
         """Get count of security advisory network devices .
 
         Args:
@@ -3816,25 +3748,19 @@ class Compliance(object):
         check_type(scan_status, str)
         check_type(advisory_count, int)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'networkDeviceId':
-                network_device_id,
-            'scanMode':
-                scan_mode,
-            'scanStatus':
-                scan_status,
-            'advisoryCount':
-                advisory_count,
+            "networkDeviceId": network_device_id,
+            "scanMode": scan_mode,
+            "scanStatus": scan_status,
+            "advisoryCount": advisory_count,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -3842,21 +3768,24 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/securityAdvisories/results/networkDev'
-                 + 'ices/count')
+        e_url = (
+            "/dna/intent/api/v1/securityAdvisories/results/networkDev" + "ices/count"
+        )
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_eb1f5f93d0d549cbf99e032a73db16d_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_eb1f5f93d0d549cbf99e032a73db16d_v2_3_7_9", json_data
+        )
 
-    def get_security_advisory_network_device_by_network_device_id(self,
-                                                                  network_device_id,
-                                                                  headers=None,
-                                                                  **request_parameters):
+    def get_security_advisory_network_device_by_network_device_id(
+        self, network_device_id, headers=None, **request_parameters
+    ):
         """Get security advisory network device by network device id .
 
         Args:
@@ -3878,20 +3807,17 @@ class Compliance(object):
             https://developer.cisco.com/docs/dna-center/#!get-security-advisory-network-device-by-network-device-id
         """
         check_type(headers, dict)
-        check_type(network_device_id, str,
-                   may_be_none=False)
+        check_type(network_device_id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'networkDeviceId': network_device_id,
+            "networkDeviceId": network_device_id,
         }
 
         with_custom_headers = False
@@ -3900,28 +3826,35 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/securityAdvisories/results/networkDev'
-                 + 'ices/{networkDeviceId}')
+        e_url = (
+            "/dna/intent/api/v1/securityAdvisories/results/networkDev"
+            + "ices/{networkDeviceId}"
+        )
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_e22988bedfbb5202b1bab7e811d56f53_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_e22988bedfbb5202b1bab7e811d56f53_v2_3_7_9", json_data
+        )
 
-    def get_security_advisories_affecting_the_network_device(self,
-                                                             network_device_id,
-                                                             cvss_base_score=None,
-                                                             id=None,
-                                                             limit=None,
-                                                             offset=None,
-                                                             order=None,
-                                                             security_impact_rating=None,
-                                                             sort_by=None,
-                                                             headers=None,
-                                                             **request_parameters):
+    def get_security_advisories_affecting_the_network_device(
+        self,
+        network_device_id,
+        cvss_base_score=None,
+        id=None,
+        limit=None,
+        offset=None,
+        order=None,
+        security_impact_rating=None,
+        sort_by=None,
+        headers=None,
+        **request_parameters
+    ):
         """Get security advisories affecting the network device .
 
         Args:
@@ -3962,34 +3895,25 @@ class Compliance(object):
         check_type(limit, int)
         check_type(sort_by, str)
         check_type(order, str)
-        check_type(network_device_id, str,
-                   may_be_none=False)
+        check_type(network_device_id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'id':
-                id,
-            'cvssBaseScore':
-                cvss_base_score,
-            'securityImpactRating':
-                security_impact_rating,
-            'offset':
-                offset,
-            'limit':
-                limit,
-            'sortBy':
-                sort_by,
-            'order':
-                order,
+            "id": id,
+            "cvssBaseScore": cvss_base_score,
+            "securityImpactRating": security_impact_rating,
+            "offset": offset,
+            "limit": limit,
+            "sortBy": sort_by,
+            "order": order,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'networkDeviceId': network_device_id,
+            "networkDeviceId": network_device_id,
         }
 
         with_custom_headers = False
@@ -3998,24 +3922,31 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/securityAdvisories/results/networkDev'
-                 + 'ices/{networkDeviceId}/advisories')
+        e_url = (
+            "/dna/intent/api/v1/securityAdvisories/results/networkDev"
+            + "ices/{networkDeviceId}/advisories"
+        )
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_c12818ede552109f463d18c23a5a13_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_c12818ede552109f463d18c23a5a13_v2_3_7_9", json_data
+        )
 
-    def get_count_of_security_advisories_affecting_the_network_device(self,
-                                                                      network_device_id,
-                                                                      cvss_base_score=None,
-                                                                      id=None,
-                                                                      security_impact_rating=None,
-                                                                      headers=None,
-                                                                      **request_parameters):
+    def get_count_of_security_advisories_affecting_the_network_device(
+        self,
+        network_device_id,
+        cvss_base_score=None,
+        id=None,
+        security_impact_rating=None,
+        headers=None,
+        **request_parameters
+    ):
         """Get count of security advisories affecting the network device .
 
         Args:
@@ -4045,26 +3976,21 @@ class Compliance(object):
         check_type(id, str)
         check_type(cvss_base_score, str)
         check_type(security_impact_rating, str)
-        check_type(network_device_id, str,
-                   may_be_none=False)
+        check_type(network_device_id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'id':
-                id,
-            'cvssBaseScore':
-                cvss_base_score,
-            'securityImpactRating':
-                security_impact_rating,
+            "id": id,
+            "cvssBaseScore": cvss_base_score,
+            "securityImpactRating": security_impact_rating,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'networkDeviceId': network_device_id,
+            "networkDeviceId": network_device_id,
         }
 
         with_custom_headers = False
@@ -4073,22 +3999,25 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/securityAdvisories/results/networkDev'
-                 + 'ices/{networkDeviceId}/advisories/count')
+        e_url = (
+            "/dna/intent/api/v1/securityAdvisories/results/networkDev"
+            + "ices/{networkDeviceId}/advisories/count"
+        )
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_a12932efe27956de8c356e40e959d6c2_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_a12932efe27956de8c356e40e959d6c2_v2_3_7_9", json_data
+        )
 
-    def get_security_advisory_affecting_the_network_device_by_device_id_and_advisory_id(self,
-                                                                                        id,
-                                                                                        network_device_id,
-                                                                                        headers=None,
-                                                                                        **request_parameters):
+    def get_security_advisory_affecting_the_network_device_by_device_id_and_advisory_id(
+        self, id, network_device_id, headers=None, **request_parameters
+    ):
         """Get security advisory affecting the network device by device Id and advisory id .
 
         Args:
@@ -4111,23 +4040,19 @@ class Compliance(object):
             https://developer.cisco.com/docs/dna-center/#!get-security-advisory-affecting-the-network-device-by-device-id-and-advisory-id
         """
         check_type(headers, dict)
-        check_type(network_device_id, str,
-                   may_be_none=False)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(network_device_id, str, may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'networkDeviceId': network_device_id,
-            'id': id,
+            "networkDeviceId": network_device_id,
+            "id": id,
         }
 
         with_custom_headers = False
@@ -4136,23 +4061,30 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/securityAdvisories/results/networkDev'
-                 + 'ices/{networkDeviceId}/advisories/{id}')
+        e_url = (
+            "/dna/intent/api/v1/securityAdvisories/results/networkDev"
+            + "ices/{networkDeviceId}/advisories/{id}"
+        )
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_fc34a3eb64405e08b65fb830f2c1c05c_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_fc34a3eb64405e08b65fb830f2c1c05c_v2_3_7_9", json_data
+        )
 
-    def get_security_advisories_results_trend_over_time(self,
-                                                        limit=None,
-                                                        offset=None,
-                                                        scan_time=None,
-                                                        headers=None,
-                                                        **request_parameters):
+    def get_security_advisories_results_trend_over_time(
+        self,
+        limit=None,
+        offset=None,
+        scan_time=None,
+        headers=None,
+        **request_parameters
+    ):
         """Get security advisories results trend over time. The default sort is by scan time descending. .
 
         Args:
@@ -4183,23 +4115,18 @@ class Compliance(object):
         check_type(offset, int)
         check_type(limit, int)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'scanTime':
-                scan_time,
-            'offset':
-                offset,
-            'limit':
-                limit,
+            "scanTime": scan_time,
+            "offset": offset,
+            "limit": limit,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -4207,20 +4134,22 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/securityAdvisories/resultsTrend')
+        e_url = "/dna/intent/api/v1/securityAdvisories/resultsTrend"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_c60e785a6915253b715d9416e684132_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_c60e785a6915253b715d9416e684132_v2_3_7_9", json_data
+        )
 
-    def get_count_of_security_advisories_results_trend_over_time(self,
-                                                                 scan_time=None,
-                                                                 headers=None,
-                                                                 **request_parameters):
+    def get_count_of_security_advisories_results_trend_over_time(
+        self, scan_time=None, headers=None, **request_parameters
+    ):
         """Get count of security advisories results trend over time. .
 
         Args:
@@ -4245,19 +4174,16 @@ class Compliance(object):
         check_type(headers, dict)
         check_type(scan_time, int)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'scanTime':
-                scan_time,
+            "scanTime": scan_time,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -4265,19 +4191,22 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/securityAdvisories/resultsTrend/count')
+        e_url = "/dna/intent/api/v1/securityAdvisories/resultsTrend/count"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_f083e6be591181051e43aebe7c7d_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_f083e6be591181051e43aebe7c7d_v2_3_7_9", json_data
+        )
 
-    def get_trial_details_for_security_advisories_detection_on_network_devices(self,
-                                                                               headers=None,
-                                                                               **request_parameters):
+    def get_trial_details_for_security_advisories_detection_on_network_devices(
+        self, headers=None, **request_parameters
+    ):
         """Get trial details for security advisories detection on network devices .
 
         Args:
@@ -4299,17 +4228,14 @@ class Compliance(object):
         """
         check_type(headers, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -4317,19 +4243,22 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/securityAdvisories/trials')
+        e_url = "/dna/intent/api/v1/securityAdvisories/trials"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_fe4fd333ec815ec283443c490bde2741_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_fe4fd333ec815ec283443c490bde2741_v2_3_7_9", json_data
+        )
 
-    def creates_a_trial_for_security_advisories_detection_on_network_devices(self,
-                                                                             headers=None,
-                                                                             **request_parameters):
+    def creates_a_trial_for_security_advisories_detection_on_network_devices(
+        self, headers=None, **request_parameters
+    ):
         """Creates a trial for security advisories detection on network devices. The consent to connect agreement must have
         been accepted in the UI for this to succeed. Please refer to the user guide at   for more details on
         consent to connect. .
@@ -4353,17 +4282,14 @@ class Compliance(object):
         """
         check_type(headers, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -4371,20 +4297,22 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/securityAdvisories/trials')
+        e_url = "/dna/intent/api/v1/securityAdvisories/trials"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.post(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_b209c580ed5c0aaf4c978f4dfc00bd_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_b209c580ed5c0aaf4c978f4dfc00bd_v2_3_7_9", json_data
+        )
 
-    def triggers_a_security_advisories_scan_for_the_supported_network_devices(self,
-                                                                              failed_devices_only=None,
-                                                                              headers=None,
-                                                                              **request_parameters):
+    def triggers_a_security_advisories_scan_for_the_supported_network_devices(
+        self, failed_devices_only=None, headers=None, **request_parameters
+    ):
         """Triggers a security advisories scan for the supported network devices. The supported devices are switches,
         routers and wireless controllers with IOS and IOS-XE. If a device is not supported, the
         SecurityAdvisoryNetworkDevice scanStatus will be Failed with appropriate comments. .
@@ -4412,19 +4340,16 @@ class Compliance(object):
         check_type(headers, dict)
         check_type(failed_devices_only, bool)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'failedDevicesOnly':
-                failed_devices_only,
+            "failedDevicesOnly": failed_devices_only,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -4432,15 +4357,18 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/securityAdvisories/triggerScan')
+        e_url = "/dna/intent/api/v1/securityAdvisories/triggerScan"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.post(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_cce0f5e813955eabb3c736d3b5952341_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_cce0f5e813955eabb3c736d3b5952341_v2_3_7_9", json_data
+        )
+
 
 # Alias Functions
-

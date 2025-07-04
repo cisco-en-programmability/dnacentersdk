@@ -25,19 +25,17 @@ SOFTWARE.
 import pytest
 
 from tests.environment import (
-    DNA_CENTER_USERNAME, DNA_CENTER_PASSWORD,
-    DNA_CENTER_ENCODED_AUTH, DNA_CENTER_VERSION,
+    DNA_CENTER_USERNAME,
+    DNA_CENTER_PASSWORD,
+    DNA_CENTER_ENCODED_AUTH,
+    DNA_CENTER_VERSION,
 )
 from tests.config import (
     DEFAULT_VERIFY,
     DEFAULT_SINGLE_REQUEST_TIMEOUT,
-    DEFAULT_WAIT_ON_RATE_LIMIT
+    DEFAULT_WAIT_ON_RATE_LIMIT,
 )
-from tests.mock.mock import (
-    get_free_port,
-    get_mock_url,
-    start_mock_server
-)
+from tests.mock.mock import get_free_port, get_mock_url, start_mock_server
 from tests.models.schema_validator import SchemaValidator
 
 
@@ -61,14 +59,17 @@ def mock_dna_center_server(free_port):
 @pytest.fixture(scope="session")
 def api(mock_dna_center_server, base_url):
     from dnacentersdk import DNACenterAPI
-    return DNACenterAPI(username=DNA_CENTER_USERNAME,
-                        password=DNA_CENTER_PASSWORD,
-                        encoded_auth=DNA_CENTER_ENCODED_AUTH,
-                        base_url=base_url,
-                        single_request_timeout=DEFAULT_SINGLE_REQUEST_TIMEOUT,
-                        wait_on_rate_limit=DEFAULT_WAIT_ON_RATE_LIMIT,
-                        verify=DEFAULT_VERIFY,
-                        version=DNA_CENTER_VERSION)
+
+    return DNACenterAPI(
+        username=DNA_CENTER_USERNAME,
+        password=DNA_CENTER_PASSWORD,
+        encoded_auth=DNA_CENTER_ENCODED_AUTH,
+        base_url=base_url,
+        single_request_timeout=DEFAULT_SINGLE_REQUEST_TIMEOUT,
+        wait_on_rate_limit=DEFAULT_WAIT_ON_RATE_LIMIT,
+        verify=DEFAULT_VERIFY,
+        version=DNA_CENTER_VERSION,
+    )
 
 
 @pytest.fixture(scope="session")

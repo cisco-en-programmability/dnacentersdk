@@ -32,7 +32,6 @@ from ...utils import (
     check_type,
     dict_from_items_with_values,
     dict_of_str,
-    
 )
 
 
@@ -65,9 +64,7 @@ class Backup(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def get_backup_configuration(self,
-                                 headers=None,
-                                 **request_parameters):
+    def get_backup_configuration(self, headers=None, **request_parameters):
         """This api is used to get the backup configuration .
 
         Args:
@@ -89,17 +86,14 @@ class Backup(object):
         """
         check_type(headers, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -107,25 +101,30 @@ class Backup(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/system/api/v1/backupConfiguration')
+        e_url = "/dna/system/api/v1/backupConfiguration"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_dd47c40ef6e75dfeb079b162f5e1d594_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_dd47c40ef6e75dfeb079b162f5e1d594_v3_1_3_0", json_data
+        )
 
-    def create_backup_configuration(self,
-                                    dataRetention=None,
-                                    encryptionPassphrase=None,
-                                    mountPath=None,
-                                    type=None,
-                                    headers=None,
-                                    payload=None,
-                                    active_validation=True,
-                                    **request_parameters):
+    def create_backup_configuration(
+        self,
+        dataRetention=None,
+        encryptionPassphrase=None,
+        mountPath=None,
+        type=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """This api is used to create or update backup configuration. Obtain the `mountPath` value from the mountPoint
         attribute in the response of the `/dna/system/api/v1/backupStorages` API. .
 
@@ -157,32 +156,26 @@ class Backup(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'dataRetention':
-                dataRetention,
-            'encryptionPassphrase':
-                encryptionPassphrase,
-            'mountPath':
-                mountPath,
-            'type':
-                type,
+            "dataRetention": dataRetention,
+            "encryptionPassphrase": encryptionPassphrase,
+            "mountPath": mountPath,
+            "type": type,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_b843a90c86875472af1f351e78dd5521_v3_1_3_0')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_b843a90c86875472af1f351e78dd5521_v3_1_3_0"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -190,28 +183,33 @@ class Backup(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/system/api/v1/backupConfiguration')
+        e_url = "/dna/system/api/v1/backupConfiguration"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_b843a90c86875472af1f351e78dd5521_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_b843a90c86875472af1f351e78dd5521_v3_1_3_0", json_data
+        )
 
-    def create_n_f_s_configuration(self,
-                                   nfsPort=None,
-                                   nfsVersion=None,
-                                   portMapperPort=None,
-                                   server=None,
-                                   sourcePath=None,
-                                   headers=None,
-                                   payload=None,
-                                   active_validation=True,
-                                   **request_parameters):
+    def create_n_f_s_configuration(
+        self,
+        nfsPort=None,
+        nfsVersion=None,
+        portMapperPort=None,
+        server=None,
+        sourcePath=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """This api is used to create NFS configuration. .
 
         Args:
@@ -243,37 +241,29 @@ class Backup(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'nfsPort':
-                nfsPort,
-            'nfsVersion':
-                nfsVersion,
-            'portMapperPort':
-                portMapperPort,
-            'server':
-                server,
-            'sourcePath':
-                sourcePath,
+            "nfsPort": nfsPort,
+            "nfsVersion": nfsVersion,
+            "portMapperPort": portMapperPort,
+            "server": server,
+            "sourcePath": sourcePath,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_e9c39175d785a0eb9d6f402f378a2ba_v3_1_3_0')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_e9c39175d785a0eb9d6f402f378a2ba_v3_1_3_0"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -281,21 +271,22 @@ class Backup(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/system/api/v1/backupNfsConfigurations')
+        e_url = "/dna/system/api/v1/backupNfsConfigurations"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_e9c39175d785a0eb9d6f402f378a2ba_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_e9c39175d785a0eb9d6f402f378a2ba_v3_1_3_0", json_data
+        )
 
-    def get_all_n_f_s_configurations(self,
-                                     headers=None,
-                                     **request_parameters):
+    def get_all_n_f_s_configurations(self, headers=None, **request_parameters):
         """This api is used to get all the configured NFS .
 
         Args:
@@ -317,17 +308,14 @@ class Backup(object):
         """
         check_type(headers, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -335,20 +323,20 @@ class Backup(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/system/api/v1/backupNfsConfigurations')
+        e_url = "/dna/system/api/v1/backupNfsConfigurations"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_f7ccd6a28585516e9858e43b24f5f63d_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_f7ccd6a28585516e9858e43b24f5f63d_v3_1_3_0", json_data
+        )
 
-    def delete_n_f_s_configuration(self,
-                                   id,
-                                   headers=None,
-                                   **request_parameters):
+    def delete_n_f_s_configuration(self, id, headers=None, **request_parameters):
         """This api is used to delete the NFS configuration. Obtain the `id` from the id attribute in the response of the
         `/dna/system/api/v1/backupNfsConfigurations` API. .
 
@@ -372,20 +360,17 @@ class Backup(object):
             https://developer.cisco.com/docs/dna-center/#!delete-n-f-s-configuration
         """
         check_type(headers, dict)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
 
         with_custom_headers = False
@@ -394,26 +379,31 @@ class Backup(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/system/api/v1/backupNfsConfigurations/{id}')
+        e_url = "/dna/system/api/v1/backupNfsConfigurations/{id}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.delete(endpoint_full_url, params=_params,
-                                             headers=_headers)
+            json_data = self._session.delete(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.delete(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_d7282ec01a275f5d9c093c2a4b2cf6af_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_d7282ec01a275f5d9c093c2a4b2cf6af_v3_1_3_0", json_data
+        )
 
-    def get_backup_and_restore_executions(self,
-                                          backup_id=None,
-                                          job_type=None,
-                                          limit=None,
-                                          offset=None,
-                                          order=None,
-                                          sort_by=None,
-                                          status=None,
-                                          headers=None,
-                                          **request_parameters):
+    def get_backup_and_restore_executions(
+        self,
+        backup_id=None,
+        job_type=None,
+        limit=None,
+        offset=None,
+        order=None,
+        sort_by=None,
+        status=None,
+        headers=None,
+        **request_parameters
+    ):
         """This api is used to get all the backup and restore executions. .
 
         Args:
@@ -452,31 +442,22 @@ class Backup(object):
         check_type(sort_by, str)
         check_type(order, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'backupId':
-                backup_id,
-            'jobType':
-                job_type,
-            'status':
-                status,
-            'offset':
-                offset,
-            'limit':
-                limit,
-            'sortBy':
-                sort_by,
-            'order':
-                order,
+            "backupId": backup_id,
+            "jobType": job_type,
+            "status": status,
+            "offset": offset,
+            "limit": limit,
+            "sortBy": sort_by,
+            "order": order,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -484,20 +465,20 @@ class Backup(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/system/api/v1/backupRestoreExecutions')
+        e_url = "/dna/system/api/v1/backupRestoreExecutions"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_e87332fa345c06b01cc351ca31a35c_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_e87332fa345c06b01cc351ca31a35c_v3_1_3_0", json_data
+        )
 
-    def get_backup_and_restore_execution(self,
-                                         id,
-                                         headers=None,
-                                         **request_parameters):
+    def get_backup_and_restore_execution(self, id, headers=None, **request_parameters):
         """This api is used to get the execution detail of a specific backup or restore worflow process .
 
         Args:
@@ -519,20 +500,17 @@ class Backup(object):
             https://developer.cisco.com/docs/dna-center/#!get-backup-and-restore-execution
         """
         check_type(headers, dict)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
 
         with_custom_headers = False
@@ -541,20 +519,20 @@ class Backup(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/system/api/v1/backupRestoreExecutions/{id}')
+        e_url = "/dna/system/api/v1/backupRestoreExecutions/{id}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_aa285ec05ff68b1101c7a15254e3_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_aa285ec05ff68b1101c7a15254e3_v3_1_3_0", json_data
+        )
 
-    def get_backup_storages(self,
-                            storage_type,
-                            headers=None,
-                            **request_parameters):
+    def get_backup_storages(self, storage_type, headers=None, **request_parameters):
         """This api is used to get all the mounted backup storage information like mount point, disk size based on the
         provided storage type .
 
@@ -578,22 +556,18 @@ class Backup(object):
             https://developer.cisco.com/docs/dna-center/#!get-backup-storages
         """
         check_type(headers, dict)
-        check_type(storage_type, str,
-                   may_be_none=False)
+        check_type(storage_type, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'storageType':
-                storage_type,
+            "storageType": storage_type,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -601,24 +575,29 @@ class Backup(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/system/api/v1/backupStorages')
+        e_url = "/dna/system/api/v1/backupStorages"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_adbfee1ef7015fbfb1bd47020ab90f89_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_adbfee1ef7015fbfb1bd47020ab90f89_v3_1_3_0", json_data
+        )
 
-    def get_all_backup(self,
-                       limit=None,
-                       offset=None,
-                       order=None,
-                       query=None,
-                       sort_by=None,
-                       headers=None,
-                       **request_parameters):
+    def get_all_backup(
+        self,
+        limit=None,
+        offset=None,
+        order=None,
+        query=None,
+        sort_by=None,
+        headers=None,
+        **request_parameters
+    ):
         """This api is used to get all the backup available in the configured storage .
 
         Args:
@@ -651,27 +630,20 @@ class Backup(object):
         check_type(sort_by, str)
         check_type(order, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'query':
-                query,
-            'offset':
-                offset,
-            'limit':
-                limit,
-            'sortBy':
-                sort_by,
-            'order':
-                order,
+            "query": query,
+            "offset": offset,
+            "limit": limit,
+            "sortBy": sort_by,
+            "order": order,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -679,23 +651,28 @@ class Backup(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/system/api/v1/backups')
+        e_url = "/dna/system/api/v1/backups"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_f09b1316bea5602aaadebe1102b8b86_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_f09b1316bea5602aaadebe1102b8b86_v3_1_3_0", json_data
+        )
 
-    def create_backup(self,
-                      name=None,
-                      scope=None,
-                      headers=None,
-                      payload=None,
-                      active_validation=True,
-                      **request_parameters):
+    def create_backup(
+        self,
+        name=None,
+        scope=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """This api is used to trigger a workflow to create an on demand backup. To monitor the progress and completion of
         the backup creation , please call `/dna/system/api/v1/backupRestoreExecutions/{id}` api , where id is
         the taskId attribute from the response of the curent endpoint. .
@@ -728,28 +705,24 @@ class Backup(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'name':
-                name,
-            'scope':
-                scope,
+            "name": name,
+            "scope": scope,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_c9d3ba6208e5d6eb45fa5c9b8f7e327_v3_1_3_0')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_c9d3ba6208e5d6eb45fa5c9b8f7e327_v3_1_3_0"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -757,22 +730,22 @@ class Backup(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/system/api/v1/backups')
+        e_url = "/dna/system/api/v1/backups"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_c9d3ba6208e5d6eb45fa5c9b8f7e327_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_c9d3ba6208e5d6eb45fa5c9b8f7e327_v3_1_3_0", json_data
+        )
 
-    def get_backup_by_id(self,
-                         id,
-                         headers=None,
-                         **request_parameters):
+    def get_backup_by_id(self, id, headers=None, **request_parameters):
         """This api is used to get a specific backup based on the provided `backup id`. .
 
         Args:
@@ -794,20 +767,17 @@ class Backup(object):
             https://developer.cisco.com/docs/dna-center/#!get-backup-by-id
         """
         check_type(headers, dict)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
 
         with_custom_headers = False
@@ -816,20 +786,20 @@ class Backup(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/system/api/v1/backups/{id}')
+        e_url = "/dna/system/api/v1/backups/{id}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_efd1d42f31af56dd8b395df3685dd465_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_efd1d42f31af56dd8b395df3685dd465_v3_1_3_0", json_data
+        )
 
-    def delete_backup(self,
-                      id,
-                      headers=None,
-                      **request_parameters):
+    def delete_backup(self, id, headers=None, **request_parameters):
         """This api is used to trigger delete workflow of a specific backup based on the provided `id` Obtain the `id` from
         the id attribute in the response of the `/dna/system/api/v1/backups` API. To monitor the progress and
         completion of the backup deletion , please call `/dna/system/api/v1/backupRestoreExecutions/{id}` api ,
@@ -855,20 +825,17 @@ class Backup(object):
             https://developer.cisco.com/docs/dna-center/#!delete-backup
         """
         check_type(headers, dict)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
 
         with_custom_headers = False
@@ -877,15 +844,18 @@ class Backup(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/system/api/v1/backups/{id}')
+        e_url = "/dna/system/api/v1/backups/{id}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.delete(endpoint_full_url, params=_params,
-                                             headers=_headers)
+            json_data = self._session.delete(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.delete(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_c468255fb65851c2b356d2dcf5397cd6_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_c468255fb65851c2b356d2dcf5397cd6_v3_1_3_0", json_data
+        )
+
 
 # Alias Functions
-

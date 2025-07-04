@@ -32,7 +32,6 @@ from ...utils import (
     check_type,
     dict_from_items_with_values,
     dict_of_str,
-    
 )
 
 
@@ -65,17 +64,19 @@ class Tag(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def update_tag(self,
-                   description=None,
-                   dynamicRules=None,
-                   id=None,
-                   instanceTenantId=None,
-                   name=None,
-                   systemTag=None,
-                   headers=None,
-                   payload=None,
-                   active_validation=True,
-                   **request_parameters):
+    def update_tag(
+        self,
+        description=None,
+        dynamicRules=None,
+        id=None,
+        instanceTenantId=None,
+        name=None,
+        systemTag=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Updates a tag specified by id .
 
         Args:
@@ -108,39 +109,30 @@ class Tag(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'systemTag':
-                systemTag,
-            'description':
-                description,
-            'dynamicRules':
-                dynamicRules,
-            'name':
-                name,
-            'id':
-                id,
-            'instanceTenantId':
-                instanceTenantId,
+            "systemTag": systemTag,
+            "description": description,
+            "dynamicRules": dynamicRules,
+            "name": name,
+            "id": id,
+            "instanceTenantId": instanceTenantId,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_c9f995abc21b54e7860f66aef2ffbc85_v2_3_7_9')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_c9f995abc21b54e7860f66aef2ffbc85_v2_3_7_9"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -148,32 +140,37 @@ class Tag(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/tag')
+        e_url = "/dna/intent/api/v1/tag"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload,
-                                          headers=_headers)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_c9f995abc21b54e7860f66aef2ffbc85_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_c9f995abc21b54e7860f66aef2ffbc85_v2_3_7_9", json_data
+        )
 
-    def get_tag(self,
-                additional_info_attributes=None,
-                additional_info_name_space=None,
-                field=None,
-                level=None,
-                limit=None,
-                name=None,
-                offset=None,
-                order=None,
-                size=None,
-                sort_by=None,
-                system_tag=None,
-                headers=None,
-                **request_parameters):
+    def get_tag(
+        self,
+        additional_info_attributes=None,
+        additional_info_name_space=None,
+        field=None,
+        level=None,
+        limit=None,
+        name=None,
+        offset=None,
+        order=None,
+        size=None,
+        sort_by=None,
+        system_tag=None,
+        headers=None,
+        **request_parameters
+    ):
         """Returns the tags for given filter criteria .
 
         Args:
@@ -220,39 +217,26 @@ class Tag(object):
         check_type(order, str)
         check_type(system_tag, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'name':
-                name,
-            'additionalInfo.nameSpace':
-                additional_info_name_space,
-            'additionalInfo.attributes':
-                additional_info_attributes,
-            'level':
-                level,
-            'offset':
-                offset,
-            'limit':
-                limit,
-            'size':
-                size,
-            'field':
-                field,
-            'sortBy':
-                sort_by,
-            'order':
-                order,
-            'systemTag':
-                system_tag,
+            "name": name,
+            "additionalInfo.nameSpace": additional_info_name_space,
+            "additionalInfo.attributes": additional_info_attributes,
+            "level": level,
+            "offset": offset,
+            "limit": limit,
+            "size": size,
+            "field": field,
+            "sortBy": sort_by,
+            "order": order,
+            "systemTag": system_tag,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -260,27 +244,32 @@ class Tag(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/tag')
+        e_url = "/dna/intent/api/v1/tag"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_a4185f5b40aabe991f8cdb2816_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_a4185f5b40aabe991f8cdb2816_v2_3_7_9", json_data
+        )
 
-    def create_tag(self,
-                   description=None,
-                   dynamicRules=None,
-                   id=None,
-                   instanceTenantId=None,
-                   name=None,
-                   systemTag=None,
-                   headers=None,
-                   payload=None,
-                   active_validation=True,
-                   **request_parameters):
+    def create_tag(
+        self,
+        description=None,
+        dynamicRules=None,
+        id=None,
+        instanceTenantId=None,
+        name=None,
+        systemTag=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Creates tag with specified tag attributes .
 
         Args:
@@ -313,36 +302,28 @@ class Tag(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'systemTag':
-                systemTag,
-            'description':
-                description,
-            'dynamicRules':
-                dynamicRules,
-            'name':
-                name,
-            'id':
-                id,
-            'instanceTenantId':
-                instanceTenantId,
+            "systemTag": systemTag,
+            "description": description,
+            "dynamicRules": dynamicRules,
+            "name": name,
+            "id": id,
+            "instanceTenantId": instanceTenantId,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_e8271b05b62c54609f74b4f2f373ad5a_v2_3_7_9')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_e8271b05b62c54609f74b4f2f373ad5a_v2_3_7_9"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -350,26 +331,31 @@ class Tag(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/tag')
+        e_url = "/dna/intent/api/v1/tag"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_e8271b05b62c54609f74b4f2f373ad5a_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_e8271b05b62c54609f74b4f2f373ad5a_v2_3_7_9", json_data
+        )
 
-    def get_tag_count(self,
-                      attribute_name=None,
-                      name=None,
-                      name_space=None,
-                      size=None,
-                      system_tag=None,
-                      headers=None,
-                      **request_parameters):
+    def get_tag_count(
+        self,
+        attribute_name=None,
+        name=None,
+        name_space=None,
+        size=None,
+        system_tag=None,
+        headers=None,
+        **request_parameters
+    ):
         """Returns tag count .
 
         Args:
@@ -401,27 +387,20 @@ class Tag(object):
         check_type(size, str)
         check_type(system_tag, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'name':
-                name,
-            'nameSpace':
-                name_space,
-            'attributeName':
-                attribute_name,
-            'size':
-                size,
-            'systemTag':
-                system_tag,
+            "name": name,
+            "nameSpace": name_space,
+            "attributeName": attribute_name,
+            "size": size,
+            "systemTag": system_tag,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -429,23 +408,28 @@ class Tag(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/tag/count')
+        e_url = "/dna/intent/api/v1/tag/count"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_afb52259f7c3501ca4d8ccd277828658_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_afb52259f7c3501ca4d8ccd277828658_v2_3_7_9", json_data
+        )
 
-    def update_tag_membership(self,
-                              memberToTags=None,
-                              memberType=None,
-                              headers=None,
-                              payload=None,
-                              active_validation=True,
-                              **request_parameters):
+    def update_tag_membership(
+        self,
+        memberToTags=None,
+        memberType=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Update tag membership. As part of the request payload through this API, only the specified members are added /
         retained to the given input tags. Possible values of memberType attribute in the request payload can be
         queried by using the /tag/member/type API .
@@ -476,31 +460,26 @@ class Tag(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'memberToTags':
-                memberToTags,
-            'memberType':
-                memberType,
+            "memberToTags": memberToTags,
+            "memberType": memberType,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_e3934b0fb68a5ff787e65e9b7c8e6296_v2_3_7_9')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_e3934b0fb68a5ff787e65e9b7c8e6296_v2_3_7_9"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -508,21 +487,22 @@ class Tag(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/tag/member')
+        e_url = "/dna/intent/api/v1/tag/member"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload,
-                                          headers=_headers)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_e3934b0fb68a5ff787e65e9b7c8e6296_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_e3934b0fb68a5ff787e65e9b7c8e6296_v2_3_7_9", json_data
+        )
 
-    def get_tag_resource_types(self,
-                               headers=None,
-                               **request_parameters):
+    def get_tag_resource_types(self, headers=None, **request_parameters):
         """Returns list of supported resource types .
 
         Args:
@@ -544,17 +524,14 @@ class Tag(object):
         """
         check_type(headers, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -562,20 +539,20 @@ class Tag(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/tag/member/type')
+        e_url = "/dna/intent/api/v1/tag/member/type"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_baf47897d525e5899f62e4d5bdd260b_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_baf47897d525e5899f62e4d5bdd260b_v2_3_7_9", json_data
+        )
 
-    def delete_tag(self,
-                   id,
-                   headers=None,
-                   **request_parameters):
+    def delete_tag(self, id, headers=None, **request_parameters):
         """Deletes a tag specified by id .
 
         Args:
@@ -597,20 +574,17 @@ class Tag(object):
             https://developer.cisco.com/docs/dna-center/#!delete-tag
         """
         check_type(headers, dict)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
 
         with_custom_headers = False
@@ -619,20 +593,20 @@ class Tag(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/tag/{id}')
+        e_url = "/dna/intent/api/v1/tag/{id}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.delete(endpoint_full_url, params=_params,
-                                             headers=_headers)
+            json_data = self._session.delete(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.delete(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_ed48fc373506cb1688cff36c2cb0f_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_ed48fc373506cb1688cff36c2cb0f_v2_3_7_9", json_data
+        )
 
-    def get_tag_by_id(self,
-                      id,
-                      headers=None,
-                      **request_parameters):
+    def get_tag_by_id(self, id, headers=None, **request_parameters):
         """Returns tag specified by Id .
 
         Args:
@@ -654,20 +628,17 @@ class Tag(object):
             https://developer.cisco.com/docs/dna-center/#!get-tag-by-id
         """
         check_type(headers, dict)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
 
         with_custom_headers = False
@@ -676,25 +647,30 @@ class Tag(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/tag/{id}')
+        e_url = "/dna/intent/api/v1/tag/{id}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_d65f9b9d8ad5426bdf7e55461fcf761_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_d65f9b9d8ad5426bdf7e55461fcf761_v2_3_7_9", json_data
+        )
 
-    def get_tag_members_by_id(self,
-                              id,
-                              member_type,
-                              level=None,
-                              limit=None,
-                              member_association_type=None,
-                              offset=None,
-                              headers=None,
-                              **request_parameters):
+    def get_tag_members_by_id(
+        self,
+        id,
+        member_type,
+        level=None,
+        limit=None,
+        member_association_type=None,
+        offset=None,
+        headers=None,
+        **request_parameters
+    ):
         """Returns tag members specified by id .
 
         Args:
@@ -728,36 +704,28 @@ class Tag(object):
             https://developer.cisco.com/docs/dna-center/#!get-tag-members-by-id
         """
         check_type(headers, dict)
-        check_type(member_type, str,
-                   may_be_none=False)
+        check_type(member_type, str, may_be_none=False)
         check_type(offset, int)
         check_type(limit, int)
         check_type(member_association_type, str)
         check_type(level, str)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'memberType':
-                member_type,
-            'offset':
-                offset,
-            'limit':
-                limit,
-            'memberAssociationType':
-                member_association_type,
-            'level':
-                level,
+            "memberType": member_type,
+            "offset": offset,
+            "limit": limit,
+            "memberAssociationType": member_association_type,
+            "level": level,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
 
         with_custom_headers = False
@@ -766,23 +734,28 @@ class Tag(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/tag/{id}/member')
+        e_url = "/dna/intent/api/v1/tag/{id}/member"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_ff12c50ea3fb53c9a53f9c9e2c595d44_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_ff12c50ea3fb53c9a53f9c9e2c595d44_v2_3_7_9", json_data
+        )
 
-    def add_members_to_the_tag(self,
-                               id,
-                               memberType=None,
-                               headers=None,
-                               payload=None,
-                               active_validation=True,
-                               **request_parameters):
+    def add_members_to_the_tag(
+        self,
+        id,
+        memberType=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Adds members to the tag specified by id .
 
         Args:
@@ -810,30 +783,27 @@ class Tag(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
         _payload = {
-            'memberType':
-                memberType,
+            "memberType": memberType,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_dcc43be0514e50fea80cfa827f13ee5c_v2_3_7_9')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_dcc43be0514e50fea80cfa827f13ee5c_v2_3_7_9"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -841,24 +811,29 @@ class Tag(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/tag/{id}/member')
+        e_url = "/dna/intent/api/v1/tag/{id}/member"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_dcc43be0514e50fea80cfa827f13ee5c_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_dcc43be0514e50fea80cfa827f13ee5c_v2_3_7_9", json_data
+        )
 
-    def get_tag_member_count(self,
-                             id,
-                             member_type,
-                             member_association_type=None,
-                             headers=None,
-                             **request_parameters):
+    def get_tag_member_count(
+        self,
+        id,
+        member_type,
+        member_association_type=None,
+        headers=None,
+        **request_parameters
+    ):
         """Returns the number of members in a given tag .
 
         Args:
@@ -882,27 +857,22 @@ class Tag(object):
             https://developer.cisco.com/docs/dna-center/#!get-tag-member-count
         """
         check_type(headers, dict)
-        check_type(member_type, str,
-                   may_be_none=False)
+        check_type(member_type, str, may_be_none=False)
         check_type(member_association_type, str)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'memberType':
-                member_type,
-            'memberAssociationType':
-                member_association_type,
+            "memberType": member_type,
+            "memberAssociationType": member_association_type,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
 
         with_custom_headers = False
@@ -911,21 +881,20 @@ class Tag(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/tag/{id}/member/count')
+        e_url = "/dna/intent/api/v1/tag/{id}/member/count"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_ffacb52f745c15b40b9b352754e2e1_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_ffacb52f745c15b40b9b352754e2e1_v2_3_7_9", json_data
+        )
 
-    def remove_tag_member(self,
-                          id,
-                          member_id,
-                          headers=None,
-                          **request_parameters):
+    def remove_tag_member(self, id, member_id, headers=None, **request_parameters):
         """Removes Tag member from the tag specified by id .
 
         Args:
@@ -948,23 +917,19 @@ class Tag(object):
             https://developer.cisco.com/docs/dna-center/#!remove-tag-member
         """
         check_type(headers, dict)
-        check_type(id, str,
-                   may_be_none=False)
-        check_type(member_id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
+        check_type(member_id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
-            'memberId': member_id,
+            "id": id,
+            "memberId": member_id,
         }
 
         with_custom_headers = False
@@ -973,21 +938,22 @@ class Tag(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/tag/{id}/member/{memberId}')
+        e_url = "/dna/intent/api/v1/tag/{id}/member/{memberId}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.delete(endpoint_full_url, params=_params,
-                                             headers=_headers)
+            json_data = self._session.delete(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.delete(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_cc9883be5c1cad1959347babb342_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_cc9883be5c1cad1959347babb342_v2_3_7_9", json_data
+        )
 
-    def retrieve_tags_associated_with_the_interfaces(self,
-                                                     limit=None,
-                                                     offset=None,
-                                                     headers=None,
-                                                     **request_parameters):
+    def retrieve_tags_associated_with_the_interfaces(
+        self, limit=None, offset=None, headers=None, **request_parameters
+    ):
         """Fetches the tags associated with the interfaces. Interfaces that don't have any tags associated will not be
         included in the response. A tag is a user-defined or system-defined construct to group resources. When
         an interface is tagged, it is called a member of the tag. .
@@ -1017,21 +983,17 @@ class Tag(object):
         check_type(offset, int)
         check_type(limit, int)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'offset':
-                offset,
-            'limit':
-                limit,
+            "offset": offset,
+            "limit": limit,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1039,21 +1001,22 @@ class Tag(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/tags/interfaces/membersAssociations')
+        e_url = "/dna/intent/api/v1/tags/interfaces/membersAssociations"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_c07bbbe75f63913bd83b34277d12_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_c07bbbe75f63913bd83b34277d12_v2_3_7_9", json_data
+        )
 
-    def update_tags_associated_with_the_interfaces(self,
-                                                   headers=None,
-                                                   payload=None,
-                                                   active_validation=True,
-                                                   **request_parameters):
+    def update_tags_associated_with_the_interfaces(
+        self, headers=None, payload=None, active_validation=True, **request_parameters
+    ):
         """Updates the tags associated with the interfaces. A tag is a user-defined or system-defined construct to group
         resources. When an interface is tagged, it is called a member of the tag. A tag can be created by using
         this POST `/dna/intent/api/v1/tag` API. .
@@ -1082,24 +1045,21 @@ class Tag(object):
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = payload or []
         if active_validation:
-            self._request_validator('jsd_ea4363569a9d58779c2bfc05b6e45423_v2_3_7_9')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_ea4363569a9d58779c2bfc05b6e45423_v2_3_7_9"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1107,22 +1067,24 @@ class Tag(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/tags/interfaces/membersAssociations/b'
-                 + 'ulk')
+        e_url = "/dna/intent/api/v1/tags/interfaces/membersAssociations/b" + "ulk"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload,
-                                          headers=_headers)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_ea4363569a9d58779c2bfc05b6e45423_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_ea4363569a9d58779c2bfc05b6e45423_v2_3_7_9", json_data
+        )
 
-    def retrieve_the_count_of_interfaces_that_are_associated_with_at_least_one_tag(self,
-                                                                                   headers=None,
-                                                                                   **request_parameters):
+    def retrieve_the_count_of_interfaces_that_are_associated_with_at_least_one_tag(
+        self, headers=None, **request_parameters
+    ):
         """Fetches the count of interfaces that are associated with at least one tag. A tag is a user-defined or system-
         defined construct to group resources. When an interface is tagged, it is called a member of the tag. .
 
@@ -1145,17 +1107,14 @@ class Tag(object):
         """
         check_type(headers, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1163,23 +1122,27 @@ class Tag(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/tags/interfaces/membersAssociations/c'
-                 + 'ount')
+        e_url = "/dna/intent/api/v1/tags/interfaces/membersAssociations/c" + "ount"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_f55ae4d0c6f65207a7630fa556ba2774_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_f55ae4d0c6f65207a7630fa556ba2774_v2_3_7_9", json_data
+        )
 
-    def query_the_tags_associated_with_interfaces(self,
-                                                  ids=None,
-                                                  headers=None,
-                                                  payload=None,
-                                                  active_validation=True,
-                                                  **request_parameters):
+    def query_the_tags_associated_with_interfaces(
+        self,
+        ids=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Fetches the tags associated with the given interface `ids`. Interfaces that don't have any tags associated will
         not be included in the response. A tag is a user-defined or system-defined construct to group resources.
         When an interface is tagged, it is called a member of the tag. `ids` can be fetched via
@@ -1211,29 +1174,25 @@ class Tag(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'ids':
-                ids,
+            "ids": ids,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_f751cc2f55767b34e4c890b3fd36e_v2_3_7_9')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_f751cc2f55767b34e4c890b3fd36e_v2_3_7_9"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1241,24 +1200,24 @@ class Tag(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/tags/interfaces/membersAssociations/q'
-                 + 'uery')
+        e_url = "/dna/intent/api/v1/tags/interfaces/membersAssociations/q" + "uery"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_f751cc2f55767b34e4c890b3fd36e_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_f751cc2f55767b34e4c890b3fd36e_v2_3_7_9", json_data
+        )
 
-    def retrieve_tags_associated_with_network_devices(self,
-                                                      limit=None,
-                                                      offset=None,
-                                                      headers=None,
-                                                      **request_parameters):
+    def retrieve_tags_associated_with_network_devices(
+        self, limit=None, offset=None, headers=None, **request_parameters
+    ):
         """Fetches the tags associated with network devices. Devices that don't have any tags associated will not be
         included in the response. A tag is a user-defined or system-defined construct to group resources. When a
         device is tagged, it is called a member of the tag. .
@@ -1288,21 +1247,17 @@ class Tag(object):
         check_type(offset, int)
         check_type(limit, int)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'offset':
-                offset,
-            'limit':
-                limit,
+            "offset": offset,
+            "limit": limit,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1310,22 +1265,22 @@ class Tag(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/tags/networkDevices/membersAssociatio'
-                 + 'ns')
+        e_url = "/dna/intent/api/v1/tags/networkDevices/membersAssociatio" + "ns"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_da9595ad2c4d51eaa0d2740d18c97d3a_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_da9595ad2c4d51eaa0d2740d18c97d3a_v2_3_7_9", json_data
+        )
 
-    def update_tags_associated_with_the_network_devices(self,
-                                                        headers=None,
-                                                        payload=None,
-                                                        active_validation=True,
-                                                        **request_parameters):
+    def update_tags_associated_with_the_network_devices(
+        self, headers=None, payload=None, active_validation=True, **request_parameters
+    ):
         """Updates the tags associated with the devices. A tag is a user-defined or system-defined construct to group
         resources. When a device is tagged, it is called a member of the tag. A tag can be created by using this
         POST `/dna/intent/api/v1/tag` API. .
@@ -1354,24 +1309,21 @@ class Tag(object):
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = payload or []
         if active_validation:
-            self._request_validator('jsd_bc1f37a9f2571fa4d7bc85b9e8a583_v2_3_7_9')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_bc1f37a9f2571fa4d7bc85b9e8a583_v2_3_7_9"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1379,22 +1331,24 @@ class Tag(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/tags/networkDevices/membersAssociatio'
-                 + 'ns/bulk')
+        e_url = "/dna/intent/api/v1/tags/networkDevices/membersAssociatio" + "ns/bulk"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload,
-                                          headers=_headers)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_bc1f37a9f2571fa4d7bc85b9e8a583_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_bc1f37a9f2571fa4d7bc85b9e8a583_v2_3_7_9", json_data
+        )
 
-    def retrieve_the_count_of_network_devices_that_are_associated_with_at_least_one_tag(self,
-                                                                                        headers=None,
-                                                                                        **request_parameters):
+    def retrieve_the_count_of_network_devices_that_are_associated_with_at_least_one_tag(
+        self, headers=None, **request_parameters
+    ):
         """Fetches the count of network devices that are associated with at least one tag. A tag is a user-defined or
         system-defined construct to group resources. When a device is tagged, it is called a member of the tag.
         .
@@ -1418,17 +1372,14 @@ class Tag(object):
         """
         check_type(headers, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1436,23 +1387,27 @@ class Tag(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/tags/networkDevices/membersAssociatio'
-                 + 'ns/count')
+        e_url = "/dna/intent/api/v1/tags/networkDevices/membersAssociatio" + "ns/count"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_edcdc3299250419200cea088186337_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_edcdc3299250419200cea088186337_v2_3_7_9", json_data
+        )
 
-    def query_the_tags_associated_with_network_devices(self,
-                                                       ids=None,
-                                                       headers=None,
-                                                       payload=None,
-                                                       active_validation=True,
-                                                       **request_parameters):
+    def query_the_tags_associated_with_network_devices(
+        self,
+        ids=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Fetches the tags associated with the given network device `ids`. Devices that don't have any tags associated
         will not be included in the response. A tag is a user-defined or system-defined construct to group
         resources. When a device is tagged, it is called a member of the tag. `ids` can be fetched via
@@ -1484,29 +1439,25 @@ class Tag(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'ids':
-                ids,
+            "ids": ids,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_e4d083d956805f63b970be543c34eb0e_v2_3_7_9')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_e4d083d956805f63b970be543c34eb0e_v2_3_7_9"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1514,18 +1465,20 @@ class Tag(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/tags/networkDevices/membersAssociatio'
-                 + 'ns/query')
+        e_url = "/dna/intent/api/v1/tags/networkDevices/membersAssociatio" + "ns/query"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_e4d083d956805f63b970be543c34eb0e_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_e4d083d956805f63b970be543c34eb0e_v2_3_7_9", json_data
+        )
+
 
 # Alias Functions
-

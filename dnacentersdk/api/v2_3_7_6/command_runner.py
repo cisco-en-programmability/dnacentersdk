@@ -23,9 +23,7 @@ SOFTWARE.
 """
 
 
-
 from builtins import *
-
 
 
 from ...restsession import RestSession
@@ -66,9 +64,7 @@ class CommandRunner(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def get_all_keywords_of_clis_accepted_v1(self,
-                                          headers=None,
-                                          **request_parameters):
+    def get_all_keywords_of_clis_accepted_v1(self, headers=None, **request_parameters):
         """Get valid keywords .
 
         Args:
@@ -90,17 +86,14 @@ class CommandRunner(object):
         """
         check_type(headers, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -108,26 +101,31 @@ class CommandRunner(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/network-device-poller/cli/legit-reads')
+        e_url = "/dna/intent/api/v1/network-device-poller/cli/legit-reads"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_e946adf864590082fe3111a2a2fa74_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_e946adf864590082fe3111a2a2fa74_v2_3_7_6", json_data
+        )
 
-    def run_read_only_commands_on_devices_v1(self,
-                                          commands=None,
-                                          description=None,
-                                          deviceUuids=None,
-                                          name=None,
-                                          timeout=None,
-                                          headers=None,
-                                          payload=None,
-                                          active_validation=True,
-                                          **request_parameters):
+    def run_read_only_commands_on_devices_v1(
+        self,
+        commands=None,
+        description=None,
+        deviceUuids=None,
+        name=None,
+        timeout=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Submit request for read-only CLIs .
 
         Args:
@@ -160,37 +158,29 @@ class CommandRunner(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'commands':
-                commands,
-            'description':
-                description,
-            'deviceUuids':
-                deviceUuids,
-            'name':
-                name,
-            'timeout':
-                timeout,
+            "commands": commands,
+            "description": description,
+            "deviceUuids": deviceUuids,
+            "name": name,
+            "timeout": timeout,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_b2dae3b41636596aa02c3ad0a4bcb8d7_v2_3_7_6')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_b2dae3b41636596aa02c3ad0a4bcb8d7_v2_3_7_6"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -198,25 +188,23 @@ class CommandRunner(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/network-device-poller/cli/read-'
-                 + 'request')
+        e_url = "/dna/intent/api/v1/network-device-poller/cli/read-" + "request"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_b2dae3b41636596aa02c3ad0a4bcb8d7_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_b2dae3b41636596aa02c3ad0a4bcb8d7_v2_3_7_6", json_data
+        )
 
-                
-    
     # Alias Function
-    def get_all_keywords_of_clis_accepted(self,
-                                          headers=None,
-                                          **request_parameters):
+    def get_all_keywords_of_clis_accepted(self, headers=None, **request_parameters):
         """This function is an alias of  get_all_keywords_of_clis_accepted_v1.
 
         Args:
@@ -228,23 +216,23 @@ class CommandRunner(object):
         Returns:
             This function returns the output of get_all_keywords_of_clis_accepted_v1.
         """
-        return  self.get_all_keywords_of_clis_accepted_v1(
-                                        headers=headers,
-                                        **request_parameters
+        return self.get_all_keywords_of_clis_accepted_v1(
+            headers=headers, **request_parameters
         )
-                
-    
+
     # Alias Function
-    def run_read_only_commands_on_devices(self,
-                                          commands=None,
-                                          description=None,
-                                          deviceUuids=None,
-                                          name=None,
-                                          timeout=None,
-                                          headers=None,
-                                          payload=None,
-                                          active_validation=True,
-                                          **request_parameters):
+    def run_read_only_commands_on_devices(
+        self,
+        commands=None,
+        description=None,
+        deviceUuids=None,
+        name=None,
+        timeout=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """This function is an alias of run_read_only_commands_on_devices_v1.
 
         Args:
@@ -265,17 +253,15 @@ class CommandRunner(object):
 
         Returns:
             This function returns the output of run_read_only_commands_on_devices_v1.
-        """  
+        """
         return self.run_read_only_commands_on_devices_v1(
-                    commands=commands,
-                    description=description,
-                    deviceUuids=deviceUuids,
-                    name=name,
-                    timeout=timeout,
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
+            commands=commands,
+            description=description,
+            deviceUuids=deviceUuids,
+            name=name,
+            timeout=timeout,
+            headers=headers,
+            payload=payload,
+            active_validation=active_validation,
+            **request_parameters
         )
-
-

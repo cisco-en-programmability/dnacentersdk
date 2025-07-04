@@ -26,17 +26,19 @@ from fastjsonschema.exceptions import JsonSchemaException
 from dnacentersdk.exceptions import MalformedRequest
 from tests.environment import DNA_CENTER_VERSION
 
-pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '2.3.7.6', reason='version does not match')
+pytestmark = pytest.mark.skipif(
+    DNA_CENTER_VERSION != "2.3.7.6", reason="version does not match"
+)
 
 
 def is_valid_retrieves_all_the_validation_sets_v1(json_schema_validate, obj):
-    json_schema_validate('jsd_d6fc1397d48d52449923716aff009d3c_v2_3_7_6').validate(obj)
+    json_schema_validate("jsd_d6fc1397d48d52449923716aff009d3c_v2_3_7_6").validate(obj)
     return True
 
 
 def retrieves_all_the_validation_sets_v1(api):
     endpoint_result = api.health_and_performance.retrieves_all_the_validation_sets_v1(
-        view='string'
+        view="string"
     )
     return endpoint_result
 
@@ -45,8 +47,7 @@ def retrieves_all_the_validation_sets_v1(api):
 def test_retrieves_all_the_validation_sets_v1(api, validator):
     try:
         assert is_valid_retrieves_all_the_validation_sets_v1(
-            validator,
-            retrieves_all_the_validation_sets_v1(api)
+            validator, retrieves_all_the_validation_sets_v1(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -65,22 +66,25 @@ def retrieves_all_the_validation_sets_v1_default_val(api):
 def test_retrieves_all_the_validation_sets_v1_default_val(api, validator):
     try:
         assert is_valid_retrieves_all_the_validation_sets_v1(
-            validator,
-            retrieves_all_the_validation_sets_v1_default_val(api)
+            validator, retrieves_all_the_validation_sets_v1_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_retrieves_validation_details_for_a_validation_set_v1(json_schema_validate, obj):
-    json_schema_validate('jsd_99d95307fdbf5b169d9d05e3151f61ac_v2_3_7_6').validate(obj)
+def is_valid_retrieves_validation_details_for_a_validation_set_v1(
+    json_schema_validate, obj
+):
+    json_schema_validate("jsd_99d95307fdbf5b169d9d05e3151f61ac_v2_3_7_6").validate(obj)
     return True
 
 
 def retrieves_validation_details_for_a_validation_set_v1(api):
-    endpoint_result = api.health_and_performance.retrieves_validation_details_for_a_validation_set_v1(
-        id='string'
+    endpoint_result = (
+        api.health_and_performance.retrieves_validation_details_for_a_validation_set_v1(
+            id="string"
+        )
     )
     return endpoint_result
 
@@ -89,8 +93,7 @@ def retrieves_validation_details_for_a_validation_set_v1(api):
 def test_retrieves_validation_details_for_a_validation_set_v1(api, validator):
     try:
         assert is_valid_retrieves_validation_details_for_a_validation_set_v1(
-            validator,
-            retrieves_validation_details_for_a_validation_set_v1(api)
+            validator, retrieves_validation_details_for_a_validation_set_v1(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -99,18 +102,22 @@ def test_retrieves_validation_details_for_a_validation_set_v1(api, validator):
 
 
 def retrieves_validation_details_for_a_validation_set_v1_default_val(api):
-    endpoint_result = api.health_and_performance.retrieves_validation_details_for_a_validation_set_v1(
-        id='string'
+    endpoint_result = (
+        api.health_and_performance.retrieves_validation_details_for_a_validation_set_v1(
+            id="string"
+        )
     )
     return endpoint_result
 
 
 @pytest.mark.health_and_performance
-def test_retrieves_validation_details_for_a_validation_set_v1_default_val(api, validator):
+def test_retrieves_validation_details_for_a_validation_set_v1_default_val(
+    api, validator
+):
     try:
         assert is_valid_retrieves_validation_details_for_a_validation_set_v1(
             validator,
-            retrieves_validation_details_for_a_validation_set_v1_default_val(api)
+            retrieves_validation_details_for_a_validation_set_v1_default_val(api),
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -118,17 +125,15 @@ def test_retrieves_validation_details_for_a_validation_set_v1_default_val(api, v
 
 
 def is_valid_retrieves_the_list_of_validation_workflows_v1(json_schema_validate, obj):
-    json_schema_validate('jsd_2a53d325f85e5549b7c5957c6ecbd891_v2_3_7_6').validate(obj)
+    json_schema_validate("jsd_2a53d325f85e5549b7c5957c6ecbd891_v2_3_7_6").validate(obj)
     return True
 
 
 def retrieves_the_list_of_validation_workflows_v1(api):
-    endpoint_result = api.health_and_performance.retrieves_the_list_of_validation_workflows_v1(
-        end_time=0,
-        limit=0,
-        offset=0,
-        run_status='string',
-        start_time=0
+    endpoint_result = (
+        api.health_and_performance.retrieves_the_list_of_validation_workflows_v1(
+            end_time=0, limit=0, offset=0, run_status="string", start_time=0
+        )
     )
     return endpoint_result
 
@@ -137,8 +142,7 @@ def retrieves_the_list_of_validation_workflows_v1(api):
 def test_retrieves_the_list_of_validation_workflows_v1(api, validator):
     try:
         assert is_valid_retrieves_the_list_of_validation_workflows_v1(
-            validator,
-            retrieves_the_list_of_validation_workflows_v1(api)
+            validator, retrieves_the_list_of_validation_workflows_v1(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -147,12 +151,10 @@ def test_retrieves_the_list_of_validation_workflows_v1(api, validator):
 
 
 def retrieves_the_list_of_validation_workflows_v1_default_val(api):
-    endpoint_result = api.health_and_performance.retrieves_the_list_of_validation_workflows_v1(
-        end_time=None,
-        limit=None,
-        offset=None,
-        run_status=None,
-        start_time=None
+    endpoint_result = (
+        api.health_and_performance.retrieves_the_list_of_validation_workflows_v1(
+            end_time=None, limit=None, offset=None, run_status=None, start_time=None
+        )
     )
     return endpoint_result
 
@@ -161,26 +163,29 @@ def retrieves_the_list_of_validation_workflows_v1_default_val(api):
 def test_retrieves_the_list_of_validation_workflows_v1_default_val(api, validator):
     try:
         assert is_valid_retrieves_the_list_of_validation_workflows_v1(
-            validator,
-            retrieves_the_list_of_validation_workflows_v1_default_val(api)
+            validator, retrieves_the_list_of_validation_workflows_v1_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_submits_the_workflow_for_executing_validations_v1(json_schema_validate, obj):
-    json_schema_validate('jsd_cf9d39cef5e95bb9bd48d5f86e094c99_v2_3_7_6').validate(obj)
+def is_valid_submits_the_workflow_for_executing_validations_v1(
+    json_schema_validate, obj
+):
+    json_schema_validate("jsd_cf9d39cef5e95bb9bd48d5f86e094c99_v2_3_7_6").validate(obj)
     return True
 
 
 def submits_the_workflow_for_executing_validations_v1(api):
-    endpoint_result = api.health_and_performance.submits_the_workflow_for_executing_validations_v1(
-        active_validation=True,
-        description='string',
-        name='string',
-        payload=None,
-        validationSetIds=['string']
+    endpoint_result = (
+        api.health_and_performance.submits_the_workflow_for_executing_validations_v1(
+            active_validation=True,
+            description="string",
+            name="string",
+            payload=None,
+            validationSetIds=["string"],
+        )
     )
     return endpoint_result
 
@@ -189,8 +194,7 @@ def submits_the_workflow_for_executing_validations_v1(api):
 def test_submits_the_workflow_for_executing_validations_v1(api, validator):
     try:
         assert is_valid_submits_the_workflow_for_executing_validations_v1(
-            validator,
-            submits_the_workflow_for_executing_validations_v1(api)
+            validator, submits_the_workflow_for_executing_validations_v1(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -199,12 +203,14 @@ def test_submits_the_workflow_for_executing_validations_v1(api, validator):
 
 
 def submits_the_workflow_for_executing_validations_v1_default_val(api):
-    endpoint_result = api.health_and_performance.submits_the_workflow_for_executing_validations_v1(
-        active_validation=True,
-        description=None,
-        name=None,
-        payload=None,
-        validationSetIds=None
+    endpoint_result = (
+        api.health_and_performance.submits_the_workflow_for_executing_validations_v1(
+            active_validation=True,
+            description=None,
+            name=None,
+            payload=None,
+            validationSetIds=None,
+        )
     )
     return endpoint_result
 
@@ -214,7 +220,7 @@ def test_submits_the_workflow_for_executing_validations_v1_default_val(api, vali
     try:
         assert is_valid_submits_the_workflow_for_executing_validations_v1(
             validator,
-            submits_the_workflow_for_executing_validations_v1_default_val(api)
+            submits_the_workflow_for_executing_validations_v1_default_val(api),
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -222,15 +228,15 @@ def test_submits_the_workflow_for_executing_validations_v1_default_val(api, vali
 
 
 def is_valid_retrieves_the_count_of_validation_workflows_v1(json_schema_validate, obj):
-    json_schema_validate('jsd_b174a2fc5171520d9423c9a50f7394e7_v2_3_7_6').validate(obj)
+    json_schema_validate("jsd_b174a2fc5171520d9423c9a50f7394e7_v2_3_7_6").validate(obj)
     return True
 
 
 def retrieves_the_count_of_validation_workflows_v1(api):
-    endpoint_result = api.health_and_performance.retrieves_the_count_of_validation_workflows_v1(
-        end_time=0,
-        run_status='string',
-        start_time=0
+    endpoint_result = (
+        api.health_and_performance.retrieves_the_count_of_validation_workflows_v1(
+            end_time=0, run_status="string", start_time=0
+        )
     )
     return endpoint_result
 
@@ -239,8 +245,7 @@ def retrieves_the_count_of_validation_workflows_v1(api):
 def test_retrieves_the_count_of_validation_workflows_v1(api, validator):
     try:
         assert is_valid_retrieves_the_count_of_validation_workflows_v1(
-            validator,
-            retrieves_the_count_of_validation_workflows_v1(api)
+            validator, retrieves_the_count_of_validation_workflows_v1(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -249,10 +254,10 @@ def test_retrieves_the_count_of_validation_workflows_v1(api, validator):
 
 
 def retrieves_the_count_of_validation_workflows_v1_default_val(api):
-    endpoint_result = api.health_and_performance.retrieves_the_count_of_validation_workflows_v1(
-        end_time=None,
-        run_status=None,
-        start_time=None
+    endpoint_result = (
+        api.health_and_performance.retrieves_the_count_of_validation_workflows_v1(
+            end_time=None, run_status=None, start_time=None
+        )
     )
     return endpoint_result
 
@@ -261,8 +266,7 @@ def retrieves_the_count_of_validation_workflows_v1_default_val(api):
 def test_retrieves_the_count_of_validation_workflows_v1_default_val(api, validator):
     try:
         assert is_valid_retrieves_the_count_of_validation_workflows_v1(
-            validator,
-            retrieves_the_count_of_validation_workflows_v1_default_val(api)
+            validator, retrieves_the_count_of_validation_workflows_v1_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -270,13 +274,13 @@ def test_retrieves_the_count_of_validation_workflows_v1_default_val(api, validat
 
 
 def is_valid_deletes_a_validation_workflow_v1(json_schema_validate, obj):
-    json_schema_validate('jsd_b3ab76a74dae51fabf39b2ad85c3c58f_v2_3_7_6').validate(obj)
+    json_schema_validate("jsd_b3ab76a74dae51fabf39b2ad85c3c58f_v2_3_7_6").validate(obj)
     return True
 
 
 def deletes_a_validation_workflow_v1(api):
     endpoint_result = api.health_and_performance.deletes_a_validation_workflow_v1(
-        id='string'
+        id="string"
     )
     return endpoint_result
 
@@ -285,8 +289,7 @@ def deletes_a_validation_workflow_v1(api):
 def test_deletes_a_validation_workflow_v1(api, validator):
     try:
         assert is_valid_deletes_a_validation_workflow_v1(
-            validator,
-            deletes_a_validation_workflow_v1(api)
+            validator, deletes_a_validation_workflow_v1(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -296,7 +299,7 @@ def test_deletes_a_validation_workflow_v1(api, validator):
 
 def deletes_a_validation_workflow_v1_default_val(api):
     endpoint_result = api.health_and_performance.deletes_a_validation_workflow_v1(
-        id='string'
+        id="string"
     )
     return endpoint_result
 
@@ -305,8 +308,7 @@ def deletes_a_validation_workflow_v1_default_val(api):
 def test_deletes_a_validation_workflow_v1_default_val(api, validator):
     try:
         assert is_valid_deletes_a_validation_workflow_v1(
-            validator,
-            deletes_a_validation_workflow_v1_default_val(api)
+            validator, deletes_a_validation_workflow_v1_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -314,13 +316,13 @@ def test_deletes_a_validation_workflow_v1_default_val(api, validator):
 
 
 def is_valid_retrieves_validation_workflow_details_v1(json_schema_validate, obj):
-    json_schema_validate('jsd_221c36c30b8c5ddfbf9ccf36db5dd68a_v2_3_7_6').validate(obj)
+    json_schema_validate("jsd_221c36c30b8c5ddfbf9ccf36db5dd68a_v2_3_7_6").validate(obj)
     return True
 
 
 def retrieves_validation_workflow_details_v1(api):
-    endpoint_result = api.health_and_performance.retrieves_validation_workflow_details_v1(
-        id='string'
+    endpoint_result = (
+        api.health_and_performance.retrieves_validation_workflow_details_v1(id="string")
     )
     return endpoint_result
 
@@ -329,8 +331,7 @@ def retrieves_validation_workflow_details_v1(api):
 def test_retrieves_validation_workflow_details_v1(api, validator):
     try:
         assert is_valid_retrieves_validation_workflow_details_v1(
-            validator,
-            retrieves_validation_workflow_details_v1(api)
+            validator, retrieves_validation_workflow_details_v1(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -339,8 +340,8 @@ def test_retrieves_validation_workflow_details_v1(api, validator):
 
 
 def retrieves_validation_workflow_details_v1_default_val(api):
-    endpoint_result = api.health_and_performance.retrieves_validation_workflow_details_v1(
-        id='string'
+    endpoint_result = (
+        api.health_and_performance.retrieves_validation_workflow_details_v1(id="string")
     )
     return endpoint_result
 
@@ -349,8 +350,7 @@ def retrieves_validation_workflow_details_v1_default_val(api):
 def test_retrieves_validation_workflow_details_v1_default_val(api, validator):
     try:
         assert is_valid_retrieves_validation_workflow_details_v1(
-            validator,
-            retrieves_validation_workflow_details_v1_default_val(api)
+            validator, retrieves_validation_workflow_details_v1_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -358,17 +358,13 @@ def test_retrieves_validation_workflow_details_v1_default_val(api, validator):
 
 
 def is_valid_system_health(json_schema_validate, obj):
-    json_schema_validate('jsd_d0acccfae6885bc28f8f39c67f4acfc1_v2_3_7_6').validate(obj)
+    json_schema_validate("jsd_d0acccfae6885bc28f8f39c67f4acfc1_v2_3_7_6").validate(obj)
     return True
 
 
 def system_health(api):
     endpoint_result = api.health_and_performance.system_health(
-        domain='string',
-        limit=0,
-        offset=0,
-        subdomain='string',
-        summary=True
+        domain="string", limit=0, offset=0, subdomain="string", summary=True
     )
     return endpoint_result
 
@@ -376,10 +372,7 @@ def system_health(api):
 @pytest.mark.health_and_performance
 def test_system_health(api, validator):
     try:
-        assert is_valid_system_health(
-            validator,
-            system_health(api)
-        )
+        assert is_valid_system_health(validator, system_health(api))
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
             print(original_e)
@@ -388,11 +381,7 @@ def test_system_health(api, validator):
 
 def system_health_default_val(api):
     endpoint_result = api.health_and_performance.system_health(
-        domain=None,
-        limit=None,
-        offset=None,
-        subdomain=None,
-        summary=None
+        domain=None, limit=None, offset=None, subdomain=None, summary=None
     )
     return endpoint_result
 
@@ -400,24 +389,20 @@ def system_health_default_val(api):
 @pytest.mark.health_and_performance
 def test_system_health_default_val(api, validator):
     try:
-        assert is_valid_system_health(
-            validator,
-            system_health_default_val(api)
-        )
+        assert is_valid_system_health(validator, system_health_default_val(api))
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
 def is_valid_system_health_count(json_schema_validate, obj):
-    json_schema_validate('jsd_96f6dd603bc35db1948f31c782a37647_v2_3_7_6').validate(obj)
+    json_schema_validate("jsd_96f6dd603bc35db1948f31c782a37647_v2_3_7_6").validate(obj)
     return True
 
 
 def system_health_count(api):
     endpoint_result = api.health_and_performance.system_health_count(
-        domain='string',
-        subdomain='string'
+        domain="string", subdomain="string"
     )
     return endpoint_result
 
@@ -425,10 +410,7 @@ def system_health_count(api):
 @pytest.mark.health_and_performance
 def test_system_health_count(api, validator):
     try:
-        assert is_valid_system_health_count(
-            validator,
-            system_health_count(api)
-        )
+        assert is_valid_system_health_count(validator, system_health_count(api))
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
             print(original_e)
@@ -437,8 +419,7 @@ def test_system_health_count(api, validator):
 
 def system_health_count_default_val(api):
     endpoint_result = api.health_and_performance.system_health_count(
-        domain=None,
-        subdomain=None
+        domain=None, subdomain=None
     )
     return endpoint_result
 
@@ -447,8 +428,7 @@ def system_health_count_default_val(api):
 def test_system_health_count_default_val(api, validator):
     try:
         assert is_valid_system_health_count(
-            validator,
-            system_health_count_default_val(api)
+            validator, system_health_count_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -456,16 +436,13 @@ def test_system_health_count_default_val(api, validator):
 
 
 def is_valid_system_performance(json_schema_validate, obj):
-    json_schema_validate('jsd_cfcb7a875f215cb4ba59be38abb871e6_v2_3_7_6').validate(obj)
+    json_schema_validate("jsd_cfcb7a875f215cb4ba59be38abb871e6_v2_3_7_6").validate(obj)
     return True
 
 
 def system_performance(api):
     endpoint_result = api.health_and_performance.system_performance(
-        end_time=0,
-        function='string',
-        kpi='string',
-        start_time=0
+        end_time=0, function="string", kpi="string", start_time=0
     )
     return endpoint_result
 
@@ -473,10 +450,7 @@ def system_performance(api):
 @pytest.mark.health_and_performance
 def test_system_performance(api, validator):
     try:
-        assert is_valid_system_performance(
-            validator,
-            system_performance(api)
-        )
+        assert is_valid_system_performance(validator, system_performance(api))
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
             print(original_e)
@@ -485,10 +459,7 @@ def test_system_performance(api, validator):
 
 def system_performance_default_val(api):
     endpoint_result = api.health_and_performance.system_performance(
-        end_time=None,
-        function=None,
-        kpi=None,
-        start_time=None
+        end_time=None, function=None, kpi=None, start_time=None
     )
     return endpoint_result
 
@@ -497,8 +468,7 @@ def system_performance_default_val(api):
 def test_system_performance_default_val(api, validator):
     try:
         assert is_valid_system_performance(
-            validator,
-            system_performance_default_val(api)
+            validator, system_performance_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -506,15 +476,13 @@ def test_system_performance_default_val(api, validator):
 
 
 def is_valid_system_performance_historical(json_schema_validate, obj):
-    json_schema_validate('jsd_0f131d712dc253dca528c0298b3e41c6_v2_3_7_6').validate(obj)
+    json_schema_validate("jsd_0f131d712dc253dca528c0298b3e41c6_v2_3_7_6").validate(obj)
     return True
 
 
 def system_performance_historical(api):
     endpoint_result = api.health_and_performance.system_performance_historical(
-        end_time=0,
-        kpi='string',
-        start_time=0
+        end_time=0, kpi="string", start_time=0
     )
     return endpoint_result
 
@@ -523,8 +491,7 @@ def system_performance_historical(api):
 def test_system_performance_historical(api, validator):
     try:
         assert is_valid_system_performance_historical(
-            validator,
-            system_performance_historical(api)
+            validator, system_performance_historical(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -534,9 +501,7 @@ def test_system_performance_historical(api, validator):
 
 def system_performance_historical_default_val(api):
     endpoint_result = api.health_and_performance.system_performance_historical(
-        end_time=None,
-        kpi=None,
-        start_time=None
+        end_time=None, kpi=None, start_time=None
     )
     return endpoint_result
 
@@ -545,8 +510,7 @@ def system_performance_historical_default_val(api):
 def test_system_performance_historical_default_val(api, validator):
     try:
         assert is_valid_system_performance_historical(
-            validator,
-            system_performance_historical_default_val(api)
+            validator, system_performance_historical_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

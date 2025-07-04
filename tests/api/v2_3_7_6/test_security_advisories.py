@@ -26,28 +26,25 @@ from fastjsonschema.exceptions import JsonSchemaException
 from dnacentersdk.exceptions import MalformedRequest
 from tests.environment import DNA_CENTER_VERSION
 
-pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '2.3.7.6', reason='version does not match')
+pytestmark = pytest.mark.skipif(
+    DNA_CENTER_VERSION != "2.3.7.6", reason="version does not match"
+)
 
 
 def is_valid_get_advisories_list_v1(json_schema_validate, obj):
-    json_schema_validate('jsd_4e6317a46c835f0881f08071959bb026_v2_3_7_6').validate(obj)
+    json_schema_validate("jsd_4e6317a46c835f0881f08071959bb026_v2_3_7_6").validate(obj)
     return True
 
 
 def get_advisories_list_v1(api):
-    endpoint_result = api.security_advisories.get_advisories_list_v1(
-
-    )
+    endpoint_result = api.security_advisories.get_advisories_list_v1()
     return endpoint_result
 
 
 @pytest.mark.security_advisories
 def test_get_advisories_list_v1(api, validator):
     try:
-        assert is_valid_get_advisories_list_v1(
-            validator,
-            get_advisories_list_v1(api)
-        )
+        assert is_valid_get_advisories_list_v1(validator, get_advisories_list_v1(api))
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
             print(original_e)
@@ -55,9 +52,7 @@ def test_get_advisories_list_v1(api, validator):
 
 
 def get_advisories_list_v1_default_val(api):
-    endpoint_result = api.security_advisories.get_advisories_list_v1(
-
-    )
+    endpoint_result = api.security_advisories.get_advisories_list_v1()
     return endpoint_result
 
 
@@ -65,8 +60,7 @@ def get_advisories_list_v1_default_val(api):
 def test_get_advisories_list_v1_default_val(api, validator):
     try:
         assert is_valid_get_advisories_list_v1(
-            validator,
-            get_advisories_list_v1_default_val(api)
+            validator, get_advisories_list_v1_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -74,14 +68,12 @@ def test_get_advisories_list_v1_default_val(api, validator):
 
 
 def is_valid_get_advisories_summary_v1(json_schema_validate, obj):
-    json_schema_validate('jsd_8947b24a5127510a8070b0f893494543_v2_3_7_6').validate(obj)
+    json_schema_validate("jsd_8947b24a5127510a8070b0f893494543_v2_3_7_6").validate(obj)
     return True
 
 
 def get_advisories_summary_v1(api):
-    endpoint_result = api.security_advisories.get_advisories_summary_v1(
-
-    )
+    endpoint_result = api.security_advisories.get_advisories_summary_v1()
     return endpoint_result
 
 
@@ -89,8 +81,7 @@ def get_advisories_summary_v1(api):
 def test_get_advisories_summary_v1(api, validator):
     try:
         assert is_valid_get_advisories_summary_v1(
-            validator,
-            get_advisories_summary_v1(api)
+            validator, get_advisories_summary_v1(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -99,9 +90,7 @@ def test_get_advisories_summary_v1(api, validator):
 
 
 def get_advisories_summary_v1_default_val(api):
-    endpoint_result = api.security_advisories.get_advisories_summary_v1(
-
-    )
+    endpoint_result = api.security_advisories.get_advisories_summary_v1()
     return endpoint_result
 
 
@@ -109,8 +98,7 @@ def get_advisories_summary_v1_default_val(api):
 def test_get_advisories_summary_v1_default_val(api, validator):
     try:
         assert is_valid_get_advisories_summary_v1(
-            validator,
-            get_advisories_summary_v1_default_val(api)
+            validator, get_advisories_summary_v1_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -118,13 +106,13 @@ def test_get_advisories_summary_v1_default_val(api, validator):
 
 
 def is_valid_get_devices_per_advisory_v1(json_schema_validate, obj):
-    json_schema_validate('jsd_cbdf8887b29b5f0ea87113d2ae17d6df_v2_3_7_6').validate(obj)
+    json_schema_validate("jsd_cbdf8887b29b5f0ea87113d2ae17d6df_v2_3_7_6").validate(obj)
     return True
 
 
 def get_devices_per_advisory_v1(api):
     endpoint_result = api.security_advisories.get_devices_per_advisory_v1(
-        advisory_id='string'
+        advisory_id="string"
     )
     return endpoint_result
 
@@ -133,8 +121,7 @@ def get_devices_per_advisory_v1(api):
 def test_get_devices_per_advisory_v1(api, validator):
     try:
         assert is_valid_get_devices_per_advisory_v1(
-            validator,
-            get_devices_per_advisory_v1(api)
+            validator, get_devices_per_advisory_v1(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -144,7 +131,7 @@ def test_get_devices_per_advisory_v1(api, validator):
 
 def get_devices_per_advisory_v1_default_val(api):
     endpoint_result = api.security_advisories.get_devices_per_advisory_v1(
-        advisory_id='string'
+        advisory_id="string"
     )
     return endpoint_result
 
@@ -153,8 +140,7 @@ def get_devices_per_advisory_v1_default_val(api):
 def test_get_devices_per_advisory_v1_default_val(api, validator):
     try:
         assert is_valid_get_devices_per_advisory_v1(
-            validator,
-            get_devices_per_advisory_v1_default_val(api)
+            validator, get_devices_per_advisory_v1_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -162,13 +148,13 @@ def test_get_devices_per_advisory_v1_default_val(api, validator):
 
 
 def is_valid_get_advisory_device_detail_v1(json_schema_validate, obj):
-    json_schema_validate('jsd_34b1c03688485b44b1547c428a887c5d_v2_3_7_6').validate(obj)
+    json_schema_validate("jsd_34b1c03688485b44b1547c428a887c5d_v2_3_7_6").validate(obj)
     return True
 
 
 def get_advisory_device_detail_v1(api):
     endpoint_result = api.security_advisories.get_advisory_device_detail_v1(
-        device_id='string'
+        device_id="string"
     )
     return endpoint_result
 
@@ -177,8 +163,7 @@ def get_advisory_device_detail_v1(api):
 def test_get_advisory_device_detail_v1(api, validator):
     try:
         assert is_valid_get_advisory_device_detail_v1(
-            validator,
-            get_advisory_device_detail_v1(api)
+            validator, get_advisory_device_detail_v1(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -188,7 +173,7 @@ def test_get_advisory_device_detail_v1(api, validator):
 
 def get_advisory_device_detail_v1_default_val(api):
     endpoint_result = api.security_advisories.get_advisory_device_detail_v1(
-        device_id='string'
+        device_id="string"
     )
     return endpoint_result
 
@@ -197,8 +182,7 @@ def get_advisory_device_detail_v1_default_val(api):
 def test_get_advisory_device_detail_v1_default_val(api, validator):
     try:
         assert is_valid_get_advisory_device_detail_v1(
-            validator,
-            get_advisory_device_detail_v1_default_val(api)
+            validator, get_advisory_device_detail_v1_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -206,13 +190,13 @@ def test_get_advisory_device_detail_v1_default_val(api, validator):
 
 
 def is_valid_get_advisories_per_device_v1(json_schema_validate, obj):
-    json_schema_validate('jsd_7cf75923b0c6575ead874f9d404d7355_v2_3_7_6').validate(obj)
+    json_schema_validate("jsd_7cf75923b0c6575ead874f9d404d7355_v2_3_7_6").validate(obj)
     return True
 
 
 def get_advisories_per_device_v1(api):
     endpoint_result = api.security_advisories.get_advisories_per_device_v1(
-        device_id='string'
+        device_id="string"
     )
     return endpoint_result
 
@@ -221,8 +205,7 @@ def get_advisories_per_device_v1(api):
 def test_get_advisories_per_device_v1(api, validator):
     try:
         assert is_valid_get_advisories_per_device_v1(
-            validator,
-            get_advisories_per_device_v1(api)
+            validator, get_advisories_per_device_v1(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -232,7 +215,7 @@ def test_get_advisories_per_device_v1(api, validator):
 
 def get_advisories_per_device_v1_default_val(api):
     endpoint_result = api.security_advisories.get_advisories_per_device_v1(
-        device_id='string'
+        device_id="string"
     )
     return endpoint_result
 
@@ -241,8 +224,7 @@ def get_advisories_per_device_v1_default_val(api):
 def test_get_advisories_per_device_v1_default_val(api, validator):
     try:
         assert is_valid_get_advisories_per_device_v1(
-            validator,
-            get_advisories_per_device_v1_default_val(api)
+            validator, get_advisories_per_device_v1_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

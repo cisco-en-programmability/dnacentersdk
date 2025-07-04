@@ -32,7 +32,6 @@ from ...utils import (
     check_type,
     dict_from_items_with_values,
     dict_of_str,
-    
 )
 
 
@@ -65,24 +64,26 @@ class Sites(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def get_sites_energy(self,
-                         attribute=None,
-                         device_category=None,
-                         end_time=None,
-                         limit=None,
-                         offset=None,
-                         order=None,
-                         site_hierarchy=None,
-                         site_hierarchy_id=None,
-                         site_id=None,
-                         site_name=None,
-                         site_type=None,
-                         sort_by=None,
-                         start_time=None,
-                         task_id=None,
-                         views=None,
-                         headers=None,
-                         **request_parameters):
+    def get_sites_energy(
+        self,
+        attribute=None,
+        device_category=None,
+        end_time=None,
+        limit=None,
+        offset=None,
+        order=None,
+        site_hierarchy=None,
+        site_hierarchy_id=None,
+        site_id=None,
+        site_name=None,
+        site_type=None,
+        sort_by=None,
+        start_time=None,
+        task_id=None,
+        views=None,
+        headers=None,
+        **request_parameters
+    ):
         """Retrieves a list of sites with energy data based on the specified query parameters. For detailed information
         about the usage of the API, please refer to the Open API specification document
         - https://github.com/cisco-en-programmability/catalyst-center-api-
@@ -181,50 +182,32 @@ class Sites(object):
         check_type(attribute, str)
         check_type(task_id, str)
         if headers is not None:
-            if 'X-CALLER-ID' in headers:
-                check_type(headers.get('X-CALLER-ID'),
-                           str)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-CALLER-ID" in headers:
+                check_type(headers.get("X-CALLER-ID"), str)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'startTime':
-                start_time,
-            'endTime':
-                end_time,
-            'limit':
-                limit,
-            'offset':
-                offset,
-            'sortBy':
-                sort_by,
-            'order':
-                order,
-            'siteHierarchy':
-                site_hierarchy,
-            'siteHierarchyId':
-                site_hierarchy_id,
-            'siteName':
-                site_name,
-            'siteType':
-                site_type,
-            'deviceCategory':
-                device_category,
-            'siteId':
-                site_id,
-            'views':
-                views,
-            'attribute':
-                attribute,
-            'taskId':
-                task_id,
+            "startTime": start_time,
+            "endTime": end_time,
+            "limit": limit,
+            "offset": offset,
+            "sortBy": sort_by,
+            "order": order,
+            "siteHierarchy": site_hierarchy,
+            "siteHierarchyId": site_hierarchy_id,
+            "siteName": site_name,
+            "siteType": site_type,
+            "deviceCategory": device_category,
+            "siteId": site_id,
+            "views": views,
+            "attribute": attribute,
+            "taskId": task_id,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -232,28 +215,31 @@ class Sites(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/data/api/v1/energy/sites')
+        e_url = "/dna/data/api/v1/energy/sites"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_e9d85a8da71b95b17b58263c_v2_3_7_9', json_data)
+        return self._object_factory("bpm_e9d85a8da71b95b17b58263c_v2_3_7_9", json_data)
 
-    def count_sites_energy(self,
-                           device_category=None,
-                           end_time=None,
-                           site_hierarchy=None,
-                           site_hierarchy_id=None,
-                           site_id=None,
-                           site_name=None,
-                           site_type=None,
-                           start_time=None,
-                           task_id=None,
-                           headers=None,
-                           **request_parameters):
+    def count_sites_energy(
+        self,
+        device_category=None,
+        end_time=None,
+        site_hierarchy=None,
+        site_hierarchy_id=None,
+        site_id=None,
+        site_name=None,
+        site_type=None,
+        start_time=None,
+        task_id=None,
+        headers=None,
+        **request_parameters
+    ):
         """Retrieves the total count of sites that provide energy data, filtered according to the specified query
         parameters. For detailed information about the usage of the API, please refer to the Open API
         specification document https://github.com/cisco-en-programmability/catalyst-center-api-
@@ -328,38 +314,26 @@ class Sites(object):
         check_type(site_id, str)
         check_type(task_id, str)
         if headers is not None:
-            if 'X-CALLER-ID' in headers:
-                check_type(headers.get('X-CALLER-ID'),
-                           str)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-CALLER-ID" in headers:
+                check_type(headers.get("X-CALLER-ID"), str)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'startTime':
-                start_time,
-            'endTime':
-                end_time,
-            'siteHierarchy':
-                site_hierarchy,
-            'siteHierarchyId':
-                site_hierarchy_id,
-            'siteName':
-                site_name,
-            'siteType':
-                site_type,
-            'deviceCategory':
-                device_category,
-            'siteId':
-                site_id,
-            'taskId':
-                task_id,
+            "startTime": start_time,
+            "endTime": end_time,
+            "siteHierarchy": site_hierarchy,
+            "siteHierarchyId": site_hierarchy_id,
+            "siteName": site_name,
+            "siteType": site_type,
+            "deviceCategory": device_category,
+            "siteId": site_id,
+            "taskId": task_id,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -367,29 +341,34 @@ class Sites(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/data/api/v1/energy/sites/count')
+        e_url = "/dna/data/api/v1/energy/sites/count"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_c449f48a0b517185b32bfd53f33a5b_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_c449f48a0b517185b32bfd53f33a5b_v2_3_7_9", json_data
+        )
 
-    def submit_request_to_query_sites_energy(self,
-                                             aggregateAttributes=None,
-                                             attributes=None,
-                                             endTime=None,
-                                             filters=None,
-                                             page=None,
-                                             startTime=None,
-                                             task_id=None,
-                                             views=None,
-                                             headers=None,
-                                             payload=None,
-                                             active_validation=True,
-                                             **request_parameters):
+    def submit_request_to_query_sites_energy(
+        self,
+        aggregateAttributes=None,
+        attributes=None,
+        endTime=None,
+        filters=None,
+        page=None,
+        startTime=None,
+        task_id=None,
+        views=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Submits a request to retrieve a list of sites along with their energy data for a specified time range, based on
         the filters provided in the request body. For detailed information about the usage of the API, please
         refer to the Open API specification document - https://github.com/cisco-en-programmability/catalyst-
@@ -429,46 +408,35 @@ class Sites(object):
         check_type(payload, dict)
         check_type(task_id, str)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'X-CALLER-ID' in headers:
-                check_type(headers.get('X-CALLER-ID'),
-                           str)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "X-CALLER-ID" in headers:
+                check_type(headers.get("X-CALLER-ID"), str)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'taskId':
-                task_id,
+            "taskId": task_id,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'startTime':
-                startTime,
-            'endTime':
-                endTime,
-            'filters':
-                filters,
-            'views':
-                views,
-            'attributes':
-                attributes,
-            'aggregateAttributes':
-                aggregateAttributes,
-            'page':
-                page,
+            "startTime": startTime,
+            "endTime": endTime,
+            "filters": filters,
+            "views": views,
+            "attributes": attributes,
+            "aggregateAttributes": aggregateAttributes,
+            "page": page,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_ae8282c90a7059ceb31b4072429d00cd_v2_3_7_9')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_ae8282c90a7059ceb31b4072429d00cd_v2_3_7_9"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -476,22 +444,24 @@ class Sites(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/data/api/v1/energy/sites/query')
+        e_url = "/dna/data/api/v1/energy/sites/query"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_ae8282c90a7059ceb31b4072429d00cd_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_ae8282c90a7059ceb31b4072429d00cd_v2_3_7_9", json_data
+        )
 
-    def query_sites_energy_for_the_given_task_id(self,
-                                                 task_id=None,
-                                                 headers=None,
-                                                 **request_parameters):
+    def query_sites_energy_for_the_given_task_id(
+        self, task_id=None, headers=None, **request_parameters
+    ):
         """Gets query sites energy task result for the given task ID. For detailed information about the usage of the API,
         please refer to the Open API specification document - https://github.com/cisco-en-
         programmability/catalyst-center-api-specs/blob/main/Assurance/CE_Cat_Center_Org-
@@ -519,19 +489,16 @@ class Sites(object):
         check_type(headers, dict)
         check_type(task_id, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'taskId':
-                task_id,
+            "taskId": task_id,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -539,20 +506,22 @@ class Sites(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/data/api/v1/energy/sites/query')
+        e_url = "/dna/data/api/v1/energy/sites/query"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_e06041b1f59638e377ae39ed162bd_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_e06041b1f59638e377ae39ed162bd_v2_3_7_9", json_data
+        )
 
-    def count_sites_energy_for_the_given_task_id(self,
-                                                 task_id=None,
-                                                 headers=None,
-                                                 **request_parameters):
+    def count_sites_energy_for_the_given_task_id(
+        self, task_id=None, headers=None, **request_parameters
+    ):
         """Gets count sites energy task result for the given task ID. For detailed information about the usage of the API,
         please refer to the Open API specification document - https://github.com/cisco-en-
         programmability/catalyst-center-api-specs/blob/main/Assurance/CE_Cat_Center_Org-
@@ -580,22 +549,18 @@ class Sites(object):
         check_type(headers, dict)
         check_type(task_id, str)
         if headers is not None:
-            if 'X-CALLER-ID' in headers:
-                check_type(headers.get('X-CALLER-ID'),
-                           str)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-CALLER-ID" in headers:
+                check_type(headers.get("X-CALLER-ID"), str)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'taskId':
-                task_id,
+            "taskId": task_id,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -603,29 +568,34 @@ class Sites(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/data/api/v1/energy/sites/query/count')
+        e_url = "/dna/data/api/v1/energy/sites/query/count"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_cc0a299df36558d8646580f0a0d283c_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_cc0a299df36558d8646580f0a0d283c_v2_3_7_9", json_data
+        )
 
-    def submit_request_to_count_sites_energy_from_query(self,
-                                                        aggregateAttributes=None,
-                                                        attributes=None,
-                                                        endTime=None,
-                                                        filters=None,
-                                                        page=None,
-                                                        startTime=None,
-                                                        task_id=None,
-                                                        views=None,
-                                                        headers=None,
-                                                        payload=None,
-                                                        active_validation=True,
-                                                        **request_parameters):
+    def submit_request_to_count_sites_energy_from_query(
+        self,
+        aggregateAttributes=None,
+        attributes=None,
+        endTime=None,
+        filters=None,
+        page=None,
+        startTime=None,
+        task_id=None,
+        views=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Submits a request to retrieve the total count of sites that provide energy data, filtered according to the
         specified query parameters. For detailed information about the usage of the API, please refer to the
         Open API specification document - https://github.com/cisco-en-programmability/catalyst-center-api-
@@ -665,40 +635,31 @@ class Sites(object):
         check_type(payload, dict)
         check_type(task_id, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'taskId':
-                task_id,
+            "taskId": task_id,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'startTime':
-                startTime,
-            'endTime':
-                endTime,
-            'filters':
-                filters,
-            'views':
-                views,
-            'attributes':
-                attributes,
-            'aggregateAttributes':
-                aggregateAttributes,
-            'page':
-                page,
+            "startTime": startTime,
+            "endTime": endTime,
+            "filters": filters,
+            "views": views,
+            "attributes": attributes,
+            "aggregateAttributes": aggregateAttributes,
+            "page": page,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_d0e1021de57d5e95bbea5d5bd86b481a_v2_3_7_9')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_d0e1021de57d5e95bbea5d5bd86b481a_v2_3_7_9"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -706,28 +667,33 @@ class Sites(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/data/api/v1/energy/sites/query/count')
+        e_url = "/dna/data/api/v1/energy/sites/query/count"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_d0e1021de57d5e95bbea5d5bd86b481a_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_d0e1021de57d5e95bbea5d5bd86b481a_v2_3_7_9", json_data
+        )
 
-    def get_site_energy_by_id(self,
-                              id,
-                              attribute=None,
-                              device_category=None,
-                              end_time=None,
-                              start_time=None,
-                              task_id=None,
-                              views=None,
-                              headers=None,
-                              **request_parameters):
+    def get_site_energy_by_id(
+        self,
+        id,
+        attribute=None,
+        device_category=None,
+        end_time=None,
+        start_time=None,
+        task_id=None,
+        views=None,
+        headers=None,
+        **request_parameters
+    ):
         """Retrieve the energy summary data for a specific site based on the site ID. For detailed information about the
         usage of the API, please refer to the Open API specification document - https://github.com/cisco-en-
         programmability/catalyst-center-api-specs/blob/main/Assurance/CE_Cat_Center_Org-
@@ -787,35 +753,26 @@ class Sites(object):
         check_type(attribute, str)
         check_type(device_category, str)
         check_type(task_id, str)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-CALLER-ID' in headers:
-                check_type(headers.get('X-CALLER-ID'),
-                           str)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-CALLER-ID" in headers:
+                check_type(headers.get("X-CALLER-ID"), str)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'startTime':
-                start_time,
-            'endTime':
-                end_time,
-            'views':
-                views,
-            'attribute':
-                attribute,
-            'deviceCategory':
-                device_category,
-            'taskId':
-                task_id,
+            "startTime": start_time,
+            "endTime": end_time,
+            "views": views,
+            "attribute": attribute,
+            "deviceCategory": device_category,
+            "taskId": task_id,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
 
         with_custom_headers = False
@@ -824,31 +781,36 @@ class Sites(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/data/api/v1/energy/sites/{id}')
+        e_url = "/dna/data/api/v1/energy/sites/{id}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_b688ff94649e552ca2d9535136b2c0a6_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_b688ff94649e552ca2d9535136b2c0a6_v2_3_7_9", json_data
+        )
 
-    def read_list_of_site_health_summaries(self,
-                                           attribute=None,
-                                           end_time=None,
-                                           id=None,
-                                           limit=None,
-                                           offset=None,
-                                           order=None,
-                                           site_hierarchy=None,
-                                           site_hierarchy_id=None,
-                                           site_type=None,
-                                           sort_by=None,
-                                           start_time=None,
-                                           view=None,
-                                           headers=None,
-                                           **request_parameters):
+    def read_list_of_site_health_summaries(
+        self,
+        attribute=None,
+        end_time=None,
+        id=None,
+        limit=None,
+        offset=None,
+        order=None,
+        site_hierarchy=None,
+        site_hierarchy_id=None,
+        site_type=None,
+        sort_by=None,
+        start_time=None,
+        view=None,
+        headers=None,
+        **request_parameters
+    ):
         """Get a paginated list of site health summaries. Use the available query parameters to identify a subset of sites
         you want health summaries for. This API provides the latest health data from a given `endTime` If data
         is not ready for the provided endTime, the request will fail, and the error message will indicate the
@@ -965,44 +927,29 @@ class Sites(object):
         check_type(view, str)
         check_type(attribute, str)
         if headers is not None:
-            if 'X-CALLER-ID' in headers:
-                check_type(headers.get('X-CALLER-ID'),
-                           str)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-CALLER-ID" in headers:
+                check_type(headers.get("X-CALLER-ID"), str)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'startTime':
-                start_time,
-            'endTime':
-                end_time,
-            'limit':
-                limit,
-            'offset':
-                offset,
-            'sortBy':
-                sort_by,
-            'order':
-                order,
-            'siteHierarchy':
-                site_hierarchy,
-            'siteHierarchyId':
-                site_hierarchy_id,
-            'siteType':
-                site_type,
-            'id':
-                id,
-            'view':
-                view,
-            'attribute':
-                attribute,
+            "startTime": start_time,
+            "endTime": end_time,
+            "limit": limit,
+            "offset": offset,
+            "sortBy": sort_by,
+            "order": order,
+            "siteHierarchy": site_hierarchy,
+            "siteHierarchyId": site_hierarchy_id,
+            "siteType": site_type,
+            "id": id,
+            "view": view,
+            "attribute": attribute,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1010,24 +957,29 @@ class Sites(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/data/api/v1/siteHealthSummaries')
+        e_url = "/dna/data/api/v1/siteHealthSummaries"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_b40b4f6d558bfbebcf8fcbc4df56b_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_b40b4f6d558bfbebcf8fcbc4df56b_v2_3_7_9", json_data
+        )
 
-    def read_site_count(self,
-                        end_time=None,
-                        id=None,
-                        site_hierarchy=None,
-                        site_hierarchy_id=None,
-                        site_type=None,
-                        headers=None,
-                        **request_parameters):
+    def read_site_count(
+        self,
+        end_time=None,
+        id=None,
+        site_hierarchy=None,
+        site_hierarchy_id=None,
+        site_type=None,
+        headers=None,
+        **request_parameters
+    ):
         """Get a count of sites. Use the available query parameters to get the count of a subset of sites. This API
         provides the latest data from a given `endTime` If data is not ready for the provided endTime, the
         request will fail, and the error message will indicate the recommended endTime to use to retrieve a
@@ -1085,30 +1037,22 @@ class Sites(object):
         check_type(site_type, str)
         check_type(id, str)
         if headers is not None:
-            if 'X-CALLER-ID' in headers:
-                check_type(headers.get('X-CALLER-ID'),
-                           str)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-CALLER-ID" in headers:
+                check_type(headers.get("X-CALLER-ID"), str)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'endTime':
-                end_time,
-            'siteHierarchy':
-                site_hierarchy,
-            'siteHierarchyId':
-                site_hierarchy_id,
-            'siteType':
-                site_type,
-            'id':
-                id,
+            "endTime": end_time,
+            "siteHierarchy": site_hierarchy,
+            "siteHierarchyId": site_hierarchy_id,
+            "siteType": site_type,
+            "id": id,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1116,27 +1060,32 @@ class Sites(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/data/api/v1/siteHealthSummaries/count')
+        e_url = "/dna/data/api/v1/siteHealthSummaries/count"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_e67558dd99925a0385f5f870bbb8f634_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_e67558dd99925a0385f5f870bbb8f634_v2_3_7_9", json_data
+        )
 
-    def read_an_aggregated_summary_of_site_health_data(self,
-                                                       attribute=None,
-                                                       end_time=None,
-                                                       id=None,
-                                                       site_hierarchy=None,
-                                                       site_hierarchy_id=None,
-                                                       site_type=None,
-                                                       start_time=None,
-                                                       view=None,
-                                                       headers=None,
-                                                       **request_parameters):
+    def read_an_aggregated_summary_of_site_health_data(
+        self,
+        attribute=None,
+        end_time=None,
+        id=None,
+        site_hierarchy=None,
+        site_hierarchy_id=None,
+        site_type=None,
+        start_time=None,
+        view=None,
+        headers=None,
+        **request_parameters
+    ):
         """Get an aggregated summary of all site health or use the query params to get an aggregated summary of health for
         a subset of sites. This API provides the latest health data from a given `endTime` If data is not ready
         for the provided endTime, the request will fail, and the error message will indicate the recommended
@@ -1245,36 +1194,25 @@ class Sites(object):
         check_type(view, str)
         check_type(attribute, str)
         if headers is not None:
-            if 'X-CALLER-ID' in headers:
-                check_type(headers.get('X-CALLER-ID'),
-                           str)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-CALLER-ID" in headers:
+                check_type(headers.get("X-CALLER-ID"), str)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'startTime':
-                start_time,
-            'endTime':
-                end_time,
-            'siteHierarchy':
-                site_hierarchy,
-            'siteHierarchyId':
-                site_hierarchy_id,
-            'siteType':
-                site_type,
-            'id':
-                id,
-            'view':
-                view,
-            'attribute':
-                attribute,
+            "startTime": start_time,
+            "endTime": end_time,
+            "siteHierarchy": site_hierarchy,
+            "siteHierarchyId": site_hierarchy_id,
+            "siteType": site_type,
+            "id": id,
+            "view": view,
+            "attribute": attribute,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1282,29 +1220,34 @@ class Sites(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/data/api/v1/siteHealthSummaries/summaryAnalytics')
+        e_url = "/dna/data/api/v1/siteHealthSummaries/summaryAnalytics"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_fc80b3e12ee9577a8e7fa5d4cd84e8fc_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_fc80b3e12ee9577a8e7fa5d4cd84e8fc_v2_3_7_9", json_data
+        )
 
-    def query_an_aggregated_summary_of_site_health_data(self,
-                                                        attributes=None,
-                                                        endTime=None,
-                                                        id=None,
-                                                        site_hierarchy=None,
-                                                        site_hierarchy_id=None,
-                                                        site_type=None,
-                                                        startTime=None,
-                                                        views=None,
-                                                        headers=None,
-                                                        payload=None,
-                                                        active_validation=True,
-                                                        **request_parameters):
+    def query_an_aggregated_summary_of_site_health_data(
+        self,
+        attributes=None,
+        endTime=None,
+        id=None,
+        site_hierarchy=None,
+        site_hierarchy_id=None,
+        site_type=None,
+        startTime=None,
+        views=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Query an aggregated summary of all site health This API provides the latest health data from a given `endTime`
         If data is not ready for the provided endTime, the request will fail, and the error message will
         indicate the recommended endTime to use to retrieve a complete data set. This behavior may occur if the
@@ -1373,40 +1316,31 @@ class Sites(object):
         check_type(site_type, str)
         check_type(id, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'siteHierarchy':
-                site_hierarchy,
-            'siteHierarchyId':
-                site_hierarchy_id,
-            'siteType':
-                site_type,
-            'id':
-                id,
+            "siteHierarchy": site_hierarchy,
+            "siteHierarchyId": site_hierarchy_id,
+            "siteType": site_type,
+            "id": id,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'startTime':
-                startTime,
-            'endTime':
-                endTime,
-            'views':
-                views,
-            'attributes':
-                attributes,
+            "startTime": startTime,
+            "endTime": endTime,
+            "views": views,
+            "attributes": attributes,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_bec2dde673c5b2f940d0474fed32af6_v2_3_7_9')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_bec2dde673c5b2f940d0474fed32af6_v2_3_7_9"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1414,33 +1348,38 @@ class Sites(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/data/api/v1/siteHealthSummaries/summaryAnalytics')
+        e_url = "/dna/data/api/v1/siteHealthSummaries/summaryAnalytics"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_bec2dde673c5b2f940d0474fed32af6_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_bec2dde673c5b2f940d0474fed32af6_v2_3_7_9", json_data
+        )
 
-    def read_trend_analytics_data_for_a_grouping_of_sites_in_your_network(self,
-                                                                          attribute=None,
-                                                                          end_time=None,
-                                                                          id=None,
-                                                                          limit=None,
-                                                                          offset=None,
-                                                                          site_hierarchy=None,
-                                                                          site_hierarchy_id=None,
-                                                                          site_type=None,
-                                                                          start_time=None,
-                                                                          task_id=None,
-                                                                          time_sort_order=None,
-                                                                          trend_interval=None,
-                                                                          headers=None,
-                                                                          **request_parameters):
+    def read_trend_analytics_data_for_a_grouping_of_sites_in_your_network(
+        self,
+        attribute=None,
+        end_time=None,
+        id=None,
+        limit=None,
+        offset=None,
+        site_hierarchy=None,
+        site_hierarchy_id=None,
+        site_type=None,
+        start_time=None,
+        task_id=None,
+        time_sort_order=None,
+        trend_interval=None,
+        headers=None,
+        **request_parameters
+    ):
         """Retrieves the time series information of health and issue data for sites specified by query parameters, or all
         sites. The data will be grouped based on the specified trend time interval. For detailed information
         about the usage of the API, please refer to the Open API specification document
@@ -1530,44 +1469,29 @@ class Sites(object):
         check_type(attribute, str)
         check_type(task_id, str)
         if headers is not None:
-            if 'X-CALLER-ID' in headers:
-                check_type(headers.get('X-CALLER-ID'),
-                           str)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-CALLER-ID" in headers:
+                check_type(headers.get("X-CALLER-ID"), str)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'startTime':
-                start_time,
-            'endTime':
-                end_time,
-            'siteHierarchy':
-                site_hierarchy,
-            'siteHierarchyId':
-                site_hierarchy_id,
-            'siteType':
-                site_type,
-            'id':
-                id,
-            'trendInterval':
-                trend_interval,
-            'limit':
-                limit,
-            'offset':
-                offset,
-            'timeSortOrder':
-                time_sort_order,
-            'attribute':
-                attribute,
-            'taskId':
-                task_id,
+            "startTime": start_time,
+            "endTime": end_time,
+            "siteHierarchy": site_hierarchy,
+            "siteHierarchyId": site_hierarchy_id,
+            "siteType": site_type,
+            "id": id,
+            "trendInterval": trend_interval,
+            "limit": limit,
+            "offset": offset,
+            "timeSortOrder": time_sort_order,
+            "attribute": attribute,
+            "taskId": task_id,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1575,24 +1499,29 @@ class Sites(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/data/api/v1/siteHealthSummaries/trendAnalytics')
+        e_url = "/dna/data/api/v1/siteHealthSummaries/trendAnalytics"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_a47540d95b8ba6d78bfe5db7dbe2_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_a47540d95b8ba6d78bfe5db7dbe2_v2_3_7_9", json_data
+        )
 
-    def read_site_health_summary_data_by_site_id(self,
-                                                 id,
-                                                 attribute=None,
-                                                 end_time=None,
-                                                 start_time=None,
-                                                 view=None,
-                                                 headers=None,
-                                                 **request_parameters):
+    def read_site_health_summary_data_by_site_id(
+        self,
+        id,
+        attribute=None,
+        end_time=None,
+        start_time=None,
+        view=None,
+        headers=None,
+        **request_parameters
+    ):
         """Get a health summary for a specific site by providing the unique site id in the url path. This API provides the
         latest health data from a given `endTime` If data is not ready for the provided endTime, the request
         will fail, and the error message will indicate the recommended endTime to use to retrieve a complete
@@ -1672,31 +1601,24 @@ class Sites(object):
         check_type(end_time, int)
         check_type(view, str)
         check_type(attribute, str)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-CALLER-ID' in headers:
-                check_type(headers.get('X-CALLER-ID'),
-                           str)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-CALLER-ID" in headers:
+                check_type(headers.get("X-CALLER-ID"), str)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'startTime':
-                start_time,
-            'endTime':
-                end_time,
-            'view':
-                view,
-            'attribute':
-                attribute,
+            "startTime": start_time,
+            "endTime": end_time,
+            "view": view,
+            "attribute": attribute,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
 
         with_custom_headers = False
@@ -1705,28 +1627,33 @@ class Sites(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/data/api/v1/siteHealthSummaries/{id}')
+        e_url = "/dna/data/api/v1/siteHealthSummaries/{id}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_f214555abaa6a30cdbcc32e713_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_f214555abaa6a30cdbcc32e713_v2_3_7_9", json_data
+        )
 
-    def read_trend_analytics_data_for_a_specific_site_in_your_network(self,
-                                                                      id,
-                                                                      attribute=None,
-                                                                      end_time=None,
-                                                                      limit=None,
-                                                                      offset=None,
-                                                                      start_time=None,
-                                                                      task_id=None,
-                                                                      time_sort_order=None,
-                                                                      trend_interval=None,
-                                                                      headers=None,
-                                                                      **request_parameters):
+    def read_trend_analytics_data_for_a_specific_site_in_your_network(
+        self,
+        id,
+        attribute=None,
+        end_time=None,
+        limit=None,
+        offset=None,
+        start_time=None,
+        task_id=None,
+        time_sort_order=None,
+        trend_interval=None,
+        headers=None,
+        **request_parameters
+    ):
         """Retrieves the time series information of health and issue data for a site specified by the path parameter. The
         data will be grouped based on the specified trend time interval. For detailed information about the
         usage of the API, please refer to the Open API specification document https://github.com/cisco-en-
@@ -1790,39 +1717,28 @@ class Sites(object):
         check_type(time_sort_order, str)
         check_type(attribute, str)
         check_type(task_id, str)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-CALLER-ID' in headers:
-                check_type(headers.get('X-CALLER-ID'),
-                           str)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-CALLER-ID" in headers:
+                check_type(headers.get("X-CALLER-ID"), str)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'startTime':
-                start_time,
-            'endTime':
-                end_time,
-            'trendInterval':
-                trend_interval,
-            'limit':
-                limit,
-            'offset':
-                offset,
-            'timeSortOrder':
-                time_sort_order,
-            'attribute':
-                attribute,
-            'taskId':
-                task_id,
+            "startTime": start_time,
+            "endTime": end_time,
+            "trendInterval": trend_interval,
+            "limit": limit,
+            "offset": offset,
+            "timeSortOrder": time_sort_order,
+            "attribute": attribute,
+            "taskId": task_id,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
 
         with_custom_headers = False
@@ -1831,36 +1747,41 @@ class Sites(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/data/api/v1/siteHealthSummaries/{id}/trendAnalytics')
+        e_url = "/dna/data/api/v1/siteHealthSummaries/{id}/trendAnalytics"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_a75ee097a016562cbf861c4c52df3e30_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_a75ee097a016562cbf861c4c52df3e30_v2_3_7_9", json_data
+        )
 
-    def get_site_analytics_for_the_child_sites_of_given_parent_site_and_other_query_parameters(self,
-                                                                                               attribute=None,
-                                                                                               band=None,
-                                                                                               end_time=None,
-                                                                                               failure_category=None,
-                                                                                               failure_reason=None,
-                                                                                               limit=None,
-                                                                                               offset=None,
-                                                                                               order=None,
-                                                                                               site_hierarchy=None,
-                                                                                               site_hierarchy_id=None,
-                                                                                               site_id=None,
-                                                                                               site_type=None,
-                                                                                               sort_by=None,
-                                                                                               ssid=None,
-                                                                                               start_time=None,
-                                                                                               task_id=None,
-                                                                                               view=None,
-                                                                                               headers=None,
-                                                                                               **request_parameters):
+    def get_site_analytics_for_the_child_sites_of_given_parent_site_and_other_query_parameters(
+        self,
+        attribute=None,
+        band=None,
+        end_time=None,
+        failure_category=None,
+        failure_reason=None,
+        limit=None,
+        offset=None,
+        order=None,
+        site_hierarchy=None,
+        site_hierarchy_id=None,
+        site_id=None,
+        site_type=None,
+        sort_by=None,
+        ssid=None,
+        start_time=None,
+        task_id=None,
+        view=None,
+        headers=None,
+        **request_parameters
+    ):
         """Returns site analytics for all child sites of given parent site. For detailed information about the usage of the
         API, please refer to the Open API specification document https://github.com/cisco-en-
         programmability/catalyst-center-api-specs/blob/main/Assurance/CE_Cat_Center_Org-
@@ -1982,54 +1903,34 @@ class Sites(object):
         check_type(sort_by, str)
         check_type(order, str)
         if headers is not None:
-            if 'X-CALLER-ID' in headers:
-                check_type(headers.get('X-CALLER-ID'),
-                           str)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-CALLER-ID" in headers:
+                check_type(headers.get("X-CALLER-ID"), str)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'taskId':
-                task_id,
-            'startTime':
-                start_time,
-            'endTime':
-                end_time,
-            'siteHierarchy':
-                site_hierarchy,
-            'siteHierarchyId':
-                site_hierarchy_id,
-            'siteId':
-                site_id,
-            'siteType':
-                site_type,
-            'ssid':
-                ssid,
-            'band':
-                band,
-            'failureCategory':
-                failure_category,
-            'failureReason':
-                failure_reason,
-            'view':
-                view,
-            'attribute':
-                attribute,
-            'limit':
-                limit,
-            'offset':
-                offset,
-            'sortBy':
-                sort_by,
-            'order':
-                order,
+            "taskId": task_id,
+            "startTime": start_time,
+            "endTime": end_time,
+            "siteHierarchy": site_hierarchy,
+            "siteHierarchyId": site_hierarchy_id,
+            "siteId": site_id,
+            "siteType": site_type,
+            "ssid": ssid,
+            "band": band,
+            "failureCategory": failure_category,
+            "failureReason": failure_reason,
+            "view": view,
+            "attribute": attribute,
+            "limit": limit,
+            "offset": offset,
+            "sortBy": sort_by,
+            "order": order,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -2037,25 +1938,30 @@ class Sites(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/data/api/v1/siteKpiSummaries')
+        e_url = "/dna/data/api/v1/siteKpiSummaries"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_fd376c6a5d9382d5bee853c43031_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_fd376c6a5d9382d5bee853c43031_v2_3_7_9", json_data
+        )
 
-    def get_the_total_number_of_site_analytics_records_available_for_for_given_set_of_query_parameters(self,
-                                                                                                       end_time=None,
-                                                                                                       site_hierarchy=None,
-                                                                                                       site_hierarchy_id=None,
-                                                                                                       site_id=None,
-                                                                                                       site_type=None,
-                                                                                                       start_time=None,
-                                                                                                       headers=None,
-                                                                                                       **request_parameters):
+    def get_the_total_number_of_site_analytics_records_available_for_for_given_set_of_query_parameters(
+        self,
+        end_time=None,
+        site_hierarchy=None,
+        site_hierarchy_id=None,
+        site_id=None,
+        site_type=None,
+        start_time=None,
+        headers=None,
+        **request_parameters
+    ):
         """Returns the total number of site analytics records available for for given set of query parameters. For detailed
         information about the usage of the API, please refer to the Open API specification document
         https://github.com/cisco-en-programmability/catalyst-center-api-
@@ -2111,32 +2017,23 @@ class Sites(object):
         check_type(site_id, str)
         check_type(site_type, str)
         if headers is not None:
-            if 'X-CALLER-ID' in headers:
-                check_type(headers.get('X-CALLER-ID'),
-                           str)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-CALLER-ID" in headers:
+                check_type(headers.get("X-CALLER-ID"), str)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'startTime':
-                start_time,
-            'endTime':
-                end_time,
-            'siteHierarchy':
-                site_hierarchy,
-            'siteHierarchyId':
-                site_hierarchy_id,
-            'siteId':
-                site_id,
-            'siteType':
-                site_type,
+            "startTime": start_time,
+            "endTime": end_time,
+            "siteHierarchy": site_hierarchy,
+            "siteHierarchyId": site_hierarchy_id,
+            "siteId": site_id,
+            "siteType": site_type,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -2144,27 +2041,32 @@ class Sites(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/data/api/v1/siteKpiSummaries/count')
+        e_url = "/dna/data/api/v1/siteKpiSummaries/count"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_af22da7f49fd5d658d0ce2992ea7fef9_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_af22da7f49fd5d658d0ce2992ea7fef9_v2_3_7_9", json_data
+        )
 
-    def get_site_analytics_for_the_child_sites_of_given_parent_site_and_other_filters(self,
-                                                                                      attributes=None,
-                                                                                      endTime=None,
-                                                                                      filters=None,
-                                                                                      page=None,
-                                                                                      startTime=None,
-                                                                                      views=None,
-                                                                                      headers=None,
-                                                                                      payload=None,
-                                                                                      active_validation=True,
-                                                                                      **request_parameters):
+    def get_site_analytics_for_the_child_sites_of_given_parent_site_and_other_filters(
+        self,
+        attributes=None,
+        endTime=None,
+        filters=None,
+        page=None,
+        startTime=None,
+        views=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Returns site analytics for all child sites of given parent site. For detailed information about the usage of the
         API, please refer to the Open API specification document https://github.com/cisco-en-
         programmability/catalyst-center-api-specs/blob/main/Assurance/CE_Cat_Center_Org-
@@ -2200,42 +2102,32 @@ class Sites(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'X-CALLER-ID' in headers:
-                check_type(headers.get('X-CALLER-ID'),
-                           str)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "X-CALLER-ID" in headers:
+                check_type(headers.get("X-CALLER-ID"), str)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'startTime':
-                startTime,
-            'endTime':
-                endTime,
-            'filters':
-                filters,
-            'attributes':
-                attributes,
-            'views':
-                views,
-            'page':
-                page,
+            "startTime": startTime,
+            "endTime": endTime,
+            "filters": filters,
+            "attributes": attributes,
+            "views": views,
+            "page": page,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_a4829a44597bbf9813664eb75de0_v2_3_7_9')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_a4829a44597bbf9813664eb75de0_v2_3_7_9"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -2243,26 +2135,31 @@ class Sites(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/data/api/v1/siteKpiSummaries/query')
+        e_url = "/dna/data/api/v1/siteKpiSummaries/query"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_a4829a44597bbf9813664eb75de0_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_a4829a44597bbf9813664eb75de0_v2_3_7_9", json_data
+        )
 
-    def get_the_total_number_of_site_analytics_records_available_for_for_given_set_of_filters(self,
-                                                                                              endTime=None,
-                                                                                              filters=None,
-                                                                                              startTime=None,
-                                                                                              headers=None,
-                                                                                              payload=None,
-                                                                                              active_validation=True,
-                                                                                              **request_parameters):
+    def get_the_total_number_of_site_analytics_records_available_for_for_given_set_of_filters(
+        self,
+        endTime=None,
+        filters=None,
+        startTime=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Returns the total number of site analytics records available for for given set of filters. For detailed
         information about the usage of the API, please refer to the Open API specification document
         https://github.com/cisco-en-programmability/catalyst-center-api-
@@ -2295,36 +2192,29 @@ class Sites(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'X-CALLER-ID' in headers:
-                check_type(headers.get('X-CALLER-ID'),
-                           str)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "X-CALLER-ID" in headers:
+                check_type(headers.get("X-CALLER-ID"), str)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'startTime':
-                startTime,
-            'endTime':
-                endTime,
-            'filters':
-                filters,
+            "startTime": startTime,
+            "endTime": endTime,
+            "filters": filters,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_db690b800995e35bc4e8c43d8ea6c18_v2_3_7_9')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_db690b800995e35bc4e8c43d8ea6c18_v2_3_7_9"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -2332,22 +2222,24 @@ class Sites(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/data/api/v1/siteKpiSummaries/query/count')
+        e_url = "/dna/data/api/v1/siteKpiSummaries/query/count"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_db690b800995e35bc4e8c43d8ea6c18_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_db690b800995e35bc4e8c43d8ea6c18_v2_3_7_9", json_data
+        )
 
-    def get_site_analytics_summary_data_for_the_given_task_id(self,
-                                                              task_id,
-                                                              headers=None,
-                                                              **request_parameters):
+    def get_site_analytics_summary_data_for_the_given_task_id(
+        self, task_id, headers=None, **request_parameters
+    ):
         """Get site analytics summary data for the given task id. For detailed information about the usage of the API,
         please refer to the Open API specification document https://github.com/cisco-en-
         programmability/catalyst-center-api-specs/blob/main/Assurance/CE_Cat_Center_Org-
@@ -2373,25 +2265,20 @@ class Sites(object):
             https://developer.cisco.com/docs/dna-center/#!get-site-analytics-summary-data-for-the-given-task-id
         """
         check_type(headers, dict)
-        check_type(task_id, str,
-                   may_be_none=False)
+        check_type(task_id, str, may_be_none=False)
         if headers is not None:
-            if 'X-CALLER-ID' in headers:
-                check_type(headers.get('X-CALLER-ID'),
-                           str)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-CALLER-ID" in headers:
+                check_type(headers.get("X-CALLER-ID"), str)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'taskId':
-                task_id,
+            "taskId": task_id,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -2399,25 +2286,30 @@ class Sites(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/data/api/v1/siteKpiSummaries/summaryAnalytics')
+        e_url = "/dna/data/api/v1/siteKpiSummaries/summaryAnalytics"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_c846dfbe75601831b5de7e8771829_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_c846dfbe75601831b5de7e8771829_v2_3_7_9", json_data
+        )
 
-    def submit_request_for_site_analytics_summary_data(self,
-                                                       attributes=None,
-                                                       endTime=None,
-                                                       filters=None,
-                                                       startTime=None,
-                                                       headers=None,
-                                                       payload=None,
-                                                       active_validation=True,
-                                                       **request_parameters):
+    def submit_request_for_site_analytics_summary_data(
+        self,
+        attributes=None,
+        endTime=None,
+        filters=None,
+        startTime=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Submits the task to get summary analytics data for a given site. For detailed information about the usage of the
         API, please refer to the Open API specification document https://github.com/cisco-en-
         programmability/catalyst-center-api-specs/blob/main/Assurance/CE_Cat_Center_Org-
@@ -2451,32 +2343,26 @@ class Sites(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'startTime':
-                startTime,
-            'endTime':
-                endTime,
-            'filters':
-                filters,
-            'attributes':
-                attributes,
+            "startTime": startTime,
+            "endTime": endTime,
+            "filters": filters,
+            "attributes": attributes,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_b8a44ba454de8a7bb52d3efe97ca_v2_3_7_9')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_b8a44ba454de8a7bb52d3efe97ca_v2_3_7_9"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -2484,22 +2370,24 @@ class Sites(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/data/api/v1/siteKpiSummaries/summaryAnalytics')
+        e_url = "/dna/data/api/v1/siteKpiSummaries/summaryAnalytics"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_b8a44ba454de8a7bb52d3efe97ca_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_b8a44ba454de8a7bb52d3efe97ca_v2_3_7_9", json_data
+        )
 
-    def get_top_n_entities_related_to_site_analytics_for_the_given_task_id(self,
-                                                                           task_id,
-                                                                           headers=None,
-                                                                           **request_parameters):
+    def get_top_n_entities_related_to_site_analytics_for_the_given_task_id(
+        self, task_id, headers=None, **request_parameters
+    ):
         """Gets the topN analytics data for a given taskId. For detailed information about the usage of the API, please
         refer to the Open API specification document https://github.com/cisco-en-programmability/catalyst-
         center-api-specs/blob/main/Assurance/CE_Cat_Center_Org-SiteKpiSummaries-1.0.0-resolved.yaml .
@@ -2524,25 +2412,20 @@ class Sites(object):
             https://developer.cisco.com/docs/dna-center/#!get-top-n-entities-related-to-site-analytics-for-the-given-task-id
         """
         check_type(headers, dict)
-        check_type(task_id, str,
-                   may_be_none=False)
+        check_type(task_id, str, may_be_none=False)
         if headers is not None:
-            if 'X-CALLER-ID' in headers:
-                check_type(headers.get('X-CALLER-ID'),
-                           str)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-CALLER-ID" in headers:
+                check_type(headers.get("X-CALLER-ID"), str)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'taskId':
-                task_id,
+            "taskId": task_id,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -2550,26 +2433,31 @@ class Sites(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/data/api/v1/siteKpiSummaries/topNAnalytics')
+        e_url = "/dna/data/api/v1/siteKpiSummaries/topNAnalytics"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_e256f5fc9757c483f41ffef3677fef_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_e256f5fc9757c483f41ffef3677fef_v2_3_7_9", json_data
+        )
 
-    def submit_request_for_top_n_entities_related_to_site_analytics(self,
-                                                                    endTime=None,
-                                                                    filters=None,
-                                                                    groupBy=None,
-                                                                    startTime=None,
-                                                                    topN=None,
-                                                                    headers=None,
-                                                                    payload=None,
-                                                                    active_validation=True,
-                                                                    **request_parameters):
+    def submit_request_for_top_n_entities_related_to_site_analytics(
+        self,
+        endTime=None,
+        filters=None,
+        groupBy=None,
+        startTime=None,
+        topN=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Gets the Top N entites related based on site analytics for a given kpi type. For detailed information about the
         usage of the API, please refer to the Open API specification document https://github.com/cisco-en-
         programmability/catalyst-center-api-specs/blob/main/Assurance/CE_Cat_Center_Org-
@@ -2604,34 +2492,27 @@ class Sites(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'startTime':
-                startTime,
-            'endTime':
-                endTime,
-            'topN':
-                topN,
-            'groupBy':
-                groupBy,
-            'filters':
-                filters,
+            "startTime": startTime,
+            "endTime": endTime,
+            "topN": topN,
+            "groupBy": groupBy,
+            "filters": filters,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_d9e3276d1ed3511b80b22ea8388959c8_v2_3_7_9')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_d9e3276d1ed3511b80b22ea8388959c8_v2_3_7_9"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -2639,22 +2520,24 @@ class Sites(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/data/api/v1/siteKpiSummaries/topNAnalytics')
+        e_url = "/dna/data/api/v1/siteKpiSummaries/topNAnalytics"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_d9e3276d1ed3511b80b22ea8388959c8_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_d9e3276d1ed3511b80b22ea8388959c8_v2_3_7_9", json_data
+        )
 
-    def get_site_analytics_trend_data_for_the_given_task_id(self,
-                                                            task_id,
-                                                            headers=None,
-                                                            **request_parameters):
+    def get_site_analytics_trend_data_for_the_given_task_id(
+        self, task_id, headers=None, **request_parameters
+    ):
         """Gets site analytics trend data for the given task id. For detailed information about the usage of the API,
         please refer to the Open API specification document https://github.com/cisco-en-
         programmability/catalyst-center-api-specs/blob/main/Assurance/CE_Cat_Center_Org-
@@ -2680,25 +2563,20 @@ class Sites(object):
             https://developer.cisco.com/docs/dna-center/#!get-site-analytics-trend-data-for-the-given-task-id
         """
         check_type(headers, dict)
-        check_type(task_id, str,
-                   may_be_none=False)
+        check_type(task_id, str, may_be_none=False)
         if headers is not None:
-            if 'X-CALLER-ID' in headers:
-                check_type(headers.get('X-CALLER-ID'),
-                           str)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-CALLER-ID" in headers:
+                check_type(headers.get("X-CALLER-ID"), str)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'taskId':
-                task_id,
+            "taskId": task_id,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -2706,27 +2584,32 @@ class Sites(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/data/api/v1/siteKpiSummaries/trendAnalytics')
+        e_url = "/dna/data/api/v1/siteKpiSummaries/trendAnalytics"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_f396d5c149b510a8cd8e560f8baae4b_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_f396d5c149b510a8cd8e560f8baae4b_v2_3_7_9", json_data
+        )
 
-    def submit_request_for_site_analytics_trend_data(self,
-                                                     attributes=None,
-                                                     endTime=None,
-                                                     filters=None,
-                                                     page=None,
-                                                     startTime=None,
-                                                     trendInterval=None,
-                                                     headers=None,
-                                                     payload=None,
-                                                     active_validation=True,
-                                                     **request_parameters):
+    def submit_request_for_site_analytics_trend_data(
+        self,
+        attributes=None,
+        endTime=None,
+        filters=None,
+        page=None,
+        startTime=None,
+        trendInterval=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Submits the task to get site analytics trend data for a given site. For detailed information about the usage of
         the API, please refer to the Open API specification document https://github.com/cisco-en-
         programmability/catalyst-center-api-specs/blob/main/Assurance/CE_Cat_Center_Org-
@@ -2762,36 +2645,28 @@ class Sites(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'startTime':
-                startTime,
-            'endTime':
-                endTime,
-            'trendInterval':
-                trendInterval,
-            'filters':
-                filters,
-            'attributes':
-                attributes,
-            'page':
-                page,
+            "startTime": startTime,
+            "endTime": endTime,
+            "trendInterval": trendInterval,
+            "filters": filters,
+            "attributes": attributes,
+            "page": page,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_edc44e0e7a513191cc16dc2b4da88e_v2_3_7_9')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_edc44e0e7a513191cc16dc2b4da88e_v2_3_7_9"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -2799,31 +2674,36 @@ class Sites(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/data/api/v1/siteKpiSummaries/trendAnalytics')
+        e_url = "/dna/data/api/v1/siteKpiSummaries/trendAnalytics"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_edc44e0e7a513191cc16dc2b4da88e_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_edc44e0e7a513191cc16dc2b4da88e_v2_3_7_9", json_data
+        )
 
-    def get_site_analytics_for_one_site(self,
-                                        id,
-                                        attribute=None,
-                                        band=None,
-                                        end_time=None,
-                                        failure_category=None,
-                                        failure_reason=None,
-                                        ssid=None,
-                                        start_time=None,
-                                        task_id=None,
-                                        view=None,
-                                        headers=None,
-                                        **request_parameters):
+    def get_site_analytics_for_one_site(
+        self,
+        id,
+        attribute=None,
+        band=None,
+        end_time=None,
+        failure_category=None,
+        failure_reason=None,
+        ssid=None,
+        start_time=None,
+        task_id=None,
+        view=None,
+        headers=None,
+        **request_parameters
+    ):
         """Returns site analytics for the given site. For detailed information about the usage of the API, please refer to
         the Open API specification document https://github.com/cisco-en-programmability/catalyst-center-api-
         specs/blob/main/Assurance/CE_Cat_Center_Org-SiteKpiSummaries-1.0.0-resolved.yaml .
@@ -2911,41 +2791,29 @@ class Sites(object):
         check_type(failure_reason, str)
         check_type(view, str)
         check_type(attribute, str)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-CALLER-ID' in headers:
-                check_type(headers.get('X-CALLER-ID'),
-                           str)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-CALLER-ID" in headers:
+                check_type(headers.get("X-CALLER-ID"), str)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'taskId':
-                task_id,
-            'startTime':
-                start_time,
-            'endTime':
-                end_time,
-            'ssid':
-                ssid,
-            'band':
-                band,
-            'failureCategory':
-                failure_category,
-            'failureReason':
-                failure_reason,
-            'view':
-                view,
-            'attribute':
-                attribute,
+            "taskId": task_id,
+            "startTime": start_time,
+            "endTime": end_time,
+            "ssid": ssid,
+            "band": band,
+            "failureCategory": failure_category,
+            "failureReason": failure_reason,
+            "view": view,
+            "attribute": attribute,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
 
         with_custom_headers = False
@@ -2954,23 +2822,28 @@ class Sites(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/data/api/v1/siteKpiSummaries/{id}')
+        e_url = "/dna/data/api/v1/siteKpiSummaries/{id}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_aec803dd6056a0b2a3ebd66dc136d3_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_aec803dd6056a0b2a3ebd66dc136d3_v2_3_7_9", json_data
+        )
 
-    def assign_devices_to_site(self,
-                               site_id,
-                               device=None,
-                               headers=None,
-                               payload=None,
-                               active_validation=True,
-                               **request_parameters):
+    def assign_devices_to_site(
+        self,
+        site_id,
+        device=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Assigns unassigned devices to a site. This API does not move assigned devices to other sites. .
 
         Args:
@@ -2998,39 +2871,33 @@ class Sites(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(site_id, str,
-                   may_be_none=False)
+        check_type(site_id, str, may_be_none=False)
         if headers is not None:
-            if '__runsync' in headers:
-                check_type(headers.get('__runsync'),
-                           bool, may_be_none=False)
-            if '__timeout' in headers:
-                check_type(headers.get('__timeout'),
-                           int)
-            if '__persistbapioutput' in headers:
-                check_type(headers.get('__persistbapioutput'),
-                           bool, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "__runsync" in headers:
+                check_type(headers.get("__runsync"), bool, may_be_none=False)
+            if "__timeout" in headers:
+                check_type(headers.get("__timeout"), int)
+            if "__persistbapioutput" in headers:
+                check_type(headers.get("__persistbapioutput"), bool, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'siteId': site_id,
+            "siteId": site_id,
         }
         _payload = {
-            'device':
-                device,
+            "device": device,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_a544e27e18e5412af3b68d915c8ca50_v2_3_7_9')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_a544e27e18e5412af3b68d915c8ca50_v2_3_7_9"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -3038,24 +2905,29 @@ class Sites(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/assign-device-to-site/{siteId}/device')
+        e_url = "/dna/intent/api/v1/assign-device-to-site/{siteId}/device"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_a544e27e18e5412af3b68d915c8ca50_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_a544e27e18e5412af3b68d915c8ca50_v2_3_7_9", json_data
+        )
 
-    def export_map_archive(self,
-                           site_hierarchy_uuid,
-                           headers=None,
-                           payload=None,
-                           active_validation=True,
-                           **request_parameters):
+    def export_map_archive(
+        self,
+        site_hierarchy_uuid,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Allows exporting a Map archive in an XML interchange format along with the associated images. .
 
         Args:
@@ -3084,28 +2956,25 @@ class Sites(object):
         """
         check_type(headers, dict)
         check_type(payload, (list, dict))
-        check_type(site_hierarchy_uuid, str,
-                   may_be_none=False)
+        check_type(site_hierarchy_uuid, str, may_be_none=False)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'siteHierarchyUuid': site_hierarchy_uuid,
+            "siteHierarchyUuid": site_hierarchy_uuid,
         }
         _payload = payload or {}
         if active_validation:
-            self._request_validator('jsd_c937494318f952ba92eaeb82b144c338_v2_3_7_9')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_c937494318f952ba92eaeb82b144c338_v2_3_7_9"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -3113,21 +2982,22 @@ class Sites(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/maps/export/{siteHierarchyUuid}')
+        e_url = "/dna/intent/api/v1/maps/export/{siteHierarchyUuid}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_c937494318f952ba92eaeb82b144c338_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_c937494318f952ba92eaeb82b144c338_v2_3_7_9", json_data
+        )
 
-    def import_map_archive_start_import(self,
-                                        headers=None,
-                                        **request_parameters):
+    def import_map_archive_start_import(self, headers=None, **request_parameters):
         """Initiates a map archive import of a tar.gz file.  The archive must consist of one xmlDir/MapsImportExport.xml
         map descriptor file, and 1 or more images for the map areas nested under /images folder. .
 
@@ -3151,20 +3021,16 @@ class Sites(object):
         """
         check_type(headers, dict)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -3172,20 +3038,22 @@ class Sites(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/maps/import/start')
+        e_url = "/dna/intent/api/v1/maps/import/start"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.post(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_ea81890f92553aaed79952ab7ab363_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_ea81890f92553aaed79952ab7ab363_v2_3_7_9", json_data
+        )
 
-    def import_map_archive_cancel_an_import(self,
-                                            import_context_uuid,
-                                            headers=None,
-                                            **request_parameters):
+    def import_map_archive_cancel_an_import(
+        self, import_context_uuid, headers=None, **request_parameters
+    ):
         """Cancels a previously initatied import, allowing the system to cleanup cached resources about that import data,
         and ensures the import cannot accidentally be performed / approved at a later time. .
 
@@ -3209,20 +3077,17 @@ class Sites(object):
             https://developer.cisco.com/docs/dna-center/#!import-map-archive-cancel-an-import
         """
         check_type(headers, dict)
-        check_type(import_context_uuid, str,
-                   may_be_none=False)
+        check_type(import_context_uuid, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'importContextUuid': import_context_uuid,
+            "importContextUuid": import_context_uuid,
         }
 
         with_custom_headers = False
@@ -3231,20 +3096,20 @@ class Sites(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/maps/import/{importContextUuid}')
+        e_url = "/dna/intent/api/v1/maps/import/{importContextUuid}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.delete(endpoint_full_url, params=_params,
-                                             headers=_headers)
+            json_data = self._session.delete(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.delete(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_a59853e8a3462db736556ab4_v2_3_7_9', json_data)
+        return self._object_factory("bpm_a59853e8a3462db736556ab4_v2_3_7_9", json_data)
 
-    def import_map_archive_perform_import(self,
-                                          import_context_uuid,
-                                          headers=None,
-                                          **request_parameters):
+    def import_map_archive_perform_import(
+        self, import_context_uuid, headers=None, **request_parameters
+    ):
         """For a previously initatied import, approves the import to be performed, accepting that data loss may occur.  A
         Map import will fully replace existing Maps data for the site(s) defined in the archive. The Map Archive
         Import Status API /maps/import/${contextUuid}/status should always be checked to validate the pre-import
@@ -3270,23 +3135,19 @@ class Sites(object):
             https://developer.cisco.com/docs/dna-center/#!import-map-archive-perform-import
         """
         check_type(headers, dict)
-        check_type(import_context_uuid, str,
-                   may_be_none=False)
+        check_type(import_context_uuid, str, may_be_none=False)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'importContextUuid': import_context_uuid,
+            "importContextUuid": import_context_uuid,
         }
 
         with_custom_headers = False
@@ -3295,21 +3156,22 @@ class Sites(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/maps/import/{importContextUuid}/perfo'
-                 + 'rm')
+        e_url = "/dna/intent/api/v1/maps/import/{importContextUuid}/perfo" + "rm"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.post(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_df05fb7a09595d0b9f6bc46b24275927_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_df05fb7a09595d0b9f6bc46b24275927_v2_3_7_9", json_data
+        )
 
-    def import_map_archive_import_status(self,
-                                         import_context_uuid,
-                                         headers=None,
-                                         **request_parameters):
+    def import_map_archive_import_status(
+        self, import_context_uuid, headers=None, **request_parameters
+    ):
         """Gets the status of a map archive import operation. For a map archive import that has just been initiated, will
         provide the result of validation of the archive and a pre-import preview of what will be performed if
         the import is performed.  Once an import is requested to be performed, this API will give the status of
@@ -3335,20 +3197,17 @@ class Sites(object):
             https://developer.cisco.com/docs/dna-center/#!import-map-archive-import-status
         """
         check_type(headers, dict)
-        check_type(import_context_uuid, str,
-                   may_be_none=False)
+        check_type(import_context_uuid, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'importContextUuid': import_context_uuid,
+            "importContextUuid": import_context_uuid,
         }
 
         with_custom_headers = False
@@ -3357,20 +3216,20 @@ class Sites(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/maps/import/{importContextUuid}/statu'
-                 + 's')
+        e_url = "/dna/intent/api/v1/maps/import/{importContextUuid}/statu" + "s"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_c04c790688e4566c9f5eaa52b8fe39c8_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_c04c790688e4566c9f5eaa52b8fe39c8_v2_3_7_9", json_data
+        )
 
-    def maps_supported_access_points(self,
-                                     headers=None,
-                                     **request_parameters):
+    def maps_supported_access_points(self, headers=None, **request_parameters):
         """Gets the list of supported access point types as well as valid antenna pattern names that can be used for each.
         .
 
@@ -3394,17 +3253,14 @@ class Sites(object):
         """
         check_type(headers, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -3412,24 +3268,29 @@ class Sites(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/maps/supported-access-points')
+        e_url = "/dna/intent/api/v1/maps/supported-access-points"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_a5e16b065e3534c8894e52d52540f99_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_a5e16b065e3534c8894e52d52540f99_v2_3_7_9", json_data
+        )
 
-    def get_membership(self,
-                       site_id,
-                       device_family=None,
-                       limit=None,
-                       offset=None,
-                       serial_number=None,
-                       headers=None,
-                       **request_parameters):
+    def get_membership(
+        self,
+        site_id,
+        device_family=None,
+        limit=None,
+        offset=None,
+        serial_number=None,
+        headers=None,
+        **request_parameters
+    ):
         """Getting the site children details and device details. .
 
         Args:
@@ -3459,28 +3320,22 @@ class Sites(object):
         check_type(limit, int)
         check_type(device_family, str)
         check_type(serial_number, str)
-        check_type(site_id, str,
-                   may_be_none=False)
+        check_type(site_id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'offset':
-                offset,
-            'limit':
-                limit,
-            'deviceFamily':
-                device_family,
-            'serialNumber':
-                serial_number,
+            "offset": offset,
+            "limit": limit,
+            "deviceFamily": device_family,
+            "serialNumber": serial_number,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'siteId': site_id,
+            "siteId": site_id,
         }
 
         with_custom_headers = False
@@ -3489,23 +3344,28 @@ class Sites(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/membership/{siteId}')
+        e_url = "/dna/intent/api/v1/membership/{siteId}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_ca11e0b5f8d91395e2462a9cfdc_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_ca11e0b5f8d91395e2462a9cfdc_v2_3_7_9", json_data
+        )
 
-    def create_site(self,
-                    site=None,
-                    type=None,
-                    headers=None,
-                    payload=None,
-                    active_validation=True,
-                    **request_parameters):
+    def create_site(
+        self,
+        site=None,
+        type=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Creates site with area/building/floor with specified hierarchy. .
 
         Args:
@@ -3535,37 +3395,30 @@ class Sites(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if '__runsync' in headers:
-                check_type(headers.get('__runsync'),
-                           bool, may_be_none=False)
-            if '__timeout' in headers:
-                check_type(headers.get('__timeout'),
-                           int)
-            if '__persistbapioutput' in headers:
-                check_type(headers.get('__persistbapioutput'),
-                           bool, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "__runsync" in headers:
+                check_type(headers.get("__runsync"), bool, may_be_none=False)
+            if "__timeout" in headers:
+                check_type(headers.get("__timeout"), int)
+            if "__persistbapioutput" in headers:
+                check_type(headers.get("__persistbapioutput"), bool, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'type':
-                type,
-            'site':
-                site,
+            "type": type,
+            "site": site,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_bce8e6b307ce52dd8f5546fbd78e05ee_v2_3_7_9')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_bce8e6b307ce52dd8f5546fbd78e05ee_v2_3_7_9"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -3573,26 +3426,31 @@ class Sites(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/site')
+        e_url = "/dna/intent/api/v1/site"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_bce8e6b307ce52dd8f5546fbd78e05ee_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_bce8e6b307ce52dd8f5546fbd78e05ee_v2_3_7_9", json_data
+        )
 
-    def get_site(self,
-                 limit=None,
-                 name=None,
-                 offset=None,
-                 site_id=None,
-                 type=None,
-                 headers=None,
-                 **request_parameters):
+    def get_site(
+        self,
+        limit=None,
+        name=None,
+        offset=None,
+        site_id=None,
+        type=None,
+        headers=None,
+        **request_parameters
+    ):
         """Get site(s) by site-name-hierarchy or siteId or type. List all sites if these parameters are not given as an
         input. .
 
@@ -3625,27 +3483,20 @@ class Sites(object):
         check_type(offset, int)
         check_type(limit, int)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'name':
-                name,
-            'siteId':
-                site_id,
-            'type':
-                type,
-            'offset':
-                offset,
-            'limit':
-                limit,
+            "name": name,
+            "siteId": site_id,
+            "type": type,
+            "offset": offset,
+            "limit": limit,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -3653,23 +3504,28 @@ class Sites(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/site')
+        e_url = "/dna/intent/api/v1/site"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_dbdd6074bedc59b9a3edd6477897d659_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_dbdd6074bedc59b9a3edd6477897d659_v2_3_7_9", json_data
+        )
 
-    def get_site_health(self,
-                        limit=None,
-                        offset=None,
-                        site_type=None,
-                        timestamp=None,
-                        headers=None,
-                        **request_parameters):
+    def get_site_health(
+        self,
+        limit=None,
+        offset=None,
+        site_type=None,
+        timestamp=None,
+        headers=None,
+        **request_parameters
+    ):
         """Returns Overall Health information for all sites .
 
         Args:
@@ -3702,28 +3558,22 @@ class Sites(object):
         check_type(limit, int)
         check_type(timestamp, int)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'siteType':
-                site_type,
-            'offset':
-                offset,
-            'limit':
-                limit,
-            'timestamp':
-                timestamp,
+            "siteType": site_type,
+            "offset": offset,
+            "limit": limit,
+            "timestamp": timestamp,
         }
 
-        if _params['timestamp'] is None:
-            _params['timestamp'] = ''
+        if _params["timestamp"] is None:
+            _params["timestamp"] = ""
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -3731,24 +3581,29 @@ class Sites(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/site-health')
+        e_url = "/dna/intent/api/v1/site-health"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_ae4b592f66035f24b55028f79c1b7290_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_ae4b592f66035f24b55028f79c1b7290_v2_3_7_9", json_data
+        )
 
-    def get_devices_that_are_assigned_to_a_site(self,
-                                                id,
-                                                member_type,
-                                                level=None,
-                                                limit=None,
-                                                offset=None,
-                                                headers=None,
-                                                **request_parameters):
+    def get_devices_that_are_assigned_to_a_site(
+        self,
+        id,
+        member_type,
+        level=None,
+        limit=None,
+        offset=None,
+        headers=None,
+        **request_parameters
+    ):
         """API to get devices that are assigned to a site. .
 
         Args:
@@ -3779,31 +3634,24 @@ class Sites(object):
         check_type(headers, dict)
         check_type(offset, str)
         check_type(limit, str)
-        check_type(member_type, str,
-                   may_be_none=False)
+        check_type(member_type, str, may_be_none=False)
         check_type(level, str)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'offset':
-                offset,
-            'limit':
-                limit,
-            'memberType':
-                member_type,
-            'level':
-                level,
+            "offset": offset,
+            "limit": limit,
+            "memberType": member_type,
+            "level": level,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
 
         with_custom_headers = False
@@ -3812,20 +3660,20 @@ class Sites(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/site-member/{id}/member')
+        e_url = "/dna/intent/api/v1/site-member/{id}/member"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_cfabe762b2af55f282076fe2a14b6792_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_cfabe762b2af55f282076fe2a14b6792_v2_3_7_9", json_data
+        )
 
-    def get_site_count(self,
-                       site_id=None,
-                       headers=None,
-                       **request_parameters):
+    def get_site_count(self, site_id=None, headers=None, **request_parameters):
         """Get the site count of the specified site's sub-hierarchy (inclusive of the provided site) .
 
         Args:
@@ -3849,19 +3697,16 @@ class Sites(object):
         check_type(headers, dict)
         check_type(site_id, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'siteId':
-                site_id,
+            "siteId": site_id,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -3869,24 +3714,29 @@ class Sites(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/site/count')
+        e_url = "/dna/intent/api/v1/site/count"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_e7a025fbe2c452fc82eedd5c50104aba_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_e7a025fbe2c452fc82eedd5c50104aba_v2_3_7_9", json_data
+        )
 
-    def update_site(self,
-                    site_id,
-                    site=None,
-                    type=None,
-                    headers=None,
-                    payload=None,
-                    active_validation=True,
-                    **request_parameters):
+    def update_site(
+        self,
+        site_id,
+        site=None,
+        type=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Update site area/building/floor with specified hierarchy and new values .
 
         Args:
@@ -3915,41 +3765,34 @@ class Sites(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(site_id, str,
-                   may_be_none=False)
+        check_type(site_id, str, may_be_none=False)
         if headers is not None:
-            if '__runsync' in headers:
-                check_type(headers.get('__runsync'),
-                           bool)
-            if '__timeout' in headers:
-                check_type(headers.get('__timeout'),
-                           int)
-            if '__persistbapioutput' in headers:
-                check_type(headers.get('__persistbapioutput'),
-                           bool, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "__runsync" in headers:
+                check_type(headers.get("__runsync"), bool)
+            if "__timeout" in headers:
+                check_type(headers.get("__timeout"), int)
+            if "__persistbapioutput" in headers:
+                check_type(headers.get("__persistbapioutput"), bool, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'siteId': site_id,
+            "siteId": site_id,
         }
         _payload = {
-            'type':
-                type,
-            'site':
-                site,
+            "type": type,
+            "site": site,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_df9908ad265e83ab77d73803925678_v2_3_7_9')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_df9908ad265e83ab77d73803925678_v2_3_7_9"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -3957,22 +3800,22 @@ class Sites(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/site/{siteId}')
+        e_url = "/dna/intent/api/v1/site/{siteId}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload,
-                                          headers=_headers)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_df9908ad265e83ab77d73803925678_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_df9908ad265e83ab77d73803925678_v2_3_7_9", json_data
+        )
 
-    def delete_site(self,
-                    site_id,
-                    headers=None,
-                    **request_parameters):
+    def delete_site(self, site_id, headers=None, **request_parameters):
         """Delete site with area/building/floor by siteId. .
 
         Args:
@@ -3994,20 +3837,17 @@ class Sites(object):
             https://developer.cisco.com/docs/dna-center/#!delete-site
         """
         check_type(headers, dict)
-        check_type(site_id, str,
-                   may_be_none=False)
+        check_type(site_id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'siteId': site_id,
+            "siteId": site_id,
         }
 
         with_custom_headers = False
@@ -4016,24 +3856,29 @@ class Sites(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/site/{siteId}')
+        e_url = "/dna/intent/api/v1/site/{siteId}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.delete(endpoint_full_url, params=_params,
-                                             headers=_headers)
+            json_data = self._session.delete(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.delete(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_ba5567f03dea5b6891957dd410319e3f_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_ba5567f03dea5b6891957dd410319e3f_v2_3_7_9", json_data
+        )
 
-    def get_site_v2(self,
-                    group_name_hierarchy=None,
-                    id=None,
-                    limit=None,
-                    offset=None,
-                    type=None,
-                    headers=None,
-                    **request_parameters):
+    def get_site_v2(
+        self,
+        group_name_hierarchy=None,
+        id=None,
+        limit=None,
+        offset=None,
+        type=None,
+        headers=None,
+        **request_parameters
+    ):
         """API to get site(s) by site-name-hierarchy or siteId or type. List all sites if these parameters  are not given
         as an input. .
 
@@ -4068,27 +3913,20 @@ class Sites(object):
         check_type(offset, str)
         check_type(limit, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'groupNameHierarchy':
-                group_name_hierarchy,
-            'id':
-                id,
-            'type':
-                type,
-            'offset':
-                offset,
-            'limit':
-                limit,
+            "groupNameHierarchy": group_name_hierarchy,
+            "id": id,
+            "type": type,
+            "offset": offset,
+            "limit": limit,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -4096,20 +3934,20 @@ class Sites(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v2/site')
+        e_url = "/dna/intent/api/v2/site"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_c5e65cce2954fdb7177ac0a8e0b76f_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_c5e65cce2954fdb7177ac0a8e0b76f_v2_3_7_9", json_data
+        )
 
-    def get_site_count_v2(self,
-                          id=None,
-                          headers=None,
-                          **request_parameters):
+    def get_site_count_v2(self, id=None, headers=None, **request_parameters):
         """Get the site count of the specified site's sub-hierarchy (inclusive of the provided site) .
 
         Args:
@@ -4133,19 +3971,16 @@ class Sites(object):
         check_type(headers, dict)
         check_type(id, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'id':
-                id,
+            "id": id,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -4153,15 +3988,18 @@ class Sites(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v2/site/count')
+        e_url = "/dna/intent/api/v2/site/count"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_b10ff66e5568ebe6d41faeeabda22_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_b10ff66e5568ebe6d41faeeabda22_v2_3_7_9", json_data
+        )
+
 
 # Alias Functions
-

@@ -23,9 +23,7 @@ SOFTWARE.
 """
 
 
-
 from builtins import *
-
 
 
 from ...restsession import RestSession
@@ -66,11 +64,13 @@ class Compliance(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def get_compliance_status_v1(self,
-                                 compliance_status=None,
-                                 device_uuid=None,
-                                 headers=None,
-                                 **request_parameters):
+    def get_compliance_status_v1(
+        self,
+        compliance_status=None,
+        device_uuid=None,
+        headers=None,
+        **request_parameters
+    ):
         """Return compliance status of device(s). .
 
         Args:
@@ -98,21 +98,17 @@ class Compliance(object):
         check_type(compliance_status, str)
         check_type(device_uuid, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'complianceStatus':
-                compliance_status,
-            'deviceUuid':
-                device_uuid,
+            "complianceStatus": compliance_status,
+            "deviceUuid": device_uuid,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -120,24 +116,29 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/compliance')
+        e_url = "/dna/intent/api/v1/compliance"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_a1de7ff46fa5da09c5051c06ad07f2c_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_a1de7ff46fa5da09c5051c06ad07f2c_v2_3_7_6", json_data
+        )
 
-    def run_compliance_v1(self,
-                          categories=None,
-                          deviceUuids=None,
-                          triggerFull=None,
-                          headers=None,
-                          payload=None,
-                          active_validation=True,
-                          **request_parameters):
+    def run_compliance_v1(
+        self,
+        categories=None,
+        deviceUuids=None,
+        triggerFull=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Run compliance check for device(s). .
 
         Args:
@@ -171,33 +172,27 @@ class Compliance(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'triggerFull':
-                triggerFull,
-            'categories':
-                categories,
-            'deviceUuids':
-                deviceUuids,
+            "triggerFull": triggerFull,
+            "categories": categories,
+            "deviceUuids": deviceUuids,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_a0a8d545698d1d59a9be90e51_v2_3_7_6')\
-                .validate(_payload)
+            self._request_validator("jsd_a0a8d545698d1d59a9be90e51_v2_3_7_6").validate(
+                _payload
+            )
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -205,22 +200,22 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/compliance/')
+        e_url = "/dna/intent/api/v1/compliance/"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_a0a8d545698d1d59a9be90e51_v2_3_7_6', json_data)
+        return self._object_factory("bpm_a0a8d545698d1d59a9be90e51_v2_3_7_6", json_data)
 
-    def get_compliance_status_count_v1(self,
-                                       compliance_status=None,
-                                       headers=None,
-                                       **request_parameters):
+    def get_compliance_status_count_v1(
+        self, compliance_status=None, headers=None, **request_parameters
+    ):
         """Return Compliance Status Count .
 
         Args:
@@ -246,19 +241,16 @@ class Compliance(object):
         check_type(headers, dict)
         check_type(compliance_status, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'complianceStatus':
-                compliance_status,
+            "complianceStatus": compliance_status,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -266,24 +258,29 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/compliance/count')
+        e_url = "/dna/intent/api/v1/compliance/count"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_c37ce8136584f9e2ed471fc896ef9_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_c37ce8136584f9e2ed471fc896ef9_v2_3_7_6", json_data
+        )
 
-    def get_compliance_detail_v1(self,
-                                 compliance_status=None,
-                                 compliance_type=None,
-                                 device_uuid=None,
-                                 limit=None,
-                                 offset=None,
-                                 headers=None,
-                                 **request_parameters):
+    def get_compliance_detail_v1(
+        self,
+        compliance_status=None,
+        compliance_type=None,
+        device_uuid=None,
+        limit=None,
+        offset=None,
+        headers=None,
+        **request_parameters
+    ):
         """Return Compliance Detail  .
 
         Args:
@@ -319,27 +316,20 @@ class Compliance(object):
         check_type(offset, int)
         check_type(limit, int)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'complianceType':
-                compliance_type,
-            'complianceStatus':
-                compliance_status,
-            'deviceUuid':
-                device_uuid,
-            'offset':
-                offset,
-            'limit':
-                limit,
+            "complianceType": compliance_type,
+            "complianceStatus": compliance_status,
+            "deviceUuid": device_uuid,
+            "offset": offset,
+            "limit": limit,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -347,21 +337,26 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/compliance/detail')
+        e_url = "/dna/intent/api/v1/compliance/detail"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_adeaeb8157da972efb7b91e1e2cb_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_adeaeb8157da972efb7b91e1e2cb_v2_3_7_6", json_data
+        )
 
-    def get_compliance_detail_count_v1(self,
-                                       compliance_status=None,
-                                       compliance_type=None,
-                                       headers=None,
-                                       **request_parameters):
+    def get_compliance_detail_count_v1(
+        self,
+        compliance_status=None,
+        compliance_type=None,
+        headers=None,
+        **request_parameters
+    ):
         """Return  Compliance Count Detail .
 
         Args:
@@ -391,21 +386,17 @@ class Compliance(object):
         check_type(compliance_type, str)
         check_type(compliance_status, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'complianceType':
-                compliance_type,
-            'complianceStatus':
-                compliance_status,
+            "complianceType": compliance_type,
+            "complianceStatus": compliance_status,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -413,20 +404,20 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/compliance/detail/count')
+        e_url = "/dna/intent/api/v1/compliance/detail/count"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_d3d38fed534f5aeaa80f5a8c63694708_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_d3d38fed534f5aeaa80f5a8c63694708_v2_3_7_6", json_data
+        )
 
-    def compliance_remediation_v1(self,
-                                  id,
-                                  headers=None,
-                                  **request_parameters):
+    def compliance_remediation_v1(self, id, headers=None, **request_parameters):
         """Remediates configuration compliance issues. Compliance issues related to 'Routing', 'HA Remediation', 'Software
         Image', 'Securities Advisories', 'SD-Access Unsupported Configuration', 'Workflow', etc. will not be
         addressed by this API. Warning: Fixing compliance mismatches could result in a possible network flap. .
@@ -450,23 +441,19 @@ class Compliance(object):
             https://developer.cisco.com/docs/dna-center/#!compliance-remediation
         """
         check_type(headers, dict)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
 
         with_custom_headers = False
@@ -475,21 +462,25 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/compliance/networkDevices/{id}/issues'
-                 + '/remediation/provision')
+        e_url = (
+            "/dna/intent/api/v1/compliance/networkDevices/{id}/issues"
+            + "/remediation/provision"
+        )
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.post(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_a233477d86a459eab3c5e9352c1c9d3e_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_a233477d86a459eab3c5e9352c1c9d3e_v2_3_7_6", json_data
+        )
 
-    def device_compliance_status_v1(self,
-                                    device_uuid,
-                                    headers=None,
-                                    **request_parameters):
+    def device_compliance_status_v1(
+        self, device_uuid, headers=None, **request_parameters
+    ):
         """Return compliance status of a device. .
 
         Args:
@@ -511,20 +502,17 @@ class Compliance(object):
             https://developer.cisco.com/docs/dna-center/#!device-compliance-status
         """
         check_type(headers, dict)
-        check_type(device_uuid, str,
-                   may_be_none=False)
+        check_type(device_uuid, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'deviceUuid': device_uuid,
+            "deviceUuid": device_uuid,
         }
 
         with_custom_headers = False
@@ -533,23 +521,28 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/compliance/{deviceUuid}')
+        e_url = "/dna/intent/api/v1/compliance/{deviceUuid}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_da8e5cdd435db0b1da1684be8f15b8_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_da8e5cdd435db0b1da1684be8f15b8_v2_3_7_6", json_data
+        )
 
-    def compliance_details_of_device_v1(self,
-                                        device_uuid,
-                                        category=None,
-                                        compliance_type=None,
-                                        diff_list=None,
-                                        headers=None,
-                                        **request_parameters):
+    def compliance_details_of_device_v1(
+        self,
+        device_uuid,
+        category=None,
+        compliance_type=None,
+        diff_list=None,
+        headers=None,
+        **request_parameters
+    ):
         """Return compliance detailed report for a device. .
 
         Args:
@@ -580,26 +573,21 @@ class Compliance(object):
         check_type(category, str)
         check_type(compliance_type, str)
         check_type(diff_list, bool)
-        check_type(device_uuid, str,
-                   may_be_none=False)
+        check_type(device_uuid, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'category':
-                category,
-            'complianceType':
-                compliance_type,
-            'diffList':
-                diff_list,
+            "category": category,
+            "complianceType": compliance_type,
+            "diffList": diff_list,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'deviceUuid': device_uuid,
+            "deviceUuid": device_uuid,
         }
 
         with_custom_headers = False
@@ -608,20 +596,22 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/compliance/{deviceUuid}/detail')
+        e_url = "/dna/intent/api/v1/compliance/{deviceUuid}/detail"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_b70e1b6a2f51a59690669a4b2fd3f0_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_b70e1b6a2f51a59690669a4b2fd3f0_v2_3_7_6", json_data
+        )
 
-    def get_config_task_details_v1(self,
-                                   parent_task_id,
-                                   headers=None,
-                                   **request_parameters):
+    def get_config_task_details_v1(
+        self, parent_task_id, headers=None, **request_parameters
+    ):
         """Returns a config task result details by specified id .
 
         Args:
@@ -643,22 +633,18 @@ class Compliance(object):
             https://developer.cisco.com/docs/dna-center/#!get-config-task-details
         """
         check_type(headers, dict)
-        check_type(parent_task_id, str,
-                   may_be_none=False)
+        check_type(parent_task_id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'parentTaskId':
-                parent_task_id,
+            "parentTaskId": parent_task_id,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -666,22 +652,27 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/network-device-config/task')
+        e_url = "/dna/intent/api/v1/network-device-config/task"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_cb73c1c44665d1ebbe934dd380f4f5e_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_cb73c1c44665d1ebbe934dd380f4f5e_v2_3_7_6", json_data
+        )
 
-    def commit_device_configuration_v1(self,
-                                       deviceId=None,
-                                       headers=None,
-                                       payload=None,
-                                       active_validation=True,
-                                       **request_parameters):
+    def commit_device_configuration_v1(
+        self,
+        deviceId=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """This operation would commit device running configuration to startup by issuing "write memory" to device .
 
         Args:
@@ -709,29 +700,25 @@ class Compliance(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'deviceId':
-                deviceId,
+            "deviceId": deviceId,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_ba40975123ed50daa2f9f599cdf2d911_v2_3_7_6')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_ba40975123ed50daa2f9f599cdf2d911_v2_3_7_6"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -739,26 +726,29 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/network-device-config/write-memory')
+        e_url = "/dna/intent/api/v1/network-device-config/write-memory"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_ba40975123ed50daa2f9f599cdf2d911_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_ba40975123ed50daa2f9f599cdf2d911_v2_3_7_6", json_data
+        )
 
-                
-    
     # Alias Function
-    def get_compliance_detail_count(self,
-                                       compliance_status=None,
-                                       compliance_type=None,
-                                       headers=None,
-                                       **request_parameters):
+    def get_compliance_detail_count(
+        self,
+        compliance_status=None,
+        compliance_type=None,
+        headers=None,
+        **request_parameters
+    ):
         """This function is an alias of get_compliance_detail_count_v1 .
 
         Args:
@@ -775,20 +765,16 @@ class Compliance(object):
 
         Returns:
             This function returns the output of get_compliance_detail_count_v1.
-        """  
+        """
         return self.get_compliance_detail_count_v1(
-                    compliance_status=compliance_status,
-                    compliance_type=compliance_type,
-                    headers=headers,
-                    **request_parameters
+            compliance_status=compliance_status,
+            compliance_type=compliance_type,
+            headers=headers,
+            **request_parameters
         )
-                
-    
+
     # Alias Function
-    def compliance_remediation(self,
-                                  id,
-                                  headers=None,
-                                  **request_parameters):
+    def compliance_remediation(self, id, headers=None, **request_parameters):
         """This function is an alias of compliance_remediation_v1. .
 
         Args:
@@ -800,23 +786,22 @@ class Compliance(object):
 
         Returns:
             This function returns the output of compliance_remediation_v1.
-        """  
+        """
         return self.compliance_remediation_v1(
-                    id=id,
-                    headers=headers,
-                    **request_parameters
+            id=id, headers=headers, **request_parameters
         )
-                
-    
+
     # Alias Function
-    def get_compliance_detail(self,
-                                 compliance_status=None,
-                                 compliance_type=None,
-                                 device_uuid=None,
-                                 limit=None,
-                                 offset=None,
-                                 headers=None,
-                                 **request_parameters):
+    def get_compliance_detail(
+        self,
+        compliance_status=None,
+        compliance_type=None,
+        device_uuid=None,
+        limit=None,
+        offset=None,
+        headers=None,
+        **request_parameters
+    ):
         """This function is an alias of get_compliance_detail_v1  .
 
         Args:
@@ -836,23 +821,21 @@ class Compliance(object):
 
         Returns:
             This function returns the output of get_compliance_detail_v1.
-        """  
+        """
         return self.get_compliance_detail_v1(
-                    compliance_status=compliance_status,
-                    compliance_type=compliance_type,
-                    device_uuid=device_uuid,
-                    limit=limit,
-                    offset=offset,
-                    headers=headers,
-                    **request_parameters
+            compliance_status=compliance_status,
+            compliance_type=compliance_type,
+            device_uuid=device_uuid,
+            limit=limit,
+            offset=offset,
+            headers=headers,
+            **request_parameters
         )
-                
-    
+
     # Alias Function
-    def get_config_task_details(self,
-                                   parent_task_id,
-                                   headers=None,
-                                   **request_parameters):
+    def get_config_task_details(
+        self, parent_task_id, headers=None, **request_parameters
+    ):
         """This function is an alias of get_config_task_details_v1 .
 
         Args:
@@ -864,20 +847,19 @@ class Compliance(object):
 
         Returns:
             This function returns the output of get_config_task_details_v1.
-        """  
+        """
         return self.get_config_task_details_v1(
-                    parent_task_id=parent_task_id,
-                    headers=headers,
-                    **request_parameters
+            parent_task_id=parent_task_id, headers=headers, **request_parameters
         )
-                
-    
+
     # Alias Function
-    def get_compliance_status(self,
-                                 compliance_status=None,
-                                 device_uuid=None,
-                                 headers=None,
-                                 **request_parameters):
+    def get_compliance_status(
+        self,
+        compliance_status=None,
+        device_uuid=None,
+        headers=None,
+        **request_parameters
+    ):
         """This function is an alias of get_compliance_status_v1. .
 
         Args:
@@ -892,20 +874,16 @@ class Compliance(object):
 
         Returns:
             This function returns the output of get_compliance_status_v1.
-        """  
+        """
         return self.get_compliance_status_v1(
-                    compliance_status=compliance_status,
-                    device_uuid=device_uuid,
-                    headers=headers,
-                    **request_parameters
+            compliance_status=compliance_status,
+            device_uuid=device_uuid,
+            headers=headers,
+            **request_parameters
         )
-                
-    
+
     # Alias Function
-    def device_compliance_status(self,
-                                    device_uuid,
-                                    headers=None,
-                                    **request_parameters):
+    def device_compliance_status(self, device_uuid, headers=None, **request_parameters):
         """This function is an alias of device_compliance_status_v1. .
 
         Args:
@@ -919,19 +897,18 @@ class Compliance(object):
             This function returns the output of device_compliance_status_v1.
         """
         return self.device_compliance_status_v1(
-                    device_uuid=device_uuid,
-                    headers=headers,
-                    **request_parameters
+            device_uuid=device_uuid, headers=headers, **request_parameters
         )
-                
-    
+
     # Alias Function
-    def commit_device_configuration(self,
-                                       deviceId=None,
-                                       headers=None,
-                                       payload=None,
-                                       active_validation=True,
-                                       **request_parameters):
+    def commit_device_configuration(
+        self,
+        deviceId=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """This function is an alias of commit_device_configuration_v1 .
 
         Args:
@@ -947,24 +924,25 @@ class Compliance(object):
 
         Returns:
             This function returns the output of commit_device_configuration_v1.
-        """  
+        """
         return self.commit_device_configuration_v1(
-                    deviceId=deviceId,
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
+            deviceId=deviceId,
+            headers=headers,
+            payload=payload,
+            active_validation=active_validation,
+            **request_parameters
         )
-                
-    
+
     # Alias Function
-    def compliance_details_of_device(self,
-                                        device_uuid,
-                                        category=None,
-                                        compliance_type=None,
-                                        diff_list=None,
-                                        headers=None,
-                                        **request_parameters):
+    def compliance_details_of_device(
+        self,
+        device_uuid,
+        category=None,
+        compliance_type=None,
+        diff_list=None,
+        headers=None,
+        **request_parameters
+    ):
         """This function is an alias of compliance_details_of_device_v1. .
 
         Args:
@@ -984,20 +962,18 @@ class Compliance(object):
             This function returns the output of compliance_details_of_device_v1.
         """
         return self.compliance_details_of_device_v1(
-                    device_uuid=device_uuid,
-                    category=category,
-                    compliance_type=compliance_type,
-                    diff_list=diff_list,
-                    headers=headers,
-                    **request_parameters
+            device_uuid=device_uuid,
+            category=category,
+            compliance_type=compliance_type,
+            diff_list=diff_list,
+            headers=headers,
+            **request_parameters
         )
-                
-    
+
     # Alias Function
-    def get_compliance_status_count(self,
-                                       compliance_status=None,
-                                       headers=None,
-                                       **request_parameters):
+    def get_compliance_status_count(
+        self, compliance_status=None, headers=None, **request_parameters
+    ):
         """This function is an alias of get_compliance_status_count_v1 .
 
         Args:
@@ -1011,23 +987,22 @@ class Compliance(object):
 
         Returns:
             This function returns the output of get_compliance_status_count_v1.
-        """  
+        """
         return self.get_compliance_status_count_v1(
-                    compliance_status=compliance_status,
-                    headers=headers,
-                    **request_parameters
+            compliance_status=compliance_status, headers=headers, **request_parameters
         )
-                
-    
+
     # Alias Function
-    def run_compliance(self,
-                          categories=None,
-                          deviceUuids=None,
-                          triggerFull=None,
-                          headers=None,
-                          payload=None,
-                          active_validation=True,
-                          **request_parameters):
+    def run_compliance(
+        self,
+        categories=None,
+        deviceUuids=None,
+        triggerFull=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """This function is an alias of run_compliance_v1. .
 
         Args:
@@ -1049,15 +1024,13 @@ class Compliance(object):
 
         Returns:
             This function returns the output of run_compliance_v1.
-        """  
+        """
         return self.run_compliance_v1(
-                    categories=categories,
-                    deviceUuids=deviceUuids,
-                    triggerFull=triggerFull,
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
+            categories=categories,
+            deviceUuids=deviceUuids,
+            triggerFull=triggerFull,
+            headers=headers,
+            payload=payload,
+            active_validation=active_validation,
+            **request_parameters
         )
-
-

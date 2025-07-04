@@ -64,15 +64,17 @@ class FabricWireless(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def add_ssid_to_ip_pool_mapping(self,
-                                    scalableGroupName=None,
-                                    siteNameHierarchy=None,
-                                    ssidNames=None,
-                                    vlanName=None,
-                                    headers=None,
-                                    payload=None,
-                                    active_validation=True,
-                                    **request_parameters):
+    def add_ssid_to_ip_pool_mapping(
+        self,
+        scalableGroupName=None,
+        siteNameHierarchy=None,
+        ssidNames=None,
+        vlanName=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Add SSID to IP Pool Mapping. .
 
         Args:
@@ -104,35 +106,28 @@ class FabricWireless(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if '__persistbapioutput' in headers:
-                check_type(headers.get('__persistbapioutput'),
-                           str)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "__persistbapioutput" in headers:
+                check_type(headers.get("__persistbapioutput"), str)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'vlanName':
-                vlanName,
-            'scalableGroupName':
-                scalableGroupName,
-            'ssidNames':
-                ssidNames,
-            'siteNameHierarchy':
-                siteNameHierarchy,
+            "vlanName": vlanName,
+            "scalableGroupName": scalableGroupName,
+            "ssidNames": ssidNames,
+            "siteNameHierarchy": siteNameHierarchy,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_ad96e712f4525a128368b1bfe3afc21c_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_ad96e712f4525a128368b1bfe3afc21c_v2_3_5_3"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -140,28 +135,32 @@ class FabricWireless(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/business/sda/hostonboarding/ssid-'
-                 + 'ippool')
+        e_url = "/dna/intent/api/v1/business/sda/hostonboarding/ssid-" + "ippool"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_ad96e712f4525a128368b1bfe3afc21c_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_ad96e712f4525a128368b1bfe3afc21c_v2_3_5_3", json_data
+        )
 
-    def update_ssid_to_ip_pool_mapping(self,
-                                       scalableGroupName=None,
-                                       siteNameHierarchy=None,
-                                       ssidNames=None,
-                                       vlanName=None,
-                                       headers=None,
-                                       payload=None,
-                                       active_validation=True,
-                                       **request_parameters):
+    def update_ssid_to_ip_pool_mapping(
+        self,
+        scalableGroupName=None,
+        siteNameHierarchy=None,
+        ssidNames=None,
+        vlanName=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Update SSID to IP Pool Mapping. .
 
         Args:
@@ -192,32 +191,26 @@ class FabricWireless(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'vlanName':
-                vlanName,
-            'scalableGroupName':
-                scalableGroupName,
-            'ssidNames':
-                ssidNames,
-            'siteNameHierarchy':
-                siteNameHierarchy,
+            "vlanName": vlanName,
+            "scalableGroupName": scalableGroupName,
+            "ssidNames": ssidNames,
+            "siteNameHierarchy": siteNameHierarchy,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_f90ae8599c8a21c98b7a1ca804_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator("jsd_f90ae8599c8a21c98b7a1ca804_v2_3_5_3").validate(
+                _payload
+            )
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -225,24 +218,24 @@ class FabricWireless(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/business/sda/hostonboarding/ssid-'
-                 + 'ippool')
+        e_url = "/dna/intent/api/v1/business/sda/hostonboarding/ssid-" + "ippool"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload,
-                                          headers=_headers)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_f90ae8599c8a21c98b7a1ca804_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_f90ae8599c8a21c98b7a1ca804_v2_3_5_3", json_data
+        )
 
-    def get_ssid_to_ip_pool_mapping(self,
-                                    site_name_hierarchy,
-                                    vlan_name,
-                                    headers=None,
-                                    **request_parameters):
+    def get_ssid_to_ip_pool_mapping(
+        self, site_name_hierarchy, vlan_name, headers=None, **request_parameters
+    ):
         """Get SSID to IP Pool Mapping .
 
         Args:
@@ -265,26 +258,20 @@ class FabricWireless(object):
             https://developer.cisco.com/docs/dna-center/#!get-ssid-to-ip-pool-mapping
         """
         check_type(headers, dict)
-        check_type(vlan_name, str,
-                   may_be_none=False)
-        check_type(site_name_hierarchy, str,
-                   may_be_none=False)
+        check_type(vlan_name, str, may_be_none=False)
+        check_type(site_name_hierarchy, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'vlanName':
-                vlan_name,
-            'siteNameHierarchy':
-                site_name_hierarchy,
+            "vlanName": vlan_name,
+            "siteNameHierarchy": site_name_hierarchy,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -292,21 +279,22 @@ class FabricWireless(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/business/sda/hostonboarding/ssid-'
-                 + 'ippool')
+        e_url = "/dna/intent/api/v1/business/sda/hostonboarding/ssid-" + "ippool"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_b0f6a0410705c75a61cdc51cc96c53f_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_b0f6a0410705c75a61cdc51cc96c53f_v2_3_5_3", json_data
+        )
 
-    def remove_w_l_c_from_fabric_domain(self,
-                                        device_ipaddress,
-                                        headers=None,
-                                        **request_parameters):
+    def remove_w_l_c_from_fabric_domain(
+        self, device_ipaddress, headers=None, **request_parameters
+    ):
         """Remove WLC from Fabric Domain .
 
         Args:
@@ -328,25 +316,20 @@ class FabricWireless(object):
             https://developer.cisco.com/docs/dna-center/#!remove-w-l-c-from-fabric-domain
         """
         check_type(headers, dict)
-        check_type(device_ipaddress, str,
-                   may_be_none=False)
+        check_type(device_ipaddress, str, may_be_none=False)
         if headers is not None:
-            if '__persistbapioutput' in headers:
-                check_type(headers.get('__persistbapioutput'),
-                           str)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "__persistbapioutput" in headers:
+                check_type(headers.get("__persistbapioutput"), str)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'deviceIPAddress':
-                device_ipaddress,
+            "deviceIPAddress": device_ipaddress,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -354,23 +337,28 @@ class FabricWireless(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/business/sda/wireless-controller')
+        e_url = "/dna/intent/api/v1/business/sda/wireless-controller"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.delete(endpoint_full_url, params=_params,
-                                             headers=_headers)
+            json_data = self._session.delete(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.delete(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_bb706025a9cb183ce7a60e0b5df_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_bb706025a9cb183ce7a60e0b5df_v2_3_5_3", json_data
+        )
 
-    def add_w_l_c_to_fabric_domain(self,
-                                   deviceName=None,
-                                   siteNameHierarchy=None,
-                                   headers=None,
-                                   payload=None,
-                                   active_validation=True,
-                                   **request_parameters):
+    def add_w_l_c_to_fabric_domain(
+        self,
+        deviceName=None,
+        siteNameHierarchy=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Add WLC to Fabric Domain .
 
         Args:
@@ -399,28 +387,24 @@ class FabricWireless(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'deviceName':
-                deviceName,
-            'siteNameHierarchy':
-                siteNameHierarchy,
+            "deviceName": deviceName,
+            "siteNameHierarchy": siteNameHierarchy,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_c4befbd77a452a9b7873ffc360a1f20_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_c4befbd77a452a9b7873ffc360a1f20_v2_3_5_3"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -428,14 +412,17 @@ class FabricWireless(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/business/sda/wireless-controller')
+        e_url = "/dna/intent/api/v1/business/sda/wireless-controller"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_c4befbd77a452a9b7873ffc360a1f20_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_c4befbd77a452a9b7873ffc360a1f20_v2_3_5_3", json_data
+        )

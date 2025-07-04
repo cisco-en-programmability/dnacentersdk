@@ -26,18 +26,18 @@ from fastjsonschema.exceptions import JsonSchemaException
 from dnacentersdk.exceptions import MalformedRequest
 from tests.environment import DNA_CENTER_VERSION
 
-pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '2.3.5.3', reason='version does not match')
+pytestmark = pytest.mark.skipif(
+    DNA_CENTER_VERSION != "2.3.5.3", reason="version does not match"
+)
 
 
 def is_valid_get_business_api_execution_details(json_schema_validate, obj):
-    json_schema_validate('jsd_0ffc19ddea705526b7d9db01baf4997e_v2_3_5_3').validate(obj)
+    json_schema_validate("jsd_0ffc19ddea705526b7d9db01baf4997e_v2_3_5_3").validate(obj)
     return True
 
 
 def get_business_api_execution_details(api):
-    endpoint_result = api.task.get_business_api_execution_details(
-        execution_id='string'
-    )
+    endpoint_result = api.task.get_business_api_execution_details(execution_id="string")
     return endpoint_result
 
 
@@ -45,8 +45,7 @@ def get_business_api_execution_details(api):
 def test_get_business_api_execution_details(api, validator):
     try:
         assert is_valid_get_business_api_execution_details(
-            validator,
-            get_business_api_execution_details(api)
+            validator, get_business_api_execution_details(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -55,9 +54,7 @@ def test_get_business_api_execution_details(api, validator):
 
 
 def get_business_api_execution_details_default_val(api):
-    endpoint_result = api.task.get_business_api_execution_details(
-        execution_id='string'
-    )
+    endpoint_result = api.task.get_business_api_execution_details(execution_id="string")
     return endpoint_result
 
 
@@ -65,8 +62,7 @@ def get_business_api_execution_details_default_val(api):
 def test_get_business_api_execution_details_default_val(api, validator):
     try:
         assert is_valid_get_business_api_execution_details(
-            validator,
-            get_business_api_execution_details_default_val(api)
+            validator, get_business_api_execution_details_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -74,26 +70,26 @@ def test_get_business_api_execution_details_default_val(api, validator):
 
 
 def is_valid_get_tasks(json_schema_validate, obj):
-    json_schema_validate('jsd_75ff485556f6504d8443789f42098be7_v2_3_5_3').validate(obj)
+    json_schema_validate("jsd_75ff485556f6504d8443789f42098be7_v2_3_5_3").validate(obj)
     return True
 
 
 def get_tasks(api):
     endpoint_result = api.task.get_tasks(
-        data='string',
-        end_time='string',
-        error_code='string',
-        failure_reason='string',
-        is_error='string',
+        data="string",
+        end_time="string",
+        error_code="string",
+        failure_reason="string",
+        is_error="string",
         limit=0,
         offset=0,
-        order='string',
-        parent_id='string',
-        progress='string',
-        service_type='string',
-        sort_by='string',
-        start_time='string',
-        username='string'
+        order="string",
+        parent_id="string",
+        progress="string",
+        service_type="string",
+        sort_by="string",
+        start_time="string",
+        username="string",
     )
     return endpoint_result
 
@@ -101,10 +97,7 @@ def get_tasks(api):
 @pytest.mark.task
 def test_get_tasks(api, validator):
     try:
-        assert is_valid_get_tasks(
-            validator,
-            get_tasks(api)
-        )
+        assert is_valid_get_tasks(validator, get_tasks(api))
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
             print(original_e)
@@ -126,7 +119,7 @@ def get_tasks_default_val(api):
         service_type=None,
         sort_by=None,
         start_time=None,
-        username=None
+        username=None,
     )
     return endpoint_result
 
@@ -134,32 +127,29 @@ def get_tasks_default_val(api):
 @pytest.mark.task
 def test_get_tasks_default_val(api, validator):
     try:
-        assert is_valid_get_tasks(
-            validator,
-            get_tasks_default_val(api)
-        )
+        assert is_valid_get_tasks(validator, get_tasks_default_val(api))
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
 def is_valid_get_task_count(json_schema_validate, obj):
-    json_schema_validate('jsd_8d0586946be75e0f9f2c170217d45a28_v2_3_5_3').validate(obj)
+    json_schema_validate("jsd_8d0586946be75e0f9f2c170217d45a28_v2_3_5_3").validate(obj)
     return True
 
 
 def get_task_count(api):
     endpoint_result = api.task.get_task_count(
-        data='string',
-        end_time='string',
-        error_code='string',
-        failure_reason='string',
-        is_error='string',
-        parent_id='string',
-        progress='string',
-        service_type='string',
-        start_time='string',
-        username='string'
+        data="string",
+        end_time="string",
+        error_code="string",
+        failure_reason="string",
+        is_error="string",
+        parent_id="string",
+        progress="string",
+        service_type="string",
+        start_time="string",
+        username="string",
     )
     return endpoint_result
 
@@ -167,10 +157,7 @@ def get_task_count(api):
 @pytest.mark.task
 def test_get_task_count(api, validator):
     try:
-        assert is_valid_get_task_count(
-            validator,
-            get_task_count(api)
-        )
+        assert is_valid_get_task_count(validator, get_task_count(api))
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
             print(original_e)
@@ -188,7 +175,7 @@ def get_task_count_default_val(api):
         progress=None,
         service_type=None,
         start_time=None,
-        username=None
+        username=None,
     )
     return endpoint_result
 
@@ -196,25 +183,20 @@ def get_task_count_default_val(api):
 @pytest.mark.task
 def test_get_task_count_default_val(api, validator):
     try:
-        assert is_valid_get_task_count(
-            validator,
-            get_task_count_default_val(api)
-        )
+        assert is_valid_get_task_count(validator, get_task_count_default_val(api))
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
 def is_valid_get_task_by_operationid(json_schema_validate, obj):
-    json_schema_validate('jsd_d95c21e41dce5a9dbee07d33eefef2b2_v2_3_5_3').validate(obj)
+    json_schema_validate("jsd_d95c21e41dce5a9dbee07d33eefef2b2_v2_3_5_3").validate(obj)
     return True
 
 
 def get_task_by_operationid(api):
     endpoint_result = api.task.get_task_by_operationid(
-        limit=0,
-        offset=0,
-        operation_id='string'
+        limit=0, offset=0, operation_id="string"
     )
     return endpoint_result
 
@@ -222,10 +204,7 @@ def get_task_by_operationid(api):
 @pytest.mark.task
 def test_get_task_by_operationid(api, validator):
     try:
-        assert is_valid_get_task_by_operationid(
-            validator,
-            get_task_by_operationid(api)
-        )
+        assert is_valid_get_task_by_operationid(validator, get_task_by_operationid(api))
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
             print(original_e)
@@ -234,9 +213,7 @@ def test_get_task_by_operationid(api, validator):
 
 def get_task_by_operationid_default_val(api):
     endpoint_result = api.task.get_task_by_operationid(
-        limit=0,
-        offset=0,
-        operation_id='string'
+        limit=0, offset=0, operation_id="string"
     )
     return endpoint_result
 
@@ -245,8 +222,7 @@ def get_task_by_operationid_default_val(api):
 def test_get_task_by_operationid_default_val(api, validator):
     try:
         assert is_valid_get_task_by_operationid(
-            validator,
-            get_task_by_operationid_default_val(api)
+            validator, get_task_by_operationid_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -254,24 +230,19 @@ def test_get_task_by_operationid_default_val(api, validator):
 
 
 def is_valid_get_task_by_id(json_schema_validate, obj):
-    json_schema_validate('jsd_8009857899a75ba5a6bae1d568700bd3_v2_3_5_3').validate(obj)
+    json_schema_validate("jsd_8009857899a75ba5a6bae1d568700bd3_v2_3_5_3").validate(obj)
     return True
 
 
 def get_task_by_id(api):
-    endpoint_result = api.task.get_task_by_id(
-        task_id='string'
-    )
+    endpoint_result = api.task.get_task_by_id(task_id="string")
     return endpoint_result
 
 
 @pytest.mark.task
 def test_get_task_by_id(api, validator):
     try:
-        assert is_valid_get_task_by_id(
-            validator,
-            get_task_by_id(api)
-        )
+        assert is_valid_get_task_by_id(validator, get_task_by_id(api))
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
             print(original_e)
@@ -279,43 +250,33 @@ def test_get_task_by_id(api, validator):
 
 
 def get_task_by_id_default_val(api):
-    endpoint_result = api.task.get_task_by_id(
-        task_id='string'
-    )
+    endpoint_result = api.task.get_task_by_id(task_id="string")
     return endpoint_result
 
 
 @pytest.mark.task
 def test_get_task_by_id_default_val(api, validator):
     try:
-        assert is_valid_get_task_by_id(
-            validator,
-            get_task_by_id_default_val(api)
-        )
+        assert is_valid_get_task_by_id(validator, get_task_by_id_default_val(api))
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
 def is_valid_get_task_tree(json_schema_validate, obj):
-    json_schema_validate('jsd_8fa2865e229b536aacd59585a1d29704_v2_3_5_3').validate(obj)
+    json_schema_validate("jsd_8fa2865e229b536aacd59585a1d29704_v2_3_5_3").validate(obj)
     return True
 
 
 def get_task_tree(api):
-    endpoint_result = api.task.get_task_tree(
-        task_id='string'
-    )
+    endpoint_result = api.task.get_task_tree(task_id="string")
     return endpoint_result
 
 
 @pytest.mark.task
 def test_get_task_tree(api, validator):
     try:
-        assert is_valid_get_task_tree(
-            validator,
-            get_task_tree(api)
-        )
+        assert is_valid_get_task_tree(validator, get_task_tree(api))
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
             print(original_e)
@@ -323,19 +284,14 @@ def test_get_task_tree(api, validator):
 
 
 def get_task_tree_default_val(api):
-    endpoint_result = api.task.get_task_tree(
-        task_id='string'
-    )
+    endpoint_result = api.task.get_task_tree(task_id="string")
     return endpoint_result
 
 
 @pytest.mark.task
 def test_get_task_tree_default_val(api, validator):
     try:
-        assert is_valid_get_task_tree(
-            validator,
-            get_task_tree_default_val(api)
-        )
+        assert is_valid_get_task_tree(validator, get_task_tree_default_val(api))
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e

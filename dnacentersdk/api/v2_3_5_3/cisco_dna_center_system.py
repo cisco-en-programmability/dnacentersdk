@@ -64,12 +64,14 @@ class CiscoDnaCenterSystem(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def authorize_device(self,
-                         deviceIdList=None,
-                         headers=None,
-                         payload=None,
-                         active_validation=True,
-                         **request_parameters):
+    def authorize_device(
+        self,
+        deviceIdList=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Authorizes one of more devices. A device can only be authorized if Authorization is set in Device Settings. .
 
         Args:
@@ -97,29 +99,25 @@ class CiscoDnaCenterSystem(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'deviceIdList':
-                deviceIdList,
+            "deviceIdList": deviceIdList,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_d9227adc5f02b7cd264af7255d19_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_d9227adc5f02b7cd264af7255d19_v2_3_5_3"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -127,14 +125,17 @@ class CiscoDnaCenterSystem(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/api/v1/onboarding/pnp-device/authorize')
+        e_url = "/api/v1/onboarding/pnp-device/authorize"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_d9227adc5f02b7cd264af7255d19_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_d9227adc5f02b7cd264af7255d19_v2_3_5_3", json_data
+        )

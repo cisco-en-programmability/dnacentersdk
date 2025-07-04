@@ -23,9 +23,7 @@ SOFTWARE.
 """
 
 
-
 from builtins import *
-
 
 
 from ...restsession import RestSession
@@ -66,9 +64,7 @@ class SecurityAdvisories(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def get_advisories_list_v1(self,
-                               headers=None,
-                               **request_parameters):
+    def get_advisories_list_v1(self, headers=None, **request_parameters):
         """Retrieves list of advisories on the network .
 
         Args:
@@ -90,17 +86,14 @@ class SecurityAdvisories(object):
         """
         check_type(headers, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -108,19 +101,20 @@ class SecurityAdvisories(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/security-advisory/advisory')
+        e_url = "/dna/intent/api/v1/security-advisory/advisory"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_e6317a46c835f0881f08071959bb026_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_e6317a46c835f0881f08071959bb026_v2_3_7_6", json_data
+        )
 
-    def get_advisories_summary_v1(self,
-                                  headers=None,
-                                  **request_parameters):
+    def get_advisories_summary_v1(self, headers=None, **request_parameters):
         """Retrieves summary of advisories on the network. .
 
         Args:
@@ -142,17 +136,14 @@ class SecurityAdvisories(object):
         """
         check_type(headers, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -160,20 +151,22 @@ class SecurityAdvisories(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/security-advisory/advisory/aggregate')
+        e_url = "/dna/intent/api/v1/security-advisory/advisory/aggregate"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_b24a5127510a8070b0f893494543_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_b24a5127510a8070b0f893494543_v2_3_7_6", json_data
+        )
 
-    def get_devices_per_advisory_v1(self,
-                                    advisory_id,
-                                    headers=None,
-                                    **request_parameters):
+    def get_devices_per_advisory_v1(
+        self, advisory_id, headers=None, **request_parameters
+    ):
         """Retrieves list of devices for an advisory .
 
         Args:
@@ -195,20 +188,17 @@ class SecurityAdvisories(object):
             https://developer.cisco.com/docs/dna-center/#!get-devices-per-advisory
         """
         check_type(headers, dict)
-        check_type(advisory_id, str,
-                   may_be_none=False)
+        check_type(advisory_id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'advisoryId': advisory_id,
+            "advisoryId": advisory_id,
         }
 
         with_custom_headers = False
@@ -217,21 +207,22 @@ class SecurityAdvisories(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/security-'
-                 + 'advisory/advisory/{advisoryId}/device')
+        e_url = "/dna/intent/api/v1/security-" + "advisory/advisory/{advisoryId}/device"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_cbdf8887b29b5f0ea87113d2ae17d6df_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_cbdf8887b29b5f0ea87113d2ae17d6df_v2_3_7_6", json_data
+        )
 
-    def get_advisory_device_detail_v1(self,
-                                      device_id,
-                                      headers=None,
-                                      **request_parameters):
+    def get_advisory_device_detail_v1(
+        self, device_id, headers=None, **request_parameters
+    ):
         """Retrieves advisory device details for a device .
 
         Args:
@@ -253,20 +244,17 @@ class SecurityAdvisories(object):
             https://developer.cisco.com/docs/dna-center/#!get-advisory-device-detail
         """
         check_type(headers, dict)
-        check_type(device_id, str,
-                   may_be_none=False)
+        check_type(device_id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'deviceId': device_id,
+            "deviceId": device_id,
         }
 
         with_custom_headers = False
@@ -275,20 +263,22 @@ class SecurityAdvisories(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/security-advisory/device/{deviceId}')
+        e_url = "/dna/intent/api/v1/security-advisory/device/{deviceId}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_b1c03688485b44b1547c428a887c5d_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_b1c03688485b44b1547c428a887c5d_v2_3_7_6", json_data
+        )
 
-    def get_advisories_per_device_v1(self,
-                                     device_id,
-                                     headers=None,
-                                     **request_parameters):
+    def get_advisories_per_device_v1(
+        self, device_id, headers=None, **request_parameters
+    ):
         """Retrieves list of advisories for a device .
 
         Args:
@@ -310,20 +300,17 @@ class SecurityAdvisories(object):
             https://developer.cisco.com/docs/dna-center/#!get-advisories-per-device
         """
         check_type(headers, dict)
-        check_type(device_id, str,
-                   may_be_none=False)
+        check_type(device_id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'deviceId': device_id,
+            "deviceId": device_id,
         }
 
         with_custom_headers = False
@@ -332,24 +319,22 @@ class SecurityAdvisories(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/security-'
-                 + 'advisory/device/{deviceId}/advisory')
+        e_url = "/dna/intent/api/v1/security-" + "advisory/device/{deviceId}/advisory"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_cf75923b0c6575ead874f9d404d7355_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_cf75923b0c6575ead874f9d404d7355_v2_3_7_6", json_data
+        )
 
-                
-    
     # Alias Function
-    def get_advisories_summary(self,
-                                  headers=None,
-                                  **request_parameters):
-        """ This function is an alias of get_advisories_summary_v1 .
+    def get_advisories_summary(self, headers=None, **request_parameters):
+        """This function is an alias of get_advisories_summary_v1 .
         Args:
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -359,18 +344,11 @@ class SecurityAdvisories(object):
         Returns:
             This function returns the output of get_advisories_summary_v1 .
         """
-        return self.get_advisories_summary_v1(
-                    headers=headers,
-                    **request_parameters
-        )
-                
-    
+        return self.get_advisories_summary_v1(headers=headers, **request_parameters)
+
     # Alias Function
-    def get_advisory_device_detail(self,
-                                      device_id,
-                                      headers=None,
-                                      **request_parameters):
-        """ This function is an alias of get_advisory_device_detail_v1 .
+    def get_advisory_device_detail(self, device_id, headers=None, **request_parameters):
+        """This function is an alias of get_advisory_device_detail_v1 .
         Args:
             device_id(basestring): deviceId path parameter. Device instance UUID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -380,20 +358,14 @@ class SecurityAdvisories(object):
 
         Returns:
             This function returns the output of get_advisory_device_detail_v1 .
-        """ 
+        """
         return self.get_advisory_device_detail_v1(
-                    device_id=device_id,
-                    headers=headers,
-                    **request_parameters
+            device_id=device_id, headers=headers, **request_parameters
         )
-                
-    
+
     # Alias Function
-    def get_devices_per_advisory(self,
-                                    advisory_id,
-                                    headers=None,
-                                    **request_parameters):
-        """ This function is an alias of get_devices_per_advisory_v1 .
+    def get_devices_per_advisory(self, advisory_id, headers=None, **request_parameters):
+        """This function is an alias of get_devices_per_advisory_v1 .
         Args:
             advisory_id(basestring): advisoryId path parameter. Advisory ID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -403,20 +375,14 @@ class SecurityAdvisories(object):
 
         Returns:
             This function returns the output of get_devices_per_advisory_v1 .
-        """ 
+        """
         return self.get_devices_per_advisory_v1(
-                    advisory_id=advisory_id,
-                    headers=headers,
-                    **request_parameters
+            advisory_id=advisory_id, headers=headers, **request_parameters
         )
-                
-    
+
     # Alias Function
-    def get_advisories_per_device(self,
-                                     device_id,
-                                     headers=None,
-                                     **request_parameters):
-        """ This function is an alias of get_advisories_per_device_v1 .
+    def get_advisories_per_device(self, device_id, headers=None, **request_parameters):
+        """This function is an alias of get_advisories_per_device_v1 .
         Args:
             device_id(basestring): deviceId path parameter. Device instance UUID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -426,19 +392,14 @@ class SecurityAdvisories(object):
 
         Returns:
             This function returns the output of get_advisories_per_device_v1 .
-        """ 
+        """
         return self.get_advisories_per_device_v1(
-                    device_id=device_id,
-                    headers=headers,
-                    **request_parameters
+            device_id=device_id, headers=headers, **request_parameters
         )
-                
-    
+
     # Alias Function
-    def get_advisories_list(self,
-                               headers=None,
-                               **request_parameters):
-        """ This function is an alias of get_advisories_list_v1 .
+    def get_advisories_list(self, headers=None, **request_parameters):
+        """This function is an alias of get_advisories_list_v1 .
         Args:
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -448,10 +409,4 @@ class SecurityAdvisories(object):
         Returns:
             This function returns the output of get_advisories_list_v1 .
         """
-        return self.get_advisories_list_v1(
-                    headers=headers,
-                    **request_parameters
-        )  
-
-
-
+        return self.get_advisories_list_v1(headers=headers, **request_parameters)

@@ -26,19 +26,18 @@ from fastjsonschema.exceptions import JsonSchemaException
 from dnacentersdk.exceptions import MalformedRequest
 from tests.environment import DNA_CENTER_VERSION
 
-pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '2.3.7.9', reason='version does not match')
+pytestmark = pytest.mark.skipif(
+    DNA_CENTER_VERSION != "2.3.7.9", reason="version does not match"
+)
 
 
 def is_valid_get_eox_status_for_all_devices(json_schema_validate, obj):
-    json_schema_validate('jsd_64d5d27a53ac53258fa2183b7e93a7d5_v2_3_7_9').validate(obj)
+    json_schema_validate("jsd_64d5d27a53ac53258fa2183b7e93a7d5_v2_3_7_9").validate(obj)
     return True
 
 
 def get_eox_status_for_all_devices(api):
-    endpoint_result = api.eox.get_eox_status_for_all_devices(
-        limit=0,
-        offset=0
-    )
+    endpoint_result = api.eox.get_eox_status_for_all_devices(limit=0, offset=0)
     return endpoint_result
 
 
@@ -46,8 +45,7 @@ def get_eox_status_for_all_devices(api):
 def test_get_eox_status_for_all_devices(api, validator):
     try:
         assert is_valid_get_eox_status_for_all_devices(
-            validator,
-            get_eox_status_for_all_devices(api)
+            validator, get_eox_status_for_all_devices(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -56,10 +54,7 @@ def test_get_eox_status_for_all_devices(api, validator):
 
 
 def get_eox_status_for_all_devices_default_val(api):
-    endpoint_result = api.eox.get_eox_status_for_all_devices(
-        limit=None,
-        offset=None
-    )
+    endpoint_result = api.eox.get_eox_status_for_all_devices(limit=None, offset=None)
     return endpoint_result
 
 
@@ -67,8 +62,7 @@ def get_eox_status_for_all_devices_default_val(api):
 def test_get_eox_status_for_all_devices_default_val(api, validator):
     try:
         assert is_valid_get_eox_status_for_all_devices(
-            validator,
-            get_eox_status_for_all_devices_default_val(api)
+            validator, get_eox_status_for_all_devices_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -76,14 +70,12 @@ def test_get_eox_status_for_all_devices_default_val(api, validator):
 
 
 def is_valid_get_eox_details_per_device(json_schema_validate, obj):
-    json_schema_validate('jsd_816ec048832853f8a63f34415d0e6fce_v2_3_7_9').validate(obj)
+    json_schema_validate("jsd_816ec048832853f8a63f34415d0e6fce_v2_3_7_9").validate(obj)
     return True
 
 
 def get_eox_details_per_device(api):
-    endpoint_result = api.eox.get_eox_details_per_device(
-        device_id='string'
-    )
+    endpoint_result = api.eox.get_eox_details_per_device(device_id="string")
     return endpoint_result
 
 
@@ -91,8 +83,7 @@ def get_eox_details_per_device(api):
 def test_get_eox_details_per_device(api, validator):
     try:
         assert is_valid_get_eox_details_per_device(
-            validator,
-            get_eox_details_per_device(api)
+            validator, get_eox_details_per_device(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -101,9 +92,7 @@ def test_get_eox_details_per_device(api, validator):
 
 
 def get_eox_details_per_device_default_val(api):
-    endpoint_result = api.eox.get_eox_details_per_device(
-        device_id='string'
-    )
+    endpoint_result = api.eox.get_eox_details_per_device(device_id="string")
     return endpoint_result
 
 
@@ -111,8 +100,7 @@ def get_eox_details_per_device_default_val(api):
 def test_get_eox_details_per_device_default_val(api, validator):
     try:
         assert is_valid_get_eox_details_per_device(
-            validator,
-            get_eox_details_per_device_default_val(api)
+            validator, get_eox_details_per_device_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -120,24 +108,19 @@ def test_get_eox_details_per_device_default_val(api, validator):
 
 
 def is_valid_get_eox_summary(json_schema_validate, obj):
-    json_schema_validate('jsd_f0a0dfdaca465bdc91fc290d87476b89_v2_3_7_9').validate(obj)
+    json_schema_validate("jsd_f0a0dfdaca465bdc91fc290d87476b89_v2_3_7_9").validate(obj)
     return True
 
 
 def get_eox_summary(api):
-    endpoint_result = api.eox.get_eox_summary(
-
-    )
+    endpoint_result = api.eox.get_eox_summary()
     return endpoint_result
 
 
 @pytest.mark.eox
 def test_get_eox_summary(api, validator):
     try:
-        assert is_valid_get_eox_summary(
-            validator,
-            get_eox_summary(api)
-        )
+        assert is_valid_get_eox_summary(validator, get_eox_summary(api))
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
             print(original_e)
@@ -145,19 +128,14 @@ def test_get_eox_summary(api, validator):
 
 
 def get_eox_summary_default_val(api):
-    endpoint_result = api.eox.get_eox_summary(
-
-    )
+    endpoint_result = api.eox.get_eox_summary()
     return endpoint_result
 
 
 @pytest.mark.eox
 def test_get_eox_summary_default_val(api, validator):
     try:
-        assert is_valid_get_eox_summary(
-            validator,
-            get_eox_summary_default_val(api)
-        )
+        assert is_valid_get_eox_summary(validator, get_eox_summary_default_val(api))
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e

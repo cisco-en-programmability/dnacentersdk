@@ -32,7 +32,7 @@ from ...utils import (
     check_type,
     dict_from_items_with_values,
     dict_of_str,
-    deprecated
+    deprecated,
 )
 
 
@@ -65,9 +65,9 @@ class Platform(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def cisco_catalyst_center_packages_summary(self,
-                                               headers=None,
-                                               **request_parameters):
+    def cisco_catalyst_center_packages_summary(
+        self, headers=None, **request_parameters
+    ):
         """Provides information such as name, version of packages installed on the Catalyst center. .
 
         Args:
@@ -89,17 +89,14 @@ class Platform(object):
         """
         check_type(headers, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -107,19 +104,20 @@ class Platform(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/dnac-packages')
+        e_url = "/dna/intent/api/v1/dnac-packages"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_c3bdcd996dd5d988d0d77ce8f732014_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_c3bdcd996dd5d988d0d77ce8f732014_v3_1_3_0", json_data
+        )
 
-    def release_summary(self,
-                        headers=None,
-                        **request_parameters):
+    def release_summary(self, headers=None, **request_parameters):
         """Provides information such as API version, mandatory core packages for installation or upgrade, optional
         packages, Cisco Catalyst Center name and version, supported direct updates, and tenant ID. .
 
@@ -142,17 +140,14 @@ class Platform(object):
         """
         check_type(headers, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -160,19 +155,20 @@ class Platform(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/dnac-release')
+        e_url = "/dna/intent/api/v1/dnac-release"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_c9b144b5dc2ba26e51798f8bede_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_c9b144b5dc2ba26e51798f8bede_v3_1_3_0", json_data
+        )
 
-    def nodes_configuration_summary(self,
-                                    headers=None,
-                                    **request_parameters):
+    def nodes_configuration_summary(self, headers=None, **request_parameters):
         """Provides details about the current Cisco Catalyst Center node configuration, such as API version, node name, NTP
         server, intracluster link, LACP mode, network static routes, DNS server, subnet mask, host IP, default
         gateway, and interface information. .
@@ -196,17 +192,14 @@ class Platform(object):
         """
         check_type(headers, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -214,21 +207,24 @@ class Platform(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/nodes-config')
+        e_url = "/dna/intent/api/v1/nodes-config"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_f0c26c266e552d6b0f1f68da8e60e16_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_f0c26c266e552d6b0f1f68da8e60e16_v3_1_3_0", json_data
+        )
 
-# Alias Functions
+    # Alias Functions
 
     @deprecated
-    def cisco_dna_center_packages_summary(self,
-                                            headers=None,
-                                            **request_parameters):
+    def cisco_dna_center_packages_summary(self, headers=None, **request_parameters):
         """alias for cisco_catalyst_center_packages_summary"""
-        return self.cisco_catalyst_center_packages_summary(headers=headers, **request_parameters)
+        return self.cisco_catalyst_center_packages_summary(
+            headers=headers, **request_parameters
+        )

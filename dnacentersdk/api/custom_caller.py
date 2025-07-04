@@ -85,9 +85,14 @@ class CustomCaller(object):
 
         setattr(self, name, obj)
 
-    def call_api(self, method, resource_path, raise_exception=True,
-                 original_response=False,
-                 **kwargs):
+    def call_api(
+        self,
+        method,
+        resource_path,
+        raise_exception=True,
+        original_response=False,
+        **kwargs
+    ):
         """Handles the requests and response.
 
         Args:
@@ -137,26 +142,22 @@ class CustomCaller(object):
             HTTPError: If the Catalyst Center cloud returns an error.
         """
 
-        path_params = kwargs.pop('path_params', {})
+        path_params = kwargs.pop("path_params", {})
         resource_path = apply_path_params(resource_path, path_params)
 
         # Ensure the url is an absolute URL
         abs_url = self._session.abs_url(resource_path)
         headers = self._session.headers
 
-        if 'headers' in kwargs:
-            headers.update(kwargs.pop('headers'))
+        if "headers" in kwargs:
+            headers.update(kwargs.pop("headers"))
 
         verify = kwargs.pop("verify", self._session.verify)
 
-        logger.debug(pprint_request_info(abs_url, method,
-                                         headers,
-                                         **kwargs))
-        response = self._session._req_session.request(method,
-                                                      abs_url,
-                                                      headers=headers,
-                                                      verify=verify,
-                                                      **kwargs)
+        logger.debug(pprint_request_info(abs_url, method, headers, **kwargs))
+        response = self._session._req_session.request(
+            method, abs_url, headers=headers, verify=verify, **kwargs
+        )
 
         if raise_exception:
             try:
@@ -170,4 +171,4 @@ class CustomCaller(object):
             return response
         else:
             json_data = extract_and_parse_json(response)
-            return self._object_factory('bpm_custom', json_data)
+            return self._object_factory("bpm_custom", json_data)

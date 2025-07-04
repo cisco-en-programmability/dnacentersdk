@@ -64,18 +64,20 @@ class NetworkSettings(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def assign_device_credential_to_site(self,
-                                         site_id,
-                                         cliId=None,
-                                         httpRead=None,
-                                         httpWrite=None,
-                                         snmpV2ReadId=None,
-                                         snmpV2WriteId=None,
-                                         snmpV3Id=None,
-                                         headers=None,
-                                         payload=None,
-                                         active_validation=True,
-                                         **request_parameters):
+    def assign_device_credential_to_site(
+        self,
+        site_id,
+        cliId=None,
+        httpRead=None,
+        httpWrite=None,
+        snmpV2ReadId=None,
+        snmpV2WriteId=None,
+        snmpV3Id=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Assign Device Credential to a site. .
 
         Args:
@@ -108,43 +110,34 @@ class NetworkSettings(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(site_id, str,
-                   may_be_none=False)
+        check_type(site_id, str, may_be_none=False)
         if headers is not None:
-            if '__persistbapioutput' in headers:
-                check_type(headers.get('__persistbapioutput'),
-                           str, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "__persistbapioutput" in headers:
+                check_type(headers.get("__persistbapioutput"), str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'siteId': site_id,
+            "siteId": site_id,
         }
         _payload = {
-            'cliId':
-                cliId,
-            'snmpV2ReadId':
-                snmpV2ReadId,
-            'snmpV2WriteId':
-                snmpV2WriteId,
-            'httpRead':
-                httpRead,
-            'httpWrite':
-                httpWrite,
-            'snmpV3Id':
-                snmpV3Id,
+            "cliId": cliId,
+            "snmpV2ReadId": snmpV2ReadId,
+            "snmpV2WriteId": snmpV2WriteId,
+            "httpRead": httpRead,
+            "httpWrite": httpWrite,
+            "snmpV3Id": snmpV3Id,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_e4f91ea42515ccdbc24549b84ca1e90_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_e4f91ea42515ccdbc24549b84ca1e90_v2_3_5_3"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -152,48 +145,57 @@ class NetworkSettings(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/credential-to-site/{siteId}')
+        e_url = "/dna/intent/api/v1/credential-to-site/{siteId}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_e4f91ea42515ccdbc24549b84ca1e90_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_e4f91ea42515ccdbc24549b84ca1e90_v2_3_5_3", json_data
+        )
 
-    def assign_credential_to_site(self,
-                                site_id,
-                                cliId=None,
-                                httpRead=None,
-                                httpWrite=None,
-                                snmpV2ReadId=None,
-                                snmpV2WriteId=None,
-                                snmpV3Id=None,
-                                headers=None,
-                                payload=None,
-                                active_validation=True,
-                                 **request_parameters):
-        return self.assign_device_credential_to_site(site_id,
-                                cliId=cliId,
-                                httpRead=httpRead,
-                                httpWrite=httpWrite,
-                                snmpV2ReadId=snmpV2ReadId,
-                                snmpV2WriteId=snmpV2WriteId,
-                                snmpV3Id=snmpV3Id,
-                                headers=headers,
-                                payload=payload,
-                                active_validation=active_validation,
-                                 **request_parameters)
+    def assign_credential_to_site(
+        self,
+        site_id,
+        cliId=None,
+        httpRead=None,
+        httpWrite=None,
+        snmpV2ReadId=None,
+        snmpV2WriteId=None,
+        snmpV3Id=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
+        return self.assign_device_credential_to_site(
+            site_id,
+            cliId=cliId,
+            httpRead=httpRead,
+            httpWrite=httpWrite,
+            snmpV2ReadId=snmpV2ReadId,
+            snmpV2WriteId=snmpV2WriteId,
+            snmpV3Id=snmpV3Id,
+            headers=headers,
+            payload=payload,
+            active_validation=active_validation,
+            **request_parameters
+        )
 
-    def create_device_credentials(self,
-                                  settings=None,
-                                  headers=None,
-                                  payload=None,
-                                  active_validation=True,
-                                  **request_parameters):
+    def create_device_credentials(
+        self,
+        settings=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """API to create device credentials. .
 
         Args:
@@ -221,26 +223,23 @@ class NetworkSettings(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'settings':
-                settings,
+            "settings": settings,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_cf2cac6f150c9bee9ade37921b162_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_cf2cac6f150c9bee9ade37921b162_v2_3_5_3"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -248,24 +247,29 @@ class NetworkSettings(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/device-credential')
+        e_url = "/dna/intent/api/v1/device-credential"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_cf2cac6f150c9bee9ade37921b162_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_cf2cac6f150c9bee9ade37921b162_v2_3_5_3", json_data
+        )
 
-    def update_device_credentials(self,
-                                  settings=None,
-                                  headers=None,
-                                  payload=None,
-                                  active_validation=True,
-                                  **request_parameters):
+    def update_device_credentials(
+        self,
+        settings=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """API to update device credentials. .
 
         Args:
@@ -293,26 +297,23 @@ class NetworkSettings(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'settings':
-                settings,
+            "settings": settings,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_d7161b33157dba957ba18eda440c2_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_d7161b33157dba957ba18eda440c2_v2_3_5_3"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -320,22 +321,24 @@ class NetworkSettings(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/device-credential')
+        e_url = "/dna/intent/api/v1/device-credential"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload,
-                                          headers=_headers)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_d7161b33157dba957ba18eda440c2_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_d7161b33157dba957ba18eda440c2_v2_3_5_3", json_data
+        )
 
-    def get_device_credential_details(self,
-                                      site_id=None,
-                                      headers=None,
-                                      **request_parameters):
+    def get_device_credential_details(
+        self, site_id=None, headers=None, **request_parameters
+    ):
         """API to get device credential details. .
 
         Args:
@@ -360,19 +363,16 @@ class NetworkSettings(object):
         check_type(headers, dict)
         check_type(site_id, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'siteId':
-                site_id,
+            "siteId": site_id,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -380,20 +380,20 @@ class NetworkSettings(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/device-credential')
+        e_url = "/dna/intent/api/v1/device-credential"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_d8cf995d9d99bdc31707817456_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_d8cf995d9d99bdc31707817456_v2_3_5_3", json_data
+        )
 
-    def delete_device_credential(self,
-                                 id,
-                                 headers=None,
-                                 **request_parameters):
+    def delete_device_credential(self, id, headers=None, **request_parameters):
         """Delete device credential. .
 
         Args:
@@ -415,20 +415,17 @@ class NetworkSettings(object):
             https://developer.cisco.com/docs/dna-center/#!delete-device-credential
         """
         check_type(headers, dict)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
 
         with_custom_headers = False
@@ -437,21 +434,22 @@ class NetworkSettings(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/device-credential/{id}')
+        e_url = "/dna/intent/api/v1/device-credential/{id}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.delete(endpoint_full_url, params=_params,
-                                             headers=_headers)
+            json_data = self._session.delete(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.delete(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_e8e021f1c51eeaf0d102084481486_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_e8e021f1c51eeaf0d102084481486_v2_3_5_3", json_data
+        )
 
-    def get_global_pool(self,
-                        limit=None,
-                        offset=None,
-                        headers=None,
-                        **request_parameters):
+    def get_global_pool(
+        self, limit=None, offset=None, headers=None, **request_parameters
+    ):
         """API to get global pool. .
 
         Args:
@@ -477,21 +475,17 @@ class NetworkSettings(object):
         check_type(offset, (int, str))
         check_type(limit, (int, str))
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'offset':
-                offset,
-            'limit':
-                limit,
+            "offset": offset,
+            "limit": limit,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -499,22 +493,27 @@ class NetworkSettings(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/global-pool')
+        e_url = "/dna/intent/api/v1/global-pool"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_ebdcd84fc41754a69eaeacf7c0b0731c_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_ebdcd84fc41754a69eaeacf7c0b0731c_v2_3_5_3", json_data
+        )
 
-    def update_global_pool(self,
-                           settings=None,
-                           headers=None,
-                           payload=None,
-                           active_validation=True,
-                           **request_parameters):
+    def update_global_pool(
+        self,
+        settings=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """API to update global pool .
 
         Args:
@@ -542,26 +541,23 @@ class NetworkSettings(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'settings':
-                settings,
+            "settings": settings,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_c380301e3e05423bdc1857ff00ae77a_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_c380301e3e05423bdc1857ff00ae77a_v2_3_5_3"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -569,24 +565,29 @@ class NetworkSettings(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/global-pool')
+        e_url = "/dna/intent/api/v1/global-pool"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload,
-                                          headers=_headers)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_c380301e3e05423bdc1857ff00ae77a_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_c380301e3e05423bdc1857ff00ae77a_v2_3_5_3", json_data
+        )
 
-    def create_global_pool(self,
-                           settings=None,
-                           headers=None,
-                           payload=None,
-                           active_validation=True,
-                           **request_parameters):
+    def create_global_pool(
+        self,
+        settings=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """API to create global pool. .
 
         Args:
@@ -614,26 +615,23 @@ class NetworkSettings(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'settings':
-                settings,
+            "settings": settings,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_eecf4323cb285985be72a7e061891059_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_eecf4323cb285985be72a7e061891059_v2_3_5_3"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -641,22 +639,22 @@ class NetworkSettings(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/global-pool')
+        e_url = "/dna/intent/api/v1/global-pool"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_eecf4323cb285985be72a7e061891059_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_eecf4323cb285985be72a7e061891059_v2_3_5_3", json_data
+        )
 
-    def delete_global_ip_pool(self,
-                              id,
-                              headers=None,
-                              **request_parameters):
+    def delete_global_ip_pool(self, id, headers=None, **request_parameters):
         """API to delete global IP pool. .
 
         Args:
@@ -678,20 +676,17 @@ class NetworkSettings(object):
             https://developer.cisco.com/docs/dna-center/#!delete-global-ip-pool
         """
         check_type(headers, dict)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
 
         with_custom_headers = False
@@ -700,20 +695,20 @@ class NetworkSettings(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/global-pool/{id}')
+        e_url = "/dna/intent/api/v1/global-pool/{id}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.delete(endpoint_full_url, params=_params,
-                                             headers=_headers)
+            json_data = self._session.delete(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.delete(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_f9079863c95acd945c51f728cbf81f_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_f9079863c95acd945c51f728cbf81f_v2_3_5_3", json_data
+        )
 
-    def get_network(self,
-                    site_id=None,
-                    headers=None,
-                    **request_parameters):
+    def get_network(self, site_id=None, headers=None, **request_parameters):
         """API to get  DHCP and DNS center server details. .
 
         Args:
@@ -738,19 +733,16 @@ class NetworkSettings(object):
         check_type(headers, dict)
         check_type(site_id, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'siteId':
-                site_id,
+            "siteId": site_id,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -758,23 +750,28 @@ class NetworkSettings(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/network')
+        e_url = "/dna/intent/api/v1/network"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_b199c175281977a7e9e6bd9255b_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_b199c175281977a7e9e6bd9255b_v2_3_5_3", json_data
+        )
 
-    def create_network(self,
-                       site_id,
-                       settings=None,
-                       headers=None,
-                       payload=None,
-                       active_validation=True,
-                       **request_parameters):
+    def create_network(
+        self,
+        site_id,
+        settings=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """API to create a network for DHCP,  Syslog, SNMP, NTP, Network AAA, Client and EndPoint AAA, and/or DNS center
         server settings. .
 
@@ -804,33 +801,29 @@ class NetworkSettings(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(site_id, str,
-                   may_be_none=False)
+        check_type(site_id, str, may_be_none=False)
         if headers is not None:
-            if '__persistbapioutput' in headers:
-                check_type(headers.get('__persistbapioutput'),
-                           bool)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "__persistbapioutput" in headers:
+                check_type(headers.get("__persistbapioutput"), bool)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'siteId': site_id,
+            "siteId": site_id,
         }
         _payload = {
-            'settings':
-                settings,
+            "settings": settings,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_eca62ef076b5627a85b2a5959613fb8_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_eca62ef076b5627a85b2a5959613fb8_v2_3_5_3"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -838,25 +831,30 @@ class NetworkSettings(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/network/{siteId}')
+        e_url = "/dna/intent/api/v1/network/{siteId}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_eca62ef076b5627a85b2a5959613fb8_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_eca62ef076b5627a85b2a5959613fb8_v2_3_5_3", json_data
+        )
 
-    def update_network(self,
-                       site_id,
-                       settings=None,
-                       headers=None,
-                       payload=None,
-                       active_validation=True,
-                       **request_parameters):
+    def update_network(
+        self,
+        site_id,
+        settings=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """API to update network settings for DHCP,  Syslog, SNMP, NTP, Network AAA, Client and EndPoint AAA, and/or DNS
         server settings. .
 
@@ -886,30 +884,27 @@ class NetworkSettings(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(site_id, str,
-                   may_be_none=False)
+        check_type(site_id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'siteId': site_id,
+            "siteId": site_id,
         }
         _payload = {
-            'settings':
-                settings,
+            "settings": settings,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_e1b8c435195d56368c24a54dcce007d0_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_e1b8c435195d56368c24a54dcce007d0_v2_3_5_3"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -917,24 +912,24 @@ class NetworkSettings(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/network/{siteId}')
+        e_url = "/dna/intent/api/v1/network/{siteId}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload,
-                                          headers=_headers)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_e1b8c435195d56368c24a54dcce007d0_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_e1b8c435195d56368c24a54dcce007d0_v2_3_5_3", json_data
+        )
 
-    def get_reserve_ip_subpool(self,
-                               limit=None,
-                               offset=None,
-                               site_id=None,
-                               headers=None,
-                               **request_parameters):
+    def get_reserve_ip_subpool(
+        self, limit=None, offset=None, site_id=None, headers=None, **request_parameters
+    ):
         """API to get the ip subpool info. .
 
         Args:
@@ -962,23 +957,18 @@ class NetworkSettings(object):
         check_type(offset, (int, str))
         check_type(limit, (int, str))
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'siteId':
-                site_id,
-            'offset':
-                offset,
-            'limit':
-                limit,
+            "siteId": site_id,
+            "offset": offset,
+            "limit": limit,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -986,20 +976,20 @@ class NetworkSettings(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/reserve-ip-subpool')
+        e_url = "/dna/intent/api/v1/reserve-ip-subpool"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_d84253559e9d3e81881a4bd2fc_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_d84253559e9d3e81881a4bd2fc_v2_3_5_3", json_data
+        )
 
-    def release_reserve_ip_subpool(self,
-                                   id,
-                                   headers=None,
-                                   **request_parameters):
+    def release_reserve_ip_subpool(self, id, headers=None, **request_parameters):
         """API to delete the reserved ip subpool .
 
         Args:
@@ -1021,20 +1011,17 @@ class NetworkSettings(object):
             https://developer.cisco.com/docs/dna-center/#!release-reserve-ip-subpool
         """
         check_type(headers, dict)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
 
         with_custom_headers = False
@@ -1043,42 +1030,47 @@ class NetworkSettings(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/reserve-ip-subpool/{id}')
+        e_url = "/dna/intent/api/v1/reserve-ip-subpool/{id}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.delete(endpoint_full_url, params=_params,
-                                             headers=_headers)
+            json_data = self._session.delete(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.delete(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_eabbb425255a57578e9db00cda1f303a_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_eabbb425255a57578e9db00cda1f303a_v2_3_5_3", json_data
+        )
 
-    def reserve_ip_subpool(self,
-                           site_id,
-                           ipv4DhcpServers=None,
-                           ipv4DnsServers=None,
-                           ipv4GateWay=None,
-                           ipv4GlobalPool=None,
-                           ipv4Prefix=None,
-                           ipv4PrefixLength=None,
-                           ipv4Subnet=None,
-                           ipv4TotalHost=None,
-                           ipv6AddressSpace=None,
-                           ipv6DhcpServers=None,
-                           ipv6DnsServers=None,
-                           ipv6GateWay=None,
-                           ipv6GlobalPool=None,
-                           ipv6Prefix=None,
-                           ipv6PrefixLength=None,
-                           ipv6Subnet=None,
-                           ipv6TotalHost=None,
-                           name=None,
-                           slaacSupport=None,
-                           type=None,
-                           headers=None,
-                           payload=None,
-                           active_validation=True,
-                           **request_parameters):
+    def reserve_ip_subpool(
+        self,
+        site_id,
+        ipv4DhcpServers=None,
+        ipv4DnsServers=None,
+        ipv4GateWay=None,
+        ipv4GlobalPool=None,
+        ipv4Prefix=None,
+        ipv4PrefixLength=None,
+        ipv4Subnet=None,
+        ipv4TotalHost=None,
+        ipv6AddressSpace=None,
+        ipv6DhcpServers=None,
+        ipv6DnsServers=None,
+        ipv6GateWay=None,
+        ipv6GlobalPool=None,
+        ipv6Prefix=None,
+        ipv6PrefixLength=None,
+        ipv6Subnet=None,
+        ipv6TotalHost=None,
+        name=None,
+        slaacSupport=None,
+        type=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """API to reserve an ip subpool from the global pool .
 
         Args:
@@ -1137,68 +1129,46 @@ class NetworkSettings(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(site_id, str,
-                   may_be_none=False)
+        check_type(site_id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'siteId': site_id,
+            "siteId": site_id,
         }
         _payload = {
-            'name':
-                name,
-            'type':
-                type,
-            'ipv6AddressSpace':
-                ipv6AddressSpace,
-            'ipv4GlobalPool':
-                ipv4GlobalPool,
-            'ipv4Prefix':
-                ipv4Prefix,
-            'ipv4PrefixLength':
-                ipv4PrefixLength,
-            'ipv4Subnet':
-                ipv4Subnet,
-            'ipv4GateWay':
-                ipv4GateWay,
-            'ipv4DhcpServers':
-                ipv4DhcpServers,
-            'ipv4DnsServers':
-                ipv4DnsServers,
-            'ipv6GlobalPool':
-                ipv6GlobalPool,
-            'ipv6Prefix':
-                ipv6Prefix,
-            'ipv6PrefixLength':
-                ipv6PrefixLength,
-            'ipv6Subnet':
-                ipv6Subnet,
-            'ipv6GateWay':
-                ipv6GateWay,
-            'ipv6DhcpServers':
-                ipv6DhcpServers,
-            'ipv6DnsServers':
-                ipv6DnsServers,
-            'ipv4TotalHost':
-                ipv4TotalHost,
-            'ipv6TotalHost':
-                ipv6TotalHost,
-            'slaacSupport':
-                slaacSupport,
+            "name": name,
+            "type": type,
+            "ipv6AddressSpace": ipv6AddressSpace,
+            "ipv4GlobalPool": ipv4GlobalPool,
+            "ipv4Prefix": ipv4Prefix,
+            "ipv4PrefixLength": ipv4PrefixLength,
+            "ipv4Subnet": ipv4Subnet,
+            "ipv4GateWay": ipv4GateWay,
+            "ipv4DhcpServers": ipv4DhcpServers,
+            "ipv4DnsServers": ipv4DnsServers,
+            "ipv6GlobalPool": ipv6GlobalPool,
+            "ipv6Prefix": ipv6Prefix,
+            "ipv6PrefixLength": ipv6PrefixLength,
+            "ipv6Subnet": ipv6Subnet,
+            "ipv6GateWay": ipv6GateWay,
+            "ipv6DhcpServers": ipv6DhcpServers,
+            "ipv6DnsServers": ipv6DnsServers,
+            "ipv4TotalHost": ipv4TotalHost,
+            "ipv6TotalHost": ipv6TotalHost,
+            "slaacSupport": slaacSupport,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_cec6c85d9bb4bcc8f61f31296b_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator("jsd_cec6c85d9bb4bcc8f61f31296b_v2_3_5_3").validate(
+                _payload
+            )
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1206,39 +1176,44 @@ class NetworkSettings(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/reserve-ip-subpool/{siteId}')
+        e_url = "/dna/intent/api/v1/reserve-ip-subpool/{siteId}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_cec6c85d9bb4bcc8f61f31296b_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_cec6c85d9bb4bcc8f61f31296b_v2_3_5_3", json_data
+        )
 
-    def update_reserve_ip_subpool(self,
-                                  id,
-                                  site_id,
-                                  ipv4DhcpServers=None,
-                                  ipv4DnsServers=None,
-                                  ipv4GateWay=None,
-                                  ipv6AddressSpace=None,
-                                  ipv6DhcpServers=None,
-                                  ipv6DnsServers=None,
-                                  ipv6GateWay=None,
-                                  ipv6GlobalPool=None,
-                                  ipv6Prefix=None,
-                                  ipv6PrefixLength=None,
-                                  ipv6Subnet=None,
-                                  ipv6TotalHost=None,
-                                  name=None,
-                                  slaacSupport=None,
-                                  headers=None,
-                                  payload=None,
-                                  active_validation=True,
-                                  **request_parameters):
+    def update_reserve_ip_subpool(
+        self,
+        id,
+        site_id,
+        ipv4DhcpServers=None,
+        ipv4DnsServers=None,
+        ipv4GateWay=None,
+        ipv6AddressSpace=None,
+        ipv6DhcpServers=None,
+        ipv6DnsServers=None,
+        ipv6GateWay=None,
+        ipv6GlobalPool=None,
+        ipv6Prefix=None,
+        ipv6PrefixLength=None,
+        ipv6Subnet=None,
+        ipv6TotalHost=None,
+        name=None,
+        slaacSupport=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """API to update ip subpool from the global pool .
 
         Args:
@@ -1288,60 +1263,43 @@ class NetworkSettings(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(id, str,
-                   may_be_none=False)
-        check_type(site_id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
+        check_type(site_id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'id':
-                id,
+            "id": id,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'siteId': site_id,
+            "siteId": site_id,
         }
         _payload = {
-            'name':
-                name,
-            'ipv6AddressSpace':
-                ipv6AddressSpace,
-            'ipv4DhcpServers':
-                ipv4DhcpServers,
-            'ipv4DnsServers':
-                ipv4DnsServers,
-            'ipv6GlobalPool':
-                ipv6GlobalPool,
-            'ipv6Prefix':
-                ipv6Prefix,
-            'ipv6PrefixLength':
-                ipv6PrefixLength,
-            'ipv6Subnet':
-                ipv6Subnet,
-            'ipv6GateWay':
-                ipv6GateWay,
-            'ipv6DhcpServers':
-                ipv6DhcpServers,
-            'ipv6DnsServers':
-                ipv6DnsServers,
-            'ipv6TotalHost':
-                ipv6TotalHost,
-            'slaacSupport':
-                slaacSupport,
-            'ipv4GateWay':
-                ipv4GateWay,
+            "name": name,
+            "ipv6AddressSpace": ipv6AddressSpace,
+            "ipv4DhcpServers": ipv4DhcpServers,
+            "ipv4DnsServers": ipv4DnsServers,
+            "ipv6GlobalPool": ipv6GlobalPool,
+            "ipv6Prefix": ipv6Prefix,
+            "ipv6PrefixLength": ipv6PrefixLength,
+            "ipv6Subnet": ipv6Subnet,
+            "ipv6GateWay": ipv6GateWay,
+            "ipv6DhcpServers": ipv6DhcpServers,
+            "ipv6DnsServers": ipv6DnsServers,
+            "ipv6TotalHost": ipv6TotalHost,
+            "slaacSupport": slaacSupport,
+            "ipv4GateWay": ipv4GateWay,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_fd6083b0c65d03b2d53f10b3ece59d_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_fd6083b0c65d03b2d53f10b3ece59d_v2_3_5_3"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1349,21 +1307,22 @@ class NetworkSettings(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/reserve-ip-subpool/{siteId}')
+        e_url = "/dna/intent/api/v1/reserve-ip-subpool/{siteId}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload,
-                                          headers=_headers)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_fd6083b0c65d03b2d53f10b3ece59d_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_fd6083b0c65d03b2d53f10b3ece59d_v2_3_5_3", json_data
+        )
 
-    def get_service_provider_details(self,
-                                     headers=None,
-                                     **request_parameters):
+    def get_service_provider_details(self, headers=None, **request_parameters):
         """API to get service provider details (QoS). .
 
         Args:
@@ -1385,17 +1344,14 @@ class NetworkSettings(object):
         """
         check_type(headers, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1403,22 +1359,27 @@ class NetworkSettings(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/service-provider')
+        e_url = "/dna/intent/api/v1/service-provider"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_dda850a0675b888048adf8d488aec1_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_dda850a0675b888048adf8d488aec1_v2_3_5_3", json_data
+        )
 
-    def create_sp_profile(self,
-                          settings=None,
-                          headers=None,
-                          payload=None,
-                          active_validation=True,
-                          **request_parameters):
+    def create_sp_profile(
+        self,
+        settings=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """API to create Service Provider Profile(QOS). .
 
         Args:
@@ -1446,26 +1407,23 @@ class NetworkSettings(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'settings':
-                settings,
+            "settings": settings,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_ffa347eb411567a9c793696795250a5_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_ffa347eb411567a9c793696795250a5_v2_3_5_3"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1473,24 +1431,29 @@ class NetworkSettings(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/service-provider')
+        e_url = "/dna/intent/api/v1/service-provider"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_ffa347eb411567a9c793696795250a5_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_ffa347eb411567a9c793696795250a5_v2_3_5_3", json_data
+        )
 
-    def update_sp_profile(self,
-                          settings=None,
-                          headers=None,
-                          payload=None,
-                          active_validation=True,
-                          **request_parameters):
+    def update_sp_profile(
+        self,
+        settings=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """API to update Service Provider Profile (QoS). .
 
         Args:
@@ -1518,26 +1481,23 @@ class NetworkSettings(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'settings':
-                settings,
+            "settings": settings,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_e22c99a82f5764828810acb45e7a9e_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_e22c99a82f5764828810acb45e7a9e_v2_3_5_3"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1545,22 +1505,22 @@ class NetworkSettings(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/service-provider')
+        e_url = "/dna/intent/api/v1/service-provider"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload,
-                                          headers=_headers)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_e22c99a82f5764828810acb45e7a9e_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_e22c99a82f5764828810acb45e7a9e_v2_3_5_3", json_data
+        )
 
-    def delete_sp_profile(self,
-                          sp_profile_name,
-                          headers=None,
-                          **request_parameters):
+    def delete_sp_profile(self, sp_profile_name, headers=None, **request_parameters):
         """API to delete Service Provider Profile (QoS). .
 
         Args:
@@ -1582,20 +1542,17 @@ class NetworkSettings(object):
             https://developer.cisco.com/docs/dna-center/#!delete-sp-profile
         """
         check_type(headers, dict)
-        check_type(sp_profile_name, str,
-                   may_be_none=False)
+        check_type(sp_profile_name, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'spProfileName': sp_profile_name,
+            "spProfileName": sp_profile_name,
         }
 
         with_custom_headers = False
@@ -1604,28 +1561,33 @@ class NetworkSettings(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/sp-profile/{spProfileName}')
+        e_url = "/dna/intent/api/v1/sp-profile/{spProfileName}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.delete(endpoint_full_url, params=_params,
-                                             headers=_headers)
+            json_data = self._session.delete(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.delete(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_a1d68f15e02adc37239b3fcbbb6_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_a1d68f15e02adc37239b3fcbbb6_v2_3_5_3", json_data
+        )
 
-    def assign_device_credential_to_site_v2(self,
-                                            site_id,
-                                            cliId=None,
-                                            httpRead=None,
-                                            httpWrite=None,
-                                            snmpV2ReadId=None,
-                                            snmpV2WriteId=None,
-                                            snmpV3Id=None,
-                                            headers=None,
-                                            payload=None,
-                                            active_validation=True,
-                                            **request_parameters):
+    def assign_device_credential_to_site_v2(
+        self,
+        site_id,
+        cliId=None,
+        httpRead=None,
+        httpWrite=None,
+        snmpV2ReadId=None,
+        snmpV2WriteId=None,
+        snmpV3Id=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """API to assign Device Credential to a site. .
 
         Args:
@@ -1658,40 +1620,32 @@ class NetworkSettings(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(site_id, str,
-                   may_be_none=False)
+        check_type(site_id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'siteId': site_id,
+            "siteId": site_id,
         }
         _payload = {
-            'cliId':
-                cliId,
-            'snmpV2ReadId':
-                snmpV2ReadId,
-            'snmpV2WriteId':
-                snmpV2WriteId,
-            'snmpV3Id':
-                snmpV3Id,
-            'httpRead':
-                httpRead,
-            'httpWrite':
-                httpWrite,
+            "cliId": cliId,
+            "snmpV2ReadId": snmpV2ReadId,
+            "snmpV2WriteId": snmpV2WriteId,
+            "snmpV3Id": snmpV3Id,
+            "httpRead": httpRead,
+            "httpWrite": httpWrite,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_a3954b27e5eeb82789ed231e0557f_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_a3954b27e5eeb82789ed231e0557f_v2_3_5_3"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1699,22 +1653,22 @@ class NetworkSettings(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v2/credential-to-site/{siteId}')
+        e_url = "/dna/intent/api/v2/credential-to-site/{siteId}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_a3954b27e5eeb82789ed231e0557f_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_a3954b27e5eeb82789ed231e0557f_v2_3_5_3", json_data
+        )
 
-    def get_network_v2(self,
-                       site_id=None,
-                       headers=None,
-                       **request_parameters):
+    def get_network_v2(self, site_id=None, headers=None, **request_parameters):
         """API to get SNMP, NTP, Network AAA, Client and Endpoint AAA, and/or DNS center server settings. .
 
         Args:
@@ -1739,19 +1693,16 @@ class NetworkSettings(object):
         check_type(headers, dict)
         check_type(site_id, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'siteId':
-                site_id,
+            "siteId": site_id,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1759,23 +1710,28 @@ class NetworkSettings(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v2/network')
+        e_url = "/dna/intent/api/v2/network"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_d0b7bffe821755dab4e2a2df8ea79404_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_d0b7bffe821755dab4e2a2df8ea79404_v2_3_5_3", json_data
+        )
 
-    def create_network_v2(self,
-                          site_id,
-                          settings=None,
-                          headers=None,
-                          payload=None,
-                          active_validation=True,
-                          **request_parameters):
+    def create_network_v2(
+        self,
+        site_id,
+        settings=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """API to create network settings for DHCP,  Syslog, SNMP, NTP, Network AAA, Client and Endpoint AAA, and/or DNS
         center server settings. .
 
@@ -1805,30 +1761,27 @@ class NetworkSettings(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(site_id, str,
-                   may_be_none=False)
+        check_type(site_id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'siteId': site_id,
+            "siteId": site_id,
         }
         _payload = {
-            'settings':
-                settings,
+            "settings": settings,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_c5f97865727857d5b1eeaedee3dcccd2_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_c5f97865727857d5b1eeaedee3dcccd2_v2_3_5_3"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1836,25 +1789,30 @@ class NetworkSettings(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v2/network/{siteId}')
+        e_url = "/dna/intent/api/v2/network/{siteId}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_c5f97865727857d5b1eeaedee3dcccd2_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_c5f97865727857d5b1eeaedee3dcccd2_v2_3_5_3", json_data
+        )
 
-    def update_network_v2(self,
-                          site_id,
-                          settings=None,
-                          headers=None,
-                          payload=None,
-                          active_validation=True,
-                          **request_parameters):
+    def update_network_v2(
+        self,
+        site_id,
+        settings=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """API to update network settings for DHCP, Syslog, SNMP, NTP, Network AAA, Client and Endpoint AAA, and/or DNS
         center server settings. .
 
@@ -1884,30 +1842,27 @@ class NetworkSettings(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(site_id, str,
-                   may_be_none=False)
+        check_type(site_id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'siteId': site_id,
+            "siteId": site_id,
         }
         _payload = {
-            'settings':
-                settings,
+            "settings": settings,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_a7935eedd53a5b8c84668c903cc1c705_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_a7935eedd53a5b8c84668c903cc1c705_v2_3_5_3"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1915,24 +1870,29 @@ class NetworkSettings(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v2/network/{siteId}')
+        e_url = "/dna/intent/api/v2/network/{siteId}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload,
-                                          headers=_headers)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_a7935eedd53a5b8c84668c903cc1c705_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_a7935eedd53a5b8c84668c903cc1c705_v2_3_5_3", json_data
+        )
 
-    def create_sp_profile_v2(self,
-                             settings=None,
-                             headers=None,
-                             payload=None,
-                             active_validation=True,
-                             **request_parameters):
+    def create_sp_profile_v2(
+        self,
+        settings=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """API to create Service Provider Profile(QOS). .
 
         Args:
@@ -1960,26 +1920,23 @@ class NetworkSettings(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'settings':
-                settings,
+            "settings": settings,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_a66db26df529597c84c2a15ea2d632ce_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_a66db26df529597c84c2a15ea2d632ce_v2_3_5_3"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1987,24 +1944,29 @@ class NetworkSettings(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v2/service-provider')
+        e_url = "/dna/intent/api/v2/service-provider"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_a66db26df529597c84c2a15ea2d632ce_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_a66db26df529597c84c2a15ea2d632ce_v2_3_5_3", json_data
+        )
 
-    def update_sp_profile_v2(self,
-                             settings=None,
-                             headers=None,
-                             payload=None,
-                             active_validation=True,
-                             **request_parameters):
+    def update_sp_profile_v2(
+        self,
+        settings=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """API to update Service Provider Profile (QoS). .
 
         Args:
@@ -2032,26 +1994,23 @@ class NetworkSettings(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'settings':
-                settings,
+            "settings": settings,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_e0b654c39dc6e19cd6f5194d_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator("jsd_e0b654c39dc6e19cd6f5194d_v2_3_5_3").validate(
+                _payload
+            )
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -2059,21 +2018,20 @@ class NetworkSettings(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v2/service-provider')
+        e_url = "/dna/intent/api/v2/service-provider"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload,
-                                          headers=_headers)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_e0b654c39dc6e19cd6f5194d_v2_3_5_3', json_data)
+        return self._object_factory("bpm_e0b654c39dc6e19cd6f5194d_v2_3_5_3", json_data)
 
-    def get_service_provider_details_v2(self,
-                                        headers=None,
-                                        **request_parameters):
+    def get_service_provider_details_v2(self, headers=None, **request_parameters):
         """API to get Service Provider details (QoS). .
 
         Args:
@@ -2095,17 +2053,14 @@ class NetworkSettings(object):
         """
         check_type(headers, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -2113,20 +2068,20 @@ class NetworkSettings(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v2/service-provider')
+        e_url = "/dna/intent/api/v2/service-provider"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_f01025635a52bdfdac7226911b31_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_f01025635a52bdfdac7226911b31_v2_3_5_3", json_data
+        )
 
-    def delete_sp_profile_v2(self,
-                             sp_profile_name,
-                             headers=None,
-                             **request_parameters):
+    def delete_sp_profile_v2(self, sp_profile_name, headers=None, **request_parameters):
         """API to delete Service Provider Profile (QoS). .
 
         Args:
@@ -2148,20 +2103,17 @@ class NetworkSettings(object):
             https://developer.cisco.com/docs/dna-center/#!delete-sp-profile-v2
         """
         check_type(headers, dict)
-        check_type(sp_profile_name, str,
-                   may_be_none=False)
+        check_type(sp_profile_name, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'spProfileName': sp_profile_name,
+            "spProfileName": sp_profile_name,
         }
 
         with_custom_headers = False
@@ -2170,12 +2122,15 @@ class NetworkSettings(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v2/sp-profile/{spProfileName}')
+        e_url = "/dna/intent/api/v2/sp-profile/{spProfileName}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.delete(endpoint_full_url, params=_params,
-                                             headers=_headers)
+            json_data = self._session.delete(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.delete(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_a9bbbce953615baeb0a324c61753139d_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_a9bbbce953615baeb0a324c61753139d_v2_3_5_3", json_data
+        )

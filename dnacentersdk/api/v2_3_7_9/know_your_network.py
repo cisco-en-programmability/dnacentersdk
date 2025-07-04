@@ -32,7 +32,6 @@ from ...utils import (
     check_type,
     dict_from_items_with_values,
     dict_of_str,
-    
 )
 
 
@@ -65,18 +64,20 @@ class KnowYourNetwork(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def get_energy_summary_analytics(self,
-                                     aggregateAttributes=None,
-                                     attributes=None,
-                                     endTime=None,
-                                     filters=None,
-                                     groupBy=None,
-                                     page=None,
-                                     startTime=None,
-                                     headers=None,
-                                     payload=None,
-                                     active_validation=True,
-                                     **request_parameters):
+    def get_energy_summary_analytics(
+        self,
+        aggregateAttributes=None,
+        attributes=None,
+        endTime=None,
+        filters=None,
+        groupBy=None,
+        page=None,
+        startTime=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Retrieve the summary analytics data related to device energy consumption for all devices, including network
         devices and clients assigned to specific sites. For detailed information about the usage of the API,
         please refer to the Open API specification document - https://github.com/cisco-en-
@@ -114,44 +115,33 @@ class KnowYourNetwork(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'X-CALLER-ID' in headers:
-                check_type(headers.get('X-CALLER-ID'),
-                           str)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "X-CALLER-ID" in headers:
+                check_type(headers.get("X-CALLER-ID"), str)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'startTime':
-                startTime,
-            'endTime':
-                endTime,
-            'filters':
-                filters,
-            'groupBy':
-                groupBy,
-            'attributes':
-                attributes,
-            'aggregateAttributes':
-                aggregateAttributes,
-            'page':
-                page,
+            "startTime": startTime,
+            "endTime": endTime,
+            "filters": filters,
+            "groupBy": groupBy,
+            "attributes": attributes,
+            "aggregateAttributes": aggregateAttributes,
+            "page": page,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_d0b2cc705afb536fab6fd0848baa73c0_v2_3_7_9')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_d0b2cc705afb536fab6fd0848baa73c0_v2_3_7_9"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -159,30 +149,35 @@ class KnowYourNetwork(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/data/api/v1/energy/summaryAnalytics')
+        e_url = "/dna/data/api/v1/energy/summaryAnalytics"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_d0b2cc705afb536fab6fd0848baa73c0_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_d0b2cc705afb536fab6fd0848baa73c0_v2_3_7_9", json_data
+        )
 
-    def get_energy_trend_analytics(self,
-                                   aggregateAttributes=None,
-                                   attributes=None,
-                                   endTime=None,
-                                   filters=None,
-                                   groupBy=None,
-                                   page=None,
-                                   startTime=None,
-                                   headers=None,
-                                   payload=None,
-                                   active_validation=True,
-                                   **request_parameters):
+    def get_energy_trend_analytics(
+        self,
+        aggregateAttributes=None,
+        attributes=None,
+        endTime=None,
+        filters=None,
+        groupBy=None,
+        page=None,
+        startTime=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Retrieve the energy trend analytics data related to device energy consumption for all devices, including network
         devices and clients assigned to specific sites. For detailed information about the usage of the API,
         please refer to the Open API specification document - https://github.com/cisco-en-
@@ -220,44 +215,33 @@ class KnowYourNetwork(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'X-CALLER-ID' in headers:
-                check_type(headers.get('X-CALLER-ID'),
-                           str)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "X-CALLER-ID" in headers:
+                check_type(headers.get("X-CALLER-ID"), str)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'startTime':
-                startTime,
-            'endTime':
-                endTime,
-            'filters':
-                filters,
-            'groupBy':
-                groupBy,
-            'attributes':
-                attributes,
-            'aggregateAttributes':
-                aggregateAttributes,
-            'page':
-                page,
+            "startTime": startTime,
+            "endTime": endTime,
+            "filters": filters,
+            "groupBy": groupBy,
+            "attributes": attributes,
+            "aggregateAttributes": aggregateAttributes,
+            "page": page,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_de4a255bc6849a7c9cec69f13c_v2_3_7_9')\
-                .validate(_payload)
+            self._request_validator("jsd_de4a255bc6849a7c9cec69f13c_v2_3_7_9").validate(
+                _payload
+            )
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -265,17 +249,20 @@ class KnowYourNetwork(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/data/api/v1/energy/trendAnalytics')
+        e_url = "/dna/data/api/v1/energy/trendAnalytics"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_de4a255bc6849a7c9cec69f13c_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_de4a255bc6849a7c9cec69f13c_v2_3_7_9", json_data
+        )
+
 
 # Alias Functions
-

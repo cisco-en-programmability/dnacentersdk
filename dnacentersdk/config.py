@@ -24,13 +24,13 @@
 # Package Constants
 
 #: **debug** default value.
-DEFAULT_DEBUG = 'False'
+DEFAULT_DEBUG = "False"
 
 #: **version** default value.
-DEFAULT_VERSION = '3.1.3.0'
+DEFAULT_VERSION = "3.1.3.0"
 
 #: **base_url** default value.
-DEFAULT_BASE_URL = 'https://sandboxdnac.cisco.com:443'
+DEFAULT_BASE_URL = "https://sandboxdnac.cisco.com:443"
 
 #: **single_request_timeout** default value.
 #: Timeout (in seconds) for the RESTful HTTP requests.

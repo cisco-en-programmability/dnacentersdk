@@ -40,10 +40,11 @@ from .exceptions import ApiError, RateLimitError
 from .response_codes import RATE_LIMIT_RESPONSE_CODE
 
 
-warnings.simplefilter('default')
+warnings.simplefilter("default")
 
-EncodableFile = namedtuple('EncodableFile',
-                           ['file_name', 'file_object', 'content_type'])
+EncodableFile = namedtuple(
+    "EncodableFile", ["file_name", "file_object", "content_type"]
+)
 
 
 def to_unicode(string):
@@ -51,12 +52,12 @@ def to_unicode(string):
     assert isinstance(string, str)
     if sys.version_info[0] >= 3:
         if isinstance(string, bytes):
-            return string.decode('utf-8')
+            return string.decode("utf-8")
         else:
             return string
     else:
         if isinstance(string, str):
-            return string.decode('utf-8')
+            return string.decode("utf-8")
         else:
             return string
 
@@ -66,12 +67,12 @@ def to_bytes(string):
     assert isinstance(string, str)
     if sys.version_info[0] >= 3:
         if isinstance(string, str):
-            return string.encode('utf-8')
+            return string.encode("utf-8")
         else:
             return string
     else:
         if isinstance(string, unicode):
-            return string.encode('utf-8')
+            return string.encode("utf-8")
         else:
             return string
 
@@ -82,8 +83,10 @@ def validate_base_url(base_url):
     if parsed_url.scheme and parsed_url.netloc:
         return parsed_url.geturl()
     else:
-        error_message = "base_url must contain a valid scheme (protocol " \
-                        "specifier) and network location (hostname)"
+        error_message = (
+            "base_url must contain a valid scheme (protocol "
+            "specifier) and network location (hostname)"
+        )
         raise ValueError(error_message)
 
 
@@ -92,12 +95,8 @@ def is_web_url(string):
     assert isinstance(string, str)
     parsed_url = urllib.parse.urlparse(string)
     return (
-        (
-            parsed_url.scheme.lower() == 'http'
-            or parsed_url.scheme.lower() == 'https'
-        )
-        and parsed_url.netloc
-    )
+        parsed_url.scheme.lower() == "http" or parsed_url.scheme.lower() == "https"
+    ) and parsed_url.netloc
 
 
 def is_local_file(string):
@@ -111,11 +110,11 @@ def open_local_file(file_path):
     assert isinstance(file_path, str)
     assert is_local_file(file_path)
     file_name = os.path.basename(file_path)
-    file_object = open(file_path, 'rb')
-    content_type = mimetypes.guess_type(file_name)[0] or 'text/plain'
-    return EncodableFile(file_name=file_name,
-                         file_object=file_object,
-                         content_type=content_type)
+    file_object = open(file_path, "rb")
+    content_type = mimetypes.guess_type(file_name)[0] or "text/plain"
+    return EncodableFile(
+        file_name=file_name, file_object=file_object, content_type=content_type
+    )
 
 
 def check_type(o, acceptable_types, may_be_none=True):
@@ -149,7 +148,7 @@ def check_type(o, acceptable_types, may_be_none=True):
                 types=", ".join([repr(t.__name__) for t in acceptable_types]),
                 none="or 'None'" if may_be_none else "",
                 o=o,
-                o_type=repr(type(o).__name__)
+                o_type=repr(type(o).__name__),
             )
         )
         raise TypeError(error_message)
@@ -198,7 +197,7 @@ def check_response_code(response, expected_response_code):
         ApiError: If the requests.response.status_code does not match the
             provided expected response code (erc).
 
-     """
+    """
     if response.status_code in expected_response_code:
         pass
     elif response.status_code == RATE_LIMIT_RESPONSE_CODE:
@@ -217,12 +216,16 @@ def extract_and_parse_json(response):
 
     Returns:
         The parsed JSON data as the appropriate native Python data type.
+        Returns None if response text is empty.
 
     Raises:
         JSONDecodeError: caused by json.loads
         TypeError: caused by json.loads
     """
     try:
+        # Return None if the response text is empty or whitespace-only
+        if not response.text or response.text.isspace():
+            return None
         return json.loads(response.text, object_hook=OrderedDict)
     except Exception as e:
         raise e
@@ -257,8 +260,8 @@ def json_dict(json_data):
 def apply_path_params(URL, path_params):
     if isinstance(URL, str) and isinstance(path_params, dict):
         for k in path_params:
-            URL = URL.replace('${' + k + '}', str(path_params[k]))
-            URL = URL.replace('{' + k + '}', str(path_params[k]))
+            URL = URL.replace("${" + k + "}", str(path_params[k]))
+            URL = URL.replace("{" + k + "}", str(path_params[k]))
         return URL
     else:
         raise TypeError(
@@ -269,21 +272,17 @@ def apply_path_params(URL, path_params):
 
 
 def pprint_request_info(url, method, _headers, **kwargs):
-    debug_print = (
-        "\nRequest"
-        "\n\tURL: {}"
-        "\n\tMethod: {}"
-        "\n\tHeaders: \n{}"
-    )
-    _headers.update(kwargs.get('headers', {}))
-    _headers = '\n'.join(['\t\t{}: {}'.format(a, b)
-                         for a, b in _headers.items()])
+    debug_print = "\nRequest" "\n\tURL: {}" "\n\tMethod: {}" "\n\tHeaders: \n{}"
+    _headers.update(kwargs.get("headers", {}))
+    _headers = "\n".join(["\t\t{}: {}".format(a, b) for a, b in _headers.items()])
     debug_print = debug_print.format(url, method, _headers)
 
-    kwargs_to_include = ['params', 'json', 'data', 'stream']
+    kwargs_to_include = ["params", "json", "data", "stream"]
     kwargs_pprint = {
-        'params': 'Params', 'json': 'Body',
-        'data': 'Body', 'stream': 'Stream'
+        "params": "Params",
+        "json": "Body",
+        "data": "Body",
+        "stream": "Stream",
     }
 
     for kw in kwargs_to_include:
@@ -292,36 +291,28 @@ def pprint_request_info(url, method, _headers, **kwargs):
             key = kwargs_pprint.get(kw)
             if isinstance(value, list) or isinstance(value, dict):
                 value = json.dumps(value, indent=4)
-                lines = [' ' * (8 + len(key)) + line
-                         for line in value.split('\n')]
-                value = '\n'.join(lines)
+                lines = [" " * (8 + len(key)) + line for line in value.split("\n")]
+                value = "\n".join(lines)
             else:
-                value = '\t\t{}'.format(value)
+                value = "\t\t{}".format(value)
 
-            format_str = '{}\n\t{}:\n{}'
-            debug_print = format_str.format(debug_print,
-                                            key,
-                                            value)
+            format_str = "{}\n\t{}:\n{}"
+            debug_print = format_str.format(debug_print, key, value)
     return debug_print
 
 
 def pprint_response_info(response):
-    debug_print = (
-        "\nResponse"
-        "\n\tStatus: {} - {}"
-        "\n\tHeaders: \n{}"
-    )
+    debug_print = "\nResponse" "\n\tStatus: {} - {}" "\n\tHeaders: \n{}"
     headers = response.headers
-    headers = '\n'.join(['\t\t{}: {}'.format(a, b)
-                         for a, b in headers.items()])
+    headers = "\n".join(["\t\t{}: {}".format(a, b) for a, b in headers.items()])
     body = None
-    file_resp_headers = ['Content-Disposition', 'fileName']
+    file_resp_headers = ["Content-Disposition", "fileName"]
 
-    if 'application/json' in response.headers.get('Content-Type'):
+    if "application/json" in response.headers.get("Content-Type"):
         try:
             body = response.json()
             body = json.dumps(body, indent=4)
-            body = '\n'.join([' ' * 13 + line for line in body.split('\n')])
+            body = "\n".join([" " * 13 + line for line in body.split("\n")])
         except Exception:
             body = response.text or response.content
             pass
@@ -330,13 +321,11 @@ def pprint_response_info(response):
     else:
         body = response.text or response.content
 
-    debug_print = debug_print.format(response.status_code,
-                                     response.reason,
-                                     headers)
+    debug_print = debug_print.format(response.status_code, response.reason, headers)
 
     if body is not None:
-        format_str = '{}\n\t{}:\n{}'
-        debug_print = format_str.format(debug_print, 'Body', body)
+        format_str = "{}\n\t{}:\n{}"
+        debug_print = format_str.format(debug_print, "Body", body)
 
     return debug_print
 
@@ -352,7 +341,7 @@ def dict_of_str(json_dict):
     """
     result = {}
     for key, value in json_dict.items():
-        result[key] = '{}'.format(value)
+        result[key] = "{}".format(value)
     return result
 
 
@@ -369,12 +358,14 @@ def deprecated(func):
         wrapper: A wrapped function that emits a deprecation warning before
                 calling the original function.
     """
+
     @functools.wraps(func)
     def wrapper(*args, **kwargs):
         warnings.warn(
             f"The function '{func.__name__}' is deprecated.",
             DeprecationWarning,
-            stacklevel=2
+            stacklevel=2,
         )
         return func(*args, **kwargs)
+
     return wrapper

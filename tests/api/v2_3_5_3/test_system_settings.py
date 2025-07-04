@@ -26,19 +26,19 @@ from fastjsonschema.exceptions import JsonSchemaException
 from dnacentersdk.exceptions import MalformedRequest
 from tests.environment import DNA_CENTER_VERSION
 
-pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '2.3.5.3', reason='version does not match')
+pytestmark = pytest.mark.skipif(
+    DNA_CENTER_VERSION != "2.3.5.3", reason="version does not match"
+)
 
 
 def is_valid_get_authentication_and_policy_servers(json_schema_validate, obj):
-    json_schema_validate('jsd_f7cc2592721f5b9b9f99795a26130147_v2_3_5_3').validate(obj)
+    json_schema_validate("jsd_f7cc2592721f5b9b9f99795a26130147_v2_3_5_3").validate(obj)
     return True
 
 
 def get_authentication_and_policy_servers(api):
     endpoint_result = api.system_settings.get_authentication_and_policy_servers(
-        is_ise_enabled=True,
-        role='string',
-        state='string'
+        is_ise_enabled=True, role="string", state="string"
     )
     return endpoint_result
 
@@ -47,8 +47,7 @@ def get_authentication_and_policy_servers(api):
 def test_get_authentication_and_policy_servers(api, validator):
     try:
         assert is_valid_get_authentication_and_policy_servers(
-            validator,
-            get_authentication_and_policy_servers(api)
+            validator, get_authentication_and_policy_servers(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -58,9 +57,7 @@ def test_get_authentication_and_policy_servers(api, validator):
 
 def get_authentication_and_policy_servers_default_val(api):
     endpoint_result = api.system_settings.get_authentication_and_policy_servers(
-        is_ise_enabled=None,
-        role=None,
-        state=None
+        is_ise_enabled=None, role=None, state=None
     )
     return endpoint_result
 
@@ -69,8 +66,7 @@ def get_authentication_and_policy_servers_default_val(api):
 def test_get_authentication_and_policy_servers_default_val(api, validator):
     try:
         assert is_valid_get_authentication_and_policy_servers(
-            validator,
-            get_authentication_and_policy_servers_default_val(api)
+            validator, get_authentication_and_policy_servers_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -78,14 +74,12 @@ def test_get_authentication_and_policy_servers_default_val(api, validator):
 
 
 def is_valid_custom_prompt_support_get_api(json_schema_validate, obj):
-    json_schema_validate('jsd_ada20dc4915d5901b50634628392e79f_v2_3_5_3').validate(obj)
+    json_schema_validate("jsd_ada20dc4915d5901b50634628392e79f_v2_3_5_3").validate(obj)
     return True
 
 
 def custom_prompt_support_get_api(api):
-    endpoint_result = api.system_settings.custom_prompt_support_get_api(
-
-    )
+    endpoint_result = api.system_settings.custom_prompt_support_get_api()
     return endpoint_result
 
 
@@ -93,8 +87,7 @@ def custom_prompt_support_get_api(api):
 def test_custom_prompt_support_get_api(api, validator):
     try:
         assert is_valid_custom_prompt_support_get_api(
-            validator,
-            custom_prompt_support_get_api(api)
+            validator, custom_prompt_support_get_api(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -103,9 +96,7 @@ def test_custom_prompt_support_get_api(api, validator):
 
 
 def custom_prompt_support_get_api_default_val(api):
-    endpoint_result = api.system_settings.custom_prompt_support_get_api(
-
-    )
+    endpoint_result = api.system_settings.custom_prompt_support_get_api()
     return endpoint_result
 
 
@@ -113,8 +104,7 @@ def custom_prompt_support_get_api_default_val(api):
 def test_custom_prompt_support_get_api_default_val(api, validator):
     try:
         assert is_valid_custom_prompt_support_get_api(
-            validator,
-            custom_prompt_support_get_api_default_val(api)
+            validator, custom_prompt_support_get_api_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -122,16 +112,16 @@ def test_custom_prompt_support_get_api_default_val(api, validator):
 
 
 def is_valid_custom_prompt_post_api(json_schema_validate, obj):
-    json_schema_validate('jsd_d2ea814bfae85da1b77872d095fc8221_v2_3_5_3').validate(obj)
+    json_schema_validate("jsd_d2ea814bfae85da1b77872d095fc8221_v2_3_5_3").validate(obj)
     return True
 
 
 def custom_prompt_post_api(api):
     endpoint_result = api.system_settings.custom_prompt_post_api(
         active_validation=True,
-        passwordPrompt='string',
+        passwordPrompt="string",
         payload=None,
-        usernamePrompt='string'
+        usernamePrompt="string",
     )
     return endpoint_result
 
@@ -139,10 +129,7 @@ def custom_prompt_post_api(api):
 @pytest.mark.system_settings
 def test_custom_prompt_post_api(api, validator):
     try:
-        assert is_valid_custom_prompt_post_api(
-            validator,
-            custom_prompt_post_api(api)
-        )
+        assert is_valid_custom_prompt_post_api(validator, custom_prompt_post_api(api))
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
             print(original_e)
@@ -151,10 +138,7 @@ def test_custom_prompt_post_api(api, validator):
 
 def custom_prompt_post_api_default_val(api):
     endpoint_result = api.system_settings.custom_prompt_post_api(
-        active_validation=True,
-        passwordPrompt=None,
-        payload=None,
-        usernamePrompt=None
+        active_validation=True, passwordPrompt=None, payload=None, usernamePrompt=None
     )
     return endpoint_result
 
@@ -163,8 +147,7 @@ def custom_prompt_post_api_default_val(api):
 def test_custom_prompt_post_api_default_val(api, validator):
     try:
         assert is_valid_custom_prompt_post_api(
-            validator,
-            custom_prompt_post_api_default_val(api)
+            validator, custom_prompt_post_api_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

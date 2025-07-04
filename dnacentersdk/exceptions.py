@@ -35,16 +35,19 @@ logger = logging.getLogger(__name__)
 
 class dnacentersdkException(Exception):
     """Base class for all dnacentersdk package exceptions."""
+
     pass
 
 
 class AccessTokenError(dnacentersdkException):
     """Raised when an incorrect DNA Center Access Token has been provided."""
+
     pass
 
 
 class VersionError(dnacentersdkException):
     """Raised when an incorrect DNA Center version has been provided."""
+
     pass
 
 
@@ -54,6 +57,7 @@ class DownloadFailure(dnacentersdkException):
 
     Several data attributes are available for inspection.
     """
+
     def __init__(self, response, exception):
         assert isinstance(response, requests.Response)
         assert isinstance(exception, Exception)
@@ -119,8 +123,7 @@ class ApiError(dnacentersdkException):
 
         self.details = None
         """The parsed JSON details from the API response."""
-        if "application/json" in \
-                self.response.headers.get("Content-Type", "").lower():
+        if "application/json" in self.response.headers.get("Content-Type", "").lower():
             try:
                 self.details = self.response.json()
             except ValueError:
@@ -128,18 +131,39 @@ class ApiError(dnacentersdkException):
 
         # Extract detailed error information
         if isinstance(self.details, dict):
-            error_code = self.details.get("response", {}).get("errorCode") if self.details else None
-            message = self.details.get("response", {}).get("message") if self.details else None
-            detail = self.details.get("response", {}).get("detail") if self.details else None
-        elif isinstance(self.details, list) and len(self.details) > 0 and isinstance(self.details[0], dict):
+            error_code = (
+                self.details.get("response", {}).get("errorCode")
+                if self.details
+                else None
+            )
+            message = (
+                self.details.get("response", {}).get("message")
+                if self.details
+                else None
+            )
+            detail = (
+                self.details.get("response", {}).get("detail") if self.details else None
+            )
+        elif (
+            isinstance(self.details, list)
+            and len(self.details) > 0
+            and isinstance(self.details[0], dict)
+        ):
             error_code = self.details[0].get("errorCode") if self.details else None
             message = self.details[0].get("message") if self.details else None
             detail = self.details[0].get("detail") if self.details else None
         else:
             error_code = None
         # Construct the error message
-        self.message = f"{error_code} - {message}: {detail}" if error_code and message and detail else \
-            message or self.details.get("description") if self.details and isinstance(self.details, dict) else None
+        self.message = (
+            f"{error_code} - {message}: {detail}"
+            if error_code and message and detail
+            else (
+                message or self.details.get("description")
+                if self.details and isinstance(self.details, dict)
+                else None
+            )
+        )
         """The error message from the parsed API response."""
 
         self.description = RESPONSE_CODES.get(self.status_code)
@@ -171,7 +195,7 @@ class RateLimitError(ApiError):
         assert isinstance(response, requests.Response)
 
         # Extended exception attributes
-        self.retry_after = max(1, int(response.headers.get('Retry-After', 15)))
+        self.retry_after = max(1, int(response.headers.get("Retry-After", 15)))
         """The `Retry-After` time period (in seconds) provided by DNA Center.
 
         Defaults to 15 seconds if the response `Retry-After` header isn't
@@ -193,7 +217,7 @@ class RateLimitWarning(UserWarning):
         assert isinstance(response, requests.Response)
 
         # Extended warning attributes
-        self.retry_after = max(1, int(response.headers.get('Retry-After', 15)))
+        self.retry_after = max(1, int(response.headers.get("Retry-After", 15)))
         """The `Retry-After` time period (in seconds) provided by DNA Center.
 
         Defaults to 15 seconds if the response `Retry-After` header isn't
@@ -206,4 +230,5 @@ class RateLimitWarning(UserWarning):
 
 class MalformedRequest(dnacentersdkException):
     """Raised when a malformed request is received from DNA Center user."""
+
     pass

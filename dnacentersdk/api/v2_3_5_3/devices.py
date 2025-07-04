@@ -64,13 +64,15 @@ class Devices(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def get_planned_access_points_for_building(self,
-                                               building_id,
-                                               limit=None,
-                                               offset=None,
-                                               radios=None,
-                                               headers=None,
-                                               **request_parameters):
+    def get_planned_access_points_for_building(
+        self,
+        building_id,
+        limit=None,
+        offset=None,
+        radios=None,
+        headers=None,
+        **request_parameters
+    ):
         """Provides a list of Planned Access Points for the Building it is requested for .
 
         Args:
@@ -98,26 +100,21 @@ class Devices(object):
         check_type(limit, (int, str))
         check_type(offset, (int, str))
         check_type(radios, bool)
-        check_type(building_id, str,
-                   may_be_none=False)
+        check_type(building_id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'limit':
-                limit,
-            'offset':
-                offset,
-            'radios':
-                radios,
+            "limit": limit,
+            "offset": offset,
+            "radios": radios,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'buildingId': building_id,
+            "buildingId": building_id,
         }
 
         with_custom_headers = False
@@ -126,23 +123,22 @@ class Devices(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/buildings/{buildingId}/planned-'
-                 + 'access-points')
+        e_url = "/dna/intent/api/v1/buildings/{buildingId}/planned-" + "access-points"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_efc372d6eb577ca47e8c86f30c3d2f_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_efc372d6eb577ca47e8c86f30c3d2f_v2_3_5_3", json_data
+        )
 
-    def get_device_detail(self,
-                          identifier,
-                          search_by,
-                          timestamp=None,
-                          headers=None,
-                          **request_parameters):
+    def get_device_detail(
+        self, identifier, search_by, timestamp=None, headers=None, **request_parameters
+    ):
         """Returns detailed Network Device information retrieved by Mac Address, Device Name or UUID for any given point of
         time.  .
 
@@ -171,31 +167,24 @@ class Devices(object):
         """
         check_type(headers, dict)
         check_type(timestamp, str)
-        check_type(search_by, str,
-                   may_be_none=False)
-        check_type(identifier, str,
-                   may_be_none=False)
+        check_type(search_by, str, may_be_none=False)
+        check_type(identifier, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'timestamp':
-                timestamp,
-            'searchBy':
-                search_by,
-            'identifier':
-                identifier,
+            "timestamp": timestamp,
+            "searchBy": search_by,
+            "identifier": identifier,
         }
 
-        if _params['timestamp'] is None:
-            _params['timestamp'] = ''
+        if _params["timestamp"] is None:
+            _params["timestamp"] = ""
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -203,19 +192,20 @@ class Devices(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/device-detail')
+        e_url = "/dna/intent/api/v1/device-detail"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_c9ee787eb5a0391309f45ddf392ca_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_c9ee787eb5a0391309f45ddf392ca_v2_3_5_3", json_data
+        )
 
-    def get_device_enrichment_details(self,
-                                      headers=None,
-                                      **request_parameters):
+    def get_device_enrichment_details(self, headers=None, **request_parameters):
         """Enriches a given network device context (device id or device Mac Address or device management IP address) with
         details about the device and neighbor topology .
 
@@ -239,23 +229,18 @@ class Devices(object):
         """
         check_type(headers, dict)
         if headers is not None:
-            if 'entity_type' in headers:
-                check_type(headers.get('entity_type'),
-                           str, may_be_none=False)
-            if 'entity_value' in headers:
-                check_type(headers.get('entity_value'),
-                           str, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "entity_type" in headers:
+                check_type(headers.get("entity_type"), str, may_be_none=False)
+            if "entity_value" in headers:
+                check_type(headers.get("entity_value"), str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -263,26 +248,31 @@ class Devices(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/device-enrichment-details')
+        e_url = "/dna/intent/api/v1/device-enrichment-details"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_a20c25e0fa518bb186fd7747450ef6_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_a20c25e0fa518bb186fd7747450ef6_v2_3_5_3", json_data
+        )
 
-    def devices(self,
-                device_role=None,
-                end_time=None,
-                health=None,
-                limit=None,
-                offset=None,
-                site_id=None,
-                start_time=None,
-                headers=None,
-                **request_parameters):
+    def devices(
+        self,
+        device_role=None,
+        end_time=None,
+        health=None,
+        limit=None,
+        offset=None,
+        site_id=None,
+        start_time=None,
+        headers=None,
+        **request_parameters
+    ):
         """Intent API for accessing DNA Assurance Device object for generating reports, creating dashboards or creating
         additional value added services. .
 
@@ -321,31 +311,22 @@ class Devices(object):
         check_type(limit, (int, str))
         check_type(offset, (int, str))
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'deviceRole':
-                device_role,
-            'siteId':
-                site_id,
-            'health':
-                health,
-            'startTime':
-                start_time,
-            'endTime':
-                end_time,
-            'limit':
-                limit,
-            'offset':
-                offset,
+            "deviceRole": device_role,
+            "siteId": site_id,
+            "health": health,
+            "startTime": start_time,
+            "endTime": end_time,
+            "limit": limit,
+            "offset": offset,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -353,23 +334,28 @@ class Devices(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/device-health')
+        e_url = "/dna/intent/api/v1/device-health"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_c75e364632e15384a18063458e2ba0e3_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_c75e364632e15384a18063458e2ba0e3_v2_3_5_3", json_data
+        )
 
-    def get_planned_access_points_for_floor(self,
-                                            floor_id,
-                                            limit=None,
-                                            offset=None,
-                                            radios=None,
-                                            headers=None,
-                                            **request_parameters):
+    def get_planned_access_points_for_floor(
+        self,
+        floor_id,
+        limit=None,
+        offset=None,
+        radios=None,
+        headers=None,
+        **request_parameters
+    ):
         """Provides a list of Planned Access Points for the Floor it is requested for .
 
         Args:
@@ -397,26 +383,21 @@ class Devices(object):
         check_type(limit, (int, str))
         check_type(offset, (int, str))
         check_type(radios, bool)
-        check_type(floor_id, str,
-                   may_be_none=False)
+        check_type(floor_id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'limit':
-                limit,
-            'offset':
-                offset,
-            'radios':
-                radios,
+            "limit": limit,
+            "offset": offset,
+            "radios": radios,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'floorId': floor_id,
+            "floorId": floor_id,
         }
 
         with_custom_headers = False
@@ -425,24 +406,28 @@ class Devices(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/floors/{floorId}/planned-access-'
-                 + 'points')
+        e_url = "/dna/intent/api/v1/floors/{floorId}/planned-access-" + "points"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_a570c5ee77b59d8b9cd203e566288e1_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_a570c5ee77b59d8b9cd203e566288e1_v2_3_5_3", json_data
+        )
 
-    def get_all_interfaces(self,
-                           last_input_time=None,
-                           last_output_time=None,
-                           limit=None,
-                           offset=None,
-                           headers=None,
-                           **request_parameters):
+    def get_all_interfaces(
+        self,
+        last_input_time=None,
+        last_output_time=None,
+        limit=None,
+        offset=None,
+        headers=None,
+        **request_parameters
+    ):
         """Returns all available interfaces. This endpoint can return a maximum of 500 interfaces .
 
         Args:
@@ -472,25 +457,19 @@ class Devices(object):
         check_type(last_input_time, str)
         check_type(last_output_time, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'offset':
-                offset,
-            'limit':
-                limit,
-            'lastInputTime':
-                last_input_time,
-            'lastOutputTime':
-                last_output_time,
+            "offset": offset,
+            "limit": limit,
+            "lastInputTime": last_input_time,
+            "lastOutputTime": last_output_time,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -498,19 +477,20 @@ class Devices(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/interface')
+        e_url = "/dna/intent/api/v1/interface"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_d3d71136d95562afc211b40004d109_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_d3d71136d95562afc211b40004d109_v2_3_5_3", json_data
+        )
 
-    def get_device_interface_count(self,
-                                   headers=None,
-                                   **request_parameters):
+    def get_device_interface_count(self, headers=None, **request_parameters):
         """Returns the count of interfaces for all devices .
 
         Args:
@@ -532,17 +512,14 @@ class Devices(object):
         """
         check_type(headers, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -550,20 +527,20 @@ class Devices(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/interface/count')
+        e_url = "/dna/intent/api/v1/interface/count"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_da44fbc3e415a99aac0bdd291e9a87a_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_da44fbc3e415a99aac0bdd291e9a87a_v2_3_5_3", json_data
+        )
 
-    def get_interface_by_ip(self,
-                            ip_address,
-                            headers=None,
-                            **request_parameters):
+    def get_interface_by_ip(self, ip_address, headers=None, **request_parameters):
         """Returns list of interfaces for specified device management IP address .
 
         Args:
@@ -585,20 +562,17 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!get-interface-by-ip
         """
         check_type(headers, dict)
-        check_type(ip_address, str,
-                   may_be_none=False)
+        check_type(ip_address, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'ipAddress': ip_address,
+            "ipAddress": ip_address,
         }
 
         with_custom_headers = False
@@ -607,19 +581,20 @@ class Devices(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/interface/ip-address/{ipAddress}')
+        e_url = "/dna/intent/api/v1/interface/ip-address/{ipAddress}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_cf7fa95e3ed4527aa5ba8ca871a8c142_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_cf7fa95e3ed4527aa5ba8ca871a8c142_v2_3_5_3", json_data
+        )
 
-    def get_isis_interfaces(self,
-                            headers=None,
-                            **request_parameters):
+    def get_isis_interfaces(self, headers=None, **request_parameters):
         """Returns the interfaces that has ISIS enabled .
 
         Args:
@@ -641,17 +616,14 @@ class Devices(object):
         """
         check_type(headers, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -659,20 +631,20 @@ class Devices(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/interface/isis')
+        e_url = "/dna/intent/api/v1/interface/isis"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_af71ea437c8755869b00d26ba9234dff_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_af71ea437c8755869b00d26ba9234dff_v2_3_5_3", json_data
+        )
 
-    def get_interface_info_by_id(self,
-                                 device_id,
-                                 headers=None,
-                                 **request_parameters):
+    def get_interface_info_by_id(self, device_id, headers=None, **request_parameters):
         """Returns list of interfaces by specified device .
 
         Args:
@@ -694,20 +666,17 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!get-interface-info-by-id
         """
         check_type(headers, dict)
-        check_type(device_id, str,
-                   may_be_none=False)
+        check_type(device_id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'deviceId': device_id,
+            "deviceId": device_id,
         }
 
         with_custom_headers = False
@@ -716,20 +685,22 @@ class Devices(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/interface/network-device/{deviceId}')
+        e_url = "/dna/intent/api/v1/interface/network-device/{deviceId}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_e057192b97615f0d99a10e2b66bab13a_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_e057192b97615f0d99a10e2b66bab13a_v2_3_5_3", json_data
+        )
 
-    def get_device_interface_count_by_id(self,
-                                         device_id,
-                                         headers=None,
-                                         **request_parameters):
+    def get_device_interface_count_by_id(
+        self, device_id, headers=None, **request_parameters
+    ):
         """Returns the interface count for the given device .
 
         Args:
@@ -751,20 +722,17 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!get-device-interface-count-by-id
         """
         check_type(headers, dict)
-        check_type(device_id, str,
-                   may_be_none=False)
+        check_type(device_id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'deviceId': device_id,
+            "deviceId": device_id,
         }
 
         with_custom_headers = False
@@ -773,22 +741,22 @@ class Devices(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/interface/network-'
-                 + 'device/{deviceId}/count')
+        e_url = "/dna/intent/api/v1/interface/network-" + "device/{deviceId}/count"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_b7d6c62ea6522081fcf55de7eb9fd7_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_b7d6c62ea6522081fcf55de7eb9fd7_v2_3_5_3", json_data
+        )
 
-    def get_interface_details(self,
-                              device_id,
-                              name,
-                              headers=None,
-                              **request_parameters):
+    def get_interface_details(
+        self, device_id, name, headers=None, **request_parameters
+    ):
         """Returns interface by specified device Id and interface name .
 
         Args:
@@ -811,24 +779,20 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!get-interface-details
         """
         check_type(headers, dict)
-        check_type(name, str,
-                   may_be_none=False)
-        check_type(device_id, str,
-                   may_be_none=False)
+        check_type(name, str, may_be_none=False)
+        check_type(device_id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'name':
-                name,
+            "name": name,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'deviceId': device_id,
+            "deviceId": device_id,
         }
 
         with_custom_headers = False
@@ -837,23 +801,29 @@ class Devices(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/interface/network-'
-                 + 'device/{deviceId}/interface-name')
+        e_url = (
+            "/dna/intent/api/v1/interface/network-" + "device/{deviceId}/interface-name"
+        )
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_bef9e9b306085d879b877598fad71b51_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_bef9e9b306085d879b877598fad71b51_v2_3_5_3", json_data
+        )
 
-    def get_device_interfaces_by_specified_range(self,
-                                                 device_id,
-                                                 records_to_return,
-                                                 start_index,
-                                                 headers=None,
-                                                 **request_parameters):
+    def get_device_interfaces_by_specified_range(
+        self,
+        device_id,
+        records_to_return,
+        start_index,
+        headers=None,
+        **request_parameters
+    ):
         """Returns the list of interfaces for the device for the specified range .
 
         Args:
@@ -877,26 +847,21 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!get-device-interfaces-by-specified-range
         """
         check_type(headers, dict)
-        check_type(device_id, str,
-                   may_be_none=False)
-        check_type(start_index, int,
-                   may_be_none=False)
-        check_type(records_to_return, int,
-                   may_be_none=False)
+        check_type(device_id, str, may_be_none=False)
+        check_type(start_index, int, may_be_none=False)
+        check_type(records_to_return, int, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'deviceId': device_id,
-            'startIndex': start_index,
-            'recordsToReturn': records_to_return,
+            "deviceId": device_id,
+            "startIndex": start_index,
+            "recordsToReturn": records_to_return,
         }
 
         with_custom_headers = False
@@ -905,20 +870,23 @@ class Devices(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/interface/network-'
-                 + 'device/{deviceId}/{startIndex}/{recordsToReturn}')
+        e_url = (
+            "/dna/intent/api/v1/interface/network-"
+            + "device/{deviceId}/{startIndex}/{recordsToReturn}"
+        )
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_a3d52c630ba5deaada16fe3b07af744_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_a3d52c630ba5deaada16fe3b07af744_v2_3_5_3", json_data
+        )
 
-    def get_ospf_interfaces(self,
-                            headers=None,
-                            **request_parameters):
+    def get_ospf_interfaces(self, headers=None, **request_parameters):
         """Returns the interfaces that has OSPF enabled .
 
         Args:
@@ -940,17 +908,14 @@ class Devices(object):
         """
         check_type(headers, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -958,20 +923,20 @@ class Devices(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/interface/ospf')
+        e_url = "/dna/intent/api/v1/interface/ospf"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_a2868ff45f5621965f6ece01a742ce_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_a2868ff45f5621965f6ece01a742ce_v2_3_5_3", json_data
+        )
 
-    def get_interface_by_id(self,
-                            id,
-                            headers=None,
-                            **request_parameters):
+    def get_interface_by_id(self, id, headers=None, **request_parameters):
         """Returns the interface for the given interface ID .
 
         Args:
@@ -993,20 +958,17 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!get-interface-by-id
         """
         check_type(headers, dict)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
 
         with_custom_headers = False
@@ -1015,27 +977,32 @@ class Devices(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/interface/{id}')
+        e_url = "/dna/intent/api/v1/interface/{id}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_b16bff74ae54ca88a02b34df169218_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_b16bff74ae54ca88a02b34df169218_v2_3_5_3", json_data
+        )
 
-    def update_interface_details(self,
-                                 interface_uuid,
-                                 adminStatus=None,
-                                 deployment_mode=None,
-                                 description=None,
-                                 vlanId=None,
-                                 voiceVlanId=None,
-                                 headers=None,
-                                 payload=None,
-                                 active_validation=True,
-                                 **request_parameters):
+    def update_interface_details(
+        self,
+        interface_uuid,
+        adminStatus=None,
+        deployment_mode=None,
+        description=None,
+        vlanId=None,
+        voiceVlanId=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Add/Update Interface description, VLAN membership, Voice VLAN and change Interface admin status ('UP'/'DOWN')
         from Request body. .
 
@@ -1071,41 +1038,34 @@ class Devices(object):
         check_type(headers, dict)
         check_type(payload, dict)
         check_type(deployment_mode, str)
-        check_type(interface_uuid, str,
-                   may_be_none=False)
+        check_type(interface_uuid, str, may_be_none=False)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'deploymentMode':
-                deployment_mode,
+            "deploymentMode": deployment_mode,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'interfaceUuid': interface_uuid,
+            "interfaceUuid": interface_uuid,
         }
         _payload = {
-            'description':
-                description,
-            'adminStatus':
-                adminStatus,
-            'vlanId':
-                vlanId,
-            'voiceVlanId':
-                voiceVlanId,
+            "description": description,
+            "adminStatus": adminStatus,
+            "vlanId": vlanId,
+            "voiceVlanId": voiceVlanId,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_b887c55faaca726bbe4ac2564_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator("jsd_b887c55faaca726bbe4ac2564_v2_3_5_3").validate(
+                _payload
+            )
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1113,22 +1073,22 @@ class Devices(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/interface/{interfaceUuid}')
+        e_url = "/dna/intent/api/v1/interface/{interfaceUuid}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload,
-                                          headers=_headers)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_b887c55faaca726bbe4ac2564_v2_3_5_3', json_data)
+        return self._object_factory("bpm_b887c55faaca726bbe4ac2564_v2_3_5_3", json_data)
 
-    def legit_operations_for_interface(self,
-                                       interface_uuid,
-                                       headers=None,
-                                       **request_parameters):
+    def legit_operations_for_interface(
+        self, interface_uuid, headers=None, **request_parameters
+    ):
         """Get list of all properties & operations valid for an interface. .
 
         Args:
@@ -1150,20 +1110,17 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!legit-operations-for-interface
         """
         check_type(headers, dict)
-        check_type(interface_uuid, str,
-                   may_be_none=False)
+        check_type(interface_uuid, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'interfaceUuid': interface_uuid,
+            "interfaceUuid": interface_uuid,
         }
 
         with_custom_headers = False
@@ -1172,25 +1129,29 @@ class Devices(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/interface/{interfaceUuid}/legit-'
-                 + 'operation')
+        e_url = "/dna/intent/api/v1/interface/{interfaceUuid}/legit-" + "operation"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_fe6d62edcec25921926043ca25f75bed_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_fe6d62edcec25921926043ca25f75bed_v2_3_5_3", json_data
+        )
 
-    def clear_mac_address_table(self,
-                                interface_uuid,
-                                deployment_mode=None,
-                                operation=None,
-                                payload=None,
-                                headers=None,
-                                active_validation=True,
-                                **request_parameters):
+    def clear_mac_address_table(
+        self,
+        interface_uuid,
+        deployment_mode=None,
+        operation=None,
+        payload=None,
+        headers=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Clear mac-address on an individual port. In request body, operation needs to be specified as 'ClearMacAddress'.
         In the future more possible operations will be added to this API .
 
@@ -1224,37 +1185,32 @@ class Devices(object):
         check_type(headers, dict)
         check_type(payload, dict)
         check_type(deployment_mode, str)
-        check_type(interface_uuid, str,
-                   may_be_none=False)
+        check_type(interface_uuid, str, may_be_none=False)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'deploymentMode':
-                deployment_mode,
+            "deploymentMode": deployment_mode,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'interfaceUuid': interface_uuid,
+            "interfaceUuid": interface_uuid,
         }
         _payload = {
-            'operation':
-                operation,
-            'payload':
-                payload,
+            "operation": operation,
+            "payload": payload,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_e702d5786552992aa76b930780569_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_e702d5786552992aa76b930780569_v2_3_5_3"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1262,55 +1218,60 @@ class Devices(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/interface/{interfaceUuid}/operation')
+        e_url = "/dna/intent/api/v1/interface/{interfaceUuid}/operation"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_e702d5786552992aa76b930780569_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_e702d5786552992aa76b930780569_v2_3_5_3", json_data
+        )
 
-    def get_device_list(self,
-                        associated_wlc_ip=None,
-                        collection_interval=None,
-                        collection_status=None,
-                        device_support_level=None,
-                        error_code=None,
-                        error_description=None,
-                        family=None,
-                        hostname=None,
-                        id=None,
-                        license_name=None,
-                        license_status=None,
-                        license_type=None,
-                        limit=None,
-                        location=None,
-                        location_name=None,
-                        mac_address=None,
-                        management_ip_address=None,
-                        module_equpimenttype=None,
-                        module_name=None,
-                        module_operationstatecode=None,
-                        module_partnumber=None,
-                        module_servicestate=None,
-                        module_vendorequipmenttype=None,
-                        not_synced_for_minutes=None,
-                        offset=None,
-                        platform_id=None,
-                        reachability_status=None,
-                        role=None,
-                        serial_number=None,
-                        series=None,
-                        software_type=None,
-                        software_version=None,
-                        type=None,
-                        up_time=None,
-                        headers=None,
-                        **request_parameters):
+    def get_device_list(
+        self,
+        associated_wlc_ip=None,
+        collection_interval=None,
+        collection_status=None,
+        device_support_level=None,
+        error_code=None,
+        error_description=None,
+        family=None,
+        hostname=None,
+        id=None,
+        license_name=None,
+        license_status=None,
+        license_type=None,
+        limit=None,
+        location=None,
+        location_name=None,
+        mac_address=None,
+        management_ip_address=None,
+        module_equpimenttype=None,
+        module_name=None,
+        module_operationstatecode=None,
+        module_partnumber=None,
+        module_servicestate=None,
+        module_vendorequipmenttype=None,
+        not_synced_for_minutes=None,
+        offset=None,
+        platform_id=None,
+        reachability_status=None,
+        role=None,
+        serial_number=None,
+        series=None,
+        software_type=None,
+        software_version=None,
+        type=None,
+        up_time=None,
+        headers=None,
+        **request_parameters
+    ):
         """Returns list of network devices based on filter criteria such as management IP address, mac address, hostname,
         etc. You can use the .* in any value to conduct a wildcard search. For example, to find all hostnames
         beginning with myhost in the IP address range 192.25.18.n, issue the following request: GET
@@ -1408,85 +1369,49 @@ class Devices(object):
         check_type(offset, (int, str))
         check_type(limit, (int, str))
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'hostname':
-                hostname,
-            'managementIpAddress':
-                management_ip_address,
-            'macAddress':
-                mac_address,
-            'locationName':
-                location_name,
-            'serialNumber':
-                serial_number,
-            'location':
-                location,
-            'family':
-                family,
-            'type':
-                type,
-            'series':
-                series,
-            'collectionStatus':
-                collection_status,
-            'collectionInterval':
-                collection_interval,
-            'notSyncedForMinutes':
-                not_synced_for_minutes,
-            'errorCode':
-                error_code,
-            'errorDescription':
-                error_description,
-            'softwareVersion':
-                software_version,
-            'softwareType':
-                software_type,
-            'platformId':
-                platform_id,
-            'role':
-                role,
-            'reachabilityStatus':
-                reachability_status,
-            'upTime':
-                up_time,
-            'associatedWlcIp':
-                associated_wlc_ip,
-            'license.name':
-                license_name,
-            'license.type':
-                license_type,
-            'license.status':
-                license_status,
-            'module+name':
-                module_name,
-            'module+equpimenttype':
-                module_equpimenttype,
-            'module+servicestate':
-                module_servicestate,
-            'module+vendorequipmenttype':
-                module_vendorequipmenttype,
-            'module+partnumber':
-                module_partnumber,
-            'module+operationstatecode':
-                module_operationstatecode,
-            'id':
-                id,
-            'deviceSupportLevel':
-                device_support_level,
-            'offset':
-                offset,
-            'limit':
-                limit,
+            "hostname": hostname,
+            "managementIpAddress": management_ip_address,
+            "macAddress": mac_address,
+            "locationName": location_name,
+            "serialNumber": serial_number,
+            "location": location,
+            "family": family,
+            "type": type,
+            "series": series,
+            "collectionStatus": collection_status,
+            "collectionInterval": collection_interval,
+            "notSyncedForMinutes": not_synced_for_minutes,
+            "errorCode": error_code,
+            "errorDescription": error_description,
+            "softwareVersion": software_version,
+            "softwareType": software_type,
+            "platformId": platform_id,
+            "role": role,
+            "reachabilityStatus": reachability_status,
+            "upTime": up_time,
+            "associatedWlcIp": associated_wlc_ip,
+            "license.name": license_name,
+            "license.type": license_type,
+            "license.status": license_status,
+            "module+name": module_name,
+            "module+equpimenttype": module_equpimenttype,
+            "module+servicestate": module_servicestate,
+            "module+vendorequipmenttype": module_vendorequipmenttype,
+            "module+partnumber": module_partnumber,
+            "module+operationstatecode": module_operationstatecode,
+            "id": id,
+            "deviceSupportLevel": device_support_level,
+            "offset": offset,
+            "limit": limit,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1494,48 +1419,53 @@ class Devices(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/network-device')
+        e_url = "/dna/intent/api/v1/network-device"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_fe602e8165035b5cbc304fada4ee2f26_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_fe602e8165035b5cbc304fada4ee2f26_v2_3_5_3", json_data
+        )
 
-    def add_device(self,
-                   cliTransport=None,
-                   computeDevice=None,
-                   enablePassword=None,
-                   extendedDiscoveryInfo=None,
-                   httpPassword=None,
-                   httpPort=None,
-                   httpSecure=None,
-                   httpUserName=None,
-                   ipAddress=None,
-                   merakiOrgId=None,
-                   netconfPort=None,
-                   password=None,
-                   serialNumber=None,
-                   snmpAuthPassphrase=None,
-                   snmpAuthProtocol=None,
-                   snmpMode=None,
-                   snmpPrivPassphrase=None,
-                   snmpPrivProtocol=None,
-                   snmpROCommunity=None,
-                   snmpRWCommunity=None,
-                   snmpRetry=None,
-                   snmpTimeout=None,
-                   snmpUserName=None,
-                   snmpVersion=None,
-                   type=None,
-                   updateMgmtIPaddressList=None,
-                   userName=None,
-                   headers=None,
-                   payload=None,
-                   active_validation=True,
-                   **request_parameters):
+    def add_device(
+        self,
+        cliTransport=None,
+        computeDevice=None,
+        enablePassword=None,
+        extendedDiscoveryInfo=None,
+        httpPassword=None,
+        httpPort=None,
+        httpSecure=None,
+        httpUserName=None,
+        ipAddress=None,
+        merakiOrgId=None,
+        netconfPort=None,
+        password=None,
+        serialNumber=None,
+        snmpAuthPassphrase=None,
+        snmpAuthProtocol=None,
+        snmpMode=None,
+        snmpPrivPassphrase=None,
+        snmpPrivProtocol=None,
+        snmpROCommunity=None,
+        snmpRWCommunity=None,
+        snmpRetry=None,
+        snmpTimeout=None,
+        snmpUserName=None,
+        snmpVersion=None,
+        type=None,
+        updateMgmtIPaddressList=None,
+        userName=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Adds the device with given credential .
 
         Args:
@@ -1590,78 +1520,49 @@ class Devices(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'cliTransport':
-                cliTransport,
-            'computeDevice':
-                computeDevice,
-            'enablePassword':
-                enablePassword,
-            'extendedDiscoveryInfo':
-                extendedDiscoveryInfo,
-            'httpPassword':
-                httpPassword,
-            'httpPort':
-                httpPort,
-            'httpSecure':
-                httpSecure,
-            'httpUserName':
-                httpUserName,
-            'ipAddress':
-                ipAddress,
-            'merakiOrgId':
-                merakiOrgId,
-            'netconfPort':
-                netconfPort,
-            'password':
-                password,
-            'serialNumber':
-                serialNumber,
-            'snmpAuthPassphrase':
-                snmpAuthPassphrase,
-            'snmpAuthProtocol':
-                snmpAuthProtocol,
-            'snmpMode':
-                snmpMode,
-            'snmpPrivPassphrase':
-                snmpPrivPassphrase,
-            'snmpPrivProtocol':
-                snmpPrivProtocol,
-            'snmpROCommunity':
-                snmpROCommunity,
-            'snmpRWCommunity':
-                snmpRWCommunity,
-            'snmpRetry':
-                snmpRetry,
-            'snmpTimeout':
-                snmpTimeout,
-            'snmpUserName':
-                snmpUserName,
-            'snmpVersion':
-                snmpVersion,
-            'type':
-                type,
-            'updateMgmtIPaddressList':
-                updateMgmtIPaddressList,
-            'userName':
-                userName,
+            "cliTransport": cliTransport,
+            "computeDevice": computeDevice,
+            "enablePassword": enablePassword,
+            "extendedDiscoveryInfo": extendedDiscoveryInfo,
+            "httpPassword": httpPassword,
+            "httpPort": httpPort,
+            "httpSecure": httpSecure,
+            "httpUserName": httpUserName,
+            "ipAddress": ipAddress,
+            "merakiOrgId": merakiOrgId,
+            "netconfPort": netconfPort,
+            "password": password,
+            "serialNumber": serialNumber,
+            "snmpAuthPassphrase": snmpAuthPassphrase,
+            "snmpAuthProtocol": snmpAuthProtocol,
+            "snmpMode": snmpMode,
+            "snmpPrivPassphrase": snmpPrivPassphrase,
+            "snmpPrivProtocol": snmpPrivProtocol,
+            "snmpROCommunity": snmpROCommunity,
+            "snmpRWCommunity": snmpRWCommunity,
+            "snmpRetry": snmpRetry,
+            "snmpTimeout": snmpTimeout,
+            "snmpUserName": snmpUserName,
+            "snmpVersion": snmpVersion,
+            "type": type,
+            "updateMgmtIPaddressList": updateMgmtIPaddressList,
+            "userName": userName,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_fe3ec7651e79d891fce37a0d860_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_fe3ec7651e79d891fce37a0d860_v2_3_5_3"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1669,50 +1570,55 @@ class Devices(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/network-device')
+        e_url = "/dna/intent/api/v1/network-device"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_fe3ec7651e79d891fce37a0d860_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_fe3ec7651e79d891fce37a0d860_v2_3_5_3", json_data
+        )
 
-    def sync_devices(self,
-                     cliTransport=None,
-                     computeDevice=None,
-                     enablePassword=None,
-                     extendedDiscoveryInfo=None,
-                     httpPassword=None,
-                     httpPort=None,
-                     httpSecure=None,
-                     httpUserName=None,
-                     ipAddress=None,
-                     merakiOrgId=None,
-                     netconfPort=None,
-                     password=None,
-                     serialNumber=None,
-                     snmpAuthPassphrase=None,
-                     snmpAuthProtocol=None,
-                     snmpMode=None,
-                     snmpPrivPassphrase=None,
-                     snmpPrivProtocol=None,
-                     snmpROCommunity=None,
-                     snmpRWCommunity=None,
-                     snmpRetry=None,
-                     snmpTimeout=None,
-                     snmpUserName=None,
-                     snmpVersion=None,
-                     type=None,
-                     updateMgmtIPaddressList=None,
-                     userName=None,
-                     headers=None,
-                     payload=None,
-                     active_validation=True,
-                     **request_parameters):
+    def sync_devices(
+        self,
+        cliTransport=None,
+        computeDevice=None,
+        enablePassword=None,
+        extendedDiscoveryInfo=None,
+        httpPassword=None,
+        httpPort=None,
+        httpSecure=None,
+        httpUserName=None,
+        ipAddress=None,
+        merakiOrgId=None,
+        netconfPort=None,
+        password=None,
+        serialNumber=None,
+        snmpAuthPassphrase=None,
+        snmpAuthProtocol=None,
+        snmpMode=None,
+        snmpPrivPassphrase=None,
+        snmpPrivProtocol=None,
+        snmpROCommunity=None,
+        snmpRWCommunity=None,
+        snmpRetry=None,
+        snmpTimeout=None,
+        snmpUserName=None,
+        snmpVersion=None,
+        type=None,
+        updateMgmtIPaddressList=None,
+        userName=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Sync the devices provided as input .
 
         Args:
@@ -1767,78 +1673,49 @@ class Devices(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'cliTransport':
-                cliTransport,
-            'computeDevice':
-                computeDevice,
-            'enablePassword':
-                enablePassword,
-            'extendedDiscoveryInfo':
-                extendedDiscoveryInfo,
-            'httpPassword':
-                httpPassword,
-            'httpPort':
-                httpPort,
-            'httpSecure':
-                httpSecure,
-            'httpUserName':
-                httpUserName,
-            'ipAddress':
-                ipAddress,
-            'merakiOrgId':
-                merakiOrgId,
-            'netconfPort':
-                netconfPort,
-            'password':
-                password,
-            'serialNumber':
-                serialNumber,
-            'snmpAuthPassphrase':
-                snmpAuthPassphrase,
-            'snmpAuthProtocol':
-                snmpAuthProtocol,
-            'snmpMode':
-                snmpMode,
-            'snmpPrivPassphrase':
-                snmpPrivPassphrase,
-            'snmpPrivProtocol':
-                snmpPrivProtocol,
-            'snmpROCommunity':
-                snmpROCommunity,
-            'snmpRWCommunity':
-                snmpRWCommunity,
-            'snmpRetry':
-                snmpRetry,
-            'snmpTimeout':
-                snmpTimeout,
-            'snmpUserName':
-                snmpUserName,
-            'snmpVersion':
-                snmpVersion,
-            'type':
-                type,
-            'updateMgmtIPaddressList':
-                updateMgmtIPaddressList,
-            'userName':
-                userName,
+            "cliTransport": cliTransport,
+            "computeDevice": computeDevice,
+            "enablePassword": enablePassword,
+            "extendedDiscoveryInfo": extendedDiscoveryInfo,
+            "httpPassword": httpPassword,
+            "httpPort": httpPort,
+            "httpSecure": httpSecure,
+            "httpUserName": httpUserName,
+            "ipAddress": ipAddress,
+            "merakiOrgId": merakiOrgId,
+            "netconfPort": netconfPort,
+            "password": password,
+            "serialNumber": serialNumber,
+            "snmpAuthPassphrase": snmpAuthPassphrase,
+            "snmpAuthProtocol": snmpAuthProtocol,
+            "snmpMode": snmpMode,
+            "snmpPrivPassphrase": snmpPrivPassphrase,
+            "snmpPrivProtocol": snmpPrivProtocol,
+            "snmpROCommunity": snmpROCommunity,
+            "snmpRWCommunity": snmpRWCommunity,
+            "snmpRetry": snmpRetry,
+            "snmpTimeout": snmpTimeout,
+            "snmpUserName": snmpUserName,
+            "snmpVersion": snmpVersion,
+            "type": type,
+            "updateMgmtIPaddressList": updateMgmtIPaddressList,
+            "userName": userName,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_fe06867e548bba1919024b40d992_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_fe06867e548bba1919024b40d992_v2_3_5_3"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1846,43 +1723,48 @@ class Devices(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/network-device')
+        e_url = "/dna/intent/api/v1/network-device"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload,
-                                          headers=_headers)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_fe06867e548bba1919024b40d992_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_fe06867e548bba1919024b40d992_v2_3_5_3", json_data
+        )
 
-    def get_device_values_that_match_fully_or_partially_an_attribute(self,
-                                                                     associated_wlc_ip=None,
-                                                                     collection_interval=None,
-                                                                     collection_status=None,
-                                                                     error_code=None,
-                                                                     family=None,
-                                                                     hostname=None,
-                                                                     limit=None,
-                                                                     mac_address=None,
-                                                                     management_ip_address=None,
-                                                                     offset=None,
-                                                                     platform_id=None,
-                                                                     reachability_failure_reason=None,
-                                                                     reachability_status=None,
-                                                                     role=None,
-                                                                     role_source=None,
-                                                                     serial_number=None,
-                                                                     series=None,
-                                                                     software_type=None,
-                                                                     software_version=None,
-                                                                     type=None,
-                                                                     up_time=None,
-                                                                     vrf_name=None,
-                                                                     headers=None,
-                                                                     **request_parameters):
+    def get_device_values_that_match_fully_or_partially_an_attribute(
+        self,
+        associated_wlc_ip=None,
+        collection_interval=None,
+        collection_status=None,
+        error_code=None,
+        family=None,
+        hostname=None,
+        limit=None,
+        mac_address=None,
+        management_ip_address=None,
+        offset=None,
+        platform_id=None,
+        reachability_failure_reason=None,
+        reachability_status=None,
+        role=None,
+        role_source=None,
+        serial_number=None,
+        series=None,
+        software_type=None,
+        software_version=None,
+        type=None,
+        up_time=None,
+        vrf_name=None,
+        headers=None,
+        **request_parameters
+    ):
         """Returns the list of values of the first given required parameter. You can use the .* in any value to conduct a
         wildcard search. For example, to get all the devices with the management IP address starting with 10.10.
         , issue the following request: GET /dna/inten/api/v1/network-
@@ -1952,61 +1834,37 @@ class Devices(object):
         check_type(offset, (int, str))
         check_type(limit, (int, str))
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'vrfName':
-                vrf_name,
-            'managementIpAddress':
-                management_ip_address,
-            'hostname':
-                hostname,
-            'macAddress':
-                mac_address,
-            'family':
-                family,
-            'collectionStatus':
-                collection_status,
-            'collectionInterval':
-                collection_interval,
-            'softwareVersion':
-                software_version,
-            'softwareType':
-                software_type,
-            'reachabilityStatus':
-                reachability_status,
-            'reachabilityFailureReason':
-                reachability_failure_reason,
-            'errorCode':
-                error_code,
-            'platformId':
-                platform_id,
-            'series':
-                series,
-            'type':
-                type,
-            'serialNumber':
-                serial_number,
-            'upTime':
-                up_time,
-            'role':
-                role,
-            'roleSource':
-                role_source,
-            'associatedWlcIp':
-                associated_wlc_ip,
-            'offset':
-                offset,
-            'limit':
-                limit,
+            "vrfName": vrf_name,
+            "managementIpAddress": management_ip_address,
+            "hostname": hostname,
+            "macAddress": mac_address,
+            "family": family,
+            "collectionStatus": collection_status,
+            "collectionInterval": collection_interval,
+            "softwareVersion": software_version,
+            "softwareType": software_type,
+            "reachabilityStatus": reachability_status,
+            "reachabilityFailureReason": reachability_failure_reason,
+            "errorCode": error_code,
+            "platformId": platform_id,
+            "series": series,
+            "type": type,
+            "serialNumber": serial_number,
+            "upTime": up_time,
+            "role": role,
+            "roleSource": role_source,
+            "associatedWlcIp": associated_wlc_ip,
+            "offset": offset,
+            "limit": limit,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -2014,24 +1872,29 @@ class Devices(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/network-device/autocomplete')
+        e_url = "/dna/intent/api/v1/network-device/autocomplete"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_b5a5c8da4aaa526da6a06e97c80a38be_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_b5a5c8da4aaa526da6a06e97c80a38be_v2_3_5_3", json_data
+        )
 
-    def update_device_role(self,
-                           id=None,
-                           role=None,
-                           roleSource=None,
-                           headers=None,
-                           payload=None,
-                           active_validation=True,
-                           **request_parameters):
+    def update_device_role(
+        self,
+        id=None,
+        role=None,
+        roleSource=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Updates the role of the device as access, core, distribution, border router .
 
         Args:
@@ -2061,33 +1924,27 @@ class Devices(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'id':
-                id,
-            'role':
-                role,
-            'roleSource':
-                roleSource,
+            "id": id,
+            "role": role,
+            "roleSource": roleSource,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_aa11f09d28165f4ea6c81b8642e59cc4_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_aa11f09d28165f4ea6c81b8642e59cc4_v2_3_5_3"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -2095,21 +1952,22 @@ class Devices(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/network-device/brief')
+        e_url = "/dna/intent/api/v1/network-device/brief"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload,
-                                          headers=_headers)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_aa11f09d28165f4ea6c81b8642e59cc4_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_aa11f09d28165f4ea6c81b8642e59cc4_v2_3_5_3", json_data
+        )
 
-    def get_polling_interval_for_all_devices(self,
-                                             headers=None,
-                                             **request_parameters):
+    def get_polling_interval_for_all_devices(self, headers=None, **request_parameters):
         """Returns polling interval of all devices .
 
         Args:
@@ -2131,17 +1989,14 @@ class Devices(object):
         """
         check_type(headers, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -2149,20 +2004,20 @@ class Devices(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/network-device/collection-'
-                 + 'schedule/global')
+        e_url = "/dna/intent/api/v1/network-device/collection-" + "schedule/global"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_ce94ab18ad505e8a9846f6c4c9df0d2b_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_ce94ab18ad505e8a9846f6c4c9df0d2b_v2_3_5_3", json_data
+        )
 
-    def get_device_config_for_all_devices(self,
-                                          headers=None,
-                                          **request_parameters):
+    def get_device_config_for_all_devices(self, headers=None, **request_parameters):
         """Returns the config for all devices .
 
         Args:
@@ -2184,17 +2039,14 @@ class Devices(object):
         """
         check_type(headers, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -2202,19 +2054,20 @@ class Devices(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/network-device/config')
+        e_url = "/dna/intent/api/v1/network-device/config"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_ed2bca4be412527198720a4dfec9604a_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_ed2bca4be412527198720a4dfec9604a_v2_3_5_3", json_data
+        )
 
-    def get_device_config_count(self,
-                                headers=None,
-                                **request_parameters):
+    def get_device_config_count(self, headers=None, **request_parameters):
         """Returns the count of device configs .
 
         Args:
@@ -2236,17 +2089,14 @@ class Devices(object):
         """
         check_type(headers, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -2254,19 +2104,20 @@ class Devices(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/network-device/config/count')
+        e_url = "/dna/intent/api/v1/network-device/config/count"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_dc0a72537a3578ca31cc5ef29131d35_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_dc0a72537a3578ca31cc5ef29131d35_v2_3_5_3", json_data
+        )
 
-    def get_device_count(self,
-                         headers=None,
-                         **request_parameters):
+    def get_device_count(self, headers=None, **request_parameters):
         """Returns the count of network devices based on the filter criteria by management IP address, mac address,
         hostname and location name .
 
@@ -2289,17 +2140,14 @@ class Devices(object):
         """
         check_type(headers, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -2307,26 +2155,31 @@ class Devices(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/network-device/count')
+        e_url = "/dna/intent/api/v1/network-device/count"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_bbfe7340fe6752e5bc273a303d165654_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_bbfe7340fe6752e5bc273a303d165654_v2_3_5_3", json_data
+        )
 
-    def export_device_list(self,
-                           deviceUuids=None,
-                           id=None,
-                           operationEnum=None,
-                           parameters=None,
-                           password=None,
-                           headers=None,
-                           payload=None,
-                           active_validation=True,
-                           **request_parameters):
+    def export_device_list(
+        self,
+        deviceUuids=None,
+        id=None,
+        operationEnum=None,
+        parameters=None,
+        password=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Exports the selected network device to a file .
 
         Args:
@@ -2359,37 +2212,29 @@ class Devices(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'deviceUuids':
-                deviceUuids,
-            'id':
-                id,
-            'operationEnum':
-                operationEnum,
-            'parameters':
-                parameters,
-            'password':
-                password,
+            "deviceUuids": deviceUuids,
+            "id": id,
+            "operationEnum": operationEnum,
+            "parameters": parameters,
+            "password": password,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_e6ec627d3c587288978990aae75228_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_e6ec627d3c587288978990aae75228_v2_3_5_3"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -2397,23 +2242,24 @@ class Devices(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/network-device/file')
+        e_url = "/dna/intent/api/v1/network-device/file"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_e6ec627d3c587288978990aae75228_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_e6ec627d3c587288978990aae75228_v2_3_5_3", json_data
+        )
 
-    def get_functional_capability_for_devices(self,
-                                              device_id,
-                                              function_name=None,
-                                              headers=None,
-                                              **request_parameters):
+    def get_functional_capability_for_devices(
+        self, device_id, function_name=None, headers=None, **request_parameters
+    ):
         """Returns the functional-capability for given devices .
 
         Args:
@@ -2438,25 +2284,20 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!get-functional-capability-for-devices
         """
         check_type(headers, dict)
-        check_type(device_id, str,
-                   may_be_none=False)
+        check_type(device_id, str, may_be_none=False)
         check_type(function_name, (str, list, set, tuple))
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'deviceId':
-                device_id,
-            'functionName':
-                function_name,
+            "deviceId": device_id,
+            "functionName": function_name,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -2464,20 +2305,20 @@ class Devices(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/network-device/functional-capability')
+        e_url = "/dna/intent/api/v1/network-device/functional-capability"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_ad8cea95d71352f0842a2c869765e6cf_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_ad8cea95d71352f0842a2c869765e6cf_v2_3_5_3", json_data
+        )
 
-    def get_functional_capability_by_id(self,
-                                        id,
-                                        headers=None,
-                                        **request_parameters):
+    def get_functional_capability_by_id(self, id, headers=None, **request_parameters):
         """Returns functional capability with given Id .
 
         Args:
@@ -2499,20 +2340,17 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!get-functional-capability-by-id
         """
         check_type(headers, dict)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
 
         with_custom_headers = False
@@ -2521,26 +2359,30 @@ class Devices(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/network-device/functional-'
-                 + 'capability/{id}')
+        e_url = "/dna/intent/api/v1/network-device/functional-" + "capability/{id}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_f494532c45654fdaeda8d46a0d9753d_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_f494532c45654fdaeda8d46a0d9753d_v2_3_5_3", json_data
+        )
 
-    def inventory_insight_device_link_mismatch(self,
-                                               category,
-                                               site_id,
-                                               limit=None,
-                                               offset=None,
-                                               order=None,
-                                               sort_by=None,
-                                               headers=None,
-                                               **request_parameters):
+    def inventory_insight_device_link_mismatch(
+        self,
+        category,
+        site_id,
+        limit=None,
+        offset=None,
+        order=None,
+        sort_by=None,
+        headers=None,
+        **request_parameters
+    ):
         """Find all devices with link mismatch (speed /  vlan) .
 
         Args:
@@ -2570,34 +2412,26 @@ class Devices(object):
         check_type(headers, dict)
         check_type(offset, (int, str))
         check_type(limit, (int, str))
-        check_type(category, str,
-                   may_be_none=False)
+        check_type(category, str, may_be_none=False)
         check_type(sort_by, str)
         check_type(order, str)
-        check_type(site_id, str,
-                   may_be_none=False)
+        check_type(site_id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'offset':
-                offset,
-            'limit':
-                limit,
-            'category':
-                category,
-            'sortBy':
-                sort_by,
-            'order':
-                order,
+            "offset": offset,
+            "limit": limit,
+            "category": category,
+            "sortBy": sort_by,
+            "order": order,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'siteId': site_id,
+            "siteId": site_id,
         }
 
         with_custom_headers = False
@@ -2606,25 +2440,29 @@ class Devices(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/network-'
-                 + 'device/insight/{siteId}/device-link')
+        e_url = "/dna/intent/api/v1/network-" + "device/insight/{siteId}/device-link"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_eed1595442b757bf94938c858a257ced_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_eed1595442b757bf94938c858a257ced_v2_3_5_3", json_data
+        )
 
-    def get_devices_with_snmpv3_des(self,
-                                    site_id,
-                                    limit=None,
-                                    offset=None,
-                                    order=None,
-                                    sort_by=None,
-                                    headers=None,
-                                    **request_parameters):
+    def get_devices_with_snmpv3_des(
+        self,
+        site_id,
+        limit=None,
+        offset=None,
+        order=None,
+        sort_by=None,
+        headers=None,
+        **request_parameters
+    ):
         """Returns devices added to Cisco DNA center with snmp v3 DES, where siteId is mandatory & accepts offset, limit,
         sortby, order which are optional. .
 
@@ -2655,28 +2493,22 @@ class Devices(object):
         check_type(limit, (int, str))
         check_type(sort_by, str)
         check_type(order, str)
-        check_type(site_id, str,
-                   may_be_none=False)
+        check_type(site_id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'offset':
-                offset,
-            'limit':
-                limit,
-            'sortBy':
-                sort_by,
-            'order':
-                order,
+            "offset": offset,
+            "limit": limit,
+            "sortBy": sort_by,
+            "order": order,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'siteId': site_id,
+            "siteId": site_id,
         }
 
         with_custom_headers = False
@@ -2685,21 +2517,23 @@ class Devices(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/network-'
-                 + 'device/insight/{siteId}/insecure-connection')
+        e_url = (
+            "/dna/intent/api/v1/network-"
+            + "device/insight/{siteId}/insecure-connection"
+        )
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_bbc074b061d3575d8247084ca33c95d9_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_bbc074b061d3575d8247084ca33c95d9_v2_3_5_3", json_data
+        )
 
-    def get_network_device_by_ip(self,
-                                 ip_address,
-                                 headers=None,
-                                 **request_parameters):
+    def get_network_device_by_ip(self, ip_address, headers=None, **request_parameters):
         """Returns the network device by specified IP address .
 
         Args:
@@ -2721,20 +2555,17 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!get-network-device-by-ip
         """
         check_type(headers, dict)
-        check_type(ip_address, str,
-                   may_be_none=False)
+        check_type(ip_address, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'ipAddress': ip_address,
+            "ipAddress": ip_address,
         }
 
         with_custom_headers = False
@@ -2743,26 +2574,31 @@ class Devices(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/network-device/ip-address/{ipAddress}')
+        e_url = "/dna/intent/api/v1/network-device/ip-address/{ipAddress}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_dc74c2052a3a4eb7e2a01eaa8e7_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_dc74c2052a3a4eb7e2a01eaa8e7_v2_3_5_3", json_data
+        )
 
-    def get_modules(self,
-                    device_id,
-                    limit=None,
-                    name_list=None,
-                    offset=None,
-                    operational_state_code_list=None,
-                    part_number_list=None,
-                    vendor_equipment_type_list=None,
-                    headers=None,
-                    **request_parameters):
+    def get_modules(
+        self,
+        device_id,
+        limit=None,
+        name_list=None,
+        offset=None,
+        operational_state_code_list=None,
+        part_number_list=None,
+        vendor_equipment_type_list=None,
+        headers=None,
+        **request_parameters
+    ):
         """Returns modules by specified device id .
 
         Args:
@@ -2790,8 +2626,7 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!get-modules
         """
         check_type(headers, dict)
-        check_type(device_id, str,
-                   may_be_none=False)
+        check_type(device_id, str, may_be_none=False)
         check_type(limit, (int, str))
         check_type(offset, (int, str))
         check_type(name_list, (str, list, set, tuple))
@@ -2799,31 +2634,22 @@ class Devices(object):
         check_type(part_number_list, (str, list, set, tuple))
         check_type(operational_state_code_list, (str, list, set, tuple))
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'deviceId':
-                device_id,
-            'limit':
-                limit,
-            'offset':
-                offset,
-            'nameList':
-                name_list,
-            'vendorEquipmentTypeList':
-                vendor_equipment_type_list,
-            'partNumberList':
-                part_number_list,
-            'operationalStateCodeList':
-                operational_state_code_list,
+            "deviceId": device_id,
+            "limit": limit,
+            "offset": offset,
+            "nameList": name_list,
+            "vendorEquipmentTypeList": vendor_equipment_type_list,
+            "partNumberList": part_number_list,
+            "operationalStateCodeList": operational_state_code_list,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -2831,24 +2657,29 @@ class Devices(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/network-device/module')
+        e_url = "/dna/intent/api/v1/network-device/module"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_ce9e547725c45c66824afda98179d12f_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_ce9e547725c45c66824afda98179d12f_v2_3_5_3", json_data
+        )
 
-    def get_module_count(self,
-                         device_id,
-                         name_list=None,
-                         operational_state_code_list=None,
-                         part_number_list=None,
-                         vendor_equipment_type_list=None,
-                         headers=None,
-                         **request_parameters):
+    def get_module_count(
+        self,
+        device_id,
+        name_list=None,
+        operational_state_code_list=None,
+        part_number_list=None,
+        vendor_equipment_type_list=None,
+        headers=None,
+        **request_parameters
+    ):
         """Returns Module Count .
 
         Args:
@@ -2874,34 +2705,26 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!get-module-count
         """
         check_type(headers, dict)
-        check_type(device_id, str,
-                   may_be_none=False)
+        check_type(device_id, str, may_be_none=False)
         check_type(name_list, (str, list, set, tuple))
         check_type(vendor_equipment_type_list, (str, list, set, tuple))
         check_type(part_number_list, (str, list, set, tuple))
         check_type(operational_state_code_list, (str, list, set, tuple))
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'deviceId':
-                device_id,
-            'nameList':
-                name_list,
-            'vendorEquipmentTypeList':
-                vendor_equipment_type_list,
-            'partNumberList':
-                part_number_list,
-            'operationalStateCodeList':
-                operational_state_code_list,
+            "deviceId": device_id,
+            "nameList": name_list,
+            "vendorEquipmentTypeList": vendor_equipment_type_list,
+            "partNumberList": part_number_list,
+            "operationalStateCodeList": operational_state_code_list,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -2909,20 +2732,20 @@ class Devices(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/network-device/module/count')
+        e_url = "/dna/intent/api/v1/network-device/module/count"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_fb11f997009751c991884b5fc02087c5_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_fb11f997009751c991884b5fc02087c5_v2_3_5_3", json_data
+        )
 
-    def get_module_info_by_id(self,
-                              id,
-                              headers=None,
-                              **request_parameters):
+    def get_module_info_by_id(self, id, headers=None, **request_parameters):
         """Returns Module info by 'module id' .
 
         Args:
@@ -2944,20 +2767,17 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!get-module-info-by-id
         """
         check_type(headers, dict)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
 
         with_custom_headers = False
@@ -2966,20 +2786,22 @@ class Devices(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/network-device/module/{id}')
+        e_url = "/dna/intent/api/v1/network-device/module/{id}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_a4588640da5b018b499c5760f4092a_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_a4588640da5b018b499c5760f4092a_v2_3_5_3", json_data
+        )
 
-    def get_device_by_serial_number(self,
-                                    serial_number,
-                                    headers=None,
-                                    **request_parameters):
+    def get_device_by_serial_number(
+        self, serial_number, headers=None, **request_parameters
+    ):
         """Returns the network device if the given serial number matches with any of the serial numbers collected. .
 
         Args:
@@ -3001,20 +2823,17 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!get-device-by-serial-number
         """
         check_type(headers, dict)
-        check_type(serial_number, str,
-                   may_be_none=False)
+        check_type(serial_number, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'serialNumber': serial_number,
+            "serialNumber": serial_number,
         }
 
         with_custom_headers = False
@@ -3023,23 +2842,27 @@ class Devices(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/network-device/serial-'
-                 + 'number/{serialNumber}')
+        e_url = "/dna/intent/api/v1/network-device/serial-" + "number/{serialNumber}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_c53d56c282e5f108c659009d21f9d26_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_c53d56c282e5f108c659009d21f9d26_v2_3_5_3", json_data
+        )
 
-    def sync_devices_using_forcesync(self,
-                                     force_sync=None,
-                                     headers=None,
-                                     payload=None,
-                                     active_validation=True,
-                                     **request_parameters):
+    def sync_devices_using_forcesync(
+        self,
+        force_sync=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Synchronizes the devices. If forceSync param is false (default) then the sync would run in normal priority
         thread. If forceSync param is true then the sync would run in high priority thread if available, else
         the sync will fail. Result can be seen in the child task of each device .
@@ -3070,26 +2893,23 @@ class Devices(object):
         check_type(payload, list)
         check_type(force_sync, bool)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'forceSync':
-                force_sync,
+            "forceSync": force_sync,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = payload or []
         if active_validation:
-            self._request_validator('jsd_f2c120b855cb8c852806ce72e54d_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_f2c120b855cb8c852806ce72e54d_v2_3_5_3"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -3097,23 +2917,24 @@ class Devices(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/network-device/sync')
+        e_url = "/dna/intent/api/v1/network-device/sync"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload,
-                                          headers=_headers)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_f2c120b855cb8c852806ce72e54d_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_f2c120b855cb8c852806ce72e54d_v2_3_5_3", json_data
+        )
 
-    def get_devices_registered_for_wsa_notification(self,
-                                                    macaddress=None,
-                                                    serial_number=None,
-                                                    headers=None,
-                                                    **request_parameters):
+    def get_devices_registered_for_wsa_notification(
+        self, macaddress=None, serial_number=None, headers=None, **request_parameters
+    ):
         """It fetches devices which are registered to receive WSA notifications. The device serial number and/or MAC
         address are required to be provided as query parameters. .
 
@@ -3140,21 +2961,17 @@ class Devices(object):
         check_type(serial_number, str)
         check_type(macaddress, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'serialNumber':
-                serial_number,
-            'macaddress':
-                macaddress,
+            "serialNumber": serial_number,
+            "macaddress": macaddress,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -3162,21 +2979,22 @@ class Devices(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/network-device/tenantinfo/macaddress')
+        e_url = "/dna/intent/api/v1/network-device/tenantinfo/macaddress"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_b2c39feb5e48913492c33add7f13_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_b2c39feb5e48913492c33add7f13_v2_3_5_3", json_data
+        )
 
-    def get_all_user_defined_fields(self,
-                                    id=None,
-                                    name=None,
-                                    headers=None,
-                                    **request_parameters):
+    def get_all_user_defined_fields(
+        self, id=None, name=None, headers=None, **request_parameters
+    ):
         """Gets existing global User Defined Fields. If no input is given, it fetches ALL the Global UDFs. Filter/search is
         supported either by UDF Id(s) or by UDF name(s), but not both. .
 
@@ -3203,21 +3021,17 @@ class Devices(object):
         check_type(id, str)
         check_type(name, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'id':
-                id,
-            'name':
-                name,
+            "id": id,
+            "name": name,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -3225,23 +3039,28 @@ class Devices(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/network-device/user-defined-field')
+        e_url = "/dna/intent/api/v1/network-device/user-defined-field"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_d31b0bb4bde55bb8a3078b66c81f3a22_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_d31b0bb4bde55bb8a3078b66c81f3a22_v2_3_5_3", json_data
+        )
 
-    def create_user_defined_field(self,
-                                  description=None,
-                                  name=None,
-                                  headers=None,
-                                  payload=None,
-                                  active_validation=True,
-                                  **request_parameters):
+    def create_user_defined_field(
+        self,
+        description=None,
+        name=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Creates a new global User Defined Field, which can be assigned to devices .
 
         Args:
@@ -3270,28 +3089,24 @@ class Devices(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'name':
-                name,
-            'description':
-                description,
+            "name": name,
+            "description": description,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_ed266e6eda225aedbf581508635da822_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_ed266e6eda225aedbf581508635da822_v2_3_5_3"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -3299,26 +3114,31 @@ class Devices(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/network-device/user-defined-field')
+        e_url = "/dna/intent/api/v1/network-device/user-defined-field"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_ed266e6eda225aedbf581508635da822_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_ed266e6eda225aedbf581508635da822_v2_3_5_3", json_data
+        )
 
-    def update_user_defined_field(self,
-                                  id,
-                                  description=None,
-                                  name=None,
-                                  headers=None,
-                                  payload=None,
-                                  active_validation=True,
-                                  **request_parameters):
+    def update_user_defined_field(
+        self,
+        id,
+        description=None,
+        name=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Updates an existing global User Defined Field, using it's id. .
 
         Args:
@@ -3347,32 +3167,28 @@ class Devices(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
         _payload = {
-            'name':
-                name,
-            'description':
-                description,
+            "name": name,
+            "description": description,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_d76a951f85a7a927afc2f1ea935c8_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_d76a951f85a7a927afc2f1ea935c8_v2_3_5_3"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -3380,23 +3196,22 @@ class Devices(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/network-device/user-defined-'
-                 + 'field/{id}')
+        e_url = "/dna/intent/api/v1/network-device/user-defined-" + "field/{id}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload,
-                                          headers=_headers)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_d76a951f85a7a927afc2f1ea935c8_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_d76a951f85a7a927afc2f1ea935c8_v2_3_5_3", json_data
+        )
 
-    def delete_user_defined_field(self,
-                                  id,
-                                  headers=None,
-                                  **request_parameters):
+    def delete_user_defined_field(self, id, headers=None, **request_parameters):
         """Deletes an existing Global User-Defined-Field using it's id. .
 
         Args:
@@ -3418,20 +3233,17 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!delete-user-defined-field
         """
         check_type(headers, dict)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
 
         with_custom_headers = False
@@ -3440,21 +3252,22 @@ class Devices(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/network-device/user-defined-'
-                 + 'field/{id}')
+        e_url = "/dna/intent/api/v1/network-device/user-defined-" + "field/{id}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.delete(endpoint_full_url, params=_params,
-                                             headers=_headers)
+            json_data = self._session.delete(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.delete(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_f0f19119501094fb5fafe05dfbca_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_f0f19119501094fb5fafe05dfbca_v2_3_5_3", json_data
+        )
 
-    def get_chassis_details_for_device(self,
-                                       device_id,
-                                       headers=None,
-                                       **request_parameters):
+    def get_chassis_details_for_device(
+        self, device_id, headers=None, **request_parameters
+    ):
         """Returns chassis details for given device ID .
 
         Args:
@@ -3476,20 +3289,17 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!get-chassis-details-for-device
         """
         check_type(headers, dict)
-        check_type(device_id, str,
-                   may_be_none=False)
+        check_type(device_id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'deviceId': device_id,
+            "deviceId": device_id,
         }
 
         with_custom_headers = False
@@ -3498,20 +3308,22 @@ class Devices(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/network-device/{deviceId}/chassis')
+        e_url = "/dna/intent/api/v1/network-device/{deviceId}/chassis"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_a03cee8dfd7514487a134a422f5e0d7_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_a03cee8dfd7514487a134a422f5e0d7_v2_3_5_3", json_data
+        )
 
-    def get_stack_details_for_device(self,
-                                     device_id,
-                                     headers=None,
-                                     **request_parameters):
+    def get_stack_details_for_device(
+        self, device_id, headers=None, **request_parameters
+    ):
         """Retrieves complete stack details for given device ID .
 
         Args:
@@ -3533,20 +3345,17 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!get-stack-details-for-device
         """
         check_type(headers, dict)
-        check_type(device_id, str,
-                   may_be_none=False)
+        check_type(device_id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'deviceId': device_id,
+            "deviceId": device_id,
         }
 
         with_custom_headers = False
@@ -3555,21 +3364,22 @@ class Devices(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/network-device/{deviceId}/stack')
+        e_url = "/dna/intent/api/v1/network-device/{deviceId}/stack"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_c07eaefa1fa45faa801764d9094336ae_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_c07eaefa1fa45faa801764d9094336ae_v2_3_5_3", json_data
+        )
 
-    def remove_user_defined_field_from_device(self,
-                                              device_id,
-                                              name,
-                                              headers=None,
-                                              **request_parameters):
+    def remove_user_defined_field_from_device(
+        self, device_id, name, headers=None, **request_parameters
+    ):
         """Remove a User-Defined-Field from device. Name of UDF has to be passed as the query parameter. Please note that
         Global UDF will not be deleted by this operation. .
 
@@ -3593,24 +3403,20 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!remove-user-defined-field-from-device
         """
         check_type(headers, dict)
-        check_type(name, str,
-                   may_be_none=False)
-        check_type(device_id, str,
-                   may_be_none=False)
+        check_type(name, str, may_be_none=False)
+        check_type(device_id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'name':
-                name,
+            "name": name,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'deviceId': device_id,
+            "deviceId": device_id,
         }
 
         with_custom_headers = False
@@ -3619,23 +3425,27 @@ class Devices(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/network-device/{deviceId}/user-'
-                 + 'defined-field')
+        e_url = "/dna/intent/api/v1/network-device/{deviceId}/user-" + "defined-field"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.delete(endpoint_full_url, params=_params,
-                                             headers=_headers)
+            json_data = self._session.delete(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.delete(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_c1144f7a496455f99f95d36d6474c4b4_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_c1144f7a496455f99f95d36d6474c4b4_v2_3_5_3", json_data
+        )
 
-    def add_user_defined_field_to_device(self,
-                                         device_id,
-                                         headers=None,
-                                         payload=None,
-                                         active_validation=True,
-                                         **request_parameters):
+    def add_user_defined_field_to_device(
+        self,
+        device_id,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Assigns an existing Global User-Defined-Field to a device. If the UDF is already assigned to the specific
         device, then it updates the device UDF value accordingly. Please note that the assigning UDF 'name' must
         be an existing global UDF. Otherwise error shall be shown. .
@@ -3664,25 +3474,23 @@ class Devices(object):
         """
         check_type(headers, dict)
         check_type(payload, list)
-        check_type(device_id, str,
-                   may_be_none=False)
+        check_type(device_id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'deviceId': device_id,
+            "deviceId": device_id,
         }
         _payload = payload or []
         if active_validation:
-            self._request_validator('jsd_a73fbc67627e5bbbafe748de84d42df6_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_a73fbc67627e5bbbafe748de84d42df6_v2_3_5_3"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -3690,24 +3498,24 @@ class Devices(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/network-device/{deviceId}/user-'
-                 + 'defined-field')
+        e_url = "/dna/intent/api/v1/network-device/{deviceId}/user-" + "defined-field"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload,
-                                          headers=_headers)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_a73fbc67627e5bbbafe748de84d42df6_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_a73fbc67627e5bbbafe748de84d42df6_v2_3_5_3", json_data
+        )
 
-    def return_power_supply_fan_details_for_the_given_device(self,
-                                                             device_uuid,
-                                                             type=None,
-                                                             headers=None,
-                                                             **request_parameters):
+    def return_power_supply_fan_details_for_the_given_device(
+        self, device_uuid, type=None, headers=None, **request_parameters
+    ):
         """Return PowerSupply/ Fan details for the Given device .
 
         Args:
@@ -3733,22 +3541,19 @@ class Devices(object):
         """
         check_type(headers, dict)
         check_type(type, str)
-        check_type(device_uuid, str,
-                   may_be_none=False)
+        check_type(device_uuid, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'type':
-                type,
+            "type": type,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'deviceUuid': device_uuid,
+            "deviceUuid": device_uuid,
         }
 
         with_custom_headers = False
@@ -3757,21 +3562,22 @@ class Devices(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/network-device/{deviceUuid}/equipment')
+        e_url = "/dna/intent/api/v1/network-device/{deviceUuid}/equipment"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_c1cb24a2b53ce8d29d119c6ee1112_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_c1cb24a2b53ce8d29d119c6ee1112_v2_3_5_3", json_data
+        )
 
-    def poe_interface_details(self,
-                              device_uuid,
-                              interface_name_list=None,
-                              headers=None,
-                              **request_parameters):
+    def poe_interface_details(
+        self, device_uuid, interface_name_list=None, headers=None, **request_parameters
+    ):
         """Returns POE interface details for the device, where deviceuuid is mandatory & accepts comma seperated interface
         names which is optional and returns information for that particular interfaces where(operStatus =
         operationalStatus) .
@@ -3797,22 +3603,19 @@ class Devices(object):
         """
         check_type(headers, dict)
         check_type(interface_name_list, str)
-        check_type(device_uuid, str,
-                   may_be_none=False)
+        check_type(device_uuid, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'interfaceNameList':
-                interface_name_list,
+            "interfaceNameList": interface_name_list,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'deviceUuid': device_uuid,
+            "deviceUuid": device_uuid,
         }
 
         with_custom_headers = False
@@ -3821,22 +3624,24 @@ class Devices(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/network-'
-                 + 'device/{deviceUuid}/interface/poe-detail')
+        e_url = (
+            "/dna/intent/api/v1/network-" + "device/{deviceUuid}/interface/poe-detail"
+        )
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_ab3215d9be065533b7cbbc978cb4d905_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_ab3215d9be065533b7cbbc978cb4d905_v2_3_5_3", json_data
+        )
 
-    def get_connected_device_detail(self,
-                                    device_uuid,
-                                    interface_uuid,
-                                    headers=None,
-                                    **request_parameters):
+    def get_connected_device_detail(
+        self, device_uuid, interface_uuid, headers=None, **request_parameters
+    ):
         """Get connected device detail for given deviceUuid and interfaceUuid .
 
         Args:
@@ -3859,23 +3664,19 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!get-connected-device-detail
         """
         check_type(headers, dict)
-        check_type(device_uuid, str,
-                   may_be_none=False)
-        check_type(interface_uuid, str,
-                   may_be_none=False)
+        check_type(device_uuid, str, may_be_none=False)
+        check_type(interface_uuid, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'deviceUuid': device_uuid,
-            'interfaceUuid': interface_uuid,
+            "deviceUuid": device_uuid,
+            "interfaceUuid": interface_uuid,
         }
 
         with_custom_headers = False
@@ -3884,21 +3685,23 @@ class Devices(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/network-'
-                 + 'device/{deviceUuid}/interface/{interfaceUuid}/neighbor')
+        e_url = (
+            "/dna/intent/api/v1/network-"
+            + "device/{deviceUuid}/interface/{interfaceUuid}/neighbor"
+        )
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_a1878314ffd35d29bea49f12d10b59c8_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_a1878314ffd35d29bea49f12d10b59c8_v2_3_5_3", json_data
+        )
 
-    def get_linecard_details(self,
-                             device_uuid,
-                             headers=None,
-                             **request_parameters):
+    def get_linecard_details(self, device_uuid, headers=None, **request_parameters):
         """Get line card detail for a given deviceuuid.  Response will contain serial no, part no, switch no and slot no. .
 
         Args:
@@ -3920,20 +3723,17 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!get-linecard-details
         """
         check_type(headers, dict)
-        check_type(device_uuid, str,
-                   may_be_none=False)
+        check_type(device_uuid, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'deviceUuid': device_uuid,
+            "deviceUuid": device_uuid,
         }
 
         with_custom_headers = False
@@ -3942,20 +3742,20 @@ class Devices(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/network-device/{deviceUuid}/line-card')
+        e_url = "/dna/intent/api/v1/network-device/{deviceUuid}/line-card"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_bd31690b61f45d9f880d74d4e682b070_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_bd31690b61f45d9f880d74d4e682b070_v2_3_5_3", json_data
+        )
 
-    def poe_details_(self,
-                     device_uuid,
-                     headers=None,
-                     **request_parameters):
+    def poe_details_(self, device_uuid, headers=None, **request_parameters):
         """Returns POE details for device. .
 
         Args:
@@ -3976,14 +3776,9 @@ class Devices(object):
         Documentation Link:
         https://developer.cisco.com/docs/dna-center/#!poe-details
         """
-        return self.poe_details(device_uuid,
-                                headers=headers,
-                                **request_parameters)
+        return self.poe_details(device_uuid, headers=headers, **request_parameters)
 
-    def poe_details(self,
-                    device_uuid,
-                    headers=None,
-                    **request_parameters):
+    def poe_details(self, device_uuid, headers=None, **request_parameters):
         """Returns POE details for device. .
 
         Args:
@@ -4005,20 +3800,17 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!poe-details
         """
         check_type(headers, dict)
-        check_type(device_uuid, str,
-                   may_be_none=False)
+        check_type(device_uuid, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'deviceUuid': device_uuid,
+            "deviceUuid": device_uuid,
         }
 
         with_custom_headers = False
@@ -4027,20 +3819,22 @@ class Devices(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/network-device/{deviceUuid}/poe')
+        e_url = "/dna/intent/api/v1/network-device/{deviceUuid}/poe"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_f7a67aba0b365a1e9dae62d148511a25_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_f7a67aba0b365a1e9dae62d148511a25_v2_3_5_3", json_data
+        )
 
-    def get_supervisor_card_detail(self,
-                                   device_uuid,
-                                   headers=None,
-                                   **request_parameters):
+    def get_supervisor_card_detail(
+        self, device_uuid, headers=None, **request_parameters
+    ):
         """Get supervisor card detail for a given deviceuuid. Response will contain serial no, part no, switch no and slot
         no. .
 
@@ -4063,20 +3857,17 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!get-supervisor-card-detail
         """
         check_type(headers, dict)
-        check_type(device_uuid, str,
-                   may_be_none=False)
+        check_type(device_uuid, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'deviceUuid': device_uuid,
+            "deviceUuid": device_uuid,
         }
 
         with_custom_headers = False
@@ -4085,21 +3876,20 @@ class Devices(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/network-'
-                 + 'device/{deviceUuid}/supervisor-card')
+        e_url = "/dna/intent/api/v1/network-" + "device/{deviceUuid}/supervisor-card"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_eb13516155a28570e542dcf10a91_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_eb13516155a28570e542dcf10a91_v2_3_5_3", json_data
+        )
 
-    def get_device_by_id(self,
-                         id,
-                         headers=None,
-                         **request_parameters):
+    def get_device_by_id(self, id, headers=None, **request_parameters):
         """Returns the network device details for the given device ID .
 
         Args:
@@ -4121,20 +3911,17 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!get-device-by-id
         """
         check_type(headers, dict)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
 
         with_custom_headers = False
@@ -4143,21 +3930,22 @@ class Devices(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/network-device/{id}')
+        e_url = "/dna/intent/api/v1/network-device/{id}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_d86f657f8592f97014d2ebf8d37ac_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_d86f657f8592f97014d2ebf8d37ac_v2_3_5_3", json_data
+        )
 
-    def delete_device_by_id(self,
-                            id,
-                            clean_config=None,
-                            headers=None,
-                            **request_parameters):
+    def delete_device_by_id(
+        self, id, clean_config=None, headers=None, **request_parameters
+    ):
         """Deletes the network device for the given Id .
 
         Args:
@@ -4181,22 +3969,19 @@ class Devices(object):
         """
         check_type(headers, dict)
         check_type(clean_config, bool)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'cleanConfig':
-                clean_config,
+            "cleanConfig": clean_config,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
 
         with_custom_headers = False
@@ -4205,20 +3990,20 @@ class Devices(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/network-device/{id}')
+        e_url = "/dna/intent/api/v1/network-device/{id}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.delete(endpoint_full_url, params=_params,
-                                             headers=_headers)
+            json_data = self._session.delete(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.delete(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_e01233fa258e393239c4b41882806_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_e01233fa258e393239c4b41882806_v2_3_5_3", json_data
+        )
 
-    def get_device_summary(self,
-                           id,
-                           headers=None,
-                           **request_parameters):
+    def get_device_summary(self, id, headers=None, **request_parameters):
         """Returns brief summary of device info such as hostname, management IP address for the given device Id .
 
         Args:
@@ -4240,20 +4025,17 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!get-device-summary
         """
         check_type(headers, dict)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
 
         with_custom_headers = False
@@ -4262,20 +4044,20 @@ class Devices(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/network-device/{id}/brief')
+        e_url = "/dna/intent/api/v1/network-device/{id}/brief"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_fe0153ca24205608b8741d51f5a6d54a_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_fe0153ca24205608b8741d51f5a6d54a_v2_3_5_3", json_data
+        )
 
-    def get_polling_interval_by_id(self,
-                                   id,
-                                   headers=None,
-                                   **request_parameters):
+    def get_polling_interval_by_id(self, id, headers=None, **request_parameters):
         """Returns polling interval by device id .
 
         Args:
@@ -4297,20 +4079,17 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!get-polling-interval-by-id
         """
         check_type(headers, dict)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
 
         with_custom_headers = False
@@ -4319,21 +4098,20 @@ class Devices(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/network-device/{id}/collection-'
-                 + 'schedule')
+        e_url = "/dna/intent/api/v1/network-device/{id}/collection-" + "schedule"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_f90daf1c279351f884ba3198d3b2d641_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_f90daf1c279351f884ba3198d3b2d641_v2_3_5_3", json_data
+        )
 
-    def get_organization_list_for_meraki(self,
-                                         id,
-                                         headers=None,
-                                         **request_parameters):
+    def get_organization_list_for_meraki(self, id, headers=None, **request_parameters):
         """Returns list of organizations for meraki dashboard .
 
         Args:
@@ -4355,20 +4133,17 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!get-organization-list-for-meraki
         """
         check_type(headers, dict)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
 
         with_custom_headers = False
@@ -4377,22 +4152,22 @@ class Devices(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/network-device/{id}/meraki-'
-                 + 'organization')
+        e_url = "/dna/intent/api/v1/network-device/{id}/meraki-" + "organization"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_b4ba6d23d5e7eb62cbba4c9e1a29d_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_b4ba6d23d5e7eb62cbba4c9e1a29d_v2_3_5_3", json_data
+        )
 
-    def get_device_interface_vlans(self,
-                                   id,
-                                   interface_type=None,
-                                   headers=None,
-                                   **request_parameters):
+    def get_device_interface_vlans(
+        self, id, interface_type=None, headers=None, **request_parameters
+    ):
         """Returns Device Interface VLANs .
 
         Args:
@@ -4416,22 +4191,19 @@ class Devices(object):
         """
         check_type(headers, dict)
         check_type(interface_type, str)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'interfaceType':
-                interface_type,
+            "interfaceType": interface_type,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
 
         with_custom_headers = False
@@ -4440,20 +4212,22 @@ class Devices(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/network-device/{id}/vlan')
+        e_url = "/dna/intent/api/v1/network-device/{id}/vlan"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_fd5fb603cba6523abb25c8ec131fbb8b_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_fd5fb603cba6523abb25c8ec131fbb8b_v2_3_5_3", json_data
+        )
 
-    def get_wireless_lan_controller_details_by_id(self,
-                                                  id,
-                                                  headers=None,
-                                                  **request_parameters):
+    def get_wireless_lan_controller_details_by_id(
+        self, id, headers=None, **request_parameters
+    ):
         """Returns the wireless lan controller info with given device ID .
 
         Args:
@@ -4475,20 +4249,17 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!get-wireless-lan-controller-details-by-id
         """
         check_type(headers, dict)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
 
         with_custom_headers = False
@@ -4497,20 +4268,22 @@ class Devices(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/network-device/{id}/wireless-info')
+        e_url = "/dna/intent/api/v1/network-device/{id}/wireless-info"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_c01ee650fcf858789ca00c8deda969b9_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_c01ee650fcf858789ca00c8deda969b9_v2_3_5_3", json_data
+        )
 
-    def get_device_config_by_id(self,
-                                network_device_id,
-                                headers=None,
-                                **request_parameters):
+    def get_device_config_by_id(
+        self, network_device_id, headers=None, **request_parameters
+    ):
         """Returns the device config by specified device ID .
 
         Args:
@@ -4532,20 +4305,17 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!get-device-config-by-id
         """
         check_type(headers, dict)
-        check_type(network_device_id, str,
-                   may_be_none=False)
+        check_type(network_device_id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'networkDeviceId': network_device_id,
+            "networkDeviceId": network_device_id,
         }
 
         with_custom_headers = False
@@ -4554,22 +4324,22 @@ class Devices(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/network-'
-                 + 'device/{networkDeviceId}/config')
+        e_url = "/dna/intent/api/v1/network-" + "device/{networkDeviceId}/config"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_af0bbf34adb5146b931ec874fc2cc40_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_af0bbf34adb5146b931ec874fc2cc40_v2_3_5_3", json_data
+        )
 
-    def get_network_device_by_pagination_range(self,
-                                               records_to_return,
-                                               start_index,
-                                               headers=None,
-                                               **request_parameters):
+    def get_network_device_by_pagination_range(
+        self, records_to_return, start_index, headers=None, **request_parameters
+    ):
         """Returns the list of network devices for the given pagination range. The maximum number of records that can be
         retrieved is 500 .
 
@@ -4594,23 +4364,19 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!get-network-device-by-pagination-range
         """
         check_type(headers, dict)
-        check_type(start_index, int,
-                   may_be_none=False)
-        check_type(records_to_return, int,
-                   may_be_none=False)
+        check_type(start_index, int, may_be_none=False)
+        check_type(records_to_return, int, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'startIndex': start_index,
-            'recordsToReturn': records_to_return,
+            "startIndex": start_index,
+            "recordsToReturn": records_to_return,
         }
 
         with_custom_headers = False
@@ -4619,13 +4385,15 @@ class Devices(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/network-'
-                 + 'device/{startIndex}/{recordsToReturn}')
+        e_url = "/dna/intent/api/v1/network-" + "device/{startIndex}/{recordsToReturn}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_d7b6ce5abd5dad837e22ace817a6f0_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_d7b6ce5abd5dad837e22ace817a6f0_v2_3_5_3", json_data
+        )

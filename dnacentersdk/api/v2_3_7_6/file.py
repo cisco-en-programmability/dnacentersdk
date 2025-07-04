@@ -23,9 +23,7 @@ SOFTWARE.
 """
 
 
-
 from builtins import *
-
 
 
 from ...restsession import RestSession
@@ -66,9 +64,7 @@ class File(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def get_list_of_available_namespaces_v1(self,
-                                            headers=None,
-                                            **request_parameters):
+    def get_list_of_available_namespaces_v1(self, headers=None, **request_parameters):
         """Returns list of available namespaces .
 
         Args:
@@ -90,17 +86,14 @@ class File(object):
         """
         check_type(headers, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -108,20 +101,20 @@ class File(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/file/namespace')
+        e_url = "/dna/intent/api/v1/file/namespace"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_b7fc125c901c5d4488b7a2b75fa292bc_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_b7fc125c901c5d4488b7a2b75fa292bc_v2_3_7_6", json_data
+        )
 
-    def get_list_of_files_v1(self,
-                             name_space,
-                             headers=None,
-                             **request_parameters):
+    def get_list_of_files_v1(self, name_space, headers=None, **request_parameters):
         """Returns list of files under a specific namespace .
 
         Args:
@@ -143,20 +136,17 @@ class File(object):
             https://developer.cisco.com/docs/dna-center/#!get-list-of-files
         """
         check_type(headers, dict)
-        check_type(name_space, str,
-                   may_be_none=False)
+        check_type(name_space, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'nameSpace': name_space,
+            "nameSpace": name_space,
         }
 
         with_custom_headers = False
@@ -165,23 +155,28 @@ class File(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/file/namespace/{nameSpace}')
+        e_url = "/dna/intent/api/v1/file/namespace/{nameSpace}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_b7d63a5ae65b59a5a35d43edc58b6db5_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_b7d63a5ae65b59a5a35d43edc58b6db5_v2_3_7_6", json_data
+        )
 
-    def download_a_file_by_file_id_v1(self,
-                                  file_id,
-                                  dirpath=None,
-                                  save_file=None,
-                                  filename=None,
-                                  headers=None,
-                                  **request_parameters):
+    def download_a_file_by_file_id_v1(
+        self,
+        file_id,
+        dirpath=None,
+        save_file=None,
+        filename=None,
+        headers=None,
+        **request_parameters
+    ):
         """Downloads a file specified by fileId .
 
         Args:
@@ -211,20 +206,17 @@ class File(object):
             https://developer.cisco.com/docs/dna-center/#!download-a-file-by-file-id
         """
         check_type(headers, dict)
-        check_type(file_id, str,
-                   may_be_none=False)
+        check_type(file_id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'fileId': file_id,
+            "fileId": file_id,
         }
 
         with_custom_headers = False
@@ -233,24 +225,40 @@ class File(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/file/{fileId}')
+        e_url = "/dna/intent/api/v1/file/{fileId}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers,
-                                          stream=True, dirpath=dirpath, save_file=save_file, filename=filename)
+            json_data = self._session.get(
+                endpoint_full_url,
+                params=_params,
+                headers=_headers,
+                stream=True,
+                dirpath=dirpath,
+                save_file=save_file,
+                filename=filename,
+            )
         else:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          stream=True, dirpath=dirpath, save_file=save_file, filename=filename)
+            json_data = self._session.get(
+                endpoint_full_url,
+                params=_params,
+                stream=True,
+                dirpath=dirpath,
+                save_file=save_file,
+                filename=filename,
+            )
 
-        return self._object_factory('bpm_fa4ab7605a75aafa6c7da6ac3f13_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_fa4ab7605a75aafa6c7da6ac3f13_v2_3_7_6", json_data
+        )
 
-    def upload_file_v1(self,
-                    multipart_fields,
-                    multipart_monitor_callback,
-                    name_space,
-                    headers=None,
-                    **request_parameters):
+    def upload_file_v1(
+        self,
+        multipart_fields,
+        multipart_monitor_callback,
+        name_space,
+        headers=None,
+        **request_parameters
+    ):
         """Uploads a new file within a specific nameSpace .
 
         The following code gives an example of the multipart_fields.
@@ -303,20 +311,17 @@ class File(object):
             https://developer.cisco.com/docs/dna-center/#!upload-file
         """
         check_type(headers, dict)
-        check_type(name_space, str,
-                   may_be_none=False)
+        check_type(name_space, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'nameSpace': name_space,
+            "nameSpace": name_space,
         }
 
         with_custom_headers = False
@@ -325,33 +330,40 @@ class File(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/file/{nameSpace}')
+        e_url = "/dna/intent/api/v1/file/{nameSpace}"
         endpoint_full_url = apply_path_params(e_url, path_params)
-        m_data = self._session.multipart_data(multipart_fields,
-                                              multipart_monitor_callback)
-        _headers.update({'Content-Type': m_data.content_type,
-                         'Content-Length': str(m_data.len),
-                         'Connection': 'keep-alive'})
+        m_data = self._session.multipart_data(
+            multipart_fields, multipart_monitor_callback
+        )
+        _headers.update(
+            {
+                "Content-Type": m_data.content_type,
+                "Content-Length": str(m_data.len),
+                "Connection": "keep-alive",
+            }
+        )
         with_custom_headers = True
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           data=m_data,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, data=m_data, headers=_headers
+            )
         else:
             json_data = self._session.post(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_e7fb3df05906b8cd6077d4d9cc5c_v2_3_7_6', json_data)
-
-
+        return self._object_factory(
+            "bpm_e7fb3df05906b8cd6077d4d9cc5c_v2_3_7_6", json_data
+        )
 
     # Alias Function
-    def upload_file(self,
-                       multipart_fields,
-                       multipart_monitor_callback,
-                       name_space,
-                       headers=None,
-                       **request_parameters):
-        """ This function is an alias of upload_file_v1 .
+    def upload_file(
+        self,
+        multipart_fields,
+        multipart_monitor_callback,
+        name_space,
+        headers=None,
+        **request_parameters
+    ):
+        """This function is an alias of upload_file_v1 .
         Args:
             name_space(str): nameSpace path parameter.
             multipart_fields(dict): Fields from which to create a
@@ -367,20 +379,16 @@ class File(object):
             This function returns the output of upload_file_v1 .
         """
         return self.upload_file_v1(
-                    multipart_fields = multipart_fields,
-                    multipart_monitor_callback = multipart_monitor_callback,
-                    name_space=name_space,
-                    headers=headers,
-                    **request_parameters
+            multipart_fields=multipart_fields,
+            multipart_monitor_callback=multipart_monitor_callback,
+            name_space=name_space,
+            headers=headers,
+            **request_parameters
         )
 
-
     # Alias Function
-    def get_list_of_files(self,
-                             name_space,
-                             headers=None,
-                             **request_parameters):
-        """ This function is an alias of get_list_of_files_v1 .
+    def get_list_of_files(self, name_space, headers=None, **request_parameters):
+        """This function is an alias of get_list_of_files_v1 .
         Args:
             name_space(basestring): nameSpace path parameter. A listing of fileId's .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -392,17 +400,12 @@ class File(object):
             This function returns the output of get_list_of_files_v1 .
         """
         return self.get_list_of_files_v1(
-                    name_space=name_space,
-                    headers=headers,
-                    **request_parameters
+            name_space=name_space, headers=headers, **request_parameters
         )
 
-
     # Alias Function
-    def get_list_of_available_namespaces(self,
-                                            headers=None,
-                                            **request_parameters):
-        """ This function is an alias of get_list_of_available_namespaces_v1 .
+    def get_list_of_available_namespaces(self, headers=None, **request_parameters):
+        """This function is an alias of get_list_of_available_namespaces_v1 .
         Args:
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -413,20 +416,20 @@ class File(object):
             This function returns the output of get_list_of_available_namespaces_v1 .
         """
         return self.get_list_of_available_namespaces_v1(
-                    headers=headers,
-                    **request_parameters
+            headers=headers, **request_parameters
         )
 
-
     # Alias Function
-    def download_a_file_by_file_id(self,
-                                  file_id,
-                                  dirpath=None,
-                                  save_file=None,
-                                  filename=None,
-                                  headers=None,
-                                  **request_parameters):
-        """ This function is an alias of download_a_file_by_file_id_v1 .
+    def download_a_file_by_file_id(
+        self,
+        file_id,
+        dirpath=None,
+        save_file=None,
+        filename=None,
+        headers=None,
+        **request_parameters
+    ):
+        """This function is an alias of download_a_file_by_file_id_v1 .
         Args:
             file_id(str): fileId path parameter. File Identification number .
             dirpath(str): Directory absolute path. Defaults to
@@ -444,23 +447,25 @@ class File(object):
             This function returns the output of download_a_file_by_file_id_v1 .
         """
         return self.download_a_file_by_file_id_v1(
-                    file_id=file_id,
-                    dirpath = dirpath,
-                    save_file = save_file,
-                    filename = filename,
-                    headers=headers,
-                    **request_parameters
+            file_id=file_id,
+            dirpath=dirpath,
+            save_file=save_file,
+            filename=filename,
+            headers=headers,
+            **request_parameters
         )
 
     # Alias Function
-    def download_a_file_by_fileid(self,
-                                  file_id,
-                                  dirpath=None,
-                                  save_file=None,
-                                  filename=None,
-                                  headers=None,
-                                  **request_parameters):
-        """ This function is an alias of download_a_file_by_file_id_v1 .
+    def download_a_file_by_fileid(
+        self,
+        file_id,
+        dirpath=None,
+        save_file=None,
+        filename=None,
+        headers=None,
+        **request_parameters
+    ):
+        """This function is an alias of download_a_file_by_file_id_v1 .
         Args:
             file_id(str): fileId path parameter. File Identification number .
             dirpath(str): Directory absolute path. Defaults to
@@ -478,12 +483,10 @@ class File(object):
             This function returns the output of download_a_file_by_file_id_v1 .
         """
         return self.download_a_file_by_file_id_v1(
-                    file_id=file_id,
-                    dirpath = dirpath,
-                    save_file = save_file,
-                    filename = filename,
-                    headers=headers,
-                    **request_parameters
+            file_id=file_id,
+            dirpath=dirpath,
+            save_file=save_file,
+            filename=filename,
+            headers=headers,
+            **request_parameters
         )
-
-

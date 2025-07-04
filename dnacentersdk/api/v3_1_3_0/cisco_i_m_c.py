@@ -32,7 +32,6 @@ from ...utils import (
     check_type,
     dict_from_items_with_values,
     dict_of_str,
-    
 )
 
 
@@ -65,15 +64,17 @@ class CiscoIMC(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def adds_cisco_i_m_c_configuration_to_a_catalyst_center_node(self,
-                                                                 ipAddress=None,
-                                                                 nodeId=None,
-                                                                 password=None,
-                                                                 username=None,
-                                                                 headers=None,
-                                                                 payload=None,
-                                                                 active_validation=True,
-                                                                 **request_parameters):
+    def adds_cisco_i_m_c_configuration_to_a_catalyst_center_node(
+        self,
+        ipAddress=None,
+        nodeId=None,
+        password=None,
+        username=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """This API adds a Cisco Integrated Management Controller (IMC) configuration to a Cisco Catalyst Center node,
         identified by its `nodeId`. Obtain the `nodeId` from the `id` attribute in the response of the
         `/dna/intent/api/v1/nodes-config` API. The Cisco IMC configuration APIs enable the management of
@@ -116,35 +117,28 @@ class CiscoIMC(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'nodeId':
-                nodeId,
-            'ipAddress':
-                ipAddress,
-            'username':
-                username,
-            'password':
-                password,
+            "nodeId": nodeId,
+            "ipAddress": ipAddress,
+            "username": username,
+            "password": password,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_d5f8cf25475dc5be53f35357aca5a4_v3_1_3_0')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_d5f8cf25475dc5be53f35357aca5a4_v3_1_3_0"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -152,21 +146,24 @@ class CiscoIMC(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/system/api/v1/ciscoImcs')
+        e_url = "/dna/system/api/v1/ciscoImcs"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_d5f8cf25475dc5be53f35357aca5a4_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_d5f8cf25475dc5be53f35357aca5a4_v3_1_3_0", json_data
+        )
 
-    def retrieves_cisco_i_m_c_configurations_for_catalyst_center_nodes(self,
-                                                                       headers=None,
-                                                                       **request_parameters):
+    def retrieves_cisco_i_m_c_configurations_for_catalyst_center_nodes(
+        self, headers=None, **request_parameters
+    ):
         """This API retrieves the configurations of the Cisco Integrated Management Controller (IMC) that have been added
         to the Catalyst Center nodes. The Cisco IMC configuration APIs enable the management of connections
         between Cisco IMC and Cisco Catalyst Center. By providing the Cisco IMC IP address and credentials to
@@ -197,17 +194,14 @@ class CiscoIMC(object):
         """
         check_type(headers, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -215,20 +209,22 @@ class CiscoIMC(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/system/api/v1/ciscoImcs')
+        e_url = "/dna/system/api/v1/ciscoImcs"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_b7ed1910345a8b9b9ad88aeee4f109_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_b7ed1910345a8b9b9ad88aeee4f109_v3_1_3_0", json_data
+        )
 
-    def deletes_the_cisco_i_m_c_configuration_for_a_catalyst_center_node(self,
-                                                                         id,
-                                                                         headers=None,
-                                                                         **request_parameters):
+    def deletes_the_cisco_i_m_c_configuration_for_a_catalyst_center_node(
+        self, id, headers=None, **request_parameters
+    ):
         """This API removes a specific Cisco Integrated Management Controller (IMC) configuration from a Catalyst Center
         node using the provided identifier. The Cisco IMC configuration APIs enable the management of
         connections between Cisco IMC and Cisco Catalyst Center. By providing the Cisco IMC IP address and
@@ -259,20 +255,17 @@ class CiscoIMC(object):
             https://developer.cisco.com/docs/dna-center/#!deletes-the-cisco-i-m-c-configuration-for-a-catalyst-center-node
         """
         check_type(headers, dict)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
 
         with_custom_headers = False
@@ -281,25 +274,30 @@ class CiscoIMC(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/system/api/v1/ciscoImcs/{id}')
+        e_url = "/dna/system/api/v1/ciscoImcs/{id}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.delete(endpoint_full_url, params=_params,
-                                             headers=_headers)
+            json_data = self._session.delete(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.delete(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_baa237a3253535e875c62928443888b_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_baa237a3253535e875c62928443888b_v3_1_3_0", json_data
+        )
 
-    def updates_the_cisco_i_m_c_configuration_for_a_catalyst_center_node(self,
-                                                                         id,
-                                                                         ipAddress=None,
-                                                                         password=None,
-                                                                         username=None,
-                                                                         headers=None,
-                                                                         payload=None,
-                                                                         active_validation=True,
-                                                                         **request_parameters):
+    def updates_the_cisco_i_m_c_configuration_for_a_catalyst_center_node(
+        self,
+        id,
+        ipAddress=None,
+        password=None,
+        username=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """This API updates the Cisco Integrated Management Controller (IMC) configuration for a Catalyst Center node,
         identified by the specified ID. The Cisco IMC configuration APIs enable the management of connections
         between Cisco IMC and Cisco Catalyst Center. By providing the Cisco IMC IP address and credentials to
@@ -339,34 +337,29 @@ class CiscoIMC(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
         _payload = {
-            'ipAddress':
-                ipAddress,
-            'username':
-                username,
-            'password':
-                password,
+            "ipAddress": ipAddress,
+            "username": username,
+            "password": password,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_f2562a2d8e5ec287738032961762ed_v3_1_3_0')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_f2562a2d8e5ec287738032961762ed_v3_1_3_0"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -374,22 +367,24 @@ class CiscoIMC(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/system/api/v1/ciscoImcs/{id}')
+        e_url = "/dna/system/api/v1/ciscoImcs/{id}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload,
-                                          headers=_headers)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_f2562a2d8e5ec287738032961762ed_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_f2562a2d8e5ec287738032961762ed_v3_1_3_0", json_data
+        )
 
-    def retrieves_the_cisco_i_m_c_configuration_for_a_catalyst_center_node(self,
-                                                                           id,
-                                                                           headers=None,
-                                                                           **request_parameters):
+    def retrieves_the_cisco_i_m_c_configuration_for_a_catalyst_center_node(
+        self, id, headers=None, **request_parameters
+    ):
         """This API retrieves the Cisco Integrated Management Controller (IMC) configuration for a Catalyst Center node,
         identified by the specified ID. The Cisco IMC configuration APIs enable the management of connections
         between Cisco IMC and Cisco Catalyst Center. By providing the Cisco IMC IP address and credentials to
@@ -420,20 +415,17 @@ class CiscoIMC(object):
             https://developer.cisco.com/docs/dna-center/#!retrieves-the-cisco-i-m-c-configuration-for-a-catalyst-center-node
         """
         check_type(headers, dict)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
 
         with_custom_headers = False
@@ -442,15 +434,18 @@ class CiscoIMC(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/system/api/v1/ciscoImcs/{id}')
+        e_url = "/dna/system/api/v1/ciscoImcs/{id}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_afae98de597f918fe9d08045026c_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_afae98de597f918fe9d08045026c_v3_1_3_0", json_data
+        )
+
 
 # Alias Functions
-

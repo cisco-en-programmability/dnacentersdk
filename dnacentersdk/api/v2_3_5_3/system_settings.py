@@ -64,12 +64,14 @@ class SystemSettings(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def get_authentication_and_policy_servers(self,
-                                              is_ise_enabled=None,
-                                              role=None,
-                                              state=None,
-                                              headers=None,
-                                              **request_parameters):
+    def get_authentication_and_policy_servers(
+        self,
+        is_ise_enabled=None,
+        role=None,
+        state=None,
+        headers=None,
+        **request_parameters
+    ):
         """API to get Authentication and Policy Servers .
 
         Args:
@@ -99,23 +101,18 @@ class SystemSettings(object):
         check_type(state, str)
         check_type(role, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'isIseEnabled':
-                is_ise_enabled,
-            'state':
-                state,
-            'role':
-                role,
+            "isIseEnabled": is_ise_enabled,
+            "state": state,
+            "role": role,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -123,19 +120,20 @@ class SystemSettings(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/authentication-policy-servers')
+        e_url = "/dna/intent/api/v1/authentication-policy-servers"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_f7cc2592721f5b9b9f99795a26130147_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_f7cc2592721f5b9b9f99795a26130147_v2_3_5_3", json_data
+        )
 
-    def custom_prompt_support_g_e_t_api(self,
-                                        headers=None,
-                                        **request_parameters):
+    def custom_prompt_support_g_e_t_api(self, headers=None, **request_parameters):
         """Returns supported custom prompts by Cisco DNA Center .
 
         Args:
@@ -157,17 +155,14 @@ class SystemSettings(object):
         """
         check_type(headers, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -175,23 +170,28 @@ class SystemSettings(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/network-device/custom-prompt')
+        e_url = "/dna/intent/api/v1/network-device/custom-prompt"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_ada20dc4915d5901b50634628392e79f_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_ada20dc4915d5901b50634628392e79f_v2_3_5_3", json_data
+        )
 
-    def custom_prompt_p_o_s_t_api(self,
-                                  passwordPrompt=None,
-                                  usernamePrompt=None,
-                                  headers=None,
-                                  payload=None,
-                                  active_validation=True,
-                                  **request_parameters):
+    def custom_prompt_p_o_s_t_api(
+        self,
+        passwordPrompt=None,
+        usernamePrompt=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Save custom prompt added by user in Cisco DNA Center. API will always override the existing prompts. User should
         provide all the custom prompt in case of any update .
 
@@ -221,28 +221,24 @@ class SystemSettings(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'usernamePrompt':
-                usernamePrompt,
-            'passwordPrompt':
-                passwordPrompt,
+            "usernamePrompt": usernamePrompt,
+            "passwordPrompt": passwordPrompt,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_d2ea814bfae85da1b77872d095fc8221_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_d2ea814bfae85da1b77872d095fc8221_v2_3_5_3"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -250,14 +246,17 @@ class SystemSettings(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/network-device/custom-prompt')
+        e_url = "/dna/intent/api/v1/network-device/custom-prompt"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_d2ea814bfae85da1b77872d095fc8221_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_d2ea814bfae85da1b77872d095fc8221_v2_3_5_3", json_data
+        )

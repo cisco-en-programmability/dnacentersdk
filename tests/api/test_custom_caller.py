@@ -27,31 +27,32 @@ import pytest
 
 @pytest.fixture(scope="session")
 def custom_caller(api):
-    api.custom_caller.add_api('get_global_credentials',
-                              lambda: api.custom_caller.call_api(
-                                  'GET',
-                                  '/dna/intent/api/v1/global-credential',
-                                  params={
-                                      'credentialSubType': 'NETCONF'
-                                  })
-                              )
-    api.custom_caller.add_api('create_netconf_credentials',
-                              lambda: api.custom_caller.call_api(
-                                  'POST',
-                                  '/dna/intent/api/v1/global-credential/netconf',
-                                  json=[{
-                                      "netconfPort": "65533"
-                                  }])
-                              )
-    api.custom_caller.add_api('delete_global_credentials_by_id',
-                              lambda global_credential_id:
-                                  api.custom_caller.call_api(
-                                      'DELETE',
-                                      '/dna/intent/api/v1/global-credential/${globalCredentialId}',
-                                      path_params={
-                                          'globalCredentialId': global_credential_id,
-                                      })
-                              )
+    api.custom_caller.add_api(
+        "get_global_credentials",
+        lambda: api.custom_caller.call_api(
+            "GET",
+            "/dna/intent/api/v1/global-credential",
+            params={"credentialSubType": "NETCONF"},
+        ),
+    )
+    api.custom_caller.add_api(
+        "create_netconf_credentials",
+        lambda: api.custom_caller.call_api(
+            "POST",
+            "/dna/intent/api/v1/global-credential/netconf",
+            json=[{"netconfPort": "65533"}],
+        ),
+    )
+    api.custom_caller.add_api(
+        "delete_global_credentials_by_id",
+        lambda global_credential_id: api.custom_caller.call_api(
+            "DELETE",
+            "/dna/intent/api/v1/global-credential/${globalCredentialId}",
+            path_params={
+                "globalCredentialId": global_credential_id,
+            },
+        ),
+    )
     return api.custom_caller
 
 
@@ -61,7 +62,7 @@ def test_custom_caller(custom_caller):
     assert original_credentials is not None
     create_response = custom_caller.create_netconf_credentials()
     assert create_response is not None
-    delete_response = custom_caller.delete_global_credentials_by_id('string')
+    delete_response = custom_caller.delete_global_credentials_by_id("string")
     assert delete_response is not None
     credentials_removed = custom_caller.get_global_credentials().response
     assert credentials_removed is not None

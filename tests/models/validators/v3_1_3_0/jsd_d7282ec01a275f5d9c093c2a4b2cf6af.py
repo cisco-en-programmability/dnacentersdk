@@ -34,19 +34,24 @@ from dnacentersdk.exceptions import MalformedRequest
 
 class JSONSchemaValidatorD7282Ec01A275F5D9C093C2A4B2Cf6Af(object):
     """DeleteNFSConfigurationV1 request schema definition."""
+
     def __init__(self):
         super(JSONSchemaValidatorD7282Ec01A275F5D9C093C2A4B2Cf6Af, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
+        self._validator = fastjsonschema.compile(
+            json.loads(
+                """{
                 "$schema": "http://json-schema.org/draft-04/schema#",
                 "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+                }""".replace(
+                    "\n" + " " * 16, ""
+                )
+            )
+        )
 
     def validate(self, request):
         try:
             self._validator(request)
         except fastjsonschema.exceptions.JsonSchemaException as e:
             raise MalformedRequest(
-                '{} is invalid. Reason: {}'.format(request, e.message)
+                "{} is invalid. Reason: {}".format(request, e.message)
             )

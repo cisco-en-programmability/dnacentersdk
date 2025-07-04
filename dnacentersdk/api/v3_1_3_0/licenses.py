@@ -32,7 +32,6 @@ from ...utils import (
     check_type,
     dict_from_items_with_values,
     dict_of_str,
-    
 )
 
 
@@ -65,9 +64,7 @@ class Licenses(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def retrieves_c_s_s_m_connection_mode(self,
-                                          headers=None,
-                                          **request_parameters):
+    def retrieves_c_s_s_m_connection_mode(self, headers=None, **request_parameters):
         """Retrieves Cisco Smart Software Manager (CSSM) connection mode setting. .
 
         Args:
@@ -89,17 +86,14 @@ class Licenses(object):
         """
         check_type(headers, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -107,23 +101,28 @@ class Licenses(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/connectionModeSetting')
+        e_url = "/dna/intent/api/v1/connectionModeSetting"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_a32ed6ebdd945af9889223196c925a17_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_a32ed6ebdd945af9889223196c925a17_v3_1_3_0", json_data
+        )
 
-    def update_c_s_s_m_connection_mode(self,
-                                       connectionMode=None,
-                                       parameters=None,
-                                       headers=None,
-                                       payload=None,
-                                       active_validation=True,
-                                       **request_parameters):
+    def update_c_s_s_m_connection_mode(
+        self,
+        connectionMode=None,
+        parameters=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Update Cisco Smart Software Manager (CSSM) connection mode for the system. .
 
         Args:
@@ -153,28 +152,24 @@ class Licenses(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'connectionMode':
-                connectionMode,
-            'parameters':
-                parameters,
+            "connectionMode": connectionMode,
+            "parameters": parameters,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_c85b39d6bae0536695992ddbb91ea96d_v3_1_3_0')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_c85b39d6bae0536695992ddbb91ea96d_v3_1_3_0"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -182,21 +177,22 @@ class Licenses(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/connectionModeSetting')
+        e_url = "/dna/intent/api/v1/connectionModeSetting"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload,
-                                          headers=_headers)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_c85b39d6bae0536695992ddbb91ea96d_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_c85b39d6bae0536695992ddbb91ea96d_v3_1_3_0", json_data
+        )
 
-    def retrieve_license_setting(self,
-                                 headers=None,
-                                 **request_parameters):
+    def retrieve_license_setting(self, headers=None, **request_parameters):
         """Retrieves license setting Default smart account id and virtual account id for auto registration of devices for
         smart license flow. If default smart account is not configured, 'defaultSmartAccountId' is 'null'.
         Similarly, if auto registration of devices for smart license flow is not enabled,
@@ -222,17 +218,14 @@ class Licenses(object):
         """
         check_type(headers, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -240,23 +233,28 @@ class Licenses(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/licenseSetting')
+        e_url = "/dna/intent/api/v1/licenseSetting"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_b5ef334945074a609698223cf05db_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_b5ef334945074a609698223cf05db_v3_1_3_0", json_data
+        )
 
-    def update_license_setting(self,
-                               autoRegistrationVirtualAccountId=None,
-                               defaultSmartAccountId=None,
-                               headers=None,
-                               payload=None,
-                               active_validation=True,
-                               **request_parameters):
+    def update_license_setting(
+        self,
+        autoRegistrationVirtualAccountId=None,
+        defaultSmartAccountId=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Update license setting Configure default smart account id  and/or virtual account id for auto registration of
         devices for smart license flow. Virtual account should be part of default smart account. Default smart
         account id cannot be set to 'null'. Auto registration of devices for smart license flow is applicable
@@ -288,28 +286,24 @@ class Licenses(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'defaultSmartAccountId':
-                defaultSmartAccountId,
-            'autoRegistrationVirtualAccountId':
-                autoRegistrationVirtualAccountId,
+            "defaultSmartAccountId": defaultSmartAccountId,
+            "autoRegistrationVirtualAccountId": autoRegistrationVirtualAccountId,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_d9bd7c527d254ecb63d2b709c428043_v3_1_3_0')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_d9bd7c527d254ecb63d2b709c428043_v3_1_3_0"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -317,26 +311,31 @@ class Licenses(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/licenseSetting')
+        e_url = "/dna/intent/api/v1/licenseSetting"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload,
-                                          headers=_headers)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_d9bd7c527d254ecb63d2b709c428043_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_d9bd7c527d254ecb63d2b709c428043_v3_1_3_0", json_data
+        )
 
-    def device_count_details(self,
-                             device_type=None,
-                             dna_level=None,
-                             registration_status=None,
-                             smart_account_id=None,
-                             virtual_account_name=None,
-                             headers=None,
-                             **request_parameters):
+    def device_count_details(
+        self,
+        device_type=None,
+        dna_level=None,
+        registration_status=None,
+        smart_account_id=None,
+        virtual_account_name=None,
+        headers=None,
+        **request_parameters
+    ):
         """Get total number of managed device(s). .
 
         Args:
@@ -369,27 +368,20 @@ class Licenses(object):
         check_type(virtual_account_name, str)
         check_type(smart_account_id, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'device_type':
-                device_type,
-            'registration_status':
-                registration_status,
-            'dna_level':
-                dna_level,
-            'virtual_account_name':
-                virtual_account_name,
-            'smart_account_id':
-                smart_account_id,
+            "device_type": device_type,
+            "registration_status": registration_status,
+            "dna_level": dna_level,
+            "virtual_account_name": virtual_account_name,
+            "smart_account_id": smart_account_id,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -397,29 +389,34 @@ class Licenses(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/licenses/device/count')
+        e_url = "/dna/intent/api/v1/licenses/device/count"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_c0cf04bdc758b29bb11abbdacbd921_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_c0cf04bdc758b29bb11abbdacbd921_v3_1_3_0", json_data
+        )
 
-    def device_license_summary(self,
-                               limit,
-                               order,
-                               page_number,
-                               device_type=None,
-                               device_uuid=None,
-                               dna_level=None,
-                               registration_status=None,
-                               smart_account_id=None,
-                               sort_by=None,
-                               virtual_account_name=None,
-                               headers=None,
-                               **request_parameters):
+    def device_license_summary(
+        self,
+        limit,
+        order,
+        page_number,
+        device_type=None,
+        device_uuid=None,
+        dna_level=None,
+        registration_status=None,
+        smart_account_id=None,
+        sort_by=None,
+        virtual_account_name=None,
+        headers=None,
+        **request_parameters
+    ):
         """Show license summary of device(s). .
 
         Args:
@@ -452,51 +449,36 @@ class Licenses(object):
             https://developer.cisco.com/docs/dna-center/#!device-license-summary
         """
         check_type(headers, dict)
-        check_type(page_number, int,
-                   may_be_none=False)
-        check_type(order, str,
-                   may_be_none=False)
+        check_type(page_number, int, may_be_none=False)
+        check_type(order, str, may_be_none=False)
         check_type(sort_by, str)
         check_type(dna_level, str)
         check_type(device_type, str)
-        check_type(limit, int,
-                   may_be_none=False)
+        check_type(limit, int, may_be_none=False)
         check_type(registration_status, str)
         check_type(virtual_account_name, str)
         check_type(smart_account_id, int)
         check_type(device_uuid, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'page_number':
-                page_number,
-            'order':
-                order,
-            'sort_by':
-                sort_by,
-            'dna_level':
-                dna_level,
-            'device_type':
-                device_type,
-            'limit':
-                limit,
-            'registration_status':
-                registration_status,
-            'virtual_account_name':
-                virtual_account_name,
-            'smart_account_id':
-                smart_account_id,
-            'device_uuid':
-                device_uuid,
+            "page_number": page_number,
+            "order": order,
+            "sort_by": sort_by,
+            "dna_level": dna_level,
+            "device_type": device_type,
+            "limit": limit,
+            "registration_status": registration_status,
+            "virtual_account_name": virtual_account_name,
+            "smart_account_id": smart_account_id,
+            "device_uuid": device_uuid,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -504,20 +486,20 @@ class Licenses(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/licenses/device/summary')
+        e_url = "/dna/intent/api/v1/licenses/device/summary"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_f4ba64eef4085d518a612835e128fe3c_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_f4ba64eef4085d518a612835e128fe3c_v3_1_3_0", json_data
+        )
 
-    def device_license_details(self,
-                               device_uuid,
-                               headers=None,
-                               **request_parameters):
+    def device_license_details(self, device_uuid, headers=None, **request_parameters):
         """Get detailed license information of a device. .
 
         Args:
@@ -539,20 +521,17 @@ class Licenses(object):
             https://developer.cisco.com/docs/dna-center/#!device-license-details
         """
         check_type(headers, dict)
-        check_type(device_uuid, str,
-                   may_be_none=False)
+        check_type(device_uuid, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'device_uuid': device_uuid,
+            "device_uuid": device_uuid,
         }
 
         with_custom_headers = False
@@ -561,22 +540,27 @@ class Licenses(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/licenses/device/{device_uuid}/details')
+        e_url = "/dna/intent/api/v1/licenses/device/{device_uuid}/details"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_f04f865c01d5c17a5f0cb5abe620dd8_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_f04f865c01d5c17a5f0cb5abe620dd8_v3_1_3_0", json_data
+        )
 
-    def device_deregistration(self,
-                              device_uuids=None,
-                              headers=None,
-                              payload=None,
-                              active_validation=True,
-                              **request_parameters):
+    def device_deregistration(
+        self,
+        device_uuids=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Deregister device(s) from CSSM(Cisco Smart Software Manager). .
 
         Args:
@@ -604,29 +588,25 @@ class Licenses(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'device_uuids':
-                device_uuids,
+            "device_uuids": device_uuids,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_b2f15d0c54c2862a60a904289ddd_v3_1_3_0')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_b2f15d0c54c2862a60a904289ddd_v3_1_3_0"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -634,26 +614,32 @@ class Licenses(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/licenses/smartAccount/virtualAccount/'
-                 + 'deregister')
+        e_url = (
+            "/dna/intent/api/v1/licenses/smartAccount/virtualAccount/" + "deregister"
+        )
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload,
-                                          headers=_headers)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_b2f15d0c54c2862a60a904289ddd_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_b2f15d0c54c2862a60a904289ddd_v3_1_3_0", json_data
+        )
 
-    def device_registration(self,
-                            virtual_account_name,
-                            device_uuids=None,
-                            headers=None,
-                            payload=None,
-                            active_validation=True,
-                            **request_parameters):
+    def device_registration(
+        self,
+        virtual_account_name,
+        device_uuids=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Register device(s) in CSSM(Cisco Smart Software Manager). .
 
         Args:
@@ -681,30 +667,27 @@ class Licenses(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(virtual_account_name, str,
-                   may_be_none=False)
+        check_type(virtual_account_name, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'virtual_account_name': virtual_account_name,
+            "virtual_account_name": virtual_account_name,
         }
         _payload = {
-            'device_uuids':
-                device_uuids,
+            "device_uuids": device_uuids,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_df26f516755a50b5b5477324cf5cb649_v3_1_3_0')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_df26f516755a50b5b5477324cf5cb649_v3_1_3_0"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -712,27 +695,34 @@ class Licenses(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/licenses/smartAccount/virtualAccount/'
-                 + '{virtual_account_name}/register')
+        e_url = (
+            "/dna/intent/api/v1/licenses/smartAccount/virtualAccount/"
+            + "{virtual_account_name}/register"
+        )
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload,
-                                          headers=_headers)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_df26f516755a50b5b5477324cf5cb649_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_df26f516755a50b5b5477324cf5cb649_v3_1_3_0", json_data
+        )
 
-    def change_virtual_account(self,
-                               smart_account_id,
-                               virtual_account_name,
-                               device_uuids=None,
-                               headers=None,
-                               payload=None,
-                               active_validation=True,
-                               **request_parameters):
+    def change_virtual_account(
+        self,
+        smart_account_id,
+        virtual_account_name,
+        device_uuids=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Transfer device(s) from one virtual account to another within same smart account. .
 
         Args:
@@ -761,33 +751,29 @@ class Licenses(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(smart_account_id, str,
-                   may_be_none=False)
-        check_type(virtual_account_name, str,
-                   may_be_none=False)
+        check_type(smart_account_id, str, may_be_none=False)
+        check_type(virtual_account_name, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'smart_account_id': smart_account_id,
-            'virtual_account_name': virtual_account_name,
+            "smart_account_id": smart_account_id,
+            "virtual_account_name": virtual_account_name,
         }
         _payload = {
-            'device_uuids':
-                device_uuids,
+            "device_uuids": device_uuids,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_bd5b507f58a50aab614e3d7409eec4c_v3_1_3_0')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_bd5b507f58a50aab614e3d7409eec4c_v3_1_3_0"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -795,24 +781,28 @@ class Licenses(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/licenses/smartAccount/{smart_account_'
-                 + 'id}/virtualAccount/{virtual_account_name}/device/transfe'
-                 + 'r')
+        e_url = (
+            "/dna/intent/api/v1/licenses/smartAccount/{smart_account_"
+            + "id}/virtualAccount/{virtual_account_name}/device/transfe"
+            + "r"
+        )
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_bd5b507f58a50aab614e3d7409eec4c_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_bd5b507f58a50aab614e3d7409eec4c_v3_1_3_0", json_data
+        )
 
-    def virtual_account_details(self,
-                                smart_account_id,
-                                headers=None,
-                                **request_parameters):
+    def virtual_account_details(
+        self, smart_account_id, headers=None, **request_parameters
+    ):
         """Get virtual account details of a smart account. .
 
         Args:
@@ -834,20 +824,17 @@ class Licenses(object):
             https://developer.cisco.com/docs/dna-center/#!virtual-account-details
         """
         check_type(headers, dict)
-        check_type(smart_account_id, str,
-                   may_be_none=False)
+        check_type(smart_account_id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'smart_account_id': smart_account_id,
+            "smart_account_id": smart_account_id,
         }
 
         with_custom_headers = False
@@ -856,20 +843,23 @@ class Licenses(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/licenses/smartAccount/{smart_account_'
-                 + 'id}/virtualAccounts')
+        e_url = (
+            "/dna/intent/api/v1/licenses/smartAccount/{smart_account_"
+            + "id}/virtualAccounts"
+        )
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_ab450b197375fa9bcd95219113a3075_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_ab450b197375fa9bcd95219113a3075_v3_1_3_0", json_data
+        )
 
-    def smart_account_details(self,
-                              headers=None,
-                              **request_parameters):
+    def smart_account_details(self, headers=None, **request_parameters):
         """Retrieve details of all smart accounts. .
 
         Args:
@@ -891,17 +881,14 @@ class Licenses(object):
         """
         check_type(headers, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -909,22 +896,27 @@ class Licenses(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/licenses/smartAccounts')
+        e_url = "/dna/intent/api/v1/licenses/smartAccounts"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_ea3fdbde23325051a76b9d062c2962a0_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_ea3fdbde23325051a76b9d062c2962a0_v3_1_3_0", json_data
+        )
 
-    def license_term_details(self,
-                             device_type,
-                             smart_account_id,
-                             virtual_account_name,
-                             headers=None,
-                             **request_parameters):
+    def license_term_details(
+        self,
+        device_type,
+        smart_account_id,
+        virtual_account_name,
+        headers=None,
+        **request_parameters
+    ):
         """Get license term details. .
 
         Args:
@@ -949,27 +941,22 @@ class Licenses(object):
             https://developer.cisco.com/docs/dna-center/#!license-term-details
         """
         check_type(headers, dict)
-        check_type(device_type, str,
-                   may_be_none=False)
-        check_type(smart_account_id, str,
-                   may_be_none=False)
-        check_type(virtual_account_name, str,
-                   may_be_none=False)
+        check_type(device_type, str, may_be_none=False)
+        check_type(smart_account_id, str, may_be_none=False)
+        check_type(virtual_account_name, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'device_type':
-                device_type,
+            "device_type": device_type,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'smart_account_id': smart_account_id,
-            'virtual_account_name': virtual_account_name,
+            "smart_account_id": smart_account_id,
+            "virtual_account_name": virtual_account_name,
         }
 
         with_custom_headers = False
@@ -978,23 +965,30 @@ class Licenses(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/licenses/term/smartAccount/{smart_acc'
-                 + 'ount_id}/virtualAccount/{virtual_account_name}')
+        e_url = (
+            "/dna/intent/api/v1/licenses/term/smartAccount/{smart_acc"
+            + "ount_id}/virtualAccount/{virtual_account_name}"
+        )
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_df2d278e89b45c8ea0ca0a945c001f08_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_df2d278e89b45c8ea0ca0a945c001f08_v3_1_3_0", json_data
+        )
 
-    def license_usage_details(self,
-                              device_type,
-                              smart_account_id,
-                              virtual_account_name,
-                              headers=None,
-                              **request_parameters):
+    def license_usage_details(
+        self,
+        device_type,
+        smart_account_id,
+        virtual_account_name,
+        headers=None,
+        **request_parameters
+    ):
         """Get count of purchased and in use Cisco Catalyst and Network licenses. .
 
         Args:
@@ -1019,27 +1013,22 @@ class Licenses(object):
             https://developer.cisco.com/docs/dna-center/#!license-usage-details
         """
         check_type(headers, dict)
-        check_type(device_type, str,
-                   may_be_none=False)
-        check_type(smart_account_id, str,
-                   may_be_none=False)
-        check_type(virtual_account_name, str,
-                   may_be_none=False)
+        check_type(device_type, str, may_be_none=False)
+        check_type(smart_account_id, str, may_be_none=False)
+        check_type(virtual_account_name, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'device_type':
-                device_type,
+            "device_type": device_type,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'smart_account_id': smart_account_id,
-            'virtual_account_name': virtual_account_name,
+            "smart_account_id": smart_account_id,
+            "virtual_account_name": virtual_account_name,
         }
 
         with_custom_headers = False
@@ -1048,20 +1037,25 @@ class Licenses(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/licenses/usage/smartAccount/{smart_ac'
-                 + 'count_id}/virtualAccount/{virtual_account_name}')
+        e_url = (
+            "/dna/intent/api/v1/licenses/usage/smartAccount/{smart_ac"
+            + "count_id}/virtualAccount/{virtual_account_name}"
+        )
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_e55ecbbda454c6a01d905e6f4cce16_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_e55ecbbda454c6a01d905e6f4cce16_v3_1_3_0", json_data
+        )
 
-    def retrieves_summary_of_network_device_licenses(self,
-                                                     headers=None,
-                                                     **request_parameters):
+    def retrieves_summary_of_network_device_licenses(
+        self, headers=None, **request_parameters
+    ):
         """Retrieves the summary of consumed network, Catalyst, and Cisco Networking Subscription (CNS) licenses, along with the
         counts of unregistered and out-of-compliance network devices, and expired and expiring network device
         licenses. .
@@ -1085,17 +1079,14 @@ class Licenses(object):
         """
         check_type(headers, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1103,19 +1094,20 @@ class Licenses(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/networkDeviceLicenses/summary')
+        e_url = "/dna/intent/api/v1/networkDeviceLicenses/summary"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_df7151bbd7053ef8b010321bfa2bb84_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_df7151bbd7053ef8b010321bfa2bb84_v3_1_3_0", json_data
+        )
 
-    def smart_licensing_deregistration(self,
-                                       headers=None,
-                                       **request_parameters):
+    def smart_licensing_deregistration(self, headers=None, **request_parameters):
         """Deregisters the system with Cisco Smart Software Manager (CSSM) .
 
         Args:
@@ -1137,20 +1129,16 @@ class Licenses(object):
         """
         check_type(headers, dict)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1158,19 +1146,22 @@ class Licenses(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/system/api/v1/license/deregister')
+        e_url = "/dna/system/api/v1/license/deregister"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.post(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_df787402ab25f32b53dcf395b2742a8_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_df787402ab25f32b53dcf395b2742a8_v3_1_3_0", json_data
+        )
 
-    def system_licensing_last_operation_status(self,
-                                               headers=None,
-                                               **request_parameters):
+    def system_licensing_last_operation_status(
+        self, headers=None, **request_parameters
+    ):
         """Retrieves the status of the last system licensing operation. .
 
         Args:
@@ -1192,17 +1183,14 @@ class Licenses(object):
         """
         check_type(headers, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1210,23 +1198,26 @@ class Licenses(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/system/api/v1/license/lastOperationStatus')
+        e_url = "/dna/system/api/v1/license/lastOperationStatus"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_d1275a6eacbbda807ec535c5_v3_1_3_0', json_data)
+        return self._object_factory("bpm_d1275a6eacbbda807ec535c5_v3_1_3_0", json_data)
 
-    def system_licensing_registration(self,
-                                      smartAccountId=None,
-                                      virtualAccountId=None,
-                                      headers=None,
-                                      payload=None,
-                                      active_validation=True,
-                                      **request_parameters):
+    def system_licensing_registration(
+        self,
+        smartAccountId=None,
+        virtualAccountId=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Registers the system with Cisco Smart Software Manager (CSSM) .
 
         Args:
@@ -1255,31 +1246,26 @@ class Licenses(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'smartAccountId':
-                smartAccountId,
-            'virtualAccountId':
-                virtualAccountId,
+            "smartAccountId": smartAccountId,
+            "virtualAccountId": virtualAccountId,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_e6bca55256a0aac288486e38049b_v3_1_3_0')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_e6bca55256a0aac288486e38049b_v3_1_3_0"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1287,21 +1273,22 @@ class Licenses(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/system/api/v1/license/register')
+        e_url = "/dna/system/api/v1/license/register"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_e6bca55256a0aac288486e38049b_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_e6bca55256a0aac288486e38049b_v3_1_3_0", json_data
+        )
 
-    def smart_licensing_renew_operation(self,
-                                        headers=None,
-                                        **request_parameters):
+    def smart_licensing_renew_operation(self, headers=None, **request_parameters):
         """Renews license registration and authorization status of the system with Cisco Smart Software Manager (CSSM) .
 
         Args:
@@ -1323,20 +1310,16 @@ class Licenses(object):
         """
         check_type(headers, dict)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1344,19 +1327,20 @@ class Licenses(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/system/api/v1/license/renew')
+        e_url = "/dna/system/api/v1/license/renew"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.post(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_f059aef5236f531b918cf6f8bd766f79_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_f059aef5236f531b918cf6f8bd766f79_v3_1_3_0", json_data
+        )
 
-    def system_licensing_status(self,
-                                headers=None,
-                                **request_parameters):
+    def system_licensing_status(self, headers=None, **request_parameters):
         """Fetches registration status, authorization status and entitlements of the system with Cisco Smart Software
         Manage (CSSM). .
 
@@ -1379,17 +1363,14 @@ class Licenses(object):
         """
         check_type(headers, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1397,15 +1378,18 @@ class Licenses(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/system/api/v1/license/status')
+        e_url = "/dna/system/api/v1/license/status"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_ad6565535c567d951cdaf7bdaf7972_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_ad6565535c567d951cdaf7bdaf7972_v3_1_3_0", json_data
+        )
+
 
 # Alias Functions
-

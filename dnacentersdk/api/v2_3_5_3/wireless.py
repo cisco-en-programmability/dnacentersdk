@@ -64,13 +64,15 @@ class Wireless(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def sensor_test_results(self,
-                            end_time=None,
-                            site_id=None,
-                            start_time=None,
-                            test_failure_by=None,
-                            headers=None,
-                            **request_parameters):
+    def sensor_test_results(
+        self,
+        end_time=None,
+        site_id=None,
+        start_time=None,
+        test_failure_by=None,
+        headers=None,
+        **request_parameters
+    ):
         """Intent API to get SENSOR test result summary .
 
         Args:
@@ -101,25 +103,19 @@ class Wireless(object):
         check_type(end_time, int)
         check_type(test_failure_by, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'siteId':
-                site_id,
-            'startTime':
-                start_time,
-            'endTime':
-                end_time,
-            'testFailureBy':
-                test_failure_by,
+            "siteId": site_id,
+            "startTime": start_time,
+            "endTime": end_time,
+            "testFailureBy": test_failure_by,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -127,26 +123,31 @@ class Wireless(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/AssuranceGetSensorTestResults')
+        e_url = "/dna/intent/api/v1/AssuranceGetSensorTestResults"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_dde2b077d6d052dcae5a76f4aac09c1d_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_dde2b077d6d052dcae5a76f4aac09c1d_v2_3_5_3", json_data
+        )
 
-    def create_and_provision_ssid(self,
-                                  enableFabric=None,
-                                  flexConnect=None,
-                                  managedAPLocations=None,
-                                  ssidDetails=None,
-                                  ssidType=None,
-                                  headers=None,
-                                  payload=None,
-                                  active_validation=True,
-                                  **request_parameters):
+    def create_and_provision_ssid(
+        self,
+        enableFabric=None,
+        flexConnect=None,
+        managedAPLocations=None,
+        ssidDetails=None,
+        ssidType=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Creates SSID, updates the SSID to the corresponding site profiles and provision it to the devices matching the
         given sites .
 
@@ -180,37 +181,29 @@ class Wireless(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if '__persistbapioutput' in headers:
-                check_type(headers.get('__persistbapioutput'),
-                           str, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "__persistbapioutput" in headers:
+                check_type(headers.get("__persistbapioutput"), str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'managedAPLocations':
-                managedAPLocations,
-            'ssidDetails':
-                ssidDetails,
-            'ssidType':
-                ssidType,
-            'enableFabric':
-                enableFabric,
-            'flexConnect':
-                flexConnect,
+            "managedAPLocations": managedAPLocations,
+            "ssidDetails": ssidDetails,
+            "ssidType": ssidType,
+            "enableFabric": enableFabric,
+            "flexConnect": flexConnect,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_d825ae9a117f5b6bb65b7d78fd42513c_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_d825ae9a117f5b6bb65b7d78fd42513c_v2_3_5_3"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -218,23 +211,24 @@ class Wireless(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/business/ssid')
+        e_url = "/dna/intent/api/v1/business/ssid"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_d825ae9a117f5b6bb65b7d78fd42513c_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_d825ae9a117f5b6bb65b7d78fd42513c_v2_3_5_3", json_data
+        )
 
-    def delete_ssid_and_provision_it_to_devices(self,
-                                                managed_aplocations,
-                                                ssid_name,
-                                                headers=None,
-                                                **request_parameters):
+    def delete_ssid_and_provision_it_to_devices(
+        self, managed_aplocations, ssid_name, headers=None, **request_parameters
+    ):
         """Removes SSID or WLAN from the network profile, reprovision the device(s) and deletes the SSID or WLAN from DNA
         Center .
 
@@ -258,26 +252,21 @@ class Wireless(object):
             https://developer.cisco.com/docs/dna-center/#!delete-ssid-and-provision-it-to-devices
         """
         check_type(headers, dict)
-        check_type(ssid_name, str,
-                   may_be_none=False)
-        check_type(managed_aplocations, str,
-                   may_be_none=False)
+        check_type(ssid_name, str, may_be_none=False)
+        check_type(managed_aplocations, str, may_be_none=False)
         if headers is not None:
-            if '__persistbapioutput' in headers:
-                check_type(headers.get('__persistbapioutput'),
-                           str, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "__persistbapioutput" in headers:
+                check_type(headers.get("__persistbapioutput"), str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'ssidName': ssid_name,
-            'managedAPLocations': managed_aplocations,
+            "ssidName": ssid_name,
+            "managedAPLocations": managed_aplocations,
         }
 
         with_custom_headers = False
@@ -286,23 +275,27 @@ class Wireless(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/business/ssid/{ssidName}/{managedAPLo'
-                 + 'cations}')
+        e_url = "/dna/intent/api/v1/business/ssid/{ssidName}/{managedAPLo" + "cations}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.delete(endpoint_full_url, params=_params,
-                                             headers=_headers)
+            json_data = self._session.delete(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.delete(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_e56eb2c294159d891b7dbe493ddc434_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_e56eb2c294159d891b7dbe493ddc434_v2_3_5_3", json_data
+        )
 
-    def reboot_access_points(self,
-                             apMacAddresses=None,
-                             headers=None,
-                             payload=None,
-                             active_validation=True,
-                             **request_parameters):
+    def reboot_access_points(
+        self,
+        apMacAddresses=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Users can reboot multiple access points up-to 200 at a time using this API .
 
         Args:
@@ -330,29 +323,25 @@ class Wireless(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'apMacAddresses':
-                apMacAddresses,
+            "apMacAddresses": apMacAddresses,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_f5602b2965e53b5bdda193025a3fc_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_f5602b2965e53b5bdda193025a3fc_v2_3_5_3"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -360,22 +349,24 @@ class Wireless(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/device-reboot/apreboot')
+        e_url = "/dna/intent/api/v1/device-reboot/apreboot"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_f5602b2965e53b5bdda193025a3fc_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_f5602b2965e53b5bdda193025a3fc_v2_3_5_3", json_data
+        )
 
-    def get_access_point_reboot_task_result(self,
-                                            parent_task_id=None,
-                                            headers=None,
-                                            **request_parameters):
+    def get_access_point_reboot_task_result(
+        self, parent_task_id=None, headers=None, **request_parameters
+    ):
         """Users can query the access point reboot status using this intent API .
 
         Args:
@@ -400,19 +391,16 @@ class Wireless(object):
         check_type(headers, dict)
         check_type(parent_task_id, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'parentTaskId':
-                parent_task_id,
+            "parentTaskId": parent_task_id,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -420,20 +408,20 @@ class Wireless(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/device-reboot/apreboot/status')
+        e_url = "/dna/intent/api/v1/device-reboot/apreboot/status"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_ebabf7f1ce2537f8aedd93e5f5aab1b_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_ebabf7f1ce2537f8aedd93e5f5aab1b_v2_3_5_3", json_data
+        )
 
-    def get_enterprise_ssid(self,
-                            ssid_name=None,
-                            headers=None,
-                            **request_parameters):
+    def get_enterprise_ssid(self, ssid_name=None, headers=None, **request_parameters):
         """Gets either one or all the enterprise SSID .
 
         Args:
@@ -459,19 +447,16 @@ class Wireless(object):
         check_type(headers, dict)
         check_type(ssid_name, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'ssidName':
-                ssid_name,
+            "ssidName": ssid_name,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -479,40 +464,45 @@ class Wireless(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/enterprise-ssid')
+        e_url = "/dna/intent/api/v1/enterprise-ssid"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_fb757e8fce4b51ffa0ba1a8e5ae4d8c0_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_fb757e8fce4b51ffa0ba1a8e5ae4d8c0_v2_3_5_3", json_data
+        )
 
-    def create_enterprise_ssid(self,
-                               basicServiceSetClientIdleTimeout=None,
-                               clientExclusionTimeout=None,
-                               enableBasicServiceSetMaxIdle=None,
-                               enableBroadcastSSID=None,
-                               enableClientExclusion=None,
-                               enableDirectedMulticastService=None,
-                               enableFastLane=None,
-                               enableMACFiltering=None,
-                               enableNeighborList=None,
-                               enableSessionTimeOut=None,
-                               fastTransition=None,
-                               mfpClientProtection=None,
-                               name=None,
-                               nasOptions=None,
-                               passphrase=None,
-                               radioPolicy=None,
-                               securityLevel=None,
-                               sessionTimeOut=None,
-                               trafficType=None,
-                               headers=None,
-                               payload=None,
-                               active_validation=True,
-                               **request_parameters):
+    def create_enterprise_ssid(
+        self,
+        basicServiceSetClientIdleTimeout=None,
+        clientExclusionTimeout=None,
+        enableBasicServiceSetMaxIdle=None,
+        enableBroadcastSSID=None,
+        enableClientExclusion=None,
+        enableDirectedMulticastService=None,
+        enableFastLane=None,
+        enableMACFiltering=None,
+        enableNeighborList=None,
+        enableSessionTimeOut=None,
+        fastTransition=None,
+        mfpClientProtection=None,
+        name=None,
+        nasOptions=None,
+        passphrase=None,
+        radioPolicy=None,
+        securityLevel=None,
+        sessionTimeOut=None,
+        trafficType=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Creates enterprise SSID .
 
         Args:
@@ -566,62 +556,41 @@ class Wireless(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'name':
-                name,
-            'securityLevel':
-                securityLevel,
-            'passphrase':
-                passphrase,
-            'enableFastLane':
-                enableFastLane,
-            'enableMACFiltering':
-                enableMACFiltering,
-            'trafficType':
-                trafficType,
-            'radioPolicy':
-                radioPolicy,
-            'enableBroadcastSSID':
-                enableBroadcastSSID,
-            'fastTransition':
-                fastTransition,
-            'enableSessionTimeOut':
-                enableSessionTimeOut,
-            'sessionTimeOut':
-                sessionTimeOut,
-            'enableClientExclusion':
-                enableClientExclusion,
-            'clientExclusionTimeout':
-                clientExclusionTimeout,
-            'enableBasicServiceSetMaxIdle':
-                enableBasicServiceSetMaxIdle,
-            'basicServiceSetClientIdleTimeout':
-                basicServiceSetClientIdleTimeout,
-            'enableDirectedMulticastService':
-                enableDirectedMulticastService,
-            'enableNeighborList':
-                enableNeighborList,
-            'mfpClientProtection':
-                mfpClientProtection,
-            'nasOptions':
-                nasOptions,
+            "name": name,
+            "securityLevel": securityLevel,
+            "passphrase": passphrase,
+            "enableFastLane": enableFastLane,
+            "enableMACFiltering": enableMACFiltering,
+            "trafficType": trafficType,
+            "radioPolicy": radioPolicy,
+            "enableBroadcastSSID": enableBroadcastSSID,
+            "fastTransition": fastTransition,
+            "enableSessionTimeOut": enableSessionTimeOut,
+            "sessionTimeOut": sessionTimeOut,
+            "enableClientExclusion": enableClientExclusion,
+            "clientExclusionTimeout": clientExclusionTimeout,
+            "enableBasicServiceSetMaxIdle": enableBasicServiceSetMaxIdle,
+            "basicServiceSetClientIdleTimeout": basicServiceSetClientIdleTimeout,
+            "enableDirectedMulticastService": enableDirectedMulticastService,
+            "enableNeighborList": enableNeighborList,
+            "mfpClientProtection": mfpClientProtection,
+            "nasOptions": nasOptions,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_bc33daf690ec5399a507829abfc4fe64_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_bc33daf690ec5399a507829abfc4fe64_v2_3_5_3"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -629,42 +598,47 @@ class Wireless(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/enterprise-ssid')
+        e_url = "/dna/intent/api/v1/enterprise-ssid"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_bc33daf690ec5399a507829abfc4fe64_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_bc33daf690ec5399a507829abfc4fe64_v2_3_5_3", json_data
+        )
 
-    def update_enterprise_ssid(self,
-                               basicServiceSetClientIdleTimeout=None,
-                               clientExclusionTimeout=None,
-                               enableBasicServiceSetMaxIdle=None,
-                               enableBroadcastSSID=None,
-                               enableClientExclusion=None,
-                               enableDirectedMulticastService=None,
-                               enableFastLane=None,
-                               enableMACFiltering=None,
-                               enableNeighborList=None,
-                               enableSessionTimeOut=None,
-                               fastTransition=None,
-                               mfpClientProtection=None,
-                               name=None,
-                               nasOptions=None,
-                               passphrase=None,
-                               radioPolicy=None,
-                               securityLevel=None,
-                               sessionTimeOut=None,
-                               trafficType=None,
-                               headers=None,
-                               payload=None,
-                               active_validation=True,
-                               **request_parameters):
+    def update_enterprise_ssid(
+        self,
+        basicServiceSetClientIdleTimeout=None,
+        clientExclusionTimeout=None,
+        enableBasicServiceSetMaxIdle=None,
+        enableBroadcastSSID=None,
+        enableClientExclusion=None,
+        enableDirectedMulticastService=None,
+        enableFastLane=None,
+        enableMACFiltering=None,
+        enableNeighborList=None,
+        enableSessionTimeOut=None,
+        fastTransition=None,
+        mfpClientProtection=None,
+        name=None,
+        nasOptions=None,
+        passphrase=None,
+        radioPolicy=None,
+        securityLevel=None,
+        sessionTimeOut=None,
+        trafficType=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Update enterprise SSID .
 
         Args:
@@ -718,62 +692,41 @@ class Wireless(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'name':
-                name,
-            'securityLevel':
-                securityLevel,
-            'passphrase':
-                passphrase,
-            'enableFastLane':
-                enableFastLane,
-            'enableMACFiltering':
-                enableMACFiltering,
-            'trafficType':
-                trafficType,
-            'radioPolicy':
-                radioPolicy,
-            'enableBroadcastSSID':
-                enableBroadcastSSID,
-            'fastTransition':
-                fastTransition,
-            'enableSessionTimeOut':
-                enableSessionTimeOut,
-            'sessionTimeOut':
-                sessionTimeOut,
-            'enableClientExclusion':
-                enableClientExclusion,
-            'clientExclusionTimeout':
-                clientExclusionTimeout,
-            'enableBasicServiceSetMaxIdle':
-                enableBasicServiceSetMaxIdle,
-            'basicServiceSetClientIdleTimeout':
-                basicServiceSetClientIdleTimeout,
-            'enableDirectedMulticastService':
-                enableDirectedMulticastService,
-            'enableNeighborList':
-                enableNeighborList,
-            'mfpClientProtection':
-                mfpClientProtection,
-            'nasOptions':
-                nasOptions,
+            "name": name,
+            "securityLevel": securityLevel,
+            "passphrase": passphrase,
+            "enableFastLane": enableFastLane,
+            "enableMACFiltering": enableMACFiltering,
+            "trafficType": trafficType,
+            "radioPolicy": radioPolicy,
+            "enableBroadcastSSID": enableBroadcastSSID,
+            "fastTransition": fastTransition,
+            "enableSessionTimeOut": enableSessionTimeOut,
+            "sessionTimeOut": sessionTimeOut,
+            "enableClientExclusion": enableClientExclusion,
+            "clientExclusionTimeout": clientExclusionTimeout,
+            "enableBasicServiceSetMaxIdle": enableBasicServiceSetMaxIdle,
+            "basicServiceSetClientIdleTimeout": basicServiceSetClientIdleTimeout,
+            "enableDirectedMulticastService": enableDirectedMulticastService,
+            "enableNeighborList": enableNeighborList,
+            "mfpClientProtection": mfpClientProtection,
+            "nasOptions": nasOptions,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_a94058a99acaaf8eb73c9227_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator("jsd_a94058a99acaaf8eb73c9227_v2_3_5_3").validate(
+                _payload
+            )
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -781,22 +734,20 @@ class Wireless(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/enterprise-ssid')
+        e_url = "/dna/intent/api/v1/enterprise-ssid"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload,
-                                          headers=_headers)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_a94058a99acaaf8eb73c9227_v2_3_5_3', json_data)
+        return self._object_factory("bpm_a94058a99acaaf8eb73c9227_v2_3_5_3", json_data)
 
-    def delete_enterprise_ssid(self,
-                               ssid_name,
-                               headers=None,
-                               **request_parameters):
+    def delete_enterprise_ssid(self, ssid_name, headers=None, **request_parameters):
         """Deletes given enterprise SSID .
 
         Args:
@@ -818,20 +769,17 @@ class Wireless(object):
             https://developer.cisco.com/docs/dna-center/#!delete-enterprise-ssid
         """
         check_type(headers, dict)
-        check_type(ssid_name, str,
-                   may_be_none=False)
+        check_type(ssid_name, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'ssidName': ssid_name,
+            "ssidName": ssid_name,
         }
 
         with_custom_headers = False
@@ -840,20 +788,22 @@ class Wireless(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/enterprise-ssid/{ssidName}')
+        e_url = "/dna/intent/api/v1/enterprise-ssid/{ssidName}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.delete(endpoint_full_url, params=_params,
-                                             headers=_headers)
+            json_data = self._session.delete(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.delete(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_a43afa4d91a5043996c682a7a7a2d62_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_a43afa4d91a5043996c682a7a7a2d62_v2_3_5_3", json_data
+        )
 
-    def delete_wireless_profile(self,
-                                wireless_profile_name,
-                                headers=None,
-                                **request_parameters):
+    def delete_wireless_profile(
+        self, wireless_profile_name, headers=None, **request_parameters
+    ):
         """Delete the Wireless Profile from Cisco DNA Center whose name is provided. .
 
         Args:
@@ -875,20 +825,17 @@ class Wireless(object):
             https://developer.cisco.com/docs/dna-center/#!delete-wireless-profile
         """
         check_type(headers, dict)
-        check_type(wireless_profile_name, str,
-                   may_be_none=False)
+        check_type(wireless_profile_name, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'wirelessProfileName': wireless_profile_name,
+            "wirelessProfileName": wireless_profile_name,
         }
 
         with_custom_headers = False
@@ -897,45 +844,49 @@ class Wireless(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/wireless-'
-                 + 'profile/{wirelessProfileName}')
+        e_url = "/dna/intent/api/v1/wireless-" + "profile/{wirelessProfileName}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.delete(endpoint_full_url, params=_params,
-                                             headers=_headers)
+            json_data = self._session.delete(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.delete(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_a850fb6c5451a7ad20ba76f4ff43_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_a850fb6c5451a7ad20ba76f4ff43_v2_3_5_3", json_data
+        )
 
-    def configure_access_points(self,
-                                adminStatus=None,
-                                apHeight=None,
-                                apList=None,
-                                apMode=None,
-                                configureAdminStatus=None,
-                                configureApHeight=None,
-                                configureApMode=None,
-                                configureFailoverPriority=None,
-                                configureHAController=None,
-                                configureLedBrightnessLevel=None,
-                                configureLedStatus=None,
-                                configureLocation=None,
-                                failoverPriority=None,
-                                ledBrightnessLevel=None,
-                                ledStatus=None,
-                                location=None,
-                                primaryControllerName=None,
-                                primaryIpAddress=None,
-                                radioConfigurations=None,
-                                secondaryControllerName=None,
-                                secondaryIpAddress=None,
-                                tertiaryControllerName=None,
-                                tertiaryIpAddress=None,
-                                headers=None,
-                                payload=None,
-                                active_validation=True,
-                                **request_parameters):
+    def configure_access_points(
+        self,
+        adminStatus=None,
+        apHeight=None,
+        apList=None,
+        apMode=None,
+        configureAdminStatus=None,
+        configureApHeight=None,
+        configureApMode=None,
+        configureFailoverPriority=None,
+        configureHAController=None,
+        configureLedBrightnessLevel=None,
+        configureLedStatus=None,
+        configureLocation=None,
+        failoverPriority=None,
+        ledBrightnessLevel=None,
+        ledStatus=None,
+        location=None,
+        primaryControllerName=None,
+        primaryIpAddress=None,
+        radioConfigurations=None,
+        secondaryControllerName=None,
+        secondaryIpAddress=None,
+        tertiaryControllerName=None,
+        tertiaryIpAddress=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """User can configure multiple access points with required options using this intent API .
 
         Args:
@@ -1003,73 +954,47 @@ class Wireless(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'apList':
-                apList,
-            'configureAdminStatus':
-                configureAdminStatus,
-            'adminStatus':
-                adminStatus,
-            'configureApMode':
-                configureApMode,
-            'apMode':
-                apMode,
-            'configureApHeight':
-                configureApHeight,
-            'apHeight':
-                apHeight,
-            'configureFailoverPriority':
-                configureFailoverPriority,
-            'failoverPriority':
-                failoverPriority,
-            'configureLedStatus':
-                configureLedStatus,
-            'ledStatus':
-                ledStatus,
-            'configureLedBrightnessLevel':
-                configureLedBrightnessLevel,
-            'ledBrightnessLevel':
-                ledBrightnessLevel,
-            'configureLocation':
-                configureLocation,
-            'location':
-                location,
-            'configureHAController':
-                configureHAController,
-            'primaryControllerName':
-                primaryControllerName,
-            'primaryIpAddress':
-                primaryIpAddress,
-            'secondaryControllerName':
-                secondaryControllerName,
-            'secondaryIpAddress':
-                secondaryIpAddress,
-            'tertiaryControllerName':
-                tertiaryControllerName,
-            'tertiaryIpAddress':
-                tertiaryIpAddress,
-            'radioConfigurations':
-                radioConfigurations,
+            "apList": apList,
+            "configureAdminStatus": configureAdminStatus,
+            "adminStatus": adminStatus,
+            "configureApMode": configureApMode,
+            "apMode": apMode,
+            "configureApHeight": configureApHeight,
+            "apHeight": apHeight,
+            "configureFailoverPriority": configureFailoverPriority,
+            "failoverPriority": failoverPriority,
+            "configureLedStatus": configureLedStatus,
+            "ledStatus": ledStatus,
+            "configureLedBrightnessLevel": configureLedBrightnessLevel,
+            "ledBrightnessLevel": ledBrightnessLevel,
+            "configureLocation": configureLocation,
+            "location": location,
+            "configureHAController": configureHAController,
+            "primaryControllerName": primaryControllerName,
+            "primaryIpAddress": primaryIpAddress,
+            "secondaryControllerName": secondaryControllerName,
+            "secondaryIpAddress": secondaryIpAddress,
+            "tertiaryControllerName": tertiaryControllerName,
+            "tertiaryIpAddress": tertiaryIpAddress,
+            "radioConfigurations": radioConfigurations,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_e0bd567c1395531a7f18ab4e14110bd_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_e0bd567c1395531a7f18ab4e14110bd_v2_3_5_3"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1077,22 +1002,24 @@ class Wireless(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/wireless/accesspoint-configuration')
+        e_url = "/dna/intent/api/v1/wireless/accesspoint-configuration"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_e0bd567c1395531a7f18ab4e14110bd_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_e0bd567c1395531a7f18ab4e14110bd_v2_3_5_3", json_data
+        )
 
-    def get_access_point_configuration_task_result(self,
-                                                   task_id,
-                                                   headers=None,
-                                                   **request_parameters):
+    def get_access_point_configuration_task_result(
+        self, task_id, headers=None, **request_parameters
+    ):
         """Users can query the access point configuration result using this intent API .
 
         Args:
@@ -1115,20 +1042,17 @@ class Wireless(object):
             https://developer.cisco.com/docs/dna-center/#!get-access-point-configuration-task-result
         """
         check_type(headers, dict)
-        check_type(task_id, str,
-                   may_be_none=False)
+        check_type(task_id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'task_id': task_id,
+            "task_id": task_id,
         }
 
         with_custom_headers = False
@@ -1137,21 +1061,23 @@ class Wireless(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/wireless/accesspoint-'
-                 + 'configuration/details/{task_id}')
+        e_url = (
+            "/dna/intent/api/v1/wireless/accesspoint-"
+            + "configuration/details/{task_id}"
+        )
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_cc2c3a5b75a4091350fa84ac872c9_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_cc2c3a5b75a4091350fa84ac872c9_v2_3_5_3", json_data
+        )
 
-    def get_access_point_configuration(self,
-                                       key,
-                                       headers=None,
-                                       **request_parameters):
+    def get_access_point_configuration(self, key, headers=None, **request_parameters):
         """Users can query the access point configuration information per device using the ethernet MAC address .
 
         Args:
@@ -1173,22 +1099,18 @@ class Wireless(object):
             https://developer.cisco.com/docs/dna-center/#!get-access-point-configuration
         """
         check_type(headers, dict)
-        check_type(key, str,
-                   may_be_none=False)
+        check_type(key, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'key':
-                key,
+            "key": key,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1196,22 +1118,22 @@ class Wireless(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/wireless/accesspoint-'
-                 + 'configuration/summary')
+        e_url = "/dna/intent/api/v1/wireless/accesspoint-" + "configuration/summary"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_fb7514b0e8c52be8cfd19dab5e31b06_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_fb7514b0e8c52be8cfd19dab5e31b06_v2_3_5_3", json_data
+        )
 
-    def ap_provision(self,
-                     headers=None,
-                     payload=None,
-                     active_validation=True,
-                     **request_parameters):
+    def ap_provision(
+        self, headers=None, payload=None, active_validation=True, **request_parameters
+    ):
         """Access Point Provision and ReProvision  .
 
         Args:
@@ -1238,24 +1160,21 @@ class Wireless(object):
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
-            if '__persistbapioutput' in headers:
-                check_type(headers.get('__persistbapioutput'),
-                           str)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "__persistbapioutput" in headers:
+                check_type(headers.get("__persistbapioutput"), str)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = payload or []
         if active_validation:
-            self._request_validator('jsd_f790a930d452708353c374f5c0f90f_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_f790a930d452708353c374f5c0f90f_v2_3_5_3"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1263,25 +1182,30 @@ class Wireless(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/wireless/ap-provision')
+        e_url = "/dna/intent/api/v1/wireless/ap-provision"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_f790a930d452708353c374f5c0f90f_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_f790a930d452708353c374f5c0f90f_v2_3_5_3", json_data
+        )
 
-    def create_update_dynamic_interface(self,
-                                        interfaceName=None,
-                                        vlanId=None,
-                                        headers=None,
-                                        payload=None,
-                                        active_validation=True,
-                                        **request_parameters):
+    def create_update_dynamic_interface(
+        self,
+        interfaceName=None,
+        vlanId=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """API to create or update an dynamic interface .
 
         Args:
@@ -1311,34 +1235,28 @@ class Wireless(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if '__runsync' in headers:
-                check_type(headers.get('__runsync'),
-                           bool)
-            if '__timeout' in headers:
-                check_type(headers.get('__timeout'),
-                           int)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "__runsync" in headers:
+                check_type(headers.get("__runsync"), bool)
+            if "__timeout" in headers:
+                check_type(headers.get("__timeout"), int)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'interfaceName':
-                interfaceName,
-            'vlanId':
-                vlanId,
+            "interfaceName": interfaceName,
+            "vlanId": vlanId,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_c00df3623b5a74ad41e75487ed9b77_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_c00df3623b5a74ad41e75487ed9b77_v2_3_5_3"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1346,22 +1264,24 @@ class Wireless(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/wireless/dynamic-interface')
+        e_url = "/dna/intent/api/v1/wireless/dynamic-interface"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_c00df3623b5a74ad41e75487ed9b77_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_c00df3623b5a74ad41e75487ed9b77_v2_3_5_3", json_data
+        )
 
-    def get_dynamic_interface(self,
-                              interface_name=None,
-                              headers=None,
-                              **request_parameters):
+    def get_dynamic_interface(
+        self, interface_name=None, headers=None, **request_parameters
+    ):
         """Get one or all dynamic interface(s) .
 
         Args:
@@ -1387,19 +1307,16 @@ class Wireless(object):
         check_type(headers, dict)
         check_type(interface_name, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'interface-name':
-                interface_name,
+            "interface-name": interface_name,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1407,20 +1324,22 @@ class Wireless(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/wireless/dynamic-interface')
+        e_url = "/dna/intent/api/v1/wireless/dynamic-interface"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_c9fb8b0f5c69ba22f920e4044538_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_c9fb8b0f5c69ba22f920e4044538_v2_3_5_3", json_data
+        )
 
-    def delete_dynamic_interface(self,
-                                 interface_name,
-                                 headers=None,
-                                 **request_parameters):
+    def delete_dynamic_interface(
+        self, interface_name, headers=None, **request_parameters
+    ):
         """Delete a dynamic interface .
 
         Args:
@@ -1442,26 +1361,21 @@ class Wireless(object):
             https://developer.cisco.com/docs/dna-center/#!delete-dynamic-interface
         """
         check_type(headers, dict)
-        check_type(interface_name, str,
-                   may_be_none=False)
+        check_type(interface_name, str, may_be_none=False)
         if headers is not None:
-            if '__runsync' in headers:
-                check_type(headers.get('__runsync'),
-                           bool)
-            if '__timeout' in headers:
-                check_type(headers.get('__timeout'),
-                           int)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "__runsync" in headers:
+                check_type(headers.get("__runsync"), bool)
+            if "__timeout" in headers:
+                check_type(headers.get("__timeout"), int)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'interfaceName': interface_name,
+            "interfaceName": interface_name,
         }
 
         with_custom_headers = False
@@ -1470,23 +1384,27 @@ class Wireless(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/wireless/dynamic-'
-                 + 'interface/{interfaceName}')
+        e_url = "/dna/intent/api/v1/wireless/dynamic-" + "interface/{interfaceName}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.delete(endpoint_full_url, params=_params,
-                                             headers=_headers)
+            json_data = self._session.delete(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.delete(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_bfd78707835bc8934cf0df1b0169fc_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_bfd78707835bc8934cf0df1b0169fc_v2_3_5_3", json_data
+        )
 
-    def update_wireless_profile(self,
-                                profileDetails=None,
-                                headers=None,
-                                payload=None,
-                                active_validation=True,
-                                **request_parameters):
+    def update_wireless_profile(
+        self,
+        profileDetails=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Updates the wireless Network Profile with updated details provided. All sites to be present in the network
         profile should be provided. .
 
@@ -1515,26 +1433,23 @@ class Wireless(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'profileDetails':
-                profileDetails,
+            "profileDetails": profileDetails,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_bbf7ce025bc2a291b90c37a6b898_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_bbf7ce025bc2a291b90c37a6b898_v2_3_5_3"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1542,24 +1457,29 @@ class Wireless(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/wireless/profile')
+        e_url = "/dna/intent/api/v1/wireless/profile"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload,
-                                          headers=_headers)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_bbf7ce025bc2a291b90c37a6b898_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_bbf7ce025bc2a291b90c37a6b898_v2_3_5_3", json_data
+        )
 
-    def create_wireless_profile(self,
-                                profileDetails=None,
-                                headers=None,
-                                payload=None,
-                                active_validation=True,
-                                **request_parameters):
+    def create_wireless_profile(
+        self,
+        profileDetails=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Creates Wireless Network Profile on Cisco DNA Center and associates sites and SSIDs to it. .
 
         Args:
@@ -1587,26 +1507,23 @@ class Wireless(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'profileDetails':
-                profileDetails,
+            "profileDetails": profileDetails,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_b95201b6a6905a10b463e036bf591166_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_b95201b6a6905a10b463e036bf591166_v2_3_5_3"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1614,22 +1531,24 @@ class Wireless(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/wireless/profile')
+        e_url = "/dna/intent/api/v1/wireless/profile"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_b95201b6a6905a10b463e036bf591166_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_b95201b6a6905a10b463e036bf591166_v2_3_5_3", json_data
+        )
 
-    def get_wireless_profile(self,
-                             profile_name=None,
-                             headers=None,
-                             **request_parameters):
+    def get_wireless_profile(
+        self, profile_name=None, headers=None, **request_parameters
+    ):
         """Gets either one or all the wireless network profiles if no name is provided for network-profile. .
 
         Args:
@@ -1654,19 +1573,16 @@ class Wireless(object):
         check_type(headers, dict)
         check_type(profile_name, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'profileName':
-                profile_name,
+            "profileName": profile_name,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1674,21 +1590,22 @@ class Wireless(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/wireless/profile')
+        e_url = "/dna/intent/api/v1/wireless/profile"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_bbc1866a50505c0695ae243718d51936_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_bbc1866a50505c0695ae243718d51936_v2_3_5_3", json_data
+        )
 
-    def provision_update(self,
-                         headers=None,
-                         payload=None,
-                         active_validation=True,
-                         **request_parameters):
+    def provision_update(
+        self, headers=None, payload=None, active_validation=True, **request_parameters
+    ):
         """Updates wireless provisioning .
 
         Args:
@@ -1715,24 +1632,21 @@ class Wireless(object):
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
-            if '__persistbapioutput' in headers:
-                check_type(headers.get('__persistbapioutput'),
-                           str, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "__persistbapioutput" in headers:
+                check_type(headers.get("__persistbapioutput"), str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = payload or []
         if active_validation:
-            self._request_validator('jsd_d0aab00569b258b481afedc35e6db392_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_d0aab00569b258b481afedc35e6db392_v2_3_5_3"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1740,23 +1654,24 @@ class Wireless(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/wireless/provision')
+        e_url = "/dna/intent/api/v1/wireless/provision"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload,
-                                          headers=_headers)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_d0aab00569b258b481afedc35e6db392_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_d0aab00569b258b481afedc35e6db392_v2_3_5_3", json_data
+        )
 
-    def provision(self,
-                  headers=None,
-                  payload=None,
-                  active_validation=True,
-                  **request_parameters):
+    def provision(
+        self, headers=None, payload=None, active_validation=True, **request_parameters
+    ):
         """Provision wireless devices .
 
         Args:
@@ -1783,21 +1698,19 @@ class Wireless(object):
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = payload or []
         if active_validation:
-            self._request_validator('jsd_e31c795964b3bdf85da1b5a2a5_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator("jsd_e31c795964b3bdf85da1b5a2a5_v2_3_5_3").validate(
+                _payload
+            )
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1805,23 +1718,24 @@ class Wireless(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/wireless/provision')
+        e_url = "/dna/intent/api/v1/wireless/provision"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_e31c795964b3bdf85da1b5a2a5_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_e31c795964b3bdf85da1b5a2a5_v2_3_5_3", json_data
+        )
 
-    def psk_override(self,
-                     headers=None,
-                     payload=None,
-                     active_validation=True,
-                     **request_parameters):
+    def psk_override(
+        self, headers=None, payload=None, active_validation=True, **request_parameters
+    ):
         """Update/override pass phrase of enterprise SSID .
 
         Args:
@@ -1848,21 +1762,19 @@ class Wireless(object):
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = payload or []
         if active_validation:
-            self._request_validator('jsd_f99c96c3a9b45ddaabc2c75ff8efa67f_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_f99c96c3a9b45ddaabc2c75ff8efa67f_v2_3_5_3"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1870,22 +1782,24 @@ class Wireless(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/wireless/psk-override')
+        e_url = "/dna/intent/api/v1/wireless/psk-override"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_f99c96c3a9b45ddaabc2c75ff8efa67f_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_f99c96c3a9b45ddaabc2c75ff8efa67f_v2_3_5_3", json_data
+        )
 
-    def retrieve_rf_profiles(self,
-                             rf_profile_name=None,
-                             headers=None,
-                             **request_parameters):
+    def retrieve_rf_profiles(
+        self, rf_profile_name=None, headers=None, **request_parameters
+    ):
         """Retrieve all RF profiles .
 
         Args:
@@ -1909,19 +1823,16 @@ class Wireless(object):
         check_type(headers, dict)
         check_type(rf_profile_name, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'rf-profile-name':
-                rf_profile_name,
+            "rf-profile-name": rf_profile_name,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1929,32 +1840,37 @@ class Wireless(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/wireless/rf-profile')
+        e_url = "/dna/intent/api/v1/wireless/rf-profile"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_ac37d6798c0b593088952123df03bb1b_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_ac37d6798c0b593088952123df03bb1b_v2_3_5_3", json_data
+        )
 
-    def create_or_update_rf_profile(self,
-                                    channelWidth=None,
-                                    defaultRfProfile=None,
-                                    enableBrownField=None,
-                                    enableCustom=None,
-                                    enableRadioTypeA=None,
-                                    enableRadioTypeB=None,
-                                    enableRadioTypeC=None,
-                                    name=None,
-                                    radioTypeAProperties=None,
-                                    radioTypeBProperties=None,
-                                    radioTypeCProperties=None,
-                                    headers=None,
-                                    payload=None,
-                                    active_validation=True,
-                                    **request_parameters):
+    def create_or_update_rf_profile(
+        self,
+        channelWidth=None,
+        defaultRfProfile=None,
+        enableBrownField=None,
+        enableCustom=None,
+        enableRadioTypeA=None,
+        enableRadioTypeB=None,
+        enableRadioTypeC=None,
+        name=None,
+        radioTypeAProperties=None,
+        radioTypeBProperties=None,
+        radioTypeCProperties=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Create or Update RF profile .
 
         Args:
@@ -1992,46 +1908,33 @@ class Wireless(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'name':
-                name,
-            'defaultRfProfile':
-                defaultRfProfile,
-            'enableRadioTypeA':
-                enableRadioTypeA,
-            'enableRadioTypeB':
-                enableRadioTypeB,
-            'channelWidth':
-                channelWidth,
-            'enableCustom':
-                enableCustom,
-            'enableBrownField':
-                enableBrownField,
-            'radioTypeAProperties':
-                radioTypeAProperties,
-            'radioTypeBProperties':
-                radioTypeBProperties,
-            'radioTypeCProperties':
-                radioTypeCProperties,
-            'enableRadioTypeC':
-                enableRadioTypeC,
+            "name": name,
+            "defaultRfProfile": defaultRfProfile,
+            "enableRadioTypeA": enableRadioTypeA,
+            "enableRadioTypeB": enableRadioTypeB,
+            "channelWidth": channelWidth,
+            "enableCustom": enableCustom,
+            "enableBrownField": enableBrownField,
+            "radioTypeAProperties": radioTypeAProperties,
+            "radioTypeBProperties": radioTypeBProperties,
+            "radioTypeCProperties": radioTypeCProperties,
+            "enableRadioTypeC": enableRadioTypeC,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_f24f6c07641580ba6ed710e92c2da16_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_f24f6c07641580ba6ed710e92c2da16_v2_3_5_3"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -2039,22 +1942,22 @@ class Wireless(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/wireless/rf-profile')
+        e_url = "/dna/intent/api/v1/wireless/rf-profile"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_f24f6c07641580ba6ed710e92c2da16_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_f24f6c07641580ba6ed710e92c2da16_v2_3_5_3", json_data
+        )
 
-    def delete_rf_profiles(self,
-                           rf_profile_name,
-                           headers=None,
-                           **request_parameters):
+    def delete_rf_profiles(self, rf_profile_name, headers=None, **request_parameters):
         """Delete RF profile(s) .
 
         Args:
@@ -2076,20 +1979,17 @@ class Wireless(object):
             https://developer.cisco.com/docs/dna-center/#!delete-rf-profiles
         """
         check_type(headers, dict)
-        check_type(rf_profile_name, str,
-                   may_be_none=False)
+        check_type(rf_profile_name, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'rfProfileName': rf_profile_name,
+            "rfProfileName": rf_profile_name,
         }
 
         with_custom_headers = False
@@ -2098,12 +1998,15 @@ class Wireless(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/wireless/rf-profile/{rfProfileName}')
+        e_url = "/dna/intent/api/v1/wireless/rf-profile/{rfProfileName}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.delete(endpoint_full_url, params=_params,
-                                             headers=_headers)
+            json_data = self._session.delete(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.delete(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_f3790386da5cd49480cb0503e59047_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_f3790386da5cd49480cb0503e59047_v2_3_5_3", json_data
+        )

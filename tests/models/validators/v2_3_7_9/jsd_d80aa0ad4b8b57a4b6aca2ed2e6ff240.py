@@ -23,7 +23,6 @@ SOFTWARE.
 """
 
 
-
 import json
 from builtins import *
 
@@ -35,10 +34,12 @@ from dnacentersdk.exceptions import MalformedRequest
 class JSONSchemaValidatorD80Aa0Ad4B8B57A4B6AcA2Ed2E6Ff240(object):
     """RetrieveASpecificPolicyTagForAWirelessProfileV1 request schema
     definition."""
+
     def __init__(self):
         super(JSONSchemaValidatorD80Aa0Ad4B8B57A4B6AcA2Ed2E6Ff240, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
+        self._validator = fastjsonschema.compile(
+            json.loads(
+                """{
                 "$schema": "http://json-schema.org/draft-04/schema#",
                 "properties": {
                 "response": {
@@ -69,13 +70,16 @@ class JSONSchemaValidatorD80Aa0Ad4B8B57A4B6AcA2Ed2E6Ff240(object):
                 }
                 },
                 "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+                }""".replace(
+                    "\n" + " " * 16, ""
+                )
+            )
+        )
 
     def validate(self, request):
         try:
             self._validator(request)
         except fastjsonschema.exceptions.JsonSchemaException as e:
             raise MalformedRequest(
-                '{} is invalid. Reason: {}'.format(request, e.message)
+                "{} is invalid. Reason: {}".format(request, e.message)
             )

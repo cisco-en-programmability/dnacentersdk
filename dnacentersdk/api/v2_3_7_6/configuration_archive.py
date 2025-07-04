@@ -23,9 +23,7 @@ SOFTWARE.
 """
 
 
-
 from builtins import *
-
 
 
 from ...restsession import RestSession
@@ -66,13 +64,15 @@ class ConfigurationArchive(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def export_device_configurations_v1(self,
-                                        deviceId=None,
-                                        password=None,
-                                        headers=None,
-                                        payload=None,
-                                        active_validation=True,
-                                        **request_parameters):
+    def export_device_configurations_v1(
+        self,
+        deviceId=None,
+        password=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Export Device configurations to an encrypted zip file .
 
         Args:
@@ -105,31 +105,26 @@ class ConfigurationArchive(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'password':
-                password,
-            'deviceId':
-                deviceId,
+            "password": password,
+            "deviceId": deviceId,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_e85b40c5ca055f4c82281617a8f95644_v2_3_7_6')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_e85b40c5ca055f4c82281617a8f95644_v2_3_7_6"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -137,27 +132,32 @@ class ConfigurationArchive(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/network-device-archive/cleartext')
+        e_url = "/dna/intent/api/v1/network-device-archive/cleartext"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_e85b40c5ca055f4c82281617a8f95644_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_e85b40c5ca055f4c82281617a8f95644_v2_3_7_6", json_data
+        )
 
-    def get_configuration_archive_details_v1(self,
-                                             created_by=None,
-                                             created_time=None,
-                                             device_id=None,
-                                             file_type=None,
-                                             limit=None,
-                                             offset=None,
-                                             headers=None,
-                                             **request_parameters):
+    def get_configuration_archive_details_v1(
+        self,
+        created_by=None,
+        created_time=None,
+        device_id=None,
+        file_type=None,
+        limit=None,
+        offset=None,
+        headers=None,
+        **request_parameters
+    ):
         """Returns the historical device configurations (running configuration , startup configuration , vlan if
         applicable) by specified criteria .
 
@@ -198,29 +198,21 @@ class ConfigurationArchive(object):
         check_type(offset, int)
         check_type(limit, int)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'deviceId':
-                device_id,
-            'fileType':
-                file_type,
-            'createdTime':
-                created_time,
-            'createdBy':
-                created_by,
-            'offset':
-                offset,
-            'limit':
-                limit,
+            "deviceId": device_id,
+            "fileType": file_type,
+            "createdTime": created_time,
+            "createdBy": created_by,
+            "offset": offset,
+            "limit": limit,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -228,26 +220,29 @@ class ConfigurationArchive(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/network-device-config')
+        e_url = "/dna/intent/api/v1/network-device-config"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_ff699112d3854d99557dc1f48987f09_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_ff699112d3854d99557dc1f48987f09_v2_3_7_6", json_data
+        )
 
-                
-    
     # Alias Function
-    def export_device_configurations(self,
-                                        deviceId=None,
-                                        password=None,
-                                        headers=None,
-                                        payload=None,
-                                        active_validation=True,
-                                        **request_parameters):
+    def export_device_configurations(
+        self,
+        deviceId=None,
+        password=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """This function is an alias of export_device_configurations_v1 .
 
         Args:
@@ -268,27 +263,28 @@ class ConfigurationArchive(object):
 
         Returns:
             This function returns the output of export_device_configurations_v1.
-        """  
+        """
         return self.export_device_configurations_v1(
-                    deviceId=deviceId,
-                    password=password,
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
+            deviceId=deviceId,
+            password=password,
+            headers=headers,
+            payload=payload,
+            active_validation=active_validation,
+            **request_parameters
         )
-                
-    
+
     # Alias Function
-    def get_configuration_archive_details(self,
-                                             created_by=None,
-                                             created_time=None,
-                                             device_id=None,
-                                             file_type=None,
-                                             limit=None,
-                                             offset=None,
-                                             headers=None,
-                                             **request_parameters):
+    def get_configuration_archive_details(
+        self,
+        created_by=None,
+        created_time=None,
+        device_id=None,
+        file_type=None,
+        limit=None,
+        offset=None,
+        headers=None,
+        **request_parameters
+    ):
         """This function is an alias of get_configuration_archive_details_v1.
 
         Args:
@@ -310,16 +306,14 @@ class ConfigurationArchive(object):
 
         Returns:
             This function returns the output of get_configuration_archive_details_v1.
-        """  
+        """
         return self.get_configuration_archive_details_v1(
-                    created_by=created_by,
-                    created_time=created_time,
-                    device_id=device_id,
-                    file_type=file_type,
-                    limit=limit,
-                    offset=offset,
-                    headers=headers,
-                    **request_parameters
+            created_by=created_by,
+            created_time=created_time,
+            device_id=device_id,
+            file_type=file_type,
+            limit=limit,
+            offset=offset,
+            headers=headers,
+            **request_parameters
         )
-
-

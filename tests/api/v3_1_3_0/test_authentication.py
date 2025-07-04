@@ -24,34 +24,31 @@ SOFTWARE.
 import pytest
 from tests.environment import DNA_CENTER_VERSION
 
-pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '3.1.3.0', reason='version does not match')
+pytestmark = pytest.mark.skipif(
+    DNA_CENTER_VERSION != "3.1.3.0", reason="version does not match"
+)
 
 
 def is_valid_authentication_api(json_schema_validate, obj):
-    json_schema_validate('jsd_ac8ae94c4e69a09d_v3_1_3_0').validate(obj)
+    json_schema_validate("jsd_ac8ae94c4e69a09d_v3_1_3_0").validate(obj)
     return True
 
 
 def authentication_api(api):
     endpoint_result = api.authentication.authentication_api(
-        username='CATALYST_CENTER_USERNAME',
-        password='CATALYST_CENTER_PASSWORD'
+        username="CATALYST_CENTER_USERNAME", password="CATALYST_CENTER_PASSWORD"
     )
     return endpoint_result
 
 
 @pytest.mark.authentication
 def test_authentication_api(api, validator):
-    assert is_valid_authentication_api(
-        validator,
-        authentication_api(api)
-    )
+    assert is_valid_authentication_api(validator, authentication_api(api))
 
 
 def authentication_api_default(api):
     endpoint_result = api.authentication.authentication_api(
-        username='CATALYST_CENTER_USERNAME',
-        password='CATALYST_CENTER_PASSWORD'
+        username="CATALYST_CENTER_USERNAME", password="CATALYST_CENTER_PASSWORD"
     )
     return endpoint_result
 
@@ -59,10 +56,7 @@ def authentication_api_default(api):
 @pytest.mark.authentication
 def test_authentication_api_default(api, validator):
     try:
-        assert is_valid_authentication_api(
-            validator,
-            authentication_api_default(api)
-        )
+        assert is_valid_authentication_api(validator, authentication_api_default(api))
     except Exception as original_e:
         with pytest.raises(TypeError, match="but instead we received None"):
             raise original_e

@@ -26,37 +26,47 @@ from fastjsonschema.exceptions import JsonSchemaException
 from dnacentersdk.exceptions import MalformedRequest
 from tests.environment import DNA_CENTER_VERSION
 
-pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '2.3.7.9', reason='version does not match')
+pytestmark = pytest.mark.skipif(
+    DNA_CENTER_VERSION != "2.3.7.9", reason="version does not match"
+)
 
 
-def is_valid_retrieves_the_list_of_network_applications_along_with_experience_and_health_metrics(json_schema_validate, obj):
-    json_schema_validate('jsd_fb02436a6c935d5d8a536b86de8b2846_v2_3_7_9').validate(obj)
+def is_valid_retrieves_the_list_of_network_applications_along_with_experience_and_health_metrics(
+    json_schema_validate, obj
+):
+    json_schema_validate("jsd_fb02436a6c935d5d8a536b86de8b2846_v2_3_7_9").validate(obj)
     return True
 
 
-def retrieves_the_list_of_network_applications_along_with_experience_and_health_metrics(api):
+def retrieves_the_list_of_network_applications_along_with_experience_and_health_metrics(
+    api,
+):
     endpoint_result = api.applications.retrieves_the_list_of_network_applications_along_with_experience_and_health_metrics(
-        application_name='string',
-        attribute='string',
-        business_relevance='string',
+        application_name="string",
+        attribute="string",
+        business_relevance="string",
         end_time=0,
         limit=0,
         offset=0,
-        order='string',
-        site_id='string',
-        sort_by='string',
-        ssid='string',
-        start_time=0
+        order="string",
+        site_id="string",
+        sort_by="string",
+        ssid="string",
+        start_time=0,
     )
     return endpoint_result
 
 
 @pytest.mark.applications
-def test_retrieves_the_list_of_network_applications_along_with_experience_and_health_metrics(api, validator):
+def test_retrieves_the_list_of_network_applications_along_with_experience_and_health_metrics(
+    api, validator
+):
     try:
         assert is_valid_retrieves_the_list_of_network_applications_along_with_experience_and_health_metrics(
             validator,
-            retrieves_the_list_of_network_applications_along_with_experience_and_health_metrics(api)
+            retrieves_the_list_of_network_applications_along_with_experience_and_health_metrics(
+                api
+            ),
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -64,7 +74,9 @@ def test_retrieves_the_list_of_network_applications_along_with_experience_and_he
             raise original_e
 
 
-def retrieves_the_list_of_network_applications_along_with_experience_and_health_metrics_default_val(api):
+def retrieves_the_list_of_network_applications_along_with_experience_and_health_metrics_default_val(
+    api,
+):
     endpoint_result = api.applications.retrieves_the_list_of_network_applications_along_with_experience_and_health_metrics(
         application_name=None,
         attribute=None,
@@ -76,46 +88,56 @@ def retrieves_the_list_of_network_applications_along_with_experience_and_health_
         site_id=None,
         sort_by=None,
         ssid=None,
-        start_time=None
+        start_time=None,
     )
     return endpoint_result
 
 
 @pytest.mark.applications
-def test_retrieves_the_list_of_network_applications_along_with_experience_and_health_metrics_default_val(api, validator):
+def test_retrieves_the_list_of_network_applications_along_with_experience_and_health_metrics_default_val(
+    api, validator
+):
     try:
         assert is_valid_retrieves_the_list_of_network_applications_along_with_experience_and_health_metrics(
             validator,
-            retrieves_the_list_of_network_applications_along_with_experience_and_health_metrics_default_val(api)
+            retrieves_the_list_of_network_applications_along_with_experience_and_health_metrics_default_val(
+                api
+            ),
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_retrieves_the_total_count_of_network_applications_by_applying_basic_filtering(json_schema_validate, obj):
-    json_schema_validate('jsd_43c50def6b3a58e5acab3ae592a57da8_v2_3_7_9').validate(obj)
+def is_valid_retrieves_the_total_count_of_network_applications_by_applying_basic_filtering(
+    json_schema_validate, obj
+):
+    json_schema_validate("jsd_43c50def6b3a58e5acab3ae592a57da8_v2_3_7_9").validate(obj)
     return True
 
 
 def retrieves_the_total_count_of_network_applications_by_applying_basic_filtering(api):
     endpoint_result = api.applications.retrieves_the_total_count_of_network_applications_by_applying_basic_filtering(
-        application_name='string',
-        business_relevance='string',
+        application_name="string",
+        business_relevance="string",
         end_time=0,
-        site_id='string',
-        ssid='string',
-        start_time=0
+        site_id="string",
+        ssid="string",
+        start_time=0,
     )
     return endpoint_result
 
 
 @pytest.mark.applications
-def test_retrieves_the_total_count_of_network_applications_by_applying_basic_filtering(api, validator):
+def test_retrieves_the_total_count_of_network_applications_by_applying_basic_filtering(
+    api, validator
+):
     try:
         assert is_valid_retrieves_the_total_count_of_network_applications_by_applying_basic_filtering(
             validator,
-            retrieves_the_total_count_of_network_applications_by_applying_basic_filtering(api)
+            retrieves_the_total_count_of_network_applications_by_applying_basic_filtering(
+                api
+            ),
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -123,58 +145,70 @@ def test_retrieves_the_total_count_of_network_applications_by_applying_basic_fil
             raise original_e
 
 
-def retrieves_the_total_count_of_network_applications_by_applying_basic_filtering_default_val(api):
+def retrieves_the_total_count_of_network_applications_by_applying_basic_filtering_default_val(
+    api,
+):
     endpoint_result = api.applications.retrieves_the_total_count_of_network_applications_by_applying_basic_filtering(
         application_name=None,
         business_relevance=None,
         end_time=None,
         site_id=None,
         ssid=None,
-        start_time=None
+        start_time=None,
     )
     return endpoint_result
 
 
 @pytest.mark.applications
-def test_retrieves_the_total_count_of_network_applications_by_applying_basic_filtering_default_val(api, validator):
+def test_retrieves_the_total_count_of_network_applications_by_applying_basic_filtering_default_val(
+    api, validator
+):
     try:
         assert is_valid_retrieves_the_total_count_of_network_applications_by_applying_basic_filtering(
             validator,
-            retrieves_the_total_count_of_network_applications_by_applying_basic_filtering_default_val(api)
+            retrieves_the_total_count_of_network_applications_by_applying_basic_filtering_default_val(
+                api
+            ),
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_retrieves_the_trend_analytics_data_related_to_network_applications(json_schema_validate, obj):
-    json_schema_validate('jsd_154870476ce35f19bc4c1d058aa01536_v2_3_7_9').validate(obj)
+def is_valid_retrieves_the_trend_analytics_data_related_to_network_applications(
+    json_schema_validate, obj
+):
+    json_schema_validate("jsd_154870476ce35f19bc4c1d058aa01536_v2_3_7_9").validate(obj)
     return True
 
 
 def retrieves_the_trend_analytics_data_related_to_network_applications(api):
     endpoint_result = api.applications.retrieves_the_trend_analytics_data_related_to_network_applications(
         active_validation=True,
-        aggregateAttributes=[{'name': 'string', 'function': 'string'}],
-        attributes=['string'],
+        aggregateAttributes=[{"name": "string", "function": "string"}],
+        attributes=["string"],
         endTime=0,
-        filters=[{'key': 'string', 'operator': 'string', 'value': 0}],
-        groupBy=['string'],
-        page={'limit': 0, 'cursor': 'string', 'timeSortOrder': 'string'},
+        filters=[{"key": "string", "operator": "string", "value": 0}],
+        groupBy=["string"],
+        page={"limit": 0, "cursor": "string", "timeSortOrder": "string"},
         payload=None,
-        siteIds=['string'],
+        siteIds=["string"],
         startTime=0,
-        trendInterval='string'
+        trendInterval="string",
     )
     return endpoint_result
 
 
 @pytest.mark.applications
-def test_retrieves_the_trend_analytics_data_related_to_network_applications(api, validator):
+def test_retrieves_the_trend_analytics_data_related_to_network_applications(
+    api, validator
+):
     try:
-        assert is_valid_retrieves_the_trend_analytics_data_related_to_network_applications(
-            validator,
-            retrieves_the_trend_analytics_data_related_to_network_applications(api)
+        assert (
+            is_valid_retrieves_the_trend_analytics_data_related_to_network_applications(
+                validator,
+                retrieves_the_trend_analytics_data_related_to_network_applications(api),
+            )
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -194,17 +228,21 @@ def retrieves_the_trend_analytics_data_related_to_network_applications_default_v
         payload=None,
         siteIds=None,
         startTime=None,
-        trendInterval=None
+        trendInterval=None,
     )
     return endpoint_result
 
 
 @pytest.mark.applications
-def test_retrieves_the_trend_analytics_data_related_to_network_applications_default_val(api, validator):
+def test_retrieves_the_trend_analytics_data_related_to_network_applications_default_val(
+    api, validator
+):
     try:
         assert is_valid_retrieves_the_trend_analytics_data_related_to_network_applications(
             validator,
-            retrieves_the_trend_analytics_data_related_to_network_applications_default_val(api)
+            retrieves_the_trend_analytics_data_related_to_network_applications_default_val(
+                api
+            ),
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -212,21 +250,21 @@ def test_retrieves_the_trend_analytics_data_related_to_network_applications_defa
 
 
 def is_valid_applications(json_schema_validate, obj):
-    json_schema_validate('jsd_1b85e4ce533d5ff49ddd3b2f9657cfa5_v2_3_7_9').validate(obj)
+    json_schema_validate("jsd_1b85e4ce533d5ff49ddd3b2f9657cfa5_v2_3_7_9").validate(obj)
     return True
 
 
 def applications(api):
     endpoint_result = api.applications.applications(
-        application_health='string',
-        application_name='string',
-        device_id='string',
+        application_health="string",
+        application_name="string",
+        device_id="string",
         end_time=0,
         limit=0,
-        mac_address='string',
+        mac_address="string",
         offset=0,
-        site_id='string',
-        start_time=0
+        site_id="string",
+        start_time=0,
     )
     return endpoint_result
 
@@ -234,10 +272,7 @@ def applications(api):
 @pytest.mark.applications
 def test_applications(api, validator):
     try:
-        assert is_valid_applications(
-            validator,
-            applications(api)
-        )
+        assert is_valid_applications(validator, applications(api))
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
             print(original_e)
@@ -254,7 +289,7 @@ def applications_default_val(api):
         mac_address=None,
         offset=None,
         site_id=None,
-        start_time=None
+        start_time=None,
     )
     return endpoint_result
 
@@ -262,10 +297,7 @@ def applications_default_val(api):
 @pytest.mark.applications
 def test_applications_default_val(api, validator):
     try:
-        assert is_valid_applications(
-            validator,
-            applications_default_val(api)
-        )
+        assert is_valid_applications(validator, applications_default_val(api))
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e

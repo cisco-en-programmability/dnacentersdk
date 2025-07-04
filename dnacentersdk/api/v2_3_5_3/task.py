@@ -64,10 +64,9 @@ class Task(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def get_business_api_execution_details(self,
-                                           execution_id,
-                                           headers=None,
-                                           **request_parameters):
+    def get_business_api_execution_details(
+        self, execution_id, headers=None, **request_parameters
+    ):
         """Retrieves the execution details of a Business API .
 
         Args:
@@ -89,20 +88,17 @@ class Task(object):
             https://developer.cisco.com/docs/dna-center/#!get-business-api-execution-details
         """
         check_type(headers, dict)
-        check_type(execution_id, str,
-                   may_be_none=False)
+        check_type(execution_id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'executionId': execution_id,
+            "executionId": execution_id,
         }
 
         with_custom_headers = False
@@ -111,34 +107,40 @@ class Task(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/dnacaap/management/execution-'
-                 + 'status/{executionId}')
+        e_url = (
+            "/dna/intent/api/v1/dnacaap/management/execution-" + "status/{executionId}"
+        )
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_ffc19ddea705526b7d9db01baf4997e_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_ffc19ddea705526b7d9db01baf4997e_v2_3_5_3", json_data
+        )
 
-    def get_tasks(self,
-                  data=None,
-                  end_time=None,
-                  error_code=None,
-                  failure_reason=None,
-                  is_error=None,
-                  limit=None,
-                  offset=None,
-                  order=None,
-                  parent_id=None,
-                  progress=None,
-                  service_type=None,
-                  sort_by=None,
-                  start_time=None,
-                  username=None,
-                  headers=None,
-                  **request_parameters):
+    def get_tasks(
+        self,
+        data=None,
+        end_time=None,
+        error_code=None,
+        failure_reason=None,
+        is_error=None,
+        limit=None,
+        offset=None,
+        order=None,
+        parent_id=None,
+        progress=None,
+        service_type=None,
+        sort_by=None,
+        start_time=None,
+        username=None,
+        headers=None,
+        **request_parameters
+    ):
         """Returns task(s) based on filter criteria .
 
         Args:
@@ -192,45 +194,29 @@ class Task(object):
         check_type(sort_by, str)
         check_type(order, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'startTime':
-                start_time,
-            'endTime':
-                end_time,
-            'data':
-                data,
-            'errorCode':
-                error_code,
-            'serviceType':
-                service_type,
-            'username':
-                username,
-            'progress':
-                progress,
-            'isError':
-                is_error,
-            'failureReason':
-                failure_reason,
-            'parentId':
-                parent_id,
-            'offset':
-                offset,
-            'limit':
-                limit,
-            'sortBy':
-                sort_by,
-            'order':
-                order,
+            "startTime": start_time,
+            "endTime": end_time,
+            "data": data,
+            "errorCode": error_code,
+            "serviceType": service_type,
+            "username": username,
+            "progress": progress,
+            "isError": is_error,
+            "failureReason": failure_reason,
+            "parentId": parent_id,
+            "offset": offset,
+            "limit": limit,
+            "sortBy": sort_by,
+            "order": order,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -238,29 +224,34 @@ class Task(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/task')
+        e_url = "/dna/intent/api/v1/task"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_ff485556f6504d8443789f42098be7_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_ff485556f6504d8443789f42098be7_v2_3_5_3", json_data
+        )
 
-    def get_task_count(self,
-                       data=None,
-                       end_time=None,
-                       error_code=None,
-                       failure_reason=None,
-                       is_error=None,
-                       parent_id=None,
-                       progress=None,
-                       service_type=None,
-                       start_time=None,
-                       username=None,
-                       headers=None,
-                       **request_parameters):
+    def get_task_count(
+        self,
+        data=None,
+        end_time=None,
+        error_code=None,
+        failure_reason=None,
+        is_error=None,
+        parent_id=None,
+        progress=None,
+        service_type=None,
+        start_time=None,
+        username=None,
+        headers=None,
+        **request_parameters
+    ):
         """Returns Task count .
 
         Args:
@@ -306,37 +297,25 @@ class Task(object):
         check_type(failure_reason, str)
         check_type(parent_id, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'startTime':
-                start_time,
-            'endTime':
-                end_time,
-            'data':
-                data,
-            'errorCode':
-                error_code,
-            'serviceType':
-                service_type,
-            'username':
-                username,
-            'progress':
-                progress,
-            'isError':
-                is_error,
-            'failureReason':
-                failure_reason,
-            'parentId':
-                parent_id,
+            "startTime": start_time,
+            "endTime": end_time,
+            "data": data,
+            "errorCode": error_code,
+            "serviceType": service_type,
+            "username": username,
+            "progress": progress,
+            "isError": is_error,
+            "failureReason": failure_reason,
+            "parentId": parent_id,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -344,22 +323,22 @@ class Task(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/task/count')
+        e_url = "/dna/intent/api/v1/task/count"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_d0586946be75e0f9f2c170217d45a28_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_d0586946be75e0f9f2c170217d45a28_v2_3_5_3", json_data
+        )
 
-    def get_task_by_operationid(self,
-                                limit,
-                                offset,
-                                operation_id,
-                                headers=None,
-                                **request_parameters):
+    def get_task_by_operationid(
+        self, limit, offset, operation_id, headers=None, **request_parameters
+    ):
         """Returns root tasks associated with an Operationid .
 
         Args:
@@ -384,26 +363,21 @@ class Task(object):
             https://developer.cisco.com/docs/dna-center/#!get-task-by-operationid
         """
         check_type(headers, dict)
-        check_type(operation_id, str,
-                   may_be_none=False)
-        check_type(offset, int,
-                   may_be_none=False)
-        check_type(limit, int,
-                   may_be_none=False)
+        check_type(operation_id, str, may_be_none=False)
+        check_type(offset, int, may_be_none=False)
+        check_type(limit, int, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'operationId': operation_id,
-            'offset': offset,
-            'limit': limit,
+            "operationId": operation_id,
+            "offset": offset,
+            "limit": limit,
         }
 
         with_custom_headers = False
@@ -412,21 +386,20 @@ class Task(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/task/operation/{operationId}/{offset}'
-                 + '/{limit}')
+        e_url = "/dna/intent/api/v1/task/operation/{operationId}/{offset}" + "/{limit}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_d95c21e41dce5a9dbee07d33eefef2b2_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_d95c21e41dce5a9dbee07d33eefef2b2_v2_3_5_3", json_data
+        )
 
-    def get_task_by_id(self,
-                       task_id,
-                       headers=None,
-                       **request_parameters):
+    def get_task_by_id(self, task_id, headers=None, **request_parameters):
         """Returns a task by specified id .
 
         Args:
@@ -448,20 +421,17 @@ class Task(object):
             https://developer.cisco.com/docs/dna-center/#!get-task-by-id
         """
         check_type(headers, dict)
-        check_type(task_id, str,
-                   may_be_none=False)
+        check_type(task_id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'taskId': task_id,
+            "taskId": task_id,
         }
 
         with_custom_headers = False
@@ -470,20 +440,18 @@ class Task(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/task/{taskId}')
+        e_url = "/dna/intent/api/v1/task/{taskId}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_99a75ba5a6bae1d568700bd3_v2_3_5_3', json_data)
+        return self._object_factory("bpm_99a75ba5a6bae1d568700bd3_v2_3_5_3", json_data)
 
-    def get_task_tree(self,
-                      task_id,
-                      headers=None,
-                      **request_parameters):
+    def get_task_tree(self, task_id, headers=None, **request_parameters):
         """Returns a task with its children tasks by based on their id .
 
         Args:
@@ -505,20 +473,17 @@ class Task(object):
             https://developer.cisco.com/docs/dna-center/#!get-task-tree
         """
         check_type(headers, dict)
-        check_type(task_id, str,
-                   may_be_none=False)
+        check_type(task_id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'taskId': task_id,
+            "taskId": task_id,
         }
 
         with_custom_headers = False
@@ -527,12 +492,15 @@ class Task(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/task/{taskId}/tree')
+        e_url = "/dna/intent/api/v1/task/{taskId}/tree"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_fa2865e229b536aacd59585a1d29704_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_fa2865e229b536aacd59585a1d29704_v2_3_5_3", json_data
+        )

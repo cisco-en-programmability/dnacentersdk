@@ -52,7 +52,9 @@ def test_rate_limit_retry(api):
         i = 0
         while i < len(devices.response):
             # Try and trigger a rate-limit
-            api.devices.get_device_config_by_id(path_network_device_id=devices.response[i].id)
+            api.devices.get_device_config_by_id(
+                path_network_device_id=devices.response[i].id
+            )
             i += 1
             if rate_limit_detected(w):
                 break

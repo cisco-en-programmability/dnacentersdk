@@ -32,7 +32,6 @@ from ...utils import (
     check_type,
     dict_from_items_with_values,
     dict_of_str,
-    
 )
 
 
@@ -65,13 +64,15 @@ class Restore(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def restore_backup(self,
-                       id,
-                       encryptionPassphrase=None,
-                       headers=None,
-                       payload=None,
-                       active_validation=True,
-                       **request_parameters):
+    def restore_backup(
+        self,
+        id,
+        encryptionPassphrase=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """This api is used to trigger restore workflow of a specific backup. Obtain the `id` from the id attribute in the
         response of the `/dna/system/api/v1/backups` API. To monitor the progress and completion of the backup
         deletion , please call `/dna/system/api/v1/backupRestoreExecutions/{id}` api , where id is the taskId
@@ -103,33 +104,29 @@ class Restore(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
         _payload = {
-            'encryptionPassphrase':
-                encryptionPassphrase,
+            "encryptionPassphrase": encryptionPassphrase,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_b5a94fd2d97514b8a9cf73df4e154b8_v3_1_3_0')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_b5a94fd2d97514b8a9cf73df4e154b8_v3_1_3_0"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -137,17 +134,20 @@ class Restore(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/system/api/v1/backups/{id}/restore')
+        e_url = "/dna/system/api/v1/backups/{id}/restore"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_b5a94fd2d97514b8a9cf73df4e154b8_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_b5a94fd2d97514b8a9cf73df4e154b8_v3_1_3_0", json_data
+        )
+
 
 # Alias Functions
-

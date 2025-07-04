@@ -64,18 +64,20 @@ class Applications(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def applications(self,
-                     application_health=None,
-                     application_name=None,
-                     device_id=None,
-                     end_time=None,
-                     limit=None,
-                     mac_address=None,
-                     offset=None,
-                     site_id=None,
-                     start_time=None,
-                     headers=None,
-                     **request_parameters):
+    def applications(
+        self,
+        application_health=None,
+        application_name=None,
+        device_id=None,
+        end_time=None,
+        limit=None,
+        mac_address=None,
+        offset=None,
+        site_id=None,
+        start_time=None,
+        headers=None,
+        **request_parameters
+    ):
         """Intent API to get a list of applications for a specific site, a device, or a client device's MAC address. For a
         combination of a specific application with site and/or device the API gets list of
         issues/devices/endpoints. .
@@ -124,35 +126,24 @@ class Applications(object):
         check_type(limit, (int, str))
         check_type(application_name, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'siteId':
-                site_id,
-            'deviceId':
-                device_id,
-            'macAddress':
-                mac_address,
-            'startTime':
-                start_time,
-            'endTime':
-                end_time,
-            'applicationHealth':
-                application_health,
-            'offset':
-                offset,
-            'limit':
-                limit,
-            'applicationName':
-                application_name,
+            "siteId": site_id,
+            "deviceId": device_id,
+            "macAddress": mac_address,
+            "startTime": start_time,
+            "endTime": end_time,
+            "applicationHealth": application_health,
+            "offset": offset,
+            "limit": limit,
+            "applicationName": application_name,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -160,12 +151,15 @@ class Applications(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/application-health')
+        e_url = "/dna/intent/api/v1/application-health"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_b85e4ce533d5ff49ddd3b2f9657cfa5_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_b85e4ce533d5ff49ddd3b2f9657cfa5_v2_3_5_3", json_data
+        )

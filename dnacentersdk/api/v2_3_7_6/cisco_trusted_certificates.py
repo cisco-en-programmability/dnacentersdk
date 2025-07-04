@@ -23,9 +23,7 @@ SOFTWARE.
 """
 
 
-
 from builtins import *
-
 
 
 from ...restsession import RestSession
@@ -66,9 +64,7 @@ class CiscoTrustedCertificates(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def import_trusted_certificate_v1(self,
-                                      headers=None,
-                                      **request_parameters):
+    def import_trusted_certificate_v1(self, headers=None, **request_parameters):
         """Imports trusted certificate into a truststore. Accepts .pem or .der file as input. .
 
         Args:
@@ -90,20 +86,16 @@ class CiscoTrustedCertificates(object):
         """
         check_type(headers, dict)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -111,22 +103,21 @@ class CiscoTrustedCertificates(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/trustedCertificates/import')
+        e_url = "/dna/intent/api/v1/trustedCertificates/import"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.post(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_ebe0eab8e1785bec83a1e155112fb70e_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_ebe0eab8e1785bec83a1e155112fb70e_v2_3_7_6", json_data
+        )
 
-                
-    
     # Alias Function
-    def import_trusted_certificate(self,
-                                      headers=None,
-                                      **request_parameters):
+    def import_trusted_certificate(self, headers=None, **request_parameters):
         """This function is an alias of import_trusted_certificate_v1. .
 
         Args:
@@ -137,10 +128,5 @@ class CiscoTrustedCertificates(object):
 
         Returns:
             This function returns the output of import_trusted_certificate_v1.
-        """  
-        return self.import_trusted_certificate_v1(
-                    headers=headers,
-                    **request_parameters
-        )
-
-
+        """
+        return self.import_trusted_certificate_v1(headers=headers, **request_parameters)

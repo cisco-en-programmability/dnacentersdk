@@ -32,7 +32,6 @@ from ...utils import (
     check_type,
     dict_from_items_with_values,
     dict_of_str,
-    
 )
 
 
@@ -65,43 +64,45 @@ class Issues(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def get_the_details_of_issues_for_given_set_of_filters_know_your_network(self,
-                                                                             ai_driven=None,
-                                                                             attribute=None,
-                                                                             category=None,
-                                                                             device_type=None,
-                                                                             end_time=None,
-                                                                             entity_id=None,
-                                                                             entity_type=None,
-                                                                             fabric_driven=None,
-                                                                             fabric_site_driven=None,
-                                                                             fabric_site_id=None,
-                                                                             fabric_transit_driven=None,
-                                                                             fabric_transit_site_id=None,
-                                                                             fabric_vn_driven=None,
-                                                                             fabric_vn_name=None,
-                                                                             is_global=None,
-                                                                             issue_id=None,
-                                                                             limit=None,
-                                                                             mac_address=None,
-                                                                             name=None,
-                                                                             network_device_id=None,
-                                                                             network_device_ip_address=None,
-                                                                             offset=None,
-                                                                             order=None,
-                                                                             priority=None,
-                                                                             severity=None,
-                                                                             site_hierarchy=None,
-                                                                             site_hierarchy_id=None,
-                                                                             site_id=None,
-                                                                             site_name=None,
-                                                                             sort_by=None,
-                                                                             start_time=None,
-                                                                             status=None,
-                                                                             updated_by=None,
-                                                                             view=None,
-                                                                             headers=None,
-                                                                             **request_parameters):
+    def get_the_details_of_issues_for_given_set_of_filters_know_your_network(
+        self,
+        ai_driven=None,
+        attribute=None,
+        category=None,
+        device_type=None,
+        end_time=None,
+        entity_id=None,
+        entity_type=None,
+        fabric_driven=None,
+        fabric_site_driven=None,
+        fabric_site_id=None,
+        fabric_transit_driven=None,
+        fabric_transit_site_id=None,
+        fabric_vn_driven=None,
+        fabric_vn_name=None,
+        is_global=None,
+        issue_id=None,
+        limit=None,
+        mac_address=None,
+        name=None,
+        network_device_id=None,
+        network_device_ip_address=None,
+        offset=None,
+        order=None,
+        priority=None,
+        severity=None,
+        site_hierarchy=None,
+        site_hierarchy_id=None,
+        site_id=None,
+        site_name=None,
+        sort_by=None,
+        start_time=None,
+        status=None,
+        updated_by=None,
+        view=None,
+        headers=None,
+        **request_parameters
+    ):
         """Returns all details of each issue along with suggested actions for given set of filters specified in query
         parameters. If there is no start and/or end time, then end time will be defaulted to current time and
         start time will be defaulted to 24-hours ago from end time. All string type query parameters support
@@ -288,91 +289,53 @@ class Issues(object):
         check_type(fabric_vn_driven, bool)
         check_type(fabric_transit_driven, bool)
         if headers is not None:
-            if 'Accept-Language' in headers:
-                check_type(headers.get('Accept-Language'),
-                           str)
-            if 'X-CALLER-ID' in headers:
-                check_type(headers.get('X-CALLER-ID'),
-                           str)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Accept-Language" in headers:
+                check_type(headers.get("Accept-Language"), str)
+            if "X-CALLER-ID" in headers:
+                check_type(headers.get("X-CALLER-ID"), str)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'startTime':
-                start_time,
-            'endTime':
-                end_time,
-            'limit':
-                limit,
-            'offset':
-                offset,
-            'sortBy':
-                sort_by,
-            'order':
-                order,
-            'isGlobal':
-                is_global,
-            'priority':
-                priority,
-            'severity':
-                severity,
-            'status':
-                status,
-            'entityType':
-                entity_type,
-            'category':
-                category,
-            'deviceType':
-                device_type,
-            'name':
-                name,
-            'issueId':
-                issue_id,
-            'entityId':
-                entity_id,
-            'updatedBy':
-                updated_by,
-            'siteHierarchy':
-                site_hierarchy,
-            'siteHierarchyId':
-                site_hierarchy_id,
-            'siteName':
-                site_name,
-            'siteId':
-                site_id,
-            'fabricSiteId':
-                fabric_site_id,
-            'fabricVnName':
-                fabric_vn_name,
-            'fabricTransitSiteId':
-                fabric_transit_site_id,
-            'networkDeviceId':
-                network_device_id,
-            'networkDeviceIpAddress':
-                network_device_ip_address,
-            'macAddress':
-                mac_address,
-            'view':
-                view,
-            'attribute':
-                attribute,
-            'aiDriven':
-                ai_driven,
-            'fabricDriven':
-                fabric_driven,
-            'fabricSiteDriven':
-                fabric_site_driven,
-            'fabricVnDriven':
-                fabric_vn_driven,
-            'fabricTransitDriven':
-                fabric_transit_driven,
+            "startTime": start_time,
+            "endTime": end_time,
+            "limit": limit,
+            "offset": offset,
+            "sortBy": sort_by,
+            "order": order,
+            "isGlobal": is_global,
+            "priority": priority,
+            "severity": severity,
+            "status": status,
+            "entityType": entity_type,
+            "category": category,
+            "deviceType": device_type,
+            "name": name,
+            "issueId": issue_id,
+            "entityId": entity_id,
+            "updatedBy": updated_by,
+            "siteHierarchy": site_hierarchy,
+            "siteHierarchyId": site_hierarchy_id,
+            "siteName": site_name,
+            "siteId": site_id,
+            "fabricSiteId": fabric_site_id,
+            "fabricVnName": fabric_vn_name,
+            "fabricTransitSiteId": fabric_transit_site_id,
+            "networkDeviceId": network_device_id,
+            "networkDeviceIpAddress": network_device_ip_address,
+            "macAddress": mac_address,
+            "view": view,
+            "attribute": attribute,
+            "aiDriven": ai_driven,
+            "fabricDriven": fabric_driven,
+            "fabricSiteDriven": fabric_site_driven,
+            "fabricVnDriven": fabric_vn_driven,
+            "fabricTransitDriven": fabric_transit_driven,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -380,47 +343,52 @@ class Issues(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/data/api/v1/assuranceIssues')
+        e_url = "/dna/data/api/v1/assuranceIssues"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_fe0609bc1db7594aabd91218a84f7cbf_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_fe0609bc1db7594aabd91218a84f7cbf_v2_3_7_9", json_data
+        )
 
-    def get_the_total_number_of_issues_for_given_set_of_filters_know_your_network(self,
-                                                                                  ai_driven=None,
-                                                                                  category=None,
-                                                                                  device_type=None,
-                                                                                  end_time=None,
-                                                                                  entity_id=None,
-                                                                                  entity_type=None,
-                                                                                  fabric_driven=None,
-                                                                                  fabric_site_driven=None,
-                                                                                  fabric_site_id=None,
-                                                                                  fabric_transit_driven=None,
-                                                                                  fabric_transit_site_id=None,
-                                                                                  fabric_vn_driven=None,
-                                                                                  fabric_vn_name=None,
-                                                                                  is_global=None,
-                                                                                  issue_id=None,
-                                                                                  mac_address=None,
-                                                                                  name=None,
-                                                                                  network_device_id=None,
-                                                                                  network_device_ip_address=None,
-                                                                                  priority=None,
-                                                                                  severity=None,
-                                                                                  site_hierarchy=None,
-                                                                                  site_hierarchy_id=None,
-                                                                                  site_id=None,
-                                                                                  site_name=None,
-                                                                                  start_time=None,
-                                                                                  status=None,
-                                                                                  updated_by=None,
-                                                                                  headers=None,
-                                                                                  **request_parameters):
+    def get_the_total_number_of_issues_for_given_set_of_filters_know_your_network(
+        self,
+        ai_driven=None,
+        category=None,
+        device_type=None,
+        end_time=None,
+        entity_id=None,
+        entity_type=None,
+        fabric_driven=None,
+        fabric_site_driven=None,
+        fabric_site_id=None,
+        fabric_transit_driven=None,
+        fabric_transit_site_id=None,
+        fabric_vn_driven=None,
+        fabric_vn_name=None,
+        is_global=None,
+        issue_id=None,
+        mac_address=None,
+        name=None,
+        network_device_id=None,
+        network_device_ip_address=None,
+        priority=None,
+        severity=None,
+        site_hierarchy=None,
+        site_hierarchy_id=None,
+        site_id=None,
+        site_name=None,
+        start_time=None,
+        status=None,
+        updated_by=None,
+        headers=None,
+        **request_parameters
+    ):
         """Returns the total number issues for given set of filters. If there is no start and/or end time, then end time
         will be defaulted to current time and start time will be defaulted to 24-hours ago from end time.
         https://github.com/cisco-en-programmability/catalyst-center-api-
@@ -579,76 +547,45 @@ class Issues(object):
         check_type(fabric_vn_driven, bool)
         check_type(fabric_transit_driven, bool)
         if headers is not None:
-            if 'X-CALLER-ID' in headers:
-                check_type(headers.get('X-CALLER-ID'),
-                           str)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-CALLER-ID" in headers:
+                check_type(headers.get("X-CALLER-ID"), str)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'startTime':
-                start_time,
-            'endTime':
-                end_time,
-            'isGlobal':
-                is_global,
-            'priority':
-                priority,
-            'severity':
-                severity,
-            'status':
-                status,
-            'entityType':
-                entity_type,
-            'category':
-                category,
-            'deviceType':
-                device_type,
-            'name':
-                name,
-            'issueId':
-                issue_id,
-            'entityId':
-                entity_id,
-            'updatedBy':
-                updated_by,
-            'siteHierarchy':
-                site_hierarchy,
-            'siteHierarchyId':
-                site_hierarchy_id,
-            'siteName':
-                site_name,
-            'siteId':
-                site_id,
-            'fabricSiteId':
-                fabric_site_id,
-            'fabricVnName':
-                fabric_vn_name,
-            'fabricTransitSiteId':
-                fabric_transit_site_id,
-            'networkDeviceId':
-                network_device_id,
-            'networkDeviceIpAddress':
-                network_device_ip_address,
-            'macAddress':
-                mac_address,
-            'aiDriven':
-                ai_driven,
-            'fabricDriven':
-                fabric_driven,
-            'fabricSiteDriven':
-                fabric_site_driven,
-            'fabricVnDriven':
-                fabric_vn_driven,
-            'fabricTransitDriven':
-                fabric_transit_driven,
+            "startTime": start_time,
+            "endTime": end_time,
+            "isGlobal": is_global,
+            "priority": priority,
+            "severity": severity,
+            "status": status,
+            "entityType": entity_type,
+            "category": category,
+            "deviceType": device_type,
+            "name": name,
+            "issueId": issue_id,
+            "entityId": entity_id,
+            "updatedBy": updated_by,
+            "siteHierarchy": site_hierarchy,
+            "siteHierarchyId": site_hierarchy_id,
+            "siteName": site_name,
+            "siteId": site_id,
+            "fabricSiteId": fabric_site_id,
+            "fabricVnName": fabric_vn_name,
+            "fabricTransitSiteId": fabric_transit_site_id,
+            "networkDeviceId": network_device_id,
+            "networkDeviceIpAddress": network_device_ip_address,
+            "macAddress": mac_address,
+            "aiDriven": ai_driven,
+            "fabricDriven": fabric_driven,
+            "fabricSiteDriven": fabric_site_driven,
+            "fabricVnDriven": fabric_vn_driven,
+            "fabricTransitDriven": fabric_transit_driven,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -656,24 +593,29 @@ class Issues(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/data/api/v1/assuranceIssues/count')
+        e_url = "/dna/data/api/v1/assuranceIssues/count"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_ada8eb3ff5b8db9eccfb778cc578e_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_ada8eb3ff5b8db9eccfb778cc578e_v2_3_7_9", json_data
+        )
 
-    def get_the_details_of_issues_for_given_set_of_filters(self,
-                                                           endTime=None,
-                                                           filters=None,
-                                                           startTime=None,
-                                                           headers=None,
-                                                           payload=None,
-                                                           active_validation=True,
-                                                           **request_parameters):
+    def get_the_details_of_issues_for_given_set_of_filters(
+        self,
+        endTime=None,
+        filters=None,
+        startTime=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Returns all details of each issue along with suggested actions for given set of filters specified in request
         body. If there is no start and/or end time, then end time will be defaulted to current time and start
         time will be defaulted to 24-hours ago from end time. https://github.com/cisco-en-
@@ -707,39 +649,31 @@ class Issues(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'Accept-Language' in headers:
-                check_type(headers.get('Accept-Language'),
-                           str)
-            if 'X-CALLER-ID' in headers:
-                check_type(headers.get('X-CALLER-ID'),
-                           str)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "Accept-Language" in headers:
+                check_type(headers.get("Accept-Language"), str)
+            if "X-CALLER-ID" in headers:
+                check_type(headers.get("X-CALLER-ID"), str)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'startTime':
-                startTime,
-            'endTime':
-                endTime,
-            'filters':
-                filters,
+            "startTime": startTime,
+            "endTime": endTime,
+            "filters": filters,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_b818044610579a9b74ec582e7739ab_v2_3_7_9')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_b818044610579a9b74ec582e7739ab_v2_3_7_9"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -747,26 +681,31 @@ class Issues(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/data/api/v1/assuranceIssues/query')
+        e_url = "/dna/data/api/v1/assuranceIssues/query"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_b818044610579a9b74ec582e7739ab_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_b818044610579a9b74ec582e7739ab_v2_3_7_9", json_data
+        )
 
-    def get_the_total_number_of_issues_for_given_set_of_filters(self,
-                                                                endTime=None,
-                                                                filters=None,
-                                                                startTime=None,
-                                                                headers=None,
-                                                                payload=None,
-                                                                active_validation=True,
-                                                                **request_parameters):
+    def get_the_total_number_of_issues_for_given_set_of_filters(
+        self,
+        endTime=None,
+        filters=None,
+        startTime=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Returns the total number issues for given set of filters. If there is no start and/or end time, then end time
         will be defaulted to current time and start time will be defaulted to 24-hours ago from end time. For
         detailed information about the usage of the API, please refer to the Open API specification document
@@ -800,36 +739,29 @@ class Issues(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'X-CALLER-ID' in headers:
-                check_type(headers.get('X-CALLER-ID'),
-                           str)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "X-CALLER-ID" in headers:
+                check_type(headers.get("X-CALLER-ID"), str)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'startTime':
-                startTime,
-            'endTime':
-                endTime,
-            'filters':
-                filters,
+            "startTime": startTime,
+            "endTime": endTime,
+            "filters": filters,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_c14a815ec5938950343f6188f0785_v2_3_7_9')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_c14a815ec5938950343f6188f0785_v2_3_7_9"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -837,30 +769,35 @@ class Issues(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/data/api/v1/assuranceIssues/query/count')
+        e_url = "/dna/data/api/v1/assuranceIssues/query/count"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_c14a815ec5938950343f6188f0785_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_c14a815ec5938950343f6188f0785_v2_3_7_9", json_data
+        )
 
-    def get_summary_analytics_data_of_issues(self,
-                                             aggregateAttributes=None,
-                                             attributes=None,
-                                             endTime=None,
-                                             filters=None,
-                                             groupBy=None,
-                                             page=None,
-                                             startTime=None,
-                                             headers=None,
-                                             payload=None,
-                                             active_validation=True,
-                                             **request_parameters):
+    def get_summary_analytics_data_of_issues(
+        self,
+        aggregateAttributes=None,
+        attributes=None,
+        endTime=None,
+        filters=None,
+        groupBy=None,
+        page=None,
+        startTime=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Gets the summary analytics data related to issues based on given filters and group by field. This data can be
         used to find issue counts grouped by different keys. For detailed information about the usage of the
         API, please refer to the Open API specification document https://github.com/cisco-en-
@@ -898,47 +835,35 @@ class Issues(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'Accept-Language' in headers:
-                check_type(headers.get('Accept-Language'),
-                           str)
-            if 'X-CALLER-ID' in headers:
-                check_type(headers.get('X-CALLER-ID'),
-                           str)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "Accept-Language" in headers:
+                check_type(headers.get("Accept-Language"), str)
+            if "X-CALLER-ID" in headers:
+                check_type(headers.get("X-CALLER-ID"), str)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'startTime':
-                startTime,
-            'endTime':
-                endTime,
-            'filters':
-                filters,
-            'groupBy':
-                groupBy,
-            'attributes':
-                attributes,
-            'aggregateAttributes':
-                aggregateAttributes,
-            'page':
-                page,
+            "startTime": startTime,
+            "endTime": endTime,
+            "filters": filters,
+            "groupBy": groupBy,
+            "attributes": attributes,
+            "aggregateAttributes": aggregateAttributes,
+            "page": page,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_b269afaaa855d3291b825f724fc8ea9_v2_3_7_9')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_b269afaaa855d3291b825f724fc8ea9_v2_3_7_9"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -946,31 +871,36 @@ class Issues(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/data/api/v1/assuranceIssues/summaryAnalytics')
+        e_url = "/dna/data/api/v1/assuranceIssues/summaryAnalytics"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_b269afaaa855d3291b825f724fc8ea9_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_b269afaaa855d3291b825f724fc8ea9_v2_3_7_9", json_data
+        )
 
-    def get_top_n_analytics_data_of_issues(self,
-                                           aggregateAttributes=None,
-                                           attributes=None,
-                                           endTime=None,
-                                           filters=None,
-                                           groupBy=None,
-                                           page=None,
-                                           startTime=None,
-                                           topN=None,
-                                           headers=None,
-                                           payload=None,
-                                           active_validation=True,
-                                           **request_parameters):
+    def get_top_n_analytics_data_of_issues(
+        self,
+        aggregateAttributes=None,
+        attributes=None,
+        endTime=None,
+        filters=None,
+        groupBy=None,
+        page=None,
+        startTime=None,
+        topN=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Gets the Top N analytics data related to issues based on given filters and group by field. This data can be used
         to find top sites which has most issues or top device types with most issue etc,. For detailed
         information about the usage of the API, please refer to the Open API specification document
@@ -1009,49 +939,36 @@ class Issues(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'Accept-Language' in headers:
-                check_type(headers.get('Accept-Language'),
-                           str)
-            if 'X-CALLER-ID' in headers:
-                check_type(headers.get('X-CALLER-ID'),
-                           str)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "Accept-Language" in headers:
+                check_type(headers.get("Accept-Language"), str)
+            if "X-CALLER-ID" in headers:
+                check_type(headers.get("X-CALLER-ID"), str)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'startTime':
-                startTime,
-            'endTime':
-                endTime,
-            'topN':
-                topN,
-            'filters':
-                filters,
-            'groupBy':
-                groupBy,
-            'attributes':
-                attributes,
-            'aggregateAttributes':
-                aggregateAttributes,
-            'page':
-                page,
+            "startTime": startTime,
+            "endTime": endTime,
+            "topN": topN,
+            "filters": filters,
+            "groupBy": groupBy,
+            "attributes": attributes,
+            "aggregateAttributes": aggregateAttributes,
+            "page": page,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_e7af120721c7519a84b13bbe4a1a0362_v2_3_7_9')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_e7af120721c7519a84b13bbe4a1a0362_v2_3_7_9"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1059,31 +976,36 @@ class Issues(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/data/api/v1/assuranceIssues/topNAnalytics')
+        e_url = "/dna/data/api/v1/assuranceIssues/topNAnalytics"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_e7af120721c7519a84b13bbe4a1a0362_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_e7af120721c7519a84b13bbe4a1a0362_v2_3_7_9", json_data
+        )
 
-    def get_trend_analytics_data_of_issues(self,
-                                           aggregateAttributes=None,
-                                           attributes=None,
-                                           endTime=None,
-                                           filters=None,
-                                           groupBy=None,
-                                           page=None,
-                                           startTime=None,
-                                           trendInterval=None,
-                                           headers=None,
-                                           payload=None,
-                                           active_validation=True,
-                                           **request_parameters):
+    def get_trend_analytics_data_of_issues(
+        self,
+        aggregateAttributes=None,
+        attributes=None,
+        endTime=None,
+        filters=None,
+        groupBy=None,
+        page=None,
+        startTime=None,
+        trendInterval=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Gets the trend analytics data related to issues based on given filters and group by field. This data can be used
         to find issue counts in different intervals over a period of time. For detailed information about the
         usage of the API, please refer to the Open API specification document https://github.com/cisco-en-
@@ -1122,49 +1044,36 @@ class Issues(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'Accept-Language' in headers:
-                check_type(headers.get('Accept-Language'),
-                           str)
-            if 'X-CALLER-ID' in headers:
-                check_type(headers.get('X-CALLER-ID'),
-                           str)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "Accept-Language" in headers:
+                check_type(headers.get("Accept-Language"), str)
+            if "X-CALLER-ID" in headers:
+                check_type(headers.get("X-CALLER-ID"), str)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'startTime':
-                startTime,
-            'endTime':
-                endTime,
-            'trendInterval':
-                trendInterval,
-            'filters':
-                filters,
-            'groupBy':
-                groupBy,
-            'attributes':
-                attributes,
-            'aggregateAttributes':
-                aggregateAttributes,
-            'page':
-                page,
+            "startTime": startTime,
+            "endTime": endTime,
+            "trendInterval": trendInterval,
+            "filters": filters,
+            "groupBy": groupBy,
+            "attributes": attributes,
+            "aggregateAttributes": aggregateAttributes,
+            "page": page,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_fee1860b4d509585956565df54a91a_v2_3_7_9')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_fee1860b4d509585956565df54a91a_v2_3_7_9"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1172,24 +1081,24 @@ class Issues(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/data/api/v1/assuranceIssues/trendAnalytics')
+        e_url = "/dna/data/api/v1/assuranceIssues/trendAnalytics"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_fee1860b4d509585956565df54a91a_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_fee1860b4d509585956565df54a91a_v2_3_7_9", json_data
+        )
 
-    def get_all_the_details_and_suggested_actions_of_an_issue_for_the_given_issue_id(self,
-                                                                                     id,
-                                                                                     attribute=None,
-                                                                                     view=None,
-                                                                                     headers=None,
-                                                                                     **request_parameters):
+    def get_all_the_details_and_suggested_actions_of_an_issue_for_the_given_issue_id(
+        self, id, attribute=None, view=None, headers=None, **request_parameters
+    ):
         """Returns all the details and suggested actions of an issue for the given issue id. https://github.com/cisco-en-
         programmability/catalyst-center-api-specs/blob/main/Assurance/CE_Cat_Center_Org-
         IssuesList-1.0.0-resolved.yaml .
@@ -1229,30 +1138,24 @@ class Issues(object):
         check_type(headers, dict)
         check_type(view, str)
         check_type(attribute, str)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'Accept-Language' in headers:
-                check_type(headers.get('Accept-Language'),
-                           str)
-            if 'X-CALLER-ID' in headers:
-                check_type(headers.get('X-CALLER-ID'),
-                           str)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Accept-Language" in headers:
+                check_type(headers.get("Accept-Language"), str)
+            if "X-CALLER-ID" in headers:
+                check_type(headers.get("X-CALLER-ID"), str)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'view':
-                view,
-            'attribute':
-                attribute,
+            "view": view,
+            "attribute": attribute,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
 
         with_custom_headers = False
@@ -1261,23 +1164,28 @@ class Issues(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/data/api/v1/assuranceIssues/{id}')
+        e_url = "/dna/data/api/v1/assuranceIssues/{id}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_e350bcc73ba5202aeaeed88175f0d44_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_e350bcc73ba5202aeaeed88175f0d44_v2_3_7_9", json_data
+        )
 
-    def ignore_the_given_list_of_issues(self,
-                                        ignoreHours=None,
-                                        issueIds=None,
-                                        headers=None,
-                                        payload=None,
-                                        active_validation=True,
-                                        **request_parameters):
+    def ignore_the_given_list_of_issues(
+        self,
+        ignoreHours=None,
+        issueIds=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Ignores the given list of issues. The response contains the list of issues which were successfully ignored as
         well as the issues which are failed to ignore. After this API returns success response, it may take few
         seconds for the issue status to be updated if the system is heavily loaded. Please use `GET
@@ -1312,34 +1220,28 @@ class Issues(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'X-CALLER-ID' in headers:
-                check_type(headers.get('X-CALLER-ID'),
-                           str)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "X-CALLER-ID" in headers:
+                check_type(headers.get("X-CALLER-ID"), str)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'issueIds':
-                issueIds,
-            'ignoreHours':
-                ignoreHours,
+            "issueIds": issueIds,
+            "ignoreHours": ignoreHours,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_f2c49c69c53e7b4f57f2af9a6f597_v2_3_7_9')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_f2c49c69c53e7b4f57f2af9a6f597_v2_3_7_9"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1347,24 +1249,29 @@ class Issues(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/assuranceIssues/ignore')
+        e_url = "/dna/intent/api/v1/assuranceIssues/ignore"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_f2c49c69c53e7b4f57f2af9a6f597_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_f2c49c69c53e7b4f57f2af9a6f597_v2_3_7_9", json_data
+        )
 
-    def resolve_the_given_lists_of_issues(self,
-                                          issueIds=None,
-                                          headers=None,
-                                          payload=None,
-                                          active_validation=True,
-                                          **request_parameters):
+    def resolve_the_given_lists_of_issues(
+        self,
+        issueIds=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Resolves the given list of issues. The response contains the list of issues which were successfully resolved as
         well as the issues which are failed to resolve. After this API returns success response, it may take few
         seconds for the issue status to be updated if the system is heavily loaded. Please use `GET
@@ -1398,32 +1305,27 @@ class Issues(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'X-CALLER-ID' in headers:
-                check_type(headers.get('X-CALLER-ID'),
-                           str)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "X-CALLER-ID" in headers:
+                check_type(headers.get("X-CALLER-ID"), str)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'issueIds':
-                issueIds,
+            "issueIds": issueIds,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_c10072541e94bd16f1aebffe32_v2_3_7_9')\
-                .validate(_payload)
+            self._request_validator("jsd_c10072541e94bd16f1aebffe32_v2_3_7_9").validate(
+                _payload
+            )
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1431,25 +1333,30 @@ class Issues(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/assuranceIssues/resolve')
+        e_url = "/dna/intent/api/v1/assuranceIssues/resolve"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_c10072541e94bd16f1aebffe32_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_c10072541e94bd16f1aebffe32_v2_3_7_9", json_data
+        )
 
-    def update_the_given_issue_by_updating_selected_fields(self,
-                                                           id,
-                                                           notes=None,
-                                                           headers=None,
-                                                           payload=None,
-                                                           active_validation=True,
-                                                           **request_parameters):
+    def update_the_given_issue_by_updating_selected_fields(
+        self,
+        id,
+        notes=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Updates selected fields in the given issue. Currently the only field that can be updated is 'notes' field. After
         this API returns success response, it may take few seconds for the issue details to be updated if the
         system is heavily loaded. Please use `GET /dna/data/api/v1/assuranceIssues/{id}` API to fetch the
@@ -1483,39 +1390,33 @@ class Issues(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'Accept-Language' in headers:
-                check_type(headers.get('Accept-Language'),
-                           str)
-            if 'X-CALLER-ID' in headers:
-                check_type(headers.get('X-CALLER-ID'),
-                           str)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "Accept-Language" in headers:
+                check_type(headers.get("Accept-Language"), str)
+            if "X-CALLER-ID" in headers:
+                check_type(headers.get("X-CALLER-ID"), str)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
         _payload = {
-            'notes':
-                notes,
+            "notes": notes,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_bece53a182b45ffa4a1a435e_v2_3_7_9')\
-                .validate(_payload)
+            self._request_validator("jsd_bece53a182b45ffa4a1a435e_v2_3_7_9").validate(
+                _payload
+            )
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1523,29 +1424,32 @@ class Issues(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/assuranceIssues/{id}/update')
+        e_url = "/dna/intent/api/v1/assuranceIssues/{id}/update"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_bece53a182b45ffa4a1a435e_v2_3_7_9', json_data)
+        return self._object_factory("bpm_bece53a182b45ffa4a1a435e_v2_3_7_9", json_data)
 
-    def creates_a_new_user_defined_issue_definitions(self,
-                                                     description=None,
-                                                     isEnabled=None,
-                                                     isNotificationEnabled=None,
-                                                     name=None,
-                                                     priority=None,
-                                                     rules=None,
-                                                     headers=None,
-                                                     payload=None,
-                                                     active_validation=True,
-                                                     **request_parameters):
+    def creates_a_new_user_defined_issue_definitions(
+        self,
+        description=None,
+        isEnabled=None,
+        isNotificationEnabled=None,
+        name=None,
+        priority=None,
+        rules=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Create a new custom issue definition using the provided input request data. The unique identifier for this issue
         definition is id. Please note that the issue names cannot be duplicated. The definition is based on the
         syslog. For detailed information about the usage of the API, please refer to the Open API specification
@@ -1582,42 +1486,32 @@ class Issues(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'X-CALLER-ID' in headers:
-                check_type(headers.get('X-CALLER-ID'),
-                           str)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "X-CALLER-ID" in headers:
+                check_type(headers.get("X-CALLER-ID"), str)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'name':
-                name,
-            'description':
-                description,
-            'rules':
-                rules,
-            'isEnabled':
-                isEnabled,
-            'priority':
-                priority,
-            'isNotificationEnabled':
-                isNotificationEnabled,
+            "name": name,
+            "description": description,
+            "rules": rules,
+            "isEnabled": isEnabled,
+            "priority": priority,
+            "isNotificationEnabled": isNotificationEnabled,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_a4d8313a955433858e0137ba7ef672_v2_3_7_9')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_a4d8313a955433858e0137ba7ef672_v2_3_7_9"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1625,33 +1519,38 @@ class Issues(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/customIssueDefinitions')
+        e_url = "/dna/intent/api/v1/customIssueDefinitions"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_a4d8313a955433858e0137ba7ef672_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_a4d8313a955433858e0137ba7ef672_v2_3_7_9", json_data
+        )
 
-    def get_all_the_custom_issue_definitions_based_on_the_given_filters(self,
-                                                                        facility=None,
-                                                                        id=None,
-                                                                        is_enabled=None,
-                                                                        limit=None,
-                                                                        mnemonic=None,
-                                                                        name=None,
-                                                                        offset=None,
-                                                                        order=None,
-                                                                        priority=None,
-                                                                        profile_id=None,
-                                                                        severity=None,
-                                                                        sort_by=None,
-                                                                        headers=None,
-                                                                        **request_parameters):
+    def get_all_the_custom_issue_definitions_based_on_the_given_filters(
+        self,
+        facility=None,
+        id=None,
+        is_enabled=None,
+        limit=None,
+        mnemonic=None,
+        name=None,
+        offset=None,
+        order=None,
+        priority=None,
+        profile_id=None,
+        severity=None,
+        sort_by=None,
+        headers=None,
+        **request_parameters
+    ):
         """Retrieve the existing syslog-based custom issue definitions. The supported filters are id, name, profileId,
         definition enable status, priority, severity, facility and mnemonic. The issue definition configurations
         may vary across profiles, hence specifying the profile Id in the query parameter is important and the
@@ -1718,41 +1617,27 @@ class Issues(object):
         check_type(sort_by, str)
         check_type(order, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'id':
-                id,
-            'profileId':
-                profile_id,
-            'name':
-                name,
-            'priority':
-                priority,
-            'isEnabled':
-                is_enabled,
-            'severity':
-                severity,
-            'facility':
-                facility,
-            'mnemonic':
-                mnemonic,
-            'limit':
-                limit,
-            'offset':
-                offset,
-            'sortBy':
-                sort_by,
-            'order':
-                order,
+            "id": id,
+            "profileId": profile_id,
+            "name": name,
+            "priority": priority,
+            "isEnabled": is_enabled,
+            "severity": severity,
+            "facility": facility,
+            "mnemonic": mnemonic,
+            "limit": limit,
+            "offset": offset,
+            "sortBy": sort_by,
+            "order": order,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1760,27 +1645,32 @@ class Issues(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/customIssueDefinitions')
+        e_url = "/dna/intent/api/v1/customIssueDefinitions"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_a51b856ea8005c8cbf42ab64da3e1786_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_a51b856ea8005c8cbf42ab64da3e1786_v2_3_7_9", json_data
+        )
 
-    def get_the_total_custom_issue_definitions_count_based_on_the_provided_filters(self,
-                                                                                   facility=None,
-                                                                                   id=None,
-                                                                                   is_enabled=None,
-                                                                                   mnemonic=None,
-                                                                                   name=None,
-                                                                                   priority=None,
-                                                                                   profile_id=None,
-                                                                                   severity=None,
-                                                                                   headers=None,
-                                                                                   **request_parameters):
+    def get_the_total_custom_issue_definitions_count_based_on_the_provided_filters(
+        self,
+        facility=None,
+        id=None,
+        is_enabled=None,
+        mnemonic=None,
+        name=None,
+        priority=None,
+        profile_id=None,
+        severity=None,
+        headers=None,
+        **request_parameters
+    ):
         """Get the total number of Custom issue definitions count based on the provided filters. The supported filters are
         id, name, profileId and definition enable status, severity, facility and mnemonic. For detailed
         information about the usage of the API, please refer to the Open API specification document
@@ -1836,36 +1726,25 @@ class Issues(object):
         check_type(facility, str)
         check_type(mnemonic, str)
         if headers is not None:
-            if 'X-CALLER-ID' in headers:
-                check_type(headers.get('X-CALLER-ID'),
-                           str)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-CALLER-ID" in headers:
+                check_type(headers.get("X-CALLER-ID"), str)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'id':
-                id,
-            'profileId':
-                profile_id,
-            'name':
-                name,
-            'priority':
-                priority,
-            'isEnabled':
-                is_enabled,
-            'severity':
-                severity,
-            'facility':
-                facility,
-            'mnemonic':
-                mnemonic,
+            "id": id,
+            "profileId": profile_id,
+            "name": name,
+            "priority": priority,
+            "isEnabled": is_enabled,
+            "severity": severity,
+            "facility": facility,
+            "mnemonic": mnemonic,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1873,20 +1752,22 @@ class Issues(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/customIssueDefinitions/count')
+        e_url = "/dna/intent/api/v1/customIssueDefinitions/count"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_ae1668865945349b9dcef2d60b7ba03_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_ae1668865945349b9dcef2d60b7ba03_v2_3_7_9", json_data
+        )
 
-    def get_the_custom_issue_definition_for_the_given_custom_issue_definition_id(self,
-                                                                                 id,
-                                                                                 headers=None,
-                                                                                 **request_parameters):
+    def get_the_custom_issue_definition_for_the_given_custom_issue_definition_id(
+        self, id, headers=None, **request_parameters
+    ):
         """Get the custom issue definition for the given custom issue definition Id. For detailed information about the
         usage of the API, please refer to the Open API specification document https://github.com/cisco-en-
         programmability/catalyst-center-api-specs/blob/main/Assurance/CE_Cat_Center_Org-
@@ -1911,23 +1792,19 @@ class Issues(object):
             https://developer.cisco.com/docs/dna-center/#!get-the-custom-issue-definition-for-the-given-custom-issue-definition-id
         """
         check_type(headers, dict)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-CALLER-ID' in headers:
-                check_type(headers.get('X-CALLER-ID'),
-                           str)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-CALLER-ID" in headers:
+                check_type(headers.get("X-CALLER-ID"), str)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
 
         with_custom_headers = False
@@ -1936,28 +1813,33 @@ class Issues(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/customIssueDefinitions/{id}')
+        e_url = "/dna/intent/api/v1/customIssueDefinitions/{id}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_b9df2373a5d4bba8e04a6c14367ec_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_b9df2373a5d4bba8e04a6c14367ec_v2_3_7_9", json_data
+        )
 
-    def updates_an_existing_custom_issue_definition_based_on_the_provided_id(self,
-                                                                             id,
-                                                                             description=None,
-                                                                             isEnabled=None,
-                                                                             isNotificationEnabled=None,
-                                                                             name=None,
-                                                                             priority=None,
-                                                                             rules=None,
-                                                                             headers=None,
-                                                                             payload=None,
-                                                                             active_validation=True,
-                                                                             **request_parameters):
+    def updates_an_existing_custom_issue_definition_based_on_the_provided_id(
+        self,
+        id,
+        description=None,
+        isEnabled=None,
+        isNotificationEnabled=None,
+        name=None,
+        priority=None,
+        rules=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Updates an existing custom issue definition based on the provided Id. For detailed information about the usage
         of the API, please refer to the Open API specification document https://github.com/cisco-en-
         programmability/catalyst-center-api-specs/blob/main/Assurance/CE_Cat_Center_Org-
@@ -1993,40 +1875,32 @@ class Issues(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
         _payload = {
-            'name':
-                name,
-            'description':
-                description,
-            'rules':
-                rules,
-            'isEnabled':
-                isEnabled,
-            'priority':
-                priority,
-            'isNotificationEnabled':
-                isNotificationEnabled,
+            "name": name,
+            "description": description,
+            "rules": rules,
+            "isEnabled": isEnabled,
+            "priority": priority,
+            "isNotificationEnabled": isNotificationEnabled,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_c0204c665262a712caef988d7d88_v2_3_7_9')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_c0204c665262a712caef988d7d88_v2_3_7_9"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -2034,22 +1908,24 @@ class Issues(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/customIssueDefinitions/{id}')
+        e_url = "/dna/intent/api/v1/customIssueDefinitions/{id}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload,
-                                          headers=_headers)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_c0204c665262a712caef988d7d88_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_c0204c665262a712caef988d7d88_v2_3_7_9", json_data
+        )
 
-    def deletes_an_existing_custom_issue_definition(self,
-                                                    id,
-                                                    headers=None,
-                                                    **request_parameters):
+    def deletes_an_existing_custom_issue_definition(
+        self, id, headers=None, **request_parameters
+    ):
         """Deletes an existing custom issue definition based on the Id. Only the Global profile issue has the access to
         delete the issue definition, so no profile id is required. For detailed information about the usage of
         the API, please refer to the Open API specification document https://github.com/cisco-en-
@@ -2075,20 +1951,17 @@ class Issues(object):
             https://developer.cisco.com/docs/dna-center/#!deletes-an-existing-custom-issue-definition
         """
         check_type(headers, dict)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
 
         with_custom_headers = False
@@ -2097,23 +1970,28 @@ class Issues(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/customIssueDefinitions/{id}')
+        e_url = "/dna/intent/api/v1/customIssueDefinitions/{id}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.delete(endpoint_full_url, params=_params,
-                                             headers=_headers)
+            json_data = self._session.delete(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.delete(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_f5ace826dd39514dbb0e0dde0599c1f5_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_f5ace826dd39514dbb0e0dde0599c1f5_v2_3_7_9", json_data
+        )
 
-    def execute_suggested_actions_commands(self,
-                                           entity_type=None,
-                                           entity_value=None,
-                                           headers=None,
-                                           payload=None,
-                                           active_validation=True,
-                                           **request_parameters):
+    def execute_suggested_actions_commands(
+        self,
+        entity_type=None,
+        entity_value=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """This API fetches the issue details and suggested actions for an issue, given the Issue Id, executes the commands
         associated with the suggested actions to remediate the issue .
 
@@ -2144,28 +2022,24 @@ class Issues(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'entity_type':
-                entity_type,
-            'entity_value':
-                entity_value,
+            "entity_type": entity_type,
+            "entity_value": entity_value,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_bc55e6552fac58cc0aaacd773a_v2_3_7_9')\
-                .validate(_payload)
+            self._request_validator("jsd_bc55e6552fac58cc0aaacd773a_v2_3_7_9").validate(
+                _payload
+            )
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -2173,21 +2047,22 @@ class Issues(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/execute-suggested-actions-commands')
+        e_url = "/dna/intent/api/v1/execute-suggested-actions-commands"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_bc55e6552fac58cc0aaacd773a_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_bc55e6552fac58cc0aaacd773a_v2_3_7_9", json_data
+        )
 
-    def get_issue_enrichment_details(self,
-                                     headers=None,
-                                     **request_parameters):
+    def get_issue_enrichment_details(self, headers=None, **request_parameters):
         """Enriches a given network issue context (an issue id or end user’s Mac Address) with details about the issue(s),
         impacted hosts and suggested actions for remediation .
 
@@ -2210,26 +2085,20 @@ class Issues(object):
         """
         check_type(headers, dict)
         if headers is not None:
-            if 'entity_type' in headers:
-                check_type(headers.get('entity_type'),
-                           str, may_be_none=False)
-            if 'entity_value' in headers:
-                check_type(headers.get('entity_value'),
-                           str, may_be_none=False)
-            if '__persistbapioutput' in headers:
-                check_type(headers.get('__persistbapioutput'),
-                           bool)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "entity_type" in headers:
+                check_type(headers.get("entity_type"), str, may_be_none=False)
+            if "entity_value" in headers:
+                check_type(headers.get("entity_value"), str, may_be_none=False)
+            if "__persistbapioutput" in headers:
+                check_type(headers.get("__persistbapioutput"), bool)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -2237,27 +2106,32 @@ class Issues(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/issue-enrichment-details')
+        e_url = "/dna/intent/api/v1/issue-enrichment-details"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_f2f039811951c0af53e3381ae91225_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_f2f039811951c0af53e3381ae91225_v2_3_7_9", json_data
+        )
 
-    def issues(self,
-               ai_driven=None,
-               device_id=None,
-               end_time=None,
-               issue_status=None,
-               mac_address=None,
-               priority=None,
-               site_id=None,
-               start_time=None,
-               headers=None,
-               **request_parameters):
+    def issues(
+        self,
+        ai_driven=None,
+        device_id=None,
+        end_time=None,
+        issue_status=None,
+        mac_address=None,
+        priority=None,
+        site_id=None,
+        start_time=None,
+        headers=None,
+        **request_parameters
+    ):
         """Intent API to get a list of global issues, issues for a specific device, or issue for a specific client device's
         MAC address. .
 
@@ -2300,33 +2174,23 @@ class Issues(object):
         check_type(issue_status, str)
         check_type(ai_driven, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'startTime':
-                start_time,
-            'endTime':
-                end_time,
-            'siteId':
-                site_id,
-            'deviceId':
-                device_id,
-            'macAddress':
-                mac_address,
-            'priority':
-                priority,
-            'issueStatus':
-                issue_status,
-            'aiDriven':
-                ai_driven,
+            "startTime": start_time,
+            "endTime": end_time,
+            "siteId": site_id,
+            "deviceId": device_id,
+            "macAddress": mac_address,
+            "priority": priority,
+            "issueStatus": issue_status,
+            "aiDriven": ai_driven,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -2334,30 +2198,35 @@ class Issues(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/issues')
+        e_url = "/dna/intent/api/v1/issues"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_aaef3b519ba8b9fb2cbf43b985_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_aaef3b519ba8b9fb2cbf43b985_v2_3_7_9", json_data
+        )
 
-    def returns_all_issue_trigger_definitions_for_given_filters(self,
-                                                                attribute=None,
-                                                                device_type=None,
-                                                                id=None,
-                                                                issue_enabled=None,
-                                                                limit=None,
-                                                                name=None,
-                                                                offset=None,
-                                                                order=None,
-                                                                priority=None,
-                                                                profile_id=None,
-                                                                sort_by=None,
-                                                                headers=None,
-                                                                **request_parameters):
+    def returns_all_issue_trigger_definitions_for_given_filters(
+        self,
+        attribute=None,
+        device_type=None,
+        id=None,
+        issue_enabled=None,
+        limit=None,
+        name=None,
+        offset=None,
+        order=None,
+        priority=None,
+        profile_id=None,
+        sort_by=None,
+        headers=None,
+        **request_parameters
+    ):
         """Get all system issue defintions. The supported filters are id, name, profileId and definition enable status. An
         issue trigger definition can be different across the profile and device type. So, `profileId` and
         `deviceType` in the query param is important and default is global profile and all device type. For
@@ -2423,42 +2292,28 @@ class Issues(object):
         check_type(sort_by, str)
         check_type(order, str)
         if headers is not None:
-            if 'X-CALLER-ID' in headers:
-                check_type(headers.get('X-CALLER-ID'),
-                           str)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-CALLER-ID" in headers:
+                check_type(headers.get("X-CALLER-ID"), str)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'deviceType':
-                device_type,
-            'profileId':
-                profile_id,
-            'id':
-                id,
-            'name':
-                name,
-            'priority':
-                priority,
-            'issueEnabled':
-                issue_enabled,
-            'attribute':
-                attribute,
-            'offset':
-                offset,
-            'limit':
-                limit,
-            'sortBy':
-                sort_by,
-            'order':
-                order,
+            "deviceType": device_type,
+            "profileId": profile_id,
+            "id": id,
+            "name": name,
+            "priority": priority,
+            "issueEnabled": issue_enabled,
+            "attribute": attribute,
+            "offset": offset,
+            "limit": limit,
+            "sortBy": sort_by,
+            "order": order,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -2466,25 +2321,30 @@ class Issues(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/systemIssueDefinitions')
+        e_url = "/dna/intent/api/v1/systemIssueDefinitions"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_d97f6433e45a53d2a56a958ba83faab5_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_d97f6433e45a53d2a56a958ba83faab5_v2_3_7_9", json_data
+        )
 
-    def get_the_count_of_system_defined_issue_definitions_based_on_provided_filters(self,
-                                                                                    device_type=None,
-                                                                                    id=None,
-                                                                                    issue_enabled=None,
-                                                                                    name=None,
-                                                                                    priority=None,
-                                                                                    profile_id=None,
-                                                                                    headers=None,
-                                                                                    **request_parameters):
+    def get_the_count_of_system_defined_issue_definitions_based_on_provided_filters(
+        self,
+        device_type=None,
+        id=None,
+        issue_enabled=None,
+        name=None,
+        priority=None,
+        profile_id=None,
+        headers=None,
+        **request_parameters
+    ):
         """Get the count of system defined issue definitions based on provided filters. Supported filters are id, name,
         profileId and definition enable status. For detailed information about the usage of the API, please
         refer to the Open API specification document https://github.com/cisco-en-programmability/catalyst-
@@ -2536,32 +2396,23 @@ class Issues(object):
         check_type(priority, str)
         check_type(issue_enabled, bool)
         if headers is not None:
-            if 'X-CALLER-ID' in headers:
-                check_type(headers.get('X-CALLER-ID'),
-                           str)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-CALLER-ID" in headers:
+                check_type(headers.get("X-CALLER-ID"), str)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'deviceType':
-                device_type,
-            'profileId':
-                profile_id,
-            'id':
-                id,
-            'name':
-                name,
-            'priority':
-                priority,
-            'issueEnabled':
-                issue_enabled,
+            "deviceType": device_type,
+            "profileId": profile_id,
+            "id": id,
+            "name": name,
+            "priority": priority,
+            "issueEnabled": issue_enabled,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -2569,20 +2420,22 @@ class Issues(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/systemIssueDefinitions/count')
+        e_url = "/dna/intent/api/v1/systemIssueDefinitions/count"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_cdb71530b2359e2bcb1e212aad71b6d_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_cdb71530b2359e2bcb1e212aad71b6d_v2_3_7_9", json_data
+        )
 
-    def get_issue_trigger_definition_for_given_id(self,
-                                                  id,
-                                                  headers=None,
-                                                  **request_parameters):
+    def get_issue_trigger_definition_for_given_id(
+        self, id, headers=None, **request_parameters
+    ):
         """Get system issue defintion for the given id. Definition includes all properties from IssueTriggerDefinition
         schema by default. For detailed information about the usage of the API, please refer to the Open API
         specification document https://github.com/cisco-en-programmability/catalyst-center-api-
@@ -2607,23 +2460,19 @@ class Issues(object):
             https://developer.cisco.com/docs/dna-center/#!get-issue-trigger-definition-for-given-id
         """
         check_type(headers, dict)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-CALLER-ID' in headers:
-                check_type(headers.get('X-CALLER-ID'),
-                           str)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-CALLER-ID" in headers:
+                check_type(headers.get("X-CALLER-ID"), str)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
 
         with_custom_headers = False
@@ -2632,26 +2481,31 @@ class Issues(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/systemIssueDefinitions/{id}')
+        e_url = "/dna/intent/api/v1/systemIssueDefinitions/{id}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_cccbb5d35c9c5be9b837a0c1a33cbff8_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_cccbb5d35c9c5be9b837a0c1a33cbff8_v2_3_7_9", json_data
+        )
 
-    def issue_trigger_definition_update(self,
-                                        id,
-                                        issueEnabled=None,
-                                        priority=None,
-                                        synchronizeToHealthThreshold=None,
-                                        thresholdValue=None,
-                                        headers=None,
-                                        payload=None,
-                                        active_validation=True,
-                                        **request_parameters):
+    def issue_trigger_definition_update(
+        self,
+        id,
+        issueEnabled=None,
+        priority=None,
+        synchronizeToHealthThreshold=None,
+        thresholdValue=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Update issue trigger threshold, priority for the given id. Also enable or disable issue trigger for the given
         id. For detailed information about the usage of the API, please refer to the Open API specification
         document https://github.com/cisco-en-programmability/catalyst-center-api-
@@ -2685,36 +2539,30 @@ class Issues(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
         _payload = {
-            'synchronizeToHealthThreshold':
-                synchronizeToHealthThreshold,
-            'priority':
-                priority,
-            'issueEnabled':
-                issueEnabled,
-            'thresholdValue':
-                thresholdValue,
+            "synchronizeToHealthThreshold": synchronizeToHealthThreshold,
+            "priority": priority,
+            "issueEnabled": issueEnabled,
+            "thresholdValue": thresholdValue,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_f25c825ca6e58a5b1c2294b11558e7b_v2_3_7_9')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_f25c825ca6e58a5b1c2294b11558e7b_v2_3_7_9"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -2722,17 +2570,20 @@ class Issues(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/systemIssueDefinitions/{id}')
+        e_url = "/dna/intent/api/v1/systemIssueDefinitions/{id}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload,
-                                          headers=_headers)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_f25c825ca6e58a5b1c2294b11558e7b_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_f25c825ca6e58a5b1c2294b11558e7b_v2_3_7_9", json_data
+        )
+
 
 # Alias Functions
-

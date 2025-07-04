@@ -26,20 +26,22 @@ from fastjsonschema.exceptions import JsonSchemaException
 from dnacentersdk.exceptions import MalformedRequest
 from tests.environment import DNA_CENTER_VERSION
 
-pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '2.3.7.9', reason='version does not match')
+pytestmark = pytest.mark.skipif(
+    DNA_CENTER_VERSION != "2.3.7.9", reason="version does not match"
+)
 
 
 def is_valid_import_certificate(json_schema_validate, obj):
-    json_schema_validate('jsd_b19d7e8de2ca5329930d06f041a4a173_v2_3_7_9').validate(obj)
+    json_schema_validate("jsd_b19d7e8de2ca5329930d06f041a4a173_v2_3_7_9").validate(obj)
     return True
 
 
 def import_certificate(api):
     endpoint_result = api.authentication_management.import_certificate(
         active_validation=True,
-        list_of_users='value1,value2',
+        list_of_users="value1,value2",
         payload=None,
-        pk_password='string'
+        pk_password="string",
     )
     return endpoint_result
 
@@ -47,10 +49,7 @@ def import_certificate(api):
 @pytest.mark.authentication_management
 def test_import_certificate(api, validator):
     try:
-        assert is_valid_import_certificate(
-            validator,
-            import_certificate(api)
-        )
+        assert is_valid_import_certificate(validator, import_certificate(api))
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
             print(original_e)
@@ -59,10 +58,7 @@ def test_import_certificate(api, validator):
 
 def import_certificate_default_val(api):
     endpoint_result = api.authentication_management.import_certificate(
-        active_validation=True,
-        list_of_users=None,
-        payload=None,
-        pk_password=None
+        active_validation=True, list_of_users=None, payload=None, pk_password=None
     )
     return endpoint_result
 
@@ -71,8 +67,7 @@ def import_certificate_default_val(api):
 def test_import_certificate_default_val(api, validator):
     try:
         assert is_valid_import_certificate(
-            validator,
-            import_certificate_default_val(api)
+            validator, import_certificate_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -80,17 +75,17 @@ def test_import_certificate_default_val(api, validator):
 
 
 def is_valid_import_certificate_p12(json_schema_validate, obj):
-    json_schema_validate('jsd_c80e660c2e36582f939a7403ef15de22_v2_3_7_9').validate(obj)
+    json_schema_validate("jsd_c80e660c2e36582f939a7403ef15de22_v2_3_7_9").validate(obj)
     return True
 
 
 def import_certificate_p12(api):
     endpoint_result = api.authentication_management.import_certificate_p12(
         active_validation=True,
-        list_of_users='value1,value2',
-        p12_password='string',
+        list_of_users="value1,value2",
+        p12_password="string",
         payload=None,
-        pk_password='string'
+        pk_password="string",
     )
     return endpoint_result
 
@@ -98,10 +93,7 @@ def import_certificate_p12(api):
 @pytest.mark.authentication_management
 def test_import_certificate_p12(api, validator):
     try:
-        assert is_valid_import_certificate_p12(
-            validator,
-            import_certificate_p12(api)
-        )
+        assert is_valid_import_certificate_p12(validator, import_certificate_p12(api))
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
             print(original_e)
@@ -114,7 +106,7 @@ def import_certificate_p12_default_val(api):
         list_of_users=None,
         p12_password=None,
         payload=None,
-        pk_password=None
+        pk_password=None,
     )
     return endpoint_result
 
@@ -123,8 +115,7 @@ def import_certificate_p12_default_val(api):
 def test_import_certificate_p12_default_val(api, validator):
     try:
         assert is_valid_import_certificate_p12(
-            validator,
-            import_certificate_p12_default_val(api)
+            validator, import_certificate_p12_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -132,14 +123,13 @@ def test_import_certificate_p12_default_val(api, validator):
 
 
 def is_valid_authentication_api(json_schema_validate, obj):
-    json_schema_validate('jsd_a6bfcd88e22c5c138657b340870b4ebb_v2_3_7_9').validate(obj)
+    json_schema_validate("jsd_a6bfcd88e22c5c138657b340870b4ebb_v2_3_7_9").validate(obj)
     return True
 
 
 def authentication_api(api):
     endpoint_result = api.authentication_management.authentication_api(
-        active_validation=True,
-        payload=None
+        active_validation=True, payload=None
     )
     return endpoint_result
 
@@ -147,10 +137,7 @@ def authentication_api(api):
 @pytest.mark.authentication_management
 def test_authentication_api(api, validator):
     try:
-        assert is_valid_authentication_api(
-            validator,
-            authentication_api(api)
-        )
+        assert is_valid_authentication_api(validator, authentication_api(api))
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
             print(original_e)
@@ -159,8 +146,7 @@ def test_authentication_api(api, validator):
 
 def authentication_api_default_val(api):
     endpoint_result = api.authentication_management.authentication_api(
-        active_validation=True,
-        payload=None
+        active_validation=True, payload=None
     )
     return endpoint_result
 
@@ -169,8 +155,7 @@ def authentication_api_default_val(api):
 def test_authentication_api_default_val(api, validator):
     try:
         assert is_valid_authentication_api(
-            validator,
-            authentication_api_default_val(api)
+            validator, authentication_api_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

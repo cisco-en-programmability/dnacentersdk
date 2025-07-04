@@ -23,9 +23,7 @@ SOFTWARE.
 """
 
 
-
 from builtins import *
-
 
 
 from ...restsession import RestSession
@@ -66,24 +64,26 @@ class PathTrace(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def retrieves_all_previous_pathtraces_summary_v1(self,
-                                                     dest_ip=None,
-                                                     dest_port=None,
-                                                     gt_create_time=None,
-                                                     last_update_time=None,
-                                                     limit=None,
-                                                     lt_create_time=None,
-                                                     offset=None,
-                                                     order=None,
-                                                     periodic_refresh=None,
-                                                     protocol=None,
-                                                     sort_by=None,
-                                                     source_ip=None,
-                                                     source_port=None,
-                                                     status=None,
-                                                     task_id=None,
-                                                     headers=None,
-                                                     **request_parameters):
+    def retrieves_all_previous_pathtraces_summary_v1(
+        self,
+        dest_ip=None,
+        dest_port=None,
+        gt_create_time=None,
+        last_update_time=None,
+        limit=None,
+        lt_create_time=None,
+        offset=None,
+        order=None,
+        periodic_refresh=None,
+        protocol=None,
+        sort_by=None,
+        source_ip=None,
+        source_port=None,
+        status=None,
+        task_id=None,
+        headers=None,
+        **request_parameters
+    ):
         """Returns a summary of all flow analyses stored. Results can be filtered by specified parameters. .
 
         Args:
@@ -135,47 +135,30 @@ class PathTrace(object):
         check_type(order, str)
         check_type(sort_by, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'periodicRefresh':
-                periodic_refresh,
-            'sourceIP':
-                source_ip,
-            'destIP':
-                dest_ip,
-            'sourcePort':
-                source_port,
-            'destPort':
-                dest_port,
-            'gtCreateTime':
-                gt_create_time,
-            'ltCreateTime':
-                lt_create_time,
-            'protocol':
-                protocol,
-            'status':
-                status,
-            'taskId':
-                task_id,
-            'lastUpdateTime':
-                last_update_time,
-            'limit':
-                limit,
-            'offset':
-                offset,
-            'order':
-                order,
-            'sortBy':
-                sort_by,
+            "periodicRefresh": periodic_refresh,
+            "sourceIP": source_ip,
+            "destIP": dest_ip,
+            "sourcePort": source_port,
+            "destPort": dest_port,
+            "gtCreateTime": gt_create_time,
+            "ltCreateTime": lt_create_time,
+            "protocol": protocol,
+            "status": status,
+            "taskId": task_id,
+            "lastUpdateTime": last_update_time,
+            "limit": limit,
+            "offset": offset,
+            "order": order,
+            "sortBy": sort_by,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -183,29 +166,34 @@ class PathTrace(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/flow-analysis')
+        e_url = "/dna/intent/api/v1/flow-analysis"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_a75e4b27171c5c6782e84f902da9e5be_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_a75e4b27171c5c6782e84f902da9e5be_v2_3_7_6", json_data
+        )
 
-    def initiate_a_new_pathtrace_v1(self,
-                                    controlPath=None,
-                                    destIP=None,
-                                    destPort=None,
-                                    inclusions=None,
-                                    periodicRefresh=None,
-                                    protocol=None,
-                                    sourceIP=None,
-                                    sourcePort=None,
-                                    headers=None,
-                                    payload=None,
-                                    active_validation=True,
-                                    **request_parameters):
+    def initiate_a_new_pathtrace_v1(
+        self,
+        controlPath=None,
+        destIP=None,
+        destPort=None,
+        inclusions=None,
+        periodicRefresh=None,
+        protocol=None,
+        sourceIP=None,
+        sourcePort=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Initiates a new flow analysis with periodic refresh and stat collection options. Returns a request id and a task
         id to get results and follow progress. .
 
@@ -242,40 +230,30 @@ class PathTrace(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'controlPath':
-                controlPath,
-            'destIP':
-                destIP,
-            'destPort':
-                destPort,
-            'inclusions':
-                inclusions,
-            'periodicRefresh':
-                periodicRefresh,
-            'protocol':
-                protocol,
-            'sourceIP':
-                sourceIP,
-            'sourcePort':
-                sourcePort,
+            "controlPath": controlPath,
+            "destIP": destIP,
+            "destPort": destPort,
+            "inclusions": inclusions,
+            "periodicRefresh": periodicRefresh,
+            "protocol": protocol,
+            "sourceIP": sourceIP,
+            "sourcePort": sourcePort,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_a54fce1a0c305bdabfe91a8a6161e539_v2_3_7_6')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_a54fce1a0c305bdabfe91a8a6161e539_v2_3_7_6"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -283,22 +261,24 @@ class PathTrace(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/flow-analysis')
+        e_url = "/dna/intent/api/v1/flow-analysis"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_a54fce1a0c305bdabfe91a8a6161e539_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_a54fce1a0c305bdabfe91a8a6161e539_v2_3_7_6", json_data
+        )
 
-    def retrieves_previous_pathtrace_v1(self,
-                                        flow_analysis_id,
-                                        headers=None,
-                                        **request_parameters):
+    def retrieves_previous_pathtrace_v1(
+        self, flow_analysis_id, headers=None, **request_parameters
+    ):
         """Returns result of a previously requested flow analysis by its Flow Analysis id .
 
         Args:
@@ -320,20 +300,17 @@ class PathTrace(object):
             https://developer.cisco.com/docs/dna-center/#!retrieves-previous-pathtrace
         """
         check_type(headers, dict)
-        check_type(flow_analysis_id, str,
-                   may_be_none=False)
+        check_type(flow_analysis_id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'flowAnalysisId': flow_analysis_id,
+            "flowAnalysisId": flow_analysis_id,
         }
 
         with_custom_headers = False
@@ -342,20 +319,22 @@ class PathTrace(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/flow-analysis/{flowAnalysisId}')
+        e_url = "/dna/intent/api/v1/flow-analysis/{flowAnalysisId}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_ed5cbafc332a5efa97547736ba8b6044_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_ed5cbafc332a5efa97547736ba8b6044_v2_3_7_6", json_data
+        )
 
-    def deletes_pathtrace_by_id_v1(self,
-                                   flow_analysis_id,
-                                   headers=None,
-                                   **request_parameters):
+    def deletes_pathtrace_by_id_v1(
+        self, flow_analysis_id, headers=None, **request_parameters
+    ):
         """Deletes a flow analysis request by its id .
 
         Args:
@@ -377,20 +356,17 @@ class PathTrace(object):
             https://developer.cisco.com/docs/dna-center/#!deletes-pathtrace-by-id
         """
         check_type(headers, dict)
-        check_type(flow_analysis_id, str,
-                   may_be_none=False)
+        check_type(flow_analysis_id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'flowAnalysisId': flow_analysis_id,
+            "flowAnalysisId": flow_analysis_id,
         }
 
         with_custom_headers = False
@@ -399,24 +375,24 @@ class PathTrace(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/flow-analysis/{flowAnalysisId}')
+        e_url = "/dna/intent/api/v1/flow-analysis/{flowAnalysisId}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.delete(endpoint_full_url, params=_params,
-                                             headers=_headers)
+            json_data = self._session.delete(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.delete(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_a7ae984f943507ba621abe155e6e744_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_a7ae984f943507ba621abe155e6e744_v2_3_7_6", json_data
+        )
 
-                
-    
     # Alias Function
-    def retrieves_previous_pathtrace(self,
-                                        flow_analysis_id,
-                                        headers=None,
-                                        **request_parameters):
-        """ This function is an alias of retrieves_previous_pathtrace_v1 .
+    def retrieves_previous_pathtrace(
+        self, flow_analysis_id, headers=None, **request_parameters
+    ):
+        """This function is an alias of retrieves_previous_pathtrace_v1 .
         Args:
             flow_analysis_id(basestring): flowAnalysisId path parameter. Flow analysis request id .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -426,20 +402,16 @@ class PathTrace(object):
 
         Returns:
             This function returns the output of retrieves_previous_pathtrace_v1 .
-        """ 
+        """
         return self.retrieves_previous_pathtrace_v1(
-                    flow_analysis_id=flow_analysis_id,
-                    headers=headers,
-                    **request_parameters
+            flow_analysis_id=flow_analysis_id, headers=headers, **request_parameters
         )
-                
-    
+
     # Alias Function
-    def deletes_pathtrace_by_id(self,
-                                   flow_analysis_id,
-                                   headers=None,
-                                   **request_parameters):
-        """ This function is an alias of deletes_pathtrace_by_id_v1 .
+    def deletes_pathtrace_by_id(
+        self, flow_analysis_id, headers=None, **request_parameters
+    ):
+        """This function is an alias of deletes_pathtrace_by_id_v1 .
         Args:
             flow_analysis_id(basestring): flowAnalysisId path parameter. Flow analysis request id .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -449,34 +421,33 @@ class PathTrace(object):
 
         Returns:
             This function returns the output of deletes_pathtrace_by_id_v1 .
-        """ 
+        """
         return self.deletes_pathtrace_by_id_v1(
-                    flow_analysis_id=flow_analysis_id,
-                    headers=headers,
-                    **request_parameters
+            flow_analysis_id=flow_analysis_id, headers=headers, **request_parameters
         )
-                
-    
+
     # Alias Function
-    def retrieves_all_previous_pathtraces_summary(self,
-                                                     dest_ip=None,
-                                                     dest_port=None,
-                                                     gt_create_time=None,
-                                                     last_update_time=None,
-                                                     limit=None,
-                                                     lt_create_time=None,
-                                                     offset=None,
-                                                     order=None,
-                                                     periodic_refresh=None,
-                                                     protocol=None,
-                                                     sort_by=None,
-                                                     source_ip=None,
-                                                     source_port=None,
-                                                     status=None,
-                                                     task_id=None,
-                                                     headers=None,
-                                                     **request_parameters):
-        """ This function is an alias of retrieves_all_previous_pathtraces_summary_v1 .
+    def retrieves_all_previous_pathtraces_summary(
+        self,
+        dest_ip=None,
+        dest_port=None,
+        gt_create_time=None,
+        last_update_time=None,
+        limit=None,
+        lt_create_time=None,
+        offset=None,
+        order=None,
+        periodic_refresh=None,
+        protocol=None,
+        sort_by=None,
+        source_ip=None,
+        source_port=None,
+        status=None,
+        task_id=None,
+        headers=None,
+        **request_parameters
+    ):
+        """This function is an alias of retrieves_all_previous_pathtraces_summary_v1 .
         Args:
             periodic_refresh(bool): periodicRefresh query parameter. Is analysis periodically refreshed? .
             source_ip(basestring): sourceIP query parameter. Source IP address .
@@ -500,43 +471,44 @@ class PathTrace(object):
 
         Returns:
             This function returns the output of retrieves_all_previous_pathtraces_summary_v1 .
-        """ 
+        """
         return self.retrieves_all_previous_pathtraces_summary_v1(
-                    dest_ip=dest_ip,
-                    dest_port=dest_port,
-                    gt_create_time=gt_create_time,
-                    last_update_time=last_update_time,
-                    limit=limit,
-                    lt_create_time=lt_create_time,
-                    offset=offset,
-                    order=order,
-                    periodic_refresh=periodic_refresh,
-                    protocol=protocol,
-                    sort_by=sort_by,
-                    source_ip=source_ip,
-                    source_port=source_port,
-                    status=status,
-                    task_id=task_id,
-                    headers=headers,
-                    **request_parameters
+            dest_ip=dest_ip,
+            dest_port=dest_port,
+            gt_create_time=gt_create_time,
+            last_update_time=last_update_time,
+            limit=limit,
+            lt_create_time=lt_create_time,
+            offset=offset,
+            order=order,
+            periodic_refresh=periodic_refresh,
+            protocol=protocol,
+            sort_by=sort_by,
+            source_ip=source_ip,
+            source_port=source_port,
+            status=status,
+            task_id=task_id,
+            headers=headers,
+            **request_parameters
         )
-                
-    
+
     # Alias Function
-    def initiate_a_new_pathtrace(self,
-                                    controlPath=None,
-                                    destIP=None,
-                                    destPort=None,
-                                    inclusions=None,
-                                    periodicRefresh=None,
-                                    protocol=None,
-                                    sourceIP=None,
-                                    sourcePort=None,
-                                    headers=None,
-                                    payload=None,
-                                    active_validation=True,
-                                    **request_parameters):
-        """ This function is an alias of initiate_a_new_pathtrace_v1 .
+    def initiate_a_new_pathtrace(
+        self,
+        controlPath=None,
+        destIP=None,
+        destPort=None,
+        inclusions=None,
+        periodicRefresh=None,
+        protocol=None,
+        sourceIP=None,
+        sourcePort=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
+        """This function is an alias of initiate_a_new_pathtrace_v1 .
         Args:
             controlPath(boolean): Path Trace's Control path tracing .
             destIP(string): Path Trace's Destination IP address .
@@ -558,20 +530,18 @@ class PathTrace(object):
 
         Returns:
             This function returns the output of initiate_a_new_pathtrace_v1 .
-        """ 
+        """
         return self.initiate_a_new_pathtrace_v1(
-                    controlPath=controlPath,
-                    destIP=destIP,
-                    destPort=destPort,
-                    inclusions=inclusions,
-                    periodicRefresh=periodicRefresh,
-                    protocol=protocol,
-                    sourceIP=sourceIP,
-                    sourcePort=sourcePort,
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
+            controlPath=controlPath,
+            destIP=destIP,
+            destPort=destPort,
+            inclusions=inclusions,
+            periodicRefresh=periodicRefresh,
+            protocol=protocol,
+            sourceIP=sourceIP,
+            sourcePort=sourcePort,
+            headers=headers,
+            payload=payload,
+            active_validation=active_validation,
+            **request_parameters
         )
-
-

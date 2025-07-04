@@ -64,11 +64,9 @@ class Clients(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def get_client_detail(self,
-                          mac_address,
-                          timestamp=None,
-                          headers=None,
-                          **request_parameters):
+    def get_client_detail(
+        self, mac_address, timestamp=None, headers=None, **request_parameters
+    ):
         """Returns detailed Client information retrieved by Mac Address for any given point of time.  .
 
         Args:
@@ -93,27 +91,22 @@ class Clients(object):
         """
         check_type(headers, dict)
         check_type(timestamp, str)
-        check_type(mac_address, str,
-                   may_be_none=False)
+        check_type(mac_address, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'timestamp':
-                timestamp,
-            'macAddress':
-                mac_address,
+            "timestamp": timestamp,
+            "macAddress": mac_address,
         }
 
-        if _params['timestamp'] is None:
-            _params['timestamp'] = ''
+        if _params["timestamp"] is None:
+            _params["timestamp"] = ""
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -121,19 +114,20 @@ class Clients(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/client-detail')
+        e_url = "/dna/intent/api/v1/client-detail"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_f2c6333d8eb05491a16c2d32095e4352_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_f2c6333d8eb05491a16c2d32095e4352_v2_3_5_3", json_data
+        )
 
-    def get_client_enrichment_details(self,
-                                      headers=None,
-                                      **request_parameters):
+    def get_client_enrichment_details(self, headers=None, **request_parameters):
         """Enriches a given network End User context (a network user-id or end user’s device Mac Address) with details
         about the user, the devices that the user is connected to and the assurance issues that the user is
         impacted by .
@@ -158,26 +152,20 @@ class Clients(object):
         """
         check_type(headers, dict)
         if headers is not None:
-            if 'entity_type' in headers:
-                check_type(headers.get('entity_type'),
-                           str, may_be_none=False)
-            if 'entity_value' in headers:
-                check_type(headers.get('entity_value'),
-                           str, may_be_none=False)
-            if 'issueCategory' in headers:
-                check_type(headers.get('issueCategory'),
-                           str)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "entity_type" in headers:
+                check_type(headers.get("entity_type"), str, may_be_none=False)
+            if "entity_value" in headers:
+                check_type(headers.get("entity_value"), str, may_be_none=False)
+            if "issueCategory" in headers:
+                check_type(headers.get("issueCategory"), str)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -185,20 +173,22 @@ class Clients(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/client-enrichment-details')
+        e_url = "/dna/intent/api/v1/client-enrichment-details"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_dfd2751065bfb8c2367dd726df316_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_dfd2751065bfb8c2367dd726df316_v2_3_5_3", json_data
+        )
 
-    def get_overall_client_health(self,
-                                  timestamp=None,
-                                  headers=None,
-                                  **request_parameters):
+    def get_overall_client_health(
+        self, timestamp=None, headers=None, **request_parameters
+    ):
         """Returns Overall Client Health information by Client type (Wired and Wireless) for any given point of time .
 
         Args:
@@ -223,22 +213,19 @@ class Clients(object):
         check_type(headers, dict)
         check_type(timestamp, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'timestamp':
-                timestamp,
+            "timestamp": timestamp,
         }
 
-        if _params['timestamp'] is None:
-            _params['timestamp'] = ''
+        if _params["timestamp"] is None:
+            _params["timestamp"] = ""
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -246,22 +233,27 @@ class Clients(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/client-health')
+        e_url = "/dna/intent/api/v1/client-health"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_f58ddf5cee095688aed79a9bb26e21e8_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_f58ddf5cee095688aed79a9bb26e21e8_v2_3_5_3", json_data
+        )
 
-    def client_proximity(self,
-                         username,
-                         number_days=None,
-                         time_resolution=None,
-                         headers=None,
-                         **request_parameters):
+    def client_proximity(
+        self,
+        username,
+        number_days=None,
+        time_resolution=None,
+        headers=None,
+        **request_parameters
+    ):
         """This intent API will provide client proximity information for a specific wireless user. Proximity is defined as
         presence on the same floor at the same time as the specified wireless user. The Proximity workflow
         requires the subscription to the following event (via the Event Notification workflow) prior to making
@@ -291,28 +283,22 @@ class Clients(object):
             https://developer.cisco.com/docs/dna-center/#!client-proximity
         """
         check_type(headers, dict)
-        check_type(username, str,
-                   may_be_none=False)
+        check_type(username, str, may_be_none=False)
         check_type(number_days, int)
         check_type(time_resolution, int)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'username':
-                username,
-            'number_days':
-                number_days,
-            'time_resolution':
-                time_resolution,
+            "username": username,
+            "number_days": number_days,
+            "time_resolution": time_resolution,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -320,12 +306,15 @@ class Clients(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/client-proximity')
+        e_url = "/dna/intent/api/v1/client-proximity"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_c141467ea25ec0aa91cbcaff070354_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_c141467ea25ec0aa91cbcaff070354_v2_3_5_3", json_data
+        )
