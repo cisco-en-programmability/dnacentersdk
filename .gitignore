@@ -129,3 +129,6 @@ dmypy.json
 # Custom
 test.py
 sdkdiffgeneratorforreview.py
+
+# Code
+.vscode/
