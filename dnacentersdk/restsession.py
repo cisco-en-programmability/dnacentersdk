@@ -560,6 +560,9 @@ class RestSession(object):
             return self.download('GET', url, erc, 0, params=params, **kwargs)
         else:
             response = self.request('GET', url, erc, 0, params=params, **kwargs)
+            # Handle No Content (204) responses
+            if response.status_code == 204:
+                return None
             return extract_and_parse_json(response)
 
     def patch(self, url, params=None, json=None, data=None, **kwargs):

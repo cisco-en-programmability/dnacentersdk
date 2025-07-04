@@ -217,12 +217,16 @@ def extract_and_parse_json(response):
 
     Returns:
         The parsed JSON data as the appropriate native Python data type.
+        Returns None if response text is empty.
 
     Raises:
         JSONDecodeError: caused by json.loads
         TypeError: caused by json.loads
     """
     try:
+        # Return None if the response text is empty or whitespace-only
+        if not response.text or response.text.isspace():
+            return None
         return json.loads(response.text, object_hook=OrderedDict)
     except Exception as e:
         raise e
