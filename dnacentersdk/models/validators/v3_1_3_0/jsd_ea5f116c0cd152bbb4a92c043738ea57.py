@@ -75,7 +75,11 @@ class JSONSchemaValidatorEa5F116C0Cd152BbB4A92C043738Ea57(object):
                 "type": "string"
                 },
                 "value": {
-                "type": "integer"
+                "oneOf": [
+                    {"type": "string"},
+                    {"type": "integer"},
+                    {"type": "number"}
+                ]
                 }
                 },
                 "type": "object"
