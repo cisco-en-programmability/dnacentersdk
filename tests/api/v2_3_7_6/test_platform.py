@@ -26,18 +26,18 @@ from fastjsonschema.exceptions import JsonSchemaException
 from dnacentersdk.exceptions import MalformedRequest
 from tests.environment import DNA_CENTER_VERSION
 
-pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '2.3.7.6', reason='version does not match')
+pytestmark = pytest.mark.skipif(
+    DNA_CENTER_VERSION != "2.3.7.6", reason="version does not match"
+)
 
 
 def is_valid_cisco_dna_center_packages_summary_v1(json_schema_validate, obj):
-    json_schema_validate('jsd_0c3bdcd996dd5d988d0d77ce8f732014_v2_3_7_6').validate(obj)
+    json_schema_validate("jsd_0c3bdcd996dd5d988d0d77ce8f732014_v2_3_7_6").validate(obj)
     return True
 
 
 def cisco_dna_center_packages_summary_v1(api):
-    endpoint_result = api.platform.cisco_dna_center_packages_summary_v1(
-
-    )
+    endpoint_result = api.platform.cisco_dna_center_packages_summary_v1()
     return endpoint_result
 
 
@@ -45,8 +45,7 @@ def cisco_dna_center_packages_summary_v1(api):
 def test_cisco_dna_center_packages_summary_v1(api, validator):
     try:
         assert is_valid_cisco_dna_center_packages_summary_v1(
-            validator,
-            cisco_dna_center_packages_summary_v1(api)
+            validator, cisco_dna_center_packages_summary_v1(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -55,9 +54,7 @@ def test_cisco_dna_center_packages_summary_v1(api, validator):
 
 
 def cisco_dna_center_packages_summary_v1_default_val(api):
-    endpoint_result = api.platform.cisco_dna_center_packages_summary_v1(
-
-    )
+    endpoint_result = api.platform.cisco_dna_center_packages_summary_v1()
     return endpoint_result
 
 
@@ -65,8 +62,7 @@ def cisco_dna_center_packages_summary_v1_default_val(api):
 def test_cisco_dna_center_packages_summary_v1_default_val(api, validator):
     try:
         assert is_valid_cisco_dna_center_packages_summary_v1(
-            validator,
-            cisco_dna_center_packages_summary_v1_default_val(api)
+            validator, cisco_dna_center_packages_summary_v1_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -74,24 +70,19 @@ def test_cisco_dna_center_packages_summary_v1_default_val(api, validator):
 
 
 def is_valid_release_summary(json_schema_validate, obj):
-    json_schema_validate('jsd_63206c9b144b5dc2ba26e51798f8bede_v2_3_7_6').validate(obj)
+    json_schema_validate("jsd_63206c9b144b5dc2ba26e51798f8bede_v2_3_7_6").validate(obj)
     return True
 
 
 def release_summary(api):
-    endpoint_result = api.platform.release_summary(
-
-    )
+    endpoint_result = api.platform.release_summary()
     return endpoint_result
 
 
 @pytest.mark.platform
 def test_release_summary(api, validator):
     try:
-        assert is_valid_release_summary(
-            validator,
-            release_summary(api)
-        )
+        assert is_valid_release_summary(validator, release_summary(api))
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
             print(original_e)
@@ -99,33 +90,26 @@ def test_release_summary(api, validator):
 
 
 def release_summary_default_val(api):
-    endpoint_result = api.platform.release_summary(
-
-    )
+    endpoint_result = api.platform.release_summary()
     return endpoint_result
 
 
 @pytest.mark.platform
 def test_release_summary_default_val(api, validator):
     try:
-        assert is_valid_release_summary(
-            validator,
-            release_summary_default_val(api)
-        )
+        assert is_valid_release_summary(validator, release_summary_default_val(api))
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
 def is_valid_nodes_configuration_summary(json_schema_validate, obj):
-    json_schema_validate('jsd_0f0c26c266e552d6b0f1f68da8e60e16_v2_3_7_6').validate(obj)
+    json_schema_validate("jsd_0f0c26c266e552d6b0f1f68da8e60e16_v2_3_7_6").validate(obj)
     return True
 
 
 def nodes_configuration_summary(api):
-    endpoint_result = api.platform.nodes_configuration_summary(
-
-    )
+    endpoint_result = api.platform.nodes_configuration_summary()
     return endpoint_result
 
 
@@ -133,8 +117,7 @@ def nodes_configuration_summary(api):
 def test_nodes_configuration_summary(api, validator):
     try:
         assert is_valid_nodes_configuration_summary(
-            validator,
-            nodes_configuration_summary(api)
+            validator, nodes_configuration_summary(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -143,9 +126,7 @@ def test_nodes_configuration_summary(api, validator):
 
 
 def nodes_configuration_summary_default_val(api):
-    endpoint_result = api.platform.nodes_configuration_summary(
-
-    )
+    endpoint_result = api.platform.nodes_configuration_summary()
     return endpoint_result
 
 
@@ -153,8 +134,7 @@ def nodes_configuration_summary_default_val(api):
 def test_nodes_configuration_summary_default_val(api, validator):
     try:
         assert is_valid_nodes_configuration_summary(
-            validator,
-            nodes_configuration_summary_default_val(api)
+            validator, nodes_configuration_summary_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

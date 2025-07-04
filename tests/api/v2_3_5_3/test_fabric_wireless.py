@@ -26,11 +26,13 @@ from fastjsonschema.exceptions import JsonSchemaException
 from dnacentersdk.exceptions import MalformedRequest
 from tests.environment import DNA_CENTER_VERSION
 
-pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '2.3.5.3', reason='version does not match')
+pytestmark = pytest.mark.skipif(
+    DNA_CENTER_VERSION != "2.3.5.3", reason="version does not match"
+)
 
 
 def is_valid_add_ssid_to_ip_pool_mapping(json_schema_validate, obj):
-    json_schema_validate('jsd_ad96e712f4525a128368b1bfe3afc21c_v2_3_5_3').validate(obj)
+    json_schema_validate("jsd_ad96e712f4525a128368b1bfe3afc21c_v2_3_5_3").validate(obj)
     return True
 
 
@@ -38,10 +40,10 @@ def add_ssid_to_ip_pool_mapping(api):
     endpoint_result = api.fabric_wireless.add_ssid_to_ip_pool_mapping(
         active_validation=True,
         payload=None,
-        scalableGroupName='string',
-        siteNameHierarchy='string',
-        ssidNames=['string'],
-        vlanName='string'
+        scalableGroupName="string",
+        siteNameHierarchy="string",
+        ssidNames=["string"],
+        vlanName="string",
     )
     return endpoint_result
 
@@ -50,8 +52,7 @@ def add_ssid_to_ip_pool_mapping(api):
 def test_add_ssid_to_ip_pool_mapping(api, validator):
     try:
         assert is_valid_add_ssid_to_ip_pool_mapping(
-            validator,
-            add_ssid_to_ip_pool_mapping(api)
+            validator, add_ssid_to_ip_pool_mapping(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -66,7 +67,7 @@ def add_ssid_to_ip_pool_mapping_default_val(api):
         scalableGroupName=None,
         siteNameHierarchy=None,
         ssidNames=None,
-        vlanName=None
+        vlanName=None,
     )
     return endpoint_result
 
@@ -75,8 +76,7 @@ def add_ssid_to_ip_pool_mapping_default_val(api):
 def test_add_ssid_to_ip_pool_mapping_default_val(api, validator):
     try:
         assert is_valid_add_ssid_to_ip_pool_mapping(
-            validator,
-            add_ssid_to_ip_pool_mapping_default_val(api)
+            validator, add_ssid_to_ip_pool_mapping_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -84,7 +84,7 @@ def test_add_ssid_to_ip_pool_mapping_default_val(api, validator):
 
 
 def is_valid_update_ssid_to_ip_pool_mapping(json_schema_validate, obj):
-    json_schema_validate('jsd_249809f90ae8599c8a21c98b7a1ca804_v2_3_5_3').validate(obj)
+    json_schema_validate("jsd_249809f90ae8599c8a21c98b7a1ca804_v2_3_5_3").validate(obj)
     return True
 
 
@@ -92,10 +92,10 @@ def update_ssid_to_ip_pool_mapping(api):
     endpoint_result = api.fabric_wireless.update_ssid_to_ip_pool_mapping(
         active_validation=True,
         payload=None,
-        scalableGroupName='string',
-        siteNameHierarchy='string',
-        ssidNames=['string'],
-        vlanName='string'
+        scalableGroupName="string",
+        siteNameHierarchy="string",
+        ssidNames=["string"],
+        vlanName="string",
     )
     return endpoint_result
 
@@ -104,8 +104,7 @@ def update_ssid_to_ip_pool_mapping(api):
 def test_update_ssid_to_ip_pool_mapping(api, validator):
     try:
         assert is_valid_update_ssid_to_ip_pool_mapping(
-            validator,
-            update_ssid_to_ip_pool_mapping(api)
+            validator, update_ssid_to_ip_pool_mapping(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -120,7 +119,7 @@ def update_ssid_to_ip_pool_mapping_default_val(api):
         scalableGroupName=None,
         siteNameHierarchy=None,
         ssidNames=None,
-        vlanName=None
+        vlanName=None,
     )
     return endpoint_result
 
@@ -129,8 +128,7 @@ def update_ssid_to_ip_pool_mapping_default_val(api):
 def test_update_ssid_to_ip_pool_mapping_default_val(api, validator):
     try:
         assert is_valid_update_ssid_to_ip_pool_mapping(
-            validator,
-            update_ssid_to_ip_pool_mapping_default_val(api)
+            validator, update_ssid_to_ip_pool_mapping_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -138,14 +136,13 @@ def test_update_ssid_to_ip_pool_mapping_default_val(api, validator):
 
 
 def is_valid_get_ssid_to_ip_pool_mapping(json_schema_validate, obj):
-    json_schema_validate('jsd_2b0f6a0410705c75a61cdc51cc96c53f_v2_3_5_3').validate(obj)
+    json_schema_validate("jsd_2b0f6a0410705c75a61cdc51cc96c53f_v2_3_5_3").validate(obj)
     return True
 
 
 def get_ssid_to_ip_pool_mapping(api):
     endpoint_result = api.fabric_wireless.get_ssid_to_ip_pool_mapping(
-        site_name_hierarchy='string',
-        vlan_name='string'
+        site_name_hierarchy="string", vlan_name="string"
     )
     return endpoint_result
 
@@ -154,8 +151,7 @@ def get_ssid_to_ip_pool_mapping(api):
 def test_get_ssid_to_ip_pool_mapping(api, validator):
     try:
         assert is_valid_get_ssid_to_ip_pool_mapping(
-            validator,
-            get_ssid_to_ip_pool_mapping(api)
+            validator, get_ssid_to_ip_pool_mapping(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -165,8 +161,7 @@ def test_get_ssid_to_ip_pool_mapping(api, validator):
 
 def get_ssid_to_ip_pool_mapping_default_val(api):
     endpoint_result = api.fabric_wireless.get_ssid_to_ip_pool_mapping(
-        site_name_hierarchy=None,
-        vlan_name=None
+        site_name_hierarchy=None, vlan_name=None
     )
     return endpoint_result
 
@@ -175,8 +170,7 @@ def get_ssid_to_ip_pool_mapping_default_val(api):
 def test_get_ssid_to_ip_pool_mapping_default_val(api, validator):
     try:
         assert is_valid_get_ssid_to_ip_pool_mapping(
-            validator,
-            get_ssid_to_ip_pool_mapping_default_val(api)
+            validator, get_ssid_to_ip_pool_mapping_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -184,13 +178,13 @@ def test_get_ssid_to_ip_pool_mapping_default_val(api, validator):
 
 
 def is_valid_remove_w_l_c_from_fabric_domain(json_schema_validate, obj):
-    json_schema_validate('jsd_76039bb706025a9cb183ce7a60e0b5df_v2_3_5_3').validate(obj)
+    json_schema_validate("jsd_76039bb706025a9cb183ce7a60e0b5df_v2_3_5_3").validate(obj)
     return True
 
 
 def remove_w_l_c_from_fabric_domain(api):
     endpoint_result = api.fabric_wireless.remove_w_l_c_from_fabric_domain(
-        device_ipaddress='string'
+        device_ipaddress="string"
     )
     return endpoint_result
 
@@ -199,8 +193,7 @@ def remove_w_l_c_from_fabric_domain(api):
 def test_remove_w_l_c_from_fabric_domain(api, validator):
     try:
         assert is_valid_remove_w_l_c_from_fabric_domain(
-            validator,
-            remove_w_l_c_from_fabric_domain(api)
+            validator, remove_w_l_c_from_fabric_domain(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -219,8 +212,7 @@ def remove_w_l_c_from_fabric_domain_default_val(api):
 def test_remove_w_l_c_from_fabric_domain_default_val(api, validator):
     try:
         assert is_valid_remove_w_l_c_from_fabric_domain(
-            validator,
-            remove_w_l_c_from_fabric_domain_default_val(api)
+            validator, remove_w_l_c_from_fabric_domain_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -228,16 +220,16 @@ def test_remove_w_l_c_from_fabric_domain_default_val(api, validator):
 
 
 def is_valid_add_w_l_c_to_fabric_domain(json_schema_validate, obj):
-    json_schema_validate('jsd_6c4befbd77a452a9b7873ffc360a1f20_v2_3_5_3').validate(obj)
+    json_schema_validate("jsd_6c4befbd77a452a9b7873ffc360a1f20_v2_3_5_3").validate(obj)
     return True
 
 
 def add_w_l_c_to_fabric_domain(api):
     endpoint_result = api.fabric_wireless.add_w_l_c_to_fabric_domain(
         active_validation=True,
-        deviceName='string',
+        deviceName="string",
         payload=None,
-        siteNameHierarchy='string'
+        siteNameHierarchy="string",
     )
     return endpoint_result
 
@@ -246,8 +238,7 @@ def add_w_l_c_to_fabric_domain(api):
 def test_add_w_l_c_to_fabric_domain(api, validator):
     try:
         assert is_valid_add_w_l_c_to_fabric_domain(
-            validator,
-            add_w_l_c_to_fabric_domain(api)
+            validator, add_w_l_c_to_fabric_domain(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -257,10 +248,7 @@ def test_add_w_l_c_to_fabric_domain(api, validator):
 
 def add_w_l_c_to_fabric_domain_default_val(api):
     endpoint_result = api.fabric_wireless.add_w_l_c_to_fabric_domain(
-        active_validation=True,
-        deviceName=None,
-        payload=None,
-        siteNameHierarchy=None
+        active_validation=True, deviceName=None, payload=None, siteNameHierarchy=None
     )
     return endpoint_result
 
@@ -269,8 +257,7 @@ def add_w_l_c_to_fabric_domain_default_val(api):
 def test_add_w_l_c_to_fabric_domain_default_val(api, validator):
     try:
         assert is_valid_add_w_l_c_to_fabric_domain(
-            validator,
-            add_w_l_c_to_fabric_domain_default_val(api)
+            validator, add_w_l_c_to_fabric_domain_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

@@ -64,9 +64,7 @@ class Eox(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def get_eox_status_for_all_devices(self,
-                                       headers=None,
-                                       **request_parameters):
+    def get_eox_status_for_all_devices(self, headers=None, **request_parameters):
         """Retrieves EoX status for all devices in the network .
 
         Args:
@@ -88,17 +86,14 @@ class Eox(object):
         """
         check_type(headers, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -106,20 +101,20 @@ class Eox(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/eox-status/device')
+        e_url = "/dna/intent/api/v1/eox-status/device"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_d5d27a53ac53258fa2183b7e93a7d5_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_d5d27a53ac53258fa2183b7e93a7d5_v2_3_5_3", json_data
+        )
 
-    def get_eox_details_per_device(self,
-                                   device_id,
-                                   headers=None,
-                                   **request_parameters):
+    def get_eox_details_per_device(self, device_id, headers=None, **request_parameters):
         """Retrieves EoX details for a device  .
 
         Args:
@@ -141,20 +136,17 @@ class Eox(object):
             https://developer.cisco.com/docs/dna-center/#!get-eox-details-per-device
         """
         check_type(headers, dict)
-        check_type(device_id, str,
-                   may_be_none=False)
+        check_type(device_id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'deviceId': device_id,
+            "deviceId": device_id,
         }
 
         with_custom_headers = False
@@ -163,19 +155,20 @@ class Eox(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/eox-status/device/{deviceId}')
+        e_url = "/dna/intent/api/v1/eox-status/device/{deviceId}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_ec048832853f8a63f34415d0e6fce_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_ec048832853f8a63f34415d0e6fce_v2_3_5_3", json_data
+        )
 
-    def get_eox_summary(self,
-                        headers=None,
-                        **request_parameters):
+    def get_eox_summary(self, headers=None, **request_parameters):
         """Retrieves EoX summary for all devices in the network .
 
         Args:
@@ -197,17 +190,14 @@ class Eox(object):
         """
         check_type(headers, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -215,12 +205,15 @@ class Eox(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/eox-status/summary')
+        e_url = "/dna/intent/api/v1/eox-status/summary"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_f0a0dfdaca465bdc91fc290d87476b89_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_f0a0dfdaca465bdc91fc290d87476b89_v2_3_5_3", json_data
+        )

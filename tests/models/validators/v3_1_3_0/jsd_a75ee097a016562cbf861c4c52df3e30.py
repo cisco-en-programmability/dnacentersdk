@@ -35,10 +35,12 @@ from dnacentersdk.exceptions import MalformedRequest
 class JSONSchemaValidatorA75Ee097A016562CBf861C4C52Df3E30(object):
     """ReadTrendAnalyticsDataForASpecificSiteInYourNetworkV1 request
     schema definition."""
+
     def __init__(self):
         super(JSONSchemaValidatorA75Ee097A016562CBf861C4C52Df3E30, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
+        self._validator = fastjsonschema.compile(
+            json.loads(
+                """{
                 "$schema": "http://json-schema.org/draft-04/schema#",
                 "properties": {
                 "page": {
@@ -88,13 +90,16 @@ class JSONSchemaValidatorA75Ee097A016562CBf861C4C52Df3E30(object):
                 }
                 },
                 "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+                }""".replace(
+                    "\n" + " " * 16, ""
+                )
+            )
+        )
 
     def validate(self, request):
         try:
             self._validator(request)
         except fastjsonschema.exceptions.JsonSchemaException as e:
             raise MalformedRequest(
-                '{} is invalid. Reason: {}'.format(request, e.message)
+                "{} is invalid. Reason: {}".format(request, e.message)
             )

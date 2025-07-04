@@ -26,25 +26,38 @@ from fastjsonschema.exceptions import JsonSchemaException
 from dnacentersdk.exceptions import MalformedRequest
 from tests.environment import DNA_CENTER_VERSION
 
-pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '3.1.3.0', reason='version does not match')
+pytestmark = pytest.mark.skipif(
+    DNA_CENTER_VERSION != "3.1.3.0", reason="version does not match"
+)
 
 
 def is_valid_get_energy_summary_analytics(json_schema_validate, obj):
-    json_schema_validate('jsd_d0b2cc705afb536fab6fd0848baa73c0_v3_1_3_0').validate(obj)
+    json_schema_validate("jsd_d0b2cc705afb536fab6fd0848baa73c0_v3_1_3_0").validate(obj)
     return True
 
 
 def get_energy_summary_analytics(api):
     endpoint_result = api.know_your_network.get_energy_summary_analytics(
         active_validation=True,
-        aggregateAttributes=[{'name': 'string', 'function': 'string'}],
-        attributes=['string'],
+        aggregateAttributes=[{"name": "string", "function": "string"}],
+        attributes=["string"],
         endTime=0,
-        filters=[{'logicalOperator': 'string', 'filters': [{'key': 'string', 'operator': 'string', 'value': ['string']}]}],
-        groupBy=['string'],
-        page={'limit': 0, 'offset': 0, 'sortBy': [{'name': 'string', 'order': 'string', 'function': 'string'}]},
+        filters=[
+            {
+                "logicalOperator": "string",
+                "filters": [
+                    {"key": "string", "operator": "string", "value": ["string"]}
+                ],
+            }
+        ],
+        groupBy=["string"],
+        page={
+            "limit": 0,
+            "offset": 0,
+            "sortBy": [{"name": "string", "order": "string", "function": "string"}],
+        },
         payload=None,
-        startTime=0
+        startTime=0,
     )
     return endpoint_result
 
@@ -53,8 +66,7 @@ def get_energy_summary_analytics(api):
 def test_get_energy_summary_analytics(api, validator):
     try:
         assert is_valid_get_energy_summary_analytics(
-            validator,
-            get_energy_summary_analytics(api)
+            validator, get_energy_summary_analytics(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -72,7 +84,7 @@ def get_energy_summary_analytics_default_val(api):
         groupBy=None,
         page=None,
         payload=None,
-        startTime=None
+        startTime=None,
     )
     return endpoint_result
 
@@ -81,8 +93,7 @@ def get_energy_summary_analytics_default_val(api):
 def test_get_energy_summary_analytics_default_val(api, validator):
     try:
         assert is_valid_get_energy_summary_analytics(
-            validator,
-            get_energy_summary_analytics_default_val(api)
+            validator, get_energy_summary_analytics_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -90,21 +101,28 @@ def test_get_energy_summary_analytics_default_val(api, validator):
 
 
 def is_valid_get_energy_trend_analytics(json_schema_validate, obj):
-    json_schema_validate('jsd_568503de4a255bc6849a7c9cec69f13c_v3_1_3_0').validate(obj)
+    json_schema_validate("jsd_568503de4a255bc6849a7c9cec69f13c_v3_1_3_0").validate(obj)
     return True
 
 
 def get_energy_trend_analytics(api):
     endpoint_result = api.know_your_network.get_energy_trend_analytics(
         active_validation=True,
-        aggregateAttributes=[{'name': 'string', 'function': 'string'}],
-        attributes=['string'],
+        aggregateAttributes=[{"name": "string", "function": "string"}],
+        attributes=["string"],
         endTime=0,
-        filters=[{'logicalOperator': 'string', 'filters': [{'key': 'string', 'operator': 'string', 'value': ['string']}]}],
-        groupBy=['string'],
-        page={'limit': 0, 'offset': 0, 'timestampOrder': 'string'},
+        filters=[
+            {
+                "logicalOperator": "string",
+                "filters": [
+                    {"key": "string", "operator": "string", "value": ["string"]}
+                ],
+            }
+        ],
+        groupBy=["string"],
+        page={"limit": 0, "offset": 0, "timestampOrder": "string"},
         payload=None,
-        startTime=0
+        startTime=0,
     )
     return endpoint_result
 
@@ -113,8 +131,7 @@ def get_energy_trend_analytics(api):
 def test_get_energy_trend_analytics(api, validator):
     try:
         assert is_valid_get_energy_trend_analytics(
-            validator,
-            get_energy_trend_analytics(api)
+            validator, get_energy_trend_analytics(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -132,7 +149,7 @@ def get_energy_trend_analytics_default_val(api):
         groupBy=None,
         page=None,
         payload=None,
-        startTime=None
+        startTime=None,
     )
     return endpoint_result
 
@@ -141,8 +158,7 @@ def get_energy_trend_analytics_default_val(api):
 def test_get_energy_trend_analytics_default_val(api, validator):
     try:
         assert is_valid_get_energy_trend_analytics(
-            validator,
-            get_energy_trend_analytics_default_val(api)
+            validator, get_energy_trend_analytics_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

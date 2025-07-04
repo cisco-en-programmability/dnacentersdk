@@ -33,10 +33,12 @@ from dnacentersdk.exceptions import MalformedRequest
 
 class JSONSchemaValidatorCeC6C85D9BB4BcC8F61F31296B(object):
     """ReserveIPSubpool request schema definition."""
+
     def __init__(self):
         super(JSONSchemaValidatorCeC6C85D9BB4BcC8F61F31296B, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
+        self._validator = fastjsonschema.compile(
+            json.loads(
+                """{
                 "$schema": "http://json-schema.org/draft-04/schema#",
                 "properties": {
                 "ipv4DhcpServers": {
@@ -120,13 +122,16 @@ class JSONSchemaValidatorCeC6C85D9BB4BcC8F61F31296B(object):
                 }
                 },
                 "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+                }""".replace(
+                    "\n" + " " * 16, ""
+                )
+            )
+        )
 
     def validate(self, request):
         try:
             self._validator(request)
         except fastjsonschema.exceptions.JsonSchemaException as e:
             raise MalformedRequest(
-                '{} is invalid. Reason: {}'.format(request, e.message)
+                "{} is invalid. Reason: {}".format(request, e.message)
             )

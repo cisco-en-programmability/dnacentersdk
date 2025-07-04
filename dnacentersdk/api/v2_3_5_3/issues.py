@@ -64,13 +64,15 @@ class Issues(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def execute_suggested_actions_commands(self,
-                                           entity_type=None,
-                                           entity_value=None,
-                                           headers=None,
-                                           payload=None,
-                                           active_validation=True,
-                                           **request_parameters):
+    def execute_suggested_actions_commands(
+        self,
+        entity_type=None,
+        entity_value=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """This API triggers the execution of the suggested actions for an issue, given the Issue Id. It will return an
         execution Id. At the completion of the execution, the output of the commands associated with the
         suggested actions will be provided Invoking this API would provide the execution id. Execute the 'Get
@@ -105,28 +107,24 @@ class Issues(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'entity_type':
-                entity_type,
-            'entity_value':
-                entity_value,
+            "entity_type": entity_type,
+            "entity_value": entity_value,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_bc55e6552fac58cc0aaacd773a_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator("jsd_bc55e6552fac58cc0aaacd773a_v2_3_5_3").validate(
+                _payload
+            )
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -134,21 +132,22 @@ class Issues(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/execute-suggested-actions-commands')
+        e_url = "/dna/intent/api/v1/execute-suggested-actions-commands"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_bc55e6552fac58cc0aaacd773a_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_bc55e6552fac58cc0aaacd773a_v2_3_5_3", json_data
+        )
 
-    def get_issue_enrichment_details(self,
-                                     headers=None,
-                                     **request_parameters):
+    def get_issue_enrichment_details(self, headers=None, **request_parameters):
         """Enriches a given network issue context (an issue id or end user’s Mac Address) with details about the issue(s),
         impacted hosts and suggested actions for remediation .
 
@@ -171,23 +170,18 @@ class Issues(object):
         """
         check_type(headers, dict)
         if headers is not None:
-            if 'entity_type' in headers:
-                check_type(headers.get('entity_type'),
-                           str, may_be_none=False)
-            if 'entity_value' in headers:
-                check_type(headers.get('entity_value'),
-                           str, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "entity_type" in headers:
+                check_type(headers.get("entity_type"), str, may_be_none=False)
+            if "entity_value" in headers:
+                check_type(headers.get("entity_value"), str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -195,27 +189,32 @@ class Issues(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/issue-enrichment-details')
+        e_url = "/dna/intent/api/v1/issue-enrichment-details"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_f2f039811951c0af53e3381ae91225_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_f2f039811951c0af53e3381ae91225_v2_3_5_3", json_data
+        )
 
-    def issues(self,
-               ai_driven=None,
-               device_id=None,
-               end_time=None,
-               issue_status=None,
-               mac_address=None,
-               priority=None,
-               site_id=None,
-               start_time=None,
-               headers=None,
-               **request_parameters):
+    def issues(
+        self,
+        ai_driven=None,
+        device_id=None,
+        end_time=None,
+        issue_status=None,
+        mac_address=None,
+        priority=None,
+        site_id=None,
+        start_time=None,
+        headers=None,
+        **request_parameters
+    ):
         """Intent API to get a list of global issues, issues for a specific device, or issue for a specific client device's
         MAC address. .
 
@@ -259,33 +258,23 @@ class Issues(object):
         check_type(ai_driven, str)
         check_type(issue_status, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'startTime':
-                start_time,
-            'endTime':
-                end_time,
-            'siteId':
-                site_id,
-            'deviceId':
-                device_id,
-            'macAddress':
-                mac_address,
-            'priority':
-                priority,
-            'aiDriven':
-                ai_driven,
-            'issueStatus':
-                issue_status,
+            "startTime": start_time,
+            "endTime": end_time,
+            "siteId": site_id,
+            "deviceId": device_id,
+            "macAddress": mac_address,
+            "priority": priority,
+            "aiDriven": ai_driven,
+            "issueStatus": issue_status,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -293,12 +282,15 @@ class Issues(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/issues')
+        e_url = "/dna/intent/api/v1/issues"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_aaef3b519ba8b9fb2cbf43b985_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_aaef3b519ba8b9fb2cbf43b985_v2_3_5_3", json_data
+        )

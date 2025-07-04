@@ -26,21 +26,23 @@ from fastjsonschema.exceptions import JsonSchemaException
 from dnacentersdk.exceptions import MalformedRequest
 from tests.environment import DNA_CENTER_VERSION
 
-pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '2.3.7.9', reason='version does not match')
+pytestmark = pytest.mark.skipif(
+    DNA_CENTER_VERSION != "2.3.7.9", reason="version does not match"
+)
 
 
 def is_valid_add_role_api(json_schema_validate, obj):
-    json_schema_validate('jsd_38a88c7510a15578b8eb2df183a92d5d_v2_3_7_9').validate(obj)
+    json_schema_validate("jsd_38a88c7510a15578b8eb2df183a92d5d_v2_3_7_9").validate(obj)
     return True
 
 
 def add_role_api(api):
     endpoint_result = api.user_and_roles.add_role_api(
         active_validation=True,
-        description='string',
+        description="string",
         payload=None,
-        resourceTypes=[{'type': 'string', 'operations': ['string']}],
-        role='string'
+        resourceTypes=[{"type": "string", "operations": ["string"]}],
+        role="string",
     )
     return endpoint_result
 
@@ -48,10 +50,7 @@ def add_role_api(api):
 @pytest.mark.user_and_roles
 def test_add_role_api(api, validator):
     try:
-        assert is_valid_add_role_api(
-            validator,
-            add_role_api(api)
-        )
+        assert is_valid_add_role_api(validator, add_role_api(api))
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
             print(original_e)
@@ -64,7 +63,7 @@ def add_role_api_default_val(api):
         description=None,
         payload=None,
         resourceTypes=None,
-        role=None
+        role=None,
     )
     return endpoint_result
 
@@ -72,27 +71,24 @@ def add_role_api_default_val(api):
 @pytest.mark.user_and_roles
 def test_add_role_api_default_val(api, validator):
     try:
-        assert is_valid_add_role_api(
-            validator,
-            add_role_api_default_val(api)
-        )
+        assert is_valid_add_role_api(validator, add_role_api_default_val(api))
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
 def is_valid_update_role_api(json_schema_validate, obj):
-    json_schema_validate('jsd_ff5bf5a67c6c5c0aa9e7ba84c088e1a6_v2_3_7_9').validate(obj)
+    json_schema_validate("jsd_ff5bf5a67c6c5c0aa9e7ba84c088e1a6_v2_3_7_9").validate(obj)
     return True
 
 
 def update_role_api(api):
     endpoint_result = api.user_and_roles.update_role_api(
         active_validation=True,
-        description='string',
+        description="string",
         payload=None,
-        resourceTypes=[{'type': 'string', 'operations': ['string']}],
-        roleId='string'
+        resourceTypes=[{"type": "string", "operations": ["string"]}],
+        roleId="string",
     )
     return endpoint_result
 
@@ -100,10 +96,7 @@ def update_role_api(api):
 @pytest.mark.user_and_roles
 def test_update_role_api(api, validator):
     try:
-        assert is_valid_update_role_api(
-            validator,
-            update_role_api(api)
-        )
+        assert is_valid_update_role_api(validator, update_role_api(api))
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
             print(original_e)
@@ -116,7 +109,7 @@ def update_role_api_default_val(api):
         description=None,
         payload=None,
         resourceTypes=None,
-        roleId=None
+        roleId=None,
     )
     return endpoint_result
 
@@ -124,34 +117,26 @@ def update_role_api_default_val(api):
 @pytest.mark.user_and_roles
 def test_update_role_api_default_val(api, validator):
     try:
-        assert is_valid_update_role_api(
-            validator,
-            update_role_api_default_val(api)
-        )
+        assert is_valid_update_role_api(validator, update_role_api_default_val(api))
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
 def is_valid_get_permissions_api(json_schema_validate, obj):
-    json_schema_validate('jsd_9ec0b30eca9d540a845848cffd7c602a_v2_3_7_9').validate(obj)
+    json_schema_validate("jsd_9ec0b30eca9d540a845848cffd7c602a_v2_3_7_9").validate(obj)
     return True
 
 
 def get_permissions_api(api):
-    endpoint_result = api.user_and_roles.get_permissions_api(
-
-    )
+    endpoint_result = api.user_and_roles.get_permissions_api()
     return endpoint_result
 
 
 @pytest.mark.user_and_roles
 def test_get_permissions_api(api, validator):
     try:
-        assert is_valid_get_permissions_api(
-            validator,
-            get_permissions_api(api)
-        )
+        assert is_valid_get_permissions_api(validator, get_permissions_api(api))
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
             print(original_e)
@@ -159,9 +144,7 @@ def test_get_permissions_api(api, validator):
 
 
 def get_permissions_api_default_val(api):
-    endpoint_result = api.user_and_roles.get_permissions_api(
-
-    )
+    endpoint_result = api.user_and_roles.get_permissions_api()
     return endpoint_result
 
 
@@ -169,8 +152,7 @@ def get_permissions_api_default_val(api):
 def test_get_permissions_api_default_val(api, validator):
     try:
         assert is_valid_get_permissions_api(
-            validator,
-            get_permissions_api_default_val(api)
+            validator, get_permissions_api_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -178,24 +160,19 @@ def test_get_permissions_api_default_val(api, validator):
 
 
 def is_valid_delete_role_api(json_schema_validate, obj):
-    json_schema_validate('jsd_da9e850c44d353f78ab002a640e5604f_v2_3_7_9').validate(obj)
+    json_schema_validate("jsd_da9e850c44d353f78ab002a640e5604f_v2_3_7_9").validate(obj)
     return True
 
 
 def delete_role_api(api):
-    endpoint_result = api.user_and_roles.delete_role_api(
-        role_id='string'
-    )
+    endpoint_result = api.user_and_roles.delete_role_api(role_id="string")
     return endpoint_result
 
 
 @pytest.mark.user_and_roles
 def test_delete_role_api(api, validator):
     try:
-        assert is_valid_delete_role_api(
-            validator,
-            delete_role_api(api)
-        )
+        assert is_valid_delete_role_api(validator, delete_role_api(api))
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
             print(original_e)
@@ -203,43 +180,33 @@ def test_delete_role_api(api, validator):
 
 
 def delete_role_api_default_val(api):
-    endpoint_result = api.user_and_roles.delete_role_api(
-        role_id='string'
-    )
+    endpoint_result = api.user_and_roles.delete_role_api(role_id="string")
     return endpoint_result
 
 
 @pytest.mark.user_and_roles
 def test_delete_role_api_default_val(api, validator):
     try:
-        assert is_valid_delete_role_api(
-            validator,
-            delete_role_api_default_val(api)
-        )
+        assert is_valid_delete_role_api(validator, delete_role_api_default_val(api))
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
 def is_valid_get_roles_api(json_schema_validate, obj):
-    json_schema_validate('jsd_bef02e8f6f8354dc99e375826a87c88c_v2_3_7_9').validate(obj)
+    json_schema_validate("jsd_bef02e8f6f8354dc99e375826a87c88c_v2_3_7_9").validate(obj)
     return True
 
 
 def get_roles_api(api):
-    endpoint_result = api.user_and_roles.get_roles_api(
-
-    )
+    endpoint_result = api.user_and_roles.get_roles_api()
     return endpoint_result
 
 
 @pytest.mark.user_and_roles
 def test_get_roles_api(api, validator):
     try:
-        assert is_valid_get_roles_api(
-            validator,
-            get_roles_api(api)
-        )
+        assert is_valid_get_roles_api(validator, get_roles_api(api))
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
             print(original_e)
@@ -247,33 +214,27 @@ def test_get_roles_api(api, validator):
 
 
 def get_roles_api_default_val(api):
-    endpoint_result = api.user_and_roles.get_roles_api(
-
-    )
+    endpoint_result = api.user_and_roles.get_roles_api()
     return endpoint_result
 
 
 @pytest.mark.user_and_roles
 def test_get_roles_api_default_val(api, validator):
     try:
-        assert is_valid_get_roles_api(
-            validator,
-            get_roles_api_default_val(api)
-        )
+        assert is_valid_get_roles_api(validator, get_roles_api_default_val(api))
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
 def is_valid_get_users_api(json_schema_validate, obj):
-    json_schema_validate('jsd_7fa405b6d1be56739f2dfeea63212015_v2_3_7_9').validate(obj)
+    json_schema_validate("jsd_7fa405b6d1be56739f2dfeea63212015_v2_3_7_9").validate(obj)
     return True
 
 
 def get_users_api(api):
     endpoint_result = api.user_and_roles.get_users_api(
-        auth_source='string',
-        invoke_source='string'
+        auth_source="string", invoke_source="string"
     )
     return endpoint_result
 
@@ -281,10 +242,7 @@ def get_users_api(api):
 @pytest.mark.user_and_roles
 def test_get_users_api(api, validator):
     try:
-        assert is_valid_get_users_api(
-            validator,
-            get_users_api(api)
-        )
+        assert is_valid_get_users_api(validator, get_users_api(api))
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
             print(original_e)
@@ -293,8 +251,7 @@ def test_get_users_api(api, validator):
 
 def get_users_api_default_val(api):
     endpoint_result = api.user_and_roles.get_users_api(
-        auth_source=None,
-        invoke_source=None
+        auth_source=None, invoke_source=None
     )
     return endpoint_result
 
@@ -302,30 +259,27 @@ def get_users_api_default_val(api):
 @pytest.mark.user_and_roles
 def test_get_users_api_default_val(api, validator):
     try:
-        assert is_valid_get_users_api(
-            validator,
-            get_users_api_default_val(api)
-        )
+        assert is_valid_get_users_api(validator, get_users_api_default_val(api))
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
 def is_valid_add_user_api(json_schema_validate, obj):
-    json_schema_validate('jsd_6d82755e5e03510daf0951c1f42c2702_v2_3_7_9').validate(obj)
+    json_schema_validate("jsd_6d82755e5e03510daf0951c1f42c2702_v2_3_7_9").validate(obj)
     return True
 
 
 def add_user_api(api):
     endpoint_result = api.user_and_roles.add_user_api(
         active_validation=True,
-        email='string',
-        firstName='string',
-        lastName='string',
-        password='string',
+        email="string",
+        firstName="string",
+        lastName="string",
+        password="string",
         payload=None,
-        roleList=['string'],
-        username='string'
+        roleList=["string"],
+        username="string",
     )
     return endpoint_result
 
@@ -333,10 +287,7 @@ def add_user_api(api):
 @pytest.mark.user_and_roles
 def test_add_user_api(api, validator):
     try:
-        assert is_valid_add_user_api(
-            validator,
-            add_user_api(api)
-        )
+        assert is_valid_add_user_api(validator, add_user_api(api))
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
             print(original_e)
@@ -352,7 +303,7 @@ def add_user_api_default_val(api):
         password=None,
         payload=None,
         roleList=None,
-        username=None
+        username=None,
     )
     return endpoint_result
 
@@ -360,30 +311,27 @@ def add_user_api_default_val(api):
 @pytest.mark.user_and_roles
 def test_add_user_api_default_val(api, validator):
     try:
-        assert is_valid_add_user_api(
-            validator,
-            add_user_api_default_val(api)
-        )
+        assert is_valid_add_user_api(validator, add_user_api_default_val(api))
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
 def is_valid_update_user_api(json_schema_validate, obj):
-    json_schema_validate('jsd_34d2bd5f05bd535a89ebadb30e2ede9e_v2_3_7_9').validate(obj)
+    json_schema_validate("jsd_34d2bd5f05bd535a89ebadb30e2ede9e_v2_3_7_9").validate(obj)
     return True
 
 
 def update_user_api(api):
     endpoint_result = api.user_and_roles.update_user_api(
         active_validation=True,
-        email='string',
-        firstName='string',
-        lastName='string',
+        email="string",
+        firstName="string",
+        lastName="string",
         payload=None,
-        roleList=['string'],
-        userId='string',
-        username='string'
+        roleList=["string"],
+        userId="string",
+        username="string",
     )
     return endpoint_result
 
@@ -391,10 +339,7 @@ def update_user_api(api):
 @pytest.mark.user_and_roles
 def test_update_user_api(api, validator):
     try:
-        assert is_valid_update_user_api(
-            validator,
-            update_user_api(api)
-        )
+        assert is_valid_update_user_api(validator, update_user_api(api))
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
             print(original_e)
@@ -410,7 +355,7 @@ def update_user_api_default_val(api):
         payload=None,
         roleList=None,
         userId=None,
-        username=None
+        username=None,
     )
     return endpoint_result
 
@@ -418,34 +363,26 @@ def update_user_api_default_val(api):
 @pytest.mark.user_and_roles
 def test_update_user_api_default_val(api, validator):
     try:
-        assert is_valid_update_user_api(
-            validator,
-            update_user_api_default_val(api)
-        )
+        assert is_valid_update_user_api(validator, update_user_api_default_val(api))
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
 def is_valid_delete_user_api(json_schema_validate, obj):
-    json_schema_validate('jsd_3556c65c6cc65f068766cbb8a42ad387_v2_3_7_9').validate(obj)
+    json_schema_validate("jsd_3556c65c6cc65f068766cbb8a42ad387_v2_3_7_9").validate(obj)
     return True
 
 
 def delete_user_api(api):
-    endpoint_result = api.user_and_roles.delete_user_api(
-        user_id='string'
-    )
+    endpoint_result = api.user_and_roles.delete_user_api(user_id="string")
     return endpoint_result
 
 
 @pytest.mark.user_and_roles
 def test_delete_user_api(api, validator):
     try:
-        assert is_valid_delete_user_api(
-            validator,
-            delete_user_api(api)
-        )
+        assert is_valid_delete_user_api(validator, delete_user_api(api))
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
             print(original_e)
@@ -453,33 +390,26 @@ def test_delete_user_api(api, validator):
 
 
 def delete_user_api_default_val(api):
-    endpoint_result = api.user_and_roles.delete_user_api(
-        user_id='string'
-    )
+    endpoint_result = api.user_and_roles.delete_user_api(user_id="string")
     return endpoint_result
 
 
 @pytest.mark.user_and_roles
 def test_delete_user_api_default_val(api, validator):
     try:
-        assert is_valid_delete_user_api(
-            validator,
-            delete_user_api_default_val(api)
-        )
+        assert is_valid_delete_user_api(validator, delete_user_api_default_val(api))
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
 def is_valid_get_external_authentication_setting_api(json_schema_validate, obj):
-    json_schema_validate('jsd_5490ac03ba045f60925fd7843bf9e279_v2_3_7_9').validate(obj)
+    json_schema_validate("jsd_5490ac03ba045f60925fd7843bf9e279_v2_3_7_9").validate(obj)
     return True
 
 
 def get_external_authentication_setting_api(api):
-    endpoint_result = api.user_and_roles.get_external_authentication_setting_api(
-
-    )
+    endpoint_result = api.user_and_roles.get_external_authentication_setting_api()
     return endpoint_result
 
 
@@ -487,8 +417,7 @@ def get_external_authentication_setting_api(api):
 def test_get_external_authentication_setting_api(api, validator):
     try:
         assert is_valid_get_external_authentication_setting_api(
-            validator,
-            get_external_authentication_setting_api(api)
+            validator, get_external_authentication_setting_api(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -497,9 +426,7 @@ def test_get_external_authentication_setting_api(api, validator):
 
 
 def get_external_authentication_setting_api_default_val(api):
-    endpoint_result = api.user_and_roles.get_external_authentication_setting_api(
-
-    )
+    endpoint_result = api.user_and_roles.get_external_authentication_setting_api()
     return endpoint_result
 
 
@@ -507,8 +434,7 @@ def get_external_authentication_setting_api_default_val(api):
 def test_get_external_authentication_setting_api_default_val(api, validator):
     try:
         assert is_valid_get_external_authentication_setting_api(
-            validator,
-            get_external_authentication_setting_api_default_val(api)
+            validator, get_external_authentication_setting_api_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -516,15 +442,13 @@ def test_get_external_authentication_setting_api_default_val(api, validator):
 
 
 def is_valid_manage_external_authentication_setting_api(json_schema_validate, obj):
-    json_schema_validate('jsd_6e4f57e8f06856ee9a7e490d01f7f692_v2_3_7_9').validate(obj)
+    json_schema_validate("jsd_6e4f57e8f06856ee9a7e490d01f7f692_v2_3_7_9").validate(obj)
     return True
 
 
 def manage_external_authentication_setting_api(api):
     endpoint_result = api.user_and_roles.manage_external_authentication_setting_api(
-        active_validation=True,
-        enable=True,
-        payload=None
+        active_validation=True, enable=True, payload=None
     )
     return endpoint_result
 
@@ -533,8 +457,7 @@ def manage_external_authentication_setting_api(api):
 def test_manage_external_authentication_setting_api(api, validator):
     try:
         assert is_valid_manage_external_authentication_setting_api(
-            validator,
-            manage_external_authentication_setting_api(api)
+            validator, manage_external_authentication_setting_api(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -544,9 +467,7 @@ def test_manage_external_authentication_setting_api(api, validator):
 
 def manage_external_authentication_setting_api_default_val(api):
     endpoint_result = api.user_and_roles.manage_external_authentication_setting_api(
-        active_validation=True,
-        enable=None,
-        payload=None
+        active_validation=True, enable=None, payload=None
     )
     return endpoint_result
 
@@ -555,8 +476,7 @@ def manage_external_authentication_setting_api_default_val(api):
 def test_manage_external_authentication_setting_api_default_val(api, validator):
     try:
         assert is_valid_manage_external_authentication_setting_api(
-            validator,
-            manage_external_authentication_setting_api_default_val(api)
+            validator, manage_external_authentication_setting_api_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -564,13 +484,13 @@ def test_manage_external_authentication_setting_api_default_val(api, validator):
 
 
 def is_valid_get_external_authentication_servers_api(json_schema_validate, obj):
-    json_schema_validate('jsd_452738def9045d4d9c96bcd42172a79c_v2_3_7_9').validate(obj)
+    json_schema_validate("jsd_452738def9045d4d9c96bcd42172a79c_v2_3_7_9").validate(obj)
     return True
 
 
 def get_external_authentication_servers_api(api):
     endpoint_result = api.user_and_roles.get_external_authentication_servers_api(
-        invoke_source='string'
+        invoke_source="string"
     )
     return endpoint_result
 
@@ -579,8 +499,7 @@ def get_external_authentication_servers_api(api):
 def test_get_external_authentication_servers_api(api, validator):
     try:
         assert is_valid_get_external_authentication_servers_api(
-            validator,
-            get_external_authentication_servers_api(api)
+            validator, get_external_authentication_servers_api(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -599,8 +518,7 @@ def get_external_authentication_servers_api_default_val(api):
 def test_get_external_authentication_servers_api_default_val(api, validator):
     try:
         assert is_valid_get_external_authentication_servers_api(
-            validator,
-            get_external_authentication_servers_api_default_val(api)
+            validator, get_external_authentication_servers_api_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -608,15 +526,13 @@ def test_get_external_authentication_servers_api_default_val(api, validator):
 
 
 def is_valid_add_and_update_aaa_attribute_api(json_schema_validate, obj):
-    json_schema_validate('jsd_9f5bfccc7e30550baa7046f74daa1ef2_v2_3_7_9').validate(obj)
+    json_schema_validate("jsd_9f5bfccc7e30550baa7046f74daa1ef2_v2_3_7_9").validate(obj)
     return True
 
 
 def add_and_update_aaa_attribute_api(api):
     endpoint_result = api.user_and_roles.add_and_update_aaa_attribute_api(
-        active_validation=True,
-        attributeName='string',
-        payload=None
+        active_validation=True, attributeName="string", payload=None
     )
     return endpoint_result
 
@@ -625,8 +541,7 @@ def add_and_update_aaa_attribute_api(api):
 def test_add_and_update_aaa_attribute_api(api, validator):
     try:
         assert is_valid_add_and_update_aaa_attribute_api(
-            validator,
-            add_and_update_aaa_attribute_api(api)
+            validator, add_and_update_aaa_attribute_api(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -636,9 +551,7 @@ def test_add_and_update_aaa_attribute_api(api, validator):
 
 def add_and_update_aaa_attribute_api_default_val(api):
     endpoint_result = api.user_and_roles.add_and_update_aaa_attribute_api(
-        active_validation=True,
-        attributeName=None,
-        payload=None
+        active_validation=True, attributeName=None, payload=None
     )
     return endpoint_result
 
@@ -647,8 +560,7 @@ def add_and_update_aaa_attribute_api_default_val(api):
 def test_add_and_update_aaa_attribute_api_default_val(api, validator):
     try:
         assert is_valid_add_and_update_aaa_attribute_api(
-            validator,
-            add_and_update_aaa_attribute_api_default_val(api)
+            validator, add_and_update_aaa_attribute_api_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -656,14 +568,12 @@ def test_add_and_update_aaa_attribute_api_default_val(api, validator):
 
 
 def is_valid_delete_aaa_attribute_api(json_schema_validate, obj):
-    json_schema_validate('jsd_f20c99b436bd5be8bdb9094db3a47f01_v2_3_7_9').validate(obj)
+    json_schema_validate("jsd_f20c99b436bd5be8bdb9094db3a47f01_v2_3_7_9").validate(obj)
     return True
 
 
 def delete_aaa_attribute_api(api):
-    endpoint_result = api.user_and_roles.delete_aaa_attribute_api(
-
-    )
+    endpoint_result = api.user_and_roles.delete_aaa_attribute_api()
     return endpoint_result
 
 
@@ -671,8 +581,7 @@ def delete_aaa_attribute_api(api):
 def test_delete_aaa_attribute_api(api, validator):
     try:
         assert is_valid_delete_aaa_attribute_api(
-            validator,
-            delete_aaa_attribute_api(api)
+            validator, delete_aaa_attribute_api(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -681,9 +590,7 @@ def test_delete_aaa_attribute_api(api, validator):
 
 
 def delete_aaa_attribute_api_default_val(api):
-    endpoint_result = api.user_and_roles.delete_aaa_attribute_api(
-
-    )
+    endpoint_result = api.user_and_roles.delete_aaa_attribute_api()
     return endpoint_result
 
 
@@ -691,8 +598,7 @@ def delete_aaa_attribute_api_default_val(api):
 def test_delete_aaa_attribute_api_default_val(api, validator):
     try:
         assert is_valid_delete_aaa_attribute_api(
-            validator,
-            delete_aaa_attribute_api_default_val(api)
+            validator, delete_aaa_attribute_api_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -700,24 +606,19 @@ def test_delete_aaa_attribute_api_default_val(api, validator):
 
 
 def is_valid_get_aaa_attribute_api(json_schema_validate, obj):
-    json_schema_validate('jsd_4bedf83096a45ad1beaaa1fc6c192103_v2_3_7_9').validate(obj)
+    json_schema_validate("jsd_4bedf83096a45ad1beaaa1fc6c192103_v2_3_7_9").validate(obj)
     return True
 
 
 def get_aaa_attribute_api(api):
-    endpoint_result = api.user_and_roles.get_aaa_attribute_api(
-
-    )
+    endpoint_result = api.user_and_roles.get_aaa_attribute_api()
     return endpoint_result
 
 
 @pytest.mark.user_and_roles
 def test_get_aaa_attribute_api(api, validator):
     try:
-        assert is_valid_get_aaa_attribute_api(
-            validator,
-            get_aaa_attribute_api(api)
-        )
+        assert is_valid_get_aaa_attribute_api(validator, get_aaa_attribute_api(api))
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
             print(original_e)
@@ -725,9 +626,7 @@ def test_get_aaa_attribute_api(api, validator):
 
 
 def get_aaa_attribute_api_default_val(api):
-    endpoint_result = api.user_and_roles.get_aaa_attribute_api(
-
-    )
+    endpoint_result = api.user_and_roles.get_aaa_attribute_api()
     return endpoint_result
 
 
@@ -735,8 +634,7 @@ def get_aaa_attribute_api_default_val(api):
 def test_get_aaa_attribute_api_default_val(api, validator):
     try:
         assert is_valid_get_aaa_attribute_api(
-            validator,
-            get_aaa_attribute_api_default_val(api)
+            validator, get_aaa_attribute_api_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

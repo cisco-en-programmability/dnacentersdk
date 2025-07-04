@@ -26,22 +26,30 @@ from fastjsonschema.exceptions import JsonSchemaException
 from dnacentersdk.exceptions import MalformedRequest
 from tests.environment import DNA_CENTER_VERSION
 
-pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '2.3.7.9', reason='version does not match')
+pytestmark = pytest.mark.skipif(
+    DNA_CENTER_VERSION != "2.3.7.9", reason="version does not match"
+)
 
 
 def is_valid_create_itsm_integration_setting(json_schema_validate, obj):
-    json_schema_validate('jsd_2bb01b6bd31b53bfb12bbe327320392e_v2_3_7_9').validate(obj)
+    json_schema_validate("jsd_2bb01b6bd31b53bfb12bbe327320392e_v2_3_7_9").validate(obj)
     return True
 
 
 def create_itsm_integration_setting(api):
     endpoint_result = api.itsm_integration.create_itsm_integration_setting(
         active_validation=True,
-        data={'ConnectionSettings': {'Url': 'string', 'Auth_UserName': 'string', 'Auth_Password': 'string'}},
-        description='string',
-        dypName='string',
-        name='string',
-        payload=None
+        data={
+            "ConnectionSettings": {
+                "Url": "string",
+                "Auth_UserName": "string",
+                "Auth_Password": "string",
+            }
+        },
+        description="string",
+        dypName="string",
+        name="string",
+        payload=None,
     )
     return endpoint_result
 
@@ -50,8 +58,7 @@ def create_itsm_integration_setting(api):
 def test_create_itsm_integration_setting(api, validator):
     try:
         assert is_valid_create_itsm_integration_setting(
-            validator,
-            create_itsm_integration_setting(api)
+            validator, create_itsm_integration_setting(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -66,7 +73,7 @@ def create_itsm_integration_setting_default_val(api):
         description=None,
         dypName=None,
         name=None,
-        payload=None
+        payload=None,
     )
     return endpoint_result
 
@@ -75,8 +82,7 @@ def create_itsm_integration_setting_default_val(api):
 def test_create_itsm_integration_setting_default_val(api, validator):
     try:
         assert is_valid_create_itsm_integration_setting(
-            validator,
-            create_itsm_integration_setting_default_val(api)
+            validator, create_itsm_integration_setting_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -84,19 +90,25 @@ def test_create_itsm_integration_setting_default_val(api, validator):
 
 
 def is_valid_update_itsm_integration_setting(json_schema_validate, obj):
-    json_schema_validate('jsd_c9b5b83e67195b649077a05e42897cc4_v2_3_7_9').validate(obj)
+    json_schema_validate("jsd_c9b5b83e67195b649077a05e42897cc4_v2_3_7_9").validate(obj)
     return True
 
 
 def update_itsm_integration_setting(api):
     endpoint_result = api.itsm_integration.update_itsm_integration_setting(
         active_validation=True,
-        data={'ConnectionSettings': {'Url': 'string', 'Auth_UserName': 'string', 'Auth_Password': 'string'}},
-        description='string',
-        dypName='string',
-        instance_id='string',
-        name='string',
-        payload=None
+        data={
+            "ConnectionSettings": {
+                "Url": "string",
+                "Auth_UserName": "string",
+                "Auth_Password": "string",
+            }
+        },
+        description="string",
+        dypName="string",
+        instance_id="string",
+        name="string",
+        payload=None,
     )
     return endpoint_result
 
@@ -105,8 +117,7 @@ def update_itsm_integration_setting(api):
 def test_update_itsm_integration_setting(api, validator):
     try:
         assert is_valid_update_itsm_integration_setting(
-            validator,
-            update_itsm_integration_setting(api)
+            validator, update_itsm_integration_setting(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -120,9 +131,9 @@ def update_itsm_integration_setting_default_val(api):
         data=None,
         description=None,
         dypName=None,
-        instance_id='string',
+        instance_id="string",
         name=None,
-        payload=None
+        payload=None,
     )
     return endpoint_result
 
@@ -131,8 +142,7 @@ def update_itsm_integration_setting_default_val(api):
 def test_update_itsm_integration_setting_default_val(api, validator):
     try:
         assert is_valid_update_itsm_integration_setting(
-            validator,
-            update_itsm_integration_setting_default_val(api)
+            validator, update_itsm_integration_setting_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -140,13 +150,13 @@ def test_update_itsm_integration_setting_default_val(api, validator):
 
 
 def is_valid_get_itsm_integration_setting_by_id(json_schema_validate, obj):
-    json_schema_validate('jsd_53ca7a97d4665bca9634b6fb41cd7d29_v2_3_7_9').validate(obj)
+    json_schema_validate("jsd_53ca7a97d4665bca9634b6fb41cd7d29_v2_3_7_9").validate(obj)
     return True
 
 
 def get_itsm_integration_setting_by_id(api):
     endpoint_result = api.itsm_integration.get_itsm_integration_setting_by_id(
-        instance_id='string'
+        instance_id="string"
     )
     return endpoint_result
 
@@ -155,8 +165,7 @@ def get_itsm_integration_setting_by_id(api):
 def test_get_itsm_integration_setting_by_id(api, validator):
     try:
         assert is_valid_get_itsm_integration_setting_by_id(
-            validator,
-            get_itsm_integration_setting_by_id(api)
+            validator, get_itsm_integration_setting_by_id(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -166,7 +175,7 @@ def test_get_itsm_integration_setting_by_id(api, validator):
 
 def get_itsm_integration_setting_by_id_default_val(api):
     endpoint_result = api.itsm_integration.get_itsm_integration_setting_by_id(
-        instance_id='string'
+        instance_id="string"
     )
     return endpoint_result
 
@@ -175,8 +184,7 @@ def get_itsm_integration_setting_by_id_default_val(api):
 def test_get_itsm_integration_setting_by_id_default_val(api, validator):
     try:
         assert is_valid_get_itsm_integration_setting_by_id(
-            validator,
-            get_itsm_integration_setting_by_id_default_val(api)
+            validator, get_itsm_integration_setting_by_id_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -184,13 +192,13 @@ def test_get_itsm_integration_setting_by_id_default_val(api, validator):
 
 
 def is_valid_delete_itsm_integration_setting(json_schema_validate, obj):
-    json_schema_validate('jsd_7ae71ae83f7f530c81e650c1455567e8_v2_3_7_9').validate(obj)
+    json_schema_validate("jsd_7ae71ae83f7f530c81e650c1455567e8_v2_3_7_9").validate(obj)
     return True
 
 
 def delete_itsm_integration_setting(api):
     endpoint_result = api.itsm_integration.delete_itsm_integration_setting(
-        instance_id='string'
+        instance_id="string"
     )
     return endpoint_result
 
@@ -199,8 +207,7 @@ def delete_itsm_integration_setting(api):
 def test_delete_itsm_integration_setting(api, validator):
     try:
         assert is_valid_delete_itsm_integration_setting(
-            validator,
-            delete_itsm_integration_setting(api)
+            validator, delete_itsm_integration_setting(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -210,7 +217,7 @@ def test_delete_itsm_integration_setting(api, validator):
 
 def delete_itsm_integration_setting_default_val(api):
     endpoint_result = api.itsm_integration.delete_itsm_integration_setting(
-        instance_id='string'
+        instance_id="string"
     )
     return endpoint_result
 
@@ -219,8 +226,7 @@ def delete_itsm_integration_setting_default_val(api):
 def test_delete_itsm_integration_setting_default_val(api, validator):
     try:
         assert is_valid_delete_itsm_integration_setting(
-            validator,
-            delete_itsm_integration_setting_default_val(api)
+            validator, delete_itsm_integration_setting_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -228,16 +234,13 @@ def test_delete_itsm_integration_setting_default_val(api, validator):
 
 
 def is_valid_get_all_itsm_integration_settings(json_schema_validate, obj):
-    json_schema_validate('jsd_ac54638bea4157f2bbd03f329ac25e27_v2_3_7_9').validate(obj)
+    json_schema_validate("jsd_ac54638bea4157f2bbd03f329ac25e27_v2_3_7_9").validate(obj)
     return True
 
 
 def get_all_itsm_integration_settings(api):
     endpoint_result = api.itsm_integration.get_all_itsm_integration_settings(
-        order='string',
-        page=0,
-        page_size=0,
-        sort_by='string'
+        order="string", page=0, page_size=0, sort_by="string"
     )
     return endpoint_result
 
@@ -246,8 +249,7 @@ def get_all_itsm_integration_settings(api):
 def test_get_all_itsm_integration_settings(api, validator):
     try:
         assert is_valid_get_all_itsm_integration_settings(
-            validator,
-            get_all_itsm_integration_settings(api)
+            validator, get_all_itsm_integration_settings(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -257,10 +259,7 @@ def test_get_all_itsm_integration_settings(api, validator):
 
 def get_all_itsm_integration_settings_default_val(api):
     endpoint_result = api.itsm_integration.get_all_itsm_integration_settings(
-        order=None,
-        page=None,
-        page_size=None,
-        sort_by=None
+        order=None, page=None, page_size=None, sort_by=None
     )
     return endpoint_result
 
@@ -269,8 +268,7 @@ def get_all_itsm_integration_settings_default_val(api):
 def test_get_all_itsm_integration_settings_default_val(api, validator):
     try:
         assert is_valid_get_all_itsm_integration_settings(
-            validator,
-            get_all_itsm_integration_settings_default_val(api)
+            validator, get_all_itsm_integration_settings_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -278,14 +276,12 @@ def test_get_all_itsm_integration_settings_default_val(api, validator):
 
 
 def is_valid_get_itsm_integration_status(json_schema_validate, obj):
-    json_schema_validate('jsd_e8398520e0aa5a549ddb60c11581b93d_v2_3_7_9').validate(obj)
+    json_schema_validate("jsd_e8398520e0aa5a549ddb60c11581b93d_v2_3_7_9").validate(obj)
     return True
 
 
 def get_itsm_integration_status(api):
-    endpoint_result = api.itsm_integration.get_itsm_integration_status(
-
-    )
+    endpoint_result = api.itsm_integration.get_itsm_integration_status()
     return endpoint_result
 
 
@@ -293,8 +289,7 @@ def get_itsm_integration_status(api):
 def test_get_itsm_integration_status(api, validator):
     try:
         assert is_valid_get_itsm_integration_status(
-            validator,
-            get_itsm_integration_status(api)
+            validator, get_itsm_integration_status(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -303,9 +298,7 @@ def test_get_itsm_integration_status(api, validator):
 
 
 def get_itsm_integration_status_default_val(api):
-    endpoint_result = api.itsm_integration.get_itsm_integration_status(
-
-    )
+    endpoint_result = api.itsm_integration.get_itsm_integration_status()
     return endpoint_result
 
 
@@ -313,8 +306,7 @@ def get_itsm_integration_status_default_val(api):
 def test_get_itsm_integration_status_default_val(api, validator):
     try:
         assert is_valid_get_itsm_integration_status(
-            validator,
-            get_itsm_integration_status_default_val(api)
+            validator, get_itsm_integration_status_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

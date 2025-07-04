@@ -26,18 +26,18 @@ from fastjsonschema.exceptions import JsonSchemaException
 from dnacentersdk.exceptions import MalformedRequest
 from tests.environment import DNA_CENTER_VERSION
 
-pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '2.3.5.3', reason='version does not match')
+pytestmark = pytest.mark.skipif(
+    DNA_CENTER_VERSION != "2.3.5.3", reason="version does not match"
+)
 
 
 def is_valid_get_all_keywords_of_clis_accepted(json_schema_validate, obj):
-    json_schema_validate('jsd_53e946adf864590082fe3111a2a2fa74_v2_3_5_3').validate(obj)
+    json_schema_validate("jsd_53e946adf864590082fe3111a2a2fa74_v2_3_5_3").validate(obj)
     return True
 
 
 def get_all_keywords_of_clis_accepted(api):
-    endpoint_result = api.command_runner.get_all_keywords_of_clis_accepted(
-
-    )
+    endpoint_result = api.command_runner.get_all_keywords_of_clis_accepted()
     return endpoint_result
 
 
@@ -45,8 +45,7 @@ def get_all_keywords_of_clis_accepted(api):
 def test_get_all_keywords_of_clis_accepted(api, validator):
     try:
         assert is_valid_get_all_keywords_of_clis_accepted(
-            validator,
-            get_all_keywords_of_clis_accepted(api)
+            validator, get_all_keywords_of_clis_accepted(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -55,9 +54,7 @@ def test_get_all_keywords_of_clis_accepted(api, validator):
 
 
 def get_all_keywords_of_clis_accepted_default_val(api):
-    endpoint_result = api.command_runner.get_all_keywords_of_clis_accepted(
-
-    )
+    endpoint_result = api.command_runner.get_all_keywords_of_clis_accepted()
     return endpoint_result
 
 
@@ -65,8 +62,7 @@ def get_all_keywords_of_clis_accepted_default_val(api):
 def test_get_all_keywords_of_clis_accepted_default_val(api, validator):
     try:
         assert is_valid_get_all_keywords_of_clis_accepted(
-            validator,
-            get_all_keywords_of_clis_accepted_default_val(api)
+            validator, get_all_keywords_of_clis_accepted_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -74,19 +70,19 @@ def test_get_all_keywords_of_clis_accepted_default_val(api, validator):
 
 
 def is_valid_run_read_only_commands_on_devices(json_schema_validate, obj):
-    json_schema_validate('jsd_b2dae3b41636596aa02c3ad0a4bcb8d7_v2_3_5_3').validate(obj)
+    json_schema_validate("jsd_b2dae3b41636596aa02c3ad0a4bcb8d7_v2_3_5_3").validate(obj)
     return True
 
 
 def run_read_only_commands_on_devices(api):
     endpoint_result = api.command_runner.run_read_only_commands_on_devices(
         active_validation=True,
-        commands=['string'],
-        description='string',
-        deviceUuids=['string'],
-        name='string',
+        commands=["string"],
+        description="string",
+        deviceUuids=["string"],
+        name="string",
         payload=None,
-        timeout=0
+        timeout=0,
     )
     return endpoint_result
 
@@ -95,8 +91,7 @@ def run_read_only_commands_on_devices(api):
 def test_run_read_only_commands_on_devices(api, validator):
     try:
         assert is_valid_run_read_only_commands_on_devices(
-            validator,
-            run_read_only_commands_on_devices(api)
+            validator, run_read_only_commands_on_devices(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -112,7 +107,7 @@ def run_read_only_commands_on_devices_default_val(api):
         deviceUuids=None,
         name=None,
         payload=None,
-        timeout=None
+        timeout=None,
     )
     return endpoint_result
 
@@ -121,8 +116,7 @@ def run_read_only_commands_on_devices_default_val(api):
 def test_run_read_only_commands_on_devices_default_val(api, validator):
     try:
         assert is_valid_run_read_only_commands_on_devices(
-            validator,
-            run_read_only_commands_on_devices_default_val(api)
+            validator, run_read_only_commands_on_devices_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

@@ -26,20 +26,19 @@ from fastjsonschema.exceptions import JsonSchemaException
 from dnacentersdk.exceptions import MalformedRequest
 from tests.environment import DNA_CENTER_VERSION
 
-pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '2.3.5.3', reason='version does not match')
+pytestmark = pytest.mark.skipif(
+    DNA_CENTER_VERSION != "2.3.5.3", reason="version does not match"
+)
 
 
 def is_valid_export_device_configurations(json_schema_validate, obj):
-    json_schema_validate('jsd_e85b40c5ca055f4c82281617a8f95644_v2_3_5_3').validate(obj)
+    json_schema_validate("jsd_e85b40c5ca055f4c82281617a8f95644_v2_3_5_3").validate(obj)
     return True
 
 
 def export_device_configurations(api):
     endpoint_result = api.configuration_archive.export_device_configurations(
-        active_validation=True,
-        deviceId=['string'],
-        password='string',
-        payload=None
+        active_validation=True, deviceId=["string"], password="string", payload=None
     )
     return endpoint_result
 
@@ -48,8 +47,7 @@ def export_device_configurations(api):
 def test_export_device_configurations(api, validator):
     try:
         assert is_valid_export_device_configurations(
-            validator,
-            export_device_configurations(api)
+            validator, export_device_configurations(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -59,10 +57,7 @@ def test_export_device_configurations(api, validator):
 
 def export_device_configurations_default_val(api):
     endpoint_result = api.configuration_archive.export_device_configurations(
-        active_validation=True,
-        deviceId=None,
-        password=None,
-        payload=None
+        active_validation=True, deviceId=None, password=None, payload=None
     )
     return endpoint_result
 
@@ -71,8 +66,7 @@ def export_device_configurations_default_val(api):
 def test_export_device_configurations_default_val(api, validator):
     try:
         assert is_valid_export_device_configurations(
-            validator,
-            export_device_configurations_default_val(api)
+            validator, export_device_configurations_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

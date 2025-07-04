@@ -26,19 +26,19 @@ from fastjsonschema.exceptions import JsonSchemaException
 from dnacentersdk.exceptions import MalformedRequest
 from tests.environment import DNA_CENTER_VERSION
 
-pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '2.3.5.3', reason='version does not match')
+pytestmark = pytest.mark.skipif(
+    DNA_CENTER_VERSION != "2.3.5.3", reason="version does not match"
+)
 
 
 def is_valid_authorize_device(json_schema_validate, obj):
-    json_schema_validate('jsd_5627d9227adc5f02b7cd264af7255d19_v2_3_5_3').validate(obj)
+    json_schema_validate("jsd_5627d9227adc5f02b7cd264af7255d19_v2_3_5_3").validate(obj)
     return True
 
 
 def authorize_device(api):
     endpoint_result = api.cisco_dna_center_system.authorize_device(
-        active_validation=True,
-        deviceIdList=['string'],
-        payload=None
+        active_validation=True, deviceIdList=["string"], payload=None
     )
     return endpoint_result
 
@@ -46,10 +46,7 @@ def authorize_device(api):
 @pytest.mark.cisco_dna_center_system
 def test_authorize_device(api, validator):
     try:
-        assert is_valid_authorize_device(
-            validator,
-            authorize_device(api)
-        )
+        assert is_valid_authorize_device(validator, authorize_device(api))
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
             print(original_e)
@@ -58,9 +55,7 @@ def test_authorize_device(api, validator):
 
 def authorize_device_default_val(api):
     endpoint_result = api.cisco_dna_center_system.authorize_device(
-        active_validation=True,
-        deviceIdList=None,
-        payload=None
+        active_validation=True, deviceIdList=None, payload=None
     )
     return endpoint_result
 
@@ -68,10 +63,7 @@ def authorize_device_default_val(api):
 @pytest.mark.cisco_dna_center_system
 def test_authorize_device_default_val(api, validator):
     try:
-        assert is_valid_authorize_device(
-            validator,
-            authorize_device_default_val(api)
-        )
+        assert is_valid_authorize_device(validator, authorize_device_default_val(api))
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e

@@ -26,20 +26,19 @@ from fastjsonschema.exceptions import JsonSchemaException
 from dnacentersdk.exceptions import MalformedRequest
 from tests.environment import DNA_CENTER_VERSION
 
-pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '3.1.3.0', reason='version does not match')
+pytestmark = pytest.mark.skipif(
+    DNA_CENTER_VERSION != "3.1.3.0", reason="version does not match"
+)
 
 
 def is_valid_restore_backup(json_schema_validate, obj):
-    json_schema_validate('jsd_9b5a94fd2d97514b8a9cf73df4e154b8_v3_1_3_0').validate(obj)
+    json_schema_validate("jsd_9b5a94fd2d97514b8a9cf73df4e154b8_v3_1_3_0").validate(obj)
     return True
 
 
 def restore_backup(api):
     endpoint_result = api.restore.restore_backup(
-        active_validation=True,
-        encryptionPassphrase='string',
-        id='string',
-        payload=None
+        active_validation=True, encryptionPassphrase="string", id="string", payload=None
     )
     return endpoint_result
 
@@ -47,10 +46,7 @@ def restore_backup(api):
 @pytest.mark.restore
 def test_restore_backup(api, validator):
     try:
-        assert is_valid_restore_backup(
-            validator,
-            restore_backup(api)
-        )
+        assert is_valid_restore_backup(validator, restore_backup(api))
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
             print(original_e)
@@ -59,10 +55,7 @@ def test_restore_backup(api, validator):
 
 def restore_backup_default_val(api):
     endpoint_result = api.restore.restore_backup(
-        active_validation=True,
-        encryptionPassphrase=None,
-        id='string',
-        payload=None
+        active_validation=True, encryptionPassphrase=None, id="string", payload=None
     )
     return endpoint_result
 
@@ -70,10 +63,7 @@ def restore_backup_default_val(api):
 @pytest.mark.restore
 def test_restore_backup_default_val(api, validator):
     try:
-        assert is_valid_restore_backup(
-            validator,
-            restore_backup_default_val(api)
-        )
+        assert is_valid_restore_backup(validator, restore_backup_default_val(api))
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e

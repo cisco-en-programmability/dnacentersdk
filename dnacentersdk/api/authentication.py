@@ -53,8 +53,9 @@ class Authentication(object):
 
     """
 
-    def __init__(self, base_url, object_factory, single_request_timeout=None,
-                 verify=True):
+    def __init__(
+        self, base_url, object_factory, single_request_timeout=None, verify=True
+    ):
         """Initialize an Authentication
         object with the provided RestSession.
 
@@ -82,8 +83,7 @@ class Authentication(object):
         self._base_url = str(validate_base_url(base_url))
         self._single_request_timeout = single_request_timeout
         self._verify = verify
-        self._request_kwargs = {"timeout": single_request_timeout,
-                                "verify": verify}
+        self._request_kwargs = {"timeout": single_request_timeout, "verify": verify}
         self._object_factory = object_factory
 
         if verify is False:
@@ -109,8 +109,10 @@ class Authentication(object):
         """The verify (TLS Certificate) for the API endpoints."""
         check_type(value, (bool, str), may_be_none=False)
         self._verify = value
-        self._request_kwargs = {"timeout": self._single_request_timeout,
-                                "verify": self._verify}
+        self._request_kwargs = {
+            "timeout": self._single_request_timeout,
+            "verify": self._verify,
+        }
 
     @base_url.setter
     def base_url(self, value):
@@ -124,8 +126,10 @@ class Authentication(object):
         check_type(value, int)
         assert value is None or value > 0
         self._single_request_timeout = value
-        self._request_kwargs = {"timeout": self._single_request_timeout,
-                                "verify": self._verify}
+        self._request_kwargs = {
+            "timeout": self._single_request_timeout,
+            "verify": self._verify,
+        }
 
     def authentication_api(self, username, password, encoded_auth=None):
         """Exchange basic auth data for an Access Token(x-auth-token)
@@ -145,28 +149,33 @@ class Authentication(object):
             ApiError: If the Catalyst Center cloud returns an error.
 
         """
-        temp_url = '/dna/system/api/v1/auth/token'
+        temp_url = "/dna/system/api/v1/auth/token"
         self._endpoint_url = urllib.parse.urljoin(self._base_url, temp_url)
 
         if encoded_auth is not None:
             check_type(encoded_auth, str, may_be_none=False)
             if isinstance(encoded_auth, str):
-                encoded_auth = bytes(encoded_auth, 'utf-8')
+                encoded_auth = bytes(encoded_auth, "utf-8")
             # API request
-            response = requests.post(self._endpoint_url, data=None,
-                                     headers={'authorization': b'Basic '
-                                              + encoded_auth},
-                                     **self._request_kwargs)
+            response = requests.post(
+                self._endpoint_url,
+                data=None,
+                headers={"authorization": b"Basic " + encoded_auth},
+                **self._request_kwargs
+            )
         else:
             check_type(username, str, may_be_none=False)
             check_type(password, str, may_be_none=False)
             # API request
-            response = requests.post(self._endpoint_url, data=None,
-                                     auth=(username, password),
-                                     **self._request_kwargs)
+            response = requests.post(
+                self._endpoint_url,
+                data=None,
+                auth=(username, password),
+                **self._request_kwargs
+            )
 
-        check_response_code(response, EXPECTED_RESPONSE_CODE['POST'])
+        check_response_code(response, EXPECTED_RESPONSE_CODE["POST"])
         json_data = extract_and_parse_json(response)
 
         # Return a access_token object created from the response JSON data
-        return self._object_factory('bpm_ac8ae94c4e69a09d', json_data)
+        return self._object_factory("bpm_ac8ae94c4e69a09d", json_data)

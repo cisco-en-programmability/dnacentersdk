@@ -64,12 +64,14 @@ class SoftwareImageManagementSwim(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def trigger_software_image_activation(self,
-                                          schedule_validate=None,
-                                          headers=None,
-                                          payload=None,
-                                          active_validation=True,
-                                          **request_parameters):
+    def trigger_software_image_activation(
+        self,
+        schedule_validate=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Activates a software image on a given device. Software image must be present in the device flash .
 
         Args:
@@ -99,32 +101,27 @@ class SoftwareImageManagementSwim(object):
         check_type(payload, list)
         check_type(schedule_validate, bool)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'Client-Type' in headers:
-                check_type(headers.get('Client-Type'),
-                           str)
-            if 'Client-Url' in headers:
-                check_type(headers.get('Client-Url'),
-                           str)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "Client-Type" in headers:
+                check_type(headers.get("Client-Type"), str)
+            if "Client-Url" in headers:
+                check_type(headers.get("Client-Url"), str)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'scheduleValidate':
-                schedule_validate,
+            "scheduleValidate": schedule_validate,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = payload or []
         if active_validation:
-            self._request_validator('jsd_a9136d5513985f15e91a19da66c_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_a9136d5513985f15e91a19da66c_v2_3_5_3"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -132,23 +129,24 @@ class SoftwareImageManagementSwim(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/image/activation/device')
+        e_url = "/dna/intent/api/v1/image/activation/device"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_a9136d5513985f15e91a19da66c_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_a9136d5513985f15e91a19da66c_v2_3_5_3", json_data
+        )
 
-    def trigger_software_image_distribution(self,
-                                            headers=None,
-                                            payload=None,
-                                            active_validation=True,
-                                            **request_parameters):
+    def trigger_software_image_distribution(
+        self, headers=None, payload=None, active_validation=True, **request_parameters
+    ):
         """Distributes a software image on a given device. Software image must be imported successfully into DNA Center
         before it can be distributed .
 
@@ -176,24 +174,21 @@ class SoftwareImageManagementSwim(object):
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = payload or []
         if active_validation:
-            self._request_validator('jsd_c8d11fb9fc752ab8bb8e2b1413ccc92_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_c8d11fb9fc752ab8bb8e2b1413ccc92_v2_3_5_3"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -201,39 +196,44 @@ class SoftwareImageManagementSwim(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/image/distribution')
+        e_url = "/dna/intent/api/v1/image/distribution"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_c8d11fb9fc752ab8bb8e2b1413ccc92_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_c8d11fb9fc752ab8bb8e2b1413ccc92_v2_3_5_3", json_data
+        )
 
-    def get_software_image_details(self,
-                                   application_type=None,
-                                   created_time=None,
-                                   family=None,
-                                   image_integrity_status=None,
-                                   image_name=None,
-                                   image_series=None,
-                                   image_size_greater_than=None,
-                                   image_size_lesser_than=None,
-                                   image_uuid=None,
-                                   is_cco_latest=None,
-                                   is_cco_recommended=None,
-                                   is_tagged_golden=None,
-                                   limit=None,
-                                   name=None,
-                                   offset=None,
-                                   sort_by=None,
-                                   sort_order=None,
-                                   version=None,
-                                   headers=None,
-                                   **request_parameters):
+    def get_software_image_details(
+        self,
+        application_type=None,
+        created_time=None,
+        family=None,
+        image_integrity_status=None,
+        image_name=None,
+        image_series=None,
+        image_size_greater_than=None,
+        image_size_lesser_than=None,
+        image_uuid=None,
+        is_cco_latest=None,
+        is_cco_recommended=None,
+        is_tagged_golden=None,
+        limit=None,
+        name=None,
+        offset=None,
+        sort_by=None,
+        sort_order=None,
+        version=None,
+        headers=None,
+        **request_parameters
+    ):
         """Returns software image list based on a filter criteria. For example: "filterbyName = cat3k%" .
 
         Args:
@@ -292,53 +292,33 @@ class SoftwareImageManagementSwim(object):
         check_type(limit, (int, str))
         check_type(offset, (int, str))
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'imageUuid':
-                image_uuid,
-            'name':
-                name,
-            'family':
-                family,
-            'applicationType':
-                application_type,
-            'imageIntegrityStatus':
-                image_integrity_status,
-            'version':
-                version,
-            'imageSeries':
-                image_series,
-            'imageName':
-                image_name,
-            'isTaggedGolden':
-                is_tagged_golden,
-            'isCCORecommended':
-                is_cco_recommended,
-            'isCCOLatest':
-                is_cco_latest,
-            'createdTime':
-                created_time,
-            'imageSizeGreaterThan':
-                image_size_greater_than,
-            'imageSizeLesserThan':
-                image_size_lesser_than,
-            'sortBy':
-                sort_by,
-            'sortOrder':
-                sort_order,
-            'limit':
-                limit,
-            'offset':
-                offset,
+            "imageUuid": image_uuid,
+            "name": name,
+            "family": family,
+            "applicationType": application_type,
+            "imageIntegrityStatus": image_integrity_status,
+            "version": version,
+            "imageSeries": image_series,
+            "imageName": image_name,
+            "isTaggedGolden": is_tagged_golden,
+            "isCCORecommended": is_cco_recommended,
+            "isCCOLatest": is_cco_latest,
+            "createdTime": created_time,
+            "imageSizeGreaterThan": image_size_greater_than,
+            "imageSizeLesserThan": image_size_lesser_than,
+            "sortBy": sort_by,
+            "sortOrder": sort_order,
+            "limit": limit,
+            "offset": offset,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -346,19 +326,20 @@ class SoftwareImageManagementSwim(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/image/importation')
+        e_url = "/dna/intent/api/v1/image/importation"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_f73101d5d5e409f571084ab4c6049_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_f73101d5d5e409f571084ab4c6049_v2_3_5_3", json_data
+        )
 
-    def get_device_family_identifiers(self,
-                                      headers=None,
-                                      **request_parameters):
+    def get_device_family_identifiers(self, headers=None, **request_parameters):
         """API to get Device Family Identifiers for all Device Families that can be used for tagging an image golden. .
 
         Args:
@@ -380,20 +361,16 @@ class SoftwareImageManagementSwim(object):
         """
         check_type(headers, dict)
         if headers is not None:
-            if 'Accept' in headers:
-                check_type(headers.get('Accept'),
-                           str)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Accept" in headers:
+                check_type(headers.get("Accept"), str)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -401,26 +378,30 @@ class SoftwareImageManagementSwim(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/image/importation/device-family-'
-                 + 'identifiers')
+        e_url = "/dna/intent/api/v1/image/importation/device-family-" + "identifiers"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_b5c47f316ff058eb979bdea047f9d5b5_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_b5c47f316ff058eb979bdea047f9d5b5_v2_3_5_3", json_data
+        )
 
-    def tag_as_golden_image(self,
-                            deviceFamilyIdentifier=None,
-                            deviceRole=None,
-                            imageId=None,
-                            siteId=None,
-                            headers=None,
-                            payload=None,
-                            active_validation=True,
-                            **request_parameters):
+    def tag_as_golden_image(
+        self,
+        deviceFamilyIdentifier=None,
+        deviceRole=None,
+        imageId=None,
+        siteId=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Golden Tag image. Set siteId as -1 for Global site. .
 
         Args:
@@ -454,38 +435,30 @@ class SoftwareImageManagementSwim(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'Accept' in headers:
-                check_type(headers.get('Accept'),
-                           str)
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Accept" in headers:
+                check_type(headers.get("Accept"), str)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'imageId':
-                imageId,
-            'siteId':
-                siteId,
-            'deviceRole':
-                deviceRole,
-            'deviceFamilyIdentifier':
-                deviceFamilyIdentifier,
+            "imageId": imageId,
+            "siteId": siteId,
+            "deviceRole": deviceRole,
+            "deviceFamilyIdentifier": deviceFamilyIdentifier,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_a9b864257b965fe4bd8b0293f41f1537_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_a9b864257b965fe4bd8b0293f41f1537_v2_3_5_3"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -493,25 +466,30 @@ class SoftwareImageManagementSwim(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/image/importation/golden')
+        e_url = "/dna/intent/api/v1/image/importation/golden"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_a9b864257b965fe4bd8b0293f41f1537_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_a9b864257b965fe4bd8b0293f41f1537_v2_3_5_3", json_data
+        )
 
-    def remove_golden_tag_for_image(self,
-                                    device_family_identifier,
-                                    device_role,
-                                    image_id,
-                                    site_id,
-                                    headers=None,
-                                    **request_parameters):
+    def remove_golden_tag_for_image(
+        self,
+        device_family_identifier,
+        device_role,
+        image_id,
+        site_id,
+        headers=None,
+        **request_parameters
+    ):
         """Remove golden tag. Set siteId as -1 for Global site. .
 
         Args:
@@ -538,32 +516,25 @@ class SoftwareImageManagementSwim(object):
             https://developer.cisco.com/docs/dna-center/#!remove-golden-tag-for-image
         """
         check_type(headers, dict)
-        check_type(site_id, str,
-                   may_be_none=False)
-        check_type(device_family_identifier, str,
-                   may_be_none=False)
-        check_type(device_role, str,
-                   may_be_none=False)
-        check_type(image_id, str,
-                   may_be_none=False)
+        check_type(site_id, str, may_be_none=False)
+        check_type(device_family_identifier, str, may_be_none=False)
+        check_type(device_role, str, may_be_none=False)
+        check_type(image_id, str, may_be_none=False)
         if headers is not None:
-            if 'Accept' in headers:
-                check_type(headers.get('Accept'),
-                           str)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Accept" in headers:
+                check_type(headers.get("Accept"), str)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'siteId': site_id,
-            'deviceFamilyIdentifier': device_family_identifier,
-            'deviceRole': device_role,
-            'imageId': image_id,
+            "siteId": site_id,
+            "deviceFamilyIdentifier": device_family_identifier,
+            "deviceRole": device_role,
+            "imageId": image_id,
         }
 
         with_custom_headers = False
@@ -572,25 +543,32 @@ class SoftwareImageManagementSwim(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/image/importation/golden/site/{siteId'
-                 + '}/family/{deviceFamilyIdentifier}/role/{deviceRole}/imag'
-                 + 'e/{imageId}')
+        e_url = (
+            "/dna/intent/api/v1/image/importation/golden/site/{siteId"
+            + "}/family/{deviceFamilyIdentifier}/role/{deviceRole}/imag"
+            + "e/{imageId}"
+        )
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.delete(endpoint_full_url, params=_params,
-                                             headers=_headers)
+            json_data = self._session.delete(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.delete(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_e9dd960c5378ab442f235c8135d0_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_e9dd960c5378ab442f235c8135d0_v2_3_5_3", json_data
+        )
 
-    def get_golden_tag_status_of_an_image(self,
-                                          device_family_identifier,
-                                          device_role,
-                                          image_id,
-                                          site_id,
-                                          headers=None,
-                                          **request_parameters):
+    def get_golden_tag_status_of_an_image(
+        self,
+        device_family_identifier,
+        device_role,
+        image_id,
+        site_id,
+        headers=None,
+        **request_parameters
+    ):
         """Get golden tag status of an image. Set siteId as -1 for Global site. .
 
         Args:
@@ -617,29 +595,23 @@ class SoftwareImageManagementSwim(object):
             https://developer.cisco.com/docs/dna-center/#!get-golden-tag-status-of-an-image
         """
         check_type(headers, dict)
-        check_type(site_id, str,
-                   may_be_none=False)
-        check_type(device_family_identifier, str,
-                   may_be_none=False)
-        check_type(device_role, str,
-                   may_be_none=False)
-        check_type(image_id, str,
-                   may_be_none=False)
+        check_type(site_id, str, may_be_none=False)
+        check_type(device_family_identifier, str, may_be_none=False)
+        check_type(device_role, str, may_be_none=False)
+        check_type(image_id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'siteId': site_id,
-            'deviceFamilyIdentifier': device_family_identifier,
-            'deviceRole': device_role,
-            'imageId': image_id,
+            "siteId": site_id,
+            "deviceFamilyIdentifier": device_family_identifier,
+            "deviceRole": device_role,
+            "imageId": image_id,
         }
 
         with_custom_headers = False
@@ -648,27 +620,34 @@ class SoftwareImageManagementSwim(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/image/importation/golden/site/{siteId'
-                 + '}/family/{deviceFamilyIdentifier}/role/{deviceRole}/imag'
-                 + 'e/{imageId}')
+        e_url = (
+            "/dna/intent/api/v1/image/importation/golden/site/{siteId"
+            + "}/family/{deviceFamilyIdentifier}/role/{deviceRole}/imag"
+            + "e/{imageId}"
+        )
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_ab6266cac654d394cf943a161fcc7b_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_ab6266cac654d394cf943a161fcc7b_v2_3_5_3", json_data
+        )
 
-    def import_local_software_image(self,
-                                    multipart_fields,
-                                    multipart_monitor_callback,
-                                    is_third_party=None,
-                                    third_party_application_type=None,
-                                    third_party_image_family=None,
-                                    third_party_vendor=None,
-                                    headers=None,
-                                    **request_parameters):
+    def import_local_software_image(
+        self,
+        multipart_fields,
+        multipart_monitor_callback,
+        is_third_party=None,
+        third_party_application_type=None,
+        third_party_image_family=None,
+        third_party_vendor=None,
+        headers=None,
+        **request_parameters
+    ):
         """Fetches a software image from local file system and uploads to DNA Center. Supported software image files
         extensions are bin, img, tar, smu, pie, aes, iso, ova, tar_gz and qcow2 .
 
@@ -731,28 +710,21 @@ class SoftwareImageManagementSwim(object):
         check_type(third_party_image_family, str)
         check_type(third_party_application_type, str)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'isThirdParty':
-                is_third_party,
-            'thirdPartyVendor':
-                third_party_vendor,
-            'thirdPartyImageFamily':
-                third_party_image_family,
-            'thirdPartyApplicationType':
-                third_party_application_type,
+            "isThirdParty": is_third_party,
+            "thirdPartyVendor": third_party_vendor,
+            "thirdPartyImageFamily": third_party_image_family,
+            "thirdPartyApplicationType": third_party_application_type,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -760,31 +732,40 @@ class SoftwareImageManagementSwim(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/image/importation/source/file')
+        e_url = "/dna/intent/api/v1/image/importation/source/file"
         endpoint_full_url = apply_path_params(e_url, path_params)
-        m_data = self._session.multipart_data(multipart_fields,
-                                              multipart_monitor_callback)
-        _headers.update({'Content-Type': m_data.content_type,
-                         'Content-Length': str(m_data.len),
-                         'Connection': 'keep-alive'})
+        m_data = self._session.multipart_data(
+            multipart_fields, multipart_monitor_callback
+        )
+        _headers.update(
+            {
+                "Content-Type": m_data.content_type,
+                "Content-Length": str(m_data.len),
+                "Connection": "keep-alive",
+            }
+        )
         with_custom_headers = True
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           data=m_data,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, data=m_data, headers=_headers
+            )
         else:
             json_data = self._session.post(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_c1cf6d5d5f0fa2e92539134b6c1d_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_c1cf6d5d5f0fa2e92539134b6c1d_v2_3_5_3", json_data
+        )
 
-    def import_software_image_via_url(self,
-                                      schedule_at=None,
-                                      schedule_desc=None,
-                                      schedule_origin=None,
-                                      headers=None,
-                                      payload=None,
-                                      active_validation=True,
-                                      **request_parameters):
+    def import_software_image_via_url(
+        self,
+        schedule_at=None,
+        schedule_desc=None,
+        schedule_origin=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Fetches a software image from remote file system (using URL for HTTP/FTP) and uploads to DNA Center. Supported
         image files extensions are bin, img, tar, smu, pie, aes, iso, ova, tar_gz and qcow2 .
 
@@ -819,30 +800,25 @@ class SoftwareImageManagementSwim(object):
         check_type(schedule_desc, str)
         check_type(schedule_origin, str)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'scheduleAt':
-                schedule_at,
-            'scheduleDesc':
-                schedule_desc,
-            'scheduleOrigin':
-                schedule_origin,
+            "scheduleAt": schedule_at,
+            "scheduleDesc": schedule_desc,
+            "scheduleOrigin": schedule_origin,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = payload or []
         if active_validation:
-            self._request_validator('jsd_be8cdb967555fcca03a4c1f796eee56_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_be8cdb967555fcca03a4c1f796eee56_v2_3_5_3"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -850,14 +826,17 @@ class SoftwareImageManagementSwim(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/image/importation/source/url')
+        e_url = "/dna/intent/api/v1/image/importation/source/url"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_be8cdb967555fcca03a4c1f796eee56_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_be8cdb967555fcca03a4c1f796eee56_v2_3_5_3", json_data
+        )

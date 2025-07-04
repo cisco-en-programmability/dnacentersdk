@@ -26,18 +26,19 @@ from fastjsonschema.exceptions import JsonSchemaException
 from dnacentersdk.exceptions import MalformedRequest
 from tests.environment import DNA_CENTER_VERSION
 
-pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '2.3.7.6', reason='version does not match')
+pytestmark = pytest.mark.skipif(
+    DNA_CENTER_VERSION != "2.3.7.6", reason="version does not match"
+)
 
 
 def is_valid_import_trusted_certificate_v1(json_schema_validate, obj):
-    json_schema_validate('jsd_ebe0eab8e1785bec83a1e155112fb70e_v2_3_7_6').validate(obj)
+    json_schema_validate("jsd_ebe0eab8e1785bec83a1e155112fb70e_v2_3_7_6").validate(obj)
     return True
 
 
 def import_trusted_certificate_v1(api):
     endpoint_result = api.cisco_trusted_certificates.import_trusted_certificate_v1(
-        active_validation=True,
-        payload=None
+        active_validation=True, payload=None
     )
     return endpoint_result
 
@@ -46,8 +47,7 @@ def import_trusted_certificate_v1(api):
 def test_import_trusted_certificate_v1(api, validator):
     try:
         assert is_valid_import_trusted_certificate_v1(
-            validator,
-            import_trusted_certificate_v1(api)
+            validator, import_trusted_certificate_v1(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -57,8 +57,7 @@ def test_import_trusted_certificate_v1(api, validator):
 
 def import_trusted_certificate_v1_default_val(api):
     endpoint_result = api.cisco_trusted_certificates.import_trusted_certificate_v1(
-        active_validation=True,
-        payload=None
+        active_validation=True, payload=None
     )
     return endpoint_result
 
@@ -67,8 +66,7 @@ def import_trusted_certificate_v1_default_val(api):
 def test_import_trusted_certificate_v1_default_val(api, validator):
     try:
         assert is_valid_import_trusted_certificate_v1(
-            validator,
-            import_trusted_certificate_v1_default_val(api)
+            validator, import_trusted_certificate_v1_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

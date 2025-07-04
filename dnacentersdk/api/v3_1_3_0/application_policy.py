@@ -32,7 +32,6 @@ from ...utils import (
     check_type,
     dict_from_items_with_values,
     dict_of_str,
-    
 )
 
 
@@ -65,10 +64,9 @@ class ApplicationPolicy(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def get_application_policy(self,
-                               policy_scope=None,
-                               headers=None,
-                               **request_parameters):
+    def get_application_policy(
+        self, policy_scope=None, headers=None, **request_parameters
+    ):
         """Get all existing application policies .
 
         Args:
@@ -92,19 +90,16 @@ class ApplicationPolicy(object):
         check_type(headers, dict)
         check_type(policy_scope, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'policyScope':
-                policy_scope,
+            "policyScope": policy_scope,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -112,19 +107,20 @@ class ApplicationPolicy(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/app-policy')
+        e_url = "/dna/intent/api/v1/app-policy"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_fae4378ef4e2503f9fef4f3a4ddd4de4_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_fae4378ef4e2503f9fef4f3a4ddd4de4_v3_1_3_0", json_data
+        )
 
-    def get_application_policy_default(self,
-                                       headers=None,
-                                       **request_parameters):
+    def get_application_policy_default(self, headers=None, **request_parameters):
         """Get default application policy .
 
         Args:
@@ -146,17 +142,14 @@ class ApplicationPolicy(object):
         """
         check_type(headers, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -164,24 +157,29 @@ class ApplicationPolicy(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/app-policy-default')
+        e_url = "/dna/intent/api/v1/app-policy-default"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_d1b2e541bb85dea8192cd474be4e3ad_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_d1b2e541bb85dea8192cd474be4e3ad_v3_1_3_0", json_data
+        )
 
-    def application_policy_intent(self,
-                                  createList=None,
-                                  deleteList=None,
-                                  updateList=None,
-                                  headers=None,
-                                  payload=None,
-                                  active_validation=True,
-                                  **request_parameters):
+    def application_policy_intent(
+        self,
+        createList=None,
+        deleteList=None,
+        updateList=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Create/Update/Delete application policy .
 
         Args:
@@ -211,33 +209,27 @@ class ApplicationPolicy(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'createList':
-                createList,
-            'updateList':
-                updateList,
-            'deleteList':
-                deleteList,
+            "createList": createList,
+            "updateList": updateList,
+            "deleteList": deleteList,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_fa27ccbaf55711849381a707e1edfa_v3_1_3_0')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_fa27ccbaf55711849381a707e1edfa_v3_1_3_0"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -245,22 +237,24 @@ class ApplicationPolicy(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/app-policy-intent')
+        e_url = "/dna/intent/api/v1/app-policy-intent"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_fa27ccbaf55711849381a707e1edfa_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_fa27ccbaf55711849381a707e1edfa_v3_1_3_0", json_data
+        )
 
-    def get_application_policy_queuing_profile(self,
-                                               name=None,
-                                               headers=None,
-                                               **request_parameters):
+    def get_application_policy_queuing_profile(
+        self, name=None, headers=None, **request_parameters
+    ):
         """Get all or by name, existing application policy queuing profiles .
 
         Args:
@@ -284,19 +278,16 @@ class ApplicationPolicy(object):
         check_type(headers, dict)
         check_type(name, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'name':
-                name,
+            "name": name,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -304,21 +295,22 @@ class ApplicationPolicy(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/app-policy-queuing-profile')
+        e_url = "/dna/intent/api/v1/app-policy-queuing-profile"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_d47102747c9e50ed9e365b1297e4188d_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_d47102747c9e50ed9e365b1297e4188d_v3_1_3_0", json_data
+        )
 
-    def update_application_policy_queuing_profile(self,
-                                                  headers=None,
-                                                  payload=None,
-                                                  active_validation=True,
-                                                  **request_parameters):
+    def update_application_policy_queuing_profile(
+        self, headers=None, payload=None, active_validation=True, **request_parameters
+    ):
         """Update existing custom application queuing profile .
 
         Args:
@@ -345,21 +337,19 @@ class ApplicationPolicy(object):
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = payload or []
         if active_validation:
-            self._request_validator('jsd_b11aa4de387251c794665e030fa815da_v3_1_3_0')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_b11aa4de387251c794665e030fa815da_v3_1_3_0"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -367,23 +357,24 @@ class ApplicationPolicy(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/app-policy-queuing-profile')
+        e_url = "/dna/intent/api/v1/app-policy-queuing-profile"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload,
-                                          headers=_headers)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_b11aa4de387251c794665e030fa815da_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_b11aa4de387251c794665e030fa815da_v3_1_3_0", json_data
+        )
 
-    def create_application_policy_queuing_profile(self,
-                                                  headers=None,
-                                                  payload=None,
-                                                  active_validation=True,
-                                                  **request_parameters):
+    def create_application_policy_queuing_profile(
+        self, headers=None, payload=None, active_validation=True, **request_parameters
+    ):
         """Create new custom application queuing profile .
 
         Args:
@@ -410,21 +401,19 @@ class ApplicationPolicy(object):
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = payload or []
         if active_validation:
-            self._request_validator('jsd_bd31fcbd1ecd5a2c8b812088b27bfcea_v3_1_3_0')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_bd31fcbd1ecd5a2c8b812088b27bfcea_v3_1_3_0"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -432,21 +421,24 @@ class ApplicationPolicy(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/app-policy-queuing-profile')
+        e_url = "/dna/intent/api/v1/app-policy-queuing-profile"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_bd31fcbd1ecd5a2c8b812088b27bfcea_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_bd31fcbd1ecd5a2c8b812088b27bfcea_v3_1_3_0", json_data
+        )
 
-    def get_application_policy_queuing_profile_count(self,
-                                                     headers=None,
-                                                     **request_parameters):
+    def get_application_policy_queuing_profile_count(
+        self, headers=None, **request_parameters
+    ):
         """Get the number of all existing  application policy queuing profile .
 
         Args:
@@ -468,17 +460,14 @@ class ApplicationPolicy(object):
         """
         check_type(headers, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -486,20 +475,22 @@ class ApplicationPolicy(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/app-policy-queuing-profile-count')
+        e_url = "/dna/intent/api/v1/app-policy-queuing-profile-count"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_a22faef865d55fe48dd2467bee214518_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_a22faef865d55fe48dd2467bee214518_v3_1_3_0", json_data
+        )
 
-    def delete_application_policy_queuing_profile(self,
-                                                  id,
-                                                  headers=None,
-                                                  **request_parameters):
+    def delete_application_policy_queuing_profile(
+        self, id, headers=None, **request_parameters
+    ):
         """Delete existing custom application policy queuing profile by id .
 
         Args:
@@ -521,20 +512,17 @@ class ApplicationPolicy(object):
             https://developer.cisco.com/docs/dna-center/#!delete-application-policy-queuing-profile
         """
         check_type(headers, dict)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
 
         with_custom_headers = False
@@ -543,22 +531,22 @@ class ApplicationPolicy(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/app-policy-queuing-profile/{id}')
+        e_url = "/dna/intent/api/v1/app-policy-queuing-profile/{id}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.delete(endpoint_full_url, params=_params,
-                                             headers=_headers)
+            json_data = self._session.delete(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.delete(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_ac547ee07c2c5aff983d90cf4306619d_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_ac547ee07c2c5aff983d90cf4306619d_v3_1_3_0", json_data
+        )
 
-    def get_application_sets(self,
-                             limit=None,
-                             name=None,
-                             offset=None,
-                             headers=None,
-                             **request_parameters):
+    def get_application_sets(
+        self, limit=None, name=None, offset=None, headers=None, **request_parameters
+    ):
         """Get appllication-sets by offset/limit or by name .
 
         Args:
@@ -586,23 +574,18 @@ class ApplicationPolicy(object):
         check_type(limit, int)
         check_type(name, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'offset':
-                offset,
-            'limit':
-                limit,
-            'name':
-                name,
+            "offset": offset,
+            "limit": limit,
+            "name": name,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -610,20 +593,20 @@ class ApplicationPolicy(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/application-policy-application-set')
+        e_url = "/dna/intent/api/v1/application-policy-application-set"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_b60dbd805b95030bc2caf345a44b504_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_b60dbd805b95030bc2caf345a44b504_v3_1_3_0", json_data
+        )
 
-    def delete_application_set(self,
-                               id,
-                               headers=None,
-                               **request_parameters):
+    def delete_application_set(self, id, headers=None, **request_parameters):
         """Delete existing application-set by it's id .
 
         Args:
@@ -645,22 +628,18 @@ class ApplicationPolicy(object):
             https://developer.cisco.com/docs/dna-center/#!delete-application-set
         """
         check_type(headers, dict)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'id':
-                id,
+            "id": id,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -668,21 +647,22 @@ class ApplicationPolicy(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/application-policy-application-set')
+        e_url = "/dna/intent/api/v1/application-policy-application-set"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.delete(endpoint_full_url, params=_params,
-                                             headers=_headers)
+            json_data = self._session.delete(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.delete(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_a59a448c5c25f1e8246d6827e6e3215_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_a59a448c5c25f1e8246d6827e6e3215_v3_1_3_0", json_data
+        )
 
-    def create_application_set(self,
-                               headers=None,
-                               payload=None,
-                               active_validation=True,
-                               **request_parameters):
+    def create_application_set(
+        self, headers=None, payload=None, active_validation=True, **request_parameters
+    ):
         """Create new custom application-set/s .
 
         Args:
@@ -709,21 +689,19 @@ class ApplicationPolicy(object):
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = payload or []
         if active_validation:
-            self._request_validator('jsd_cb7563a5058c4801eb842a74ff61c_v3_1_3_0')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_cb7563a5058c4801eb842a74ff61c_v3_1_3_0"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -731,21 +709,22 @@ class ApplicationPolicy(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/application-policy-application-set')
+        e_url = "/dna/intent/api/v1/application-policy-application-set"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_cb7563a5058c4801eb842a74ff61c_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_cb7563a5058c4801eb842a74ff61c_v3_1_3_0", json_data
+        )
 
-    def get_application_sets_count(self,
-                                   headers=None,
-                                   **request_parameters):
+    def get_application_sets_count(self, headers=None, **request_parameters):
         """Get the number of existing application-sets .
 
         Args:
@@ -767,17 +746,14 @@ class ApplicationPolicy(object):
         """
         check_type(headers, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -785,35 +761,39 @@ class ApplicationPolicy(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/application-policy-application-set-'
-                 + 'count')
+        e_url = "/dna/intent/api/v1/application-policy-application-set-" + "count"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_ebc5880945305adb41253c6e4ffec_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_ebc5880945305adb41253c6e4ffec_v3_1_3_0", json_data
+        )
 
-    def retrieve_the_list_of_network_devices_with_their_application_visibility_status(self,
-                                                                                      app_telemetry_deployment_status=None,
-                                                                                      app_telemetry_readiness_status=None,
-                                                                                      application_registry_sync_status=None,
-                                                                                      cbar_deployment_status=None,
-                                                                                      cbar_readiness_status=None,
-                                                                                      hostname=None,
-                                                                                      ids=None,
-                                                                                      limit=None,
-                                                                                      management_address=None,
-                                                                                      offset=None,
-                                                                                      order=None,
-                                                                                      protocol_pack_status=None,
-                                                                                      protocol_pack_update_status=None,
-                                                                                      site_id=None,
-                                                                                      sort_by=None,
-                                                                                      headers=None,
-                                                                                      **request_parameters):
+    def retrieve_the_list_of_network_devices_with_their_application_visibility_status(
+        self,
+        app_telemetry_deployment_status=None,
+        app_telemetry_readiness_status=None,
+        application_registry_sync_status=None,
+        cbar_deployment_status=None,
+        cbar_readiness_status=None,
+        hostname=None,
+        ids=None,
+        limit=None,
+        management_address=None,
+        offset=None,
+        order=None,
+        protocol_pack_status=None,
+        protocol_pack_update_status=None,
+        site_id=None,
+        sort_by=None,
+        headers=None,
+        **request_parameters
+    ):
         """This API retrieves the list of network devices with their application visibility status. The list can be
         filtered using the query parameters. Multiple filters can be applied. .
 
@@ -890,47 +870,30 @@ class ApplicationPolicy(object):
         check_type(sort_by, str)
         check_type(order, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'ids':
-                ids,
-            'managementAddress':
-                management_address,
-            'hostname':
-                hostname,
-            'siteId':
-                site_id,
-            'appTelemetryDeploymentStatus':
-                app_telemetry_deployment_status,
-            'appTelemetryReadinessStatus':
-                app_telemetry_readiness_status,
-            'cbarDeploymentStatus':
-                cbar_deployment_status,
-            'cbarReadinessStatus':
-                cbar_readiness_status,
-            'protocolPackStatus':
-                protocol_pack_status,
-            'protocolPackUpdateStatus':
-                protocol_pack_update_status,
-            'applicationRegistrySyncStatus':
-                application_registry_sync_status,
-            'offset':
-                offset,
-            'limit':
-                limit,
-            'sortBy':
-                sort_by,
-            'order':
-                order,
+            "ids": ids,
+            "managementAddress": management_address,
+            "hostname": hostname,
+            "siteId": site_id,
+            "appTelemetryDeploymentStatus": app_telemetry_deployment_status,
+            "appTelemetryReadinessStatus": app_telemetry_readiness_status,
+            "cbarDeploymentStatus": cbar_deployment_status,
+            "cbarReadinessStatus": cbar_readiness_status,
+            "protocolPackStatus": protocol_pack_status,
+            "protocolPackUpdateStatus": protocol_pack_update_status,
+            "applicationRegistrySyncStatus": application_registry_sync_status,
+            "offset": offset,
+            "limit": limit,
+            "sortBy": sort_by,
+            "order": order,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -938,30 +901,33 @@ class ApplicationPolicy(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/applicationVisibility/networkDevices')
+        e_url = "/dna/intent/api/v1/applicationVisibility/networkDevices"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_a5b7b549ba686b2c5c1091157_v3_1_3_0', json_data)
+        return self._object_factory("bpm_a5b7b549ba686b2c5c1091157_v3_1_3_0", json_data)
 
-    def retrieve_the_count_of_network_devices_for_the_given_application_visibility_status_filters(self,
-                                                                                                  app_telemetry_deployment_status=None,
-                                                                                                  app_telemetry_readiness_status=None,
-                                                                                                  application_registry_sync_status=None,
-                                                                                                  cbar_deployment_status=None,
-                                                                                                  cbar_readiness_status=None,
-                                                                                                  hostname=None,
-                                                                                                  ids=None,
-                                                                                                  management_address=None,
-                                                                                                  protocol_pack_status=None,
-                                                                                                  protocol_pack_update_status=None,
-                                                                                                  site_id=None,
-                                                                                                  headers=None,
-                                                                                                  **request_parameters):
+    def retrieve_the_count_of_network_devices_for_the_given_application_visibility_status_filters(
+        self,
+        app_telemetry_deployment_status=None,
+        app_telemetry_readiness_status=None,
+        application_registry_sync_status=None,
+        cbar_deployment_status=None,
+        cbar_readiness_status=None,
+        hostname=None,
+        ids=None,
+        management_address=None,
+        protocol_pack_status=None,
+        protocol_pack_update_status=None,
+        site_id=None,
+        headers=None,
+        **request_parameters
+    ):
         """This API retrieves the count of network devices for the given application visibility status filters. .
 
         Args:
@@ -1026,39 +992,26 @@ class ApplicationPolicy(object):
         check_type(protocol_pack_update_status, str)
         check_type(application_registry_sync_status, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'ids':
-                ids,
-            'managementAddress':
-                management_address,
-            'hostname':
-                hostname,
-            'siteId':
-                site_id,
-            'appTelemetryDeploymentStatus':
-                app_telemetry_deployment_status,
-            'appTelemetryReadinessStatus':
-                app_telemetry_readiness_status,
-            'cbarDeploymentStatus':
-                cbar_deployment_status,
-            'cbarReadinessStatus':
-                cbar_readiness_status,
-            'protocolPackStatus':
-                protocol_pack_status,
-            'protocolPackUpdateStatus':
-                protocol_pack_update_status,
-            'applicationRegistrySyncStatus':
-                application_registry_sync_status,
+            "ids": ids,
+            "managementAddress": management_address,
+            "hostname": hostname,
+            "siteId": site_id,
+            "appTelemetryDeploymentStatus": app_telemetry_deployment_status,
+            "appTelemetryReadinessStatus": app_telemetry_readiness_status,
+            "cbarDeploymentStatus": cbar_deployment_status,
+            "cbarReadinessStatus": cbar_readiness_status,
+            "protocolPackStatus": protocol_pack_status,
+            "protocolPackUpdateStatus": protocol_pack_update_status,
+            "applicationRegistrySyncStatus": application_registry_sync_status,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1066,23 +1019,27 @@ class ApplicationPolicy(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/applicationVisibility/networkDevices/'
-                 + 'count')
+        e_url = "/dna/intent/api/v1/applicationVisibility/networkDevices/" + "count"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_c378266e951b51b6b15818086b9ea97a_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_c378266e951b51b6b15818086b9ea97a_v3_1_3_0", json_data
+        )
 
-    def disable_application_telemetry_feature_on_multiple_network_devices(self,
-                                                                          networkDeviceIds=None,
-                                                                          headers=None,
-                                                                          payload=None,
-                                                                          active_validation=True,
-                                                                          **request_parameters):
+    def disable_application_telemetry_feature_on_multiple_network_devices(
+        self,
+        networkDeviceIds=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """This API can be used to disable application telemetry feature on multiple network devices. Request payload
         should include the list of network devices where it has to be disabled. This operation pushes
         configuration to the network devices, and is only permitted if the provisioning settings do not mandate
@@ -1115,29 +1072,25 @@ class ApplicationPolicy(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'networkDeviceIds':
-                networkDeviceIds,
+            "networkDeviceIds": networkDeviceIds,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_dda852745acd5ce5a97b0cfdf0de2fd2_v3_1_3_0')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_dda852745acd5ce5a97b0cfdf0de2fd2_v3_1_3_0"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1145,25 +1098,32 @@ class ApplicationPolicy(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/applicationVisibility/networkDevices/'
-                 + 'disableAppTelemetry')
+        e_url = (
+            "/dna/intent/api/v1/applicationVisibility/networkDevices/"
+            + "disableAppTelemetry"
+        )
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_dda852745acd5ce5a97b0cfdf0de2fd2_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_dda852745acd5ce5a97b0cfdf0de2fd2_v3_1_3_0", json_data
+        )
 
-    def disable_c_b_a_r_feature_on_multiple_network_devices(self,
-                                                            networkDeviceIds=None,
-                                                            headers=None,
-                                                            payload=None,
-                                                            active_validation=True,
-                                                            **request_parameters):
+    def disable_c_b_a_r_feature_on_multiple_network_devices(
+        self,
+        networkDeviceIds=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """This API can be used to disable CBAR feature on multiple network devices. Request payload should include the
         list of network devices where it has to be disabled. This operation pushes configuration to the network
         devices, and is only permitted if the provisioning settings do not mandate a config preview for CBAR
@@ -1196,29 +1156,25 @@ class ApplicationPolicy(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'networkDeviceIds':
-                networkDeviceIds,
+            "networkDeviceIds": networkDeviceIds,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_b4635c45c3b5e44a30d84daa1d5fb69_v3_1_3_0')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_b4635c45c3b5e44a30d84daa1d5fb69_v3_1_3_0"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1226,25 +1182,31 @@ class ApplicationPolicy(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/applicationVisibility/networkDevices/'
-                 + 'disableCbar')
+        e_url = (
+            "/dna/intent/api/v1/applicationVisibility/networkDevices/" + "disableCbar"
+        )
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_b4635c45c3b5e44a30d84daa1d5fb69_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_b4635c45c3b5e44a30d84daa1d5fb69_v3_1_3_0", json_data
+        )
 
-    def enable_application_telemetry_feature_on_multiple_network_devices(self,
-                                                                         networkDevices=None,
-                                                                         headers=None,
-                                                                         payload=None,
-                                                                         active_validation=True,
-                                                                         **request_parameters):
+    def enable_application_telemetry_feature_on_multiple_network_devices(
+        self,
+        networkDevices=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """This API can be used to enable application telemetry feature on multiple network devices. Request payload should
         include the list of network devices where application telemetry has to be enabled. For wireless
         controllers, it also needs the WLAN modes / SSID details to be included for enablement. Please note that
@@ -1279,29 +1241,25 @@ class ApplicationPolicy(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'networkDevices':
-                networkDevices,
+            "networkDevices": networkDevices,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_d73cd5be487a36d0a01d6cdc3_v3_1_3_0')\
-                .validate(_payload)
+            self._request_validator("jsd_d73cd5be487a36d0a01d6cdc3_v3_1_3_0").validate(
+                _payload
+            )
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1309,25 +1267,30 @@ class ApplicationPolicy(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/applicationVisibility/networkDevices/'
-                 + 'enableAppTelemetry')
+        e_url = (
+            "/dna/intent/api/v1/applicationVisibility/networkDevices/"
+            + "enableAppTelemetry"
+        )
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_d73cd5be487a36d0a01d6cdc3_v3_1_3_0', json_data)
+        return self._object_factory("bpm_d73cd5be487a36d0a01d6cdc3_v3_1_3_0", json_data)
 
-    def enable_c_b_a_r_feature_on_multiple_network_devices(self,
-                                                           networkDevices=None,
-                                                           headers=None,
-                                                           payload=None,
-                                                           active_validation=True,
-                                                           **request_parameters):
+    def enable_c_b_a_r_feature_on_multiple_network_devices(
+        self,
+        networkDevices=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """This API can be used to enable CBAR feature on multiple network devices. Request payload should include the list
         of network devices where CBAR has to be enabled. It can optionally include list of interfaces (wired) or
         WLAN modes (wireless) to be excluded from CBAR enablement. Please note that this operation can be
@@ -1361,29 +1324,25 @@ class ApplicationPolicy(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'networkDevices':
-                networkDevices,
+            "networkDevices": networkDevices,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_e62749061c5aae8ecd1ccc2d315153_v3_1_3_0')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_e62749061c5aae8ecd1ccc2d315153_v3_1_3_0"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1391,24 +1350,26 @@ class ApplicationPolicy(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/applicationVisibility/networkDevices/'
-                 + 'enableCbar')
+        e_url = (
+            "/dna/intent/api/v1/applicationVisibility/networkDevices/" + "enableCbar"
+        )
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_e62749061c5aae8ecd1ccc2d315153_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_e62749061c5aae8ecd1ccc2d315153_v3_1_3_0", json_data
+        )
 
-    def create_application(self,
-                           headers=None,
-                           payload=None,
-                           active_validation=True,
-                           **request_parameters):
+    def create_application(
+        self, headers=None, payload=None, active_validation=True, **request_parameters
+    ):
         """Create new Custom application .
 
         Args:
@@ -1435,21 +1396,19 @@ class ApplicationPolicy(object):
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = payload or []
         if active_validation:
-            self._request_validator('jsd_e1781a990c6b5a4b895d56bcfda2b7cb_v3_1_3_0')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_e1781a990c6b5a4b895d56bcfda2b7cb_v3_1_3_0"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1457,23 +1416,24 @@ class ApplicationPolicy(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/applications')
+        e_url = "/dna/intent/api/v1/applications"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_e1781a990c6b5a4b895d56bcfda2b7cb_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_e1781a990c6b5a4b895d56bcfda2b7cb_v3_1_3_0", json_data
+        )
 
-    def edit_application(self,
-                         headers=None,
-                         payload=None,
-                         active_validation=True,
-                         **request_parameters):
+    def edit_application(
+        self, headers=None, payload=None, active_validation=True, **request_parameters
+    ):
         """Edit the attributes of an existing application .
 
         Args:
@@ -1500,21 +1460,19 @@ class ApplicationPolicy(object):
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = payload or []
         if active_validation:
-            self._request_validator('jsd_a3b37dcbe2a150bea06d9dcde1837281_v3_1_3_0')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_a3b37dcbe2a150bea06d9dcde1837281_v3_1_3_0"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1522,22 +1480,22 @@ class ApplicationPolicy(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/applications')
+        e_url = "/dna/intent/api/v1/applications"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload,
-                                          headers=_headers)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_a3b37dcbe2a150bea06d9dcde1837281_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_a3b37dcbe2a150bea06d9dcde1837281_v3_1_3_0", json_data
+        )
 
-    def delete_application(self,
-                           id,
-                           headers=None,
-                           **request_parameters):
+    def delete_application(self, id, headers=None, **request_parameters):
         """Delete existing application by its id .
 
         Args:
@@ -1559,22 +1517,18 @@ class ApplicationPolicy(object):
             https://developer.cisco.com/docs/dna-center/#!delete-application
         """
         check_type(headers, dict)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'id':
-                id,
+            "id": id,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1582,22 +1536,22 @@ class ApplicationPolicy(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/applications')
+        e_url = "/dna/intent/api/v1/applications"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.delete(endpoint_full_url, params=_params,
-                                             headers=_headers)
+            json_data = self._session.delete(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.delete(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_d11d35f3505652b68905ddf1ee2f7e66_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_d11d35f3505652b68905ddf1ee2f7e66_v3_1_3_0", json_data
+        )
 
-    def get_applications(self,
-                         limit=None,
-                         name=None,
-                         offset=None,
-                         headers=None,
-                         **request_parameters):
+    def get_applications(
+        self, limit=None, name=None, offset=None, headers=None, **request_parameters
+    ):
         """Get applications by offset/limit or by name .
 
         Args:
@@ -1626,23 +1580,18 @@ class ApplicationPolicy(object):
         check_type(limit, int)
         check_type(name, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'offset':
-                offset,
-            'limit':
-                limit,
-            'name':
-                name,
+            "offset": offset,
+            "limit": limit,
+            "name": name,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1650,19 +1599,20 @@ class ApplicationPolicy(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/applications')
+        e_url = "/dna/intent/api/v1/applications"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_b12cdd3a75c51258c9e051e84189f92_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_b12cdd3a75c51258c9e051e84189f92_v3_1_3_0", json_data
+        )
 
-    def get_applications_count(self,
-                               headers=None,
-                               **request_parameters):
+    def get_applications_count(self, headers=None, **request_parameters):
         """Get the number of all existing applications .
 
         Args:
@@ -1684,17 +1634,14 @@ class ApplicationPolicy(object):
         """
         check_type(headers, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1702,20 +1649,22 @@ class ApplicationPolicy(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/applications-count')
+        e_url = "/dna/intent/api/v1/applications-count"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_af5f0aa1ed56ab9b98eb602dbd8366_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_af5f0aa1ed56ab9b98eb602dbd8366_v3_1_3_0", json_data
+        )
 
-    def get_qos_device_interface_info(self,
-                                      network_device_id=None,
-                                      headers=None,
-                                      **request_parameters):
+    def get_qos_device_interface_info(
+        self, network_device_id=None, headers=None, **request_parameters
+    ):
         """Get all or by network device id, existing qos device interface infos .
 
         Args:
@@ -1739,19 +1688,16 @@ class ApplicationPolicy(object):
         check_type(headers, dict)
         check_type(network_device_id, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'networkDeviceId':
-                network_device_id,
+            "networkDeviceId": network_device_id,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1759,21 +1705,22 @@ class ApplicationPolicy(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/qos-device-interface-info')
+        e_url = "/dna/intent/api/v1/qos-device-interface-info"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_c37a46857f0bee5eba0a514091c_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_c37a46857f0bee5eba0a514091c_v3_1_3_0", json_data
+        )
 
-    def update_qos_device_interface_info(self,
-                                         headers=None,
-                                         payload=None,
-                                         active_validation=True,
-                                         **request_parameters):
+    def update_qos_device_interface_info(
+        self, headers=None, payload=None, active_validation=True, **request_parameters
+    ):
         """Update existing qos device interface infos associate with network device id .
 
         Args:
@@ -1800,21 +1747,19 @@ class ApplicationPolicy(object):
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = payload or []
         if active_validation:
-            self._request_validator('jsd_ea59df3daf2a57a0b48044cc49c8a1ca_v3_1_3_0')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_ea59df3daf2a57a0b48044cc49c8a1ca_v3_1_3_0"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1822,23 +1767,24 @@ class ApplicationPolicy(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/qos-device-interface-info')
+        e_url = "/dna/intent/api/v1/qos-device-interface-info"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload,
-                                          headers=_headers)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_ea59df3daf2a57a0b48044cc49c8a1ca_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_ea59df3daf2a57a0b48044cc49c8a1ca_v3_1_3_0", json_data
+        )
 
-    def create_qos_device_interface_info(self,
-                                         headers=None,
-                                         payload=None,
-                                         active_validation=True,
-                                         **request_parameters):
+    def create_qos_device_interface_info(
+        self, headers=None, payload=None, active_validation=True, **request_parameters
+    ):
         """Create qos device interface infos associate with network device id to allow the user to mark specific interfaces
         as WAN, to associate WAN interfaces with specific SP Profile and to be able to define a shaper on WAN
         interfaces .
@@ -1867,21 +1813,19 @@ class ApplicationPolicy(object):
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = payload or []
         if active_validation:
-            self._request_validator('jsd_d045d18062ad5ae59c6f446beb17d675_v3_1_3_0')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_d045d18062ad5ae59c6f446beb17d675_v3_1_3_0"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1889,21 +1833,22 @@ class ApplicationPolicy(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/qos-device-interface-info')
+        e_url = "/dna/intent/api/v1/qos-device-interface-info"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_d045d18062ad5ae59c6f446beb17d675_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_d045d18062ad5ae59c6f446beb17d675_v3_1_3_0", json_data
+        )
 
-    def get_qos_device_interface_info_count(self,
-                                            headers=None,
-                                            **request_parameters):
+    def get_qos_device_interface_info_count(self, headers=None, **request_parameters):
         """Get the number of all existing qos device interface infos group by network device id .
 
         Args:
@@ -1925,17 +1870,14 @@ class ApplicationPolicy(object):
         """
         check_type(headers, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1943,20 +1885,20 @@ class ApplicationPolicy(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/qos-device-interface-info-count')
+        e_url = "/dna/intent/api/v1/qos-device-interface-info-count"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_b98fe15b531dbb7e20c0f5fa61ab_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_b98fe15b531dbb7e20c0f5fa61ab_v3_1_3_0", json_data
+        )
 
-    def delete_qos_device_interface_info(self,
-                                         id,
-                                         headers=None,
-                                         **request_parameters):
+    def delete_qos_device_interface_info(self, id, headers=None, **request_parameters):
         """Delete all qos device interface infos associate with network device id .
 
         Args:
@@ -1979,20 +1921,17 @@ class ApplicationPolicy(object):
             https://developer.cisco.com/docs/dna-center/#!delete-qos-device-interface-info
         """
         check_type(headers, dict)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
 
         with_custom_headers = False
@@ -2001,19 +1940,22 @@ class ApplicationPolicy(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/qos-device-interface-info/{id}')
+        e_url = "/dna/intent/api/v1/qos-device-interface-info/{id}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.delete(endpoint_full_url, params=_params,
-                                             headers=_headers)
+            json_data = self._session.delete(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.delete(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_a6a5bb5935709b03d0fc37a1d47d4_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_a6a5bb5935709b03d0fc37a1d47d4_v3_1_3_0", json_data
+        )
 
-    def retrieves_the_application_qo_s_policy_setting(self,
-                                                      headers=None,
-                                                      **request_parameters):
+    def retrieves_the_application_qo_s_policy_setting(
+        self, headers=None, **request_parameters
+    ):
         """API to retrieve the application QoS policy setting. .
 
         Args:
@@ -2035,17 +1977,14 @@ class ApplicationPolicy(object):
         """
         check_type(headers, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -2053,22 +1992,27 @@ class ApplicationPolicy(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/qosPolicySetting')
+        e_url = "/dna/intent/api/v1/qosPolicySetting"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_d3c8a459b787b55338701d8b33_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_d3c8a459b787b55338701d8b33_v3_1_3_0", json_data
+        )
 
-    def updates_the_application_qo_s_policy_setting(self,
-                                                    deployByDefaultOnWiredDevices=None,
-                                                    headers=None,
-                                                    payload=None,
-                                                    active_validation=True,
-                                                    **request_parameters):
+    def updates_the_application_qo_s_policy_setting(
+        self,
+        deployByDefaultOnWiredDevices=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """API to update the application QoS policy setting. .
 
         Args:
@@ -2099,26 +2043,23 @@ class ApplicationPolicy(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'deployByDefaultOnWiredDevices':
-                deployByDefaultOnWiredDevices,
+            "deployByDefaultOnWiredDevices": deployByDefaultOnWiredDevices,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_bc9716ed6eb5c6e9ecb0380501d6138_v3_1_3_0')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_bc9716ed6eb5c6e9ecb0380501d6138_v3_1_3_0"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -2126,23 +2067,24 @@ class ApplicationPolicy(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/qosPolicySetting')
+        e_url = "/dna/intent/api/v1/qosPolicySetting"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload,
-                                          headers=_headers)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_bc9716ed6eb5c6e9ecb0380501d6138_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_bc9716ed6eb5c6e9ecb0380501d6138_v3_1_3_0", json_data
+        )
 
-    def create_application_sets(self,
-                                headers=None,
-                                payload=None,
-                                active_validation=True,
-                                **request_parameters):
+    def create_application_sets(
+        self, headers=None, payload=None, active_validation=True, **request_parameters
+    ):
         """Create new custom application set/s .
 
         Args:
@@ -2169,24 +2111,21 @@ class ApplicationPolicy(object):
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = payload or []
         if active_validation:
-            self._request_validator('jsd_e4d208b5545f66bf0f94a155c81f46_v3_1_3_0')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_e4d208b5545f66bf0f94a155c81f46_v3_1_3_0"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -2194,25 +2133,24 @@ class ApplicationPolicy(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v2/application-policy-application-set')
+        e_url = "/dna/intent/api/v2/application-policy-application-set"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_e4d208b5545f66bf0f94a155c81f46_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_e4d208b5545f66bf0f94a155c81f46_v3_1_3_0", json_data
+        )
 
-    def get_application_sets_v2(self,
-                                attributes,
-                                limit,
-                                offset,
-                                name=None,
-                                headers=None,
-                                **request_parameters):
+    def get_application_sets_v2(
+        self, attributes, limit, offset, name=None, headers=None, **request_parameters
+    ):
         """Get application set/s by offset/limit or by name .
 
         Args:
@@ -2239,33 +2177,24 @@ class ApplicationPolicy(object):
             https://developer.cisco.com/docs/dna-center/#!get-application-sets-v2
         """
         check_type(headers, dict)
-        check_type(attributes, str,
-                   may_be_none=False)
+        check_type(attributes, str, may_be_none=False)
         check_type(name, str)
-        check_type(offset, int,
-                   may_be_none=False)
-        check_type(limit, int,
-                   may_be_none=False)
+        check_type(offset, int, may_be_none=False)
+        check_type(limit, int, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'attributes':
-                attributes,
-            'name':
-                name,
-            'offset':
-                offset,
-            'limit':
-                limit,
+            "attributes": attributes,
+            "name": name,
+            "offset": offset,
+            "limit": limit,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -2273,20 +2202,22 @@ class ApplicationPolicy(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v2/application-policy-application-set')
+        e_url = "/dna/intent/api/v2/application-policy-application-set"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_b399a8f895b65f3d91926da8508a9295_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_b399a8f895b65f3d91926da8508a9295_v3_1_3_0", json_data
+        )
 
-    def get_application_set_count(self,
-                                  scalable_group_type,
-                                  headers=None,
-                                  **request_parameters):
+    def get_application_set_count(
+        self, scalable_group_type, headers=None, **request_parameters
+    ):
         """Get the number of all existing application sets .
 
         Args:
@@ -2309,22 +2240,18 @@ class ApplicationPolicy(object):
             https://developer.cisco.com/docs/dna-center/#!get-application-set-count
         """
         check_type(headers, dict)
-        check_type(scalable_group_type, str,
-                   may_be_none=False)
+        check_type(scalable_group_type, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'scalableGroupType':
-                scalable_group_type,
+            "scalableGroupType": scalable_group_type,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -2332,21 +2259,20 @@ class ApplicationPolicy(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v2/application-policy-application-set-'
-                 + 'count')
+        e_url = "/dna/intent/api/v2/application-policy-application-set-" + "count"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_c3f0e5c233a5cc39969fdcff6e0288e_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_c3f0e5c233a5cc39969fdcff6e0288e_v3_1_3_0", json_data
+        )
 
-    def delete_application_set_v2(self,
-                                  id,
-                                  headers=None,
-                                  **request_parameters):
+    def delete_application_set_v2(self, id, headers=None, **request_parameters):
         """Delete existing custom application set by id .
 
         Args:
@@ -2368,20 +2294,17 @@ class ApplicationPolicy(object):
             https://developer.cisco.com/docs/dna-center/#!delete-application-set-v2
         """
         check_type(headers, dict)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
 
         with_custom_headers = False
@@ -2390,22 +2313,22 @@ class ApplicationPolicy(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v2/application-policy-application-'
-                 + 'set/{id}')
+        e_url = "/dna/intent/api/v2/application-policy-application-" + "set/{id}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.delete(endpoint_full_url, params=_params,
-                                             headers=_headers)
+            json_data = self._session.delete(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.delete(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_fbef625d3225c1eb6db93289a11a33e_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_fbef625d3225c1eb6db93289a11a33e_v3_1_3_0", json_data
+        )
 
-    def edit_applications(self,
-                          headers=None,
-                          payload=None,
-                          active_validation=True,
-                          **request_parameters):
+    def edit_applications(
+        self, headers=None, payload=None, active_validation=True, **request_parameters
+    ):
         """Edit the attributes of an existing application .
 
         Args:
@@ -2432,24 +2355,21 @@ class ApplicationPolicy(object):
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = payload or []
         if active_validation:
-            self._request_validator('jsd_b46a141650debf5946262e8a0961_v3_1_3_0')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_b46a141650debf5946262e8a0961_v3_1_3_0"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -2457,23 +2377,24 @@ class ApplicationPolicy(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v2/applications')
+        e_url = "/dna/intent/api/v2/applications"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload,
-                                          headers=_headers)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_b46a141650debf5946262e8a0961_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_b46a141650debf5946262e8a0961_v3_1_3_0", json_data
+        )
 
-    def create_applications(self,
-                            headers=None,
-                            payload=None,
-                            active_validation=True,
-                            **request_parameters):
+    def create_applications(
+        self, headers=None, payload=None, active_validation=True, **request_parameters
+    ):
         """Create new custom application/s .
 
         Args:
@@ -2500,21 +2421,19 @@ class ApplicationPolicy(object):
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = payload or []
         if active_validation:
-            self._request_validator('jsd_a14e71c1b98e51eea41255720025b519_v3_1_3_0')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_a14e71c1b98e51eea41255720025b519_v3_1_3_0"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -2522,25 +2441,24 @@ class ApplicationPolicy(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v2/applications')
+        e_url = "/dna/intent/api/v2/applications"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_a14e71c1b98e51eea41255720025b519_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_a14e71c1b98e51eea41255720025b519_v3_1_3_0", json_data
+        )
 
-    def get_applications_v2(self,
-                            attributes,
-                            limit,
-                            offset,
-                            name=None,
-                            headers=None,
-                            **request_parameters):
+    def get_applications_v2(
+        self, attributes, limit, offset, name=None, headers=None, **request_parameters
+    ):
         """Get application/s by offset/limit or by name .
 
         Args:
@@ -2567,33 +2485,24 @@ class ApplicationPolicy(object):
             https://developer.cisco.com/docs/dna-center/#!get-applications-v2
         """
         check_type(headers, dict)
-        check_type(attributes, str,
-                   may_be_none=False)
+        check_type(attributes, str, may_be_none=False)
         check_type(name, str)
-        check_type(offset, int,
-                   may_be_none=False)
-        check_type(limit, int,
-                   may_be_none=False)
+        check_type(offset, int, may_be_none=False)
+        check_type(limit, int, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'attributes':
-                attributes,
-            'name':
-                name,
-            'offset':
-                offset,
-            'limit':
-                limit,
+            "attributes": attributes,
+            "name": name,
+            "offset": offset,
+            "limit": limit,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -2601,20 +2510,22 @@ class ApplicationPolicy(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v2/applications')
+        e_url = "/dna/intent/api/v2/applications"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_f8a81055328e2c77f0dcb60a68_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_f8a81055328e2c77f0dcb60a68_v3_1_3_0", json_data
+        )
 
-    def get_application_count(self,
-                              scalable_group_type,
-                              headers=None,
-                              **request_parameters):
+    def get_application_count(
+        self, scalable_group_type, headers=None, **request_parameters
+    ):
         """Get the number of all existing applications .
 
         Args:
@@ -2637,22 +2548,18 @@ class ApplicationPolicy(object):
             https://developer.cisco.com/docs/dna-center/#!get-application-count
         """
         check_type(headers, dict)
-        check_type(scalable_group_type, str,
-                   may_be_none=False)
+        check_type(scalable_group_type, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'scalableGroupType':
-                scalable_group_type,
+            "scalableGroupType": scalable_group_type,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -2660,20 +2567,20 @@ class ApplicationPolicy(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v2/applications-count')
+        e_url = "/dna/intent/api/v2/applications-count"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_d4d0a63b02ed518a95fe297b2a566f1d_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_d4d0a63b02ed518a95fe297b2a566f1d_v3_1_3_0", json_data
+        )
 
-    def delete_application_v2(self,
-                              id,
-                              headers=None,
-                              **request_parameters):
+    def delete_application_v2(self, id, headers=None, **request_parameters):
         """Delete existing custom application by id .
 
         Args:
@@ -2695,20 +2602,17 @@ class ApplicationPolicy(object):
             https://developer.cisco.com/docs/dna-center/#!delete-application-v2
         """
         check_type(headers, dict)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
 
         with_custom_headers = False
@@ -2717,15 +2621,18 @@ class ApplicationPolicy(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v2/applications/{id}')
+        e_url = "/dna/intent/api/v2/applications/{id}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.delete(endpoint_full_url, params=_params,
-                                             headers=_headers)
+            json_data = self._session.delete(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.delete(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_ef849b2f5415501086635693a458e69b_v3_1_3_0', json_data)
+        return self._object_factory(
+            "bpm_ef849b2f5415501086635693a458e69b_v3_1_3_0", json_data
+        )
+
 
 # Alias Functions
-

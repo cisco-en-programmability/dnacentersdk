@@ -26,18 +26,18 @@ from fastjsonschema.exceptions import JsonSchemaException
 from dnacentersdk.exceptions import MalformedRequest
 from tests.environment import DNA_CENTER_VERSION
 
-pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '2.3.5.3', reason='version does not match')
+pytestmark = pytest.mark.skipif(
+    DNA_CENTER_VERSION != "2.3.5.3", reason="version does not match"
+)
 
 
 def is_valid_get_user_enrichment_details(json_schema_validate, obj):
-    json_schema_validate('jsd_70f9c1d861a051b4a4928f2e6d84b2e3_v2_3_5_3').validate(obj)
+    json_schema_validate("jsd_70f9c1d861a051b4a4928f2e6d84b2e3_v2_3_5_3").validate(obj)
     return True
 
 
 def get_user_enrichment_details(api):
-    endpoint_result = api.users.get_user_enrichment_details(
-
-    )
+    endpoint_result = api.users.get_user_enrichment_details()
     return endpoint_result
 
 
@@ -45,8 +45,7 @@ def get_user_enrichment_details(api):
 def test_get_user_enrichment_details(api, validator):
     try:
         assert is_valid_get_user_enrichment_details(
-            validator,
-            get_user_enrichment_details(api)
+            validator, get_user_enrichment_details(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -55,9 +54,7 @@ def test_get_user_enrichment_details(api, validator):
 
 
 def get_user_enrichment_details_default_val(api):
-    endpoint_result = api.users.get_user_enrichment_details(
-
-    )
+    endpoint_result = api.users.get_user_enrichment_details()
     return endpoint_result
 
 
@@ -65,8 +62,7 @@ def get_user_enrichment_details_default_val(api):
 def test_get_user_enrichment_details_default_val(api, validator):
     try:
         assert is_valid_get_user_enrichment_details(
-            validator,
-            get_user_enrichment_details_default_val(api)
+            validator, get_user_enrichment_details_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

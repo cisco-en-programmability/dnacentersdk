@@ -64,13 +64,15 @@ class AuthenticationManagement(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def import_certificate(self,
-                           multipart_fields,
-                           multipart_monitor_callback,
-                           list_of_users=None,
-                           pk_password=None,
-                           headers=None,
-                           **request_parameters):
+    def import_certificate(
+        self,
+        multipart_fields,
+        multipart_monitor_callback,
+        list_of_users=None,
+        pk_password=None,
+        headers=None,
+        **request_parameters
+    ):
         """This method is used to upload a certificate .
 
         The following code gives an example of the multipart_fields.
@@ -127,24 +129,19 @@ class AuthenticationManagement(object):
         check_type(pk_password, str)
         check_type(list_of_users, (str, list, set, tuple))
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'pkPassword':
-                pk_password,
-            'listOfUsers':
-                list_of_users,
+            "pkPassword": pk_password,
+            "listOfUsers": list_of_users,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -152,31 +149,40 @@ class AuthenticationManagement(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/certificate')
+        e_url = "/dna/intent/api/v1/certificate"
         endpoint_full_url = apply_path_params(e_url, path_params)
-        m_data = self._session.multipart_data(multipart_fields,
-                                              multipart_monitor_callback)
-        _headers.update({'Content-Type': m_data.content_type,
-                         'Content-Length': str(m_data.len),
-                         'Connection': 'keep-alive'})
+        m_data = self._session.multipart_data(
+            multipart_fields, multipart_monitor_callback
+        )
+        _headers.update(
+            {
+                "Content-Type": m_data.content_type,
+                "Content-Length": str(m_data.len),
+                "Connection": "keep-alive",
+            }
+        )
         with_custom_headers = True
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           data=m_data,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, data=m_data, headers=_headers
+            )
         else:
             json_data = self._session.post(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_b19d7e8de2ca5329930d06f041a4a173_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_b19d7e8de2ca5329930d06f041a4a173_v2_3_5_3", json_data
+        )
 
-    def import_certificate_p12(self,
-                               multipart_fields,
-                               multipart_monitor_callback,
-                               list_of_users=None,
-                               p12_password=None,
-                               pk_password=None,
-                               headers=None,
-                               **request_parameters):
+    def import_certificate_p12(
+        self,
+        multipart_fields,
+        multipart_monitor_callback,
+        list_of_users=None,
+        p12_password=None,
+        pk_password=None,
+        headers=None,
+        **request_parameters
+    ):
         """This method is used to upload a PKCS#12 file .
 
         The following code gives an example of the multipart_fields.
@@ -235,26 +241,20 @@ class AuthenticationManagement(object):
         check_type(pk_password, str)
         check_type(list_of_users, (str, list, set, tuple))
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'p12Password':
-                p12_password,
-            'pkPassword':
-                pk_password,
-            'listOfUsers':
-                list_of_users,
+            "p12Password": p12_password,
+            "pkPassword": pk_password,
+            "listOfUsers": list_of_users,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -262,26 +262,31 @@ class AuthenticationManagement(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/certificate-p12')
+        e_url = "/dna/intent/api/v1/certificate-p12"
         endpoint_full_url = apply_path_params(e_url, path_params)
-        m_data = self._session.multipart_data(multipart_fields,
-                                              multipart_monitor_callback)
-        _headers.update({'Content-Type': m_data.content_type,
-                         'Content-Length': str(m_data.len),
-                         'Connection': 'keep-alive'})
+        m_data = self._session.multipart_data(
+            multipart_fields, multipart_monitor_callback
+        )
+        _headers.update(
+            {
+                "Content-Type": m_data.content_type,
+                "Content-Length": str(m_data.len),
+                "Connection": "keep-alive",
+            }
+        )
         with_custom_headers = True
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           data=m_data,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, data=m_data, headers=_headers
+            )
         else:
             json_data = self._session.post(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_c80e660c2e36582f939a7403ef15de22_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_c80e660c2e36582f939a7403ef15de22_v2_3_5_3", json_data
+        )
 
-    def authentication_api(self,
-                           headers=None,
-                           **request_parameters):
+    def authentication_api(self, headers=None, **request_parameters):
         """API to obtain an access token, which remains valid for 1 hour. The token obtained using this API is required to
         be set as value to the X-Auth-Token HTTP Header for all API calls to Cisco DNA Center. .
 
@@ -304,23 +309,18 @@ class AuthenticationManagement(object):
         """
         check_type(headers, dict)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'Authorization' in headers:
-                check_type(headers.get('Authorization'),
-                           str, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "Authorization" in headers:
+                check_type(headers.get("Authorization"), str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -328,12 +328,15 @@ class AuthenticationManagement(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/system/api/v1/auth/token')
+        e_url = "/dna/system/api/v1/auth/token"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.post(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_a6bfcd88e22c5c138657b340870b4ebb_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_a6bfcd88e22c5c138657b340870b4ebb_v2_3_5_3", json_data
+        )

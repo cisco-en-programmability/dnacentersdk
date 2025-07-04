@@ -26,22 +26,28 @@ from fastjsonschema.exceptions import JsonSchemaException
 from dnacentersdk.exceptions import MalformedRequest
 from tests.environment import DNA_CENTER_VERSION
 
-pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '3.1.3.0', reason='version does not match')
+pytestmark = pytest.mark.skipif(
+    DNA_CENTER_VERSION != "3.1.3.0", reason="version does not match"
+)
 
 
-def is_valid_configure_a_r_e_p_ring_on_f_a_b_r_i_c_deployment(json_schema_validate, obj):
-    json_schema_validate('jsd_f200dc9a10d25beab1243a5b29f99c7d_v3_1_3_0').validate(obj)
+def is_valid_configure_a_r_e_p_ring_on_f_a_b_r_i_c_deployment(
+    json_schema_validate, obj
+):
+    json_schema_validate("jsd_f200dc9a10d25beab1243a5b29f99c7d_v3_1_3_0").validate(obj)
     return True
 
 
 def configure_a_r_e_p_ring_on_f_a_b_r_i_c_deployment(api):
-    endpoint_result = api.industrial_configuration.configure_a_r_e_p_ring_on_f_a_b_r_i_c_deployment(
-        active_validation=True,
-        deploymentMode='string',
-        payload=None,
-        ringName='string',
-        rootNeighbourNetworkDeviceIds=['string'],
-        rootNetworkDeviceId='string'
+    endpoint_result = (
+        api.industrial_configuration.configure_a_r_e_p_ring_on_f_a_b_r_i_c_deployment(
+            active_validation=True,
+            deploymentMode="string",
+            payload=None,
+            ringName="string",
+            rootNeighbourNetworkDeviceIds=["string"],
+            rootNetworkDeviceId="string",
+        )
     )
     return endpoint_result
 
@@ -50,8 +56,7 @@ def configure_a_r_e_p_ring_on_f_a_b_r_i_c_deployment(api):
 def test_configure_a_r_e_p_ring_on_f_a_b_r_i_c_deployment(api, validator):
     try:
         assert is_valid_configure_a_r_e_p_ring_on_f_a_b_r_i_c_deployment(
-            validator,
-            configure_a_r_e_p_ring_on_f_a_b_r_i_c_deployment(api)
+            validator, configure_a_r_e_p_ring_on_f_a_b_r_i_c_deployment(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -60,13 +65,15 @@ def test_configure_a_r_e_p_ring_on_f_a_b_r_i_c_deployment(api, validator):
 
 
 def configure_a_r_e_p_ring_on_f_a_b_r_i_c_deployment_default_val(api):
-    endpoint_result = api.industrial_configuration.configure_a_r_e_p_ring_on_f_a_b_r_i_c_deployment(
-        active_validation=True,
-        deploymentMode=None,
-        payload=None,
-        ringName=None,
-        rootNeighbourNetworkDeviceIds=None,
-        rootNetworkDeviceId=None
+    endpoint_result = (
+        api.industrial_configuration.configure_a_r_e_p_ring_on_f_a_b_r_i_c_deployment(
+            active_validation=True,
+            deploymentMode=None,
+            payload=None,
+            ringName=None,
+            rootNeighbourNetworkDeviceIds=None,
+            rootNetworkDeviceId=None,
+        )
     )
     return endpoint_result
 
@@ -75,22 +82,23 @@ def configure_a_r_e_p_ring_on_f_a_b_r_i_c_deployment_default_val(api):
 def test_configure_a_r_e_p_ring_on_f_a_b_r_i_c_deployment_default_val(api, validator):
     try:
         assert is_valid_configure_a_r_e_p_ring_on_f_a_b_r_i_c_deployment(
-            validator,
-            configure_a_r_e_p_ring_on_f_a_b_r_i_c_deployment_default_val(api)
+            validator, configure_a_r_e_p_ring_on_f_a_b_r_i_c_deployment_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_delete_r_e_p_ring_configured_in_the_f_a_b_r_i_c_deployment(json_schema_validate, obj):
-    json_schema_validate('jsd_743aca1b387f556ca0c87d563b3df8f2_v3_1_3_0').validate(obj)
+def is_valid_delete_r_e_p_ring_configured_in_the_f_a_b_r_i_c_deployment(
+    json_schema_validate, obj
+):
+    json_schema_validate("jsd_743aca1b387f556ca0c87d563b3df8f2_v3_1_3_0").validate(obj)
     return True
 
 
 def delete_r_e_p_ring_configured_in_the_f_a_b_r_i_c_deployment(api):
     endpoint_result = api.industrial_configuration.delete_r_e_p_ring_configured_in_the_f_a_b_r_i_c_deployment(
-        id='string'
+        id="string"
     )
     return endpoint_result
 
@@ -99,8 +107,7 @@ def delete_r_e_p_ring_configured_in_the_f_a_b_r_i_c_deployment(api):
 def test_delete_r_e_p_ring_configured_in_the_f_a_b_r_i_c_deployment(api, validator):
     try:
         assert is_valid_delete_r_e_p_ring_configured_in_the_f_a_b_r_i_c_deployment(
-            validator,
-            delete_r_e_p_ring_configured_in_the_f_a_b_r_i_c_deployment(api)
+            validator, delete_r_e_p_ring_configured_in_the_f_a_b_r_i_c_deployment(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -110,17 +117,19 @@ def test_delete_r_e_p_ring_configured_in_the_f_a_b_r_i_c_deployment(api, validat
 
 def delete_r_e_p_ring_configured_in_the_f_a_b_r_i_c_deployment_default_val(api):
     endpoint_result = api.industrial_configuration.delete_r_e_p_ring_configured_in_the_f_a_b_r_i_c_deployment(
-        id='string'
+        id="string"
     )
     return endpoint_result
 
 
 @pytest.mark.industrial_configuration
-def test_delete_r_e_p_ring_configured_in_the_f_a_b_r_i_c_deployment_default_val(api, validator):
+def test_delete_r_e_p_ring_configured_in_the_f_a_b_r_i_c_deployment_default_val(
+    api, validator
+):
     try:
         assert is_valid_delete_r_e_p_ring_configured_in_the_f_a_b_r_i_c_deployment(
             validator,
-            delete_r_e_p_ring_configured_in_the_f_a_b_r_i_c_deployment_default_val(api)
+            delete_r_e_p_ring_configured_in_the_f_a_b_r_i_c_deployment_default_val(api),
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -128,16 +137,13 @@ def test_delete_r_e_p_ring_configured_in_the_f_a_b_r_i_c_deployment_default_val(
 
 
 def is_valid_retrieves_the_list_of_m_r_p_rings(json_schema_validate, obj):
-    json_schema_validate('jsd_70ef907f6fb75c9187c6377b24549af5_v3_1_3_0').validate(obj)
+    json_schema_validate("jsd_70ef907f6fb75c9187c6377b24549af5_v3_1_3_0").validate(obj)
     return True
 
 
 def retrieves_the_list_of_m_r_p_rings(api):
     endpoint_result = api.industrial_configuration.retrieves_the_list_of_m_r_p_rings(
-        id=0,
-        limit=0,
-        network_device_id='string',
-        offset=0
+        id=0, limit=0, network_device_id="string", offset=0
     )
     return endpoint_result
 
@@ -146,8 +152,7 @@ def retrieves_the_list_of_m_r_p_rings(api):
 def test_retrieves_the_list_of_m_r_p_rings(api, validator):
     try:
         assert is_valid_retrieves_the_list_of_m_r_p_rings(
-            validator,
-            retrieves_the_list_of_m_r_p_rings(api)
+            validator, retrieves_the_list_of_m_r_p_rings(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -157,10 +162,7 @@ def test_retrieves_the_list_of_m_r_p_rings(api, validator):
 
 def retrieves_the_list_of_m_r_p_rings_default_val(api):
     endpoint_result = api.industrial_configuration.retrieves_the_list_of_m_r_p_rings(
-        id=None,
-        limit=None,
-        network_device_id='string',
-        offset=None
+        id=None, limit=None, network_device_id="string", offset=None
     )
     return endpoint_result
 
@@ -169,8 +171,7 @@ def retrieves_the_list_of_m_r_p_rings_default_val(api):
 def test_retrieves_the_list_of_m_r_p_rings_default_val(api, validator):
     try:
         assert is_valid_retrieves_the_list_of_m_r_p_rings(
-            validator,
-            retrieves_the_list_of_m_r_p_rings_default_val(api)
+            validator, retrieves_the_list_of_m_r_p_rings_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -178,13 +179,13 @@ def test_retrieves_the_list_of_m_r_p_rings_default_val(api, validator):
 
 
 def is_valid_retrieves_the_count_of_mrp_rings(json_schema_validate, obj):
-    json_schema_validate('jsd_54f4d2ca417d50d7912fb8ea4a31662d_v3_1_3_0').validate(obj)
+    json_schema_validate("jsd_54f4d2ca417d50d7912fb8ea4a31662d_v3_1_3_0").validate(obj)
     return True
 
 
 def retrieves_the_count_of_mrp_rings(api):
     endpoint_result = api.industrial_configuration.retrieves_the_count_of_mrp_rings(
-        network_device_id='string'
+        network_device_id="string"
     )
     return endpoint_result
 
@@ -193,8 +194,7 @@ def retrieves_the_count_of_mrp_rings(api):
 def test_retrieves_the_count_of_mrp_rings(api, validator):
     try:
         assert is_valid_retrieves_the_count_of_mrp_rings(
-            validator,
-            retrieves_the_count_of_mrp_rings(api)
+            validator, retrieves_the_count_of_mrp_rings(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -204,7 +204,7 @@ def test_retrieves_the_count_of_mrp_rings(api, validator):
 
 def retrieves_the_count_of_mrp_rings_default_val(api):
     endpoint_result = api.industrial_configuration.retrieves_the_count_of_mrp_rings(
-        network_device_id='string'
+        network_device_id="string"
     )
     return endpoint_result
 
@@ -213,25 +213,23 @@ def retrieves_the_count_of_mrp_rings_default_val(api):
 def test_retrieves_the_count_of_mrp_rings_default_val(api, validator):
     try:
         assert is_valid_retrieves_the_count_of_mrp_rings(
-            validator,
-            retrieves_the_count_of_mrp_rings_default_val(api)
+            validator, retrieves_the_count_of_mrp_rings_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_retrieves_the_list_of_network_devices_part_of_m_r_p_ring(json_schema_validate, obj):
-    json_schema_validate('jsd_bf87f6cb9efb5451b84253593e548f98_v3_1_3_0').validate(obj)
+def is_valid_retrieves_the_list_of_network_devices_part_of_m_r_p_ring(
+    json_schema_validate, obj
+):
+    json_schema_validate("jsd_bf87f6cb9efb5451b84253593e548f98_v3_1_3_0").validate(obj)
     return True
 
 
 def retrieves_the_list_of_network_devices_part_of_m_r_p_ring(api):
     endpoint_result = api.industrial_configuration.retrieves_the_list_of_network_devices_part_of_m_r_p_ring(
-        id=0,
-        limit=0,
-        network_device_id='string',
-        offset=0
+        id=0, limit=0, network_device_id="string", offset=0
     )
     return endpoint_result
 
@@ -240,8 +238,7 @@ def retrieves_the_list_of_network_devices_part_of_m_r_p_ring(api):
 def test_retrieves_the_list_of_network_devices_part_of_m_r_p_ring(api, validator):
     try:
         assert is_valid_retrieves_the_list_of_network_devices_part_of_m_r_p_ring(
-            validator,
-            retrieves_the_list_of_network_devices_part_of_m_r_p_ring(api)
+            validator, retrieves_the_list_of_network_devices_part_of_m_r_p_ring(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -251,20 +248,19 @@ def test_retrieves_the_list_of_network_devices_part_of_m_r_p_ring(api, validator
 
 def retrieves_the_list_of_network_devices_part_of_m_r_p_ring_default_val(api):
     endpoint_result = api.industrial_configuration.retrieves_the_list_of_network_devices_part_of_m_r_p_ring(
-        id=0,
-        limit=None,
-        network_device_id='string',
-        offset=None
+        id=0, limit=None, network_device_id="string", offset=None
     )
     return endpoint_result
 
 
 @pytest.mark.industrial_configuration
-def test_retrieves_the_list_of_network_devices_part_of_m_r_p_ring_default_val(api, validator):
+def test_retrieves_the_list_of_network_devices_part_of_m_r_p_ring_default_val(
+    api, validator
+):
     try:
         assert is_valid_retrieves_the_list_of_network_devices_part_of_m_r_p_ring(
             validator,
-            retrieves_the_list_of_network_devices_part_of_m_r_p_ring_default_val(api)
+            retrieves_the_list_of_network_devices_part_of_m_r_p_ring_default_val(api),
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -272,14 +268,15 @@ def test_retrieves_the_list_of_network_devices_part_of_m_r_p_ring_default_val(ap
 
 
 def is_valid_retrieves_the_count_of_m_r_p_ring_members(json_schema_validate, obj):
-    json_schema_validate('jsd_35bc1b3345f259e9859ac21a1ec694fe_v3_1_3_0').validate(obj)
+    json_schema_validate("jsd_35bc1b3345f259e9859ac21a1ec694fe_v3_1_3_0").validate(obj)
     return True
 
 
 def retrieves_the_count_of_m_r_p_ring_members(api):
-    endpoint_result = api.industrial_configuration.retrieves_the_count_of_m_r_p_ring_members(
-        id=0,
-        network_device_id='string'
+    endpoint_result = (
+        api.industrial_configuration.retrieves_the_count_of_m_r_p_ring_members(
+            id=0, network_device_id="string"
+        )
     )
     return endpoint_result
 
@@ -288,8 +285,7 @@ def retrieves_the_count_of_m_r_p_ring_members(api):
 def test_retrieves_the_count_of_m_r_p_ring_members(api, validator):
     try:
         assert is_valid_retrieves_the_count_of_m_r_p_ring_members(
-            validator,
-            retrieves_the_count_of_m_r_p_ring_members(api)
+            validator, retrieves_the_count_of_m_r_p_ring_members(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -298,9 +294,10 @@ def test_retrieves_the_count_of_m_r_p_ring_members(api, validator):
 
 
 def retrieves_the_count_of_m_r_p_ring_members_default_val(api):
-    endpoint_result = api.industrial_configuration.retrieves_the_count_of_m_r_p_ring_members(
-        id=0,
-        network_device_id='string'
+    endpoint_result = (
+        api.industrial_configuration.retrieves_the_count_of_m_r_p_ring_members(
+            id=0, network_device_id="string"
+        )
     )
     return endpoint_result
 
@@ -309,27 +306,28 @@ def retrieves_the_count_of_m_r_p_ring_members_default_val(api):
 def test_retrieves_the_count_of_m_r_p_ring_members_default_val(api, validator):
     try:
         assert is_valid_retrieves_the_count_of_m_r_p_ring_members(
-            validator,
-            retrieves_the_count_of_m_r_p_ring_members_default_val(api)
+            validator, retrieves_the_count_of_m_r_p_ring_members_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_configure_a_r_e_p_ring_on_n_o_n_f_a_b_r_i_c_deployment(json_schema_validate, obj):
-    json_schema_validate('jsd_bbc4dab8193c546ab116e19863dff621_v3_1_3_0').validate(obj)
+def is_valid_configure_a_r_e_p_ring_on_n_o_n_f_a_b_r_i_c_deployment(
+    json_schema_validate, obj
+):
+    json_schema_validate("jsd_bbc4dab8193c546ab116e19863dff621_v3_1_3_0").validate(obj)
     return True
 
 
 def configure_a_r_e_p_ring_on_n_o_n_f_a_b_r_i_c_deployment(api):
     endpoint_result = api.industrial_configuration.configure_a_r_e_p_ring_on_n_o_n_f_a_b_r_i_c_deployment(
         active_validation=True,
-        deploymentMode='string',
+        deploymentMode="string",
         payload=None,
-        ringName='string',
-        rootNeighbourNetworkDeviceIds=['string'],
-        rootNetworkDeviceId='string'
+        ringName="string",
+        rootNeighbourNetworkDeviceIds=["string"],
+        rootNetworkDeviceId="string",
     )
     return endpoint_result
 
@@ -338,8 +336,7 @@ def configure_a_r_e_p_ring_on_n_o_n_f_a_b_r_i_c_deployment(api):
 def test_configure_a_r_e_p_ring_on_n_o_n_f_a_b_r_i_c_deployment(api, validator):
     try:
         assert is_valid_configure_a_r_e_p_ring_on_n_o_n_f_a_b_r_i_c_deployment(
-            validator,
-            configure_a_r_e_p_ring_on_n_o_n_f_a_b_r_i_c_deployment(api)
+            validator, configure_a_r_e_p_ring_on_n_o_n_f_a_b_r_i_c_deployment(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -354,41 +351,49 @@ def configure_a_r_e_p_ring_on_n_o_n_f_a_b_r_i_c_deployment_default_val(api):
         payload=None,
         ringName=None,
         rootNeighbourNetworkDeviceIds=None,
-        rootNetworkDeviceId=None
+        rootNetworkDeviceId=None,
     )
     return endpoint_result
 
 
 @pytest.mark.industrial_configuration
-def test_configure_a_r_e_p_ring_on_n_o_n_f_a_b_r_i_c_deployment_default_val(api, validator):
+def test_configure_a_r_e_p_ring_on_n_o_n_f_a_b_r_i_c_deployment_default_val(
+    api, validator
+):
     try:
         assert is_valid_configure_a_r_e_p_ring_on_n_o_n_f_a_b_r_i_c_deployment(
             validator,
-            configure_a_r_e_p_ring_on_n_o_n_f_a_b_r_i_c_deployment_default_val(api)
+            configure_a_r_e_p_ring_on_n_o_n_f_a_b_r_i_c_deployment_default_val(api),
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_delete_r_e_p_ring_configured_in_the_n_o_n_f_a_b_r_i_c_deployment(json_schema_validate, obj):
-    json_schema_validate('jsd_4dcf9b8fecdd57f0bb7a33d358e6be37_v3_1_3_0').validate(obj)
+def is_valid_delete_r_e_p_ring_configured_in_the_n_o_n_f_a_b_r_i_c_deployment(
+    json_schema_validate, obj
+):
+    json_schema_validate("jsd_4dcf9b8fecdd57f0bb7a33d358e6be37_v3_1_3_0").validate(obj)
     return True
 
 
 def delete_r_e_p_ring_configured_in_the_n_o_n_f_a_b_r_i_c_deployment(api):
     endpoint_result = api.industrial_configuration.delete_r_e_p_ring_configured_in_the_n_o_n_f_a_b_r_i_c_deployment(
-        id='string'
+        id="string"
     )
     return endpoint_result
 
 
 @pytest.mark.industrial_configuration
-def test_delete_r_e_p_ring_configured_in_the_n_o_n_f_a_b_r_i_c_deployment(api, validator):
+def test_delete_r_e_p_ring_configured_in_the_n_o_n_f_a_b_r_i_c_deployment(
+    api, validator
+):
     try:
-        assert is_valid_delete_r_e_p_ring_configured_in_the_n_o_n_f_a_b_r_i_c_deployment(
-            validator,
-            delete_r_e_p_ring_configured_in_the_n_o_n_f_a_b_r_i_c_deployment(api)
+        assert (
+            is_valid_delete_r_e_p_ring_configured_in_the_n_o_n_f_a_b_r_i_c_deployment(
+                validator,
+                delete_r_e_p_ring_configured_in_the_n_o_n_f_a_b_r_i_c_deployment(api),
+            )
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -398,17 +403,21 @@ def test_delete_r_e_p_ring_configured_in_the_n_o_n_f_a_b_r_i_c_deployment(api, v
 
 def delete_r_e_p_ring_configured_in_the_n_o_n_f_a_b_r_i_c_deployment_default_val(api):
     endpoint_result = api.industrial_configuration.delete_r_e_p_ring_configured_in_the_n_o_n_f_a_b_r_i_c_deployment(
-        id='string'
+        id="string"
     )
     return endpoint_result
 
 
 @pytest.mark.industrial_configuration
-def test_delete_r_e_p_ring_configured_in_the_n_o_n_f_a_b_r_i_c_deployment_default_val(api, validator):
+def test_delete_r_e_p_ring_configured_in_the_n_o_n_f_a_b_r_i_c_deployment_default_val(
+    api, validator
+):
     try:
         assert is_valid_delete_r_e_p_ring_configured_in_the_n_o_n_f_a_b_r_i_c_deployment(
             validator,
-            delete_r_e_p_ring_configured_in_the_n_o_n_f_a_b_r_i_c_deployment_default_val(api)
+            delete_r_e_p_ring_configured_in_the_n_o_n_f_a_b_r_i_c_deployment_default_val(
+                api
+            ),
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -416,18 +425,18 @@ def test_delete_r_e_p_ring_configured_in_the_n_o_n_f_a_b_r_i_c_deployment_defaul
 
 
 def is_valid_retrieves_the_list_of_r_e_p_rings(json_schema_validate, obj):
-    json_schema_validate('jsd_5344fa2127b55124a3a00b2991b77db6_v3_1_3_0').validate(obj)
+    json_schema_validate("jsd_5344fa2127b55124a3a00b2991b77db6_v3_1_3_0").validate(obj)
     return True
 
 
 def retrieves_the_list_of_r_e_p_rings(api):
     endpoint_result = api.industrial_configuration.retrieves_the_list_of_r_e_p_rings(
         active_validation=True,
-        deploymentMode='string',
+        deploymentMode="string",
         limit=0,
-        networkDeviceId='string',
+        networkDeviceId="string",
         offset=0,
-        payload=None
+        payload=None,
     )
     return endpoint_result
 
@@ -436,8 +445,7 @@ def retrieves_the_list_of_r_e_p_rings(api):
 def test_retrieves_the_list_of_r_e_p_rings(api, validator):
     try:
         assert is_valid_retrieves_the_list_of_r_e_p_rings(
-            validator,
-            retrieves_the_list_of_r_e_p_rings(api)
+            validator, retrieves_the_list_of_r_e_p_rings(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -452,7 +460,7 @@ def retrieves_the_list_of_r_e_p_rings_default_val(api):
         limit=None,
         networkDeviceId=None,
         offset=None,
-        payload=None
+        payload=None,
     )
     return endpoint_result
 
@@ -461,8 +469,7 @@ def retrieves_the_list_of_r_e_p_rings_default_val(api):
 def test_retrieves_the_list_of_r_e_p_rings_default_val(api, validator):
     try:
         assert is_valid_retrieves_the_list_of_r_e_p_rings(
-            validator,
-            retrieves_the_list_of_r_e_p_rings_default_val(api)
+            validator, retrieves_the_list_of_r_e_p_rings_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -470,16 +477,16 @@ def test_retrieves_the_list_of_r_e_p_rings_default_val(api, validator):
 
 
 def is_valid_retrieves_the_count_of_r_e_p_rings(json_schema_validate, obj):
-    json_schema_validate('jsd_2d9f276a532e5eeb86bb591f8537fcc7_v3_1_3_0').validate(obj)
+    json_schema_validate("jsd_2d9f276a532e5eeb86bb591f8537fcc7_v3_1_3_0").validate(obj)
     return True
 
 
 def retrieves_the_count_of_r_e_p_rings(api):
     endpoint_result = api.industrial_configuration.retrieves_the_count_of_r_e_p_rings(
         active_validation=True,
-        deploymentMode='string',
-        networkDeviceId='string',
-        payload=None
+        deploymentMode="string",
+        networkDeviceId="string",
+        payload=None,
     )
     return endpoint_result
 
@@ -488,8 +495,7 @@ def retrieves_the_count_of_r_e_p_rings(api):
 def test_retrieves_the_count_of_r_e_p_rings(api, validator):
     try:
         assert is_valid_retrieves_the_count_of_r_e_p_rings(
-            validator,
-            retrieves_the_count_of_r_e_p_rings(api)
+            validator, retrieves_the_count_of_r_e_p_rings(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -499,10 +505,7 @@ def test_retrieves_the_count_of_r_e_p_rings(api, validator):
 
 def retrieves_the_count_of_r_e_p_rings_default_val(api):
     endpoint_result = api.industrial_configuration.retrieves_the_count_of_r_e_p_rings(
-        active_validation=True,
-        deploymentMode=None,
-        networkDeviceId=None,
-        payload=None
+        active_validation=True, deploymentMode=None, networkDeviceId=None, payload=None
     )
     return endpoint_result
 
@@ -511,8 +514,7 @@ def retrieves_the_count_of_r_e_p_rings_default_val(api):
 def test_retrieves_the_count_of_r_e_p_rings_default_val(api, validator):
     try:
         assert is_valid_retrieves_the_count_of_r_e_p_rings(
-            validator,
-            retrieves_the_count_of_r_e_p_rings_default_val(api)
+            validator, retrieves_the_count_of_r_e_p_rings_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -520,13 +522,15 @@ def test_retrieves_the_count_of_r_e_p_rings_default_val(api, validator):
 
 
 def is_valid_get_the_r_e_p_ring_based_on_the_ring_id(json_schema_validate, obj):
-    json_schema_validate('jsd_98534ce1469c515d8a72455779e3a484_v3_1_3_0').validate(obj)
+    json_schema_validate("jsd_98534ce1469c515d8a72455779e3a484_v3_1_3_0").validate(obj)
     return True
 
 
 def get_the_r_e_p_ring_based_on_the_ring_id(api):
-    endpoint_result = api.industrial_configuration.get_the_r_e_p_ring_based_on_the_ring_id(
-        id='string'
+    endpoint_result = (
+        api.industrial_configuration.get_the_r_e_p_ring_based_on_the_ring_id(
+            id="string"
+        )
     )
     return endpoint_result
 
@@ -535,8 +539,7 @@ def get_the_r_e_p_ring_based_on_the_ring_id(api):
 def test_get_the_r_e_p_ring_based_on_the_ring_id(api, validator):
     try:
         assert is_valid_get_the_r_e_p_ring_based_on_the_ring_id(
-            validator,
-            get_the_r_e_p_ring_based_on_the_ring_id(api)
+            validator, get_the_r_e_p_ring_based_on_the_ring_id(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -545,8 +548,10 @@ def test_get_the_r_e_p_ring_based_on_the_ring_id(api, validator):
 
 
 def get_the_r_e_p_ring_based_on_the_ring_id_default_val(api):
-    endpoint_result = api.industrial_configuration.get_the_r_e_p_ring_based_on_the_ring_id(
-        id='string'
+    endpoint_result = (
+        api.industrial_configuration.get_the_r_e_p_ring_based_on_the_ring_id(
+            id="string"
+        )
     )
     return endpoint_result
 
@@ -555,8 +560,7 @@ def get_the_r_e_p_ring_based_on_the_ring_id_default_val(api):
 def test_get_the_r_e_p_ring_based_on_the_ring_id_default_val(api, validator):
     try:
         assert is_valid_get_the_r_e_p_ring_based_on_the_ring_id(
-            validator,
-            get_the_r_e_p_ring_based_on_the_ring_id_default_val(api)
+            validator, get_the_r_e_p_ring_based_on_the_ring_id_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

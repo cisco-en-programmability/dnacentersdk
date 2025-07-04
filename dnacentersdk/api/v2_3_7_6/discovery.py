@@ -23,9 +23,7 @@ SOFTWARE.
 """
 
 
-
 from builtins import *
-
 
 
 from ...restsession import RestSession
@@ -66,9 +64,7 @@ class Discovery(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def delete_all_discovery_v1(self,
-                                headers=None,
-                                **request_parameters):
+    def delete_all_discovery_v1(self, headers=None, **request_parameters):
         """Stops all the discoveries and removes them .
 
         Args:
@@ -90,17 +86,14 @@ class Discovery(object):
         """
         check_type(headers, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -108,57 +101,62 @@ class Discovery(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/discovery')
+        e_url = "/dna/intent/api/v1/discovery"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.delete(endpoint_full_url, params=_params,
-                                             headers=_headers)
+            json_data = self._session.delete(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.delete(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_a1d007749a7e5b99aabddf1543714a9a_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_a1d007749a7e5b99aabddf1543714a9a_v2_3_7_6", json_data
+        )
 
-    def updates_discovery_by_id_v1(self,
-                                attributeInfo=None,
-                                cdpLevel=None,
-                                deviceIds=None,
-                                discoveryCondition=None,
-                                discoveryStatus=None,
-                                discoveryType=None,
-                                enablePasswordList=None,
-                                globalCredentialIdList=None,
-                                httpReadCredential=None,
-                                httpWriteCredential=None,
-                                id=None,
-                                ipAddressList=None,
-                                ipFilterList=None,
-                                isAutoCdp=None,
-                                lldpLevel=None,
-                                name=None,
-                                netconfPort=None,
-                                numDevices=None,
-                                parentDiscoveryId=None,
-                                passwordList=None,
-                                preferredMgmtIPMethod=None,
-                                protocolOrder=None,
-                                retryCount=None,
-                                snmpAuthPassphrase=None,
-                                snmpAuthProtocol=None,
-                                snmpMode=None,
-                                snmpPrivPassphrase=None,
-                                snmpPrivProtocol=None,
-                                snmpRoCommunity=None,
-                                snmpRoCommunityDesc=None,
-                                snmpRwCommunity=None,
-                                snmpRwCommunityDesc=None,
-                                snmpUserName=None,
-                                timeOut=None,
-                                updateMgmtIp=None,
-                                userNameList=None,
-                                headers=None,
-                                payload=None,
-                                active_validation=True,
-                                **request_parameters):
+    def updates_discovery_by_id_v1(
+        self,
+        attributeInfo=None,
+        cdpLevel=None,
+        deviceIds=None,
+        discoveryCondition=None,
+        discoveryStatus=None,
+        discoveryType=None,
+        enablePasswordList=None,
+        globalCredentialIdList=None,
+        httpReadCredential=None,
+        httpWriteCredential=None,
+        id=None,
+        ipAddressList=None,
+        ipFilterList=None,
+        isAutoCdp=None,
+        lldpLevel=None,
+        name=None,
+        netconfPort=None,
+        numDevices=None,
+        parentDiscoveryId=None,
+        passwordList=None,
+        preferredMgmtIPMethod=None,
+        protocolOrder=None,
+        retryCount=None,
+        snmpAuthPassphrase=None,
+        snmpAuthProtocol=None,
+        snmpMode=None,
+        snmpPrivPassphrase=None,
+        snmpPrivProtocol=None,
+        snmpRoCommunity=None,
+        snmpRoCommunityDesc=None,
+        snmpRwCommunity=None,
+        snmpRwCommunityDesc=None,
+        snmpUserName=None,
+        timeOut=None,
+        updateMgmtIp=None,
+        userNameList=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Stops or starts an existing discovery .
 
         Args:
@@ -229,96 +227,58 @@ class Discovery(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'attributeInfo':
-                attributeInfo,
-            'cdpLevel':
-                cdpLevel,
-            'deviceIds':
-                deviceIds,
-            'discoveryCondition':
-                discoveryCondition,
-            'discoveryStatus':
-                discoveryStatus,
-            'discoveryType':
-                discoveryType,
-            'enablePasswordList':
-                enablePasswordList,
-            'globalCredentialIdList':
-                globalCredentialIdList,
-            'httpReadCredential':
-                httpReadCredential,
-            'httpWriteCredential':
-                httpWriteCredential,
-            'id':
-                id,
-            'ipAddressList':
-                ipAddressList,
-            'ipFilterList':
-                ipFilterList,
-            'isAutoCdp':
-                isAutoCdp,
-            'lldpLevel':
-                lldpLevel,
-            'name':
-                name,
-            'netconfPort':
-                netconfPort,
-            'numDevices':
-                numDevices,
-            'parentDiscoveryId':
-                parentDiscoveryId,
-            'passwordList':
-                passwordList,
-            'preferredMgmtIPMethod':
-                preferredMgmtIPMethod,
-            'protocolOrder':
-                protocolOrder,
-            'retryCount':
-                retryCount,
-            'snmpAuthPassphrase':
-                snmpAuthPassphrase,
-            'snmpAuthProtocol':
-                snmpAuthProtocol,
-            'snmpMode':
-                snmpMode,
-            'snmpPrivPassphrase':
-                snmpPrivPassphrase,
-            'snmpPrivProtocol':
-                snmpPrivProtocol,
-            'snmpRoCommunity':
-                snmpRoCommunity,
-            'snmpRoCommunityDesc':
-                snmpRoCommunityDesc,
-            'snmpRwCommunity':
-                snmpRwCommunity,
-            'snmpRwCommunityDesc':
-                snmpRwCommunityDesc,
-            'snmpUserName':
-                snmpUserName,
-            'timeOut':
-                timeOut,
-            'updateMgmtIp':
-                updateMgmtIp,
-            'userNameList':
-                userNameList,
+            "attributeInfo": attributeInfo,
+            "cdpLevel": cdpLevel,
+            "deviceIds": deviceIds,
+            "discoveryCondition": discoveryCondition,
+            "discoveryStatus": discoveryStatus,
+            "discoveryType": discoveryType,
+            "enablePasswordList": enablePasswordList,
+            "globalCredentialIdList": globalCredentialIdList,
+            "httpReadCredential": httpReadCredential,
+            "httpWriteCredential": httpWriteCredential,
+            "id": id,
+            "ipAddressList": ipAddressList,
+            "ipFilterList": ipFilterList,
+            "isAutoCdp": isAutoCdp,
+            "lldpLevel": lldpLevel,
+            "name": name,
+            "netconfPort": netconfPort,
+            "numDevices": numDevices,
+            "parentDiscoveryId": parentDiscoveryId,
+            "passwordList": passwordList,
+            "preferredMgmtIPMethod": preferredMgmtIPMethod,
+            "protocolOrder": protocolOrder,
+            "retryCount": retryCount,
+            "snmpAuthPassphrase": snmpAuthPassphrase,
+            "snmpAuthProtocol": snmpAuthProtocol,
+            "snmpMode": snmpMode,
+            "snmpPrivPassphrase": snmpPrivPassphrase,
+            "snmpPrivProtocol": snmpPrivProtocol,
+            "snmpRoCommunity": snmpRoCommunity,
+            "snmpRoCommunityDesc": snmpRoCommunityDesc,
+            "snmpRwCommunity": snmpRwCommunity,
+            "snmpRwCommunityDesc": snmpRwCommunityDesc,
+            "snmpUserName": snmpUserName,
+            "timeOut": timeOut,
+            "updateMgmtIp": updateMgmtIp,
+            "userNameList": userNameList,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_f325b2c7e429566ba5ed9ae8253b5bef_v2_3_7_6')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_f325b2c7e429566ba5ed9ae8253b5bef_v2_3_7_6"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -326,51 +286,56 @@ class Discovery(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/discovery')
+        e_url = "/dna/intent/api/v1/discovery"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload,
-                                          headers=_headers)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_f325b2c7e429566ba5ed9ae8253b5bef_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_f325b2c7e429566ba5ed9ae8253b5bef_v2_3_7_6", json_data
+        )
 
-    def start_discovery_v1(self,
-                           cdpLevel=None,
-                           discoveryType=None,
-                           enablePasswordList=None,
-                           globalCredentialIdList=None,
-                           httpReadCredential=None,
-                           httpWriteCredential=None,
-                           ipAddressList=None,
-                           ipFilterList=None,
-                           lldpLevel=None,
-                           name=None,
-                           netconfPort=None,
-                           passwordList=None,
-                           preferredMgmtIPMethod=None,
-                           protocolOrder=None,
-                           retry=None,
-                           snmpAuthPassphrase=None,
-                           snmpAuthProtocol=None,
-                           snmpMode=None,
-                           snmpPrivPassphrase=None,
-                           snmpPrivProtocol=None,
-                           snmpROCommunity=None,
-                           snmpROCommunityDesc=None,
-                           snmpRWCommunity=None,
-                           snmpRWCommunityDesc=None,
-                           snmpUserName=None,
-                           snmpVersion=None,
-                           timeout=None,
-                           userNameList=None,
-                           headers=None,
-                           payload=None,
-                           active_validation=True,
-                           **request_parameters):
+    def start_discovery_v1(
+        self,
+        cdpLevel=None,
+        discoveryType=None,
+        enablePasswordList=None,
+        globalCredentialIdList=None,
+        httpReadCredential=None,
+        httpWriteCredential=None,
+        ipAddressList=None,
+        ipFilterList=None,
+        lldpLevel=None,
+        name=None,
+        netconfPort=None,
+        passwordList=None,
+        preferredMgmtIPMethod=None,
+        protocolOrder=None,
+        retry=None,
+        snmpAuthPassphrase=None,
+        snmpAuthProtocol=None,
+        snmpMode=None,
+        snmpPrivPassphrase=None,
+        snmpPrivProtocol=None,
+        snmpROCommunity=None,
+        snmpROCommunityDesc=None,
+        snmpRWCommunity=None,
+        snmpRWCommunityDesc=None,
+        snmpUserName=None,
+        snmpVersion=None,
+        timeout=None,
+        userNameList=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Initiates discovery with the given parameters .
 
         Args:
@@ -433,80 +398,50 @@ class Discovery(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'cdpLevel':
-                cdpLevel,
-            'discoveryType':
-                discoveryType,
-            'enablePasswordList':
-                enablePasswordList,
-            'globalCredentialIdList':
-                globalCredentialIdList,
-            'httpReadCredential':
-                httpReadCredential,
-            'httpWriteCredential':
-                httpWriteCredential,
-            'ipAddressList':
-                ipAddressList,
-            'ipFilterList':
-                ipFilterList,
-            'lldpLevel':
-                lldpLevel,
-            'name':
-                name,
-            'netconfPort':
-                netconfPort,
-            'passwordList':
-                passwordList,
-            'preferredMgmtIPMethod':
-                preferredMgmtIPMethod,
-            'protocolOrder':
-                protocolOrder,
-            'retry':
-                retry,
-            'snmpAuthPassphrase':
-                snmpAuthPassphrase,
-            'snmpAuthProtocol':
-                snmpAuthProtocol,
-            'snmpMode':
-                snmpMode,
-            'snmpPrivPassphrase':
-                snmpPrivPassphrase,
-            'snmpPrivProtocol':
-                snmpPrivProtocol,
-            'snmpROCommunity':
-                snmpROCommunity,
-            'snmpROCommunityDesc':
-                snmpROCommunityDesc,
-            'snmpRWCommunity':
-                snmpRWCommunity,
-            'snmpRWCommunityDesc':
-                snmpRWCommunityDesc,
-            'snmpUserName':
-                snmpUserName,
-            'snmpVersion':
-                snmpVersion,
-            'timeout':
-                timeout,
-            'userNameList':
-                userNameList,
+            "cdpLevel": cdpLevel,
+            "discoveryType": discoveryType,
+            "enablePasswordList": enablePasswordList,
+            "globalCredentialIdList": globalCredentialIdList,
+            "httpReadCredential": httpReadCredential,
+            "httpWriteCredential": httpWriteCredential,
+            "ipAddressList": ipAddressList,
+            "ipFilterList": ipFilterList,
+            "lldpLevel": lldpLevel,
+            "name": name,
+            "netconfPort": netconfPort,
+            "passwordList": passwordList,
+            "preferredMgmtIPMethod": preferredMgmtIPMethod,
+            "protocolOrder": protocolOrder,
+            "retry": retry,
+            "snmpAuthPassphrase": snmpAuthPassphrase,
+            "snmpAuthProtocol": snmpAuthProtocol,
+            "snmpMode": snmpMode,
+            "snmpPrivPassphrase": snmpPrivPassphrase,
+            "snmpPrivProtocol": snmpPrivProtocol,
+            "snmpROCommunity": snmpROCommunity,
+            "snmpROCommunityDesc": snmpROCommunityDesc,
+            "snmpRWCommunity": snmpRWCommunity,
+            "snmpRWCommunityDesc": snmpRWCommunityDesc,
+            "snmpUserName": snmpUserName,
+            "snmpVersion": snmpVersion,
+            "timeout": timeout,
+            "userNameList": userNameList,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_fdbe4ec3e9f252a988404dc94250b80d_v2_3_7_6')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_fdbe4ec3e9f252a988404dc94250b80d_v2_3_7_6"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -514,21 +449,22 @@ class Discovery(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/discovery')
+        e_url = "/dna/intent/api/v1/discovery"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_fdbe4ec3e9f252a988404dc94250b80d_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_fdbe4ec3e9f252a988404dc94250b80d_v2_3_7_6", json_data
+        )
 
-    def get_count_of_all_discovery_jobs_v1(self,
-                                           headers=None,
-                                           **request_parameters):
+    def get_count_of_all_discovery_jobs_v1(self, headers=None, **request_parameters):
         """Returns the count of all available discovery jobs .
 
         Args:
@@ -550,17 +486,14 @@ class Discovery(object):
         """
         check_type(headers, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -568,23 +501,28 @@ class Discovery(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/discovery/count')
+        e_url = "/dna/intent/api/v1/discovery/count"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_e37fcf36e3539492dfb9cd21e49620_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_e37fcf36e3539492dfb9cd21e49620_v2_3_7_6", json_data
+        )
 
-    def get_discovery_jobs_by_ip_v1(self,
-                                    ip_address,
-                                    limit=None,
-                                    name=None,
-                                    offset=None,
-                                    headers=None,
-                                    **request_parameters):
+    def get_discovery_jobs_by_ip_v1(
+        self,
+        ip_address,
+        limit=None,
+        name=None,
+        offset=None,
+        headers=None,
+        **request_parameters
+    ):
         """Returns the list of discovery jobs for the given IP .
 
         Args:
@@ -611,29 +549,22 @@ class Discovery(object):
         check_type(headers, dict)
         check_type(offset, int)
         check_type(limit, int)
-        check_type(ip_address, str,
-                   may_be_none=False)
+        check_type(ip_address, str, may_be_none=False)
         check_type(name, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'offset':
-                offset,
-            'limit':
-                limit,
-            'ipAddress':
-                ip_address,
-            'name':
-                name,
+            "offset": offset,
+            "limit": limit,
+            "ipAddress": ip_address,
+            "name": name,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -641,20 +572,20 @@ class Discovery(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/discovery/job')
+        e_url = "/dna/intent/api/v1/discovery/job"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_bde1ca5763fc552ab78cd3b2ecf119b1_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_bde1ca5763fc552ab78cd3b2ecf119b1_v2_3_7_6", json_data
+        )
 
-    def delete_discovery_by_id_v1(self,
-                                  id,
-                                  headers=None,
-                                  **request_parameters):
+    def delete_discovery_by_id_v1(self, id, headers=None, **request_parameters):
         """Stops the discovery for the given Discovery ID and removes it. Discovery ID can be obtained using the "Get
         Discoveries by range" API. .
 
@@ -677,20 +608,17 @@ class Discovery(object):
             https://developer.cisco.com/docs/dna-center/#!delete-discovery-by-id
         """
         check_type(headers, dict)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
 
         with_custom_headers = False
@@ -699,20 +627,20 @@ class Discovery(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/discovery/{id}')
+        e_url = "/dna/intent/api/v1/discovery/{id}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.delete(endpoint_full_url, params=_params,
-                                             headers=_headers)
+            json_data = self._session.delete(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.delete(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_bb187b0c0a55e7e8089ac78eb29d8a2_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_bb187b0c0a55e7e8089ac78eb29d8a2_v2_3_7_6", json_data
+        )
 
-    def get_discovery_by_id_v1(self,
-                               id,
-                               headers=None,
-                               **request_parameters):
+    def get_discovery_by_id_v1(self, id, headers=None, **request_parameters):
         """Returns discovery by Discovery ID. Discovery ID can be obtained using the "Get Discoveries by range" API. .
 
         Args:
@@ -734,20 +662,17 @@ class Discovery(object):
             https://developer.cisco.com/docs/dna-center/#!get-discovery-by-id
         """
         check_type(headers, dict)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
 
         with_custom_headers = False
@@ -756,23 +681,28 @@ class Discovery(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/discovery/{id}')
+        e_url = "/dna/intent/api/v1/discovery/{id}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_c4370f0a57d85355a7061d7671f1b613_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_c4370f0a57d85355a7061d7671f1b613_v2_3_7_6", json_data
+        )
 
-    def get_list_of_discoveries_by_discovery_id_v1(self,
-                                                   id,
-                                                   ip_address=None,
-                                                   limit=None,
-                                                   offset=None,
-                                                   headers=None,
-                                                   **request_parameters):
+    def get_list_of_discoveries_by_discovery_id_v1(
+        self,
+        id,
+        ip_address=None,
+        limit=None,
+        offset=None,
+        headers=None,
+        **request_parameters
+    ):
         """Returns the list of discovery jobs for the given Discovery ID. The results can be optionally filtered based on
         IP. Discovery ID can be obtained using the "Get Discoveries by range" API. .
 
@@ -801,26 +731,21 @@ class Discovery(object):
         check_type(offset, int)
         check_type(limit, int)
         check_type(ip_address, str)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'offset':
-                offset,
-            'limit':
-                limit,
-            'ipAddress':
-                ip_address,
+            "offset": offset,
+            "limit": limit,
+            "ipAddress": ip_address,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
 
         with_custom_headers = False
@@ -829,21 +754,22 @@ class Discovery(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/discovery/{id}/job')
+        e_url = "/dna/intent/api/v1/discovery/{id}/job"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_e369e19c1a835567855984d9f2c628ef_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_e369e19c1a835567855984d9f2c628ef_v2_3_7_6", json_data
+        )
 
-    def get_discovered_network_devices_by_discovery_id_v1(self,
-                                                          id,
-                                                          task_id=None,
-                                                          headers=None,
-                                                          **request_parameters):
+    def get_discovered_network_devices_by_discovery_id_v1(
+        self, id, task_id=None, headers=None, **request_parameters
+    ):
         """Returns the network devices discovered for the given Discovery ID. Discovery ID can be obtained using the "Get
         Discoveries by range" API. .
 
@@ -868,22 +794,19 @@ class Discovery(object):
         """
         check_type(headers, dict)
         check_type(task_id, str)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'taskId':
-                task_id,
+            "taskId": task_id,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
 
         with_custom_headers = False
@@ -892,21 +815,22 @@ class Discovery(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/discovery/{id}/network-device')
+        e_url = "/dna/intent/api/v1/discovery/{id}/network-device"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_f478b876b38a5cf094d80eced531b1a0_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_f478b876b38a5cf094d80eced531b1a0_v2_3_7_6", json_data
+        )
 
-    def get_devices_discovered_by_id_v1(self,
-                                        id,
-                                        task_id=None,
-                                        headers=None,
-                                        **request_parameters):
+    def get_devices_discovered_by_id_v1(
+        self, id, task_id=None, headers=None, **request_parameters
+    ):
         """Returns the count of network devices discovered in the given discovery. Discovery ID can be obtained using the
         "Get Discoveries by range" API. .
 
@@ -931,22 +855,19 @@ class Discovery(object):
         """
         check_type(headers, dict)
         check_type(task_id, str)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'taskId':
-                task_id,
+            "taskId": task_id,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
 
         with_custom_headers = False
@@ -955,23 +876,28 @@ class Discovery(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/discovery/{id}/network-device/count')
+        e_url = "/dna/intent/api/v1/discovery/{id}/network-device/count"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_a2f0cb47996d5bf7a3d5de89e2a002bb_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_a2f0cb47996d5bf7a3d5de89e2a002bb_v2_3_7_6", json_data
+        )
 
-    def get_discovered_devices_by_range_v1(self,
-                                           id,
-                                           records_to_return,
-                                           start_index,
-                                           task_id=None,
-                                           headers=None,
-                                           **request_parameters):
+    def get_discovered_devices_by_range_v1(
+        self,
+        id,
+        records_to_return,
+        start_index,
+        task_id=None,
+        headers=None,
+        **request_parameters
+    ):
         """Returns the network devices discovered for the given discovery and for the given range. The maximum number of
         records that can be retrieved is 500. Discovery ID can be obtained using the "Get Discoveries by range"
         API. .
@@ -1000,28 +926,23 @@ class Discovery(object):
         """
         check_type(headers, dict)
         check_type(task_id, str)
-        check_type(id, str,
-                   may_be_none=False)
-        check_type(start_index, int,
-                   may_be_none=False)
-        check_type(records_to_return, int,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
+        check_type(start_index, int, may_be_none=False)
+        check_type(records_to_return, int, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'taskId':
-                task_id,
+            "taskId": task_id,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
-            'startIndex': start_index,
-            'recordsToReturn': records_to_return,
+            "id": id,
+            "startIndex": start_index,
+            "recordsToReturn": records_to_return,
         }
 
         with_custom_headers = False
@@ -1030,30 +951,37 @@ class Discovery(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/discovery/{id}/network-'
-                 + 'device/{startIndex}/{recordsToReturn}')
+        e_url = (
+            "/dna/intent/api/v1/discovery/{id}/network-"
+            + "device/{startIndex}/{recordsToReturn}"
+        )
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_fd0ae0041dc59fb8aae545a8199d7b4_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_fd0ae0041dc59fb8aae545a8199d7b4_v2_3_7_6", json_data
+        )
 
-    def get_network_devices_from_discovery_v1(self,
-                                              id,
-                                              clistatus=None,
-                                              http_status=None,
-                                              ip_address=None,
-                                              netconf_status=None,
-                                              ping_status=None,
-                                              snmp_status=None,
-                                              sort_by=None,
-                                              sort_order=None,
-                                              task_id=None,
-                                              headers=None,
-                                              **request_parameters):
+    def get_network_devices_from_discovery_v1(
+        self,
+        id,
+        clistatus=None,
+        http_status=None,
+        ip_address=None,
+        netconf_status=None,
+        ping_status=None,
+        snmp_status=None,
+        sort_by=None,
+        sort_order=None,
+        task_id=None,
+        headers=None,
+        **request_parameters
+    ):
         """Returns the devices discovered in the given discovery based on given filters. Discovery ID can be obtained using
         the "Get Discoveries by range" API. .
 
@@ -1102,38 +1030,27 @@ class Discovery(object):
         check_type(clistatus, (str, list, set, tuple))
         check_type(netconf_status, (str, list, set, tuple))
         check_type(http_status, (str, list, set, tuple))
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'taskId':
-                task_id,
-            'sortBy':
-                sort_by,
-            'sortOrder':
-                sort_order,
-            'ipAddress':
-                ip_address,
-            'pingStatus':
-                ping_status,
-            'snmpStatus':
-                snmp_status,
-            'cliStatus':
-                clistatus,
-            'netconfStatus':
-                netconf_status,
-            'httpStatus':
-                http_status,
+            "taskId": task_id,
+            "sortBy": sort_by,
+            "sortOrder": sort_order,
+            "ipAddress": ip_address,
+            "pingStatus": ping_status,
+            "snmpStatus": snmp_status,
+            "cliStatus": clistatus,
+            "netconfStatus": netconf_status,
+            "httpStatus": http_status,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
 
         with_custom_headers = False
@@ -1142,21 +1059,22 @@ class Discovery(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/discovery/{id}/summary')
+        e_url = "/dna/intent/api/v1/discovery/{id}/summary"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_b212632561f886c01676b12a2b1_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_b212632561f886c01676b12a2b1_v2_3_7_6", json_data
+        )
 
-    def delete_discovery_by_specified_range_v1(self,
-                                               records_to_delete,
-                                               start_index,
-                                               headers=None,
-                                               **request_parameters):
+    def delete_discovery_by_specified_range_v1(
+        self, records_to_delete, start_index, headers=None, **request_parameters
+    ):
         """Stops discovery for the given range and removes them .
 
         Args:
@@ -1180,23 +1098,19 @@ class Discovery(object):
             https://developer.cisco.com/docs/dna-center/#!delete-discovery-by-specified-range
         """
         check_type(headers, dict)
-        check_type(start_index, int,
-                   may_be_none=False)
-        check_type(records_to_delete, int,
-                   may_be_none=False)
+        check_type(start_index, int, may_be_none=False)
+        check_type(records_to_delete, int, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'startIndex': start_index,
-            'recordsToDelete': records_to_delete,
+            "startIndex": start_index,
+            "recordsToDelete": records_to_delete,
         }
 
         with_custom_headers = False
@@ -1205,22 +1119,22 @@ class Discovery(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/discovery/{startIndex}/{recordsToDele'
-                 + 'te}')
+        e_url = "/dna/intent/api/v1/discovery/{startIndex}/{recordsToDele" + "te}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.delete(endpoint_full_url, params=_params,
-                                             headers=_headers)
+            json_data = self._session.delete(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.delete(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_cba543cfb0957e9bc38d8c7f49f3e47_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_cba543cfb0957e9bc38d8c7f49f3e47_v2_3_7_6", json_data
+        )
 
-    def get_discoveries_by_range_v1(self,
-                                    records_to_return,
-                                    start_index,
-                                    headers=None,
-                                    **request_parameters):
+    def get_discoveries_by_range_v1(
+        self, records_to_return, start_index, headers=None, **request_parameters
+    ):
         """Returns the discoveries by specified range .
 
         Args:
@@ -1244,23 +1158,19 @@ class Discovery(object):
             https://developer.cisco.com/docs/dna-center/#!get-discoveries-by-range
         """
         check_type(headers, dict)
-        check_type(start_index, int,
-                   may_be_none=False)
-        check_type(records_to_return, int,
-                   may_be_none=False)
+        check_type(start_index, int, may_be_none=False)
+        check_type(records_to_return, int, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'startIndex': start_index,
-            'recordsToReturn': records_to_return,
+            "startIndex": start_index,
+            "recordsToReturn": records_to_return,
         }
 
         with_custom_headers = False
@@ -1269,23 +1179,27 @@ class Discovery(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/discovery/{startIndex}/{recordsToRetu'
-                 + 'rn}')
+        e_url = "/dna/intent/api/v1/discovery/{startIndex}/{recordsToRetu" + "rn}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_e847420499a7592d993b7c7dff809f0d_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_e847420499a7592d993b7c7dff809f0d_v2_3_7_6", json_data
+        )
 
-    def get_global_credentials_v1(self,
-                                  credential_sub_type,
-                                  order=None,
-                                  sort_by=None,
-                                  headers=None,
-                                  **request_parameters):
+    def get_global_credentials_v1(
+        self,
+        credential_sub_type,
+        order=None,
+        sort_by=None,
+        headers=None,
+        **request_parameters
+    ):
         """Returns global credential for the given credential sub type .
 
         Args:
@@ -1312,28 +1226,22 @@ class Discovery(object):
             https://developer.cisco.com/docs/dna-center/#!get-global-credentials
         """
         check_type(headers, dict)
-        check_type(credential_sub_type, str,
-                   may_be_none=False)
+        check_type(credential_sub_type, str, may_be_none=False)
         check_type(sort_by, str)
         check_type(order, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'credentialSubType':
-                credential_sub_type,
-            'sortBy':
-                sort_by,
-            'order':
-                order,
+            "credentialSubType": credential_sub_type,
+            "sortBy": sort_by,
+            "order": order,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1341,30 +1249,35 @@ class Discovery(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/global-credential')
+        e_url = "/dna/intent/api/v1/global-credential"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_ce4a30581da554591309dd423a91e7a_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_ce4a30581da554591309dd423a91e7a_v2_3_7_6", json_data
+        )
 
-    def update_cli_credentials_v1(self,
-                                  comments=None,
-                                  credentialType=None,
-                                  description=None,
-                                  enablePassword=None,
-                                  id=None,
-                                  instanceTenantId=None,
-                                  instanceUuid=None,
-                                  password=None,
-                                  username=None,
-                                  headers=None,
-                                  payload=None,
-                                  active_validation=True,
-                                  **request_parameters):
+    def update_cli_credentials_v1(
+        self,
+        comments=None,
+        credentialType=None,
+        description=None,
+        enablePassword=None,
+        id=None,
+        instanceTenantId=None,
+        instanceUuid=None,
+        password=None,
+        username=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Updates global CLI credentials .
 
         Args:
@@ -1401,45 +1314,33 @@ class Discovery(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'comments':
-                comments,
-            'credentialType':
-                credentialType,
-            'description':
-                description,
-            'enablePassword':
-                enablePassword,
-            'id':
-                id,
-            'instanceTenantId':
-                instanceTenantId,
-            'instanceUuid':
-                instanceUuid,
-            'password':
-                password,
-            'username':
-                username,
+            "comments": comments,
+            "credentialType": credentialType,
+            "description": description,
+            "enablePassword": enablePassword,
+            "id": id,
+            "instanceTenantId": instanceTenantId,
+            "instanceUuid": instanceUuid,
+            "password": password,
+            "username": username,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_d39d23589e85db0a63c414057c_v2_3_7_6')\
-                .validate(_payload)
+            self._request_validator("jsd_d39d23589e85db0a63c414057c_v2_3_7_6").validate(
+                _payload
+            )
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1447,23 +1348,24 @@ class Discovery(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/global-credential/cli')
+        e_url = "/dna/intent/api/v1/global-credential/cli"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload,
-                                          headers=_headers)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_d39d23589e85db0a63c414057c_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_d39d23589e85db0a63c414057c_v2_3_7_6", json_data
+        )
 
-    def create_cli_credentials_v1(self,
-                                  headers=None,
-                                  payload=None,
-                                  active_validation=True,
-                                  **request_parameters):
+    def create_cli_credentials_v1(
+        self, headers=None, payload=None, active_validation=True, **request_parameters
+    ):
         """Adds global CLI credential .
 
         Args:
@@ -1490,21 +1392,19 @@ class Discovery(object):
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = payload or []
         if active_validation:
-            self._request_validator('jsd_c524f0ec199e5435bcaee56b423532e7_v2_3_7_6')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_c524f0ec199e5435bcaee56b423532e7_v2_3_7_6"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1512,23 +1412,24 @@ class Discovery(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/global-credential/cli')
+        e_url = "/dna/intent/api/v1/global-credential/cli"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_c524f0ec199e5435bcaee56b423532e7_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_c524f0ec199e5435bcaee56b423532e7_v2_3_7_6", json_data
+        )
 
-    def create_http_read_credentials_v1(self,
-                                        headers=None,
-                                        payload=None,
-                                        active_validation=True,
-                                        **request_parameters):
+    def create_http_read_credentials_v1(
+        self, headers=None, payload=None, active_validation=True, **request_parameters
+    ):
         """Adds HTTP read credentials .
 
         Args:
@@ -1555,24 +1456,21 @@ class Discovery(object):
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = payload or []
         if active_validation:
-            self._request_validator('jsd_ffcaccdd9f2530abf66adc98c3f0201_v2_3_7_6')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_ffcaccdd9f2530abf66adc98c3f0201_v2_3_7_6"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1580,33 +1478,38 @@ class Discovery(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/global-credential/http-read')
+        e_url = "/dna/intent/api/v1/global-credential/http-read"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_ffcaccdd9f2530abf66adc98c3f0201_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_ffcaccdd9f2530abf66adc98c3f0201_v2_3_7_6", json_data
+        )
 
-    def update_http_read_credential_v1(self,
-                                       comments=None,
-                                       credentialType=None,
-                                       description=None,
-                                       id=None,
-                                       instanceTenantId=None,
-                                       instanceUuid=None,
-                                       password=None,
-                                       port=None,
-                                       secure=None,
-                                       username=None,
-                                       headers=None,
-                                       payload=None,
-                                       active_validation=True,
-                                       **request_parameters):
+    def update_http_read_credential_v1(
+        self,
+        comments=None,
+        credentialType=None,
+        description=None,
+        id=None,
+        instanceTenantId=None,
+        instanceUuid=None,
+        password=None,
+        port=None,
+        secure=None,
+        username=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Updates global HTTP Read credential .
 
         Args:
@@ -1644,44 +1547,32 @@ class Discovery(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'comments':
-                comments,
-            'credentialType':
-                credentialType,
-            'description':
-                description,
-            'id':
-                id,
-            'instanceTenantId':
-                instanceTenantId,
-            'instanceUuid':
-                instanceUuid,
-            'password':
-                password,
-            'port':
-                port,
-            'secure':
-                secure,
-            'username':
-                username,
+            "comments": comments,
+            "credentialType": credentialType,
+            "description": description,
+            "id": id,
+            "instanceTenantId": instanceTenantId,
+            "instanceUuid": instanceUuid,
+            "password": password,
+            "port": port,
+            "secure": secure,
+            "username": username,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_d1845268faf55f98bc952872259f16f_v2_3_7_6')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_d1845268faf55f98bc952872259f16f_v2_3_7_6"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1689,33 +1580,38 @@ class Discovery(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/global-credential/http-read')
+        e_url = "/dna/intent/api/v1/global-credential/http-read"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload,
-                                          headers=_headers)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_d1845268faf55f98bc952872259f16f_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_d1845268faf55f98bc952872259f16f_v2_3_7_6", json_data
+        )
 
-    def update_http_write_credentials_v1(self,
-                                         comments=None,
-                                         credentialType=None,
-                                         description=None,
-                                         id=None,
-                                         instanceTenantId=None,
-                                         instanceUuid=None,
-                                         password=None,
-                                         port=None,
-                                         secure=None,
-                                         username=None,
-                                         headers=None,
-                                         payload=None,
-                                         active_validation=True,
-                                         **request_parameters):
+    def update_http_write_credentials_v1(
+        self,
+        comments=None,
+        credentialType=None,
+        description=None,
+        id=None,
+        instanceTenantId=None,
+        instanceUuid=None,
+        password=None,
+        port=None,
+        secure=None,
+        username=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Updates global HTTP write credentials .
 
         Args:
@@ -1753,47 +1649,34 @@ class Discovery(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'comments':
-                comments,
-            'credentialType':
-                credentialType,
-            'description':
-                description,
-            'id':
-                id,
-            'instanceTenantId':
-                instanceTenantId,
-            'instanceUuid':
-                instanceUuid,
-            'password':
-                password,
-            'port':
-                port,
-            'secure':
-                secure,
-            'username':
-                username,
+            "comments": comments,
+            "credentialType": credentialType,
+            "description": description,
+            "id": id,
+            "instanceTenantId": instanceTenantId,
+            "instanceUuid": instanceUuid,
+            "password": password,
+            "port": port,
+            "secure": secure,
+            "username": username,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_f6536a8f01d5863856a0a8308198e15_v2_3_7_6')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_f6536a8f01d5863856a0a8308198e15_v2_3_7_6"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1801,23 +1684,24 @@ class Discovery(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/global-credential/http-write')
+        e_url = "/dna/intent/api/v1/global-credential/http-write"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload,
-                                          headers=_headers)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_f6536a8f01d5863856a0a8308198e15_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_f6536a8f01d5863856a0a8308198e15_v2_3_7_6", json_data
+        )
 
-    def create_http_write_credentials_v1(self,
-                                         headers=None,
-                                         payload=None,
-                                         active_validation=True,
-                                         **request_parameters):
+    def create_http_write_credentials_v1(
+        self, headers=None, payload=None, active_validation=True, **request_parameters
+    ):
         """Adds global HTTP write credentials .
 
         Args:
@@ -1844,21 +1728,19 @@ class Discovery(object):
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = payload or []
         if active_validation:
-            self._request_validator('jsd_f77386a48895fa59dcddcc7dd4addb5_v2_3_7_6')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_f77386a48895fa59dcddcc7dd4addb5_v2_3_7_6"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1866,30 +1748,35 @@ class Discovery(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/global-credential/http-write')
+        e_url = "/dna/intent/api/v1/global-credential/http-write"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_f77386a48895fa59dcddcc7dd4addb5_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_f77386a48895fa59dcddcc7dd4addb5_v2_3_7_6", json_data
+        )
 
-    def update_netconf_credentials_v1(self,
-                                      comments=None,
-                                      credentialType=None,
-                                      description=None,
-                                      id=None,
-                                      instanceTenantId=None,
-                                      instanceUuid=None,
-                                      netconfPort=None,
-                                      headers=None,
-                                      payload=None,
-                                      active_validation=True,
-                                      **request_parameters):
+    def update_netconf_credentials_v1(
+        self,
+        comments=None,
+        credentialType=None,
+        description=None,
+        id=None,
+        instanceTenantId=None,
+        instanceUuid=None,
+        netconfPort=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Updates global netconf credentials .
 
         Args:
@@ -1925,41 +1812,31 @@ class Discovery(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'comments':
-                comments,
-            'credentialType':
-                credentialType,
-            'description':
-                description,
-            'id':
-                id,
-            'instanceTenantId':
-                instanceTenantId,
-            'instanceUuid':
-                instanceUuid,
-            'netconfPort':
-                netconfPort,
+            "comments": comments,
+            "credentialType": credentialType,
+            "description": description,
+            "id": id,
+            "instanceTenantId": instanceTenantId,
+            "instanceUuid": instanceUuid,
+            "netconfPort": netconfPort,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_f7cf4f24d54c6944a31ed308f8361_v2_3_7_6')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_f7cf4f24d54c6944a31ed308f8361_v2_3_7_6"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1967,23 +1844,24 @@ class Discovery(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/global-credential/netconf')
+        e_url = "/dna/intent/api/v1/global-credential/netconf"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload,
-                                          headers=_headers)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_f7cf4f24d54c6944a31ed308f8361_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_f7cf4f24d54c6944a31ed308f8361_v2_3_7_6", json_data
+        )
 
-    def create_netconf_credentials_v1(self,
-                                      headers=None,
-                                      payload=None,
-                                      active_validation=True,
-                                      **request_parameters):
+    def create_netconf_credentials_v1(
+        self, headers=None, payload=None, active_validation=True, **request_parameters
+    ):
         """Adds global netconf credentials .
 
         Args:
@@ -2010,21 +1888,19 @@ class Discovery(object):
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = payload or []
         if active_validation:
-            self._request_validator('jsd_f5645e6e819558fa08761dee45ca406_v2_3_7_6')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_f5645e6e819558fa08761dee45ca406_v2_3_7_6"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -2032,28 +1908,33 @@ class Discovery(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/global-credential/netconf')
+        e_url = "/dna/intent/api/v1/global-credential/netconf"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_f5645e6e819558fa08761dee45ca406_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_f5645e6e819558fa08761dee45ca406_v2_3_7_6", json_data
+        )
 
-    def update_snmp_read_community_v1(self,
-                                      comments=None,
-                                      credentialType=None,
-                                      description=None,
-                                      instanceUuid=None,
-                                      readCommunity=None,
-                                      headers=None,
-                                      payload=None,
-                                      active_validation=True,
-                                      **request_parameters):
+    def update_snmp_read_community_v1(
+        self,
+        comments=None,
+        credentialType=None,
+        description=None,
+        instanceUuid=None,
+        readCommunity=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Updates global SNMP read community .
 
         Args:
@@ -2086,37 +1967,29 @@ class Discovery(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'comments':
-                comments,
-            'credentialType':
-                credentialType,
-            'description':
-                description,
-            'instanceUuid':
-                instanceUuid,
-            'readCommunity':
-                readCommunity,
+            "comments": comments,
+            "credentialType": credentialType,
+            "description": description,
+            "instanceUuid": instanceUuid,
+            "readCommunity": readCommunity,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_e3d7ad943d3a50fb8c3be7327669e557_v2_3_7_6')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_e3d7ad943d3a50fb8c3be7327669e557_v2_3_7_6"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -2124,24 +1997,24 @@ class Discovery(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/global-credential/snmpv2-read-'
-                 + 'community')
+        e_url = "/dna/intent/api/v1/global-credential/snmpv2-read-" + "community"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload,
-                                          headers=_headers)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_e3d7ad943d3a50fb8c3be7327669e557_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_e3d7ad943d3a50fb8c3be7327669e557_v2_3_7_6", json_data
+        )
 
-    def create_snmp_read_community_v1(self,
-                                      headers=None,
-                                      payload=None,
-                                      active_validation=True,
-                                      **request_parameters):
+    def create_snmp_read_community_v1(
+        self, headers=None, payload=None, active_validation=True, **request_parameters
+    ):
         """Adds global SNMP read community .
 
         Args:
@@ -2168,21 +2041,19 @@ class Discovery(object):
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = payload or []
         if active_validation:
-            self._request_validator('jsd_d16471a58805b4aa2c757209d188aed_v2_3_7_6')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_d16471a58805b4aa2c757209d188aed_v2_3_7_6"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -2190,24 +2061,24 @@ class Discovery(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/global-credential/snmpv2-read-'
-                 + 'community')
+        e_url = "/dna/intent/api/v1/global-credential/snmpv2-read-" + "community"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_d16471a58805b4aa2c757209d188aed_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_d16471a58805b4aa2c757209d188aed_v2_3_7_6", json_data
+        )
 
-    def create_snmp_write_community_v1(self,
-                                       headers=None,
-                                       payload=None,
-                                       active_validation=True,
-                                       **request_parameters):
+    def create_snmp_write_community_v1(
+        self, headers=None, payload=None, active_validation=True, **request_parameters
+    ):
         """Adds global SNMP write community .
 
         Args:
@@ -2234,24 +2105,21 @@ class Discovery(object):
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = payload or []
         if active_validation:
-            self._request_validator('jsd_a3a1bf404bf5772828f66f1e10f074d_v2_3_7_6')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_a3a1bf404bf5772828f66f1e10f074d_v2_3_7_6"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -2259,29 +2127,33 @@ class Discovery(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/global-credential/snmpv2-write-'
-                 + 'community')
+        e_url = "/dna/intent/api/v1/global-credential/snmpv2-write-" + "community"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_a3a1bf404bf5772828f66f1e10f074d_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_a3a1bf404bf5772828f66f1e10f074d_v2_3_7_6", json_data
+        )
 
-    def update_snmp_write_community_v1(self,
-                                       comments=None,
-                                       credentialType=None,
-                                       description=None,
-                                       instanceUuid=None,
-                                       writeCommunity=None,
-                                       headers=None,
-                                       payload=None,
-                                       active_validation=True,
-                                       **request_parameters):
+    def update_snmp_write_community_v1(
+        self,
+        comments=None,
+        credentialType=None,
+        description=None,
+        instanceUuid=None,
+        writeCommunity=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Updates global SNMP write community .
 
         Args:
@@ -2314,34 +2186,27 @@ class Discovery(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'comments':
-                comments,
-            'credentialType':
-                credentialType,
-            'description':
-                description,
-            'instanceUuid':
-                instanceUuid,
-            'writeCommunity':
-                writeCommunity,
+            "comments": comments,
+            "credentialType": credentialType,
+            "description": description,
+            "instanceUuid": instanceUuid,
+            "writeCommunity": writeCommunity,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_c9ea5c02b2b7368cac785f30_v2_3_7_6')\
-                .validate(_payload)
+            self._request_validator("jsd_c9ea5c02b2b7368cac785f30_v2_3_7_6").validate(
+                _payload
+            )
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -2349,36 +2214,38 @@ class Discovery(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/global-credential/snmpv2-write-'
-                 + 'community')
+        e_url = "/dna/intent/api/v1/global-credential/snmpv2-write-" + "community"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload,
-                                          headers=_headers)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_c9ea5c02b2b7368cac785f30_v2_3_7_6', json_data)
+        return self._object_factory("bpm_c9ea5c02b2b7368cac785f30_v2_3_7_6", json_data)
 
-    def update_snmpv3_credentials_v1(self,
-                                     authPassword=None,
-                                     authType=None,
-                                     comments=None,
-                                     credentialType=None,
-                                     description=None,
-                                     id=None,
-                                     instanceTenantId=None,
-                                     instanceUuid=None,
-                                     privacyPassword=None,
-                                     privacyType=None,
-                                     snmpMode=None,
-                                     username=None,
-                                     headers=None,
-                                     payload=None,
-                                     active_validation=True,
-                                     **request_parameters):
+    def update_snmpv3_credentials_v1(
+        self,
+        authPassword=None,
+        authType=None,
+        comments=None,
+        credentialType=None,
+        description=None,
+        id=None,
+        instanceTenantId=None,
+        instanceUuid=None,
+        privacyPassword=None,
+        privacyType=None,
+        snmpMode=None,
+        username=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Updates global SNMPv3 credential .
 
         Args:
@@ -2425,51 +2292,36 @@ class Discovery(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'authPassword':
-                authPassword,
-            'authType':
-                authType,
-            'comments':
-                comments,
-            'credentialType':
-                credentialType,
-            'description':
-                description,
-            'id':
-                id,
-            'instanceTenantId':
-                instanceTenantId,
-            'instanceUuid':
-                instanceUuid,
-            'privacyPassword':
-                privacyPassword,
-            'privacyType':
-                privacyType,
-            'snmpMode':
-                snmpMode,
-            'username':
-                username,
+            "authPassword": authPassword,
+            "authType": authType,
+            "comments": comments,
+            "credentialType": credentialType,
+            "description": description,
+            "id": id,
+            "instanceTenantId": instanceTenantId,
+            "instanceUuid": instanceUuid,
+            "privacyPassword": privacyPassword,
+            "privacyType": privacyType,
+            "snmpMode": snmpMode,
+            "username": username,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_bdc981805b5fad0a038966d52558_v2_3_7_6')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_bdc981805b5fad0a038966d52558_v2_3_7_6"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -2477,23 +2329,24 @@ class Discovery(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/global-credential/snmpv3')
+        e_url = "/dna/intent/api/v1/global-credential/snmpv3"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload,
-                                          headers=_headers)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_bdc981805b5fad0a038966d52558_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_bdc981805b5fad0a038966d52558_v2_3_7_6", json_data
+        )
 
-    def create_snmpv3_credentials_v1(self,
-                                     headers=None,
-                                     payload=None,
-                                     active_validation=True,
-                                     **request_parameters):
+    def create_snmpv3_credentials_v1(
+        self, headers=None, payload=None, active_validation=True, **request_parameters
+    ):
         """Adds global SNMPv3 credentials .
 
         Args:
@@ -2520,21 +2373,19 @@ class Discovery(object):
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = payload or []
         if active_validation:
-            self._request_validator('jsd_ecdb2d14c29b5bf3ad79ed2e3cc70715_v2_3_7_6')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_ecdb2d14c29b5bf3ad79ed2e3cc70715_v2_3_7_6"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -2542,22 +2393,24 @@ class Discovery(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/global-credential/snmpv3')
+        e_url = "/dna/intent/api/v1/global-credential/snmpv3"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_ecdb2d14c29b5bf3ad79ed2e3cc70715_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_ecdb2d14c29b5bf3ad79ed2e3cc70715_v2_3_7_6", json_data
+        )
 
-    def delete_global_credentials_by_id_v1(self,
-                                           global_credential_id,
-                                           headers=None,
-                                           **request_parameters):
+    def delete_global_credentials_by_id_v1(
+        self, global_credential_id, headers=None, **request_parameters
+    ):
         """Deletes global credential for the given ID .
 
         Args:
@@ -2579,20 +2432,17 @@ class Discovery(object):
             https://developer.cisco.com/docs/dna-center/#!delete-global-credentials-by-id
         """
         check_type(headers, dict)
-        check_type(global_credential_id, str,
-                   may_be_none=False)
+        check_type(global_credential_id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'globalCredentialId': global_credential_id,
+            "globalCredentialId": global_credential_id,
         }
 
         with_custom_headers = False
@@ -2601,24 +2451,28 @@ class Discovery(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/global-'
-                 + 'credential/{globalCredentialId}')
+        e_url = "/dna/intent/api/v1/global-" + "credential/{globalCredentialId}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.delete(endpoint_full_url, params=_params,
-                                             headers=_headers)
+            json_data = self._session.delete(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.delete(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_a82cc61ddeae50969464f7b5d7d6bbf1_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_a82cc61ddeae50969464f7b5d7d6bbf1_v2_3_7_6", json_data
+        )
 
-    def update_global_credentials_v1(self,
-                                     global_credential_id,
-                                     siteUuids=None,
-                                     headers=None,
-                                     payload=None,
-                                     active_validation=True,
-                                     **request_parameters):
+    def update_global_credentials_v1(
+        self,
+        global_credential_id,
+        siteUuids=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Update global credential for network devices in site(s) .
 
         Args:
@@ -2646,30 +2500,27 @@ class Discovery(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(global_credential_id, str,
-                   may_be_none=False)
+        check_type(global_credential_id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'globalCredentialId': global_credential_id,
+            "globalCredentialId": global_credential_id,
         }
         _payload = {
-            'siteUuids':
-                siteUuids,
+            "siteUuids": siteUuids,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_f5d13316c8f53a0b78d881c738a15c6_v2_3_7_6')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_f5d13316c8f53a0b78d881c738a15c6_v2_3_7_6"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -2677,23 +2528,24 @@ class Discovery(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/global-'
-                 + 'credential/{globalCredentialId}')
+        e_url = "/dna/intent/api/v1/global-" + "credential/{globalCredentialId}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload,
-                                          headers=_headers)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_f5d13316c8f53a0b78d881c738a15c6_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_f5d13316c8f53a0b78d881c738a15c6_v2_3_7_6", json_data
+        )
 
-    def get_credential_sub_type_by_credential_id_v1(self,
-                                                    id,
-                                                    headers=None,
-                                                    **request_parameters):
+    def get_credential_sub_type_by_credential_id_v1(
+        self, id, headers=None, **request_parameters
+    ):
         """Returns the credential sub type for the given Id .
 
         Args:
@@ -2715,20 +2567,17 @@ class Discovery(object):
             https://developer.cisco.com/docs/dna-center/#!get-credential-sub-type-by-credential-id
         """
         check_type(headers, dict)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
 
         with_custom_headers = False
@@ -2737,19 +2586,20 @@ class Discovery(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/global-credential/{id}')
+        e_url = "/dna/intent/api/v1/global-credential/{id}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_a37de9e4e5fab8c65b0701b074fd2_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_a37de9e4e5fab8c65b0701b074fd2_v2_3_7_6", json_data
+        )
 
-    def get_snmp_properties_v1(self,
-                               headers=None,
-                               **request_parameters):
+    def get_snmp_properties_v1(self, headers=None, **request_parameters):
         """Returns SNMP properties .
 
         Args:
@@ -2771,17 +2621,14 @@ class Discovery(object):
         """
         check_type(headers, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -2789,21 +2636,22 @@ class Discovery(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/snmp-property')
+        e_url = "/dna/intent/api/v1/snmp-property"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_dfb02d27503fab05602db7311e90_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_dfb02d27503fab05602db7311e90_v2_3_7_6", json_data
+        )
 
-    def create_update_snmp_properties_v1(self,
-                                         headers=None,
-                                         payload=None,
-                                         active_validation=True,
-                                         **request_parameters):
+    def create_update_snmp_properties_v1(
+        self, headers=None, payload=None, active_validation=True, **request_parameters
+    ):
         """Adds SNMP properties .
 
         Args:
@@ -2830,21 +2678,19 @@ class Discovery(object):
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = payload or []
         if active_validation:
-            self._request_validator('jsd_da593242978c5047bb6b62b7f9475326_v2_3_7_6')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_da593242978c5047bb6b62b7f9475326_v2_3_7_6"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -2852,29 +2698,34 @@ class Discovery(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/snmp-property')
+        e_url = "/dna/intent/api/v1/snmp-property"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_da593242978c5047bb6b62b7f9475326_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_da593242978c5047bb6b62b7f9475326_v2_3_7_6", json_data
+        )
 
-    def update_global_credentials_v2(self,
-                                     cliCredential=None,
-                                     httpsRead=None,
-                                     httpsWrite=None,
-                                     snmpV2cRead=None,
-                                     snmpV2cWrite=None,
-                                     snmpV3=None,
-                                     headers=None,
-                                     payload=None,
-                                     active_validation=True,
-                                     **request_parameters):
+    def update_global_credentials_v2(
+        self,
+        cliCredential=None,
+        httpsRead=None,
+        httpsWrite=None,
+        snmpV2cRead=None,
+        snmpV2cWrite=None,
+        snmpV3=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """API to update device credentials. Multiple credentials can be passed at once, but only a single credential of a
         given type can be passed at once. Please refer sample Request Body for more information. .
 
@@ -2908,36 +2759,28 @@ class Discovery(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'cliCredential':
-                cliCredential,
-            'snmpV2cRead':
-                snmpV2cRead,
-            'snmpV2cWrite':
-                snmpV2cWrite,
-            'snmpV3':
-                snmpV3,
-            'httpsRead':
-                httpsRead,
-            'httpsWrite':
-                httpsWrite,
+            "cliCredential": cliCredential,
+            "snmpV2cRead": snmpV2cRead,
+            "snmpV2cWrite": snmpV2cWrite,
+            "snmpV3": snmpV3,
+            "httpsRead": httpsRead,
+            "httpsWrite": httpsWrite,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_b3323a24b275402b97c7e9ccfd78c91_v2_3_7_6')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_b3323a24b275402b97c7e9ccfd78c91_v2_3_7_6"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -2945,29 +2788,34 @@ class Discovery(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v2/global-credential')
+        e_url = "/dna/intent/api/v2/global-credential"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload,
-                                          headers=_headers)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_b3323a24b275402b97c7e9ccfd78c91_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_b3323a24b275402b97c7e9ccfd78c91_v2_3_7_6", json_data
+        )
 
-    def create_global_credentials_v2(self,
-                                     cliCredential=None,
-                                     httpsRead=None,
-                                     httpsWrite=None,
-                                     snmpV2cRead=None,
-                                     snmpV2cWrite=None,
-                                     snmpV3=None,
-                                     headers=None,
-                                     payload=None,
-                                     active_validation=True,
-                                     **request_parameters):
+    def create_global_credentials_v2(
+        self,
+        cliCredential=None,
+        httpsRead=None,
+        httpsWrite=None,
+        snmpV2cRead=None,
+        snmpV2cWrite=None,
+        snmpV3=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """API to create new global credentials. Multiple credentials of various types can be passed at once. Please refer
         sample Request Body for more information. .
 
@@ -3001,36 +2849,28 @@ class Discovery(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'cliCredential':
-                cliCredential,
-            'snmpV2cRead':
-                snmpV2cRead,
-            'snmpV2cWrite':
-                snmpV2cWrite,
-            'snmpV3':
-                snmpV3,
-            'httpsRead':
-                httpsRead,
-            'httpsWrite':
-                httpsWrite,
+            "cliCredential": cliCredential,
+            "snmpV2cRead": snmpV2cRead,
+            "snmpV2cWrite": snmpV2cWrite,
+            "snmpV3": snmpV3,
+            "httpsRead": httpsRead,
+            "httpsWrite": httpsWrite,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_d2ece28b509b8ef80b2b8c5c5f36_v2_3_7_6')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_d2ece28b509b8ef80b2b8c5c5f36_v2_3_7_6"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -3038,21 +2878,22 @@ class Discovery(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v2/global-credential')
+        e_url = "/dna/intent/api/v2/global-credential"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_d2ece28b509b8ef80b2b8c5c5f36_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_d2ece28b509b8ef80b2b8c5c5f36_v2_3_7_6", json_data
+        )
 
-    def get_all_global_credentials_v2(self,
-                                      headers=None,
-                                      **request_parameters):
+    def get_all_global_credentials_v2(self, headers=None, **request_parameters):
         """API to get device credentials' details. It fetches all global credentials of all types at once, without the need
         to pass any input parameters. .
 
@@ -3075,17 +2916,14 @@ class Discovery(object):
         """
         check_type(headers, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -3093,20 +2931,20 @@ class Discovery(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v2/global-credential')
+        e_url = "/dna/intent/api/v2/global-credential"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_a473a278a325c67abd310df49bae1bb_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_a473a278a325c67abd310df49bae1bb_v2_3_7_6", json_data
+        )
 
-    def delete_global_credential_v2(self,
-                                    id,
-                                    headers=None,
-                                    **request_parameters):
+    def delete_global_credential_v2(self, id, headers=None, **request_parameters):
         """Delete a global credential. Only 'id' of the credential has to be passed. .
 
         Args:
@@ -3128,20 +2966,17 @@ class Discovery(object):
             https://developer.cisco.com/docs/dna-center/#!delete-global-credential-v2
         """
         check_type(headers, dict)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
 
         with_custom_headers = False
@@ -3150,25 +2985,24 @@ class Discovery(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v2/global-credential/{id}')
+        e_url = "/dna/intent/api/v2/global-credential/{id}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.delete(endpoint_full_url, params=_params,
-                                             headers=_headers)
+            json_data = self._session.delete(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.delete(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_caa7cd8d7a3550cfb102cd3498494d04_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_caa7cd8d7a3550cfb102cd3498494d04_v2_3_7_6", json_data
+        )
 
-                
-    
     # Alias Function
-    def create_snmp_write_community(self,
-                                       headers=None,
-                                       payload=None,
-                                       active_validation=True,
-                                       **request_parameters):
-        """ This function is an alias of create_snmp_write_community_v1 .
+    def create_snmp_write_community(
+        self, headers=None, payload=None, active_validation=True, **request_parameters
+    ):
+        """This function is an alias of create_snmp_write_community_v1 .
         Args:
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -3181,22 +3015,19 @@ class Discovery(object):
 
         Returns:
             This function returns the output of create_snmp_write_community_v1 .
-        """ 
+        """
         return self.create_snmp_write_community_v1(
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
+            headers=headers,
+            payload=payload,
+            active_validation=active_validation,
+            **request_parameters
         )
-                
-    
+
     # Alias Function
-    def get_discoveries_by_range(self,
-                                    records_to_return,
-                                    start_index,
-                                    headers=None,
-                                    **request_parameters):
-        """ This function is an alias of get_discoveries_by_range_v1 .
+    def get_discoveries_by_range(
+        self, records_to_return, start_index, headers=None, **request_parameters
+    ):
+        """This function is an alias of get_discoveries_by_range_v1 .
         Args:
             start_index(int): startIndex path parameter. Starting index for the records .
             records_to_return(int): recordsToReturn path parameter. Number of records to fetch from the starting
@@ -3208,20 +3039,17 @@ class Discovery(object):
 
         Returns:
             This function returns the output of get_discoveries_by_range_v1 .
-        """ 
+        """
         return self.get_discoveries_by_range_v1(
-                    records_to_return=records_to_return,
-                    start_index=start_index,
-                    headers=headers,
-                    **request_parameters
+            records_to_return=records_to_return,
+            start_index=start_index,
+            headers=headers,
+            **request_parameters
         )
-                
-    
+
     # Alias Function
-    def get_count_of_all_discovery_jobs(self,
-                                           headers=None,
-                                           **request_parameters):
-        """ This function is an alias of get_count_of_all_discovery_jobs_v1 .
+    def get_count_of_all_discovery_jobs(self, headers=None, **request_parameters):
+        """This function is an alias of get_count_of_all_discovery_jobs_v1 .
         Args:
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -3232,16 +3060,12 @@ class Discovery(object):
             This function returns the output of get_count_of_all_discovery_jobs_v1 .
         """
         return self.get_count_of_all_discovery_jobs_v1(
-                    headers=headers,
-                    **request_parameters
+            headers=headers, **request_parameters
         )
-                
-    
+
     # Alias Function
-    def get_snmp_properties(self,
-                               headers=None,
-                               **request_parameters):
-        """ This function is an alias of get_snmp_properties_v1 .
+    def get_snmp_properties(self, headers=None, **request_parameters):
+        """This function is an alias of get_snmp_properties_v1 .
         Args:
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -3251,19 +3075,13 @@ class Discovery(object):
         Returns:
             This function returns the output of get_snmp_properties_v1 .
         """
-        return self.get_snmp_properties_v1(
-                    headers=headers,
-                    **request_parameters
-        )
-                
-    
+        return self.get_snmp_properties_v1(headers=headers, **request_parameters)
+
     # Alias Function
-    def get_discovered_network_devices_by_discovery_id(self,
-                                                          id,
-                                                          task_id=None,
-                                                          headers=None,
-                                                          **request_parameters):
-        """ This function is an alias of get_discovered_network_devices_by_discovery_id_v1 .
+    def get_discovered_network_devices_by_discovery_id(
+        self, id, task_id=None, headers=None, **request_parameters
+    ):
+        """This function is an alias of get_discovered_network_devices_by_discovery_id_v1 .
         Args:
             id(basestring): id path parameter. Discovery ID .
             task_id(basestring): taskId query parameter.
@@ -3274,23 +3092,21 @@ class Discovery(object):
 
         Returns:
             This function returns the output of get_discovered_network_devices_by_discovery_id_v1 .
-        """ 
+        """
         return self.get_discovered_network_devices_by_discovery_id_v1(
-                    id=id,
-                    task_id=task_id,
-                    headers=headers,
-                    **request_parameters
+            id=id, task_id=task_id, headers=headers, **request_parameters
         )
-                
-    
+
     # Alias Function
-    def get_global_credentials(self,
-                                  credential_sub_type,
-                                  order=None,
-                                  sort_by=None,
-                                  headers=None,
-                                  **request_parameters):
-        """ This function is an alias of get_global_credentials_v1 .
+    def get_global_credentials(
+        self,
+        credential_sub_type,
+        order=None,
+        sort_by=None,
+        headers=None,
+        **request_parameters
+    ):
+        """This function is an alias of get_global_credentials_v1 .
         Args:
             credential_sub_type(basestring): credentialSubType query parameter. Credential type as CLI /
                 SNMPV2_READ_COMMUNITY / SNMPV2_WRITE_COMMUNITY / SNMPV3 / HTTP_WRITE / HTTP_READ /
@@ -3305,23 +3121,20 @@ class Discovery(object):
 
         Returns:
             This function returns the output of get_global_credentials_v1 .
-        """ 
+        """
         return self.get_global_credentials_v1(
-                    credential_sub_type=credential_sub_type,
-                    order=order,
-                    sort_by=sort_by,
-                    headers=headers,
-                    **request_parameters
+            credential_sub_type=credential_sub_type,
+            order=order,
+            sort_by=sort_by,
+            headers=headers,
+            **request_parameters
         )
-                
-    
+
     # Alias Function
-    def get_devices_discovered_by_id(self,
-                                        id,
-                                        task_id=None,
-                                        headers=None,
-                                        **request_parameters):
-        """ This function is an alias of get_devices_discovered_by_id_v1 .
+    def get_devices_discovered_by_id(
+        self, id, task_id=None, headers=None, **request_parameters
+    ):
+        """This function is an alias of get_devices_discovered_by_id_v1 .
         Args:
             id(basestring): id path parameter. Discovery ID .
             task_id(basestring): taskId query parameter.
@@ -3332,22 +3145,16 @@ class Discovery(object):
 
         Returns:
             This function returns the output of get_devices_discovered_by_id_v1 .
-        """ 
+        """
         return self.get_devices_discovered_by_id_v1(
-                    id=id,
-                    task_id=task_id,
-                    headers=headers,
-                    **request_parameters
+            id=id, task_id=task_id, headers=headers, **request_parameters
         )
-                
-    
+
     # Alias Function
-    def delete_discovery_by_specified_range(self,
-                                               records_to_delete,
-                                               start_index,
-                                               headers=None,
-                                               **request_parameters):
-        """ This function is an alias of delete_discovery_by_specified_range_v1 .
+    def delete_discovery_by_specified_range(
+        self, records_to_delete, start_index, headers=None, **request_parameters
+    ):
+        """This function is an alias of delete_discovery_by_specified_range_v1 .
         Args:
             start_index(int): startIndex path parameter. Starting index for the records .
             records_to_delete(int): recordsToDelete path parameter. Number of records to delete from the starting
@@ -3359,29 +3166,30 @@ class Discovery(object):
 
         Returns:
             This function returns the output of delete_discovery_by_specified_range_v1 .
-        """ 
+        """
         return self.delete_discovery_by_specified_range_v1(
-                    records_to_delete=records_to_delete,
-                    start_index=start_index,
-                    headers=headers,
-                    **request_parameters
+            records_to_delete=records_to_delete,
+            start_index=start_index,
+            headers=headers,
+            **request_parameters
         )
-                
-    
+
     # Alias Function
-    def update_netconf_credentials(self,
-                                      comments=None,
-                                      credentialType=None,
-                                      description=None,
-                                      id=None,
-                                      instanceTenantId=None,
-                                      instanceUuid=None,
-                                      netconfPort=None,
-                                      headers=None,
-                                      payload=None,
-                                      active_validation=True,
-                                      **request_parameters):
-        """ This function is an alias of update_netconf_credentials_v1 .
+    def update_netconf_credentials(
+        self,
+        comments=None,
+        credentialType=None,
+        description=None,
+        id=None,
+        instanceTenantId=None,
+        instanceUuid=None,
+        netconfPort=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
+        """This function is an alias of update_netconf_credentials_v1 .
         Args:
             comments(string): Discovery's Comments to identify the netconf credential .
             credentialType(string): Discovery's Credential type to identify the application that uses the netconf
@@ -3403,31 +3211,32 @@ class Discovery(object):
 
         Returns:
             This function returns the output of update_netconf_credentials_v1 .
-        """ 
+        """
         return self.update_netconf_credentials_v1(
-                    comments=comments,
-                    credentialType=credentialType,
-                    description=description,
-                    id=id,
-                    instanceTenantId=instanceTenantId,
-                    instanceUuid=instanceUuid,
-                    netconfPort=netconfPort,
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
+            comments=comments,
+            credentialType=credentialType,
+            description=description,
+            id=id,
+            instanceTenantId=instanceTenantId,
+            instanceUuid=instanceUuid,
+            netconfPort=netconfPort,
+            headers=headers,
+            payload=payload,
+            active_validation=active_validation,
+            **request_parameters
         )
-                
-    
+
     # Alias Function
-    def get_discovered_devices_by_range(self,
-                                           id,
-                                           records_to_return,
-                                           start_index,
-                                           task_id=None,
-                                           headers=None,
-                                           **request_parameters):
-        """ This function is an alias of get_discovered_devices_by_range_v1 .
+    def get_discovered_devices_by_range(
+        self,
+        id,
+        records_to_return,
+        start_index,
+        task_id=None,
+        headers=None,
+        **request_parameters
+    ):
+        """This function is an alias of get_discovered_devices_by_range_v1 .
         Args:
             id(basestring): id path parameter. Discovery ID .
             start_index(int): startIndex path parameter. Starting index for the records .
@@ -3441,22 +3250,19 @@ class Discovery(object):
 
         Returns:
             This function returns the output of get_discovered_devices_by_range_v1 .
-        """ 
+        """
         return self.get_discovered_devices_by_range_v1(
-                    id=id,
-                    records_to_return=records_to_return,
-                    start_index=start_index,
-                    task_id=task_id,
-                    headers=headers,
-                    **request_parameters
+            id=id,
+            records_to_return=records_to_return,
+            start_index=start_index,
+            task_id=task_id,
+            headers=headers,
+            **request_parameters
         )
-                
-    
+
     # Alias Function
-    def delete_all_discovery(self,
-                                headers=None,
-                                **request_parameters):
-        """ This function is an alias of delete_all_discovery_v1 .
+    def delete_all_discovery(self, headers=None, **request_parameters):
+        """This function is an alias of delete_all_discovery_v1 .
         Args:
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -3466,55 +3272,53 @@ class Discovery(object):
         Returns:
             This function returns the output of delete_all_discovery_v1 .
         """
-        return self.delete_all_discovery_v1(
-                    headers=headers,
-                    **request_parameters
-        )
-                
-    
+        return self.delete_all_discovery_v1(headers=headers, **request_parameters)
+
     # Alias Function
-    def updates_discovery_by_id(self,
-                                attributeInfo=None,
-                                cdpLevel=None,
-                                deviceIds=None,
-                                discoveryCondition=None,
-                                discoveryStatus=None,
-                                discoveryType=None,
-                                enablePasswordList=None,
-                                globalCredentialIdList=None,
-                                httpReadCredential=None,
-                                httpWriteCredential=None,
-                                id=None,
-                                ipAddressList=None,
-                                ipFilterList=None,
-                                isAutoCdp=None,
-                                lldpLevel=None,
-                                name=None,
-                                netconfPort=None,
-                                numDevices=None,
-                                parentDiscoveryId=None,
-                                passwordList=None,
-                                preferredMgmtIPMethod=None,
-                                protocolOrder=None,
-                                retryCount=None,
-                                snmpAuthPassphrase=None,
-                                snmpAuthProtocol=None,
-                                snmpMode=None,
-                                snmpPrivPassphrase=None,
-                                snmpPrivProtocol=None,
-                                snmpRoCommunity=None,
-                                snmpRoCommunityDesc=None,
-                                snmpRwCommunity=None,
-                                snmpRwCommunityDesc=None,
-                                snmpUserName=None,
-                                timeOut=None,
-                                updateMgmtIp=None,
-                                userNameList=None,
-                                headers=None,
-                                payload=None,
-                                active_validation=True,
-                                **request_parameters):
-        """ This function is an alias of updates_discovery_by_id_v1 .
+    def updates_discovery_by_id(
+        self,
+        attributeInfo=None,
+        cdpLevel=None,
+        deviceIds=None,
+        discoveryCondition=None,
+        discoveryStatus=None,
+        discoveryType=None,
+        enablePasswordList=None,
+        globalCredentialIdList=None,
+        httpReadCredential=None,
+        httpWriteCredential=None,
+        id=None,
+        ipAddressList=None,
+        ipFilterList=None,
+        isAutoCdp=None,
+        lldpLevel=None,
+        name=None,
+        netconfPort=None,
+        numDevices=None,
+        parentDiscoveryId=None,
+        passwordList=None,
+        preferredMgmtIPMethod=None,
+        protocolOrder=None,
+        retryCount=None,
+        snmpAuthPassphrase=None,
+        snmpAuthProtocol=None,
+        snmpMode=None,
+        snmpPrivPassphrase=None,
+        snmpPrivProtocol=None,
+        snmpRoCommunity=None,
+        snmpRoCommunityDesc=None,
+        snmpRwCommunity=None,
+        snmpRwCommunityDesc=None,
+        snmpUserName=None,
+        timeOut=None,
+        updateMgmtIp=None,
+        userNameList=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
+        """This function is an alias of updates_discovery_by_id_v1 .
         Args:
             attributeInfo(object): Discovery's Deprecated .
             cdpLevel(integer): Discovery's CDP level to which neighbor devices to be discovered .
@@ -3571,63 +3375,64 @@ class Discovery(object):
 
         Returns:
             This function returns the output of updates_discovery_by_id_v1 .
-        """ 
+        """
         return self.updates_discovery_by_id_v1(
-                    attributeInfo=attributeInfo,
-                    cdpLevel=cdpLevel,
-                    deviceIds=deviceIds,
-                    discoveryCondition=discoveryCondition,
-                    discoveryStatus=discoveryStatus,
-                    discoveryType=discoveryType,
-                    enablePasswordList=enablePasswordList,
-                    globalCredentialIdList=globalCredentialIdList,
-                    httpReadCredential=httpReadCredential,
-                    httpWriteCredential=httpWriteCredential,
-                    id=id,
-                    ipAddressList=ipAddressList,
-                    ipFilterList=ipFilterList,
-                    isAutoCdp=isAutoCdp,
-                    lldpLevel=lldpLevel,
-                    name=name,
-                    netconfPort=netconfPort,
-                    numDevices=numDevices,
-                    parentDiscoveryId=parentDiscoveryId,
-                    passwordList=passwordList,
-                    preferredMgmtIPMethod=preferredMgmtIPMethod,
-                    protocolOrder=protocolOrder,
-                    retryCount=retryCount,
-                    snmpAuthPassphrase=snmpAuthPassphrase,
-                    snmpAuthProtocol=snmpAuthProtocol,
-                    snmpMode=snmpMode,
-                    snmpPrivPassphrase=snmpPrivPassphrase,
-                    snmpPrivProtocol=snmpPrivProtocol,
-                    snmpRoCommunity=snmpRoCommunity,
-                    snmpRoCommunityDesc=snmpRoCommunityDesc,
-                    snmpRwCommunity=snmpRwCommunity,
-                    snmpRwCommunityDesc=snmpRwCommunityDesc,
-                    snmpUserName=snmpUserName,
-                    timeOut=timeOut,
-                    updateMgmtIp=updateMgmtIp,
-                    userNameList=userNameList,
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
+            attributeInfo=attributeInfo,
+            cdpLevel=cdpLevel,
+            deviceIds=deviceIds,
+            discoveryCondition=discoveryCondition,
+            discoveryStatus=discoveryStatus,
+            discoveryType=discoveryType,
+            enablePasswordList=enablePasswordList,
+            globalCredentialIdList=globalCredentialIdList,
+            httpReadCredential=httpReadCredential,
+            httpWriteCredential=httpWriteCredential,
+            id=id,
+            ipAddressList=ipAddressList,
+            ipFilterList=ipFilterList,
+            isAutoCdp=isAutoCdp,
+            lldpLevel=lldpLevel,
+            name=name,
+            netconfPort=netconfPort,
+            numDevices=numDevices,
+            parentDiscoveryId=parentDiscoveryId,
+            passwordList=passwordList,
+            preferredMgmtIPMethod=preferredMgmtIPMethod,
+            protocolOrder=protocolOrder,
+            retryCount=retryCount,
+            snmpAuthPassphrase=snmpAuthPassphrase,
+            snmpAuthProtocol=snmpAuthProtocol,
+            snmpMode=snmpMode,
+            snmpPrivPassphrase=snmpPrivPassphrase,
+            snmpPrivProtocol=snmpPrivProtocol,
+            snmpRoCommunity=snmpRoCommunity,
+            snmpRoCommunityDesc=snmpRoCommunityDesc,
+            snmpRwCommunity=snmpRwCommunity,
+            snmpRwCommunityDesc=snmpRwCommunityDesc,
+            snmpUserName=snmpUserName,
+            timeOut=timeOut,
+            updateMgmtIp=updateMgmtIp,
+            userNameList=userNameList,
+            headers=headers,
+            payload=payload,
+            active_validation=active_validation,
+            **request_parameters
         )
-                
-    
+
     # Alias Function
-    def update_snmp_read_community(self,
-                                      comments=None,
-                                      credentialType=None,
-                                      description=None,
-                                      instanceUuid=None,
-                                      readCommunity=None,
-                                      headers=None,
-                                      payload=None,
-                                      active_validation=True,
-                                      **request_parameters):
-        """ This function is an alias of update_snmp_read_community_v1 .
+    def update_snmp_read_community(
+        self,
+        comments=None,
+        credentialType=None,
+        description=None,
+        instanceUuid=None,
+        readCommunity=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
+        """This function is an alias of update_snmp_read_community_v1 .
         Args:
             comments(string): Discovery's Comments to identify the credential .
             credentialType(string): Discovery's Credential type to identify the application that uses the credential
@@ -3646,39 +3451,40 @@ class Discovery(object):
 
         Returns:
             This function returns the output of update_snmp_read_community_v1 .
-        """ 
+        """
         return self.update_snmp_read_community_v1(
-                    comments=comments,
-                    credentialType=credentialType,
-                    description=description,
-                    instanceUuid=instanceUuid,
-                    readCommunity=readCommunity,
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
+            comments=comments,
+            credentialType=credentialType,
+            description=description,
+            instanceUuid=instanceUuid,
+            readCommunity=readCommunity,
+            headers=headers,
+            payload=payload,
+            active_validation=active_validation,
+            **request_parameters
         )
-                
-    
+
     # Alias Function
-    def update_snmpv3_credentials(self,
-                                     authPassword=None,
-                                     authType=None,
-                                     comments=None,
-                                     credentialType=None,
-                                     description=None,
-                                     id=None,
-                                     instanceTenantId=None,
-                                     instanceUuid=None,
-                                     privacyPassword=None,
-                                     privacyType=None,
-                                     snmpMode=None,
-                                     username=None,
-                                     headers=None,
-                                     payload=None,
-                                     active_validation=True,
-                                     **request_parameters):
-        """ This function is an alias of update_snmpv3_credentials_v1 .
+    def update_snmpv3_credentials(
+        self,
+        authPassword=None,
+        authType=None,
+        comments=None,
+        credentialType=None,
+        description=None,
+        id=None,
+        instanceTenantId=None,
+        instanceUuid=None,
+        privacyPassword=None,
+        privacyType=None,
+        snmpMode=None,
+        username=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
+        """This function is an alias of update_snmpv3_credentials_v1 .
         Args:
             authPassword(string): Discovery's Auth password for SNMPv3. Required if snmpMode is 'AUTHPRIV' or
                 'AUTHNOPRIV'. Use 'NO!$DATA!$' if no change required. .
@@ -3711,33 +3517,31 @@ class Discovery(object):
 
         Returns:
             This function returns the output of update_snmpv3_credentials_v1 .
-        """ 
+        """
         return self.update_snmpv3_credentials_v1(
-                    authPassword=authPassword,
-                    authType=authType,
-                    comments=comments,
-                    credentialType=credentialType,
-                    description=description,
-                    id=id,
-                    instanceTenantId=instanceTenantId,
-                    instanceUuid=instanceUuid,
-                    privacyPassword=privacyPassword,
-                    privacyType=privacyType,
-                    snmpMode=snmpMode,
-                    username=username,
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
+            authPassword=authPassword,
+            authType=authType,
+            comments=comments,
+            credentialType=credentialType,
+            description=description,
+            id=id,
+            instanceTenantId=instanceTenantId,
+            instanceUuid=instanceUuid,
+            privacyPassword=privacyPassword,
+            privacyType=privacyType,
+            snmpMode=snmpMode,
+            username=username,
+            headers=headers,
+            payload=payload,
+            active_validation=active_validation,
+            **request_parameters
         )
-                
-    
+
     # Alias Function
-    def delete_global_credentials_by_id(self,
-                                           global_credential_id,
-                                           headers=None,
-                                           **request_parameters):
-        """ This function is an alias of delete_global_credentials_by_id_v1 .
+    def delete_global_credentials_by_id(
+        self, global_credential_id, headers=None, **request_parameters
+    ):
+        """This function is an alias of delete_global_credentials_by_id_v1 .
         Args:
             global_credential_id(basestring): globalCredentialId path parameter. ID of global-credential .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -3747,23 +3551,24 @@ class Discovery(object):
 
         Returns:
             This function returns the output of delete_global_credentials_by_id_v1 .
-        """ 
+        """
         return self.delete_global_credentials_by_id_v1(
-                    global_credential_id=global_credential_id,
-                    headers=headers,
-                    **request_parameters
+            global_credential_id=global_credential_id,
+            headers=headers,
+            **request_parameters
         )
-                
-    
+
     # Alias Function
-    def get_list_of_discoveries_by_discovery_id(self,
-                                                   id,
-                                                   ip_address=None,
-                                                   limit=None,
-                                                   offset=None,
-                                                   headers=None,
-                                                   **request_parameters):
-        """ This function is an alias of get_list_of_discoveries_by_discovery_id_v1 .
+    def get_list_of_discoveries_by_discovery_id(
+        self,
+        id,
+        ip_address=None,
+        limit=None,
+        offset=None,
+        headers=None,
+        **request_parameters
+    ):
+        """This function is an alias of get_list_of_discoveries_by_discovery_id_v1 .
         Args:
             id(basestring): id path parameter. Discovery ID .
             offset(int): offset query parameter. Starting index for the records .
@@ -3776,23 +3581,19 @@ class Discovery(object):
 
         Returns:
             This function returns the output of get_list_of_discoveries_by_discovery_id_v1 .
-        """ 
+        """
         return self.get_list_of_discoveries_by_discovery_id_v1(
-                    id=id,
-                    ip_address=ip_address,
-                    limit=limit,
-                    offset=offset,
-                    headers=headers,
-                    **request_parameters
+            id=id,
+            ip_address=ip_address,
+            limit=limit,
+            offset=offset,
+            headers=headers,
+            **request_parameters
         )
-                
-    
+
     # Alias Function
-    def delete_discovery_by_id(self,
-                                  id,
-                                  headers=None,
-                                  **request_parameters):
-        """ This function is an alias of delete_discovery_by_id_v1 .
+    def delete_discovery_by_id(self, id, headers=None, **request_parameters):
+        """This function is an alias of delete_discovery_by_id_v1 .
         Args:
             id(basestring): id path parameter. Discovery ID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -3802,23 +3603,22 @@ class Discovery(object):
 
         Returns:
             This function returns the output of delete_discovery_by_id_v1 .
-        """ 
+        """
         return self.delete_discovery_by_id_v1(
-                    id=id,
-                    headers=headers,
-                    **request_parameters
+            id=id, headers=headers, **request_parameters
         )
-                
-    
+
     # Alias Function
-    def update_global_credentials(self,
-                                     global_credential_id,
-                                     siteUuids=None,
-                                     headers=None,
-                                     payload=None,
-                                     active_validation=True,
-                                     **request_parameters):
-        """ This function is an alias of update_global_credentials_v1 .
+    def update_global_credentials(
+        self,
+        global_credential_id,
+        siteUuids=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
+        """This function is an alias of update_global_credentials_v1 .
         Args:
             siteUuids(list): Discovery's List of siteUuids where credential is to be updated  (list of strings).
             global_credential_id(basestring): globalCredentialId path parameter. Global credential Uuid .
@@ -3833,23 +3633,21 @@ class Discovery(object):
 
         Returns:
             This function returns the output of update_global_credentials_v1 .
-        """ 
+        """
         return self.update_global_credentials_v1(
-                    global_credential_id=global_credential_id,
-                    siteUuids=siteUuids,
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
+            global_credential_id=global_credential_id,
+            siteUuids=siteUuids,
+            headers=headers,
+            payload=payload,
+            active_validation=active_validation,
+            **request_parameters
         )
-                
-    
+
     # Alias Function
-    def get_credential_sub_type_by_credential_id(self,
-                                                    id,
-                                                    headers=None,
-                                                    **request_parameters):
-        """ This function is an alias of get_credential_sub_type_by_credential_id_v1 .
+    def get_credential_sub_type_by_credential_id(
+        self, id, headers=None, **request_parameters
+    ):
+        """This function is an alias of get_credential_sub_type_by_credential_id_v1 .
         Args:
             id(basestring): id path parameter. Global Credential ID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -3859,27 +3657,26 @@ class Discovery(object):
 
         Returns:
             This function returns the output of get_credential_sub_type_by_credential_id_v1 .
-        """ 
+        """
         return self.get_credential_sub_type_by_credential_id_v1(
-                    id=id,
-                    headers=headers,
-                    **request_parameters
+            id=id, headers=headers, **request_parameters
         )
-                
-    
+
     # Alias Function
-    def create_global_credentials(self,
-                                     cliCredential=None,
-                                     httpsRead=None,
-                                     httpsWrite=None,
-                                     snmpV2cRead=None,
-                                     snmpV2cWrite=None,
-                                     snmpV3=None,
-                                     headers=None,
-                                     payload=None,
-                                     active_validation=True,
-                                     **request_parameters):
-        """ This function is an alias of create_global_credentials_v2 .
+    def create_global_credentials(
+        self,
+        cliCredential=None,
+        httpsRead=None,
+        httpsWrite=None,
+        snmpV2cRead=None,
+        snmpV2cWrite=None,
+        snmpV3=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
+        """This function is an alias of create_global_credentials_v2 .
         Args:
             cliCredential(list): Discovery's cliCredential (list of objects).
             httpsRead(list): Discovery's httpsRead (list of objects).
@@ -3898,26 +3695,23 @@ class Discovery(object):
 
         Returns:
             This function returns the output of create_global_credentials_v2 .
-        """ 
+        """
         return self.create_global_credentials_v2(
-                    cliCredential=cliCredential,
-                    httpsRead=httpsRead,
-                    httpsWrite=httpsWrite,
-                    snmpV2cRead=snmpV2cRead,
-                    snmpV2cWrite=snmpV2cWrite,
-                    snmpV3=snmpV3,
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
+            cliCredential=cliCredential,
+            httpsRead=httpsRead,
+            httpsWrite=httpsWrite,
+            snmpV2cRead=snmpV2cRead,
+            snmpV2cWrite=snmpV2cWrite,
+            snmpV3=snmpV3,
+            headers=headers,
+            payload=payload,
+            active_validation=active_validation,
+            **request_parameters
         )
-                
-    
+
     # Alias Function
-    def get_all_global_credentials(self,
-                                      headers=None,
-                                      **request_parameters):
-        """ This function is an alias of get_all_global_credentials_v2 .
+    def get_all_global_credentials(self, headers=None, **request_parameters):
+        """This function is an alias of get_all_global_credentials_v2 .
         Args:
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -3927,19 +3721,13 @@ class Discovery(object):
         Returns:
             This function returns the output of get_all_global_credentials_v2 .
         """
-        return self.get_all_global_credentials_v2(
-                    headers=headers,
-                    **request_parameters
-        )
-                
-    
+        return self.get_all_global_credentials_v2(headers=headers, **request_parameters)
+
     # Alias Function
-    def create_http_read_credentials(self,
-                                        headers=None,
-                                        payload=None,
-                                        active_validation=True,
-                                        **request_parameters):
-        """ This function is an alias of create_http_read_credentials_v1 .
+    def create_http_read_credentials(
+        self, headers=None, payload=None, active_validation=True, **request_parameters
+    ):
+        """This function is an alias of create_http_read_credentials_v1 .
         Args:
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -3952,30 +3740,31 @@ class Discovery(object):
 
         Returns:
             This function returns the output of create_http_read_credentials_v1 .
-        """ 
+        """
         return self.create_http_read_credentials_v1(
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
+            headers=headers,
+            payload=payload,
+            active_validation=active_validation,
+            **request_parameters
         )
-                
-    
+
     # Alias Function
-    def get_network_devices_from_discovery(self,
-                                              id,
-                                              clistatus=None,
-                                              http_status=None,
-                                              ip_address=None,
-                                              netconf_status=None,
-                                              ping_status=None,
-                                              snmp_status=None,
-                                              sort_by=None,
-                                              sort_order=None,
-                                              task_id=None,
-                                              headers=None,
-                                              **request_parameters):
-        """ This function is an alias of get_network_devices_from_discovery_v1 .
+    def get_network_devices_from_discovery(
+        self,
+        id,
+        clistatus=None,
+        http_status=None,
+        ip_address=None,
+        netconf_status=None,
+        ping_status=None,
+        snmp_status=None,
+        sort_by=None,
+        sort_order=None,
+        task_id=None,
+        headers=None,
+        **request_parameters
+    ):
+        """This function is an alias of get_network_devices_from_discovery_v1 .
         Args:
             id(basestring): id path parameter. Discovery ID .
             task_id(basestring): taskId query parameter.
@@ -4002,39 +3791,40 @@ class Discovery(object):
 
         Returns:
             This function returns the output of get_network_devices_from_discovery_v1 .
-        """ 
+        """
         return self.get_network_devices_from_discovery_v1(
-                    id=id,
-                    clistatus=clistatus,
-                    http_status=http_status,
-                    ip_address=ip_address,
-                    netconf_status=netconf_status,
-                    ping_status=ping_status,
-                    snmp_status=snmp_status,
-                    sort_by=sort_by,
-                    sort_order=sort_order,
-                    task_id=task_id,
-                    headers=headers,
-                    **request_parameters
+            id=id,
+            clistatus=clistatus,
+            http_status=http_status,
+            ip_address=ip_address,
+            netconf_status=netconf_status,
+            ping_status=ping_status,
+            snmp_status=snmp_status,
+            sort_by=sort_by,
+            sort_order=sort_order,
+            task_id=task_id,
+            headers=headers,
+            **request_parameters
         )
-                
-    
+
     # Alias Function
-    def update_cli_credentials(self,
-                                  comments=None,
-                                  credentialType=None,
-                                  description=None,
-                                  enablePassword=None,
-                                  id=None,
-                                  instanceTenantId=None,
-                                  instanceUuid=None,
-                                  password=None,
-                                  username=None,
-                                  headers=None,
-                                  payload=None,
-                                  active_validation=True,
-                                  **request_parameters):
-        """ This function is an alias of update_cli_credentials_v1 .
+    def update_cli_credentials(
+        self,
+        comments=None,
+        credentialType=None,
+        description=None,
+        enablePassword=None,
+        id=None,
+        instanceTenantId=None,
+        instanceUuid=None,
+        password=None,
+        username=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
+        """This function is an alias of update_cli_credentials_v1 .
         Args:
             comments(string): Discovery's Comments to identify the CLI credential .
             credentialType(string): Discovery's Credential type to identify the application that uses the CLI
@@ -4057,59 +3847,60 @@ class Discovery(object):
 
         Returns:
             This function returns the output of update_cli_credentials_v1 .
-        """ 
+        """
         return self.update_cli_credentials_v1(
-                    comments=comments,
-                    credentialType=credentialType,
-                    description=description,
-                    enablePassword=enablePassword,
-                    id=id,
-                    instanceTenantId=instanceTenantId,
-                    instanceUuid=instanceUuid,
-                    password=password,
-                    username=username,
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
+            comments=comments,
+            credentialType=credentialType,
+            description=description,
+            enablePassword=enablePassword,
+            id=id,
+            instanceTenantId=instanceTenantId,
+            instanceUuid=instanceUuid,
+            password=password,
+            username=username,
+            headers=headers,
+            payload=payload,
+            active_validation=active_validation,
+            **request_parameters
         )
-                
-    
+
     # Alias Function
-    def start_discovery(self,
-                           cdpLevel=None,
-                           discoveryType=None,
-                           enablePasswordList=None,
-                           globalCredentialIdList=None,
-                           httpReadCredential=None,
-                           httpWriteCredential=None,
-                           ipAddressList=None,
-                           ipFilterList=None,
-                           lldpLevel=None,
-                           name=None,
-                           netconfPort=None,
-                           passwordList=None,
-                           preferredMgmtIPMethod=None,
-                           protocolOrder=None,
-                           retry=None,
-                           snmpAuthPassphrase=None,
-                           snmpAuthProtocol=None,
-                           snmpMode=None,
-                           snmpPrivPassphrase=None,
-                           snmpPrivProtocol=None,
-                           snmpROCommunity=None,
-                           snmpROCommunityDesc=None,
-                           snmpRWCommunity=None,
-                           snmpRWCommunityDesc=None,
-                           snmpUserName=None,
-                           snmpVersion=None,
-                           timeout=None,
-                           userNameList=None,
-                           headers=None,
-                           payload=None,
-                           active_validation=True,
-                           **request_parameters):
-        """ This function is an alias of start_discovery_v1 .
+    def start_discovery(
+        self,
+        cdpLevel=None,
+        discoveryType=None,
+        enablePasswordList=None,
+        globalCredentialIdList=None,
+        httpReadCredential=None,
+        httpWriteCredential=None,
+        ipAddressList=None,
+        ipFilterList=None,
+        lldpLevel=None,
+        name=None,
+        netconfPort=None,
+        passwordList=None,
+        preferredMgmtIPMethod=None,
+        protocolOrder=None,
+        retry=None,
+        snmpAuthPassphrase=None,
+        snmpAuthProtocol=None,
+        snmpMode=None,
+        snmpPrivPassphrase=None,
+        snmpPrivProtocol=None,
+        snmpROCommunity=None,
+        snmpROCommunityDesc=None,
+        snmpRWCommunity=None,
+        snmpRWCommunityDesc=None,
+        snmpUserName=None,
+        snmpVersion=None,
+        timeout=None,
+        userNameList=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
+        """This function is an alias of start_discovery_v1 .
         Args:
             cdpLevel(integer): Discovery's CDP level to which neighbor devices are to be discovered .
             discoveryType(string): Discovery's Type of the discovery. 'Single', 'Range', 'Multi Range', 'CDP',
@@ -4158,50 +3949,47 @@ class Discovery(object):
 
         Returns:
             This function returns the output of start_discovery_v1 .
-        """ 
+        """
         return self.start_discovery_v1(
-                    cdpLevel=cdpLevel,
-                    discoveryType=discoveryType,
-                    enablePasswordList=enablePasswordList,
-                    globalCredentialIdList=globalCredentialIdList,
-                    httpReadCredential=httpReadCredential,
-                    httpWriteCredential=httpWriteCredential,
-                    ipAddressList=ipAddressList,
-                    ipFilterList=ipFilterList,
-                    lldpLevel=lldpLevel,
-                    name=name,
-                    netconfPort=netconfPort,
-                    passwordList=passwordList,
-                    preferredMgmtIPMethod=preferredMgmtIPMethod,
-                    protocolOrder=protocolOrder,
-                    retry=retry,
-                    snmpAuthPassphrase=snmpAuthPassphrase,
-                    snmpAuthProtocol=snmpAuthProtocol,
-                    snmpMode=snmpMode,
-                    snmpPrivPassphrase=snmpPrivPassphrase,
-                    snmpPrivProtocol=snmpPrivProtocol,
-                    snmpROCommunity=snmpROCommunity,
-                    snmpROCommunityDesc=snmpROCommunityDesc,
-                    snmpRWCommunity=snmpRWCommunity,
-                    snmpRWCommunityDesc=snmpRWCommunityDesc,
-                    snmpUserName=snmpUserName,
-                    snmpVersion=snmpVersion,
-                    timeout=timeout,
-                    userNameList=userNameList,
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
+            cdpLevel=cdpLevel,
+            discoveryType=discoveryType,
+            enablePasswordList=enablePasswordList,
+            globalCredentialIdList=globalCredentialIdList,
+            httpReadCredential=httpReadCredential,
+            httpWriteCredential=httpWriteCredential,
+            ipAddressList=ipAddressList,
+            ipFilterList=ipFilterList,
+            lldpLevel=lldpLevel,
+            name=name,
+            netconfPort=netconfPort,
+            passwordList=passwordList,
+            preferredMgmtIPMethod=preferredMgmtIPMethod,
+            protocolOrder=protocolOrder,
+            retry=retry,
+            snmpAuthPassphrase=snmpAuthPassphrase,
+            snmpAuthProtocol=snmpAuthProtocol,
+            snmpMode=snmpMode,
+            snmpPrivPassphrase=snmpPrivPassphrase,
+            snmpPrivProtocol=snmpPrivProtocol,
+            snmpROCommunity=snmpROCommunity,
+            snmpROCommunityDesc=snmpROCommunityDesc,
+            snmpRWCommunity=snmpRWCommunity,
+            snmpRWCommunityDesc=snmpRWCommunityDesc,
+            snmpUserName=snmpUserName,
+            snmpVersion=snmpVersion,
+            timeout=timeout,
+            userNameList=userNameList,
+            headers=headers,
+            payload=payload,
+            active_validation=active_validation,
+            **request_parameters
         )
-                
-    
+
     # Alias Function
-    def create_snmp_read_community(self,
-                                      headers=None,
-                                      payload=None,
-                                      active_validation=True,
-                                      **request_parameters):
-        """ This function is an alias of create_snmp_read_community_v1 .
+    def create_snmp_read_community(
+        self, headers=None, payload=None, active_validation=True, **request_parameters
+    ):
+        """This function is an alias of create_snmp_read_community_v1 .
         Args:
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -4214,22 +4002,19 @@ class Discovery(object):
 
         Returns:
             This function returns the output of create_snmp_read_community_v1 .
-        """ 
+        """
         return self.create_snmp_read_community_v1(
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
+            headers=headers,
+            payload=payload,
+            active_validation=active_validation,
+            **request_parameters
         )
-                
-    
+
     # Alias Function
-    def create_cli_credentials(self,
-                                  headers=None,
-                                  payload=None,
-                                  active_validation=True,
-                                  **request_parameters):
-        """ This function is an alias of create_cli_credentials_v1 .
+    def create_cli_credentials(
+        self, headers=None, payload=None, active_validation=True, **request_parameters
+    ):
+        """This function is an alias of create_cli_credentials_v1 .
         Args:
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -4242,32 +4027,33 @@ class Discovery(object):
 
         Returns:
             This function returns the output of create_cli_credentials_v1 .
-        """ 
+        """
         return self.create_cli_credentials_v1(
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
+            headers=headers,
+            payload=payload,
+            active_validation=active_validation,
+            **request_parameters
         )
-                
-    
+
     # Alias Function
-    def update_http_read_credential(self,
-                                       comments=None,
-                                       credentialType=None,
-                                       description=None,
-                                       id=None,
-                                       instanceTenantId=None,
-                                       instanceUuid=None,
-                                       password=None,
-                                       port=None,
-                                       secure=None,
-                                       username=None,
-                                       headers=None,
-                                       payload=None,
-                                       active_validation=True,
-                                       **request_parameters):
-        """ This function is an alias of update_http_read_credential_v1 .
+    def update_http_read_credential(
+        self,
+        comments=None,
+        credentialType=None,
+        description=None,
+        id=None,
+        instanceTenantId=None,
+        instanceUuid=None,
+        password=None,
+        port=None,
+        secure=None,
+        username=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
+        """This function is an alias of update_http_read_credential_v1 .
         Args:
             comments(string): Discovery's Comments to identify the HTTP(S) Read credential .
             credentialType(string): Discovery's Credential type to identify the application that uses the HTTP(S)
@@ -4291,42 +4077,43 @@ class Discovery(object):
 
         Returns:
             This function returns the output of update_http_read_credential_v1 .
-        """ 
+        """
         return self.update_http_read_credential_v1(
-                    comments=comments,
-                    credentialType=credentialType,
-                    description=description,
-                    id=id,
-                    instanceTenantId=instanceTenantId,
-                    instanceUuid=instanceUuid,
-                    password=password,
-                    port=port,
-                    secure=secure,
-                    username=username,
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
+            comments=comments,
+            credentialType=credentialType,
+            description=description,
+            id=id,
+            instanceTenantId=instanceTenantId,
+            instanceUuid=instanceUuid,
+            password=password,
+            port=port,
+            secure=secure,
+            username=username,
+            headers=headers,
+            payload=payload,
+            active_validation=active_validation,
+            **request_parameters
         )
-                
-    
+
     # Alias Function
-    def update_http_write_credentials(self,
-                                         comments=None,
-                                         credentialType=None,
-                                         description=None,
-                                         id=None,
-                                         instanceTenantId=None,
-                                         instanceUuid=None,
-                                         password=None,
-                                         port=None,
-                                         secure=None,
-                                         username=None,
-                                         headers=None,
-                                         payload=None,
-                                         active_validation=True,
-                                         **request_parameters):
-        """ This function is an alias of update_http_write_credentials_v1 .
+    def update_http_write_credentials(
+        self,
+        comments=None,
+        credentialType=None,
+        description=None,
+        id=None,
+        instanceTenantId=None,
+        instanceUuid=None,
+        password=None,
+        port=None,
+        secure=None,
+        username=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
+        """This function is an alias of update_http_write_credentials_v1 .
         Args:
             comments(string): Discovery's Comments to identify the HTTP(S) Write credential .
             credentialType(string): Discovery's Credential type to identify the application that uses the HTTP(S)
@@ -4350,31 +4137,27 @@ class Discovery(object):
 
         Returns:
             This function returns the output of update_http_write_credentials_v1 .
-        """ 
+        """
         return self.update_http_write_credentials_v1(
-                    comments=comments,
-                    credentialType=credentialType,
-                    description=description,
-                    id=id,
-                    instanceTenantId=instanceTenantId,
-                    instanceUuid=instanceUuid,
-                    password=password,
-                    port=port,
-                    secure=secure,
-                    username=username,
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
+            comments=comments,
+            credentialType=credentialType,
+            description=description,
+            id=id,
+            instanceTenantId=instanceTenantId,
+            instanceUuid=instanceUuid,
+            password=password,
+            port=port,
+            secure=secure,
+            username=username,
+            headers=headers,
+            payload=payload,
+            active_validation=active_validation,
+            **request_parameters
         )
-                
-    
+
     # Alias Function
-    def delete_global_credential(self,
-                                    id,
-                                    headers=None,
-                                    **request_parameters):
-        """ This function is an alias of delete_global_credential_v2 .
+    def delete_global_credential(self, id, headers=None, **request_parameters):
+        """This function is an alias of delete_global_credential_v2 .
         Args:
             id(basestring): id path parameter. Global Credential id  .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -4384,21 +4167,16 @@ class Discovery(object):
 
         Returns:
             This function returns the output of delete_global_credential_v2 .
-        """ 
+        """
         return self.delete_global_credential_v2(
-                    id=id,
-                    headers=headers,
-                    **request_parameters
+            id=id, headers=headers, **request_parameters
         )
-                
-    
+
     # Alias Function
-    def create_http_write_credentials(self,
-                                         headers=None,
-                                         payload=None,
-                                         active_validation=True,
-                                         **request_parameters):
-        """ This function is an alias of create_http_write_credentials_v1 .
+    def create_http_write_credentials(
+        self, headers=None, payload=None, active_validation=True, **request_parameters
+    ):
+        """This function is an alias of create_http_write_credentials_v1 .
         Args:
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -4411,21 +4189,17 @@ class Discovery(object):
 
         Returns:
             This function returns the output of create_http_write_credentials_v1 .
-        """ 
+        """
         return self.create_http_write_credentials_v1(
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
+            headers=headers,
+            payload=payload,
+            active_validation=active_validation,
+            **request_parameters
         )
-                
-    
+
     # Alias Function
-    def get_discovery_by_id(self,
-                               id,
-                               headers=None,
-                               **request_parameters):
-        """ This function is an alias of get_discovery_by_id_v1 .
+    def get_discovery_by_id(self, id, headers=None, **request_parameters):
+        """This function is an alias of get_discovery_by_id_v1 .
         Args:
             id(basestring): id path parameter. Discovery ID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -4435,21 +4209,14 @@ class Discovery(object):
 
         Returns:
             This function returns the output of get_discovery_by_id_v1 .
-        """ 
-        return self.get_discovery_by_id_v1(
-                    id=id,
-                    headers=headers,
-                    **request_parameters
-        )
-                
-    
+        """
+        return self.get_discovery_by_id_v1(id=id, headers=headers, **request_parameters)
+
     # Alias Function
-    def create_update_snmp_properties(self,
-                                         headers=None,
-                                         payload=None,
-                                         active_validation=True,
-                                         **request_parameters):
-        """ This function is an alias of create_update_snmp_properties_v1 .
+    def create_update_snmp_properties(
+        self, headers=None, payload=None, active_validation=True, **request_parameters
+    ):
+        """This function is an alias of create_update_snmp_properties_v1 .
         Args:
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -4462,22 +4229,19 @@ class Discovery(object):
 
         Returns:
             This function returns the output of create_update_snmp_properties_v1 .
-        """ 
+        """
         return self.create_update_snmp_properties_v1(
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
+            headers=headers,
+            payload=payload,
+            active_validation=active_validation,
+            **request_parameters
         )
-                
-    
+
     # Alias Function
-    def create_snmpv3_credentials(self,
-                                     headers=None,
-                                     payload=None,
-                                     active_validation=True,
-                                     **request_parameters):
-        """ This function is an alias of create_snmpv3_credentials_v1 .
+    def create_snmpv3_credentials(
+        self, headers=None, payload=None, active_validation=True, **request_parameters
+    ):
+        """This function is an alias of create_snmpv3_credentials_v1 .
         Args:
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -4490,22 +4254,19 @@ class Discovery(object):
 
         Returns:
             This function returns the output of create_snmpv3_credentials_v1 .
-        """ 
+        """
         return self.create_snmpv3_credentials_v1(
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
+            headers=headers,
+            payload=payload,
+            active_validation=active_validation,
+            **request_parameters
         )
-                
-    
+
     # Alias Function
-    def create_netconf_credentials(self,
-                                      headers=None,
-                                      payload=None,
-                                      active_validation=True,
-                                      **request_parameters):
-        """ This function is an alias of create_netconf_credentials_v1 .
+    def create_netconf_credentials(
+        self, headers=None, payload=None, active_validation=True, **request_parameters
+    ):
+        """This function is an alias of create_netconf_credentials_v1 .
         Args:
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -4518,27 +4279,28 @@ class Discovery(object):
 
         Returns:
             This function returns the output of create_netconf_credentials_v1 .
-        """ 
+        """
         return self.create_netconf_credentials_v1(
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
+            headers=headers,
+            payload=payload,
+            active_validation=active_validation,
+            **request_parameters
         )
-                
-    
+
     # Alias Function
-    def update_snmp_write_community(self,
-                                       comments=None,
-                                       credentialType=None,
-                                       description=None,
-                                       instanceUuid=None,
-                                       writeCommunity=None,
-                                       headers=None,
-                                       payload=None,
-                                       active_validation=True,
-                                       **request_parameters):
-        """ This function is an alias of update_snmp_write_community_v1 .
+    def update_snmp_write_community(
+        self,
+        comments=None,
+        credentialType=None,
+        description=None,
+        instanceUuid=None,
+        writeCommunity=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
+        """This function is an alias of update_snmp_write_community_v1 .
         Args:
             comments(string): Discovery's Comments to identify the credential .
             credentialType(string): Discovery's Credential type to identify the application that uses the credential
@@ -4557,29 +4319,30 @@ class Discovery(object):
 
         Returns:
             This function returns the output of update_snmp_write_community_v1 .
-        """ 
+        """
         return self.update_snmp_write_community_v1(
-                    comments=comments,
-                    credentialType=credentialType,
-                    description=description,
-                    instanceUuid=instanceUuid,
-                    writeCommunity=writeCommunity,
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
+            comments=comments,
+            credentialType=credentialType,
+            description=description,
+            instanceUuid=instanceUuid,
+            writeCommunity=writeCommunity,
+            headers=headers,
+            payload=payload,
+            active_validation=active_validation,
+            **request_parameters
         )
-                
-    
+
     # Alias Function
-    def get_discovery_jobs_by_ip(self,
-                                    ip_address,
-                                    limit=None,
-                                    name=None,
-                                    offset=None,
-                                    headers=None,
-                                    **request_parameters):
-        """ This function is an alias of get_discovery_jobs_by_ip_v1 .
+    def get_discovery_jobs_by_ip(
+        self,
+        ip_address,
+        limit=None,
+        name=None,
+        offset=None,
+        headers=None,
+        **request_parameters
+    ):
+        """This function is an alias of get_discovery_jobs_by_ip_v1 .
         Args:
             offset(int): offset query parameter.
             limit(int): limit query parameter.
@@ -4592,12 +4355,12 @@ class Discovery(object):
 
         Returns:
             This function returns the output of get_discovery_jobs_by_ip_v1 .
-        """ 
+        """
         return self.get_discovery_jobs_by_ip_v1(
-                    ip_address=ip_address,
-                    limit=limit,
-                    name=name,
-                    offset=offset,
-                    headers=headers,
-                    **request_parameters
+            ip_address=ip_address,
+            limit=limit,
+            name=name,
+            offset=offset,
+            headers=headers,
+            **request_parameters
         )

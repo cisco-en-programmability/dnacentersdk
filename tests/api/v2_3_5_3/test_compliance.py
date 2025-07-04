@@ -26,20 +26,19 @@ from fastjsonschema.exceptions import JsonSchemaException
 from dnacentersdk.exceptions import MalformedRequest
 from tests.environment import DNA_CENTER_VERSION
 
-pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '2.3.5.3', reason='version does not match')
+pytestmark = pytest.mark.skipif(
+    DNA_CENTER_VERSION != "2.3.5.3", reason="version does not match"
+)
 
 
 def is_valid_get_compliance_status(json_schema_validate, obj):
-    json_schema_validate('jsd_4a1de7ff46fa5da09c5051c06ad07f2c_v2_3_5_3').validate(obj)
+    json_schema_validate("jsd_4a1de7ff46fa5da09c5051c06ad07f2c_v2_3_5_3").validate(obj)
     return True
 
 
 def get_compliance_status(api):
     endpoint_result = api.compliance.get_compliance_status(
-        compliance_status='string',
-        device_uuid='string',
-        limit=0,
-        offset=0
+        compliance_status="string", device_uuid="string", limit=0, offset=0
     )
     return endpoint_result
 
@@ -47,10 +46,7 @@ def get_compliance_status(api):
 @pytest.mark.compliance
 def test_get_compliance_status(api, validator):
     try:
-        assert is_valid_get_compliance_status(
-            validator,
-            get_compliance_status(api)
-        )
+        assert is_valid_get_compliance_status(validator, get_compliance_status(api))
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
             print(original_e)
@@ -59,10 +55,7 @@ def test_get_compliance_status(api, validator):
 
 def get_compliance_status_default_val(api):
     endpoint_result = api.compliance.get_compliance_status(
-        compliance_status=None,
-        device_uuid=None,
-        limit=None,
-        offset=None
+        compliance_status=None, device_uuid=None, limit=None, offset=None
     )
     return endpoint_result
 
@@ -71,8 +64,7 @@ def get_compliance_status_default_val(api):
 def test_get_compliance_status_default_val(api, validator):
     try:
         assert is_valid_get_compliance_status(
-            validator,
-            get_compliance_status_default_val(api)
+            validator, get_compliance_status_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -80,17 +72,17 @@ def test_get_compliance_status_default_val(api, validator):
 
 
 def is_valid_run_compliance(json_schema_validate, obj):
-    json_schema_validate('jsd_0802306a0a8d545698d1d59a9be90e51_v2_3_5_3').validate(obj)
+    json_schema_validate("jsd_0802306a0a8d545698d1d59a9be90e51_v2_3_5_3").validate(obj)
     return True
 
 
 def run_compliance(api):
     endpoint_result = api.compliance.run_compliance(
         active_validation=True,
-        categories=['string'],
-        deviceUuids=['string'],
+        categories=["string"],
+        deviceUuids=["string"],
         payload=None,
-        triggerFull=True
+        triggerFull=True,
     )
     return endpoint_result
 
@@ -98,10 +90,7 @@ def run_compliance(api):
 @pytest.mark.compliance
 def test_run_compliance(api, validator):
     try:
-        assert is_valid_run_compliance(
-            validator,
-            run_compliance(api)
-        )
+        assert is_valid_run_compliance(validator, run_compliance(api))
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
             print(original_e)
@@ -114,7 +103,7 @@ def run_compliance_default_val(api):
         categories=None,
         deviceUuids=None,
         payload=None,
-        triggerFull=None
+        triggerFull=None,
     )
     return endpoint_result
 
@@ -122,23 +111,20 @@ def run_compliance_default_val(api):
 @pytest.mark.compliance
 def test_run_compliance_default_val(api, validator):
     try:
-        assert is_valid_run_compliance(
-            validator,
-            run_compliance_default_val(api)
-        )
+        assert is_valid_run_compliance(validator, run_compliance_default_val(api))
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
 def is_valid_get_compliance_status_count(json_schema_validate, obj):
-    json_schema_validate('jsd_079c37ce8136584f9e2ed471fc896ef9_v2_3_5_3').validate(obj)
+    json_schema_validate("jsd_079c37ce8136584f9e2ed471fc896ef9_v2_3_5_3").validate(obj)
     return True
 
 
 def get_compliance_status_count(api):
     endpoint_result = api.compliance.get_compliance_status_count(
-        compliance_status='string'
+        compliance_status="string"
     )
     return endpoint_result
 
@@ -147,8 +133,7 @@ def get_compliance_status_count(api):
 def test_get_compliance_status_count(api, validator):
     try:
         assert is_valid_get_compliance_status_count(
-            validator,
-            get_compliance_status_count(api)
+            validator, get_compliance_status_count(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -157,9 +142,7 @@ def test_get_compliance_status_count(api, validator):
 
 
 def get_compliance_status_count_default_val(api):
-    endpoint_result = api.compliance.get_compliance_status_count(
-        compliance_status=None
-    )
+    endpoint_result = api.compliance.get_compliance_status_count(compliance_status=None)
     return endpoint_result
 
 
@@ -167,8 +150,7 @@ def get_compliance_status_count_default_val(api):
 def test_get_compliance_status_count_default_val(api, validator):
     try:
         assert is_valid_get_compliance_status_count(
-            validator,
-            get_compliance_status_count_default_val(api)
+            validator, get_compliance_status_count_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -176,17 +158,17 @@ def test_get_compliance_status_count_default_val(api, validator):
 
 
 def is_valid_get_compliance_detail(json_schema_validate, obj):
-    json_schema_validate('jsd_6395adeaeb8157da972efb7b91e1e2cb_v2_3_5_3').validate(obj)
+    json_schema_validate("jsd_6395adeaeb8157da972efb7b91e1e2cb_v2_3_5_3").validate(obj)
     return True
 
 
 def get_compliance_detail(api):
     endpoint_result = api.compliance.get_compliance_detail(
-        compliance_status='string',
-        compliance_type='string',
-        device_uuid='string',
+        compliance_status="string",
+        compliance_type="string",
+        device_uuid="string",
         limit=0,
-        offset=0
+        offset=0,
     )
     return endpoint_result
 
@@ -194,10 +176,7 @@ def get_compliance_detail(api):
 @pytest.mark.compliance
 def test_get_compliance_detail(api, validator):
     try:
-        assert is_valid_get_compliance_detail(
-            validator,
-            get_compliance_detail(api)
-        )
+        assert is_valid_get_compliance_detail(validator, get_compliance_detail(api))
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
             print(original_e)
@@ -210,7 +189,7 @@ def get_compliance_detail_default_val(api):
         compliance_type=None,
         device_uuid=None,
         limit=None,
-        offset=None
+        offset=None,
     )
     return endpoint_result
 
@@ -219,8 +198,7 @@ def get_compliance_detail_default_val(api):
 def test_get_compliance_detail_default_val(api, validator):
     try:
         assert is_valid_get_compliance_detail(
-            validator,
-            get_compliance_detail_default_val(api)
+            validator, get_compliance_detail_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -228,14 +206,13 @@ def test_get_compliance_detail_default_val(api, validator):
 
 
 def is_valid_get_compliance_detail_count(json_schema_validate, obj):
-    json_schema_validate('jsd_d3d38fed534f5aeaa80f5a8c63694708_v2_3_5_3').validate(obj)
+    json_schema_validate("jsd_d3d38fed534f5aeaa80f5a8c63694708_v2_3_5_3").validate(obj)
     return True
 
 
 def get_compliance_detail_count(api):
     endpoint_result = api.compliance.get_compliance_detail_count(
-        compliance_status='string',
-        compliance_type='string'
+        compliance_status="string", compliance_type="string"
     )
     return endpoint_result
 
@@ -244,8 +221,7 @@ def get_compliance_detail_count(api):
 def test_get_compliance_detail_count(api, validator):
     try:
         assert is_valid_get_compliance_detail_count(
-            validator,
-            get_compliance_detail_count(api)
+            validator, get_compliance_detail_count(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -255,8 +231,7 @@ def test_get_compliance_detail_count(api, validator):
 
 def get_compliance_detail_count_default_val(api):
     endpoint_result = api.compliance.get_compliance_detail_count(
-        compliance_status=None,
-        compliance_type=None
+        compliance_status=None, compliance_type=None
     )
     return endpoint_result
 
@@ -265,8 +240,7 @@ def get_compliance_detail_count_default_val(api):
 def test_get_compliance_detail_count_default_val(api, validator):
     try:
         assert is_valid_get_compliance_detail_count(
-            validator,
-            get_compliance_detail_count_default_val(api)
+            validator, get_compliance_detail_count_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -274,14 +248,12 @@ def test_get_compliance_detail_count_default_val(api, validator):
 
 
 def is_valid_device_compliance_status(json_schema_validate, obj):
-    json_schema_validate('jsd_41da8e5cdd435db0b1da1684be8f15b8_v2_3_5_3').validate(obj)
+    json_schema_validate("jsd_41da8e5cdd435db0b1da1684be8f15b8_v2_3_5_3").validate(obj)
     return True
 
 
 def device_compliance_status(api):
-    endpoint_result = api.compliance.device_compliance_status(
-        device_uuid='string'
-    )
+    endpoint_result = api.compliance.device_compliance_status(device_uuid="string")
     return endpoint_result
 
 
@@ -289,8 +261,7 @@ def device_compliance_status(api):
 def test_device_compliance_status(api, validator):
     try:
         assert is_valid_device_compliance_status(
-            validator,
-            device_compliance_status(api)
+            validator, device_compliance_status(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -299,9 +270,7 @@ def test_device_compliance_status(api, validator):
 
 
 def device_compliance_status_default_val(api):
-    endpoint_result = api.compliance.device_compliance_status(
-        device_uuid='string'
-    )
+    endpoint_result = api.compliance.device_compliance_status(device_uuid="string")
     return endpoint_result
 
 
@@ -309,8 +278,7 @@ def device_compliance_status_default_val(api):
 def test_device_compliance_status_default_val(api, validator):
     try:
         assert is_valid_device_compliance_status(
-            validator,
-            device_compliance_status_default_val(api)
+            validator, device_compliance_status_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -318,18 +286,18 @@ def test_device_compliance_status_default_val(api, validator):
 
 
 def is_valid_compliance_details_of_device(json_schema_validate, obj):
-    json_schema_validate('jsd_90b70e1b6a2f51a59690669a4b2fd3f0_v2_3_5_3').validate(obj)
+    json_schema_validate("jsd_90b70e1b6a2f51a59690669a4b2fd3f0_v2_3_5_3").validate(obj)
     return True
 
 
 def compliance_details_of_device(api):
     endpoint_result = api.compliance.compliance_details_of_device(
-        category='string',
-        compliance_type='string',
-        device_uuid='string',
+        category="string",
+        compliance_type="string",
+        device_uuid="string",
         diff_list=True,
-        key='string',
-        value='string'
+        key="string",
+        value="string",
     )
     return endpoint_result
 
@@ -338,8 +306,7 @@ def compliance_details_of_device(api):
 def test_compliance_details_of_device(api, validator):
     try:
         assert is_valid_compliance_details_of_device(
-            validator,
-            compliance_details_of_device(api)
+            validator, compliance_details_of_device(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -351,10 +318,10 @@ def compliance_details_of_device_default_val(api):
     endpoint_result = api.compliance.compliance_details_of_device(
         category=None,
         compliance_type=None,
-        device_uuid='string',
+        device_uuid="string",
         diff_list=None,
         key=None,
-        value=None
+        value=None,
     )
     return endpoint_result
 
@@ -363,8 +330,7 @@ def compliance_details_of_device_default_val(api):
 def test_compliance_details_of_device_default_val(api, validator):
     try:
         assert is_valid_compliance_details_of_device(
-            validator,
-            compliance_details_of_device_default_val(api)
+            validator, compliance_details_of_device_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

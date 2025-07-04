@@ -64,13 +64,15 @@ class ConfigurationArchive(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def export_device_configurations(self,
-                                     deviceId=None,
-                                     password=None,
-                                     headers=None,
-                                     payload=None,
-                                     active_validation=True,
-                                     **request_parameters):
+    def export_device_configurations(
+        self,
+        deviceId=None,
+        password=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Export Device configurations to an encrypted zip file. .
 
         Args:
@@ -99,31 +101,26 @@ class ConfigurationArchive(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'deviceId':
-                deviceId,
-            'password':
-                password,
+            "deviceId": deviceId,
+            "password": password,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_e85b40c5ca055f4c82281617a8f95644_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_e85b40c5ca055f4c82281617a8f95644_v2_3_5_3"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -131,14 +128,17 @@ class ConfigurationArchive(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/network-device-archive/cleartext')
+        e_url = "/dna/intent/api/v1/network-device-archive/cleartext"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_e85b40c5ca055f4c82281617a8f95644_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_e85b40c5ca055f4c82281617a8f95644_v2_3_5_3", json_data
+        )

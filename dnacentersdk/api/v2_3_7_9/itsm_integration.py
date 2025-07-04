@@ -32,7 +32,6 @@ from ...utils import (
     check_type,
     dict_from_items_with_values,
     dict_of_str,
-    
 )
 
 
@@ -65,15 +64,17 @@ class ItsmIntegration(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def create_itsm_integration_setting(self,
-                                        data=None,
-                                        description=None,
-                                        dypName=None,
-                                        name=None,
-                                        headers=None,
-                                        payload=None,
-                                        active_validation=True,
-                                        **request_parameters):
+    def create_itsm_integration_setting(
+        self,
+        data=None,
+        description=None,
+        dypName=None,
+        name=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Creates ITSM Integration setting .
 
         Args:
@@ -104,32 +105,26 @@ class ItsmIntegration(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'name':
-                name,
-            'description':
-                description,
-            'data':
-                data,
-            'dypName':
-                dypName,
+            "name": name,
+            "description": description,
+            "data": data,
+            "dypName": dypName,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_bb01b6bd31b53bfb12bbe327320392e_v2_3_7_9')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_bb01b6bd31b53bfb12bbe327320392e_v2_3_7_9"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -137,28 +132,33 @@ class ItsmIntegration(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/integration-settings/instances/itsm')
+        e_url = "/dna/intent/api/v1/integration-settings/instances/itsm"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_bb01b6bd31b53bfb12bbe327320392e_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_bb01b6bd31b53bfb12bbe327320392e_v2_3_7_9", json_data
+        )
 
-    def update_itsm_integration_setting(self,
-                                        instance_id,
-                                        data=None,
-                                        description=None,
-                                        dypName=None,
-                                        name=None,
-                                        headers=None,
-                                        payload=None,
-                                        active_validation=True,
-                                        **request_parameters):
+    def update_itsm_integration_setting(
+        self,
+        instance_id,
+        data=None,
+        description=None,
+        dypName=None,
+        name=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Updates the ITSM Integration setting .
 
         Args:
@@ -189,36 +189,30 @@ class ItsmIntegration(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(instance_id, str,
-                   may_be_none=False)
+        check_type(instance_id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'instanceId': instance_id,
+            "instanceId": instance_id,
         }
         _payload = {
-            'name':
-                name,
-            'description':
-                description,
-            'data':
-                data,
-            'dypName':
-                dypName,
+            "name": name,
+            "description": description,
+            "data": data,
+            "dypName": dypName,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_c9b5b83e67195b649077a05e42897cc4_v2_3_7_9')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_c9b5b83e67195b649077a05e42897cc4_v2_3_7_9"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -226,23 +220,26 @@ class ItsmIntegration(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/integration-'
-                 + 'settings/instances/itsm/{instanceId}')
+        e_url = (
+            "/dna/intent/api/v1/integration-" + "settings/instances/itsm/{instanceId}"
+        )
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload,
-                                          headers=_headers)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_c9b5b83e67195b649077a05e42897cc4_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_c9b5b83e67195b649077a05e42897cc4_v2_3_7_9", json_data
+        )
 
-    def get_itsm_integration_setting_by_id(self,
-                                           instance_id,
-                                           headers=None,
-                                           **request_parameters):
+    def get_itsm_integration_setting_by_id(
+        self, instance_id, headers=None, **request_parameters
+    ):
         """Fetches ITSM Integration setting by ID .
 
         Args:
@@ -264,20 +261,17 @@ class ItsmIntegration(object):
             https://developer.cisco.com/docs/dna-center/#!get-i-t-s-m-integration-setting-by-id
         """
         check_type(headers, dict)
-        check_type(instance_id, str,
-                   may_be_none=False)
+        check_type(instance_id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'instanceId': instance_id,
+            "instanceId": instance_id,
         }
 
         with_custom_headers = False
@@ -286,21 +280,24 @@ class ItsmIntegration(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/integration-'
-                 + 'settings/instances/itsm/{instanceId}')
+        e_url = (
+            "/dna/intent/api/v1/integration-" + "settings/instances/itsm/{instanceId}"
+        )
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_ca7a97d4665bca9634b6fb41cd7d29_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_ca7a97d4665bca9634b6fb41cd7d29_v2_3_7_9", json_data
+        )
 
-    def delete_itsm_integration_setting(self,
-                                        instance_id,
-                                        headers=None,
-                                        **request_parameters):
+    def delete_itsm_integration_setting(
+        self, instance_id, headers=None, **request_parameters
+    ):
         """Deletes the ITSM Integration setting .
 
         Args:
@@ -322,20 +319,17 @@ class ItsmIntegration(object):
             https://developer.cisco.com/docs/dna-center/#!delete-i-t-s-m-integration-setting
         """
         check_type(headers, dict)
-        check_type(instance_id, str,
-                   may_be_none=False)
+        check_type(instance_id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'instanceId': instance_id,
+            "instanceId": instance_id,
         }
 
         with_custom_headers = False
@@ -344,24 +338,30 @@ class ItsmIntegration(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/integration-'
-                 + 'settings/instances/itsm/{instanceId}')
+        e_url = (
+            "/dna/intent/api/v1/integration-" + "settings/instances/itsm/{instanceId}"
+        )
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.delete(endpoint_full_url, params=_params,
-                                             headers=_headers)
+            json_data = self._session.delete(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.delete(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_ae71ae83f7f530c81e650c1455567e8_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_ae71ae83f7f530c81e650c1455567e8_v2_3_7_9", json_data
+        )
 
-    def get_all_itsm_integration_settings(self,
-                                          order=None,
-                                          page=None,
-                                          page_size=None,
-                                          sort_by=None,
-                                          headers=None,
-                                          **request_parameters):
+    def get_all_itsm_integration_settings(
+        self,
+        order=None,
+        page=None,
+        page_size=None,
+        sort_by=None,
+        headers=None,
+        **request_parameters
+    ):
         """Fetches all ITSM Integration settings .
 
         Args:
@@ -391,25 +391,19 @@ class ItsmIntegration(object):
         check_type(sort_by, str)
         check_type(order, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'page_size':
-                page_size,
-            'page':
-                page,
-            'sortBy':
-                sort_by,
-            'order':
-                order,
+            "page_size": page_size,
+            "page": page,
+            "sortBy": sort_by,
+            "order": order,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -417,19 +411,20 @@ class ItsmIntegration(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/integration-settings/itsm/instances')
+        e_url = "/dna/intent/api/v1/integration-settings/itsm/instances"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_ac54638bea4157f2bbd03f329ac25e27_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_ac54638bea4157f2bbd03f329ac25e27_v2_3_7_9", json_data
+        )
 
-    def get_itsm_integration_status(self,
-                                    headers=None,
-                                    **request_parameters):
+    def get_itsm_integration_status(self, headers=None, **request_parameters):
         """Fetches ITSM Integration status .
 
         Args:
@@ -451,17 +446,14 @@ class ItsmIntegration(object):
         """
         check_type(headers, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -469,15 +461,18 @@ class ItsmIntegration(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/integration-settings/status')
+        e_url = "/dna/intent/api/v1/integration-settings/status"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_e8398520e0aa5a549ddb60c11581b93d_v2_3_7_9', json_data)
+        return self._object_factory(
+            "bpm_e8398520e0aa5a549ddb60c11581b93d_v2_3_7_9", json_data
+        )
+
 
 # Alias Functions
-

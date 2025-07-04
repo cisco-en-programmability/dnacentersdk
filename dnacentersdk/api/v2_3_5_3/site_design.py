@@ -64,13 +64,15 @@ class SiteDesign(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def provision_nfv(self,
-                      provisioning=None,
-                      siteProfile=None,
-                      headers=None,
-                      payload=None,
-                      active_validation=True,
-                      **request_parameters):
+    def provision_nfv(
+        self,
+        provisioning=None,
+        siteProfile=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Design and Provision single/multi NFV device with given site/area/building/floor . .
 
         Args:
@@ -99,37 +101,30 @@ class SiteDesign(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if '__runsync' in headers:
-                check_type(headers.get('__runsync'),
-                           bool, may_be_none=False)
-            if '__timeout' in headers:
-                check_type(headers.get('__timeout'),
-                           int)
-            if '__persistbapioutput' in headers:
-                check_type(headers.get('__persistbapioutput'),
-                           bool, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "__runsync" in headers:
+                check_type(headers.get("__runsync"), bool, may_be_none=False)
+            if "__timeout" in headers:
+                check_type(headers.get("__timeout"), int)
+            if "__persistbapioutput" in headers:
+                check_type(headers.get("__persistbapioutput"), bool, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'siteProfile':
-                siteProfile,
-            'provisioning':
-                provisioning,
+            "siteProfile": siteProfile,
+            "provisioning": provisioning,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_cc72e307e5df50c48ce57370f27395a0_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_cc72e307e5df50c48ce57370f27395a0_v2_3_5_3"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -137,22 +132,22 @@ class SiteDesign(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/business/nfv')
+        e_url = "/dna/intent/api/v1/business/nfv"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_cc72e307e5df50c48ce57370f27395a0_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_cc72e307e5df50c48ce57370f27395a0_v2_3_5_3", json_data
+        )
 
-    def get_device_details_by_ip(self,
-                                 device_ip,
-                                 headers=None,
-                                 **request_parameters):
+    def get_device_details_by_ip(self, device_ip, headers=None, **request_parameters):
         """Returns provisioning device information for the specified IP address. .
 
         Args:
@@ -175,22 +170,18 @@ class SiteDesign(object):
             https://developer.cisco.com/docs/dna-center/#!get-device-details-by-ip
         """
         check_type(headers, dict)
-        check_type(device_ip, str,
-                   may_be_none=False)
+        check_type(device_ip, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'deviceIp':
-                device_ip,
+            "deviceIp": device_ip,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -198,21 +189,22 @@ class SiteDesign(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/business/nfv/provisioningDetail')
+        e_url = "/dna/intent/api/v1/business/nfv/provisioningDetail"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_bfde206eb445821a5722511f138814a_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_bfde206eb445821a5722511f138814a_v2_3_5_3", json_data
+        )
 
-    def associate(self,
-                  network_profile_id,
-                  site_id,
-                  headers=None,
-                  **request_parameters):
+    def associate(
+        self, network_profile_id, site_id, headers=None, **request_parameters
+    ):
         """Associate Site to a Network Profile .
 
         Args:
@@ -235,26 +227,21 @@ class SiteDesign(object):
             https://developer.cisco.com/docs/dna-center/#!associate
         """
         check_type(headers, dict)
-        check_type(network_profile_id, str,
-                   may_be_none=False)
-        check_type(site_id, str,
-                   may_be_none=False)
+        check_type(network_profile_id, str, may_be_none=False)
+        check_type(site_id, str, may_be_none=False)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'networkProfileId': network_profile_id,
-            'siteId': site_id,
+            "networkProfileId": network_profile_id,
+            "siteId": site_id,
         }
 
         with_custom_headers = False
@@ -263,22 +250,24 @@ class SiteDesign(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/networkprofile/{networkProfileId}/sit'
-                 + 'e/{siteId}')
+        e_url = (
+            "/dna/intent/api/v1/networkprofile/{networkProfileId}/sit" + "e/{siteId}"
+        )
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.post(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_a1800508058e4b82a08ea5637b794_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_a1800508058e4b82a08ea5637b794_v2_3_5_3", json_data
+        )
 
-    def disassociate(self,
-                     network_profile_id,
-                     site_id,
-                     headers=None,
-                     **request_parameters):
+    def disassociate(
+        self, network_profile_id, site_id, headers=None, **request_parameters
+    ):
         """Disassociate a Site from a Network Profile .
 
         Args:
@@ -301,23 +290,19 @@ class SiteDesign(object):
             https://developer.cisco.com/docs/dna-center/#!disassociate
         """
         check_type(headers, dict)
-        check_type(network_profile_id, str,
-                   may_be_none=False)
-        check_type(site_id, str,
-                   may_be_none=False)
+        check_type(network_profile_id, str, may_be_none=False)
+        check_type(site_id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'networkProfileId': network_profile_id,
-            'siteId': site_id,
+            "networkProfileId": network_profile_id,
+            "siteId": site_id,
         }
 
         with_custom_headers = False
@@ -326,23 +311,29 @@ class SiteDesign(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/networkprofile/{networkProfileId}/sit'
-                 + 'e/{siteId}')
+        e_url = (
+            "/dna/intent/api/v1/networkprofile/{networkProfileId}/sit" + "e/{siteId}"
+        )
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.delete(endpoint_full_url, params=_params,
-                                             headers=_headers)
+            json_data = self._session.delete(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.delete(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_c8936d6a0c54e89b471fe36bf28de8_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_c8936d6a0c54e89b471fe36bf28de8_v2_3_5_3", json_data
+        )
 
-    def nfv_provisioning_detail(self,
-                                device_ip=None,
-                                headers=None,
-                                payload=None,
-                                active_validation=True,
-                                **request_parameters):
+    def nfv_provisioning_detail(
+        self,
+        device_ip=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Checks the provisioning detail of an ENCS device including log information. .
 
         Args:
@@ -370,35 +361,29 @@ class SiteDesign(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if '__runsync' in headers:
-                check_type(headers.get('__runsync'),
-                           bool, may_be_none=False)
-            if '__runsynctimeout' in headers:
-                check_type(headers.get('__runsynctimeout'),
-                           int)
-            if '__persistbapioutput' in headers:
-                check_type(headers.get('__persistbapioutput'),
-                           bool, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "__runsync" in headers:
+                check_type(headers.get("__runsync"), bool, may_be_none=False)
+            if "__runsynctimeout" in headers:
+                check_type(headers.get("__runsynctimeout"), int)
+            if "__persistbapioutput" in headers:
+                check_type(headers.get("__persistbapioutput"), bool, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'device_ip':
-                device_ip,
+            "device_ip": device_ip,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_d9ccfce8451809129ec5de42c5048_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_d9ccfce8451809129ec5de42c5048_v2_3_5_3"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -406,25 +391,30 @@ class SiteDesign(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/nfv-provision-detail')
+        e_url = "/dna/intent/api/v1/nfv-provision-detail"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_d9ccfce8451809129ec5de42c5048_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_d9ccfce8451809129ec5de42c5048_v2_3_5_3", json_data
+        )
 
-    def create_nfv_profile(self,
-                           device=None,
-                           profileName=None,
-                           headers=None,
-                           payload=None,
-                           active_validation=True,
-                           **request_parameters):
+    def create_nfv_profile(
+        self,
+        device=None,
+        profileName=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """API to create network profile for different NFV topologies .
 
         Args:
@@ -453,28 +443,24 @@ class SiteDesign(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'profileName':
-                profileName,
-            'device':
-                device,
+            "profileName": profileName,
+            "device": device,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_d2a712eb315650618d475db5de0aabec_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_d2a712eb315650618d475db5de0aabec_v2_3_5_3"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -482,26 +468,31 @@ class SiteDesign(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/nfv/network-profile')
+        e_url = "/dna/intent/api/v1/nfv/network-profile"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_d2a712eb315650618d475db5de0aabec_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_d2a712eb315650618d475db5de0aabec_v2_3_5_3", json_data
+        )
 
-    def update_nfv_profile(self,
-                           id,
-                           device=None,
-                           name=None,
-                           headers=None,
-                           payload=None,
-                           active_validation=True,
-                           **request_parameters):
+    def update_nfv_profile(
+        self,
+        id,
+        device=None,
+        name=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """API to update a NFV Network profile .
 
         Args:
@@ -531,32 +522,29 @@ class SiteDesign(object):
         check_type(headers, dict)
         check_type(payload, dict)
         check_type(name, str)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'name':
-                name,
+            "name": name,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
         _payload = {
-            'device':
-                device,
+            "device": device,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_e2202e5f7586e68778ed7772b1_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator("jsd_e2202e5f7586e68778ed7772b1_v2_3_5_3").validate(
+                _payload
+            )
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -564,25 +552,24 @@ class SiteDesign(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/nfv/network-profile/{id}')
+        e_url = "/dna/intent/api/v1/nfv/network-profile/{id}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload,
-                                          headers=_headers)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_e2202e5f7586e68778ed7772b1_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_e2202e5f7586e68778ed7772b1_v2_3_5_3", json_data
+        )
 
-    def get_nfv_profile(self,
-                        id,
-                        limit=None,
-                        name=None,
-                        offset=None,
-                        headers=None,
-                        **request_parameters):
+    def get_nfv_profile(
+        self, id, limit=None, name=None, offset=None, headers=None, **request_parameters
+    ):
         """API to get NFV network profile. .
 
         Args:
@@ -610,26 +597,21 @@ class SiteDesign(object):
         check_type(offset, (int, str))
         check_type(limit, (int, str))
         check_type(name, str)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'offset':
-                offset,
-            'limit':
-                limit,
-            'name':
-                name,
+            "offset": offset,
+            "limit": limit,
+            "name": name,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
 
         with_custom_headers = False
@@ -638,21 +620,20 @@ class SiteDesign(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/nfv/network-profile/{id}')
+        e_url = "/dna/intent/api/v1/nfv/network-profile/{id}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_f50579d855255df89ab3545de9745545_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_f50579d855255df89ab3545de9745545_v2_3_5_3", json_data
+        )
 
-    def delete_nfv_profile(self,
-                           id,
-                           name=None,
-                           headers=None,
-                           **request_parameters):
+    def delete_nfv_profile(self, id, name=None, headers=None, **request_parameters):
         """API to delete nfv network profile. .
 
         Args:
@@ -676,22 +657,19 @@ class SiteDesign(object):
         """
         check_type(headers, dict)
         check_type(name, str)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'name':
-                name,
+            "name": name,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
 
         with_custom_headers = False
@@ -700,12 +678,15 @@ class SiteDesign(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/nfv/network-profile/{id}')
+        e_url = "/dna/intent/api/v1/nfv/network-profile/{id}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.delete(endpoint_full_url, params=_params,
-                                             headers=_headers)
+            json_data = self._session.delete(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.delete(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_bcefb205d26b9aced6dc6d8c269_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_bcefb205d26b9aced6dc6d8c269_v2_3_5_3", json_data
+        )

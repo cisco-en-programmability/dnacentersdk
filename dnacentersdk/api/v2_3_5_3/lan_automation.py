@@ -64,11 +64,9 @@ class LanAutomation(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def lan_automation_start(self,
-                             headers=None,
-                             payload=None,
-                             active_validation=True,
-                             **request_parameters):
+    def lan_automation_start(
+        self, headers=None, payload=None, active_validation=True, **request_parameters
+    ):
         """Invoke this API to start LAN Automation for the given site. .
 
         Args:
@@ -95,24 +93,21 @@ class LanAutomation(object):
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = payload or []
         if active_validation:
-            self._request_validator('jsd_b119a4d455e35cc3b2cc6695a045cbfa_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_b119a4d455e35cc3b2cc6695a045cbfa_v2_3_5_3"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -120,23 +115,24 @@ class LanAutomation(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/lan-automation')
+        e_url = "/dna/intent/api/v1/lan-automation"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_b119a4d455e35cc3b2cc6695a045cbfa_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_b119a4d455e35cc3b2cc6695a045cbfa_v2_3_5_3", json_data
+        )
 
-    def start(self,
-              headers=None,
-              payload=None,
-              active_validation=True,
-              **query_parameters):
+    def start(
+        self, headers=None, payload=None, active_validation=True, **query_parameters
+    ):
         """Alias for `lan_automation_start <#dnacentersdk.
         api.v2_3_5_3.lan_automation.
         LanAutomation.lan_automation_start>`_
@@ -148,9 +144,7 @@ class LanAutomation(object):
             **query_parameters
         )
 
-    def lan_automation_session_count(self,
-                                     headers=None,
-                                     **request_parameters):
+    def lan_automation_session_count(self, headers=None, **request_parameters):
         """Invoke this API to get the total count of LAN Automation sessions. .
 
         Args:
@@ -172,17 +166,14 @@ class LanAutomation(object):
         """
         check_type(headers, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -190,33 +181,29 @@ class LanAutomation(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/lan-automation/count')
+        e_url = "/dna/intent/api/v1/lan-automation/count"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_eea014edd5807925df3a414a92ed4_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_eea014edd5807925df3a414a92ed4_v2_3_5_3", json_data
+        )
 
-    def session_count(self,
-                      headers=None,
-                      **query_parameters):
+    def session_count(self, headers=None, **query_parameters):
         """Alias for `lan_automation_session_count <#dnacentersdk.
         api.v2_3_5_3.lan_automation.
         LanAutomation.lan_automation_session_count>`_
         """
-        return self.lan_automation_session_count(
-            headers=headers,
-            **query_parameters
-        )
+        return self.lan_automation_session_count(headers=headers, **query_parameters)
 
-    def lan_automation_log(self,
-                           limit=None,
-                           offset=None,
-                           headers=None,
-                           **request_parameters):
+    def lan_automation_log(
+        self, limit=None, offset=None, headers=None, **request_parameters
+    ):
         """Invoke this API to get the LAN Automation session logs. .
 
         Args:
@@ -243,21 +230,17 @@ class LanAutomation(object):
         check_type(offset, (int, str))
         check_type(limit, (int, str))
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'offset':
-                offset,
-            'limit':
-                limit,
+            "offset": offset,
+            "limit": limit,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -265,36 +248,29 @@ class LanAutomation(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/lan-automation/log')
+        e_url = "/dna/intent/api/v1/lan-automation/log"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_e37f6c9650b68e0aaac866a162cf_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_e37f6c9650b68e0aaac866a162cf_v2_3_5_3", json_data
+        )
 
-    def log(self,
-            limit=None,
-            offset=None,
-            headers=None,
-            **query_parameters):
+    def log(self, limit=None, offset=None, headers=None, **query_parameters):
         """Alias for `lan_automation_log <#dnacentersdk.
         api.v2_3_5_3.lan_automation.
         LanAutomation.lan_automation_log>`_
         """
         return self.lan_automation_log(
-            limit=limit,
-            offset=offset,
-            headers=headers,
-            **query_parameters
+            limit=limit, offset=offset, headers=headers, **query_parameters
         )
 
-    def lan_automation_log_by_id(self,
-                                 id,
-                                 headers=None,
-                                 **request_parameters):
+    def lan_automation_log_by_id(self, id, headers=None, **request_parameters):
         """Invoke this API to get the LAN Automation session logs based on the given LAN Automation session id. .
 
         Args:
@@ -316,20 +292,17 @@ class LanAutomation(object):
             https://developer.cisco.com/docs/dna-center/#!lan-automation-log-by-id
         """
         check_type(headers, dict)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
 
         with_custom_headers = False
@@ -338,36 +311,29 @@ class LanAutomation(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/lan-automation/log/{id}')
+        e_url = "/dna/intent/api/v1/lan-automation/log/{id}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_e98b744fde50a1b53761251c43bfb0_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_e98b744fde50a1b53761251c43bfb0_v2_3_5_3", json_data
+        )
 
-    def log_by_id(self,
-                  id,
-                  headers=None,
-                  **query_parameters):
+    def log_by_id(self, id, headers=None, **query_parameters):
         """Alias for `lan_automation_log_by_id <#dnacentersdk.
         api.v2_3_5_3.lan_automation.
         LanAutomation.lan_automation_log_by_id>`_
         """
-        return self.lan_automation_log_by_id(
-            id=id,
-            headers=headers,
-            **query_parameters
-        )
+        return self.lan_automation_log_by_id(id=id, headers=headers, **query_parameters)
 
-    def lan_automation_logs_for_individual_devices(self,
-                                                   id,
-                                                   serial_number,
-                                                   log_level=None,
-                                                   headers=None,
-                                                   **request_parameters):
+    def lan_automation_logs_for_individual_devices(
+        self, id, serial_number, log_level=None, headers=None, **request_parameters
+    ):
         """Invoke this API to get the LAN Automation session logs for individual devices based on the given LAN Automation
         session id and device serial number.  .
 
@@ -396,25 +362,21 @@ class LanAutomation(object):
         """
         check_type(headers, dict)
         check_type(log_level, str)
-        check_type(id, str,
-                   may_be_none=False)
-        check_type(serial_number, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
+        check_type(serial_number, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'logLevel':
-                log_level,
+            "logLevel": log_level,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
-            'serialNumber': serial_number,
+            "id": id,
+            "serialNumber": serial_number,
         }
 
         with_custom_headers = False
@@ -423,20 +385,20 @@ class LanAutomation(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/lan-'
-                 + 'automation/log/{id}/{serialNumber}')
+        e_url = "/dna/intent/api/v1/lan-" + "automation/log/{id}/{serialNumber}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_c3441f7507a98d02579c25814f4_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_c3441f7507a98d02579c25814f4_v2_3_5_3", json_data
+        )
 
-    def lan_automation_active_sessions(self,
-                                       headers=None,
-                                       **request_parameters):
+    def lan_automation_active_sessions(self, headers=None, **request_parameters):
         """Invoke this API to get the LAN Automation active session information .
 
         Args:
@@ -458,17 +420,14 @@ class LanAutomation(object):
         """
         check_type(headers, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -476,21 +435,22 @@ class LanAutomation(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/lan-automation/sessions')
+        e_url = "/dna/intent/api/v1/lan-automation/sessions"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_a19cf2241e75c648220d7172e9e4013_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_a19cf2241e75c648220d7172e9e4013_v2_3_5_3", json_data
+        )
 
-    def lan_automation_status(self,
-                              limit=None,
-                              offset=None,
-                              headers=None,
-                              **request_parameters):
+    def lan_automation_status(
+        self, limit=None, offset=None, headers=None, **request_parameters
+    ):
         """Invoke this API to get the LAN Automation session status.  .
 
         Args:
@@ -517,21 +477,17 @@ class LanAutomation(object):
         check_type(offset, (int, str))
         check_type(limit, (int, str))
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'offset':
-                offset,
-            'limit':
-                limit,
+            "offset": offset,
+            "limit": limit,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -539,36 +495,29 @@ class LanAutomation(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/lan-automation/status')
+        e_url = "/dna/intent/api/v1/lan-automation/status"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_c56a6c58fd5b71b7949036855ee25b_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_c56a6c58fd5b71b7949036855ee25b_v2_3_5_3", json_data
+        )
 
-    def status(self,
-               limit=None,
-               offset=None,
-               headers=None,
-               **query_parameters):
+    def status(self, limit=None, offset=None, headers=None, **query_parameters):
         """Alias for `lan_automation_status <#dnacentersdk.
         api.v2_3_5_3.lan_automation.
         LanAutomation.lan_automation_status>`_
         """
         return self.lan_automation_status(
-            limit=limit,
-            offset=offset,
-            headers=headers,
-            **query_parameters
+            limit=limit, offset=offset, headers=headers, **query_parameters
         )
 
-    def lan_automation_status_by_id(self,
-                                    id,
-                                    headers=None,
-                                    **request_parameters):
+    def lan_automation_status_by_id(self, id, headers=None, **request_parameters):
         """Invoke this API to get the LAN Automation session status based on the given Lan Automation session id. .
 
         Args:
@@ -590,20 +539,17 @@ class LanAutomation(object):
             https://developer.cisco.com/docs/dna-center/#!lan-automation-status-by-id
         """
         check_type(headers, dict)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
 
         with_custom_headers = False
@@ -612,34 +558,29 @@ class LanAutomation(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/lan-automation/status/{id}')
+        e_url = "/dna/intent/api/v1/lan-automation/status/{id}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_d5727c4bdb1056308cd10e99dff2acb8_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_d5727c4bdb1056308cd10e99dff2acb8_v2_3_5_3", json_data
+        )
 
-    def status_by_id(self,
-                     id,
-                     headers=None,
-                     **query_parameters):
+    def status_by_id(self, id, headers=None, **query_parameters):
         """Alias for `lan_automation_status_by_id <#dnacentersdk.
         api.v2_3_5_3.lan_automation.
         LanAutomation.lan_automation_status_by_id>`_
         """
         return self.lan_automation_status_by_id(
-            id=id,
-            headers=headers,
-            **query_parameters
+            id=id, headers=headers, **query_parameters
         )
 
-    def lan_automation_stop(self,
-                            id,
-                            headers=None,
-                            **request_parameters):
+    def lan_automation_stop(self, id, headers=None, **request_parameters):
         """Invoke this API to stop LAN Automation for the given site.  .
 
         Args:
@@ -662,20 +603,17 @@ class LanAutomation(object):
             https://developer.cisco.com/docs/dna-center/#!lan-automation-stop
         """
         check_type(headers, dict)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            "id": id,
         }
 
         with_custom_headers = False
@@ -684,26 +622,22 @@ class LanAutomation(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/lan-automation/{id}')
+        e_url = "/dna/intent/api/v1/lan-automation/{id}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.delete(endpoint_full_url, params=_params,
-                                             headers=_headers)
+            json_data = self._session.delete(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.delete(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_ed815ca3e5ab5ae48720795217ec776b_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_ed815ca3e5ab5ae48720795217ec776b_v2_3_5_3", json_data
+        )
 
-    def stop(self,
-             id,
-             headers=None,
-             **query_parameters):
+    def stop(self, id, headers=None, **query_parameters):
         """Alias for `lan_automation_stop <#dnacentersdk.
         api.v2_3_5_3.lan_automation.
         LanAutomation.lan_automation_stop>`_
         """
-        return self.lan_automation_stop(
-            id=id,
-            headers=headers,
-            **query_parameters
-        )
+        return self.lan_automation_stop(id=id, headers=headers, **query_parameters)

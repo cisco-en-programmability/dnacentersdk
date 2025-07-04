@@ -23,9 +23,7 @@ SOFTWARE.
 """
 
 
-
 from builtins import *
-
 
 
 from ...restsession import RestSession
@@ -66,10 +64,9 @@ class Topology(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def get_overall_network_health_v1(self,
-                                      timestamp=None,
-                                      headers=None,
-                                      **request_parameters):
+    def get_overall_network_health_v1(
+        self, timestamp=None, headers=None, **request_parameters
+    ):
         """Returns Overall Network Health information by Device category (Access, Distribution, Core, Router, Wireless) for
         any given point of time .
 
@@ -94,22 +91,19 @@ class Topology(object):
         check_type(headers, dict)
         check_type(timestamp, int)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'timestamp':
-                timestamp,
+            "timestamp": timestamp,
         }
 
-        if _params['timestamp'] is None:
-            _params['timestamp'] = ''
+        if _params["timestamp"] is None:
+            _params["timestamp"] = ""
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -117,20 +111,20 @@ class Topology(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/network-health')
+        e_url = "/dna/intent/api/v1/network-health"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_b0753b63045528194f2f5bbf8ae432d_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_b0753b63045528194f2f5bbf8ae432d_v2_3_7_6", json_data
+        )
 
-    def get_topology_details_v1(self,
-                                vlan_id,
-                                headers=None,
-                                **request_parameters):
+    def get_topology_details_v1(self, vlan_id, headers=None, **request_parameters):
         """Returns Layer 2 network topology by specified VLAN ID .
 
         Args:
@@ -152,20 +146,17 @@ class Topology(object):
             https://developer.cisco.com/docs/dna-center/#!get-topology-details
         """
         check_type(headers, dict)
-        check_type(vlan_id, str,
-                   may_be_none=False)
+        check_type(vlan_id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'vlanID': vlan_id,
+            "vlanID": vlan_id,
         }
 
         with_custom_headers = False
@@ -174,20 +165,22 @@ class Topology(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/topology/l2/{vlanID}')
+        e_url = "/dna/intent/api/v1/topology/l2/{vlanID}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_b3f79d3b45b98849d9180cc08018e_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_b3f79d3b45b98849d9180cc08018e_v2_3_7_6", json_data
+        )
 
-    def get_l3_topology_details_v1(self,
-                                   topology_type,
-                                   headers=None,
-                                   **request_parameters):
+    def get_l3_topology_details_v1(
+        self, topology_type, headers=None, **request_parameters
+    ):
         """Returns the Layer 3 network topology by routing protocol .
 
         Args:
@@ -209,20 +202,17 @@ class Topology(object):
             https://developer.cisco.com/docs/dna-center/#!get-l3-topology-details
         """
         check_type(headers, dict)
-        check_type(topology_type, str,
-                   may_be_none=False)
+        check_type(topology_type, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'topologyType': topology_type,
+            "topologyType": topology_type,
         }
 
         with_custom_headers = False
@@ -231,20 +221,22 @@ class Topology(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/topology/l3/{topologyType}')
+        e_url = "/dna/intent/api/v1/topology/l3/{topologyType}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_c7e9c39880735e7684291bc5dc3ba994_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_c7e9c39880735e7684291bc5dc3ba994_v2_3_7_6", json_data
+        )
 
-    def get_physical_topology_v1(self,
-                                 node_type=None,
-                                 headers=None,
-                                 **request_parameters):
+    def get_physical_topology_v1(
+        self, node_type=None, headers=None, **request_parameters
+    ):
         """Returns the raw physical topology by specified criteria of nodeType .
 
         Args:
@@ -268,19 +260,16 @@ class Topology(object):
         check_type(headers, dict)
         check_type(node_type, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'nodeType':
-                node_type,
+            "nodeType": node_type,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -288,19 +277,18 @@ class Topology(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/topology/physical-topology')
+        e_url = "/dna/intent/api/v1/topology/physical-topology"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_eb4ab5a978fe8785516c8af42_v2_3_7_6', json_data)
+        return self._object_factory("bpm_eb4ab5a978fe8785516c8af42_v2_3_7_6", json_data)
 
-    def get_site_topology_v1(self,
-                             headers=None,
-                             **request_parameters):
+    def get_site_topology_v1(self, headers=None, **request_parameters):
         """Returns site topology .
 
         Args:
@@ -322,17 +310,14 @@ class Topology(object):
         """
         check_type(headers, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -340,19 +325,20 @@ class Topology(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/topology/site-topology')
+        e_url = "/dna/intent/api/v1/topology/site-topology"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_f7abdb7ab46a5918a74e839488ff6ae0_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_f7abdb7ab46a5918a74e839488ff6ae0_v2_3_7_6", json_data
+        )
 
-    def get_vlan_details_v1(self,
-                            headers=None,
-                            **request_parameters):
+    def get_vlan_details_v1(self, headers=None, **request_parameters):
         """Returns the list of VLAN names that are involved in a loop as identified by the Spanning Tree Protocol .
 
         Args:
@@ -374,17 +360,14 @@ class Topology(object):
         """
         check_type(headers, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -392,23 +375,22 @@ class Topology(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/topology/vlan/vlan-names')
+        e_url = "/dna/intent/api/v1/topology/vlan/vlan-names"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_fb6000ce8d8854bc80be3803b8dee1b7_v2_3_7_6', json_data)
+        return self._object_factory(
+            "bpm_fb6000ce8d8854bc80be3803b8dee1b7_v2_3_7_6", json_data
+        )
 
-                
-    
     # Alias Function
-    def get_site_topology(self,
-                             headers=None,
-                             **request_parameters):
-        """ This function is an alias of get_site_topology_v1 .
+    def get_site_topology(self, headers=None, **request_parameters):
+        """This function is an alias of get_site_topology_v1 .
         Args:
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -418,18 +400,11 @@ class Topology(object):
         Returns:
             This function returns the output of get_site_topology_v1 .
         """
-        return self.get_site_topology_v1(
-                    headers=headers,
-                    **request_parameters
-        )
-                
-    
+        return self.get_site_topology_v1(headers=headers, **request_parameters)
+
     # Alias Function
-    def get_physical_topology(self,
-                                 node_type=None,
-                                 headers=None,
-                                 **request_parameters):
-        """ This function is an alias of get_physical_topology_v1 .
+    def get_physical_topology(self, node_type=None, headers=None, **request_parameters):
+        """This function is an alias of get_physical_topology_v1 .
         Args:
             node_type(basestring): nodeType query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -439,20 +414,14 @@ class Topology(object):
 
         Returns:
             This function returns the output of get_physical_topology_v1 .
-        """ 
+        """
         return self.get_physical_topology_v1(
-                    node_type=node_type,
-                    headers=headers,
-                    **request_parameters
+            node_type=node_type, headers=headers, **request_parameters
         )
-                
-    
+
     # Alias Function
-    def get_topology_details(self,
-                                vlan_id,
-                                headers=None,
-                                **request_parameters):
-        """ This function is an alias of get_topology_details_v1 .
+    def get_topology_details(self, vlan_id, headers=None, **request_parameters):
+        """This function is an alias of get_topology_details_v1 .
         Args:
             vlan_id(basestring): vlanID path parameter. Vlan Name for e.g Vlan1, Vlan23 etc .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -462,20 +431,16 @@ class Topology(object):
 
         Returns:
             This function returns the output of get_topology_details_v1 .
-        """ 
+        """
         return self.get_topology_details_v1(
-                    vlan_id=vlan_id,
-                    headers=headers,
-                    **request_parameters
+            vlan_id=vlan_id, headers=headers, **request_parameters
         )
-                
-    
+
     # Alias Function
-    def get_l3_topology_details(self,
-                                   topology_type,
-                                   headers=None,
-                                   **request_parameters):
-        """ This function is an alias of get_l3_topology_details_v1 .
+    def get_l3_topology_details(
+        self, topology_type, headers=None, **request_parameters
+    ):
+        """This function is an alias of get_l3_topology_details_v1 .
         Args:
             topology_type(basestring): topologyType path parameter. Type of topology(OSPF,ISIS,etc) .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -485,19 +450,14 @@ class Topology(object):
 
         Returns:
             This function returns the output of get_l3_topology_details_v1 .
-        """ 
+        """
         return self.get_l3_topology_details_v1(
-                    topology_type=topology_type,
-                    headers=headers,
-                    **request_parameters
+            topology_type=topology_type, headers=headers, **request_parameters
         )
-                
-    
+
     # Alias Function
-    def get_vlan_details(self,
-                            headers=None,
-                            **request_parameters):
-        """ This function is an alias of get_vlan_details_v1 .
+    def get_vlan_details(self, headers=None, **request_parameters):
+        """This function is an alias of get_vlan_details_v1 .
         Args:
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -507,18 +467,13 @@ class Topology(object):
         Returns:
             This function returns the output of get_vlan_details_v1 .
         """
-        return self.get_vlan_details_v1(
-                    headers=headers,
-                    **request_parameters
-        )
-                
-    
+        return self.get_vlan_details_v1(headers=headers, **request_parameters)
+
     # Alias Function
-    def get_overall_network_health(self,
-                                      timestamp=None,
-                                      headers=None,
-                                      **request_parameters):
-        """ This function is an alias of get_overall_network_health_v1 .
+    def get_overall_network_health(
+        self, timestamp=None, headers=None, **request_parameters
+    ):
+        """This function is an alias of get_overall_network_health_v1 .
         Args:
             timestamp(int): timestamp query parameter. UTC timestamp of network health data in milliseconds .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -528,11 +483,7 @@ class Topology(object):
 
         Returns:
             This function returns the output of get_overall_network_health_v1 .
-        """ 
+        """
         return self.get_overall_network_health_v1(
-                    timestamp=timestamp,
-                    headers=headers,
-                    **request_parameters
+            timestamp=timestamp, headers=headers, **request_parameters
         )
-
-

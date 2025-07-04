@@ -64,30 +64,32 @@ class EventManagement(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def get_auditlog_parent_records(self,
-                                    category=None,
-                                    context=None,
-                                    description=None,
-                                    device_id=None,
-                                    domain=None,
-                                    end_time=None,
-                                    event_hierarchy=None,
-                                    event_id=None,
-                                    instance_id=None,
-                                    is_system_events=None,
-                                    limit=None,
-                                    name=None,
-                                    offset=None,
-                                    order=None,
-                                    severity=None,
-                                    site_id=None,
-                                    sort_by=None,
-                                    source=None,
-                                    start_time=None,
-                                    sub_domain=None,
-                                    user_id=None,
-                                    headers=None,
-                                    **request_parameters):
+    def get_auditlog_parent_records(
+        self,
+        category=None,
+        context=None,
+        description=None,
+        device_id=None,
+        domain=None,
+        end_time=None,
+        event_hierarchy=None,
+        event_id=None,
+        instance_id=None,
+        is_system_events=None,
+        limit=None,
+        name=None,
+        offset=None,
+        order=None,
+        severity=None,
+        site_id=None,
+        sort_by=None,
+        source=None,
+        start_time=None,
+        sub_domain=None,
+        user_id=None,
+        headers=None,
+        **request_parameters
+    ):
         """Get Parent Audit Log Event instances from the Event-Hub  .
 
         Args:
@@ -163,59 +165,36 @@ class EventManagement(object):
         check_type(sort_by, str)
         check_type(order, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'instanceId':
-                instance_id,
-            'name':
-                name,
-            'eventId':
-                event_id,
-            'category':
-                category,
-            'severity':
-                severity,
-            'domain':
-                domain,
-            'subDomain':
-                sub_domain,
-            'source':
-                source,
-            'userId':
-                user_id,
-            'context':
-                context,
-            'eventHierarchy':
-                event_hierarchy,
-            'siteId':
-                site_id,
-            'deviceId':
-                device_id,
-            'isSystemEvents':
-                is_system_events,
-            'description':
-                description,
-            'offset':
-                offset,
-            'limit':
-                limit,
-            'startTime':
-                start_time,
-            'endTime':
-                end_time,
-            'sortBy':
-                sort_by,
-            'order':
-                order,
+            "instanceId": instance_id,
+            "name": name,
+            "eventId": event_id,
+            "category": category,
+            "severity": severity,
+            "domain": domain,
+            "subDomain": sub_domain,
+            "source": source,
+            "userId": user_id,
+            "context": context,
+            "eventHierarchy": event_hierarchy,
+            "siteId": site_id,
+            "deviceId": device_id,
+            "isSystemEvents": is_system_events,
+            "description": description,
+            "offset": offset,
+            "limit": limit,
+            "startTime": start_time,
+            "endTime": end_time,
+            "sortBy": sort_by,
+            "order": order,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -223,39 +202,43 @@ class EventManagement(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/data/api/v1/event/event-series/audit-log/parent-'
-                 + 'records')
+        e_url = "/dna/data/api/v1/event/event-series/audit-log/parent-" + "records"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_f8e3a0674c15fd58cd78f42dca37c7c_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_f8e3a0674c15fd58cd78f42dca37c7c_v2_3_5_3", json_data
+        )
 
-    def get_auditlog_summary(self,
-                             category=None,
-                             context=None,
-                             description=None,
-                             device_id=None,
-                             domain=None,
-                             end_time=None,
-                             event_hierarchy=None,
-                             event_id=None,
-                             instance_id=None,
-                             is_parent_only=None,
-                             is_system_events=None,
-                             name=None,
-                             parent_instance_id=None,
-                             severity=None,
-                             site_id=None,
-                             source=None,
-                             start_time=None,
-                             sub_domain=None,
-                             user_id=None,
-                             headers=None,
-                             **request_parameters):
+    def get_auditlog_summary(
+        self,
+        category=None,
+        context=None,
+        description=None,
+        device_id=None,
+        domain=None,
+        end_time=None,
+        event_hierarchy=None,
+        event_id=None,
+        instance_id=None,
+        is_parent_only=None,
+        is_system_events=None,
+        name=None,
+        parent_instance_id=None,
+        severity=None,
+        site_id=None,
+        source=None,
+        start_time=None,
+        sub_domain=None,
+        user_id=None,
+        headers=None,
+        **request_parameters
+    ):
         """Get Audit Log Summary from the Event-Hub .
 
         Args:
@@ -326,55 +309,34 @@ class EventManagement(object):
         check_type(start_time, int)
         check_type(end_time, int)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'parentInstanceId':
-                parent_instance_id,
-            'isParentOnly':
-                is_parent_only,
-            'instanceId':
-                instance_id,
-            'name':
-                name,
-            'eventId':
-                event_id,
-            'category':
-                category,
-            'severity':
-                severity,
-            'domain':
-                domain,
-            'subDomain':
-                sub_domain,
-            'source':
-                source,
-            'userId':
-                user_id,
-            'context':
-                context,
-            'eventHierarchy':
-                event_hierarchy,
-            'siteId':
-                site_id,
-            'deviceId':
-                device_id,
-            'isSystemEvents':
-                is_system_events,
-            'description':
-                description,
-            'startTime':
-                start_time,
-            'endTime':
-                end_time,
+            "parentInstanceId": parent_instance_id,
+            "isParentOnly": is_parent_only,
+            "instanceId": instance_id,
+            "name": name,
+            "eventId": event_id,
+            "category": category,
+            "severity": severity,
+            "domain": domain,
+            "subDomain": sub_domain,
+            "source": source,
+            "userId": user_id,
+            "context": context,
+            "eventHierarchy": event_hierarchy,
+            "siteId": site_id,
+            "deviceId": device_id,
+            "isSystemEvents": is_system_events,
+            "description": description,
+            "startTime": start_time,
+            "endTime": end_time,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -382,41 +344,46 @@ class EventManagement(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/data/api/v1/event/event-series/audit-log/summary')
+        e_url = "/dna/data/api/v1/event/event-series/audit-log/summary"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_ea7c0220d55ae9e1a51d6823ce862_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_ea7c0220d55ae9e1a51d6823ce862_v2_3_5_3", json_data
+        )
 
-    def get_auditlog_records(self,
-                             category=None,
-                             context=None,
-                             description=None,
-                             device_id=None,
-                             domain=None,
-                             end_time=None,
-                             event_hierarchy=None,
-                             event_id=None,
-                             instance_id=None,
-                             is_system_events=None,
-                             limit=None,
-                             name=None,
-                             offset=None,
-                             order=None,
-                             parent_instance_id=None,
-                             severity=None,
-                             site_id=None,
-                             sort_by=None,
-                             source=None,
-                             start_time=None,
-                             sub_domain=None,
-                             user_id=None,
-                             headers=None,
-                             **request_parameters):
+    def get_auditlog_records(
+        self,
+        category=None,
+        context=None,
+        description=None,
+        device_id=None,
+        domain=None,
+        end_time=None,
+        event_hierarchy=None,
+        event_id=None,
+        instance_id=None,
+        is_system_events=None,
+        limit=None,
+        name=None,
+        offset=None,
+        order=None,
+        parent_instance_id=None,
+        severity=None,
+        site_id=None,
+        sort_by=None,
+        source=None,
+        start_time=None,
+        sub_domain=None,
+        user_id=None,
+        headers=None,
+        **request_parameters
+    ):
         """Get Audit Log Event instances from the Event-Hub  .
 
         Args:
@@ -495,61 +462,37 @@ class EventManagement(object):
         check_type(sort_by, str)
         check_type(order, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'parentInstanceId':
-                parent_instance_id,
-            'instanceId':
-                instance_id,
-            'name':
-                name,
-            'eventId':
-                event_id,
-            'category':
-                category,
-            'severity':
-                severity,
-            'domain':
-                domain,
-            'subDomain':
-                sub_domain,
-            'source':
-                source,
-            'userId':
-                user_id,
-            'context':
-                context,
-            'eventHierarchy':
-                event_hierarchy,
-            'siteId':
-                site_id,
-            'deviceId':
-                device_id,
-            'isSystemEvents':
-                is_system_events,
-            'description':
-                description,
-            'offset':
-                offset,
-            'limit':
-                limit,
-            'startTime':
-                start_time,
-            'endTime':
-                end_time,
-            'sortBy':
-                sort_by,
-            'order':
-                order,
+            "parentInstanceId": parent_instance_id,
+            "instanceId": instance_id,
+            "name": name,
+            "eventId": event_id,
+            "category": category,
+            "severity": severity,
+            "domain": domain,
+            "subDomain": sub_domain,
+            "source": source,
+            "userId": user_id,
+            "context": context,
+            "eventHierarchy": event_hierarchy,
+            "siteId": site_id,
+            "deviceId": device_id,
+            "isSystemEvents": is_system_events,
+            "description": description,
+            "offset": offset,
+            "limit": limit,
+            "startTime": start_time,
+            "endTime": end_time,
+            "sortBy": sort_by,
+            "order": order,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -557,20 +500,22 @@ class EventManagement(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/data/api/v1/event/event-series/audit-logs')
+        e_url = "/dna/data/api/v1/event/event-series/audit-logs"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_b0aa5a61f64a5da997dfe05bc8a4a64f_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_b0aa5a61f64a5da997dfe05bc8a4a64f_v2_3_5_3", json_data
+        )
 
-    def get_status_api_for_events(self,
-                                  execution_id,
-                                  headers=None,
-                                  **request_parameters):
+    def get_status_api_for_events(
+        self, execution_id, headers=None, **request_parameters
+    ):
         """Get the Status of events API calls with provided executionId as mandatory path parameter .
 
         Args:
@@ -592,20 +537,17 @@ class EventManagement(object):
             https://developer.cisco.com/docs/dna-center/#!get-status-api-for-events
         """
         check_type(headers, dict)
-        check_type(execution_id, str,
-                   may_be_none=False)
+        check_type(execution_id, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'executionId': execution_id,
+            "executionId": execution_id,
         }
 
         with_custom_headers = False
@@ -614,27 +556,32 @@ class EventManagement(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/event/api-status/{executionId}')
+        e_url = "/dna/intent/api/v1/event/api-status/{executionId}"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_e1bd67a1a0225713ab23f0d0d3ceb4f6_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_e1bd67a1a0225713ab23f0d0d3ceb4f6_v2_3_5_3", json_data
+        )
 
-    def update_email_destination(self,
-                                 emailConfigId=None,
-                                 fromEmail=None,
-                                 primarySMTPConfig=None,
-                                 secondarySMTPConfig=None,
-                                 subject=None,
-                                 toEmail=None,
-                                 headers=None,
-                                 payload=None,
-                                 active_validation=True,
-                                 **request_parameters):
+    def update_email_destination(
+        self,
+        emailConfigId=None,
+        fromEmail=None,
+        primarySMTPConfig=None,
+        secondarySMTPConfig=None,
+        subject=None,
+        toEmail=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Update Email Destination .
 
         Args:
@@ -667,39 +614,30 @@ class EventManagement(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'emailConfigId':
-                emailConfigId,
-            'primarySMTPConfig':
-                primarySMTPConfig,
-            'secondarySMTPConfig':
-                secondarySMTPConfig,
-            'fromEmail':
-                fromEmail,
-            'toEmail':
-                toEmail,
-            'subject':
-                subject,
+            "emailConfigId": emailConfigId,
+            "primarySMTPConfig": primarySMTPConfig,
+            "secondarySMTPConfig": secondarySMTPConfig,
+            "fromEmail": fromEmail,
+            "toEmail": toEmail,
+            "subject": subject,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_aaebb912125213b350d7423b4f01a4_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_aaebb912125213b350d7423b4f01a4_v2_3_5_3"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -707,21 +645,22 @@ class EventManagement(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/event/email-config')
+        e_url = "/dna/intent/api/v1/event/email-config"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload,
-                                          headers=_headers)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_aaebb912125213b350d7423b4f01a4_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_aaebb912125213b350d7423b4f01a4_v2_3_5_3", json_data
+        )
 
-    def get_email_destination(self,
-                              headers=None,
-                              **request_parameters):
+    def get_email_destination(self, headers=None, **request_parameters):
         """Get Email Destination .
 
         Args:
@@ -744,17 +683,14 @@ class EventManagement(object):
         """
         check_type(headers, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -762,27 +698,32 @@ class EventManagement(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/event/email-config')
+        e_url = "/dna/intent/api/v1/event/email-config"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_d5f08e8ff59e51d1a9ae56c3e20eae3c_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_d5f08e8ff59e51d1a9ae56c3e20eae3c_v2_3_5_3", json_data
+        )
 
-    def create_email_destination(self,
-                                 emailConfigId=None,
-                                 fromEmail=None,
-                                 primarySMTPConfig=None,
-                                 secondarySMTPConfig=None,
-                                 subject=None,
-                                 toEmail=None,
-                                 headers=None,
-                                 payload=None,
-                                 active_validation=True,
-                                 **request_parameters):
+    def create_email_destination(
+        self,
+        emailConfigId=None,
+        fromEmail=None,
+        primarySMTPConfig=None,
+        secondarySMTPConfig=None,
+        subject=None,
+        toEmail=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Create Email Destination .
 
         Args:
@@ -815,36 +756,28 @@ class EventManagement(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'emailConfigId':
-                emailConfigId,
-            'primarySMTPConfig':
-                primarySMTPConfig,
-            'secondarySMTPConfig':
-                secondarySMTPConfig,
-            'fromEmail':
-                fromEmail,
-            'toEmail':
-                toEmail,
-            'subject':
-                subject,
+            "emailConfigId": emailConfigId,
+            "primarySMTPConfig": primarySMTPConfig,
+            "secondarySMTPConfig": secondarySMTPConfig,
+            "fromEmail": fromEmail,
+            "toEmail": toEmail,
+            "subject": subject,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_c991ce0b0f058a08c863a4abdfc70a6_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_c991ce0b0f058a08c863a4abdfc70a6_v2_3_5_3"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -852,37 +785,42 @@ class EventManagement(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/event/email-config')
+        e_url = "/dna/intent/api/v1/event/email-config"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_c991ce0b0f058a08c863a4abdfc70a6_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_c991ce0b0f058a08c863a4abdfc70a6_v2_3_5_3", json_data
+        )
 
-    def get_notifications(self,
-                          category=None,
-                          domain=None,
-                          end_time=None,
-                          event_ids=None,
-                          limit=None,
-                          namespace=None,
-                          offset=None,
-                          order=None,
-                          severity=None,
-                          site_id=None,
-                          sort_by=None,
-                          source=None,
-                          start_time=None,
-                          sub_domain=None,
-                          tags=None,
-                          type=None,
-                          headers=None,
-                          **request_parameters):
+    def get_notifications(
+        self,
+        category=None,
+        domain=None,
+        end_time=None,
+        event_ids=None,
+        limit=None,
+        namespace=None,
+        offset=None,
+        order=None,
+        severity=None,
+        site_id=None,
+        sort_by=None,
+        source=None,
+        start_time=None,
+        sub_domain=None,
+        tags=None,
+        type=None,
+        headers=None,
+        **request_parameters
+    ):
         """Get the list of Published Notifications .
 
         Args:
@@ -937,49 +875,31 @@ class EventManagement(object):
         check_type(namespace, str)
         check_type(site_id, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'eventIds':
-                event_ids,
-            'startTime':
-                start_time,
-            'endTime':
-                end_time,
-            'category':
-                category,
-            'type':
-                type,
-            'severity':
-                severity,
-            'domain':
-                domain,
-            'subDomain':
-                sub_domain,
-            'source':
-                source,
-            'offset':
-                offset,
-            'limit':
-                limit,
-            'sortBy':
-                sort_by,
-            'order':
-                order,
-            'tags':
-                tags,
-            'namespace':
-                namespace,
-            'siteId':
-                site_id,
+            "eventIds": event_ids,
+            "startTime": start_time,
+            "endTime": end_time,
+            "category": category,
+            "type": type,
+            "severity": severity,
+            "domain": domain,
+            "subDomain": sub_domain,
+            "source": source,
+            "offset": offset,
+            "limit": limit,
+            "sortBy": sort_by,
+            "order": order,
+            "tags": tags,
+            "namespace": namespace,
+            "siteId": site_id,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -987,28 +907,33 @@ class EventManagement(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/event/event-series')
+        e_url = "/dna/intent/api/v1/event/event-series"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_c641f481dd285301861010da8d6fbf9f_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_c641f481dd285301861010da8d6fbf9f_v2_3_5_3", json_data
+        )
 
-    def count_of_notifications(self,
-                               category=None,
-                               domain=None,
-                               end_time=None,
-                               event_ids=None,
-                               severity=None,
-                               source=None,
-                               start_time=None,
-                               sub_domain=None,
-                               type=None,
-                               headers=None,
-                               **request_parameters):
+    def count_of_notifications(
+        self,
+        category=None,
+        domain=None,
+        end_time=None,
+        event_ids=None,
+        severity=None,
+        source=None,
+        start_time=None,
+        sub_domain=None,
+        type=None,
+        headers=None,
+        **request_parameters
+    ):
         """Get the Count of Published Notifications .
 
         Args:
@@ -1048,35 +973,24 @@ class EventManagement(object):
         check_type(sub_domain, str)
         check_type(source, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'eventIds':
-                event_ids,
-            'startTime':
-                start_time,
-            'endTime':
-                end_time,
-            'category':
-                category,
-            'type':
-                type,
-            'severity':
-                severity,
-            'domain':
-                domain,
-            'subDomain':
-                sub_domain,
-            'source':
-                source,
+            "eventIds": event_ids,
+            "startTime": start_time,
+            "endTime": end_time,
+            "category": category,
+            "type": type,
+            "severity": severity,
+            "domain": domain,
+            "subDomain": sub_domain,
+            "source": source,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1084,24 +998,29 @@ class EventManagement(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/event/event-series/count')
+        e_url = "/dna/intent/api/v1/event/event-series/count"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_fd269fe156e4b5ad3f4210b7b168_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_fd269fe156e4b5ad3f4210b7b168_v2_3_5_3", json_data
+        )
 
-    def get_snmp_destination(self,
-                             config_id=None,
-                             limit=None,
-                             offset=None,
-                             order=None,
-                             sort_by=None,
-                             headers=None,
-                             **request_parameters):
+    def get_snmp_destination(
+        self,
+        config_id=None,
+        limit=None,
+        offset=None,
+        order=None,
+        sort_by=None,
+        headers=None,
+        **request_parameters
+    ):
         """Get SNMP Destination .
 
         Args:
@@ -1135,27 +1054,20 @@ class EventManagement(object):
         check_type(sort_by, str)
         check_type(order, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'configId':
-                config_id,
-            'offset':
-                offset,
-            'limit':
-                limit,
-            'sortBy':
-                sort_by,
-            'order':
-                order,
+            "configId": config_id,
+            "offset": offset,
+            "limit": limit,
+            "sortBy": sort_by,
+            "order": order,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1163,24 +1075,29 @@ class EventManagement(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/event/snmp-config')
+        e_url = "/dna/intent/api/v1/event/snmp-config"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_e698d5a990a55158003a9f3250316a8_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_e698d5a990a55158003a9f3250316a8_v2_3_5_3", json_data
+        )
 
-    def get_event_subscriptions(self,
-                                event_ids=None,
-                                limit=None,
-                                offset=None,
-                                order=None,
-                                sort_by=None,
-                                headers=None,
-                                **request_parameters):
+    def get_event_subscriptions(
+        self,
+        event_ids=None,
+        limit=None,
+        offset=None,
+        order=None,
+        sort_by=None,
+        headers=None,
+        **request_parameters
+    ):
         """Gets the list of Subscriptions's based on provided offset and limit (Deprecated) .
 
         Args:
@@ -1216,27 +1133,20 @@ class EventManagement(object):
         check_type(sort_by, str)
         check_type(order, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'eventIds':
-                event_ids,
-            'offset':
-                offset,
-            'limit':
-                limit,
-            'sortBy':
-                sort_by,
-            'order':
-                order,
+            "eventIds": event_ids,
+            "offset": offset,
+            "limit": limit,
+            "sortBy": sort_by,
+            "order": order,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1244,20 +1154,22 @@ class EventManagement(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/event/subscription')
+        e_url = "/dna/intent/api/v1/event/subscription"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_d7d4e55d6bbb21c34ce863a131_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_d7d4e55d6bbb21c34ce863a131_v2_3_5_3", json_data
+        )
 
-    def delete_event_subscriptions(self,
-                                   subscriptions,
-                                   headers=None,
-                                   **request_parameters):
+    def delete_event_subscriptions(
+        self, subscriptions, headers=None, **request_parameters
+    ):
         """Delete EventSubscriptions .
 
         Args:
@@ -1279,22 +1191,18 @@ class EventManagement(object):
             https://developer.cisco.com/docs/dna-center/#!delete-event-subscriptions
         """
         check_type(headers, dict)
-        check_type(subscriptions, str,
-                   may_be_none=False)
+        check_type(subscriptions, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'subscriptions':
-                subscriptions,
+            "subscriptions": subscriptions,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1302,21 +1210,22 @@ class EventManagement(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/event/subscription')
+        e_url = "/dna/intent/api/v1/event/subscription"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.delete(endpoint_full_url, params=_params,
-                                             headers=_headers)
+            json_data = self._session.delete(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.delete(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_a0e0b1772dfc5a02a96a9f6ee6e2579b_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_a0e0b1772dfc5a02a96a9f6ee6e2579b_v2_3_5_3", json_data
+        )
 
-    def update_event_subscriptions(self,
-                                   headers=None,
-                                   payload=None,
-                                   active_validation=True,
-                                   **request_parameters):
+    def update_event_subscriptions(
+        self, headers=None, payload=None, active_validation=True, **request_parameters
+    ):
         """Update SubscriptionEndpoint to list of registered events(Deprecated) .
 
         Args:
@@ -1343,21 +1252,19 @@ class EventManagement(object):
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = payload or []
         if active_validation:
-            self._request_validator('jsd_dfda5beca4cc5437876bff366493ebf0_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_dfda5beca4cc5437876bff366493ebf0_v2_3_5_3"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1365,23 +1272,24 @@ class EventManagement(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/event/subscription')
+        e_url = "/dna/intent/api/v1/event/subscription"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload,
-                                          headers=_headers)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_dfda5beca4cc5437876bff366493ebf0_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_dfda5beca4cc5437876bff366493ebf0_v2_3_5_3", json_data
+        )
 
-    def create_event_subscriptions(self,
-                                   headers=None,
-                                   payload=None,
-                                   active_validation=True,
-                                   **request_parameters):
+    def create_event_subscriptions(
+        self, headers=None, payload=None, active_validation=True, **request_parameters
+    ):
         """Subscribe SubscriptionEndpoint to list of registered events (Deprecated) .
 
         Args:
@@ -1408,21 +1316,19 @@ class EventManagement(object):
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = payload or []
         if active_validation:
-            self._request_validator('jsd_fcc151af7615a84adf48b714d146192_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_fcc151af7615a84adf48b714d146192_v2_3_5_3"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1430,27 +1336,32 @@ class EventManagement(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/event/subscription')
+        e_url = "/dna/intent/api/v1/event/subscription"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_fcc151af7615a84adf48b714d146192_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_fcc151af7615a84adf48b714d146192_v2_3_5_3", json_data
+        )
 
-    def get_email_subscription_details(self,
-                                       instance_id=None,
-                                       limit=None,
-                                       name=None,
-                                       offset=None,
-                                       order=None,
-                                       sort_by=None,
-                                       headers=None,
-                                       **request_parameters):
+    def get_email_subscription_details(
+        self,
+        instance_id=None,
+        limit=None,
+        name=None,
+        offset=None,
+        order=None,
+        sort_by=None,
+        headers=None,
+        **request_parameters
+    ):
         """Gets the list of subscription details for specified connectorType .
 
         Args:
@@ -1487,29 +1398,21 @@ class EventManagement(object):
         check_type(sort_by, str)
         check_type(order, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'name':
-                name,
-            'instanceId':
-                instance_id,
-            'offset':
-                offset,
-            'limit':
-                limit,
-            'sortBy':
-                sort_by,
-            'order':
-                order,
+            "name": name,
+            "instanceId": instance_id,
+            "offset": offset,
+            "limit": limit,
+            "sortBy": sort_by,
+            "order": order,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1517,25 +1420,30 @@ class EventManagement(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/event/subscription-details/email')
+        e_url = "/dna/intent/api/v1/event/subscription-details/email"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_d420225889bb16f99ec7ba099a_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_d420225889bb16f99ec7ba099a_v2_3_5_3", json_data
+        )
 
-    def get_rest_webhook_subscription_details(self,
-                                              instance_id=None,
-                                              limit=None,
-                                              name=None,
-                                              offset=None,
-                                              order=None,
-                                              sort_by=None,
-                                              headers=None,
-                                              **request_parameters):
+    def get_rest_webhook_subscription_details(
+        self,
+        instance_id=None,
+        limit=None,
+        name=None,
+        offset=None,
+        order=None,
+        sort_by=None,
+        headers=None,
+        **request_parameters
+    ):
         """Gets the list of subscription details for specified connectorType .
 
         Args:
@@ -1572,29 +1480,21 @@ class EventManagement(object):
         check_type(sort_by, str)
         check_type(order, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'name':
-                name,
-            'instanceId':
-                instance_id,
-            'offset':
-                offset,
-            'limit':
-                limit,
-            'sortBy':
-                sort_by,
-            'order':
-                order,
+            "name": name,
+            "instanceId": instance_id,
+            "offset": offset,
+            "limit": limit,
+            "sortBy": sort_by,
+            "order": order,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1602,25 +1502,30 @@ class EventManagement(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/event/subscription-details/rest')
+        e_url = "/dna/intent/api/v1/event/subscription-details/rest"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_f278c72555e9a56f554b2a21c85_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_f278c72555e9a56f554b2a21c85_v2_3_5_3", json_data
+        )
 
-    def get_syslog_subscription_details(self,
-                                        instance_id=None,
-                                        limit=None,
-                                        name=None,
-                                        offset=None,
-                                        order=None,
-                                        sort_by=None,
-                                        headers=None,
-                                        **request_parameters):
+    def get_syslog_subscription_details(
+        self,
+        instance_id=None,
+        limit=None,
+        name=None,
+        offset=None,
+        order=None,
+        sort_by=None,
+        headers=None,
+        **request_parameters
+    ):
         """Gets the list of subscription details for specified connectorType .
 
         Args:
@@ -1657,29 +1562,21 @@ class EventManagement(object):
         check_type(sort_by, str)
         check_type(order, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'name':
-                name,
-            'instanceId':
-                instance_id,
-            'offset':
-                offset,
-            'limit':
-                limit,
-            'sortBy':
-                sort_by,
-            'order':
-                order,
+            "name": name,
+            "instanceId": instance_id,
+            "offset": offset,
+            "limit": limit,
+            "sortBy": sort_by,
+            "order": order,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1687,20 +1584,22 @@ class EventManagement(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/event/subscription-details/syslog')
+        e_url = "/dna/intent/api/v1/event/subscription-details/syslog"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_c0dcb335458a58fa8bc5a485b174427d_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_c0dcb335458a58fa8bc5a485b174427d_v2_3_5_3", json_data
+        )
 
-    def count_of_event_subscriptions(self,
-                                     event_ids,
-                                     headers=None,
-                                     **request_parameters):
+    def count_of_event_subscriptions(
+        self, event_ids, headers=None, **request_parameters
+    ):
         """Returns the Count of EventSubscriptions .
 
         Args:
@@ -1723,22 +1622,18 @@ class EventManagement(object):
             https://developer.cisco.com/docs/dna-center/#!count-of-event-subscriptions
         """
         check_type(headers, dict)
-        check_type(event_ids, str,
-                   may_be_none=False)
+        check_type(event_ids, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'eventIds':
-                event_ids,
+            "eventIds": event_ids,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1746,21 +1641,22 @@ class EventManagement(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/event/subscription/count')
+        e_url = "/dna/intent/api/v1/event/subscription/count"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_c538dc50a4555b5fba17b672a89ee1b8_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_c538dc50a4555b5fba17b672a89ee1b8_v2_3_5_3", json_data
+        )
 
-    def create_email_event_subscription(self,
-                                        headers=None,
-                                        payload=None,
-                                        active_validation=True,
-                                        **request_parameters):
+    def create_email_event_subscription(
+        self, headers=None, payload=None, active_validation=True, **request_parameters
+    ):
         """Create Email Subscription Endpoint for list of registered events. .
 
         Args:
@@ -1787,24 +1683,21 @@ class EventManagement(object):
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = payload or []
         if active_validation:
-            self._request_validator('jsd_e69d02d71905aecbd10b782469efbda_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_e69d02d71905aecbd10b782469efbda_v2_3_5_3"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1812,23 +1705,24 @@ class EventManagement(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/event/subscription/email')
+        e_url = "/dna/intent/api/v1/event/subscription/email"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_e69d02d71905aecbd10b782469efbda_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_e69d02d71905aecbd10b782469efbda_v2_3_5_3", json_data
+        )
 
-    def update_email_event_subscription(self,
-                                        headers=None,
-                                        payload=None,
-                                        active_validation=True,
-                                        **request_parameters):
+    def update_email_event_subscription(
+        self, headers=None, payload=None, active_validation=True, **request_parameters
+    ):
         """Update Email Subscription Endpoint for list of registered events .
 
         Args:
@@ -1855,21 +1749,19 @@ class EventManagement(object):
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = payload or []
         if active_validation:
-            self._request_validator('jsd_f8b4842604b65658afb34b4f124db469_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_f8b4842604b65658afb34b4f124db469_v2_3_5_3"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1877,31 +1769,36 @@ class EventManagement(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/event/subscription/email')
+        e_url = "/dna/intent/api/v1/event/subscription/email"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload,
-                                          headers=_headers)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_f8b4842604b65658afb34b4f124db469_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_f8b4842604b65658afb34b4f124db469_v2_3_5_3", json_data
+        )
 
-    def get_email_event_subscriptions(self,
-                                      category=None,
-                                      domain=None,
-                                      event_ids=None,
-                                      limit=None,
-                                      name=None,
-                                      offset=None,
-                                      order=None,
-                                      sort_by=None,
-                                      sub_domain=None,
-                                      type=None,
-                                      headers=None,
-                                      **request_parameters):
+    def get_email_event_subscriptions(
+        self,
+        category=None,
+        domain=None,
+        event_ids=None,
+        limit=None,
+        name=None,
+        offset=None,
+        order=None,
+        sort_by=None,
+        sub_domain=None,
+        type=None,
+        headers=None,
+        **request_parameters
+    ):
         """Gets the list of email Subscriptions's based on provided query params .
 
         Args:
@@ -1950,37 +1847,25 @@ class EventManagement(object):
         check_type(type, str)
         check_type(name, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'eventIds':
-                event_ids,
-            'offset':
-                offset,
-            'limit':
-                limit,
-            'sortBy':
-                sort_by,
-            'order':
-                order,
-            'domain':
-                domain,
-            'subDomain':
-                sub_domain,
-            'category':
-                category,
-            'type':
-                type,
-            'name':
-                name,
+            "eventIds": event_ids,
+            "offset": offset,
+            "limit": limit,
+            "sortBy": sort_by,
+            "order": order,
+            "domain": domain,
+            "subDomain": sub_domain,
+            "category": category,
+            "type": type,
+            "name": name,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1988,21 +1873,22 @@ class EventManagement(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/event/subscription/email')
+        e_url = "/dna/intent/api/v1/event/subscription/email"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_bc212b5ee1f252479f35e8dd58319f17_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_bc212b5ee1f252479f35e8dd58319f17_v2_3_5_3", json_data
+        )
 
-    def create_rest_webhook_event_subscription(self,
-                                               headers=None,
-                                               payload=None,
-                                               active_validation=True,
-                                               **request_parameters):
+    def create_rest_webhook_event_subscription(
+        self, headers=None, payload=None, active_validation=True, **request_parameters
+    ):
         """Create Rest/Webhook Subscription Endpoint for list of registered events .
 
         Args:
@@ -2029,24 +1915,21 @@ class EventManagement(object):
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = payload or []
         if active_validation:
-            self._request_validator('jsd_f41eb48a0da56949cfaddeecb51ab66_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_f41eb48a0da56949cfaddeecb51ab66_v2_3_5_3"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -2054,31 +1937,36 @@ class EventManagement(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/event/subscription/rest')
+        e_url = "/dna/intent/api/v1/event/subscription/rest"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_f41eb48a0da56949cfaddeecb51ab66_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_f41eb48a0da56949cfaddeecb51ab66_v2_3_5_3", json_data
+        )
 
-    def get_rest_webhook_event_subscriptions(self,
-                                             category=None,
-                                             domain=None,
-                                             event_ids=None,
-                                             limit=None,
-                                             name=None,
-                                             offset=None,
-                                             order=None,
-                                             sort_by=None,
-                                             sub_domain=None,
-                                             type=None,
-                                             headers=None,
-                                             **request_parameters):
+    def get_rest_webhook_event_subscriptions(
+        self,
+        category=None,
+        domain=None,
+        event_ids=None,
+        limit=None,
+        name=None,
+        offset=None,
+        order=None,
+        sort_by=None,
+        sub_domain=None,
+        type=None,
+        headers=None,
+        **request_parameters
+    ):
         """Gets the list of Rest/Webhook Subscriptions's based on provided query params .
 
         Args:
@@ -2126,37 +2014,25 @@ class EventManagement(object):
         check_type(type, str)
         check_type(name, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'eventIds':
-                event_ids,
-            'offset':
-                offset,
-            'limit':
-                limit,
-            'sortBy':
-                sort_by,
-            'order':
-                order,
-            'domain':
-                domain,
-            'subDomain':
-                sub_domain,
-            'category':
-                category,
-            'type':
-                type,
-            'name':
-                name,
+            "eventIds": event_ids,
+            "offset": offset,
+            "limit": limit,
+            "sortBy": sort_by,
+            "order": order,
+            "domain": domain,
+            "subDomain": sub_domain,
+            "category": category,
+            "type": type,
+            "name": name,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -2164,21 +2040,22 @@ class EventManagement(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/event/subscription/rest')
+        e_url = "/dna/intent/api/v1/event/subscription/rest"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_ee2008494d158e7bff7f106519a64c5_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_ee2008494d158e7bff7f106519a64c5_v2_3_5_3", json_data
+        )
 
-    def update_rest_webhook_event_subscription(self,
-                                               headers=None,
-                                               payload=None,
-                                               active_validation=True,
-                                               **request_parameters):
+    def update_rest_webhook_event_subscription(
+        self, headers=None, payload=None, active_validation=True, **request_parameters
+    ):
         """Update Rest/Webhook Subscription Endpoint for list of registered events .
 
         Args:
@@ -2205,21 +2082,19 @@ class EventManagement(object):
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = payload or []
         if active_validation:
-            self._request_validator('jsd_b6581534bb321eaea272365b7_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator("jsd_b6581534bb321eaea272365b7_v2_3_5_3").validate(
+                _payload
+            )
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -2227,23 +2102,22 @@ class EventManagement(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/event/subscription/rest')
+        e_url = "/dna/intent/api/v1/event/subscription/rest"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload,
-                                          headers=_headers)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_b6581534bb321eaea272365b7_v2_3_5_3', json_data)
+        return self._object_factory("bpm_b6581534bb321eaea272365b7_v2_3_5_3", json_data)
 
-    def update_syslog_event_subscription(self,
-                                         headers=None,
-                                         payload=None,
-                                         active_validation=True,
-                                         **request_parameters):
+    def update_syslog_event_subscription(
+        self, headers=None, payload=None, active_validation=True, **request_parameters
+    ):
         """Update Syslog Subscription Endpoint for list of registered events .
 
         Args:
@@ -2270,24 +2144,21 @@ class EventManagement(object):
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = payload or []
         if active_validation:
-            self._request_validator('jsd_d8fc92ddeab597ebb50ea003a6d46bd_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_d8fc92ddeab597ebb50ea003a6d46bd_v2_3_5_3"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -2295,23 +2166,24 @@ class EventManagement(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/event/subscription/syslog')
+        e_url = "/dna/intent/api/v1/event/subscription/syslog"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload,
-                                          headers=_headers)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_d8fc92ddeab597ebb50ea003a6d46bd_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_d8fc92ddeab597ebb50ea003a6d46bd_v2_3_5_3", json_data
+        )
 
-    def create_syslog_event_subscription(self,
-                                         headers=None,
-                                         payload=None,
-                                         active_validation=True,
-                                         **request_parameters):
+    def create_syslog_event_subscription(
+        self, headers=None, payload=None, active_validation=True, **request_parameters
+    ):
         """Create Syslog Subscription Endpoint for list of registered events .
 
         Args:
@@ -2338,21 +2210,19 @@ class EventManagement(object):
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = payload or []
         if active_validation:
-            self._request_validator('jsd_fb5a8c0075563491622171958074bf_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_fb5a8c0075563491622171958074bf_v2_3_5_3"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -2360,31 +2230,36 @@ class EventManagement(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/event/subscription/syslog')
+        e_url = "/dna/intent/api/v1/event/subscription/syslog"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_fb5a8c0075563491622171958074bf_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_fb5a8c0075563491622171958074bf_v2_3_5_3", json_data
+        )
 
-    def get_syslog_event_subscriptions(self,
-                                       category=None,
-                                       domain=None,
-                                       event_ids=None,
-                                       limit=None,
-                                       name=None,
-                                       offset=None,
-                                       order=None,
-                                       sort_by=None,
-                                       sub_domain=None,
-                                       type=None,
-                                       headers=None,
-                                       **request_parameters):
+    def get_syslog_event_subscriptions(
+        self,
+        category=None,
+        domain=None,
+        event_ids=None,
+        limit=None,
+        name=None,
+        offset=None,
+        order=None,
+        sort_by=None,
+        sub_domain=None,
+        type=None,
+        headers=None,
+        **request_parameters
+    ):
         """Gets the list of Syslog Subscriptions's based on provided offset and limit .
 
         Args:
@@ -2432,37 +2307,25 @@ class EventManagement(object):
         check_type(type, str)
         check_type(name, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'eventIds':
-                event_ids,
-            'offset':
-                offset,
-            'limit':
-                limit,
-            'sortBy':
-                sort_by,
-            'order':
-                order,
-            'domain':
-                domain,
-            'subDomain':
-                sub_domain,
-            'category':
-                category,
-            'type':
-                type,
-            'name':
-                name,
+            "eventIds": event_ids,
+            "offset": offset,
+            "limit": limit,
+            "sortBy": sort_by,
+            "order": order,
+            "domain": domain,
+            "subDomain": sub_domain,
+            "category": category,
+            "type": type,
+            "name": name,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -2470,27 +2333,32 @@ class EventManagement(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/event/subscription/syslog')
+        e_url = "/dna/intent/api/v1/event/subscription/syslog"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_c7bed4b4148753e6bc9912e3be135217_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_c7bed4b4148753e6bc9912e3be135217_v2_3_5_3", json_data
+        )
 
-    def update_syslog_destination(self,
-                                  configId=None,
-                                  description=None,
-                                  host=None,
-                                  name=None,
-                                  port=None,
-                                  protocol=None,
-                                  headers=None,
-                                  payload=None,
-                                  active_validation=True,
-                                  **request_parameters):
+    def update_syslog_destination(
+        self,
+        configId=None,
+        description=None,
+        host=None,
+        name=None,
+        port=None,
+        protocol=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Update Syslog Destination .
 
         Args:
@@ -2523,39 +2391,30 @@ class EventManagement(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'configId':
-                configId,
-            'name':
-                name,
-            'description':
-                description,
-            'host':
-                host,
-            'protocol':
-                protocol,
-            'port':
-                port,
+            "configId": configId,
+            "name": name,
+            "description": description,
+            "host": host,
+            "protocol": protocol,
+            "port": port,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_a9f5796226051218eac559ab5211384_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_a9f5796226051218eac559ab5211384_v2_3_5_3"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -2563,28 +2422,33 @@ class EventManagement(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/event/syslog-config')
+        e_url = "/dna/intent/api/v1/event/syslog-config"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload,
-                                          headers=_headers)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_a9f5796226051218eac559ab5211384_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_a9f5796226051218eac559ab5211384_v2_3_5_3", json_data
+        )
 
-    def get_syslog_destination(self,
-                               config_id=None,
-                               limit=None,
-                               name=None,
-                               offset=None,
-                               order=None,
-                               protocol=None,
-                               sort_by=None,
-                               headers=None,
-                               **request_parameters):
+    def get_syslog_destination(
+        self,
+        config_id=None,
+        limit=None,
+        name=None,
+        offset=None,
+        order=None,
+        protocol=None,
+        sort_by=None,
+        headers=None,
+        **request_parameters
+    ):
         """Get Syslog Destination .
 
         Args:
@@ -2622,31 +2486,22 @@ class EventManagement(object):
         check_type(sort_by, str)
         check_type(order, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'configId':
-                config_id,
-            'name':
-                name,
-            'protocol':
-                protocol,
-            'offset':
-                offset,
-            'limit':
-                limit,
-            'sortBy':
-                sort_by,
-            'order':
-                order,
+            "configId": config_id,
+            "name": name,
+            "protocol": protocol,
+            "offset": offset,
+            "limit": limit,
+            "sortBy": sort_by,
+            "order": order,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -2654,27 +2509,32 @@ class EventManagement(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/event/syslog-config')
+        e_url = "/dna/intent/api/v1/event/syslog-config"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_a170168de2ac55cc93571af1fbc02894_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_a170168de2ac55cc93571af1fbc02894_v2_3_5_3", json_data
+        )
 
-    def create_syslog_destination(self,
-                                  configId=None,
-                                  description=None,
-                                  host=None,
-                                  name=None,
-                                  port=None,
-                                  protocol=None,
-                                  headers=None,
-                                  payload=None,
-                                  active_validation=True,
-                                  **request_parameters):
+    def create_syslog_destination(
+        self,
+        configId=None,
+        description=None,
+        host=None,
+        name=None,
+        port=None,
+        protocol=None,
+        headers=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Create Syslog Destination .
 
         Args:
@@ -2707,36 +2567,28 @@ class EventManagement(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'configId':
-                configId,
-            'name':
-                name,
-            'description':
-                description,
-            'host':
-                host,
-            'protocol':
-                protocol,
-            'port':
-                port,
+            "configId": configId,
+            "name": name,
+            "description": description,
+            "host": host,
+            "protocol": protocol,
+            "port": port,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_dece7a9b353b49084a8ffa4f18c91_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_dece7a9b353b49084a8ffa4f18c91_v2_3_5_3"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -2744,29 +2596,34 @@ class EventManagement(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/event/syslog-config')
+        e_url = "/dna/intent/api/v1/event/syslog-config"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_dece7a9b353b49084a8ffa4f18c91_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_dece7a9b353b49084a8ffa4f18c91_v2_3_5_3", json_data
+        )
 
-    def create_webhook_destination(self,
-                                   description=None,
-                                   headers=None,
-                                   method=None,
-                                   name=None,
-                                   trustCert=None,
-                                   url=None,
-                                   webhookId=None,
-                                   payload=None,
-                                   active_validation=True,
-                                   **request_parameters):
+    def create_webhook_destination(
+        self,
+        description=None,
+        headers=None,
+        method=None,
+        name=None,
+        trustCert=None,
+        url=None,
+        webhookId=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Create Webhook Destination .
 
         Args:
@@ -2799,41 +2656,31 @@ class EventManagement(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "Content-Type" in headers:
+                check_type(headers.get("Content-Type"), str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'webhookId':
-                webhookId,
-            'name':
-                name,
-            'description':
-                description,
-            'url':
-                url,
-            'method':
-                method,
-            'trustCert':
-                trustCert,
-            'headers':
-                headers,
+            "webhookId": webhookId,
+            "name": name,
+            "description": description,
+            "url": url,
+            "method": method,
+            "trustCert": trustCert,
+            "headers": headers,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_b8699619f95a24bd2d81f12f048235_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_b8699619f95a24bd2d81f12f048235_v2_3_5_3"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -2841,29 +2688,34 @@ class EventManagement(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/event/webhook')
+        e_url = "/dna/intent/api/v1/event/webhook"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_b8699619f95a24bd2d81f12f048235_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_b8699619f95a24bd2d81f12f048235_v2_3_5_3", json_data
+        )
 
-    def update_webhook_destination(self,
-                                   description=None,
-                                   headers=None,
-                                   method=None,
-                                   name=None,
-                                   trustCert=None,
-                                   url=None,
-                                   webhookId=None,
-                                   payload=None,
-                                   active_validation=True,
-                                   **request_parameters):
+    def update_webhook_destination(
+        self,
+        description=None,
+        headers=None,
+        method=None,
+        name=None,
+        trustCert=None,
+        url=None,
+        webhookId=None,
+        payload=None,
+        active_validation=True,
+        **request_parameters
+    ):
         """Update Webhook Destination .
 
         Args:
@@ -2896,38 +2748,29 @@ class EventManagement(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
         _payload = {
-            'webhookId':
-                webhookId,
-            'name':
-                name,
-            'description':
-                description,
-            'url':
-                url,
-            'method':
-                method,
-            'trustCert':
-                trustCert,
-            'headers':
-                headers,
+            "webhookId": webhookId,
+            "name": name,
+            "description": description,
+            "url": url,
+            "method": method,
+            "trustCert": trustCert,
+            "headers": headers,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_d5c229546dc755f796dfcf34f1c2e290_v2_3_5_3')\
-                .validate(_payload)
+            self._request_validator(
+                "jsd_d5c229546dc755f796dfcf34f1c2e290_v2_3_5_3"
+            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -2935,26 +2778,31 @@ class EventManagement(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/event/webhook')
+        e_url = "/dna/intent/api/v1/event/webhook"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload,
-                                          headers=_headers)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload, headers=_headers
+            )
         else:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload)
+            json_data = self._session.put(
+                endpoint_full_url, params=_params, json=_payload
+            )
 
-        return self._object_factory('bpm_d5c229546dc755f796dfcf34f1c2e290_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_d5c229546dc755f796dfcf34f1c2e290_v2_3_5_3", json_data
+        )
 
-    def get_webhook_destination(self,
-                                limit=None,
-                                offset=None,
-                                order=None,
-                                sort_by=None,
-                                webhook_ids=None,
-                                headers=None,
-                                **request_parameters):
+    def get_webhook_destination(
+        self,
+        limit=None,
+        offset=None,
+        order=None,
+        sort_by=None,
+        webhook_ids=None,
+        headers=None,
+        **request_parameters
+    ):
         """Get Webhook Destination .
 
         Args:
@@ -2988,27 +2836,20 @@ class EventManagement(object):
         check_type(sort_by, str)
         check_type(order, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'webhookIds':
-                webhook_ids,
-            'offset':
-                offset,
-            'limit':
-                limit,
-            'sortBy':
-                sort_by,
-            'order':
-                order,
+            "webhookIds": webhook_ids,
+            "offset": offset,
+            "limit": limit,
+            "sortBy": sort_by,
+            "order": order,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -3016,25 +2857,30 @@ class EventManagement(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/event/webhook')
+        e_url = "/dna/intent/api/v1/event/webhook"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_ddecdd64b34c5fdc910296fce09b2828_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_ddecdd64b34c5fdc910296fce09b2828_v2_3_5_3", json_data
+        )
 
-    def get_events(self,
-                   tags,
-                   event_id=None,
-                   limit=None,
-                   offset=None,
-                   order=None,
-                   sort_by=None,
-                   headers=None,
-                   **request_parameters):
+    def get_events(
+        self,
+        tags,
+        event_id=None,
+        limit=None,
+        offset=None,
+        order=None,
+        sort_by=None,
+        headers=None,
+        **request_parameters
+    ):
         """Gets the list of registered Events with provided eventIds or tags as mandatory .
 
         Args:
@@ -3065,36 +2911,27 @@ class EventManagement(object):
         """
         check_type(headers, dict)
         check_type(event_id, str)
-        check_type(tags, str,
-                   may_be_none=False)
+        check_type(tags, str, may_be_none=False)
         check_type(offset, (int, str))
         check_type(limit, (int, str))
         check_type(sort_by, str)
         check_type(order, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'eventId':
-                event_id,
-            'tags':
-                tags,
-            'offset':
-                offset,
-            'limit':
-                limit,
-            'sortBy':
-                sort_by,
-            'order':
-                order,
+            "eventId": event_id,
+            "tags": tags,
+            "offset": offset,
+            "limit": limit,
+            "sortBy": sort_by,
+            "order": order,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -3102,21 +2939,20 @@ class EventManagement(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/events')
+        e_url = "/dna/intent/api/v1/events"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_bf36f1819e61575189c0709efab6e48a_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_bf36f1819e61575189c0709efab6e48a_v2_3_5_3", json_data
+        )
 
-    def count_of_events(self,
-                        tags,
-                        event_id=None,
-                        headers=None,
-                        **request_parameters):
+    def count_of_events(self, tags, event_id=None, headers=None, **request_parameters):
         """Get the count of registered events with provided eventIds or tags as mandatory .
 
         Args:
@@ -3140,24 +2976,19 @@ class EventManagement(object):
         """
         check_type(headers, dict)
         check_type(event_id, str)
-        check_type(tags, str,
-                   may_be_none=False)
+        check_type(tags, str, may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'eventId':
-                event_id,
-            'tags':
-                tags,
+            "eventId": event_id,
+            "tags": tags,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -3165,26 +2996,31 @@ class EventManagement(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/events/count')
+        e_url = "/dna/intent/api/v1/events/count"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_b21d2947d715c198f5e62ba3149839a_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_b21d2947d715c198f5e62ba3149839a_v2_3_5_3", json_data
+        )
 
-    def get_eventartifacts(self,
-                           event_ids=None,
-                           limit=None,
-                           offset=None,
-                           order=None,
-                           search=None,
-                           sort_by=None,
-                           tags=None,
-                           headers=None,
-                           **request_parameters):
+    def get_eventartifacts(
+        self,
+        event_ids=None,
+        limit=None,
+        offset=None,
+        order=None,
+        search=None,
+        sort_by=None,
+        tags=None,
+        headers=None,
+        **request_parameters
+    ):
         """Gets the list of artifacts based on provided offset and limit .
 
         Args:
@@ -3222,31 +3058,22 @@ class EventManagement(object):
         check_type(order, str)
         check_type(search, str)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
-            'eventIds':
-                event_ids,
-            'tags':
-                tags,
-            'offset':
-                offset,
-            'limit':
-                limit,
-            'sortBy':
-                sort_by,
-            'order':
-                order,
-            'search':
-                search,
+            "eventIds": event_ids,
+            "tags": tags,
+            "offset": offset,
+            "limit": limit,
+            "sortBy": sort_by,
+            "order": order,
+            "search": search,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -3254,19 +3081,20 @@ class EventManagement(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/system/api/v1/event/artifact')
+        e_url = "/dna/system/api/v1/event/artifact"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_c0e0d76b2561b8f2efd0220f02267_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_c0e0d76b2561b8f2efd0220f02267_v2_3_5_3", json_data
+        )
 
-    def eventartifact_count(self,
-                            headers=None,
-                            **request_parameters):
+    def eventartifact_count(self, headers=None, **request_parameters):
         """Get the count of registered event artifacts with provided eventIds or tags as mandatory .
 
         Args:
@@ -3288,17 +3116,14 @@ class EventManagement(object):
         """
         check_type(headers, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -3306,19 +3131,20 @@ class EventManagement(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/system/api/v1/event/artifact/count')
+        e_url = "/dna/system/api/v1/event/artifact/count"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_a137e0b583c85ffe80fbbd85b480bf15_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_a137e0b583c85ffe80fbbd85b480bf15_v2_3_5_3", json_data
+        )
 
-    def get_connector_types(self,
-                            headers=None,
-                            **request_parameters):
+    def get_connector_types(self, headers=None, **request_parameters):
         """Get the list of connector types .
 
         Args:
@@ -3341,17 +3167,14 @@ class EventManagement(object):
         """
         check_type(headers, dict)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+            if "X-Auth-Token" in headers:
+                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
-        path_params = {
-        }
+        path_params = {}
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -3359,12 +3182,15 @@ class EventManagement(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/system/api/v1/event/config/connector-types')
+        e_url = "/dna/system/api/v1/event/config/connector-types"
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.get(
+                endpoint_full_url, params=_params, headers=_headers
+            )
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_b94cfb5af084c1a65d8e51df71_v2_3_5_3', json_data)
+        return self._object_factory(
+            "bpm_b94cfb5af084c1a65d8e51df71_v2_3_5_3", json_data
+        )

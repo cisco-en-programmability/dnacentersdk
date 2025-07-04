@@ -26,46 +26,236 @@ from fastjsonschema.exceptions import JsonSchemaException
 from dnacentersdk.exceptions import MalformedRequest
 from tests.environment import DNA_CENTER_VERSION
 
-pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '2.3.7.6', reason='version does not match')
+pytestmark = pytest.mark.skipif(
+    DNA_CENTER_VERSION != "2.3.7.6", reason="version does not match"
+)
 
 
 def is_valid_edit_sensor_test_template_v1(json_schema_validate, obj):
-    json_schema_validate('jsd_e2f9718de3d050819cdc6355a3a43200_v2_3_7_6').validate(obj)
+    json_schema_validate("jsd_e2f9718de3d050819cdc6355a3a43200_v2_3_7_6").validate(obj)
     return True
 
 
 def edit_sensor_test_template_v1(api):
     endpoint_result = api.sensors.edit_sensor_test_template_v1(
-        _id='string',
-        actionInProgress='string',
+        _id="string",
+        actionInProgress="string",
         active_validation=True,
-        apCoverage=[{'bands': 'string', 'numberOfApsToTest': 0, 'rssiThreshold': 0}],
-        connection='string',
-        encryptionMode='string',
-        frequency={'value': 0, 'unit': 'string'},
+        apCoverage=[{"bands": "string", "numberOfApsToTest": 0, "rssiThreshold": 0}],
+        connection="string",
+        encryptionMode="string",
+        frequency={"value": 0, "unit": "string"},
         lastModifiedTime=0,
-        location='string',
-        locationInfoList=[{'locationId': 'string', 'locationType': 'string', 'allSensors': True, 'siteHierarchy': 'string', 'macAddressList': ['string'], 'managementVlan': 'string', 'customManagementVlan': True}],
+        location="string",
+        locationInfoList=[
+            {
+                "locationId": "string",
+                "locationType": "string",
+                "allSensors": True,
+                "siteHierarchy": "string",
+                "macAddressList": ["string"],
+                "managementVlan": "string",
+                "customManagementVlan": True,
+            }
+        ],
         modelVersion=0,
-        name='string',
+        name="string",
         numAssociatedSensor=0,
         numNeighborAPThreshold=0,
         payload=None,
-        profiles=[{'authType': 'string', 'psk': 'string', 'username': 'string', 'password': 'string', 'passwordType': 'string', 'eapMethod': 'string', 'scep': True, 'authProtocol': 'string', 'certfilename': 'string', 'certxferprotocol': 'string', 'certstatus': 'string', 'certpassphrase': 'string', 'certdownloadurl': 'string', 'extWebAuthVirtualIp': 'string', 'extWebAuth': True, 'whiteList': True, 'extWebAuthPortal': 'string', 'extWebAuthAccessUrl': 'string', 'extWebAuthHtmlTag': [{'label': 'string', 'tag': 'string', 'value': 'string'}], 'qosPolicy': 'string', 'tests': [{'name': 'string', 'config': [{'domains': ['string'], 'server': 'string', 'userName': 'string', 'password': 'string', 'url': 'string', 'port': 0, 'protocol': 'string', 'servers': ['string'], 'direction': 'string', 'startPort': 0, 'endPort': 0, 'udpBandwidth': 0, 'probeType': 'string', 'numPackets': 0, 'pathToDownload': 'string', 'transferType': 'string', 'sharedSecret': 'string', 'ndtServer': 'string', 'ndtServerPort': 'string', 'ndtServerPath': 'string', 'uplinkTest': True, 'downlinkTest': True, 'proxyServer': 'string', 'proxyPort': 'string', 'proxyUserName': 'string', 'proxyPassword': 'string', 'userNamePrompt': 'string', 'passwordPrompt': 'string', 'exitCommand': 'string', 'finalPrompt': 'string'}]}], 'profileName': 'string', 'deviceType': 'string', 'vlan': 'string', 'locationVlanList': [{'locationId': 'string', 'vlans': ['string']}]}],
+        profiles=[
+            {
+                "authType": "string",
+                "psk": "string",
+                "username": "string",
+                "password": "string",
+                "passwordType": "string",
+                "eapMethod": "string",
+                "scep": True,
+                "authProtocol": "string",
+                "certfilename": "string",
+                "certxferprotocol": "string",
+                "certstatus": "string",
+                "certpassphrase": "string",
+                "certdownloadurl": "string",
+                "extWebAuthVirtualIp": "string",
+                "extWebAuth": True,
+                "whiteList": True,
+                "extWebAuthPortal": "string",
+                "extWebAuthAccessUrl": "string",
+                "extWebAuthHtmlTag": [
+                    {"label": "string", "tag": "string", "value": "string"}
+                ],
+                "qosPolicy": "string",
+                "tests": [
+                    {
+                        "name": "string",
+                        "config": [
+                            {
+                                "domains": ["string"],
+                                "server": "string",
+                                "userName": "string",
+                                "password": "string",
+                                "url": "string",
+                                "port": 0,
+                                "protocol": "string",
+                                "servers": ["string"],
+                                "direction": "string",
+                                "startPort": 0,
+                                "endPort": 0,
+                                "udpBandwidth": 0,
+                                "probeType": "string",
+                                "numPackets": 0,
+                                "pathToDownload": "string",
+                                "transferType": "string",
+                                "sharedSecret": "string",
+                                "ndtServer": "string",
+                                "ndtServerPort": "string",
+                                "ndtServerPath": "string",
+                                "uplinkTest": True,
+                                "downlinkTest": True,
+                                "proxyServer": "string",
+                                "proxyPort": "string",
+                                "proxyUserName": "string",
+                                "proxyPassword": "string",
+                                "userNamePrompt": "string",
+                                "passwordPrompt": "string",
+                                "exitCommand": "string",
+                                "finalPrompt": "string",
+                            }
+                        ],
+                    }
+                ],
+                "profileName": "string",
+                "deviceType": "string",
+                "vlan": "string",
+                "locationVlanList": [{"locationId": "string", "vlans": ["string"]}],
+            }
+        ],
         radioAsSensorRemoved=True,
         rssiThreshold=0,
-        runNow='string',
+        runNow="string",
         scheduleInDays=0,
-        sensors=[{'name': 'string', 'macAddress': 'string', 'switchMac': 'string', 'switchUuid': 'string', 'switchSerialNumber': 'string', 'markedForUninstall': True, 'ipAddress': 'string', 'hostName': 'string', 'wiredApplicationStatus': 'string', 'wiredApplicationMessage': 'string', 'assigned': True, 'status': 'string', 'xorSensor': True, 'targetAPs': ['string'], 'runNow': 'string', 'locationId': 'string', 'allSensorAddition': True, 'configUpdated': 'string', 'sensorType': 'string', 'testMacAddresses': {}, 'id': 'string', 'servicePolicy': 'string', 'iPerfInfo': {}}],
+        sensors=[
+            {
+                "name": "string",
+                "macAddress": "string",
+                "switchMac": "string",
+                "switchUuid": "string",
+                "switchSerialNumber": "string",
+                "markedForUninstall": True,
+                "ipAddress": "string",
+                "hostName": "string",
+                "wiredApplicationStatus": "string",
+                "wiredApplicationMessage": "string",
+                "assigned": True,
+                "status": "string",
+                "xorSensor": True,
+                "targetAPs": ["string"],
+                "runNow": "string",
+                "locationId": "string",
+                "allSensorAddition": True,
+                "configUpdated": "string",
+                "sensorType": "string",
+                "testMacAddresses": {},
+                "id": "string",
+                "servicePolicy": "string",
+                "iPerfInfo": {},
+            }
+        ],
         showWlcUpgradeBanner=True,
-        siteHierarchy='string',
-        ssids=[{'bands': 'string', 'ssid': 'string', 'profileName': 'string', 'numAps': 0, 'numSensors': 0, 'layer3webAuthsecurity': 'string', 'layer3webAuthuserName': 'string', 'layer3webAuthpassword': 'string', 'layer3webAuthEmailAddress': 'string', 'thirdParty': {'selected': True}, 'id': 0, 'wlanId': 0, 'wlc': 'string', 'validFrom': 0, 'validTo': 0, 'status': 'string', 'proxyServer': 'string', 'proxyPort': 'string', 'proxyUserName': 'string', 'proxyPassword': 'string', 'authType': 'string', 'psk': 'string', 'username': 'string', 'password': 'string', 'passwordType': 'string', 'eapMethod': 'string', 'scep': True, 'authProtocol': 'string', 'certfilename': 'string', 'certxferprotocol': 'string', 'certstatus': 'string', 'certpassphrase': 'string', 'certdownloadurl': 'string', 'extWebAuthVirtualIp': 'string', 'extWebAuth': True, 'whiteList': True, 'extWebAuthPortal': 'string', 'extWebAuthAccessUrl': 'string', 'extWebAuthHtmlTag': [{'label': 'string', 'tag': 'string', 'value': 'string'}], 'qosPolicy': 'string', 'tests': [{'name': 'string', 'config': [{'domains': ['string'], 'server': 'string', 'userName': 'string', 'password': 'string', 'url': 'string', 'port': 0, 'protocol': 'string', 'servers': ['string'], 'direction': 'string', 'startPort': 0, 'endPort': 0, 'udpBandwidth': 0, 'probeType': 'string', 'numPackets': 0, 'pathToDownload': 'string', 'transferType': 'string', 'sharedSecret': 'string', 'ndtServer': 'string', 'ndtServerPort': 'string', 'ndtServerPath': 'string', 'uplinkTest': True, 'downlinkTest': True, 'proxyServer': 'string', 'proxyPort': 'string', 'proxyUserName': 'string', 'proxyPassword': 'string', 'userNamePrompt': 'string', 'passwordPrompt': 'string', 'exitCommand': 'string', 'finalPrompt': 'string'}]}]}],
+        siteHierarchy="string",
+        ssids=[
+            {
+                "bands": "string",
+                "ssid": "string",
+                "profileName": "string",
+                "numAps": 0,
+                "numSensors": 0,
+                "layer3webAuthsecurity": "string",
+                "layer3webAuthuserName": "string",
+                "layer3webAuthpassword": "string",
+                "layer3webAuthEmailAddress": "string",
+                "thirdParty": {"selected": True},
+                "id": 0,
+                "wlanId": 0,
+                "wlc": "string",
+                "validFrom": 0,
+                "validTo": 0,
+                "status": "string",
+                "proxyServer": "string",
+                "proxyPort": "string",
+                "proxyUserName": "string",
+                "proxyPassword": "string",
+                "authType": "string",
+                "psk": "string",
+                "username": "string",
+                "password": "string",
+                "passwordType": "string",
+                "eapMethod": "string",
+                "scep": True,
+                "authProtocol": "string",
+                "certfilename": "string",
+                "certxferprotocol": "string",
+                "certstatus": "string",
+                "certpassphrase": "string",
+                "certdownloadurl": "string",
+                "extWebAuthVirtualIp": "string",
+                "extWebAuth": True,
+                "whiteList": True,
+                "extWebAuthPortal": "string",
+                "extWebAuthAccessUrl": "string",
+                "extWebAuthHtmlTag": [
+                    {"label": "string", "tag": "string", "value": "string"}
+                ],
+                "qosPolicy": "string",
+                "tests": [
+                    {
+                        "name": "string",
+                        "config": [
+                            {
+                                "domains": ["string"],
+                                "server": "string",
+                                "userName": "string",
+                                "password": "string",
+                                "url": "string",
+                                "port": 0,
+                                "protocol": "string",
+                                "servers": ["string"],
+                                "direction": "string",
+                                "startPort": 0,
+                                "endPort": 0,
+                                "udpBandwidth": 0,
+                                "probeType": "string",
+                                "numPackets": 0,
+                                "pathToDownload": "string",
+                                "transferType": "string",
+                                "sharedSecret": "string",
+                                "ndtServer": "string",
+                                "ndtServerPort": "string",
+                                "ndtServerPath": "string",
+                                "uplinkTest": True,
+                                "downlinkTest": True,
+                                "proxyServer": "string",
+                                "proxyPort": "string",
+                                "proxyUserName": "string",
+                                "proxyPassword": "string",
+                                "userNamePrompt": "string",
+                                "passwordPrompt": "string",
+                                "exitCommand": "string",
+                                "finalPrompt": "string",
+                            }
+                        ],
+                    }
+                ],
+            }
+        ],
         startTime=0,
-        status='string',
-        templateName='string',
-        testScheduleMode='string',
+        status="string",
+        templateName="string",
+        testScheduleMode="string",
         version=0,
-        wlans=['string']
+        wlans=["string"],
     )
     return endpoint_result
 
@@ -74,8 +264,7 @@ def edit_sensor_test_template_v1(api):
 def test_edit_sensor_test_template_v1(api, validator):
     try:
         assert is_valid_edit_sensor_test_template_v1(
-            validator,
-            edit_sensor_test_template_v1(api)
+            validator, edit_sensor_test_template_v1(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -114,7 +303,7 @@ def edit_sensor_test_template_v1_default_val(api):
         templateName=None,
         testScheduleMode=None,
         version=None,
-        wlans=None
+        wlans=None,
     )
     return endpoint_result
 
@@ -123,8 +312,7 @@ def edit_sensor_test_template_v1_default_val(api):
 def test_edit_sensor_test_template_v1_default_val(api, validator):
     try:
         assert is_valid_edit_sensor_test_template_v1(
-            validator,
-            edit_sensor_test_template_v1_default_val(api)
+            validator, edit_sensor_test_template_v1_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -132,25 +320,207 @@ def test_edit_sensor_test_template_v1_default_val(api, validator):
 
 
 def is_valid_create_sensor_test_template_v1(json_schema_validate, obj):
-    json_schema_validate('jsd_6f7dd6a6cf8d57499168aae05847ad34_v2_3_7_6').validate(obj)
+    json_schema_validate("jsd_6f7dd6a6cf8d57499168aae05847ad34_v2_3_7_6").validate(obj)
     return True
 
 
 def create_sensor_test_template_v1(api):
     endpoint_result = api.sensors.create_sensor_test_template_v1(
         active_validation=True,
-        apCoverage=[{'bands': 'string', 'numberOfApsToTest': 0, 'rssiThreshold': 0}],
-        connection='string',
-        encryptionMode='string',
-        locationInfoList=[{'locationId': 'string', 'locationType': 'string', 'allSensors': True, 'siteHierarchy': 'string', 'macAddressList': ['string'], 'managementVlan': 'string', 'customManagementVlan': True}],
+        apCoverage=[{"bands": "string", "numberOfApsToTest": 0, "rssiThreshold": 0}],
+        connection="string",
+        encryptionMode="string",
+        locationInfoList=[
+            {
+                "locationId": "string",
+                "locationType": "string",
+                "allSensors": True,
+                "siteHierarchy": "string",
+                "macAddressList": ["string"],
+                "managementVlan": "string",
+                "customManagementVlan": True,
+            }
+        ],
         modelVersion=0,
-        name='string',
+        name="string",
         payload=None,
-        profiles=[{'authType': 'string', 'psk': 'string', 'username': 'string', 'password': 'string', 'passwordType': 'string', 'eapMethod': 'string', 'scep': True, 'authProtocol': 'string', 'certfilename': 'string', 'certxferprotocol': 'string', 'certstatus': 'string', 'certpassphrase': 'string', 'certdownloadurl': 'string', 'extWebAuthVirtualIp': 'string', 'extWebAuth': True, 'whiteList': True, 'extWebAuthPortal': 'string', 'extWebAuthAccessUrl': 'string', 'extWebAuthHtmlTag': [{'label': 'string', 'tag': 'string', 'value': 'string'}], 'qosPolicy': 'string', 'tests': [{'name': 'string', 'config': [{'domains': ['string'], 'server': 'string', 'userName': 'string', 'password': 'string', 'url': 'string', 'port': 0, 'protocol': 'string', 'servers': ['string'], 'direction': 'string', 'startPort': 0, 'endPort': 0, 'udpBandwidth': 0, 'probeType': 'string', 'numPackets': 0, 'pathToDownload': 'string', 'transferType': 'string', 'sharedSecret': 'string', 'ndtServer': 'string', 'ndtServerPort': 'string', 'ndtServerPath': 'string', 'uplinkTest': True, 'downlinkTest': True, 'proxyServer': 'string', 'proxyPort': 'string', 'proxyUserName': 'string', 'proxyPassword': 'string', 'userNamePrompt': 'string', 'passwordPrompt': 'string', 'exitCommand': 'string', 'finalPrompt': 'string'}]}], 'profileName': 'string', 'deviceType': 'string', 'vlan': 'string', 'locationVlanList': [{'locationId': 'string', 'vlans': ['string']}]}],
-        runNow='string',
-        sensors=[{'name': 'string', 'macAddress': 'string', 'switchMac': 'string', 'switchUuid': 'string', 'switchSerialNumber': 'string', 'markedForUninstall': True, 'ipAddress': 'string', 'hostName': 'string', 'wiredApplicationStatus': 'string', 'wiredApplicationMessage': 'string', 'assigned': True, 'status': 'string', 'xorSensor': True, 'targetAPs': ['string'], 'runNow': 'string', 'locationId': 'string', 'allSensorAddition': True, 'configUpdated': 'string', 'sensorType': 'string', 'testMacAddresses': {}, 'id': 'string', 'servicePolicy': 'string', 'iPerfInfo': {}}],
-        ssids=[{'bands': 'string', 'ssid': 'string', 'profileName': 'string', 'layer3webAuthsecurity': 'string', 'layer3webAuthuserName': 'string', 'layer3webAuthpassword': 'string', 'layer3webAuthEmailAddress': 'string', 'thirdParty': {'selected': True}, 'wlanId': 0, 'wlc': 'string', 'proxyServer': 'string', 'proxyPort': 'string', 'proxyUserName': 'string', 'proxyPassword': 'string', 'authType': 'string', 'psk': 'string', 'username': 'string', 'password': 'string', 'passwordType': 'string', 'eapMethod': 'string', 'scep': True, 'authProtocol': 'string', 'certfilename': 'string', 'certxferprotocol': 'string', 'certstatus': 'string', 'certpassphrase': 'string', 'certdownloadurl': 'string', 'extWebAuthVirtualIp': 'string', 'extWebAuth': True, 'whiteList': True, 'extWebAuthPortal': 'string', 'extWebAuthAccessUrl': 'string', 'extWebAuthHtmlTag': [{'label': 'string', 'tag': 'string', 'value': 'string'}], 'qosPolicy': 'string', 'tests': [{'name': 'string', 'config': [{'domains': ['string'], 'server': 'string', 'userName': 'string', 'password': 'string', 'url': 'string', 'port': 0, 'protocol': 'string', 'servers': ['string'], 'direction': 'string', 'startPort': 0, 'endPort': 0, 'udpBandwidth': 0, 'probeType': 'string', 'numPackets': 0, 'pathToDownload': 'string', 'transferType': 'string', 'sharedSecret': 'string', 'ndtServer': 'string', 'ndtServerPort': 'string', 'ndtServerPath': 'string', 'uplinkTest': True, 'downlinkTest': True, 'proxyServer': 'string', 'proxyPort': 'string', 'proxyUserName': 'string', 'proxyPassword': 'string', 'userNamePrompt': 'string', 'passwordPrompt': 'string', 'exitCommand': 'string', 'finalPrompt': 'string'}]}]}],
-        version=0
+        profiles=[
+            {
+                "authType": "string",
+                "psk": "string",
+                "username": "string",
+                "password": "string",
+                "passwordType": "string",
+                "eapMethod": "string",
+                "scep": True,
+                "authProtocol": "string",
+                "certfilename": "string",
+                "certxferprotocol": "string",
+                "certstatus": "string",
+                "certpassphrase": "string",
+                "certdownloadurl": "string",
+                "extWebAuthVirtualIp": "string",
+                "extWebAuth": True,
+                "whiteList": True,
+                "extWebAuthPortal": "string",
+                "extWebAuthAccessUrl": "string",
+                "extWebAuthHtmlTag": [
+                    {"label": "string", "tag": "string", "value": "string"}
+                ],
+                "qosPolicy": "string",
+                "tests": [
+                    {
+                        "name": "string",
+                        "config": [
+                            {
+                                "domains": ["string"],
+                                "server": "string",
+                                "userName": "string",
+                                "password": "string",
+                                "url": "string",
+                                "port": 0,
+                                "protocol": "string",
+                                "servers": ["string"],
+                                "direction": "string",
+                                "startPort": 0,
+                                "endPort": 0,
+                                "udpBandwidth": 0,
+                                "probeType": "string",
+                                "numPackets": 0,
+                                "pathToDownload": "string",
+                                "transferType": "string",
+                                "sharedSecret": "string",
+                                "ndtServer": "string",
+                                "ndtServerPort": "string",
+                                "ndtServerPath": "string",
+                                "uplinkTest": True,
+                                "downlinkTest": True,
+                                "proxyServer": "string",
+                                "proxyPort": "string",
+                                "proxyUserName": "string",
+                                "proxyPassword": "string",
+                                "userNamePrompt": "string",
+                                "passwordPrompt": "string",
+                                "exitCommand": "string",
+                                "finalPrompt": "string",
+                            }
+                        ],
+                    }
+                ],
+                "profileName": "string",
+                "deviceType": "string",
+                "vlan": "string",
+                "locationVlanList": [{"locationId": "string", "vlans": ["string"]}],
+            }
+        ],
+        runNow="string",
+        sensors=[
+            {
+                "name": "string",
+                "macAddress": "string",
+                "switchMac": "string",
+                "switchUuid": "string",
+                "switchSerialNumber": "string",
+                "markedForUninstall": True,
+                "ipAddress": "string",
+                "hostName": "string",
+                "wiredApplicationStatus": "string",
+                "wiredApplicationMessage": "string",
+                "assigned": True,
+                "status": "string",
+                "xorSensor": True,
+                "targetAPs": ["string"],
+                "runNow": "string",
+                "locationId": "string",
+                "allSensorAddition": True,
+                "configUpdated": "string",
+                "sensorType": "string",
+                "testMacAddresses": {},
+                "id": "string",
+                "servicePolicy": "string",
+                "iPerfInfo": {},
+            }
+        ],
+        ssids=[
+            {
+                "bands": "string",
+                "ssid": "string",
+                "profileName": "string",
+                "layer3webAuthsecurity": "string",
+                "layer3webAuthuserName": "string",
+                "layer3webAuthpassword": "string",
+                "layer3webAuthEmailAddress": "string",
+                "thirdParty": {"selected": True},
+                "wlanId": 0,
+                "wlc": "string",
+                "proxyServer": "string",
+                "proxyPort": "string",
+                "proxyUserName": "string",
+                "proxyPassword": "string",
+                "authType": "string",
+                "psk": "string",
+                "username": "string",
+                "password": "string",
+                "passwordType": "string",
+                "eapMethod": "string",
+                "scep": True,
+                "authProtocol": "string",
+                "certfilename": "string",
+                "certxferprotocol": "string",
+                "certstatus": "string",
+                "certpassphrase": "string",
+                "certdownloadurl": "string",
+                "extWebAuthVirtualIp": "string",
+                "extWebAuth": True,
+                "whiteList": True,
+                "extWebAuthPortal": "string",
+                "extWebAuthAccessUrl": "string",
+                "extWebAuthHtmlTag": [
+                    {"label": "string", "tag": "string", "value": "string"}
+                ],
+                "qosPolicy": "string",
+                "tests": [
+                    {
+                        "name": "string",
+                        "config": [
+                            {
+                                "domains": ["string"],
+                                "server": "string",
+                                "userName": "string",
+                                "password": "string",
+                                "url": "string",
+                                "port": 0,
+                                "protocol": "string",
+                                "servers": ["string"],
+                                "direction": "string",
+                                "startPort": 0,
+                                "endPort": 0,
+                                "udpBandwidth": 0,
+                                "probeType": "string",
+                                "numPackets": 0,
+                                "pathToDownload": "string",
+                                "transferType": "string",
+                                "sharedSecret": "string",
+                                "ndtServer": "string",
+                                "ndtServerPort": "string",
+                                "ndtServerPath": "string",
+                                "uplinkTest": True,
+                                "downlinkTest": True,
+                                "proxyServer": "string",
+                                "proxyPort": "string",
+                                "proxyUserName": "string",
+                                "proxyPassword": "string",
+                                "userNamePrompt": "string",
+                                "passwordPrompt": "string",
+                                "exitCommand": "string",
+                                "finalPrompt": "string",
+                            }
+                        ],
+                    }
+                ],
+            }
+        ],
+        version=0,
     )
     return endpoint_result
 
@@ -159,8 +529,7 @@ def create_sensor_test_template_v1(api):
 def test_create_sensor_test_template_v1(api, validator):
     try:
         assert is_valid_create_sensor_test_template_v1(
-            validator,
-            create_sensor_test_template_v1(api)
+            validator, create_sensor_test_template_v1(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -182,7 +551,7 @@ def create_sensor_test_template_v1_default_val(api):
         runNow=None,
         sensors=None,
         ssids=None,
-        version=None
+        version=None,
     )
     return endpoint_result
 
@@ -191,8 +560,7 @@ def create_sensor_test_template_v1_default_val(api):
 def test_create_sensor_test_template_v1_default_val(api, validator):
     try:
         assert is_valid_create_sensor_test_template_v1(
-            validator,
-            create_sensor_test_template_v1_default_val(api)
+            validator, create_sensor_test_template_v1_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -200,24 +568,19 @@ def test_create_sensor_test_template_v1_default_val(api, validator):
 
 
 def is_valid_delete_sensor_test_v1(json_schema_validate, obj):
-    json_schema_validate('jsd_a1c0ac4386555300b7f4a541d8dba625_v2_3_7_6').validate(obj)
+    json_schema_validate("jsd_a1c0ac4386555300b7f4a541d8dba625_v2_3_7_6").validate(obj)
     return True
 
 
 def delete_sensor_test_v1(api):
-    endpoint_result = api.sensors.delete_sensor_test_v1(
-        template_name='string'
-    )
+    endpoint_result = api.sensors.delete_sensor_test_v1(template_name="string")
     return endpoint_result
 
 
 @pytest.mark.sensors
 def test_delete_sensor_test_v1(api, validator):
     try:
-        assert is_valid_delete_sensor_test_v1(
-            validator,
-            delete_sensor_test_v1(api)
-        )
+        assert is_valid_delete_sensor_test_v1(validator, delete_sensor_test_v1(api))
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
             print(original_e)
@@ -225,9 +588,7 @@ def test_delete_sensor_test_v1(api, validator):
 
 
 def delete_sensor_test_v1_default_val(api):
-    endpoint_result = api.sensors.delete_sensor_test_v1(
-        template_name=None
-    )
+    endpoint_result = api.sensors.delete_sensor_test_v1(template_name=None)
     return endpoint_result
 
 
@@ -235,8 +596,7 @@ def delete_sensor_test_v1_default_val(api):
 def test_delete_sensor_test_v1_default_val(api, validator):
     try:
         assert is_valid_delete_sensor_test_v1(
-            validator,
-            delete_sensor_test_v1_default_val(api)
+            validator, delete_sensor_test_v1_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -244,24 +604,19 @@ def test_delete_sensor_test_v1_default_val(api, validator):
 
 
 def is_valid_sensors_v1(json_schema_validate, obj):
-    json_schema_validate('jsd_49925cda740c5bdc92fd150c334d0e4e_v2_3_7_6').validate(obj)
+    json_schema_validate("jsd_49925cda740c5bdc92fd150c334d0e4e_v2_3_7_6").validate(obj)
     return True
 
 
 def sensors_v1(api):
-    endpoint_result = api.sensors.sensors_v1(
-        site_id='string'
-    )
+    endpoint_result = api.sensors.sensors_v1(site_id="string")
     return endpoint_result
 
 
 @pytest.mark.sensors
 def test_sensors_v1(api, validator):
     try:
-        assert is_valid_sensors_v1(
-            validator,
-            sensors_v1(api)
-        )
+        assert is_valid_sensors_v1(validator, sensors_v1(api))
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
             print(original_e)
@@ -269,34 +624,27 @@ def test_sensors_v1(api, validator):
 
 
 def sensors_v1_default_val(api):
-    endpoint_result = api.sensors.sensors_v1(
-        site_id=None
-    )
+    endpoint_result = api.sensors.sensors_v1(site_id=None)
     return endpoint_result
 
 
 @pytest.mark.sensors
 def test_sensors_v1_default_val(api, validator):
     try:
-        assert is_valid_sensors_v1(
-            validator,
-            sensors_v1_default_val(api)
-        )
+        assert is_valid_sensors_v1(validator, sensors_v1_default_val(api))
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
 def is_valid_run_now_sensor_test_v1(json_schema_validate, obj):
-    json_schema_validate('jsd_cfadc5e4c912588389f4f63d2fb6e4ed_v2_3_7_6').validate(obj)
+    json_schema_validate("jsd_cfadc5e4c912588389f4f63d2fb6e4ed_v2_3_7_6").validate(obj)
     return True
 
 
 def run_now_sensor_test_v1(api):
     endpoint_result = api.sensors.run_now_sensor_test_v1(
-        active_validation=True,
-        payload=None,
-        templateName='string'
+        active_validation=True, payload=None, templateName="string"
     )
     return endpoint_result
 
@@ -304,10 +652,7 @@ def run_now_sensor_test_v1(api):
 @pytest.mark.sensors
 def test_run_now_sensor_test_v1(api, validator):
     try:
-        assert is_valid_run_now_sensor_test_v1(
-            validator,
-            run_now_sensor_test_v1(api)
-        )
+        assert is_valid_run_now_sensor_test_v1(validator, run_now_sensor_test_v1(api))
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
             print(original_e)
@@ -316,9 +661,7 @@ def test_run_now_sensor_test_v1(api, validator):
 
 def run_now_sensor_test_v1_default_val(api):
     endpoint_result = api.sensors.run_now_sensor_test_v1(
-        active_validation=True,
-        payload=None,
-        templateName=None
+        active_validation=True, payload=None, templateName=None
     )
     return endpoint_result
 
@@ -327,8 +670,7 @@ def run_now_sensor_test_v1_default_val(api):
 def test_run_now_sensor_test_v1_default_val(api, validator):
     try:
         assert is_valid_run_now_sensor_test_v1(
-            validator,
-            run_now_sensor_test_v1_default_val(api)
+            validator, run_now_sensor_test_v1_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -336,16 +678,16 @@ def test_run_now_sensor_test_v1_default_val(api, validator):
 
 
 def is_valid_duplicate_sensor_test_template_v1(json_schema_validate, obj):
-    json_schema_validate('jsd_a352f6280e445075b3ea7cbf868c2d94_v2_3_7_6').validate(obj)
+    json_schema_validate("jsd_a352f6280e445075b3ea7cbf868c2d94_v2_3_7_6").validate(obj)
     return True
 
 
 def duplicate_sensor_test_template_v1(api):
     endpoint_result = api.sensors.duplicate_sensor_test_template_v1(
         active_validation=True,
-        newTemplateName='string',
+        newTemplateName="string",
         payload=None,
-        templateName='string'
+        templateName="string",
     )
     return endpoint_result
 
@@ -354,8 +696,7 @@ def duplicate_sensor_test_template_v1(api):
 def test_duplicate_sensor_test_template_v1(api, validator):
     try:
         assert is_valid_duplicate_sensor_test_template_v1(
-            validator,
-            duplicate_sensor_test_template_v1(api)
+            validator, duplicate_sensor_test_template_v1(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -365,10 +706,7 @@ def test_duplicate_sensor_test_template_v1(api, validator):
 
 def duplicate_sensor_test_template_v1_default_val(api):
     endpoint_result = api.sensors.duplicate_sensor_test_template_v1(
-        active_validation=True,
-        newTemplateName=None,
-        payload=None,
-        templateName=None
+        active_validation=True, newTemplateName=None, payload=None, templateName=None
     )
     return endpoint_result
 
@@ -377,8 +715,7 @@ def duplicate_sensor_test_template_v1_default_val(api):
 def test_duplicate_sensor_test_template_v1_default_val(api, validator):
     try:
         assert is_valid_duplicate_sensor_test_template_v1(
-            validator,
-            duplicate_sensor_test_template_v1_default_val(api)
+            validator, duplicate_sensor_test_template_v1_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

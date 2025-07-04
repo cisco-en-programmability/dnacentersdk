@@ -105,10 +105,10 @@ class MyDict(dict):
             return True
 
         else:
-            parts = str(key).split('.')
+            parts = str(key).split(".")
             if len(parts) > 1:
-                k = '.'.join(parts[:1])
-                return self[k].has_path('.'.join(parts[1:]))
+                k = ".".join(parts[:1])
+                return self[k].has_path(".".join(parts[1:]))
 
             else:
                 return super(MyDict, self).__contains__(key)
@@ -118,10 +118,10 @@ class MyDict(dict):
             return super(MyDict, self).get(key, default)
 
         else:
-            parts = str(key).split('.')
+            parts = str(key).split(".")
             if len(parts) > 1:
                 try:
-                    return self.get(parts[0]).get('.'.join(parts[1:]))
+                    return self.get(parts[0]).get(".".join(parts[1:]))
 
                 except Exception:
                     return None

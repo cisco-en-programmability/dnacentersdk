@@ -26,11 +26,13 @@ from fastjsonschema.exceptions import JsonSchemaException
 from dnacentersdk.exceptions import MalformedRequest
 from tests.environment import DNA_CENTER_VERSION
 
-pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '2.3.5.3', reason='version does not match')
+pytestmark = pytest.mark.skipif(
+    DNA_CENTER_VERSION != "2.3.5.3", reason="version does not match"
+)
 
 
 def is_valid_provision_nfv(json_schema_validate, obj):
-    json_schema_validate('jsd_cc72e307e5df50c48ce57370f27395a0_v2_3_5_3').validate(obj)
+    json_schema_validate("jsd_cc72e307e5df50c48ce57370f27395a0_v2_3_5_3").validate(obj)
     return True
 
 
@@ -38,8 +40,148 @@ def provision_nfv(api):
     endpoint_result = api.site_design.provision_nfv(
         active_validation=True,
         payload=None,
-        provisioning=[{'site': {'siteProfileName': 'string', 'area': {'name': 'string', 'parentName': 'string'}, 'building': {'name': 'string', 'address': 'string', 'latitude': 0, 'longitude': 0, 'parentName': 'string'}, 'floor': {'name': 'string', 'parentName': 'string', 'rfModel': 'string', 'width': 0, 'length': 0, 'height': 0}}, 'device': [{'ip': 'string', 'deviceSerialNumber': 'string', 'tagName': 'string', 'serviceProviders': [{'serviceProvider': 'string', 'wanInterface': {'ipAddress': 'string', 'interfaceName': 'string', 'subnetmask': 'string', 'bandwidth': 'string', 'gateway': 'string'}}], 'services': [{'type': 'string', 'mode': 'string', 'systemIp': 'string', 'centralManagerIP': 'string', 'centralRegistrationKey': 'string', 'commonKey': 'string', 'adminPasswordHash': 'string', 'disk': 'string'}], 'vlan': [{'type': 'string', 'id': 'string', 'interfaces': 'string', 'network': 'string'}], 'subPools': [{'type': 'string', 'name': 'string', 'ipSubnet': 'string', 'gateway': 'string', 'parentPoolName': 'string'}], 'customNetworks': [{'name': 'string', 'port': 'string', 'ipAddressPool': 'string'}], 'templateParam': {'nfvis': {'var1': 'string'}, 'asav': {'var1': 'string'}}}]}],
-        siteProfile=[{'siteProfileName': 'string', 'device': [{'deviceType': 'string', 'tagName': 'string', 'serviceProviders': [{'serviceProvider': 'string', 'linkType': 'string', 'connect': True, 'defaultGateway': True}], 'dia': True, 'services': [{'type': 'string', 'profile': 'string', 'mode': 'string', 'name': 'string', 'imageName': 'string', 'topology': {'type': 'string', 'name': 'string', 'assignIp': 'string'}}], 'customServices': [{'name': 'string', 'applicationType': 'string', 'profile': 'string', 'topology': {'type': 'string', 'name': 'string', 'assignIp': 'string'}, 'imageName': 'string'}], 'customNetworks': [{'name': 'string', 'servicesToConnect': [{'service': 'string'}], 'connectionType': 'string', 'networkMode': 'string', 'vlan': 'string'}], 'vlan': [{'type': 'string', 'id': 'string'}], 'customTemplate': [{'deviceType': 'string', 'template': 'string'}]}]}]
+        provisioning=[
+            {
+                "site": {
+                    "siteProfileName": "string",
+                    "area": {"name": "string", "parentName": "string"},
+                    "building": {
+                        "name": "string",
+                        "address": "string",
+                        "latitude": 0,
+                        "longitude": 0,
+                        "parentName": "string",
+                    },
+                    "floor": {
+                        "name": "string",
+                        "parentName": "string",
+                        "rfModel": "string",
+                        "width": 0,
+                        "length": 0,
+                        "height": 0,
+                    },
+                },
+                "device": [
+                    {
+                        "ip": "string",
+                        "deviceSerialNumber": "string",
+                        "tagName": "string",
+                        "serviceProviders": [
+                            {
+                                "serviceProvider": "string",
+                                "wanInterface": {
+                                    "ipAddress": "string",
+                                    "interfaceName": "string",
+                                    "subnetmask": "string",
+                                    "bandwidth": "string",
+                                    "gateway": "string",
+                                },
+                            }
+                        ],
+                        "services": [
+                            {
+                                "type": "string",
+                                "mode": "string",
+                                "systemIp": "string",
+                                "centralManagerIP": "string",
+                                "centralRegistrationKey": "string",
+                                "commonKey": "string",
+                                "adminPasswordHash": "string",
+                                "disk": "string",
+                            }
+                        ],
+                        "vlan": [
+                            {
+                                "type": "string",
+                                "id": "string",
+                                "interfaces": "string",
+                                "network": "string",
+                            }
+                        ],
+                        "subPools": [
+                            {
+                                "type": "string",
+                                "name": "string",
+                                "ipSubnet": "string",
+                                "gateway": "string",
+                                "parentPoolName": "string",
+                            }
+                        ],
+                        "customNetworks": [
+                            {
+                                "name": "string",
+                                "port": "string",
+                                "ipAddressPool": "string",
+                            }
+                        ],
+                        "templateParam": {
+                            "nfvis": {"var1": "string"},
+                            "asav": {"var1": "string"},
+                        },
+                    }
+                ],
+            }
+        ],
+        siteProfile=[
+            {
+                "siteProfileName": "string",
+                "device": [
+                    {
+                        "deviceType": "string",
+                        "tagName": "string",
+                        "serviceProviders": [
+                            {
+                                "serviceProvider": "string",
+                                "linkType": "string",
+                                "connect": True,
+                                "defaultGateway": True,
+                            }
+                        ],
+                        "dia": True,
+                        "services": [
+                            {
+                                "type": "string",
+                                "profile": "string",
+                                "mode": "string",
+                                "name": "string",
+                                "imageName": "string",
+                                "topology": {
+                                    "type": "string",
+                                    "name": "string",
+                                    "assignIp": "string",
+                                },
+                            }
+                        ],
+                        "customServices": [
+                            {
+                                "name": "string",
+                                "applicationType": "string",
+                                "profile": "string",
+                                "topology": {
+                                    "type": "string",
+                                    "name": "string",
+                                    "assignIp": "string",
+                                },
+                                "imageName": "string",
+                            }
+                        ],
+                        "customNetworks": [
+                            {
+                                "name": "string",
+                                "servicesToConnect": [{"service": "string"}],
+                                "connectionType": "string",
+                                "networkMode": "string",
+                                "vlan": "string",
+                            }
+                        ],
+                        "vlan": [{"type": "string", "id": "string"}],
+                        "customTemplate": [
+                            {"deviceType": "string", "template": "string"}
+                        ],
+                    }
+                ],
+            }
+        ],
     )
     return endpoint_result
 
@@ -47,10 +189,7 @@ def provision_nfv(api):
 @pytest.mark.site_design
 def test_provision_nfv(api, validator):
     try:
-        assert is_valid_provision_nfv(
-            validator,
-            provision_nfv(api)
-        )
+        assert is_valid_provision_nfv(validator, provision_nfv(api))
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
             print(original_e)
@@ -59,10 +198,7 @@ def test_provision_nfv(api, validator):
 
 def provision_nfv_default_val(api):
     endpoint_result = api.site_design.provision_nfv(
-        active_validation=True,
-        payload=None,
-        provisioning=None,
-        siteProfile=None
+        active_validation=True, payload=None, provisioning=None, siteProfile=None
     )
     return endpoint_result
 
@@ -70,24 +206,19 @@ def provision_nfv_default_val(api):
 @pytest.mark.site_design
 def test_provision_nfv_default_val(api, validator):
     try:
-        assert is_valid_provision_nfv(
-            validator,
-            provision_nfv_default_val(api)
-        )
+        assert is_valid_provision_nfv(validator, provision_nfv_default_val(api))
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
 def is_valid_get_device_details_by_ip(json_schema_validate, obj):
-    json_schema_validate('jsd_2bfde206eb445821a5722511f138814a_v2_3_5_3').validate(obj)
+    json_schema_validate("jsd_2bfde206eb445821a5722511f138814a_v2_3_5_3").validate(obj)
     return True
 
 
 def get_device_details_by_ip(api):
-    endpoint_result = api.site_design.get_device_details_by_ip(
-        device_ip='string'
-    )
+    endpoint_result = api.site_design.get_device_details_by_ip(device_ip="string")
     return endpoint_result
 
 
@@ -95,8 +226,7 @@ def get_device_details_by_ip(api):
 def test_get_device_details_by_ip(api, validator):
     try:
         assert is_valid_get_device_details_by_ip(
-            validator,
-            get_device_details_by_ip(api)
+            validator, get_device_details_by_ip(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -105,9 +235,7 @@ def test_get_device_details_by_ip(api, validator):
 
 
 def get_device_details_by_ip_default_val(api):
-    endpoint_result = api.site_design.get_device_details_by_ip(
-        device_ip=None
-    )
+    endpoint_result = api.site_design.get_device_details_by_ip(device_ip=None)
     return endpoint_result
 
 
@@ -115,8 +243,7 @@ def get_device_details_by_ip_default_val(api):
 def test_get_device_details_by_ip_default_val(api, validator):
     try:
         assert is_valid_get_device_details_by_ip(
-            validator,
-            get_device_details_by_ip_default_val(api)
+            validator, get_device_details_by_ip_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -124,16 +251,16 @@ def test_get_device_details_by_ip_default_val(api, validator):
 
 
 def is_valid_associate(json_schema_validate, obj):
-    json_schema_validate('jsd_378a1800508058e4b82a08ea5637b794_v2_3_5_3').validate(obj)
+    json_schema_validate("jsd_378a1800508058e4b82a08ea5637b794_v2_3_5_3").validate(obj)
     return True
 
 
 def associate(api):
     endpoint_result = api.site_design.associate(
         active_validation=True,
-        network_profile_id='string',
+        network_profile_id="string",
         payload=None,
-        site_id='string'
+        site_id="string",
     )
     return endpoint_result
 
@@ -141,10 +268,7 @@ def associate(api):
 @pytest.mark.site_design
 def test_associate(api, validator):
     try:
-        assert is_valid_associate(
-            validator,
-            associate(api)
-        )
+        assert is_valid_associate(validator, associate(api))
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
             print(original_e)
@@ -154,9 +278,9 @@ def test_associate(api, validator):
 def associate_default_val(api):
     endpoint_result = api.site_design.associate(
         active_validation=True,
-        network_profile_id='string',
+        network_profile_id="string",
         payload=None,
-        site_id='string'
+        site_id="string",
     )
     return endpoint_result
 
@@ -164,24 +288,20 @@ def associate_default_val(api):
 @pytest.mark.site_design
 def test_associate_default_val(api, validator):
     try:
-        assert is_valid_associate(
-            validator,
-            associate_default_val(api)
-        )
+        assert is_valid_associate(validator, associate_default_val(api))
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
 def is_valid_disassociate(json_schema_validate, obj):
-    json_schema_validate('jsd_21c8936d6a0c54e89b471fe36bf28de8_v2_3_5_3').validate(obj)
+    json_schema_validate("jsd_21c8936d6a0c54e89b471fe36bf28de8_v2_3_5_3").validate(obj)
     return True
 
 
 def disassociate(api):
     endpoint_result = api.site_design.disassociate(
-        network_profile_id='string',
-        site_id='string'
+        network_profile_id="string", site_id="string"
     )
     return endpoint_result
 
@@ -189,10 +309,7 @@ def disassociate(api):
 @pytest.mark.site_design
 def test_disassociate(api, validator):
     try:
-        assert is_valid_disassociate(
-            validator,
-            disassociate(api)
-        )
+        assert is_valid_disassociate(validator, disassociate(api))
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
             print(original_e)
@@ -201,8 +318,7 @@ def test_disassociate(api, validator):
 
 def disassociate_default_val(api):
     endpoint_result = api.site_design.disassociate(
-        network_profile_id='string',
-        site_id='string'
+        network_profile_id="string", site_id="string"
     )
     return endpoint_result
 
@@ -210,25 +326,20 @@ def disassociate_default_val(api):
 @pytest.mark.site_design
 def test_disassociate_default_val(api, validator):
     try:
-        assert is_valid_disassociate(
-            validator,
-            disassociate_default_val(api)
-        )
+        assert is_valid_disassociate(validator, disassociate_default_val(api))
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
 def is_valid_nfv_provisioning_detail(json_schema_validate, obj):
-    json_schema_validate('jsd_497d9ccfce8451809129ec5de42c5048_v2_3_5_3').validate(obj)
+    json_schema_validate("jsd_497d9ccfce8451809129ec5de42c5048_v2_3_5_3").validate(obj)
     return True
 
 
 def nfv_provisioning_detail(api):
     endpoint_result = api.site_design.nfv_provisioning_detail(
-        active_validation=True,
-        device_ip='string',
-        payload=None
+        active_validation=True, device_ip="string", payload=None
     )
     return endpoint_result
 
@@ -236,10 +347,7 @@ def nfv_provisioning_detail(api):
 @pytest.mark.site_design
 def test_nfv_provisioning_detail(api, validator):
     try:
-        assert is_valid_nfv_provisioning_detail(
-            validator,
-            nfv_provisioning_detail(api)
-        )
+        assert is_valid_nfv_provisioning_detail(validator, nfv_provisioning_detail(api))
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
             print(original_e)
@@ -248,9 +356,7 @@ def test_nfv_provisioning_detail(api, validator):
 
 def nfv_provisioning_detail_default_val(api):
     endpoint_result = api.site_design.nfv_provisioning_detail(
-        active_validation=True,
-        device_ip=None,
-        payload=None
+        active_validation=True, device_ip=None, payload=None
     )
     return endpoint_result
 
@@ -259,8 +365,7 @@ def nfv_provisioning_detail_default_val(api):
 def test_nfv_provisioning_detail_default_val(api, validator):
     try:
         assert is_valid_nfv_provisioning_detail(
-            validator,
-            nfv_provisioning_detail_default_val(api)
+            validator, nfv_provisioning_detail_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -268,16 +373,64 @@ def test_nfv_provisioning_detail_default_val(api, validator):
 
 
 def is_valid_create_nfv_profile(json_schema_validate, obj):
-    json_schema_validate('jsd_d2a712eb315650618d475db5de0aabec_v2_3_5_3').validate(obj)
+    json_schema_validate("jsd_d2a712eb315650618d475db5de0aabec_v2_3_5_3").validate(obj)
     return True
 
 
 def create_nfv_profile(api):
     endpoint_result = api.site_design.create_nfv_profile(
         active_validation=True,
-        device=[{'deviceType': 'string', 'deviceTag': 'string', 'serviceProviderProfile': [{'serviceProvider': 'string', 'linkType': 'string', 'connect': True, 'connectDefaultGatewayOnWan': True}], 'directInternetAccessForFirewall': True, 'services': [{'serviceType': 'string', 'profileType': 'string', 'serviceName': 'string', 'imageName': 'string', 'vNicMapping': [{'networkType': 'string', 'assignIpAddressToNetwork': 'string'}], 'firewallMode': 'string'}], 'customNetworks': [{'networkName': 'string', 'servicesToConnect': [{'serviceName': 'string'}], 'connectionType': 'string', 'vlanMode': 'string', 'vlanId': 0}], 'vlanForL2': [{'vlanType': 'string', 'vlanId': 0, 'vlanDescription': 'string'}], 'customTemplate': [{'deviceType': 'string', 'template': 'string', 'templateType': 'string'}]}],
+        device=[
+            {
+                "deviceType": "string",
+                "deviceTag": "string",
+                "serviceProviderProfile": [
+                    {
+                        "serviceProvider": "string",
+                        "linkType": "string",
+                        "connect": True,
+                        "connectDefaultGatewayOnWan": True,
+                    }
+                ],
+                "directInternetAccessForFirewall": True,
+                "services": [
+                    {
+                        "serviceType": "string",
+                        "profileType": "string",
+                        "serviceName": "string",
+                        "imageName": "string",
+                        "vNicMapping": [
+                            {
+                                "networkType": "string",
+                                "assignIpAddressToNetwork": "string",
+                            }
+                        ],
+                        "firewallMode": "string",
+                    }
+                ],
+                "customNetworks": [
+                    {
+                        "networkName": "string",
+                        "servicesToConnect": [{"serviceName": "string"}],
+                        "connectionType": "string",
+                        "vlanMode": "string",
+                        "vlanId": 0,
+                    }
+                ],
+                "vlanForL2": [
+                    {"vlanType": "string", "vlanId": 0, "vlanDescription": "string"}
+                ],
+                "customTemplate": [
+                    {
+                        "deviceType": "string",
+                        "template": "string",
+                        "templateType": "string",
+                    }
+                ],
+            }
+        ],
         payload=None,
-        profileName='string'
+        profileName="string",
     )
     return endpoint_result
 
@@ -285,10 +438,7 @@ def create_nfv_profile(api):
 @pytest.mark.site_design
 def test_create_nfv_profile(api, validator):
     try:
-        assert is_valid_create_nfv_profile(
-            validator,
-            create_nfv_profile(api)
-        )
+        assert is_valid_create_nfv_profile(validator, create_nfv_profile(api))
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
             print(original_e)
@@ -297,10 +447,7 @@ def test_create_nfv_profile(api, validator):
 
 def create_nfv_profile_default_val(api):
     endpoint_result = api.site_design.create_nfv_profile(
-        active_validation=True,
-        device=None,
-        payload=None,
-        profileName=None
+        active_validation=True, device=None, payload=None, profileName=None
     )
     return endpoint_result
 
@@ -309,8 +456,7 @@ def create_nfv_profile_default_val(api):
 def test_create_nfv_profile_default_val(api, validator):
     try:
         assert is_valid_create_nfv_profile(
-            validator,
-            create_nfv_profile_default_val(api)
+            validator, create_nfv_profile_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -318,17 +464,57 @@ def test_create_nfv_profile_default_val(api, validator):
 
 
 def is_valid_update_nfv_profile(json_schema_validate, obj):
-    json_schema_validate('jsd_159612e2202e5f7586e68778ed7772b1_v2_3_5_3').validate(obj)
+    json_schema_validate("jsd_159612e2202e5f7586e68778ed7772b1_v2_3_5_3").validate(obj)
     return True
 
 
 def update_nfv_profile(api):
     endpoint_result = api.site_design.update_nfv_profile(
         active_validation=True,
-        device=[{'deviceTag': 'string', 'directInternetAccessForFirewall': True, 'services': [{'serviceType': 'string', 'profileType': 'string', 'serviceName': 'string', 'imageName': 'string', 'vNicMapping': [{'networkType': 'string', 'assignIpAddressToNetwork': 'string'}], 'firewallMode': 'string'}], 'customNetworks': [{'networkName': 'string', 'servicesToConnect': [{'serviceName': 'string'}], 'connectionType': 'string', 'vlanMode': 'string', 'vlanId': 0}], 'vlanForL2': [{'vlanType': 'string', 'vlanId': 0, 'vlanDescription': 'string'}], 'customTemplate': [{'deviceType': 'string', 'template': 'string', 'templateType': 'string'}], 'currentDeviceTag': 'string'}],
-        id='string',
-        name='string',
-        payload=None
+        device=[
+            {
+                "deviceTag": "string",
+                "directInternetAccessForFirewall": True,
+                "services": [
+                    {
+                        "serviceType": "string",
+                        "profileType": "string",
+                        "serviceName": "string",
+                        "imageName": "string",
+                        "vNicMapping": [
+                            {
+                                "networkType": "string",
+                                "assignIpAddressToNetwork": "string",
+                            }
+                        ],
+                        "firewallMode": "string",
+                    }
+                ],
+                "customNetworks": [
+                    {
+                        "networkName": "string",
+                        "servicesToConnect": [{"serviceName": "string"}],
+                        "connectionType": "string",
+                        "vlanMode": "string",
+                        "vlanId": 0,
+                    }
+                ],
+                "vlanForL2": [
+                    {"vlanType": "string", "vlanId": 0, "vlanDescription": "string"}
+                ],
+                "customTemplate": [
+                    {
+                        "deviceType": "string",
+                        "template": "string",
+                        "templateType": "string",
+                    }
+                ],
+                "currentDeviceTag": "string",
+            }
+        ],
+        id="string",
+        name="string",
+        payload=None,
     )
     return endpoint_result
 
@@ -336,10 +522,7 @@ def update_nfv_profile(api):
 @pytest.mark.site_design
 def test_update_nfv_profile(api, validator):
     try:
-        assert is_valid_update_nfv_profile(
-            validator,
-            update_nfv_profile(api)
-        )
+        assert is_valid_update_nfv_profile(validator, update_nfv_profile(api))
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
             print(original_e)
@@ -348,11 +531,7 @@ def test_update_nfv_profile(api, validator):
 
 def update_nfv_profile_default_val(api):
     endpoint_result = api.site_design.update_nfv_profile(
-        active_validation=True,
-        device=None,
-        id='string',
-        name=None,
-        payload=None
+        active_validation=True, device=None, id="string", name=None, payload=None
     )
     return endpoint_result
 
@@ -361,8 +540,7 @@ def update_nfv_profile_default_val(api):
 def test_update_nfv_profile_default_val(api, validator):
     try:
         assert is_valid_update_nfv_profile(
-            validator,
-            update_nfv_profile_default_val(api)
+            validator, update_nfv_profile_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -370,16 +548,13 @@ def test_update_nfv_profile_default_val(api, validator):
 
 
 def is_valid_get_nfv_profile(json_schema_validate, obj):
-    json_schema_validate('jsd_f50579d855255df89ab3545de9745545_v2_3_5_3').validate(obj)
+    json_schema_validate("jsd_f50579d855255df89ab3545de9745545_v2_3_5_3").validate(obj)
     return True
 
 
 def get_nfv_profile(api):
     endpoint_result = api.site_design.get_nfv_profile(
-        id='string',
-        limit=0,
-        name='string',
-        offset=0
+        id="string", limit=0, name="string", offset=0
     )
     return endpoint_result
 
@@ -387,10 +562,7 @@ def get_nfv_profile(api):
 @pytest.mark.site_design
 def test_get_nfv_profile(api, validator):
     try:
-        assert is_valid_get_nfv_profile(
-            validator,
-            get_nfv_profile(api)
-        )
+        assert is_valid_get_nfv_profile(validator, get_nfv_profile(api))
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
             print(original_e)
@@ -399,10 +571,7 @@ def test_get_nfv_profile(api, validator):
 
 def get_nfv_profile_default_val(api):
     endpoint_result = api.site_design.get_nfv_profile(
-        id='string',
-        limit=None,
-        name=None,
-        offset=None
+        id="string", limit=None, name=None, offset=None
     )
     return endpoint_result
 
@@ -410,35 +579,26 @@ def get_nfv_profile_default_val(api):
 @pytest.mark.site_design
 def test_get_nfv_profile_default_val(api, validator):
     try:
-        assert is_valid_get_nfv_profile(
-            validator,
-            get_nfv_profile_default_val(api)
-        )
+        assert is_valid_get_nfv_profile(validator, get_nfv_profile_default_val(api))
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
 def is_valid_delete_nfv_profile(json_schema_validate, obj):
-    json_schema_validate('jsd_89252bcefb205d26b9aced6dc6d8c269_v2_3_5_3').validate(obj)
+    json_schema_validate("jsd_89252bcefb205d26b9aced6dc6d8c269_v2_3_5_3").validate(obj)
     return True
 
 
 def delete_nfv_profile(api):
-    endpoint_result = api.site_design.delete_nfv_profile(
-        id='string',
-        name='string'
-    )
+    endpoint_result = api.site_design.delete_nfv_profile(id="string", name="string")
     return endpoint_result
 
 
 @pytest.mark.site_design
 def test_delete_nfv_profile(api, validator):
     try:
-        assert is_valid_delete_nfv_profile(
-            validator,
-            delete_nfv_profile(api)
-        )
+        assert is_valid_delete_nfv_profile(validator, delete_nfv_profile(api))
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
             print(original_e)
@@ -446,10 +606,7 @@ def test_delete_nfv_profile(api, validator):
 
 
 def delete_nfv_profile_default_val(api):
-    endpoint_result = api.site_design.delete_nfv_profile(
-        id='string',
-        name=None
-    )
+    endpoint_result = api.site_design.delete_nfv_profile(id="string", name=None)
     return endpoint_result
 
 
@@ -457,8 +614,7 @@ def delete_nfv_profile_default_val(api):
 def test_delete_nfv_profile_default_val(api, validator):
     try:
         assert is_valid_delete_nfv_profile(
-            validator,
-            delete_nfv_profile_default_val(api)
+            validator, delete_nfv_profile_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

@@ -45,5 +45,6 @@ logger = logging.getLogger(__name__)
 
 
 from importlib.metadata import version
-release = version('dnacentersdk')
-__version__ = '.'.join(release.split('.')[:3])
+
+release = version("dnacentersdk")
+__version__ = ".".join(release.split(".")[:3])
