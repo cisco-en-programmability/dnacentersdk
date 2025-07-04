@@ -6,7 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [2.10.0]
+## [2.10.1] - 2025-07-04
+### Fixed
+- Fixed a bug that occurred when the response was empty.
+- Fixed validation for the `value` field in filters of the function `retrieves_the_list_of_clients_by_applying_complex_filters_while_also_supporting_aggregate_attributes` to accept `string`, `integer`, and `number` types as supported by the API.
+- Fixed function name from `download_unmaskedraw_device_configuration_as_z_ip` to `download_unmaskedraw_device_configuration_as_zip`.
+
+## [2.10.0] - 2025-06-09
 ### Added
 - Backup service.
 - Industrial configuratiom service.
@@ -663,4 +669,26 @@ respond with a binary.
 [2.7.2]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.7.1...v2.7.2
 [2.7.3]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.7.2...v2.7.3
 [2.7.4]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.7.3...v2.7.4
-[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.7.4...develop
+[2.7.5]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.7.4...v2.7.5
+[2.7.6]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.7.5...v2.7.6
+[2.7.7]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.7.6...v2.7.7
+[2.8.0]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.7.7...v2.8.0
+[2.8.1]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.8.0...v2.8.1
+[2.8.2]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.8.1...v2.8.2
+[2.8.3]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.8.2...v2.8.3
+[2.8.4]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.8.3...v2.8.4
+[2.8.5]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.8.4...v2.8.5
+[2.8.6]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.8.5...v2.8.6
+[2.8.7]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.8.6...v2.8.7
+[2.8.8]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.8.7...v2.8.8
+[2.8.9]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.8.8...v2.8.9
+[2.8.10]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.8.9...v2.8.10
+[2.8.11]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.8.10...v2.8.11
+[2.8.12]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.8.11...v2.8.12
+[2.8.13]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.8.12...v2.8.13
+[2.8.14]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.8.13...v2.8.14
+[2.9.0]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.8.14...v2.9.0
+[2.9.1]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.9.0...v2.9.1
+[2.10.0]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.9.1...v2.10.0
+[2.10.1]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.10.0...v2.10.1
+[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.10.1...develop
