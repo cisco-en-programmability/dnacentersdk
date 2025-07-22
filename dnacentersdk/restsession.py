@@ -708,3 +708,22 @@ class RestSession(object):
 
         response = self.request("DELETE", url, erc, 0, params=params, **kwargs)
         return extract_and_parse_json(response)
+
+    def close(self):
+        """Close the underlying requests session.
+
+        This method closes the underlying requests session, which will close
+        any open HTTP connections and free up resources.
+
+        Example:
+            session = RestSession(...)
+            # ... use session for API calls ...
+            session.close()  # Close all connections
+        """
+        if hasattr(self, "_req_session") and self._req_session:
+            self._req_session.close()
+            self._req_session = None
+
+    def __del__(self):
+        """Destructor that ensures the session is closed when the object is garbage collected."""
+        self.close()
