@@ -1,154 +1,171 @@
-=============
 dnacentersdk
-=============
+============
 
 *Work with the DNA Center APIs in native Python!*
 
 -------------------------------------------------------------------------------
 
-**dnacentersdk** is a *community developed* Python library for working with the DNA Center APIs.  Our goal is to make working with DNA Center in Python a *native* and *natural* experience!
+**dnacentersdk** is a *community-developed* Python library for working with the Cisco DNA Center APIs. Our goal is to make interacting with DNA Center in Python a *native* and *natural* experience!
 
 .. code-block:: python
 
-    from dnacentersdk import api
+    from dnacentersdk import DNACenterAPI
 
-    # Create a DNACenterAPI connection object;
-    # it uses DNA Center sandbox URL, username and password, with DNA Center API version 2.3.5.3.
-    # and requests to verify the server's TLS certificate with verify=True.
-    dnac = api.DNACenterAPI(username="devnetuser",
-                            password="Cisco123!",
-                            base_url="https://sandboxdnac.cisco.com:443",
-                            version='3.1.3.0',
-                            verify=True)
+    # Create a DNACenterAPI connection object
+    dnac = DNACenterAPI(
+        username="devnetuser",
+        password="Cisco123!",
+        base_url="https://sandboxdnac.cisco.com:443",
+        version="3.1.3.0",
+        verify=True
+    )
 
-    # Find all devices that have 'Switches and Hubs' in their family
-    devices = dnac.devices.get_device_list(family='Switches and Hubs')
+    # Find all devices that belong to the "Switches and Hubs" family
+    devices = dnac.devices.get_device_list(family="Switches and Hubs")
 
-    # Print all of demo devices
     for device in devices.response:
-        print('{:20s}{}'.format(device.hostname, device.upTime))
+        print("{:20s}{}".format(device.hostname, device.upTime))
 
     # Find all tags
-    all_tags = dnac.tag.get_tag(sort_by='name', order='des')
-    demo_tags = [tag for tag in all_tags.response if 'Demo' in tag.name ]
+    all_tags = dnac.tag.get_tag(sort_by="name", order="des")
+    demo_tags = [tag for tag in all_tags.response if "Demo" in tag.name]
 
-    #  Delete all of the demo tags
+    # Delete demo tags
     for tag in demo_tags:
         dnac.tag.delete_tag(tag.id)
 
     # Create a new demo tag
-    demo_tag = dnac.tag.create_tag(name='dna Demo')
-    task_demo_tag = dnac.task.get_task_by_id(task_id=demo_tag.response.taskId)
+    demo_tag = dnac.tag.create_tag(name="dna Demo")
+    task = dnac.task.get_task_by_id(task_id=demo_tag.response.taskId)
 
-    if not task_demo_tag.response.isError:
-        # Retrieve created tag
-        created_tag = dnac.tag.get_tag(name='dna Demo')
+    if not task.response.isError:
+        created_tag = dnac.tag.get_tag(name="dna Demo")
+        updated_tag = dnac.tag.update_tag(
+            id=created_tag.response[0].id,
+            name="Updated " + created_tag.response[0].name,
+            description="DNA demo tag"
+        )
+        print(dnac.task.get_task_by_id(task_id=updated_tag.response.taskId).response.progress)
 
-        # Update tag
-        update_tag = dnac.tag.update_tag(id=created_tag.response[0].id,
-                                         name='Updated ' + created_tag.response[0].name,
-                                         description='DNA demo tag')
-
-        print(dnac.task.get_task_by_id(task_id=update_tag.response.taskId).response.progress)
-
-        # Retrieved updated
-        updated_tag = dnac.tag.get_tag(name='Updated dna Demo')
-        print(updated_tag)
+        # Retrieve updated tag
+        result = dnac.tag.get_tag(name="Updated dna Demo")
+        print(result)
     else:
-        # Get task error details
-        print('Unfortunately ', task_demo_tag.response.progress)
-        print('Reason: ', task_demo_tag.response.failureReason)
+        print("Unfortunately", task.response.progress)
+        print("Reason:", task.response.failureReason)
 
-    # Advance usage example using Custom Caller functions
-    # Define the get_global_credentials and create_netconf_credentials functions
-    # under the custom_caller wrapper.
-    # Call them with:
-    #     dnac.custom_caller.get_global_credentials('NETCONF')
-    #     dnac.custom_caller.create_netconf_credentials('65533')
+    # Custom API examples
     def setup_custom():
-        dnac.custom_caller.add_api('get_global_credentials',
-                                lambda credential_type:
-                                    dnac.custom_caller.call_api(
-                                        'GET',
-                                        '/dna/intent/api/v1/global-credential',
-                                        params={
-                                            'credentialSubType': credential_type
-                                        }).response
-                                )
-        dnac.custom_caller.add_api('create_netconf_credentials',
-                                lambda port:
-                                    dnac.custom_caller.call_api(
-                                        'POST',
-                                        '/dna/intent/api/v1/global-credential/netconf',
-                                        json=[{
-                                            "netconfPort": port
-                                        }])
-                                )
+        dnac.custom_caller.add_api(
+            "get_global_credentials",
+            lambda credential_type: dnac.custom_caller.call_api(
+                "GET",
+                "/dna/intent/api/v1/global-credential",
+                params={"credentialSubType": credential_type}
+            ).response
+        )
+        dnac.custom_caller.add_api(
+            "create_netconf_credentials",
+            lambda port: dnac.custom_caller.call_api(
+                "POST",
+                "/dna/intent/api/v1/global-credential/netconf",
+                json=[{"netconfPort": port}]
+            )
+        )
 
-    # Add the custom API calls to the connection object under the custom_caller wrapper
     setup_custom()
-    # Call the newly added functions
-    dnac.custom_caller.create_netconf_credentials('65533')
-    print(dnac.custom_caller.get_global_credentials('NETCONF'))
-
+    dnac.custom_caller.create_netconf_credentials("65533")
+    print(dnac.custom_caller.get_global_credentials("NETCONF"))
 
 Introduction
 ------------
+
 Check out the complete Introduction_
 
 **dnacentersdk handles all of this for you:**
 
-+ Reads your DNA Center credentials from environment variables.
+- Reads your DNA Center credentials from environment variables.
+- Reads your DNA Center API version from the `DNA_CENTER_VERSION` environment variable.
+- Handles TLS certificate verification with the `verify` parameter.
+- Enables debug mode via the `DNA_CENTER_DEBUG` environment variable.
+- Exposes all DNA Center API calls as native Python methods organized in a hierarchical tree.
+- Offers IDE auto-completion support (e.g., in `PyCharm_`).
+- Converts all JSON responses to native Python objects with dot notation access.
+- Handles rate-limiting automatically.
+- Refreshes authentication tokens when they expire.
+- Provides resource management via context managers and explicit connection cleanup.
 
-+ Reads your DNA Center API version from environment variable DNA_CENTER_VERSION.
+Resource Management
+-------------------
 
-+ Controls whether to verify the server's TLS certificate or not according to the verify parameter.
+You can manage the HTTP connection lifecycle in several ways:
 
-+ Reads your DNA Center debug from environment variable DNA_CENTER_DEBUG. Boolean.
+**Context Manager**
 
-+ Wraps and represents all DNA Center API calls as a simple hierarchical tree of
-  native-Python methods
+.. code-block:: python
 
-+ If your Python IDE supports **auto-completion** (like `PyCharm_`), you can
-  navigate the available methods and object attributes right within your IDE
+    from dnacentersdk import DNACenterAPI
 
-+ Represents all returned JSON objects as native Python objects - you can
-  access all of the object's attributes using native *dot.syntax*
+    with DNACenterAPI() as dnac:
+        devices = dnac.devices.get_device_list()
 
-+ **Automatic Rate-Limit Handling**  Sending a lot of requests to DNA Center?
-  Don't worry; we have you covered.  DNA Center will respond with a rate-limit
-  response, which will automatically be caught and "handled" for you.
+**Explicit Close**
 
-+ **Refresh token** Each time the token becomes invalid, the SDK will generate a new valid token for you.
+.. code-block:: python
+
+    from dnacentersdk import DNACenterAPI
+
+    dnac = DNACenterAPI()
+    try:
+        devices = dnac.devices.get_device_list()
+    finally:
+        dnac.close()
+
+**Automatic Cleanup via GC**
+
+.. code-block:: python
+
+    from dnacentersdk import DNACenterAPI
+
+    def get_devices():
+        dnac = DNACenterAPI()
+        return dnac.devices.get_device_list()
+
+    devices = get_devices()
+
+**Legacy Usage**
+
+.. code-block:: python
+
+    from dnacentersdk import DNACenterAPI
+
+    dnac = DNACenterAPI()
+    devices = dnac.devices.get_device_list()
 
 Installation
 ------------
 
-Installing and upgrading dnacentersdk is easy:
-
-**Install via PIP**
+**Install via pip**
 
 .. code-block:: bash
 
-    $ pip install dnacentersdk
+    pip install dnacentersdk
 
-**Upgrading to the latest Version**
+**Upgrade to the latest version**
 
 .. code-block:: bash
 
-    $ pip install dnacentersdk --upgrade
+    pip install --upgrade dnacentersdk
 
-
-Compatibility matrix
+Compatibility Matrix
 --------------------
-The following table shows the supported versions.
 
 .. list-table::
    :widths: 50 50
    :header-rows: 1
 
    * - Cisco DNA Center version
-     - Python "dnacentersdk" version
+     - dnacentersdk version
    * - 2.3.5.3
      - 2.6.11
    * - 2.3.7.6
@@ -158,64 +175,50 @@ The following table shows the supported versions.
    * - 2.3.7.9
      - 2.8.14
    * - 3.1.3.0
-     - 2.10.1
-
-
-
-If your SDK is older please consider updating it first.
+     - 2.10.2
 
 Documentation
 -------------
 
-**Excellent documentation is now available at:**
-https://dnacentersdk.readthedocs.io
+Visit: https://dnacentersdk.readthedocs.io
 
-Check out the Quickstart_ to dive in and begin using dnacentersdk.
-
+Start with the Quickstart_ to get up and running quickly.
 
 Release Notes
 -------------
 
-Please see the releases_ page for release notes on the incremental functionality and bug fixes incorporated into the published releases.
-
+See the releases_ page for details on features and fixes.
 
 Questions, Support & Discussion
 -------------------------------
 
-dnacentersdk is a *community developed* and *community supported* project.  If you experience any issues using this package, please report them using the issues_ page.
+This is a *community-supported* project. For questions or issues, use the issues_ page.
 
-
-Contribution
+Contributing
 ------------
 
-dnacentersdk_ is a community development projects.  Feedback, thoughts, ideas, and code contributions are welcome!  Please see the `Contributing`_ guide for more information.
-
+dnacentersdk_ is community-driven. Feedback, suggestions, and code contributions are welcome! See the Contributing_ guide.
 
 Inspiration
-------------
+-----------
 
-This library is inspired by the webexteamssdk_  library
-
+This library is inspired by the webexteamssdk_ project.
 
 Changelog
 ---------
 
-All notable changes to this project will be documented in the CHANGELOG_ file.
+All notable changes are documented in the CHANGELOG_.
 
-The development team may make additional name changes as the library evolves with the Cisco DNA Center APIs.
+The library may continue to evolve as Cisco DNA Center APIs change.
 
-
-*Copyright (c) 2019-2021 Cisco Systems.*
+*Copyright (c) 2019–2025 Cisco Systems.*
 
 .. _Introduction: https://dnacentersdk.readthedocs.io/en/latest/api/intro.html
-.. _dnacentersdk.readthedocs.io: https://dnacentersdk.readthedocs.io
 .. _Quickstart: https://dnacentersdk.readthedocs.io/en/latest/api/quickstart.html
 .. _dnacentersdk: https://github.com/cisco-en-programmability/dnacentersdk
 .. _issues: https://github.com/cisco-en-programmability/dnacentersdk/issues
-.. _pull requests: https://github.com/cisco-en-programmability/dnacentersdk/pulls
 .. _releases: https://github.com/cisco-en-programmability/dnacentersdk/releases
-.. _the repository: dnacentersdk_
-.. _pull request: `pull requests`_
 .. _Contributing: https://github.com/cisco-en-programmability/dnacentersdk/blob/master/docs/contributing.rst
 .. _webexteamssdk: https://github.com/CiscoDevNet/webexteamssdk
 .. _CHANGELOG: https://github.com/cisco-en-programmability/dnacentersdk/blob/main/CHANGELOG.md
+.. _PyCharm: https://www.jetbrains.com/pycharm
