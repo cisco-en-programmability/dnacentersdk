@@ -958,3 +958,72 @@ class DNACenterAPI(object):
     def wait_on_rate_limit(self, value):
         """Enable or disable automatic rate-limit handling."""
         self._session.wait_on_rate_limit = value
+
+    @property
+    def session(self):
+        """Access to the underlying RestSession for advanced usage.
+
+        This property provides access to the internal session object
+        for backward compatibility and advanced use cases.
+
+        Returns:
+            RestSession: The underlying RestSession object.
+
+        Example:
+            api = DNACenterAPI(username, password, base_url=base_url)
+            # Legacy way to close session (still supported)
+            api.session._req_session.close()
+
+            # Recommended way
+            api.close()
+        """
+        return self._session
+
+    def close(self):
+        """Close the underlying HTTP session.
+
+        This method closes the underlying HTTP session used for API calls,
+        which will close any open HTTP connections and free up resources.
+        This helps prevent ResourceWarning messages about unclosed connections.
+
+        Example:
+            api = DNACenterAPI(username, password, base_url=base_url)
+            # ... make API calls ...
+            api.close()  # Close all connections
+        """
+        if hasattr(self, "_session") and self._session:
+            self._session.close()
+
+    def __enter__(self):
+        """Context manager entry point.
+
+        Returns:
+            DNACenterAPI: The DNACenterAPI instance for use in context manager.
+
+        Example:
+            with DNACenterAPI(username, password, base_url=base_url) as api:
+                devices = api.devices.get_device_list()
+                # Session automatically closed when exiting the context
+        """
+        return self
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        """Context manager exit point.
+
+        Automatically closes the session when exiting the context manager.
+
+        Args:
+            exc_type: Exception type (if any)
+            exc_val: Exception value (if any)
+            exc_tb: Exception traceback (if any)
+        """
+        self.close()
+        return False
+
+    def __del__(self):
+        """Destructor that ensures the session is closed when the object is garbage collected.
+
+        This is a fallback mechanism to ensure resources are freed even if
+        close() is not called explicitly or the context manager is not used.
+        """
+        self.close()

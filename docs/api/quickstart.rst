@@ -553,7 +553,7 @@ Custom caller functions help you:
 
 .. code-block:: python
 
-    from dnacentersdk import api
+    from dnacentersdk import DNACenterAPI
 
     # Create a DNACenterAPI connection object;
     # it uses DNA Center sandbox URL, username and password, with DNA Center API version 2.3.7.6.,
