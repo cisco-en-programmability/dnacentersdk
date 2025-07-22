@@ -6,6 +6,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.10.2] - 2025-07-22
+### Fixed
+- Fixed `download_unmaskedraw_device_configuration_as_zip` function in both v2.3.7.9 and v3.1.3.0 by adding `stream=True` parameter and additional download parameters (`dirpath`, `save_file`, `filename`) to properly handle ZIP file downloads, prevent JSONDecodeError, and maintain consistency with other download functions in the SDK
+- Fixed ResourceWarning for unclosed HTTP connections by adding proper session management methods (`close()`, context manager support, and automatic cleanup) to both `DNACenterAPI` and `RestSession` classes
+
+### Changed
+- Removed `active_validation` parameter from `download_unmaskedraw_device_configuration_as_zip` function to maintain consistency with other download functions in the SDK
+
+### Documentation
+- Updated README.rst with comprehensive resource management documentation and usage examples, including context manager usage, explicit close methods, and migration guidance for updating existing code to use new resource management patterns.
+
 ## [2.10.1] - 2025-07-04
 ### Fixed
 - Fixed a bug that occurred when the response was empty.
@@ -691,4 +702,5 @@ respond with a binary.
 [2.9.1]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.9.0...v2.9.1
 [2.10.0]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.9.1...v2.10.0
 [2.10.1]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.10.0...v2.10.1
-[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.10.1...develop
+[2.10.2]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.10.1...v2.10.2
+[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.10.2...develop
