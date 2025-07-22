@@ -503,9 +503,11 @@ class ConfigurationArchive(object):
         self,
         id,
         password=None,
+        dirpath=None,
+        save_file=None,
+        filename=None,
         headers=None,
         payload=None,
-        active_validation=True,
         **request_parameters
     ):
         """Download the unmasked (raw) device configuration by providing the file `id` and a `password`. The response will
@@ -520,23 +522,27 @@ class ConfigurationArchive(object):
                 space or the characters <>. .
             id(str): id path parameter. The value of `id` can be obtained from the response of API
                 `/dna/intent/api/v1/networkDeviceConfigFiles` .
+            dirpath(str): Directory absolute path. Defaults to os.getcwd().
+            save_file(bool): Enable or disable automatic file creation of
+                raw response.
+            filename(str): The filename used to save the download file.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
                 body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
         Returns:
-            MyDict: JSON response. Access the object's properties by using
-            the dot notation or the bracket notation.
+            DownloadResponse: The DownloadResponse wrapper. Wraps the urllib3.response.HTTPResponse. For more
+            information check the `urlib3 documentation <https://urllib3.readthedocs.io/en/latest/reference/urllib3.response.html>`_
 
         Raises:
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
+            DownloadFailure: If was not able to download the raw
+            response to a file.
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!download-unmaskedraw-device-configuration-as-z-i-p
         """
@@ -561,10 +567,6 @@ class ConfigurationArchive(object):
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator(
-                "jsd_d8fcd6dbb7ff53b58f7398c49b27ded2_v3_1_3_0"
-            ).validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -576,16 +578,26 @@ class ConfigurationArchive(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.post(
-                endpoint_full_url, params=_params, json=_payload, headers=_headers
+                endpoint_full_url,
+                params=_params,
+                json=_payload,
+                headers=_headers,
+                stream=True,
+                dirpath=dirpath,
+                save_file=save_file,
+                filename=filename,
             )
         else:
             json_data = self._session.post(
-                endpoint_full_url, params=_params, json=_payload
+                endpoint_full_url,
+                params=_params,
+                json=_payload,
+                stream=True,
+                dirpath=dirpath,
+                save_file=save_file,
+                filename=filename,
             )
 
         return self._object_factory(
             "bpm_d8fcd6dbb7ff53b58f7398c49b27ded2_v3_1_3_0", json_data
         )
-
-
-# Alias Functions
