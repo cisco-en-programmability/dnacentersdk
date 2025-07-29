@@ -175,7 +175,7 @@ Compatibility Matrix
    * - 2.3.7.9
      - 2.8.14
    * - 3.1.3.0
-     - 2.10.2
+     - 2.10.3
 
 Documentation
 -------------
