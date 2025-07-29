@@ -1521,7 +1521,7 @@ class ConfigurationTemplates(object):
             "bpm_e1a76c121857a085149e62e56caadd_v2_3_7_6", json_data
         )
 
-    def get_template_versions_v1(self, template_id, headers=None, **request_parameters):
+    def gets_all_the_versions_of_a_given_template_v1(self, template_id, headers=None, **request_parameters):
         """Get all the versions of template by its id .
 
         Args:
@@ -2408,6 +2408,32 @@ class ConfigurationTemplates(object):
         )
 
     # Alias Function
+    def exports_the_projects_for_a_given_criteria(
+        self, headers=None, payload=None, active_validation=True, **request_parameters
+    ):
+        """This function is an alias of export_projects.
+
+        Args:
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(list): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            This function returns the output of export_projects.
+        """
+        return self.export_projects(
+            headers=headers,
+            payload=payload,
+            active_validation=active_validation,
+            **request_parameters
+        )
+
+    # Alias Function
     def clone_given_template(
         self, name, project_id, template_id, headers=None, **request_parameters
     ):
@@ -2564,7 +2590,7 @@ class ConfigurationTemplates(object):
 
     # Alias Function
     def get_template_versions(self, template_id, headers=None, **request_parameters):
-        """This function is an alias of get_template_versions_v1 .
+        """This function is an alias of gets_all_the_versions_of_a_given_template_v1 .
 
         Args:
             template_id(str): templateId path parameter. templateId(UUID) to get list of versioned templates
@@ -2575,9 +2601,9 @@ class ConfigurationTemplates(object):
                 support for parameters that may be added in the future).
 
         Returns:
-            This function returns the output of get_template_versions_v1.
+            This function returns the output of gets_all_the_versions_of_a_given_template_v1.
         """
-        return self.get_template_versions_v1(
+        return self.gets_all_the_versions_of_a_given_template_v1(
             template_id=template_id, headers=headers, **request_parameters
         )
 

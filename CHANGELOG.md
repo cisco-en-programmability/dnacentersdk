@@ -6,6 +6,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.10.3] - 2025-07-29
+### Fixed
+- Fixed `download_masked_device_configuration` function in both v2.3.7.9 and v3.1.3.0 by adding `stream=True` parameter and additional download parameters (`dirpath`, `save_file`, `filename`) to properly handle file downloads, prevent JSONDecodeError, and maintain consistency with other download functions in the SDK
+- Updated function signature to match the pattern established by `download_unmaskedraw_device_configuration_as_zip` function
+- Resolved parameter naming conflict in webhook destination functions where both the webhook payload and HTTP request headers used similar parameter names, causing ambiguity in function signatures.
+- Resolved function name conflicts in `configuration_templates` module where duplicate `get_template_versions` functions existed across multiple API versions (v2.3.5.3, v2.3.7.6, v2.3.7.9, v3.1.3.0). Renamed legacy endpoint functions to `gets_all_the_versions_of_a_given_template` to match their operation IDs and avoid naming collisions.
+
+### Changed
+- Updated return type documentation for `download_masked_device_configuration` from `MyDict` to `DownloadResponse` to accurately reflect the response type when using stream=True
+- Enhanced function parameters to support proper file download functionality with configurable directory path, save options, and custom filename
+- Standardized HTTP header parameter naming across all API versions. Changed `customHeaders` parameter to `http_headers` in webhook destination functions (create_webhook_destination, update_webhook_destination, get_webhook_destination) in v2.3.7.6 to maintain consistency with other API versions (v2.3.5.3, v2.3.7.9, v3.1.3.0). This resolves the conflict between the webhook payload `headers` parameter and HTTP request headers parameter.
+- Refactored `configuration_templates` function naming for consistency across API versions:
+  - **v3.1.3.0**: Renamed first `get_template_versions` function (legacy endpoint `/dna/intent/api/v1/template-programmer/template/version/{templateId}`) to `gets_all_the_versions_of_a_given_template`
+  - **v2.3.7.9**: Renamed first `get_template_versions` function (legacy endpoint) to `gets_all_the_versions_of_a_given_template`
+  - **v2.3.7.6**: Renamed `get_template_versions_v1` to `gets_all_the_versions_of_a_given_template_v1` and updated alias functions. Added backward compatibility alias `get_template_versions` for seamless migration
+  - **v2.3.5.3**: Renamed `get_template_versions` function to `gets_all_the_versions_of_a_given_template`. Added backward compatibility alias `get_template_versions` for seamless migration.
+  - Updated all corresponding test functions to match the new naming convention
+  - Maintained backward compatibility where applicable through alias functions
+
 ## [2.10.2] - 2025-07-22
 ### Fixed
 - Fixed `download_unmaskedraw_device_configuration_as_zip` function in both v2.3.7.9 and v3.1.3.0 by adding `stream=True` parameter and additional download parameters (`dirpath`, `save_file`, `filename`) to properly handle ZIP file downloads, prevent JSONDecodeError, and maintain consistency with other download functions in the SDK
@@ -703,4 +722,5 @@ respond with a binary.
 [2.10.0]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.9.1...v2.10.0
 [2.10.1]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.10.0...v2.10.1
 [2.10.2]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.10.1...v2.10.2
-[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.10.2...develop
+[2.10.3]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.10.2...v2.10.3
+[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.10.3...develop

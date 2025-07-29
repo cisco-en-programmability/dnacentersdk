@@ -919,6 +919,40 @@ class ConfigurationTemplates(object):
             "bpm_e6ea8c5d425cf9ac77006f5593725f_v3_1_3_0", json_data
         )
 
+    # Alias Function
+    def exports_the_projects_for_a_given_criteria(
+        self, headers=None, payload=None, active_validation=True, **request_parameters
+    ):
+        """This function is an alias of export_projects.
+
+        Args:
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(list): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the Catalyst Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!exports-the-projects-for-a-given-criteria
+        """
+        return self.export_projects(
+            headers=headers,
+            payload=payload,
+            active_validation=active_validation,
+            **request_parameters
+        )
+
     def imports_the_templates_provided(
         self,
         project_name,
@@ -1909,7 +1943,7 @@ class ConfigurationTemplates(object):
             "bpm_e1a76c121857a085149e62e56caadd_v3_1_3_0", json_data
         )
 
-    def get_template_versions(self, template_id, headers=None, **request_parameters):
+    def gets_all_the_versions_of_a_given_template(self, template_id, headers=None, **request_parameters):
         """Get all the versions of template by its id .
 
         Args:

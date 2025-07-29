@@ -1423,39 +1423,39 @@ def test_version_template_default_val(api, validator):
             raise original_e
 
 
-def is_valid_get_template_versions(json_schema_validate, obj):
+def is_valid_gets_all_the_versions_of_a_given_template(json_schema_validate, obj):
     return True if obj else False
 
 
-def get_template_versions(api):
-    endpoint_result = api.configuration_templates.get_template_versions(
+def gets_all_the_versions_of_a_given_template(api):
+    endpoint_result = api.configuration_templates.gets_all_the_versions_of_a_given_template(
         template_id="string"
     )
     return endpoint_result
 
 
 @pytest.mark.configuration_templates
-def test_get_template_versions(api, validator):
+def test_gets_all_the_versions_of_a_given_template(api, validator):
     try:
-        assert is_valid_get_template_versions(validator, get_template_versions(api))
+        assert is_valid_gets_all_the_versions_of_a_given_template(validator, gets_all_the_versions_of_a_given_template(api))
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
             print(original_e)
             raise original_e
 
 
-def get_template_versions_default_val(api):
-    endpoint_result = api.configuration_templates.get_template_versions(
+def gets_all_the_versions_of_a_given_template_default_val(api):
+    endpoint_result = api.configuration_templates.gets_all_the_versions_of_a_given_template(
         template_id="string"
     )
     return endpoint_result
 
 
 @pytest.mark.configuration_templates
-def test_get_template_versions_default_val(api, validator):
+def test_gets_all_the_versions_of_a_given_template_default_val(api, validator):
     try:
-        assert is_valid_get_template_versions(
-            validator, get_template_versions_default_val(api)
+        assert is_valid_gets_all_the_versions_of_a_given_template(
+            validator, gets_all_the_versions_of_a_given_template_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

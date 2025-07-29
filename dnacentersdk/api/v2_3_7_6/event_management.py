@@ -2846,7 +2846,7 @@ class EventManagement(object):
         url=None,
         webhookId=None,
         payload=None,
-        customHeaders=None,
+        http_headers=None,
         active_validation=True,
         **request_parameters
     ):
@@ -2861,7 +2861,7 @@ class EventManagement(object):
             trustCert(boolean): Event Management's Trust Cert.
             url(string): Event Management's Url.
             webhookId(string): Event Management's Required only for update webhook configuration .
-            customHeaders(dict): Dictionary of HTTP Headers to send with the Request
+            http_headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
                 body of the Request.
@@ -2881,13 +2881,13 @@ class EventManagement(object):
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!create-webhook-destination
         """
-        check_type(customHeaders, dict)
+        check_type(http_headers, dict)
         check_type(payload, dict)
-        if customHeaders is not None:
-            if "Content-Type" in customHeaders:
-                check_type(customHeaders.get("Content-Type"), str, may_be_none=False)
-            if "X-Auth-Token" in customHeaders:
-                check_type(customHeaders.get("X-Auth-Token"), str, may_be_none=False)
+        if http_headers is not None:
+            if "Content-Type" in http_headers:
+                check_type(http_headers.get("Content-Type"), str, may_be_none=False)
+            if "X-Auth-Token" in http_headers:
+                check_type(http_headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {}
         _params.update(request_parameters)
@@ -2913,8 +2913,8 @@ class EventManagement(object):
 
         with_custom_headers = False
         _headers = self._session.headers or {}
-        if customHeaders:
-            _headers.update(dict_of_str(customHeaders))
+        if http_headers:
+            _headers.update(dict_of_str(http_headers))
             with_custom_headers = True
 
         e_url = "/dna/intent/api/v1/event/webhook"
@@ -2943,7 +2943,7 @@ class EventManagement(object):
         url=None,
         webhookId=None,
         payload=None,
-        customHeaders=None,
+        http_headers=None,
         active_validation=True,
         **request_parameters
     ):
@@ -2958,7 +2958,7 @@ class EventManagement(object):
             trustCert(boolean): Event Management's Trust Cert.
             url(string): Event Management's Url.
             webhookId(string): Event Management's Required only for update webhook configuration .
-            customHeaders(dict): Dictionary of HTTP Headers to send with the Request
+            http_headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
                 body of the Request.
@@ -2978,11 +2978,11 @@ class EventManagement(object):
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!update-webhook-destination
         """
-        check_type(customHeaders, dict)
+        check_type(http_headers, dict)
         check_type(payload, dict)
-        if customHeaders is not None:
-            if "X-Auth-Token" in customHeaders:
-                check_type(customHeaders.get("X-Auth-Token"), str, may_be_none=False)
+        if http_headers is not None:
+            if "X-Auth-Token" in http_headers:
+                check_type(http_headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {}
         _params.update(request_parameters)
@@ -3008,8 +3008,8 @@ class EventManagement(object):
 
         with_custom_headers = False
         _headers = self._session.headers or {}
-        if customHeaders:
-            _headers.update(dict_of_str(customHeaders))
+        if http_headers:
+            _headers.update(dict_of_str(http_headers))
             with_custom_headers = True
 
         e_url = "/dna/intent/api/v1/event/webhook"
@@ -3034,7 +3034,7 @@ class EventManagement(object):
         order=None,
         sort_by=None,
         webhook_ids=None,
-        customHeaders=None,
+        http_headers=None,
         **request_parameters
     ):
         """Get Webhook Destination .
@@ -3047,7 +3047,7 @@ class EventManagement(object):
                 default value 10 .
             sort_by(str): sortBy query parameter. SortBy field name .
             order(str): order query parameter.
-            customHeaders(dict): Dictionary of HTTP Headers to send with the Request
+            http_headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
@@ -3063,15 +3063,15 @@ class EventManagement(object):
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-webhook-destination
         """
-        check_type(customHeaders, dict)
+        check_type(http_headers, dict)
         check_type(webhook_ids, str)
         check_type(offset, int)
         check_type(limit, int)
         check_type(sort_by, str)
         check_type(order, str)
-        if customHeaders is not None:
-            if "X-Auth-Token" in customHeaders:
-                check_type(customHeaders.get("X-Auth-Token"), str, may_be_none=False)
+        if http_headers is not None:
+            if "X-Auth-Token" in http_headers:
+                check_type(http_headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {
             "webhookIds": webhook_ids,
@@ -3087,8 +3087,8 @@ class EventManagement(object):
 
         with_custom_headers = False
         _headers = self._session.headers or {}
-        if customHeaders:
-            _headers.update(dict_of_str(customHeaders))
+        if http_headers:
+            _headers.update(dict_of_str(http_headers))
             with_custom_headers = True
 
         e_url = "/dna/intent/api/v1/event/webhook"
@@ -3934,7 +3934,7 @@ class EventManagement(object):
         url=None,
         webhookId=None,
         payload=None,
-        customHeaders=None,
+        http_headers=None,
         active_validation=True,
         **request_parameters
     ):
@@ -3948,7 +3948,7 @@ class EventManagement(object):
             trustCert(boolean): Event Management's Trust Cert.
             url(string): Event Management's Url.
             webhookId(string): Event Management's Required only for update webhook configuration .
-            customHeaders(dict): Dictionary of HTTP Headers to send with the Request
+            http_headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(): A JSON serializable Python object to send in the
                 body of the Request.
@@ -3970,7 +3970,7 @@ class EventManagement(object):
             url=url,
             webhookId=webhookId,
             payload=payload,
-            customHeaders=customHeaders,
+            http_headers=http_headers,
             active_validation=active_validation,
             **request_parameters
         )
@@ -4280,7 +4280,7 @@ class EventManagement(object):
         url=None,
         webhookId=None,
         payload=None,
-        customHeaders=None,
+        http_headers=None,
         active_validation=True,
         **request_parameters
     ):
@@ -4294,7 +4294,7 @@ class EventManagement(object):
             trustCert(boolean): Event Management's Trust Cert.
             url(string): Event Management's Url.
             webhookId(string): Event Management's Required only for update webhook configuration .
-            customHeaders(dict): Dictionary of HTTP Headers to send with the Request
+            http_headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(): A JSON serializable Python object to send in the
                 body of the Request.
@@ -4316,7 +4316,7 @@ class EventManagement(object):
             url=url,
             webhookId=webhookId,
             payload=payload,
-            customHeaders=customHeaders,
+            http_headers=http_headers,
             active_validation=active_validation,
             **request_parameters
         )
@@ -5423,7 +5423,7 @@ class EventManagement(object):
         order=None,
         sort_by=None,
         webhook_ids=None,
-        customHeaders=None,
+        http_headers=None,
         **request_parameters
     ):
         """This function is an alias of get_webhook_destination_v1 .
@@ -5435,7 +5435,7 @@ class EventManagement(object):
                 default value 10 .
             sort_by(basestring): sortBy query parameter. SortBy field name .
             order(basestring): order query parameter.
-            customHeaders(dict): Dictionary of HTTP Headers to send with the Request
+            http_headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
@@ -5449,6 +5449,6 @@ class EventManagement(object):
             order=order,
             sort_by=sort_by,
             webhook_ids=webhook_ids,
-            customHeaders=customHeaders,
+            http_headers=http_headers,
             **request_parameters
         )
