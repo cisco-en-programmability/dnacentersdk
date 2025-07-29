@@ -1935,7 +1935,7 @@ class ConfigurationTemplates(object):
             "bpm_e1a76c121857a085149e62e56caadd_v2_3_7_9", json_data
         )
 
-    def get_template_versions(self, template_id, headers=None, **request_parameters):
+    def gets_all_the_versions_of_a_given_template(self, template_id, headers=None, **request_parameters):
         """Get all the versions of template by its id .
 
         Args:

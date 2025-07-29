@@ -1618,7 +1618,7 @@ class ConfigurationTemplates(object):
             "bpm_e1a76c121857a085149e62e56caadd_v2_3_5_3", json_data
         )
 
-    def get_template_versions(self, template_id, headers=None, **request_parameters):
+    def gets_all_the_versions_of_a_given_template(self, template_id, headers=None, **request_parameters):
         """Get all the versions of template by its id .
 
         Args:
@@ -1639,7 +1639,7 @@ class ConfigurationTemplates(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-template-versions
+            https://developer.cisco.com/docs/dna-center/#!gets-all-the-versions-of-a-given-template
         """
         check_type(headers, dict)
         check_type(template_id, str, may_be_none=False)
@@ -1674,6 +1674,25 @@ class ConfigurationTemplates(object):
 
         return self._object_factory(
             "bpm_d49f82923bc5dfda63adfd224e1a22f_v2_3_5_3", json_data
+        )
+    
+    # Alias for backwards compatibility
+    def get_template_versions(self, template_id, headers=None, **request_parameters):
+        """This function is an alias of gets_all_the_versions_of_a_given_template.
+
+        Args:
+            template_id(str): templateId path parameter. templateId(UUID) to get list of versioned templates
+                .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            This function returns the output of gets_all_the_versions_of_a_given_template.
+        """
+        return self.gets_all_the_versions_of_a_given_template(
+            template_id=template_id, headers=headers, **request_parameters
         )
 
     def deletes_the_template(self, template_id, headers=None, **request_parameters):
