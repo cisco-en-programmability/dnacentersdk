@@ -2842,6 +2842,7 @@ class EventManagement(object):
         trustCert=None,
         url=None,
         webhookId=None,
+        http_headers=None,
         payload=None,
         active_validation=True,
         **request_parameters
@@ -2857,7 +2858,7 @@ class EventManagement(object):
             trustCert(boolean): Event Management's Trust Cert.
             url(string): Event Management's Url.
             webhookId(string): Event Management's Required only for update webhook configuration .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
+            http_headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
                 body of the Request.
@@ -2877,13 +2878,13 @@ class EventManagement(object):
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!create-webhook-destination
         """
-        check_type(headers, dict)
+        check_type(http_headers, dict)
         check_type(payload, dict)
-        if headers is not None:
-            if "Content-Type" in headers:
-                check_type(headers.get("Content-Type"), str, may_be_none=False)
-            if "X-Auth-Token" in headers:
-                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
+        if http_headers is not None:
+            if "Content-Type" in http_headers:
+                check_type(http_headers.get("Content-Type"), str, may_be_none=False)
+            if "X-Auth-Token" in http_headers:
+                check_type(http_headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {}
         _params.update(request_parameters)
@@ -2909,8 +2910,8 @@ class EventManagement(object):
 
         with_custom_headers = False
         _headers = self._session.headers or {}
-        if headers:
-            _headers.update(dict_of_str(headers))
+        if http_headers:
+            _headers.update(dict_of_str(http_headers))
             with_custom_headers = True
 
         e_url = "/dna/intent/api/v1/event/webhook"
@@ -2938,6 +2939,7 @@ class EventManagement(object):
         trustCert=None,
         url=None,
         webhookId=None,
+        http_headers=None,
         payload=None,
         active_validation=True,
         **request_parameters
@@ -2953,7 +2955,7 @@ class EventManagement(object):
             trustCert(boolean): Event Management's Trust Cert.
             url(string): Event Management's Url.
             webhookId(string): Event Management's Required only for update webhook configuration .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
+            http_headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
                 body of the Request.
@@ -2973,11 +2975,11 @@ class EventManagement(object):
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!update-webhook-destination
         """
-        check_type(headers, dict)
+        check_type(http_headers, dict)
         check_type(payload, dict)
-        if headers is not None:
-            if "X-Auth-Token" in headers:
-                check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
+        if http_headers is not None:
+            if "X-Auth-Token" in http_headers:
+                check_type(http_headers.get("X-Auth-Token"), str, may_be_none=False)
 
         _params = {}
         _params.update(request_parameters)
@@ -3003,8 +3005,8 @@ class EventManagement(object):
 
         with_custom_headers = False
         _headers = self._session.headers or {}
-        if headers:
-            _headers.update(dict_of_str(headers))
+        if http_headers:
+            _headers.update(dict_of_str(http_headers))
             with_custom_headers = True
 
         e_url = "/dna/intent/api/v1/event/webhook"
