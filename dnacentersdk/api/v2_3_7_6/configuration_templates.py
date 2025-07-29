@@ -2408,6 +2408,32 @@ class ConfigurationTemplates(object):
         )
 
     # Alias Function
+    def exports_the_projects_for_a_given_criteria(
+        self, headers=None, payload=None, active_validation=True, **request_parameters
+    ):
+        """This function is an alias of export_projects.
+
+        Args:
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(list): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            This function returns the output of export_projects.
+        """
+        return self.export_projects(
+            headers=headers,
+            payload=payload,
+            active_validation=active_validation,
+            **request_parameters
+        )
+
+    # Alias Function
     def clone_given_template(
         self, name, project_id, template_id, headers=None, **request_parameters
     ):
