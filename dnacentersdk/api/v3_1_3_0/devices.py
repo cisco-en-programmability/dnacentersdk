@@ -4461,7 +4461,7 @@ class Devices(object):
             "bpm_f667322836d5527482ad2100bec7feb4_v3_1_3_0", json_data
         )
 
-    def the_total_interfaces_count_across_the_network_devices(
+    def get_total_interfaces_count_across_the_network_devices(
         self,
         aggregateAttributes=None,
         attributes=None,
@@ -4656,7 +4656,7 @@ class Devices(object):
             "bpm_adcdf890505770af113b18b30c1b5f_v3_1_3_0", json_data
         )
 
-    def the_trend_analytcis_data_for_the_interfaces_in_the_specified_time_range(
+    def get_trend_analytics_data_for_the_interfaces_in_the_specified_time_range(
         self,
         id,
         aggregateAttributes=None,
@@ -5771,7 +5771,7 @@ class Devices(object):
             "bpm_f89c7ee84a615469b754add8feeabb5a_v3_1_3_0", json_data
         )
 
-    def the_trend_analytics_data_for_the_network_device_in_the_specified_time_range(
+    def get_trend_analytics_data_for_the_network_device_in_the_specified_time_range(
         self,
         id,
         aggregateAttributes=None,
@@ -13663,3 +13663,11 @@ class Devices(object):
             headers=headers,
             **request_parameters
         )
+
+
+# Aliases for backward compatibility with incorrect function names
+Devices.the_total_interfaces_count_across_the_network_devices = Devices.get_total_interfaces_count_across_the_network_devices
+Devices.the_trend_analytcis_data_for_the_interfaces_in_the_specified_time_range = Devices.get_trend_analytics_data_for_the_interfaces_in_the_specified_time_range
+Devices.the_trend_analytics_data_for_the_network_device_in_the_specified_time_range = Devices.get_trend_analytics_data_for_the_network_device_in_the_specified_time_range
+# Ansible
+Devices.get_device_interface_stats_info_v2 = Devices.get_device_interface_stats_info

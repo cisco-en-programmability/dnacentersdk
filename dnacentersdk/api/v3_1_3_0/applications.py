@@ -849,7 +849,7 @@ class Applications(object):
             "bpm_ef366ca484355d15937dd851a67c88e3_v3_1_3_0", json_data
         )
 
-    def the_trend_analytics_data_for_thousand_eyes_test_results_in_the_specified_time_range(
+    def get_trend_analytics_data_for_thousand_eyes_test_results_in_the_specified_time_range(
         self,
         agent_id=None,
         end_time=None,
@@ -1078,3 +1078,5 @@ class Applications(object):
 
 
 # Alias Functions
+# Alias for backward compatibility with incorrect function name
+Applications.the_trend_analytics_data_for_thousand_eyes_test_results_in_the_specified_time_range = Applications.get_trend_analytics_data_for_thousand_eyes_test_results_in_the_specified_time_range

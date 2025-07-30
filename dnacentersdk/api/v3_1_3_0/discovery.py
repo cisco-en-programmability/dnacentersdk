@@ -3001,3 +3001,7 @@ class Discovery(object):
 
 
 # Alias Functions
+# Aliases for v2 functions that were renamed without v2 suffix when v1 doesn't exist Ansible
+Discovery.create_global_credentials_v2 = Discovery.create_global_credentials
+Discovery.get_all_global_credentials_v2 = Discovery.get_all_global_credentials
+Discovery.delete_global_credential_v2 = Discovery.delete_global_credential

@@ -3127,3 +3127,5 @@ class ConfigurationTemplates(object):
 
 
 # Alias Functions
+# Aliases for v2 functions that were renamed without v2 suffix when v1 doesn't exist Ansible
+ConfigurationTemplates.get_projects_details_v2 = ConfigurationTemplates.get_projects_details

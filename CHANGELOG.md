@@ -6,6 +6,95 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.10.4] - 2025-07-30
+### Added
+- **Ansible Compatibility Aliases (v3.1.3.0)**: Added 46 backward compatibility alias functions to support Ansible modules and legacy code. These aliases map old function names to their current implementations:
+  - **application_policy.py** (4 alias):
+    - `create_application_sets_v2` → `create_application_sets`
+    - `create_applications_v2` → `create_applications`
+    - `edit_applications_v2` → `edit_applications`
+    - `get_application_count_v2` → `get_application_count`
+  - **site_design.py** (19 alias):
+    - `add_planned_access_points_positions_v2` → `add_planned_access_points_positions`
+    - `assign_planned_access_points_to_operations_ones_v2` → `assign_planned_access_points_to_operations_ones`
+    - `creates_a_building_v2` → `creates_a_building`
+    - `creates_a_floor_v2` → `creates_a_floor`
+    - `delete_planned_access_points_position_v2` → `delete_planned_access_points_position`
+    - `deletes_a_building_v2` → `deletes_a_building`
+    - `deletes_a_floor_v2` → `deletes_a_floor`
+    - `edit_planned_access_points_positions_v2` → `edit_planned_access_points_positions`
+    - `edit_the_access_points_positions_v2` → `edit_the_access_points_positions`
+    - `get_access_points_positions_count_v2` → `get_access_points_positions_count`
+    - `get_access_points_positions_v2` → `get_access_points_positions`
+    - `get_floor_settings_v2` → `get_floor_settings`
+    - `get_planned_access_points_positions_count_v2` → `get_planned_access_points_positions_count`
+    - `get_planned_access_points_positions_v2` → `get_planned_access_points_positions`
+    - `gets_a_building_v2` → `gets_a_building`
+    - `gets_a_floor_v2` → `gets_a_floor`
+    - `updates_a_building_v2` → `updates_a_building`
+    - `updates_a_floor_v2` → `updates_a_floor`
+    - `uploads_floor_image_v2` → `uploads_floor_image`
+  - **discovery.py** (3 alias):
+    - `create_global_credentials_v2` → `create_global_credentials`
+    - `get_all_global_credentials_v2` → `get_all_global_credentials`
+    - `delete_global_credential_v2` → `delete_global_credential`
+  - **devices.py** (4 alias):
+    - `get_device_interface_stats_info_v2` → `get_device_interface_stats_info`
+    - `the_total_interfaces_count_across_the_network_devices` → `get_total_interfaces_count_across_the_network_devices`
+    - `the_trend_analytcis_data_for_the_interfaces_in_the_specified_time_range` → `get_trend_analytics_data_for_the_interfaces_in_the_specified_time_range`
+    - `the_trend_analytics_data_for_the_network_device_in_the_specified_time_range` → `get_trend_analytics_data_for_the_network_device_in_the_specified_time_range`
+  - **configuration_templates.py** (1 alias):
+    - `get_projects_details_v2` → `get_projects_details`
+  - **sda.py** (3 alias):
+    - `the_trend_analytics_data_for_a_fabric_site_in_the_specified_time_range` → `get_trend_analytics_data_for_a_fabric_site_in_the_specified_time_range`
+    - `the_trend_analytics_data_for_a_transit_network_in_the_specified_time_range` → `get_trend_analytics_data_for_a_transit_network_in_the_specified_time_range`
+    - `the_trend_analytics_data_for_a_virtual_network_in_the_specified_time_range` → `get_trend_analytics_data_for_a_virtual_network_in_the_specified_time_range`
+  - **industrial_configuration.py** (11 alias):
+    - `configure_a_r_e_p_ring_on_f_a_b_r_i_c_deployment` → `configure_rep_ring_on_fabric_deployment`
+    - `configure_a_r_e_p_ring_on_n_o_n_f_a_b_r_i_c_deployment` → `configure_rep_ring_on_non_fabric_deployment`
+    - `delete_r_e_p_ring_configured_in_the_f_a_b_r_i_c_deployment` → `delete_rep_ring_configured_in_the_fabric_deployment`
+    - `delete_r_e_p_ring_configured_in_the_n_o_n_f_a_b_r_i_c_deployment` → `delete_rep_ring_configured_in_the_non_fabric_deployment`
+    - `get_the_r_e_p_ring_based_on_the_ring_id` → `get_the_rep_ring_based_on_the_ring_id`
+    - `retrieves_the_count_of_m_r_p_ring_members` → `retrieves_the_count_of_mrp_ring_members`
+    - `retrieves_the_count_of_r_e_p_rings` → `retrieves_the_count_of_rep_rings`
+    - `retrieves_the_list_of_m_r_p_rings` → `retrieves_the_list_of_mrp_rings`
+    - `retrieves_the_list_of_network_devices_part_of_m_r_p_ring` → `retrieves_the_list_of_network_devices_part_of_mrp_ring`
+    - `retrieves_the_list_of_r_e_p_rings` → `retrieves_the_list_of_rep_rings`
+  - **device_onboarding_pnp.py** (1 alias):
+    - `un_claim_device` → `unclaim_device`
+  - **applications.py** (1 alias):
+    - `the_trend_analytics_data_for_thousand_eyes_test_results_in_the_specified_time_range` → `get_trend_analytics_data_for_thousand_eyes_test_results_in_the_specified_time_range`
+
+### Fixed
+- **Function Name Corrections (v3.1.3.0)**: Fixed multiple incorrectly named functions across several API modules to follow proper Python naming conventions and match their actual functionality:
+  - **industrial_configuration.py**: Corrected REP (Resilient Ethernet Protocol) ring function names:
+    - `configure_are_p_ring_on_fabric_deployment` → `configure_rep_ring_on_fabric_deployment`
+    - `configure_are_p_ring_on_non_fabric_deployment` → `configure_rep_ring_on_non_fabric_deployment`
+    - `delete_are_p_ring_configured_in_the_fabric_deployment` → `delete_rep_ring_configured_in_the_fabric_deployment`
+    - `delete_are_p_ring_configured_in_the_non_fabric_deployment` → `delete_rep_ring_configured_in_the_non_fabric_deployment`
+    - `retrieves_the_list_of_are_p_rings` → `retrieves_the_list_of_rep_rings`
+    - `retrieves_the_count_of_are_p_rings` → `retrieves_the_count_of_rep_rings`
+    - `get_the_are_p_ring_based_on_the_ring_id` → `get_the_rep_ring_based_on_the_ring_id`
+  - **user_and_roles.py**: Corrected class name:
+    - `UserandRoles` → `UserAndRoles` (improved word separation)
+  - **device_onboarding_pnp.py**: Fixed function naming:
+    - `un_claim_device` → `unclaim_device` (removed unnecessary underscore)
+  - **sda.py**: Corrected trend analytics function names:
+    - `the_trend_analytics_data_for_a_fabric_site_in_the_specified_time_range` → `get_trend_analytics_data_for_a_fabric_site_in_the_specified_time_range`
+    - `the_trend_analytics_data_for_a_transit_network_in_the_specified_time_range` → `get_trend_analytics_data_for_a_transit_network_in_the_specified_time_range`
+    - `the_trend_analytics_data_for_a_virtual_network_in_the_specified_time_range` → `get_trend_analytics_data_for_a_virtual_network_in_the_specified_time_range`
+  - **devices.py**: Fixed trend analytics and interface functions:
+    - `the_total_interfaces_count_across_the_network_devices` → `get_total_interfaces_count_across_the_network_devices`
+    - `the_trend_analytcis_data_for_the_interfaces_in_the_specified_time_range` → `get_trend_analytics_data_for_the_interfaces_in_the_specified_time_range` (also fixed typo "analytcis" → "analytics")
+    - `the_trend_analytics_data_for_the_network_device_in_the_specified_time_range` → `get_trend_analytics_data_for_the_network_device_in_the_specified_time_range`
+  - **applications.py**: Fixed trend analytics function:
+    - `the_trend_analytics_data_for_thousand_eyes_test_results_in_the_specified_time_range` → `get_trend_analytics_data_for_thousand_eyes_test_results_in_the_specified_time_range`
+
+### Changed
+- **Backward Compatibility**: Added alias functions for all corrected function and class names to maintain backward compatibility. Existing code using the old function names will continue to work without modification.
+- **Naming Conventions**: All corrected functions now follow proper Python naming conventions with clear, descriptive names that better reflect their functionality.
+- **Documentation Consistency**: Function names now properly align with their respective API documentation and operation IDs.
+
 ## [2.10.3] - 2025-07-29
 ### Fixed
 - Fixed `download_masked_device_configuration` function in both v2.3.7.9 and v3.1.3.0 by adding `stream=True` parameter and additional download parameters (`dirpath`, `save_file`, `filename`) to properly handle file downloads, prevent JSONDecodeError, and maintain consistency with other download functions in the SDK
@@ -723,4 +812,5 @@ respond with a binary.
 [2.10.1]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.10.0...v2.10.1
 [2.10.2]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.10.1...v2.10.2
 [2.10.3]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.10.2...v2.10.3
-[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.10.3...develop
+[2.10.4]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.10.3...v2.10.4
+[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.10.4...develop

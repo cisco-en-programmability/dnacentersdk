@@ -1026,7 +1026,7 @@ class DeviceOnboardingPnp(object):
             "bpm_fc416739f3c655ed911884aec0130e83_v3_1_3_0", json_data
         )
 
-    def un_claim_device(
+    def unclaim_device(
         self,
         deviceIdList=None,
         headers=None,
@@ -2421,3 +2421,5 @@ class DeviceOnboardingPnp(object):
 
 
 # Alias Functions
+# Alias for backward compatibility with incorrect function name
+DeviceOnboardingPnp.un_claim_device = DeviceOnboardingPnp.unclaim_device

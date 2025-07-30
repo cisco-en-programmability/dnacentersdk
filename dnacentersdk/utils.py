@@ -308,7 +308,8 @@ def pprint_response_info(response):
     body = None
     file_resp_headers = ["Content-Disposition", "fileName"]
 
-    if "application/json" in response.headers.get("Content-Type"):
+    content_type = response.headers.get("Content-Type")
+    if content_type and "application/json" in content_type:
         try:
             body = response.json()
             body = json.dumps(body, indent=4)
