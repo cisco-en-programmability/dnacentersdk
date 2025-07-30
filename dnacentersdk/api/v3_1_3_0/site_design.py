@@ -3602,3 +3602,24 @@ class SiteDesign(object):
 
 
 # Alias Functions
+# Missing function aliases Ansible
+SiteDesign.add_planned_access_points_positions_v2 = SiteDesign.add_planned_access_points_positions
+SiteDesign.assign_planned_access_points_to_operations_ones_v2 = SiteDesign.assign_planned_access_points_to_operations_ones
+#Ansible
+SiteDesign.creates_a_building_v2 = SiteDesign.creates_a_building
+SiteDesign.creates_a_floor_v2 = SiteDesign.creates_a_floor
+SiteDesign.deletes_a_building_v2 = SiteDesign.deletes_a_building
+SiteDesign.deletes_a_floor_v2 = SiteDesign.deletes_a_floor
+SiteDesign.edit_planned_access_points_positions_v2 = SiteDesign.edit_planned_access_points_positions
+SiteDesign.edit_the_access_points_positions_v2 = SiteDesign.edit_the_access_points_positions
+SiteDesign.get_access_points_positions_count_v2 = SiteDesign.get_access_points_positions_count
+SiteDesign.get_access_points_positions_v2 = SiteDesign.get_access_points_positions
+SiteDesign.get_floor_settings_v2 = SiteDesign.get_floor_settings
+SiteDesign.get_planned_access_points_positions_count_v2 = SiteDesign.get_planned_access_points_positions_count
+SiteDesign.get_planned_access_points_positions_v2 = SiteDesign.get_planned_access_points_positions
+SiteDesign.gets_a_building_v2 = SiteDesign.gets_a_building
+SiteDesign.gets_a_floor_v2 = SiteDesign.gets_a_floor
+SiteDesign.updates_a_building_v2 = SiteDesign.updates_a_building
+SiteDesign.updates_a_floor_v2 = SiteDesign.updates_a_floor
+SiteDesign.uploads_floor_image_v2 = SiteDesign.uploads_floor_image
+SiteDesign.delete_planned_access_points_position_v2 = SiteDesign.delete_planned_access_points_position

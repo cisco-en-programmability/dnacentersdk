@@ -2636,3 +2636,8 @@ class ApplicationPolicy(object):
 
 
 # Alias Functions
+# Aliases for v2 functions that were renamed without v2 suffix when v1 doesn't exist Ansible
+ApplicationPolicy.create_application_sets_v2 = ApplicationPolicy.create_application_sets
+ApplicationPolicy.create_applications_v2 = ApplicationPolicy.create_applications
+ApplicationPolicy.edit_applications_v2 = ApplicationPolicy.edit_applications
+ApplicationPolicy.get_application_count_v2 = ApplicationPolicy.get_application_count
