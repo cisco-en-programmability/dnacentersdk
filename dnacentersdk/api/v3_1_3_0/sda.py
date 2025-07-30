@@ -394,7 +394,7 @@ class Sda(object):
             "bpm_daad662049da50a985dbd37a3a7fd28c_v3_1_3_0", json_data
         )
 
-    def the_trend_analytics_data_for_a_fabric_site_in_the_specified_time_range(
+    def get_trend_analytics_data_for_a_fabric_site_in_the_specified_time_range(
         self,
         id,
         trend_interval,
@@ -881,7 +881,7 @@ class Sda(object):
             "bpm_b95b73d75c7956acab07b3d5ba39d191_v3_1_3_0", json_data
         )
 
-    def the_trend_analytics_data_for_a_transit_network_in_the_specified_time_range(
+    def get_trend_analytics_data_for_a_transit_network_in_the_specified_time_range(
         self,
         id,
         trend_interval,
@@ -1335,7 +1335,7 @@ class Sda(object):
             "bpm_bbb30e8498ac5c8f8bcb5c5fd33cff43_v3_1_3_0", json_data
         )
 
-    def the_trend_analytics_data_for_a_virtual_network_in_the_specified_time_range(
+    def get_trend_analytics_data_for_a_virtual_network_in_the_specified_time_range(
         self,
         id,
         trend_interval,
@@ -11056,3 +11056,9 @@ class Sda(object):
             headers=headers,
             **request_parameters
         )
+
+
+# Aliases for backward compatibility with incorrect function names
+Sda.the_trend_analytics_data_for_a_fabric_site_in_the_specified_time_range = Sda.get_trend_analytics_data_for_a_fabric_site_in_the_specified_time_range
+Sda.the_trend_analytics_data_for_a_transit_network_in_the_specified_time_range = Sda.get_trend_analytics_data_for_a_transit_network_in_the_specified_time_range
+Sda.the_trend_analytics_data_for_a_virtual_network_in_the_specified_time_range = Sda.get_trend_analytics_data_for_a_virtual_network_in_the_specified_time_range

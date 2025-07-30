@@ -64,7 +64,7 @@ class IndustrialConfiguration(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def configure_are_p_ring_on_fabric_deployment(
+    def configure_rep_ring_on_fabric_deployment(
         self,
         deploymentMode=None,
         ringName=None,
@@ -161,7 +161,7 @@ class IndustrialConfiguration(object):
             "bpm_f200dc9a10d25beab1243a5b29f99c7d_v3_1_3_0", json_data
         )
 
-    def delete_are_p_ring_configured_in_the_fabric_deployment(
+    def delete_rep_ring_configured_in_the_fabric_deployment(
         self, id, headers=None, **request_parameters
     ):
         """This API deletes the REP ring configured in the FABRIC deployment for the given id. The id of configured REP
@@ -507,7 +507,7 @@ class IndustrialConfiguration(object):
             "bpm_bc1b3345f259e9859ac21a1ec694fe_v3_1_3_0", json_data
         )
 
-    def configure_are_p_ring_on_non_fabric_deployment(
+    def configure_rep_ring_on_non_fabric_deployment(
         self,
         deploymentMode=None,
         ringName=None,
@@ -604,7 +604,7 @@ class IndustrialConfiguration(object):
             "bpm_bbc4dab8193c546ab116e19863dff621_v3_1_3_0", json_data
         )
 
-    def delete_are_p_ring_configured_in_the_non_fabric_deployment(
+    def delete_rep_ring_configured_in_the_non_fabric_deployment(
         self, id, headers=None, **request_parameters
     ):
         """This API deletes the REP ring configured in the NON-FABRIC deployment for the given id. The id of configured REP
@@ -663,7 +663,7 @@ class IndustrialConfiguration(object):
             "bpm_dcf9b8fecdd57f0bb7a33d358e6be37_v3_1_3_0", json_data
         )
 
-    def retrieves_the_list_of_are_p_rings(
+    def retrieves_the_list_of_rep_rings(
         self,
         deploymentMode=None,
         limit=None,
@@ -757,7 +757,7 @@ class IndustrialConfiguration(object):
             "bpm_fa2127b55124a3a00b2991b77db6_v3_1_3_0", json_data
         )
 
-    def retrieves_the_count_of_are_p_rings(
+    def retrieves_the_count_of_rep_rings(
         self,
         deploymentMode=None,
         networkDeviceId=None,
@@ -842,7 +842,7 @@ class IndustrialConfiguration(object):
             "bpm_d9f276a532e5eeb86bb591f8537fcc7_v3_1_3_0", json_data
         )
 
-    def get_the_are_p_ring_based_on_the_ring_id(
+    def get_the_rep_ring_based_on_the_ring_id(
         self, id, headers=None, **request_parameters
     ):
         """This API returns REP ring for the given id (The id of configured REP ring can be retrieved using the API
@@ -903,3 +903,11 @@ class IndustrialConfiguration(object):
 
 
 # Alias Functions
+# Aliases for backward compatibility with incorrect function names
+IndustrialConfiguration.configure_are_p_ring_on_fabric_deployment = IndustrialConfiguration.configure_rep_ring_on_fabric_deployment
+IndustrialConfiguration.delete_are_p_ring_configured_in_the_fabric_deployment = IndustrialConfiguration.delete_rep_ring_configured_in_the_fabric_deployment
+IndustrialConfiguration.configure_are_p_ring_on_non_fabric_deployment = IndustrialConfiguration.configure_rep_ring_on_non_fabric_deployment
+IndustrialConfiguration.delete_are_p_ring_configured_in_the_non_fabric_deployment = IndustrialConfiguration.delete_rep_ring_configured_in_the_non_fabric_deployment
+IndustrialConfiguration.retrieves_the_list_of_are_p_rings = IndustrialConfiguration.retrieves_the_list_of_rep_rings
+IndustrialConfiguration.retrieves_the_count_of_are_p_rings = IndustrialConfiguration.retrieves_the_count_of_rep_rings
+IndustrialConfiguration.get_the_are_p_ring_based_on_the_ring_id = IndustrialConfiguration.get_the_rep_ring_based_on_the_ring_id
