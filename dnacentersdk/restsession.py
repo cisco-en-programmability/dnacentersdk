@@ -135,7 +135,6 @@ class RestSession(object):
     def __init__(
         self,
         get_access_token,
-        access_token,
         base_url,
         single_request_timeout=DEFAULT_SINGLE_REQUEST_TIMEOUT,
         wait_on_rate_limit=DEFAULT_WAIT_ON_RATE_LIMIT,
@@ -150,8 +149,6 @@ class RestSession(object):
         Args:
             get_access_token(callable): The DNA Center method to get a new
                 access token.
-            access_token(str): The DNA Center access token to be used
-                for this session.
             base_url(str): The base URL that will be suffixed onto API
                 endpoint relative URLs to produce a callable absolute URL.
             single_request_timeout(int): The timeout (seconds) for a single
@@ -174,7 +171,6 @@ class RestSession(object):
             TypeError: If the parameter types are incorrect.
 
         """
-        check_type(access_token, str, may_be_none=False)
         check_type(base_url, str, may_be_none=False)
         check_type(single_request_timeout, int)
         check_type(wait_on_rate_limit, bool, may_be_none=False)
@@ -188,13 +184,14 @@ class RestSession(object):
         # Initialize attributes and properties
         self._base_url = str(validate_base_url(base_url))
         self._get_access_token = get_access_token
-        self._access_token = str(access_token)
+        self._access_token = None
         self._single_request_timeout = single_request_timeout
         self._wait_on_rate_limit = wait_on_rate_limit
         self._verify = verify
         self._version = version
         self._debug = debug
         self._user_agent = user_agent
+        self._authenticated = False  # Flag to track if we've authenticated
 
         if debug:
             logger.setLevel(logging.DEBUG)
@@ -208,17 +205,16 @@ class RestSession(object):
         # Use the injected `requests` session, build a new one if not provided
         self._req_session = session or requests.session()
 
-        if user_agent != "":
-            user_agent = "-" + user_agent
+        user_agent_suffix = ""
+        if user_agent is not None and user_agent != "":
+            user_agent_suffix = "-" + user_agent
 
-        # Update the headers of the `requests` session
-        self.update_headers(
-            {
-                "X-Auth-Token": access_token,
-                "Content-type": "application/json;charset=utf-8",
-                "User-Agent": f"python-cisco-dnacsdk/{version}{user_agent}",
-            }
-        )
+        # Initialize headers without X-Auth-Token for lazy authentication
+        headers = {
+            "Content-type": "application/json;charset=utf-8",
+            "User-Agent": f"python-cisco-dnacsdk/{version}{user_agent_suffix}",
+        }
+        self.update_headers(headers)
 
     @property
     def version(self):
@@ -255,6 +251,8 @@ class RestSession(object):
     @property
     def access_token(self):
         """The DNA Center access token used for this session."""
+        if not self._authenticated and self._get_access_token:
+            self._ensure_authenticated()
         return self._access_token
 
     @property
@@ -312,12 +310,24 @@ class RestSession(object):
         check_type(headers, dict, may_be_none=False)
         self._req_session.headers.update(headers)
 
+    def _ensure_authenticated(self):
+        """Ensure that we have a valid access token.
+
+        If we don't have an access token or haven't authenticated yet,
+        call the get_access_token method to authenticate.
+        """
+        if not self._authenticated or not self._access_token:
+            self._access_token = self._get_access_token()
+            self.update_headers({"X-Auth-Token": self._access_token})
+            self._authenticated = True
+
     def refresh_token(self):
         """Call the get_access_token method and update the session's
         auth header with the new token.
         """
         self._access_token = self._get_access_token()
         self.update_headers({"X-Auth-Token": self.access_token})
+        self._authenticated = True
 
     def abs_url(self, url):
         """Given a relative or absolute URL; return an absolute URL.
@@ -443,6 +453,9 @@ class RestSession(object):
                 returned by the DNA Center API endpoint.
 
         """
+        # Ensure we are authenticated before making any request
+        self._ensure_authenticated()
+
         # Ensure the url is an absolute URL
         abs_url = self.abs_url(url)
 
