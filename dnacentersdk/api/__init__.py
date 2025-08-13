@@ -490,7 +490,6 @@ class DNACenterAPI(object):
         # cloud.
         self._session = RestSession(
             get_access_token=get_access_token,
-            access_token=get_access_token(),
             base_url=base_url,
             single_request_timeout=single_request_timeout,
             wait_on_rate_limit=wait_on_rate_limit,
