@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.10.5] - 2025-10-29
+### Fixed
+- **Validation Schema (v3.1.3.0)**: Fixed `value` field type from `object` to `array` in `CreateOrScheduleAReport` validator (`jsd_fa310ab095148bdb00d7d3d5e1676.py`).
+
 ## [2.10.4] - 2025-07-30
 ### Added
 - **Ansible Compatibility Aliases (v3.1.3.0)**: Added 46 backward compatibility alias functions to support Ansible modules and legacy code. These aliases map old function names to their current implementations:
@@ -813,4 +817,5 @@ respond with a binary.
 [2.10.2]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.10.1...v2.10.2
 [2.10.3]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.10.2...v2.10.3
 [2.10.4]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.10.3...v2.10.4
-[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.10.4...develop
+[2.10.5]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.10.4...v2.10.5
+[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.10.5...develop
