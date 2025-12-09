@@ -26,7 +26,10 @@ import logging
 import warnings
 
 import dnacentersdk
+from dnacentersdk.restsession import RestSession
 import pytest
+from unittest.mock import Mock, patch
+
 
 logging.captureWarnings(True)
 
@@ -59,3 +62,38 @@ def test_rate_limit_retry(api):
             if rate_limit_detected(w):
                 break
     api._session.wait_on_rate_limit = original_wait_on_rate_limit
+
+
+def test_lazy_authentication():
+    auth_call_count = 0
+
+    def mock_get_token():
+        nonlocal auth_call_count
+        auth_call_count += 1
+        return f"mock-token-{auth_call_count}"
+
+    session = RestSession(
+        get_access_token=mock_get_token,
+        base_url="https://httpbin.org",
+        version="2.3.5.3",
+        user_agent="dnacentersdk"
+    )
+    assert session._get_access_token == mock_get_token
+    assert session._authenticated is False
+    assert session._access_token is None
+
+    mock_response = Mock()
+    mock_response.status_code = 200
+    mock_response.headers = {"Content-Type": "application/json"}
+    mock_response.text = '{"success": true}'
+    mock_response.json.return_value = {"success": True}
+
+    with patch.object(session._req_session, "request", return_value=mock_response) as mock_request:
+        # This should trigger authentication since we haven't authenticated yet
+        result = session.get("/json")
+
+        assert result == {"success": True}
+        assert auth_call_count == 1
+        assert session._authenticated is True
+        assert session._access_token == "mock-token-1"
+        assert mock_request.called
