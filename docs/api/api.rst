@@ -767,6 +767,9 @@ wireless
 
 .. autoclass:: dnacentersdk.api.v2_3_7_6.wireless.Wireless()
 
+DNACenterAPI v2.3.7.9
+=====================
+
 .. _ai_endpoint_analytics_2_3_7_9:
 
 ai_endpoint_analytics
