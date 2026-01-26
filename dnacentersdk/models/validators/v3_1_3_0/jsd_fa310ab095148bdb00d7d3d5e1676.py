@@ -106,6 +106,9 @@ class JSONSchemaValidatorFa310Ab095148Bdb00D7D3D5E1676(object):
                 "type": "string"
                 },
                 "value": {
+                "items": {
+                "type": "object"
+                },
                 "type": "array"
                 }
                 },

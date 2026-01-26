@@ -202,4 +202,7 @@ def mydict_data_factory(model, json_data):
     """Data factory function with standard params."""
     # Uses kw (json_data =) to handle array responses.
     # Returns .json_data as is not important.
+    # Handle None (empty response) by returning an empty MyDict
+    if json_data is None:
+        return MyDict()
     return MyDict(json_data=json_data).json_data

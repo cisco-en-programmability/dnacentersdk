@@ -720,7 +720,7 @@ class Wired(object):
             "vtpGlobalConfig": vtpGlobalConfig,
             "vtpInterfaceConfig": vtpInterfaceConfig,
             "vlanConfig": vlanConfig,
-            "portChannelConfig": portChannelConfig,
+            "portchannelConfig": portChannelConfig,
             "switchportInterfaceConfig": switchportInterfaceConfig,
         }
         _payload.update(payload or {})
@@ -867,7 +867,7 @@ class Wired(object):
             "vtpGlobalConfig": vtpGlobalConfig,
             "vtpInterfaceConfig": vtpInterfaceConfig,
             "vlanConfig": vlanConfig,
-            "portChannelConfig": portChannelConfig,
+            "portchannelConfig": portChannelConfig,
             "switchportInterfaceConfig": switchportInterfaceConfig,
         }
         _payload.update(payload or {})

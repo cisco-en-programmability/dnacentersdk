@@ -6,6 +6,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+
+
+## [2.10.6] - 2025-12-15
+### Fixed
+- **Empty Response Handling**: Fixed issue where empty string responses from API (e.g., NFS config and backup configuration operations) caused "argument of type 'NoneType' is not iterable" error. Updated `mydict_data_factory()` to gracefully handle `None` responses by returning an empty `MyDict()` instead of attempting to process `None` values.
+- **Multiple Attributes Support**: Fixed `gets_interfaces_along_with_statistics_and_poe_data_from_all_network_devices()` to accept tuples for the `attribute` parameter, allowing users to pass multiple attributes like `attribute=("rxError", "txError")` which correctly generates query parameters with `&` separators.
+- **Port Channel Configuration**: Fixed API and SDK feature name mismatch for port channel configurations. Changed payload key from `"portChannelConfig"` to `"portchannelConfig"` (lowercase 'c') in `create_configurations_for_an_intended_layer2_feature_on_a_wired_device()` and `update_configurations_for_an_intended_layer2_feature_on_a_wired_device()` methods to match the API's expected format.
+- **Report Filters Validation**: Fixed validation schema for `create_or_schedule_a_report()` to accept `value` field in filters as an array of objects instead of a single object, matching the API's expected format for `MULTI_SELECT_TREE` filter types.
+
+### Changed
+- **Documentation**: Added missing section header "DNACenterAPI v2.3.7.9" in the User API Doc to properly separate v2.3.7.9 classes from v2.3.7.6, improving documentation clarity and navigation.
+
 ## [2.10.5] - 2025-10-29
 ### Fixed
 - **Validation Schema (v3.1.3.0)**: Fixed `value` field type from `object` to `array` in `CreateOrScheduleAReport` validator (`jsd_fa310ab095148bdb00d7d3d5e1676.py`).
@@ -818,4 +830,5 @@ respond with a binary.
 [2.10.3]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.10.2...v2.10.3
 [2.10.4]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.10.3...v2.10.4
 [2.10.5]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.10.4...v2.10.5
-[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.10.5...develop
+[2.10.6]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.10.5...v2.10.6
+[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.10.6...develop
