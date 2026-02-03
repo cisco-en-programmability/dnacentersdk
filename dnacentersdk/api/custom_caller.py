@@ -158,6 +158,14 @@ class CustomCaller(object):
         response = self._session._req_session.request(
             method, abs_url, headers=headers, verify=verify, **kwargs
         )
+        if response.status_code == 401:
+            logger.debug("Received 401 Unauthorized. Attempting to re-authenticate.")
+            self._session._ensure_authenticated()
+            logger.debug("Retrying the API call after re-authentication.")
+            response = self._session._req_session.request(
+                method, abs_url, headers=headers, verify=verify, **kwargs
+            )
+        
 
         if raise_exception:
             try:
