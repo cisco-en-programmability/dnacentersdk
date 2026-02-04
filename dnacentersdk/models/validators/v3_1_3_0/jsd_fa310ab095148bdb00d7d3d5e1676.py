@@ -106,14 +106,7 @@ class JSONSchemaValidatorFa310Ab095148Bdb00D7D3D5E1676(object):
                 "type": "string"
                 },
                 "value": {
-<<<<<<< sdk_report_creation
                 "type": ["array", "object"]
-=======
-                "items": {
-                "type": "object"
-                },
-                "type": "array"
->>>>>>> master
                 }
                 },
                 "type": "object"
