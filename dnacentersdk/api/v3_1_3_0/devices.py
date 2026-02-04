@@ -4171,7 +4171,7 @@ class Devices(object):
         check_type(site_hierarchy_id, str)
         check_type(site_id, str)
         check_type(view, str)
-        check_type(attribute, str)
+        check_type(attribute, (str, tuple))
         check_type(network_device_id, str)
         check_type(network_device_ip_address, str)
         check_type(network_device_mac_address, str)

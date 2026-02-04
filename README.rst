@@ -16,7 +16,7 @@ dnacentersdk
         username="devnetuser",
         password="Cisco123!",
         base_url="https://sandboxdnac.cisco.com:443",
-        version="3.1.3.0",
+        version="3.1.6.0",
         verify=True
     )
 
@@ -27,7 +27,7 @@ dnacentersdk
         print("{:20s}{}".format(device.hostname, device.upTime))
 
     # Find all tags
-    all_tags = dnac.tag.get_tag(sort_by="name", order="des")
+    all_tags = dnac.tag.get_tag(sort_by="name", order="desc")
     demo_tags = [tag for tag in all_tags.response if "Demo" in tag.name]
 
     # Delete demo tags
@@ -175,7 +175,9 @@ Compatibility Matrix
    * - 2.3.7.9
      - 2.8.14
    * - 3.1.3.0
-     - 2.10.4
+     - 2.10.6
+   * - 3.1.6.0
+     - 2.11.0
 
 Documentation
 -------------

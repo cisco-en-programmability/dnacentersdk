@@ -26,7 +26,6 @@ SOFTWARE.
 import logging
 from builtins import *
 
-
 from requests.exceptions import HTTPError
 
 from ..restsession import RestSession
@@ -63,7 +62,7 @@ class CustomCaller(object):
 
         super(CustomCaller, self).__init__()
 
-        self._session = session
+        self._session: RestSession = session
         self._object_factory = object_factory
 
         if self._session._debug:
@@ -153,11 +152,22 @@ class CustomCaller(object):
             headers.update(kwargs.pop("headers"))
 
         verify = kwargs.pop("verify", self._session.verify)
-
+        if not self._session.authenticated:
+            logger.debug("Session not authenticated. Authenticating now.")
+            self._session.refresh_token()
+            
         logger.debug(pprint_request_info(abs_url, method, headers, **kwargs))
         response = self._session._req_session.request(
             method, abs_url, headers=headers, verify=verify, **kwargs
         )
+        if response.status_code == 401:
+            logger.debug("Received 401 Unauthorized. Attempting to re-authenticate.")
+            self._session.refresh_token()
+            logger.debug("Retrying the API call after re-authentication.")
+            response = self._session._req_session.request(
+                method, abs_url, headers=headers, verify=verify, **kwargs
+            )
+        
 
         if raise_exception:
             try:
