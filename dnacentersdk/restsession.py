@@ -34,7 +34,6 @@ import warnings
 from builtins import *
 
 import requests
-
 from requests.packages.urllib3.response import HTTPResponse
 from requests_toolbelt.multipart import encoder
 
@@ -294,6 +293,11 @@ class RestSession(object):
     def debug(self):
         """The DNA Center access token used for this session."""
         return self._debug
+    
+    @property
+    def authenticated(self):
+        """Flag to track if we've authenticated."""
+        return self._authenticated
 
     def update_headers(self, headers):
         """Update the HTTP headers used for requests in this session.
