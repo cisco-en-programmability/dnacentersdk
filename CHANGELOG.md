@@ -6,7 +6,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.11.0] - 2026-02-04
+### Added
+- Add support of Cisco Catalyst Center version ('3.1.6.0')
+- Adds modules for v3_1_6_0
+- New service for Cisco Catalyst Center 3.1.6.0's API:
+  - `system_software_upgrade`
 
+### Changed
+- SDK is now compatible with Cisco Catalyst Center 3.1.6.0's API.
 
 ## [2.10.6] - 2025-12-15
 ### Fixed
@@ -831,4 +839,5 @@ respond with a binary.
 [2.10.4]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.10.3...v2.10.4
 [2.10.5]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.10.4...v2.10.5
 [2.10.6]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.10.5...v2.10.6
-[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.10.6...develop
+[2.11.0]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.10.6...v2.11.0
+[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.11.0...develop

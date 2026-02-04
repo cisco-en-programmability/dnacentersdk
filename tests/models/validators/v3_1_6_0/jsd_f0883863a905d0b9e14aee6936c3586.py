@@ -1,0 +1,147 @@
+# -*- coding: utf-8 -*-
+"""Cisco Catalyst Center RetrieveTheVariables data model.
+
+Copyright (c) 2025 Cisco Systems.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+"""
+
+from __future__ import absolute_import, division, print_function, unicode_literals
+
+import json
+from builtins import *
+
+import fastjsonschema
+
+from dnacentersdk.exceptions import MalformedRequest
+
+
+class JSONSchemaValidatorF0883863A905D0B9E14Aee6936C3586(object):
+    """RetrieveTheVariables request schema definition."""
+    def __init__(self):
+        super(JSONSchemaValidatorF0883863A905D0B9E14Aee6936C3586, self).__init__()
+        self._validator = fastjsonschema.compile(json.loads(
+            '''{
+                "$schema": "http://json-schema.org/draft-04/schema#",
+                "properties": {
+                "response": {
+                "items": {
+                "properties": {
+                "dataType": {
+                "enum": [
+                "STRING, INTEGER, BOOLEAN, IP_ADDRESS, INTERFACE_NAME, IP_MASK"
+                ],
+                "type": "string"
+                },
+                "defaultValue": {
+                "type": "string"
+                },
+                "description":
+                 {
+                "type": "string"
+                },
+                "id": {
+                "type": "string"
+                },
+                "identifier": {
+                "type": "string"
+                },
+                "inputType": {
+                "enum": [
+                "SINGLE_SELECT, MULTI_SELECT, SINGLE_TEXT, MULTI_TEXT "
+                ],
+                "type": "string"
+                },
+                "mandatory": {
+                "type": "boolean"
+                },
+                "maxLength": {
+                "type": "integer"
+                },
+                "maxValue": {
+                "type": "integer"
+                },
+                "minValue": {
+                "type": "integer"
+                },
+                "name": {
+                "type": "string"
+                },
+                "selectionList": {
+                "items": {
+                "properties": {
+                "default": {
+                "type": "boolean"
+                },
+                "key": {
+                "type": "string"
+                },
+                "value": {
+                "type": "string"
+                }
+                },
+                "required": [
+                "key",
+                "value"
+                ],
+                "type": "object"
+                },
+                "type": "array"
+                },
+                "sequenceNumber": {
+                "type": "integer"
+                },
+                "usedByConditions": {
+                "items": {
+                "type": "string"
+                },
+                "type": "array"
+                },
+                "validationRegex": {
+                "type": "string"
+                }
+                },
+                "required": [
+                "id",
+                "sequenceNumber",
+                "name",
+                "dataType",
+                "inputType",
+                "identifier",
+                "usedByConditions"
+                ],
+                "type": "object"
+                },
+                "type": "array"
+                },
+                "version": {
+                "type": "string"
+                }
+                },
+                "type": "object"
+                }'''.replace("\n" + ' ' * 16, '')
+        ))
+
+    def validate(self, request):
+        try:
+            self._validator(request)
+        except fastjsonschema.exceptions.JsonSchemaException as e:
+            raise MalformedRequest(
+                '{} is invalid. Reason: {}'.format(request, e.message)
+            )

@@ -75,7 +75,7 @@ def test_lazy_authentication():
     session = RestSession(
         get_access_token=mock_get_token,
         base_url="https://httpbin.org",
-        version="2.3.5.3",
+        version="3.1.6.0",
         user_agent="dnacentersdk"
     )
     assert session._get_access_token == mock_get_token
