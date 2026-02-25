@@ -62,9 +62,6 @@ class JSONSchemaValidatorC1Fa19F9295C50018132C6C9Ebc3Fc35(object):
                 "type": "array"
                 }
                 },
-                "required": [
-                "id"
-                ],
                 "type": "object"
                 },
                 "type": "array"

@@ -57,11 +57,6 @@ class JSONSchemaValidatorFc416739F3C655Ed911884Aec0130E83(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "deviceId",
-                "siteId",
-                "type"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

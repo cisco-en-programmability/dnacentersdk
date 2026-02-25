@@ -146,9 +146,6 @@ class JSONSchemaValidatorFe06867E548BBa1919024B40D992(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "ipAddress"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

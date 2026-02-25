@@ -47,10 +47,6 @@ class JSONSchemaValidatorF50F8C552F5D2EB68D715E1318976E(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "name",
-                "parentId"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

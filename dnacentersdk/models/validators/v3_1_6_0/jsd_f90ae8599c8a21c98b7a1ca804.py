@@ -56,11 +56,6 @@ class JSONSchemaValidatorF90Ae8599C8A21C98B7A1Ca804(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "vlanName",
-                "ssidNames",
-                "siteNameHierarchy"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

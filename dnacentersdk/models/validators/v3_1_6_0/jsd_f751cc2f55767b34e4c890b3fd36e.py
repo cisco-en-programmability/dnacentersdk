@@ -47,9 +47,6 @@ class JSONSchemaValidatorF751CC2F55767B34E4C890B3Fd36E(object):
                 "type": "array"
                 }
                 },
-                "required": [
-                "ids"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

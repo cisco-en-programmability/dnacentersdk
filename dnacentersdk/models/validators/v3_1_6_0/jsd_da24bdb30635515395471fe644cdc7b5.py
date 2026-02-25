@@ -44,9 +44,6 @@ class JSONSchemaValidatorDa24Bdb30635515395471Fe644Cdc7B5(object):
                 "type": "integer"
                 }
                 },
-                "required": [
-                "nativeVlanId"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

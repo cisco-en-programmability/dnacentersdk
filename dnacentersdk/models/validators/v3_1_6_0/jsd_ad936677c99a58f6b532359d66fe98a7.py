@@ -48,9 +48,6 @@ class JSONSchemaValidatorAd936677C99A58F6B532359D66Fe98A7(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "unitsOfMeasure"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

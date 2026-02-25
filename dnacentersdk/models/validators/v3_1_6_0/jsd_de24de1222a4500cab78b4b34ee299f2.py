@@ -70,9 +70,6 @@ class JSONSchemaValidatorDe24De1222A4500CAb78B4B34Ee299F2(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "globalMulticastEnabled"
-                ],
                 "type": "object"
                 },
                 "unlockedAttributes": {
@@ -82,10 +79,6 @@ class JSONSchemaValidatorDe24De1222A4500CAb78B4B34Ee299F2(object):
                 "type": "array"
                 }
                 },
-                "required": [
-                "designName",
-                "featureAttributes"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

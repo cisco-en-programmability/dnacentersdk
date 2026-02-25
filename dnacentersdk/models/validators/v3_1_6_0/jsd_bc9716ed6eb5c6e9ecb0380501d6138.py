@@ -44,9 +44,6 @@ class JSONSchemaValidatorBc9716ED6Eb5C6E9Ecb0380501D6138(object):
                 "type": "boolean"
                 }
                 },
-                "required": [
-                "deployByDefaultOnWiredDevices"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

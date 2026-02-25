@@ -46,9 +46,6 @@ class JSONSchemaValidatorE481654675355408Be8Daff9A82F9A0(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "credentialsId"
-                ],
                 "type": "object"
                 },
                 "httpReadCredentialsId": {
@@ -57,9 +54,6 @@ class JSONSchemaValidatorE481654675355408Be8Daff9A82F9A0(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "credentialsId"
-                ],
                 "type": "object"
                 },
                 "httpWriteCredentialsId": {
@@ -68,9 +62,6 @@ class JSONSchemaValidatorE481654675355408Be8Daff9A82F9A0(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "credentialsId"
-                ],
                 "type": "object"
                 },
                 "snmpv2cReadCredentialsId": {
@@ -79,9 +70,6 @@ class JSONSchemaValidatorE481654675355408Be8Daff9A82F9A0(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "credentialsId"
-                ],
                 "type": "object"
                 },
                 "snmpv2cWriteCredentialsId": {
@@ -90,9 +78,6 @@ class JSONSchemaValidatorE481654675355408Be8Daff9A82F9A0(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "credentialsId"
-                ],
                 "type": "object"
                 },
                 "snmpv3CredentialsId": {
@@ -101,20 +86,9 @@ class JSONSchemaValidatorE481654675355408Be8Daff9A82F9A0(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "credentialsId"
-                ],
                 "type": "object"
                 }
                 },
-                "required": [
-                "cliCredentialsId",
-                "snmpv2cReadCredentialsId",
-                "snmpv2cWriteCredentialsId",
-                "snmpv3CredentialsId",
-                "httpReadCredentialsId",
-                "httpWriteCredentialsId"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

@@ -47,17 +47,11 @@ class JSONSchemaValidatorA544E27E18E5412Af3B68D915C8Ca50(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "ip"
-                ],
                 "type": "object"
                 },
                 "type": "array"
                 }
                 },
-                "required": [
-                "device"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

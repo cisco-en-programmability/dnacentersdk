@@ -50,10 +50,6 @@ class JSONSchemaValidatorEfa7F7A97B95F5885A00E6981B27B11(object):
                 "type": "boolean"
                 }
                 },
-                "required": [
-                "keepStaticIPConfig",
-                "apMacAddresses"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

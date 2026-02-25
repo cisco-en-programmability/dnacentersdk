@@ -169,10 +169,6 @@ class JSONSchemaValidatorB4155D6F885A53Ad0E47B1A4(object):
                 "type": "array"
                 }
                 },
-                "required": [
-                "ruleName",
-                "ruleType"
-                ],
                 "type": "object"
                 },
                 "type": "array"

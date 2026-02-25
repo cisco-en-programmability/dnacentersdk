@@ -60,11 +60,6 @@ class JSONSchemaValidatorF200Dc9A10D25BeaB1243A5B29F99C7D(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "ringName",
-                "rootNetworkDeviceId",
-                "rootNeighbourNetworkDeviceIds"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

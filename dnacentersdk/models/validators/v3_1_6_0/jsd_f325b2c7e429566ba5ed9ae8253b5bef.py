@@ -105,11 +105,6 @@ class JSONSchemaValidatorF325B2C7E429566BA5Ed9Ae8253B5Bef(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "password",
-                "port",
-                "username"
-                ],
                 "type": "object"
                 },
                 "httpWriteCredential": {
@@ -150,11 +145,6 @@ class JSONSchemaValidatorF325B2C7E429566BA5Ed9Ae8253B5Bef(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "password",
-                "port",
-                "username"
-                ],
                 "type": "object"
                 },
                 "id": {
@@ -236,10 +226,6 @@ class JSONSchemaValidatorF325B2C7E429566BA5Ed9Ae8253B5Bef(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "discoveryStatus",
-                "id"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

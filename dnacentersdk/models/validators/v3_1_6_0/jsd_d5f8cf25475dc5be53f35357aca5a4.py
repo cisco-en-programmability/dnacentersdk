@@ -54,12 +54,6 @@ class JSONSchemaValidatorD5F8Cf25475Dc5Be53F35357Aca5A4(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "nodeId",
-                "ipAddress",
-                "username",
-                "password"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

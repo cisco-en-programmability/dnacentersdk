@@ -67,10 +67,6 @@ class JSONSchemaValidatorF7Cf4F24D54C6944A31Ed308F8361(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "id",
-                "netconfPort"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

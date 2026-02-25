@@ -49,9 +49,6 @@ class JSONSchemaValidatorDe1B75D59B083Df0Ece12259Ecd(object):
                 "type": "array"
                 }
                 },
-                "required": [
-                "deviceIds"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

@@ -55,9 +55,6 @@ class JSONSchemaValidatorEb3B18894545315B25B94D0C0E2Ec67(object):
                 "type": "object"
                 }
                 },
-                "required": [
-                "dns"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

@@ -50,9 +50,6 @@ class JSONSchemaValidatorA764C85D8Df5C30B9143619D4F9Cde9(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "siteNameHierarchy"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

@@ -54,9 +54,6 @@ class JSONSchemaValidatorDabd13Cd5E9C928DAf80D6758D62(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "virtualNetworkName"
-                ],
                 "type": "object"
                 },
                 "type": "array"

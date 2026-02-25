@@ -98,12 +98,6 @@ class JSONSchemaValidatorD69B1CffFdda5Bd1828A5A89A262Cbdd(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "name",
-                "ipAddress",
-                "port",
-                "snmpVersion"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

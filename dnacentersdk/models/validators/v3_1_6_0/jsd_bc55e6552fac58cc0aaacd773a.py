@@ -47,10 +47,6 @@ class JSONSchemaValidatorBc55E6552FAc58Cc0Aaacd773A(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "entity_type",
-                "entity_value"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

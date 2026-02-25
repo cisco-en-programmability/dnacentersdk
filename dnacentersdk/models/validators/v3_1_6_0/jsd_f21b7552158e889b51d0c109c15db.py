@@ -80,9 +80,6 @@ class JSONSchemaValidatorF21B7552158E889B51D0C109C15Db(object):
                 "type": "array"
                 }
                 },
-                "required": [
-                "id"
-                ],
                 "type": "object"
                 },
                 "type": "array"

@@ -85,15 +85,6 @@ class JSONSchemaValidatorBd421C1Db8C5DeaA3301B8Cc73Dd541(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "id",
-                "fabricId",
-                "networkDeviceId",
-                "portChannelName",
-                "interfaceNames",
-                "connectedDeviceType",
-                "protocol"
-                ],
                 "type": "object"
                 },
                 "type": "array"

@@ -51,9 +51,6 @@ class JSONSchemaValidatorAD0Cb5A12A76384Ba4644E55E(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "deviceManagementIPAddress"
-                ],
                 "type": "object"
                 },
                 "type": "array"

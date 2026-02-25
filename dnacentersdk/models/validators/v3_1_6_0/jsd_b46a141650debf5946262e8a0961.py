@@ -75,11 +75,6 @@ class JSONSchemaValidatorB46A141650DeBf5946262E8A0961(object):
                 "type": "number"
                 }
                 },
-                "required": [
-                "id",
-                "displayName",
-                "protocol"
-                ],
                 "type": "object"
                 },
                 "type": "array"
@@ -183,20 +178,6 @@ class JSONSchemaValidatorB46A141650DeBf5946262E8A0961(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "id",
-                "applicationSubType",
-                "applicationType",
-                "categoryId",
-                "displayName",
-                "engineId",
-                "helpString",
-                "name",
-                "popularity",
-                "rank",
-                "selectorId",
-                "trafficClass"
-                ],
                 "type": "object"
                 },
                 "type": "array"
@@ -218,7 +199,6 @@ class JSONSchemaValidatorB46A141650DeBf5946262E8A0961(object):
                 },
                 "ipv6Subnet": {
                 "items": {
-                "type": "string"
                 },
                 "type": "array"
                 },
@@ -241,11 +221,6 @@ class JSONSchemaValidatorB46A141650DeBf5946262E8A0961(object):
                 "type": "number"
                 }
                 },
-                "required": [
-                "id",
-                "displayName",
-                "protocol"
-                ],
                 "type": "object"
                 },
                 "type": "array"
@@ -256,9 +231,6 @@ class JSONSchemaValidatorB46A141650DeBf5946262E8A0961(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "idRef"
-                ],
                 "type": "object"
                 },
                 "qualifier": {
@@ -274,20 +246,6 @@ class JSONSchemaValidatorB46A141650DeBf5946262E8A0961(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "id",
-                "instanceId",
-                "displayName",
-                "instanceVersion",
-                "name",
-                "namespace",
-                "networkApplications",
-                "parentScalableGroup",
-                "qualifier",
-                "scalableGroupExternalHandle",
-                "scalableGroupType",
-                "type"
-                ],
                 "type": "object"
                 },
                 "type": "array"

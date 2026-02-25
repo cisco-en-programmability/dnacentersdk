@@ -166,10 +166,6 @@ class JSONSchemaValidatorA4DaB79D54829548004029A91Ba1(object):
                 "type": "array"
                 }
                 },
-                "required": [
-                "ruleName",
-                "ruleType"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

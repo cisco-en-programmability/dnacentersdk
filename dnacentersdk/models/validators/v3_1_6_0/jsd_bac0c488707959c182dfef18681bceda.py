@@ -58,21 +58,12 @@ class JSONSchemaValidatorBac0C488707959C182DfEf18681Bceda(object):
                 "type": "integer"
                 }
                 },
-                "required": [
-                "collectorType",
-                "address",
-                "port"
-                ],
                 "type": "object"
                 },
                 "enableOnWiredAccessDevices": {
                 "type": "boolean"
                 }
                 },
-                "required": [
-                "collector",
-                "enableOnWiredAccessDevices"
-                ],
                 "type": "object"
                 },
                 "snmpTraps": {
@@ -87,9 +78,6 @@ class JSONSchemaValidatorBac0C488707959C182DfEf18681Bceda(object):
                 "type": "boolean"
                 }
                 },
-                "required": [
-                "useBuiltinTrapServer"
-                ],
                 "type": "object"
                 },
                 "syslogs": {
@@ -104,9 +92,6 @@ class JSONSchemaValidatorBac0C488707959C182DfEf18681Bceda(object):
                 "type": "boolean"
                 }
                 },
-                "required": [
-                "useBuiltinSyslogServer"
-                ],
                 "type": "object"
                 },
                 "wiredDataCollection": {
@@ -115,9 +100,6 @@ class JSONSchemaValidatorBac0C488707959C182DfEf18681Bceda(object):
                 "type": "boolean"
                 }
                 },
-                "required": [
-                "enableWiredDataCollection"
-                ],
                 "type": "object"
                 },
                 "wirelessTelemetry": {
@@ -126,19 +108,9 @@ class JSONSchemaValidatorBac0C488707959C182DfEf18681Bceda(object):
                 "type": "boolean"
                 }
                 },
-                "required": [
-                "enableWirelessTelemetry"
-                ],
                 "type": "object"
                 }
                 },
-                "required": [
-                "wiredDataCollection",
-                "wirelessTelemetry",
-                "snmpTraps",
-                "syslogs",
-                "applicationVisibility"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

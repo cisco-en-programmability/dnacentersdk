@@ -66,10 +66,6 @@ class JSONSchemaValidatorFcc151AF7615A84Adf48B714D146192(object):
                 "type": "array"
                 }
                 },
-                "required": [
-                "domain",
-                "subDomains"
-                ],
                 "type": "object"
                 },
                 "type": "array"
@@ -105,9 +101,6 @@ class JSONSchemaValidatorFcc151AF7615A84Adf48B714D146192(object):
                 "type": "array"
                 }
                 },
-                "required": [
-                "eventIds"
-                ],
                 "type": "object"
                 },
                 "name": {
@@ -125,16 +118,9 @@ class JSONSchemaValidatorFcc151AF7615A84Adf48B714D146192(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "connectorType"
-                ],
                 "type": "object"
                 }
                 },
-                "required": [
-                "instanceId",
-                "subscriptionDetails"
-                ],
                 "type": "object"
                 },
                 "type": "array"
@@ -146,11 +132,6 @@ class JSONSchemaValidatorFcc151AF7615A84Adf48B714D146192(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "name",
-                "subscriptionEndpoints",
-                "filter"
-                ],
                 "type": "object"
                 },
                 "type": "array"

@@ -117,9 +117,6 @@ class JSONSchemaValidatorCa2F659B595C0BA7C649Fd8C8Bdad6(object):
                 "type": "integer"
                 }
                 },
-                "required": [
-                "trendIntervalInMinutes"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

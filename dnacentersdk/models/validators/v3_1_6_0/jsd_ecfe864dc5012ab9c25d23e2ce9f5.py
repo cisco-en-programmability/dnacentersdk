@@ -80,21 +80,11 @@ class JSONSchemaValidatorEcfe864Dc5012Ab9C25D23E2Ce9F5(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "deviceName",
-                "ipAddress",
-                "anchorPriority",
-                "managedAnchorWlc"
-                ],
                 "type": "object"
                 },
                 "type": "array"
                 }
                 },
-                "required": [
-                "anchorGroupName",
-                "mobilityAnchors"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

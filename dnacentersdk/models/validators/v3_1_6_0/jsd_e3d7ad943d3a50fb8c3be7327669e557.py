@@ -61,11 +61,6 @@ class JSONSchemaValidatorE3D7Ad943D3A50Fb8C3BE7327669E557(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "description",
-                "instanceUuid",
-                "readCommunity"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

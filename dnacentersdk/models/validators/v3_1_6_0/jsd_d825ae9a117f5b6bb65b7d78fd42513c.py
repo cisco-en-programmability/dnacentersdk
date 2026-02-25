@@ -140,10 +140,6 @@ class JSONSchemaValidatorD825Ae9A117F5B6BB65B7D78Fd42513C(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "name",
-                "securityLevel"
-                ],
                 "type": "object"
                 },
                 "ssidType": {
@@ -154,12 +150,6 @@ class JSONSchemaValidatorD825Ae9A117F5B6BB65B7D78Fd42513C(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "managedAPLocations",
-                "ssidDetails",
-                "ssidType",
-                "enableFabric"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

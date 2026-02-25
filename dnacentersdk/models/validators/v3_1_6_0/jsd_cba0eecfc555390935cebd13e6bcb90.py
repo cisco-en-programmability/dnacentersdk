@@ -56,11 +56,6 @@ class JSONSchemaValidatorCba0EecFc555390935CEbd13E6Bcb90(object):
                 "type": "number"
                 }
                 },
-                "required": [
-                "x",
-                "y",
-                "z"
-                ],
                 "type": "object"
                 },
                 "radios": {
@@ -78,31 +73,17 @@ class JSONSchemaValidatorCba0EecFc555390935CEbd13E6Bcb90(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "name",
-                "azimuth",
-                "elevation"
-                ],
                 "type": "object"
                 },
                 "id": {
                 "type": "string"
                 }
                 },
-                "required": [
-                "id",
-                "antenna"
-                ],
                 "type": "object"
                 },
                 "type": "array"
                 }
                 },
-                "required": [
-                "id",
-                "position",
-                "radios"
-                ],
                 "type": "object"
                 },
                 "type": "array"

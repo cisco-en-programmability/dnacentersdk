@@ -79,14 +79,6 @@ class JSONSchemaValidatorC45C1C55D498D03A72933690098(object):
                 "type": "integer"
                 }
                 },
-                "required": [
-                "networkDeviceId",
-                "fabricId",
-                "transitNetworkId",
-                "interfaceName",
-                "virtualNetworkName",
-                "vlanId"
-                ],
                 "type": "object"
                 },
                 "type": "array"

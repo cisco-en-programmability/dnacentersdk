@@ -57,10 +57,6 @@ class JSONSchemaValidatorFf5Bf5A67C6C5C0AA9E7Ba84C088E1A6(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "type",
-                "operations"
-                ],
                 "type": "object"
                 },
                 "type": "array"
@@ -69,10 +65,6 @@ class JSONSchemaValidatorFf5Bf5A67C6C5C0AA9E7Ba84C088E1A6(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "roleId",
-                "resourceTypes"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

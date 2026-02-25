@@ -47,9 +47,6 @@ class JSONSchemaValidatorF5602B2965E53B5BdDa193025A3Fc(object):
                 "type": "array"
                 }
                 },
-                "required": [
-                "apMacAddresses"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

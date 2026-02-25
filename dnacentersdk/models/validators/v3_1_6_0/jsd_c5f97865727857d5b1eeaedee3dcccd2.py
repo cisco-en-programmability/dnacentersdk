@@ -60,11 +60,6 @@ class JSONSchemaValidatorC5F97865727857D5B1EeAedee3Dcccd2(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "servers",
-                "network",
-                "protocol"
-                ],
                 "type": "object"
                 },
                 "dhcpServer": {
@@ -127,11 +122,6 @@ class JSONSchemaValidatorC5F97865727857D5B1EeAedee3Dcccd2(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "servers",
-                "network",
-                "protocol"
-                ],
                 "type": "object"
                 },
                 "ntpServer": {
@@ -172,15 +162,9 @@ class JSONSchemaValidatorC5F97865727857D5B1EeAedee3Dcccd2(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "timezone"
-                ],
                 "type": "object"
                 }
                 },
-                "required": [
-                "settings"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

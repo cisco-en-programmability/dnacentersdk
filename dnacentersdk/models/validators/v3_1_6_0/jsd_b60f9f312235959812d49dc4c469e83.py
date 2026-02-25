@@ -84,10 +84,6 @@ class JSONSchemaValidatorB60F9F312235959812D49Dc4C469E83(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "id",
-                "replacementStatus"
-                ],
                 "type": "object"
                 },
                 "type": "array"

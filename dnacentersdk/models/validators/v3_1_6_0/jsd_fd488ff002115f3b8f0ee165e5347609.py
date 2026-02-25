@@ -47,10 +47,6 @@ class JSONSchemaValidatorFd488Ff002115F3B8F0EE165E5347609(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "deviceManagementIpAddress",
-                "siteNameHierarchy"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

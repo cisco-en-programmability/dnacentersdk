@@ -56,9 +56,6 @@ class JSONSchemaValidatorA0A8D545698D1D59A9Be90E51(object):
                 "type": "boolean"
                 }
                 },
-                "required": [
-                "deviceUuids"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

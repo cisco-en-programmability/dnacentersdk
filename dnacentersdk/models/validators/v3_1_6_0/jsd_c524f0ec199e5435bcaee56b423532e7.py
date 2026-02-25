@@ -74,11 +74,6 @@ class JSONSchemaValidatorC524F0Ec199E5435BcaeE56B423532E7(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "enablePassword",
-                "password",
-                "username"
-                ],
                 "type": "object"
                 },
                 "type": "array"

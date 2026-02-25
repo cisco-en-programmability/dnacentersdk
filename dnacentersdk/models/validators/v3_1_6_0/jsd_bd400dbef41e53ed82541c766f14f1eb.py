@@ -78,9 +78,6 @@ class JSONSchemaValidatorBd400DbeF41E53Ed82541C766F14F1Eb(object):
                 "type": "object"
                 }
                 },
-                "required": [
-                "apAuthorizationListName"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

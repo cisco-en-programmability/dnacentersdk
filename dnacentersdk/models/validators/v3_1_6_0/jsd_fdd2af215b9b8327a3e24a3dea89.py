@@ -159,11 +159,6 @@ class JSONSchemaValidatorFdd2Af215B9B8327A3E24A3Dea89(object):
                 "type": "integer"
                 }
                 },
-                "required": [
-                "name",
-                "tasks",
-                "type"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

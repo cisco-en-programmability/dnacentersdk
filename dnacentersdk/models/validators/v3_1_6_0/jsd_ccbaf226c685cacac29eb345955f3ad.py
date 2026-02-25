@@ -101,13 +101,6 @@ class JSONSchemaValidatorCcbaf226C685CacAc29Eb345955F3Ad(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "configId",
-                "name",
-                "ipAddress",
-                "port",
-                "snmpVersion"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

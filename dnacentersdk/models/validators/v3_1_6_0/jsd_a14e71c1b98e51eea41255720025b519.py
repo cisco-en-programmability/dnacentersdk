@@ -75,9 +75,6 @@ class JSONSchemaValidatorA14E71C1B98E51EeA41255720025B519(object):
                 "type": "number"
                 }
                 },
-                "required": [
-                "protocol"
-                ],
                 "type": "object"
                 },
                 "type": "array"
@@ -153,16 +150,6 @@ class JSONSchemaValidatorA14E71C1B98E51EeA41255720025B519(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "helpString",
-                "applicationType",
-                "type",
-                "trafficClass",
-                "categoryId",
-                "ignoreConflict",
-                "rank",
-                "engineId"
-                ],
                 "type": "object"
                 },
                 "type": "array"
@@ -195,11 +182,6 @@ class JSONSchemaValidatorA14E71C1B98E51EeA41255720025B519(object):
                 "type": "number"
                 }
                 },
-                "required": [
-                "protocol",
-                "ports",
-                "ipv4Subnet"
-                ],
                 "type": "object"
                 },
                 "type": "array"
@@ -210,9 +192,6 @@ class JSONSchemaValidatorA14E71C1B98E51EeA41255720025B519(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "idRef"
-                ],
                 "type": "object"
                 },
                 "scalableGroupType": {
@@ -222,13 +201,6 @@ class JSONSchemaValidatorA14E71C1B98E51EeA41255720025B519(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "name",
-                "networkApplications",
-                "parentScalableGroup",
-                "scalableGroupType",
-                "type"
-                ],
                 "type": "object"
                 },
                 "type": "array"

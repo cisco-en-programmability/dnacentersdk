@@ -60,11 +60,6 @@ class JSONSchemaValidatorBbc4Dab8193C546AB116E19863Dff621(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "ringName",
-                "rootNetworkDeviceId",
-                "rootNeighbourNetworkDeviceIds"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

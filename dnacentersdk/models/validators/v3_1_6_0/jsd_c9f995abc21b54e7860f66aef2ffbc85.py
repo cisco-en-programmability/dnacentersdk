@@ -94,9 +94,6 @@ class JSONSchemaValidatorC9F995AbC21B54E7860F66Aef2Ffbc85(object):
                 "type": "boolean"
                 }
                 },
-                "required": [
-                "id"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

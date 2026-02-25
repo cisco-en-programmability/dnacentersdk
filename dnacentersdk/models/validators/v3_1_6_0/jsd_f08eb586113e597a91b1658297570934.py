@@ -79,9 +79,6 @@ class JSONSchemaValidatorF08Eb586113E597A91B1658297570934(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "profileName"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

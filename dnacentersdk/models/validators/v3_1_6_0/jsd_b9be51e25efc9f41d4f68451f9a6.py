@@ -91,9 +91,6 @@ class JSONSchemaValidatorB9Be51E25Efc9F41D4F68451F9A6(object):
                 "type": "integer"
                 }
                 },
-                "required": [
-                "trendIntervalInMinutes"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

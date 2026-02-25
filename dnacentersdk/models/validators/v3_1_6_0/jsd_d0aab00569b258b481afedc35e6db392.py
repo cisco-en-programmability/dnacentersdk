@@ -77,10 +77,6 @@ class JSONSchemaValidatorD0Aab00569B258B481AfEdc35E6Db392(object):
                 "type": "array"
                 }
                 },
-                "required": [
-                "deviceName",
-                "managedAPLocations"
-                ],
                 "type": "object"
                 },
                 "type": "array"

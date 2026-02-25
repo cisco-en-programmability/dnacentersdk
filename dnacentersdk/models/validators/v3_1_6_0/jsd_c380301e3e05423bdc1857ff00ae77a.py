@@ -67,23 +67,14 @@ class JSONSchemaValidatorC380301E3E05423Bdc1857Ff00Ae77A(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "id"
-                ],
                 "type": "object"
                 },
                 "type": "array"
                 }
                 },
-                "required": [
-                "ippool"
-                ],
                 "type": "object"
                 }
                 },
-                "required": [
-                "settings"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

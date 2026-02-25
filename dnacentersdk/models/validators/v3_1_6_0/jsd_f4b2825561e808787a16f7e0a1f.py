@@ -51,11 +51,6 @@ class JSONSchemaValidatorF4B2825561E808787A16F7E0A1F(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "id",
-                "siteId",
-                "networkDeviceId"
-                ],
                 "type": "object"
                 },
                 "type": "array"

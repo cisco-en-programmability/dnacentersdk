@@ -63,12 +63,6 @@ class JSONSchemaValidatorF790A930D452708353C374F5C0F90F(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "rfProfile",
-                "deviceName",
-                "type",
-                "siteNameHierarchy"
-                ],
                 "type": "object"
                 },
                 "type": "array"

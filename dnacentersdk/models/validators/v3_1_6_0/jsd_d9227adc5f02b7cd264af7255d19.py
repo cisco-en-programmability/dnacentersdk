@@ -47,9 +47,6 @@ class JSONSchemaValidatorD9227Adc5F02B7Cd264Af7255D19(object):
                 "type": "array"
                 }
                 },
-                "required": [
-                "deviceIdList"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

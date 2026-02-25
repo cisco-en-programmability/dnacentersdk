@@ -47,15 +47,11 @@ class JSONSchemaValidatorCcbf614B4B355Cac929F12Cc61272C1C(object):
                 "type": "object"
                 },
                 "resourceParams": {
-                "type": "object"
                 },
                 "templateId": {
                 "type": "string"
                 }
                 },
-                "required": [
-                "templateId"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

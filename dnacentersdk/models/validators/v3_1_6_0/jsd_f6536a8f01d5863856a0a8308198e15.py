@@ -76,12 +76,6 @@ class JSONSchemaValidatorF6536A8F01D5863856A0A8308198E15(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "id",
-                "password",
-                "port",
-                "username"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

@@ -57,10 +57,6 @@ class JSONSchemaValidatorEfc2269Ee565E23B7Be7B49E4Fc0322(object):
                 "type": "array"
                 }
                 },
-                "required": [
-                "siteIds",
-                "policyTagName"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

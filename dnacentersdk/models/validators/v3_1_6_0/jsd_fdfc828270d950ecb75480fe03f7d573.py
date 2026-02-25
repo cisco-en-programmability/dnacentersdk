@@ -44,9 +44,6 @@ class JSONSchemaValidatorFdfc828270D950EcB75480Fe03F7D573(object):
                 "type": "integer"
                 }
                 },
-                "required": [
-                "interval"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

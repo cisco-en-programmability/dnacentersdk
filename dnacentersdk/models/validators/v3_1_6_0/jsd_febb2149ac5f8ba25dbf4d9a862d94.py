@@ -59,9 +59,6 @@ class JSONSchemaValidatorFebb2149Ac5F8BA25DBf4D9A862D94(object):
                 "type": "number"
                 }
                 },
-                "required": [
-                "productNameOrdinal"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

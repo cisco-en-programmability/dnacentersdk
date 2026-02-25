@@ -249,9 +249,6 @@ class JSONSchemaValidatorA602EEe5A56FaA64436Bade8A240E(object):
                 "type": "integer"
                 }
                 },
-                "required": [
-                "passphrase"
-                ],
                 "type": "object"
                 },
                 "type": "array"
@@ -338,11 +335,6 @@ class JSONSchemaValidatorA602EEe5A56FaA64436Bade8A240E(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "ssid",
-                "authType",
-                "wlanType"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

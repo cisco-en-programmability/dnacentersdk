@@ -57,11 +57,6 @@ class JSONSchemaValidatorBa9E0F3A5Db5972A55D4B3Fcf2B5432(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "siteIds",
-                "siteTagName",
-                "apProfileName"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

@@ -65,12 +65,6 @@ class JSONSchemaValidatorE4A09Bf566F35BabAd9E27F5Eb61A86D(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "siteNameHierarchy",
-                "deviceManagementIpAddress",
-                "interfaceName",
-                "dataIpAddressPoolName"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

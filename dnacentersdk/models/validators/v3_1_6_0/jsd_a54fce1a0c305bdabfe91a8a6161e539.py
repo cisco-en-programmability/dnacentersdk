@@ -68,10 +68,6 @@ class JSONSchemaValidatorA54Fce1A0C305BdaBfe91A8A6161E539(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "destIP",
-                "sourceIP"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

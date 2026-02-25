@@ -97,21 +97,11 @@ class JSONSchemaValidatorF0F7B6E1E4E159E7A40001Fc3E649Dfc(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "interfaceType",
-                "interfaceID",
-                "parameterType",
-                "parameterValue"
-                ],
                 "type": "object"
                 },
                 "type": "array"
                 }
                 },
-                "required": [
-                "profileName",
-                "rules"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

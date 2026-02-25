@@ -60,10 +60,6 @@ class JSONSchemaValidatorB119A4D455E35Cc3B2Cc6695A045Cbfa(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "ipPoolName",
-                "ipPoolRole"
-                ],
                 "type": "object"
                 },
                 "type": "array"
@@ -90,12 +86,6 @@ class JSONSchemaValidatorB119A4D455E35Cc3B2Cc6695A045Cbfa(object):
                 "type": "boolean"
                 }
                 },
-                "required": [
-                "discoveredDeviceSiteNameHierarchy",
-                "primaryDeviceManagmentIPAddress",
-                "primaryDeviceInterfaceNames",
-                "ipPools"
-                ],
                 "type": "object"
                 },
                 "type": "array"

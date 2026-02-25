@@ -48,10 +48,6 @@ class JSONSchemaValidatorA41Ac8D894E5Ee98Fc9324Fb8488174(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "vlanId",
-                "vlanName"
-                ],
                 "type": "object"
                 },
                 "type": "array"

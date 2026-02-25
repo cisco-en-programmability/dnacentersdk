@@ -55,10 +55,6 @@ class JSONSchemaValidatorCf9D39CeF5E95Bb9Bd48D5F86E094C99(object):
                 "type": "array"
                 }
                 },
-                "required": [
-                "name",
-                "validationSetIds"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

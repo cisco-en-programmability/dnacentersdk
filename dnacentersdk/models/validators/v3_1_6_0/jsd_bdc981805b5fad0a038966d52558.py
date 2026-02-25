@@ -94,11 +94,6 @@ class JSONSchemaValidatorBdc981805B5FAd0A038966D52558(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "id",
-                "snmpMode",
-                "username"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

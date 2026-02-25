@@ -54,17 +54,9 @@ class JSONSchemaValidatorC9B5B83E67195B649077A05E42897Cc4(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "Url",
-                "Auth_UserName",
-                "Auth_Password"
-                ],
                 "type": "object"
                 }
                 },
-                "required": [
-                "ConnectionSettings"
-                ],
                 "type": "object"
                 },
                 "description":
@@ -78,11 +70,6 @@ class JSONSchemaValidatorC9B5B83E67195B649077A05E42897Cc4(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "name",
-                "data",
-                "dypName"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

@@ -66,23 +66,16 @@ class JSONSchemaValidatorEcc3258A5C5B8F2267A512820A59(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "name"
-                ],
                 "type": "object"
                 },
                 "type": "array"
                 },
                 "templates": {
                 "items": {
-                "type": "string"
                 },
                 "type": "array"
                 }
                 },
-                "required": [
-                "name"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

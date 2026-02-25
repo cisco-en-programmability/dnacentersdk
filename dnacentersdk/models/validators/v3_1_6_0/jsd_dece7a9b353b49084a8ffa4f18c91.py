@@ -64,13 +64,6 @@ class JSONSchemaValidatorDece7A9B353B49084A8Ffa4F18C91(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "configId",
-                "name",
-                "host",
-                "protocol",
-                "port"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

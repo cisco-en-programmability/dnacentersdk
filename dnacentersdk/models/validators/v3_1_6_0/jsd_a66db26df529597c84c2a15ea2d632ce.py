@@ -55,25 +55,14 @@ class JSONSchemaValidatorA66Db26DF529597C84C2A15Ea2D632Ce(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "profileName",
-                "model",
-                "wanProvider"
-                ],
                 "type": "object"
                 },
                 "type": "array"
                 }
                 },
-                "required": [
-                "qos"
-                ],
                 "type": "object"
                 }
                 },
-                "required": [
-                "settings"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

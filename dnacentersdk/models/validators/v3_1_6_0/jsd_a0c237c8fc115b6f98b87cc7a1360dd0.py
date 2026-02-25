@@ -60,11 +60,6 @@ class JSONSchemaValidatorA0C237C8Fc115B6F98B87Cc7A1360Dd0(object):
                 "type": "array"
                 }
                 },
-                "required": [
-                "extranetPolicyName",
-                "providerVirtualNetworkName",
-                "subscriberVirtualNetworkNames"
-                ],
                 "type": "object"
                 },
                 "type": "array"

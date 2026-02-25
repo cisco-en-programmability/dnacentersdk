@@ -68,11 +68,6 @@ class JSONSchemaValidatorE4D208B5545F66Bf0F94A155C81F46(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "name",
-                "scalableGroupType",
-                "defaultBusinessRelevance"
-                ],
                 "type": "object"
                 },
                 "type": "array"

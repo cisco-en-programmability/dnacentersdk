@@ -47,10 +47,6 @@ class JSONSchemaValidatorE6BcA55256A0Aac288486E38049B(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "smartAccountId",
-                "virtualAccountId"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

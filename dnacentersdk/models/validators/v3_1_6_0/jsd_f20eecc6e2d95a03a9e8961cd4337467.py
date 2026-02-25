@@ -48,10 +48,6 @@ class JSONSchemaValidatorF20Eecc6E2D95A03A9E8961Cd4337467(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "id",
-                "fabricId"
-                ],
                 "type": "object"
                 },
                 "type": "array"

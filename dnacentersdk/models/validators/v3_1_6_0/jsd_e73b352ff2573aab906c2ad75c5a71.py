@@ -50,10 +50,6 @@ class JSONSchemaValidatorE73B352Ff2573AAb906C2Ad75C5A71(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "siteId",
-                "deviceCredentialId"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

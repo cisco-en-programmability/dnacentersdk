@@ -423,13 +423,6 @@ class JSONSchemaValidatorDa455F4BE5B75126Ba9970C7Cc54C7Db(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "rfProfileName",
-                "defaultRfProfile",
-                "enableRadioTypeA",
-                "enableRadioTypeB",
-                "enableRadioType6GHz"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

@@ -59,10 +59,6 @@ class JSONSchemaValidatorD16471A58805B4AA2C757209D188Aed(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "description",
-                "readCommunity"
-                ],
                 "type": "object"
                 },
                 "type": "array"

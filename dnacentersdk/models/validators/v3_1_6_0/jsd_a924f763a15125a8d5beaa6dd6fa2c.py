@@ -67,17 +67,9 @@ class JSONSchemaValidatorA924F763A15125A8D5Beaa6Dd6Fa2C(object):
                 "type": "integer"
                 }
                 },
-                "required": [
-                "localAutonomousSystemNumber",
-                "isDefaultExit",
-                "importExternalRoutes"
-                ],
                 "type": "object"
                 }
                 },
-                "required": [
-                "borderTypes"
-                ],
                 "type": "object"
                 },
                 "deviceRoles": {
@@ -96,12 +88,6 @@ class JSONSchemaValidatorA924F763A15125A8D5Beaa6Dd6Fa2C(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "id",
-                "networkDeviceId",
-                "fabricId",
-                "deviceRoles"
-                ],
                 "type": "object"
                 },
                 "type": "array"

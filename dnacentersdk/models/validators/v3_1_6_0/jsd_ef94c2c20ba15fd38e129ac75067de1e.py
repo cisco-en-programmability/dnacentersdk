@@ -107,9 +107,6 @@ class JSONSchemaValidatorEf94C2C20Ba15Fd38E129Ac75067De1E(object):
                 "type": "array"
                 }
                 },
-                "required": [
-                "deviceFamily"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

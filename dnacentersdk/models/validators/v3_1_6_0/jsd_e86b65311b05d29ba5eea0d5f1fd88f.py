@@ -57,13 +57,6 @@ class JSONSchemaValidatorE86B65311B05D29Ba5EEa0D5F1Fd88F(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "networkDeviceId",
-                "fabricId",
-                "interfaceName",
-                "internalVlanId",
-                "externalVlanId"
-                ],
                 "type": "object"
                 },
                 "type": "array"

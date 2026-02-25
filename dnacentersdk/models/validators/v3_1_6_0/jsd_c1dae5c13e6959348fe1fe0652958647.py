@@ -59,20 +59,12 @@ class JSONSchemaValidatorC1Dae5C13E6959348Fe1Fe0652958647(object):
                 "type": "number"
                 }
                 },
-                "required": [
-                "interval",
-                "recurrenceEndTime"
-                ],
                 "type": "object"
                 },
                 "startTime": {
                 "type": "number"
                 }
                 },
-                "required": [
-                "startTime",
-                "endTime"
-                ],
                 "type": "object"
                 },
                 "networkDeviceIds": {
@@ -82,11 +74,6 @@ class JSONSchemaValidatorC1Dae5C13E6959348Fe1Fe0652958647(object):
                 "type": "array"
                 }
                 },
-                "required": [
-                "description",
-                "maintenanceSchedule",
-                "networkDeviceIds"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

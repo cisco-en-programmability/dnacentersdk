@@ -73,12 +73,6 @@ class JSONSchemaValidatorD39D23589E85Db0A63C414057C(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "enablePassword",
-                "id",
-                "password",
-                "username"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

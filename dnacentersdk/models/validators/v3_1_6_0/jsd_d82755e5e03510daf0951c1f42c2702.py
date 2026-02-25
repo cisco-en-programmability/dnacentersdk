@@ -68,10 +68,6 @@ class JSONSchemaValidatorD82755E5E03510DAf0951C1F42C2702(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "username",
-                "password"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

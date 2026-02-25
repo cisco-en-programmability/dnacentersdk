@@ -52,10 +52,6 @@ class JSONSchemaValidatorD7073129453698264E7519D82991C(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "routingProtocolName",
-                "autonomousSystemNumber"
-                ],
                 "type": "object"
                 },
                 "sdaTransitSettings": {
@@ -70,18 +66,11 @@ class JSONSchemaValidatorD7073129453698264E7519D82991C(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "siteNameHierarchy",
-                "deviceManagementIpAddress"
-                ],
                 "type": "object"
                 },
                 "type": "array"
                 }
                 },
-                "required": [
-                "transitControlPlaneSettings"
-                ],
                 "type": "object"
                 },
                 "transitPeerNetworkName": {
@@ -96,10 +85,6 @@ class JSONSchemaValidatorD7073129453698264E7519D82991C(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "transitPeerNetworkName",
-                "transitPeerNetworkType"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

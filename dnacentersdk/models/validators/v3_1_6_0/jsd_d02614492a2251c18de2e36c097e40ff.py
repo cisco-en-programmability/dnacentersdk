@@ -52,9 +52,6 @@ class JSONSchemaValidatorD02614492A2251C18De2E36C097E40Ff(object):
                 "type": "object"
                 }
                 },
-                "required": [
-                "imageDistribution"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

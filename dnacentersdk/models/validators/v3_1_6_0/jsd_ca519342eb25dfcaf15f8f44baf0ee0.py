@@ -71,13 +71,6 @@ class JSONSchemaValidatorCa519342Eb25DfcAf15F8F44Baf0Ee0(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "name",
-                "type",
-                "operationType",
-                "cli",
-                "productSeriesOrdinals"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

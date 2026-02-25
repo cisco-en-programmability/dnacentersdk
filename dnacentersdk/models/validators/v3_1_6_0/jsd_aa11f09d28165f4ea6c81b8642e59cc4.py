@@ -50,11 +50,6 @@ class JSONSchemaValidatorAa11F09D28165F4EA6C81B8642E59Cc4(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "id",
-                "role",
-                "roleSource"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

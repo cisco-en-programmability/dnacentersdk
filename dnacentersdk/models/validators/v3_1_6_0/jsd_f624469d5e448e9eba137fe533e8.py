@@ -49,10 +49,6 @@ class JSONSchemaValidatorF624469D5E448E9EBa137Fe533E8(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "plannedAccessPointId",
-                "accessPointId"
-                ],
                 "type": "object"
                 },
                 "type": "array"

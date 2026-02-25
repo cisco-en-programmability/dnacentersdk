@@ -51,10 +51,6 @@ class JSONSchemaValidatorBce8E6B307Ce52Dd8F5546Fbd78E05Ee(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "name",
-                "parentName"
-                ],
                 "type": "object"
                 },
                 "building": {
@@ -78,12 +74,6 @@ class JSONSchemaValidatorBce8E6B307Ce52Dd8F5546Fbd78E05Ee(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "name",
-                "parentName",
-                "latitude",
-                "longitude"
-                ],
                 "type": "object"
                 },
                 "floor": {
@@ -116,14 +106,6 @@ class JSONSchemaValidatorBce8E6B307Ce52Dd8F5546Fbd78E05Ee(object):
                 "type": "number"
                 }
                 },
-                "required": [
-                "name",
-                "parentName",
-                "rfModel",
-                "width",
-                "length",
-                "height"
-                ],
                 "type": "object"
                 }
                 },
@@ -138,10 +120,6 @@ class JSONSchemaValidatorBce8E6B307Ce52Dd8F5546Fbd78E05Ee(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "type",
-                "site"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

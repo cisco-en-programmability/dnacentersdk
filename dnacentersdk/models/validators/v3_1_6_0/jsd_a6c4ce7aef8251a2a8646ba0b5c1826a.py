@@ -44,9 +44,6 @@ class JSONSchemaValidatorA6C4Ce7AEf8251A2A8646Ba0B5C1826A(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "networkDeviceId"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

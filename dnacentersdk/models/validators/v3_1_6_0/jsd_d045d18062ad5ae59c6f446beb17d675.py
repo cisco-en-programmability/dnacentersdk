@@ -83,21 +83,11 @@ class JSONSchemaValidatorD045D18062Ad5Ae59C6F446Beb17D675(object):
                 "type": "integer"
                 }
                 },
-                "required": [
-                "interfaceId",
-                "interfaceName",
-                "role"
-                ],
                 "type": "object"
                 },
                 "type": "array"
                 }
                 },
-                "required": [
-                "name",
-                "networkDeviceId",
-                "qosDeviceInterfaceInfo"
-                ],
                 "type": "object"
                 },
                 "type": "array"

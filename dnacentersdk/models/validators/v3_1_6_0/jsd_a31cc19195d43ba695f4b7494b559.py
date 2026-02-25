@@ -44,9 +44,6 @@ class JSONSchemaValidatorA31Cc19195D43Ba695F4B7494B559(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "profileId"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

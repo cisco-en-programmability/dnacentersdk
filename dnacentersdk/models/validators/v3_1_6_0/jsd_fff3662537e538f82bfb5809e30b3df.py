@@ -61,14 +61,8 @@ class JSONSchemaValidatorFff3662537E538F82BfB5809E30B3Df(object):
                 "type": "string"
                 },
                 "value": {
-                "type": "object"
                 }
                 },
-                "required": [
-                "key",
-                "operator",
-                "value"
-                ],
                 "type": "object"
                 },
                 "type": "array"

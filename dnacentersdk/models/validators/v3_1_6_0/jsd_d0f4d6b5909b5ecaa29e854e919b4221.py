@@ -48,17 +48,11 @@ class JSONSchemaValidatorD0F4D6B5909B5EcaA29E854E919B4221(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "profileId"
-                ],
                 "type": "object"
                 },
                 "type": "array"
                 }
                 },
-                "required": [
-                "items"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

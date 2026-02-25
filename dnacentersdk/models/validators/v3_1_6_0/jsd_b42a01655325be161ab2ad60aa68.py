@@ -75,10 +75,6 @@ class JSONSchemaValidatorB42A01655325Be161Ab2Ad60Aa68(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "schedulerStartTime",
-                "schedulerEndTime"
-                ],
                 "type": "object"
                 },
                 "powerProfileName": {
@@ -93,11 +89,6 @@ class JSONSchemaValidatorB42A01655325Be161Ab2Ad60Aa68(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "powerProfileName",
-                "schedulerType",
-                "duration"
-                ],
                 "type": "object"
                 },
                 "clientLimit": {
@@ -232,9 +223,6 @@ class JSONSchemaValidatorB42A01655325Be161Ab2Ad60Aa68(object):
                 "type": "integer"
                 }
                 },
-                "required": [
-                "apProfileName"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

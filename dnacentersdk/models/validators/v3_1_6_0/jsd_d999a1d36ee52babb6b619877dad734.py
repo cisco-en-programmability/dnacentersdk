@@ -73,14 +73,6 @@ class JSONSchemaValidatorD999A1D36Ee52BaBb6B619877Dad734(object):
                 "type": "boolean"
                 }
                 },
-                "required": [
-                "siteNameHierarchy",
-                "authenticateTemplateName",
-                "authenticationOrder",
-                "dot1xToMabFallbackTimeout",
-                "wakeOnLan",
-                "numberOfHosts"
-                ],
                 "type": "object"
                 },
                 "type": "array"

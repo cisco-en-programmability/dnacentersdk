@@ -52,10 +52,6 @@ class JSONSchemaValidatorCfb964A2958909F7CA12D23Ab2Bdb(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "fabricId",
-                "replicationMode"
-                ],
                 "type": "object"
                 },
                 "type": "array"

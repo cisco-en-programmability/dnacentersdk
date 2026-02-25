@@ -47,9 +47,6 @@ class JSONSchemaValidatorAf893464E53D2Abc8922F4F3310Ea(object):
                 "type": "array"
                 }
                 },
-                "required": [
-                "anchorManagedAPLocationsSiteIds"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

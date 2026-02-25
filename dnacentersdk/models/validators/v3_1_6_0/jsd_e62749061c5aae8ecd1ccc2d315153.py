@@ -60,17 +60,11 @@ class JSONSchemaValidatorE62749061C5Aae8Ecd1Ccc2D315153(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "id"
-                ],
                 "type": "object"
                 },
                 "type": "array"
                 }
                 },
-                "required": [
-                "networkDevices"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

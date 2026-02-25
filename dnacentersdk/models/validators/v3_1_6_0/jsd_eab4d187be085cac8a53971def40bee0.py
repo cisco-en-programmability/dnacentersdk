@@ -65,9 +65,6 @@ class JSONSchemaValidatorEab4D187Be085Cac8A53971Def40Bee0(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "deviceId"
-                ],
                 "type": "object"
                 },
                 "type": "array"
@@ -79,10 +76,6 @@ class JSONSchemaValidatorEab4D187Be085Cac8A53971Def40Bee0(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "networkDevices",
-                "siteId"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

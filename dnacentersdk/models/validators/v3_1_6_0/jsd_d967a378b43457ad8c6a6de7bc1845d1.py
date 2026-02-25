@@ -142,10 +142,6 @@ class JSONSchemaValidatorD967A378B43457Ad8C6A6De7Bc1845D1(object):
                 "type": "array"
                 }
                 },
-                "required": [
-                "taskSeqNo",
-                "type"
-                ],
                 "type": "object"
                 },
                 "type": "array"
@@ -163,10 +159,6 @@ class JSONSchemaValidatorD967A378B43457Ad8C6A6De7Bc1845D1(object):
                 "type": "integer"
                 }
                 },
-                "required": [
-                "name",
-                "tasks"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

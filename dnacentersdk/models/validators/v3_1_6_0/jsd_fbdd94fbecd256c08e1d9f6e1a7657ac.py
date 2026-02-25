@@ -73,13 +73,6 @@ class JSONSchemaValidatorFbdd94FbEcd256C08E1D9F6E1A7657Ac(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "fqdn",
-                "password",
-                "ipAddress",
-                "subscriberName",
-                "userName"
-                ],
                 "type": "object"
                 },
                 "type": "array"
@@ -130,11 +123,6 @@ class JSONSchemaValidatorFbdd94FbEcd256C08E1D9F6E1A7657Ac(object):
                 "type": "boolean"
                 }
                 },
-                "required": [
-                "protocol",
-                "retries",
-                "timeoutSeconds"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

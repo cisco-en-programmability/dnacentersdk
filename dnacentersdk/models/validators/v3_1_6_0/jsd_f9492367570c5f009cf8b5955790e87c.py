@@ -56,9 +56,6 @@ class JSONSchemaValidatorF9492367570C5F009Cf8B5955790E87C(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "virtualNetworkName"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

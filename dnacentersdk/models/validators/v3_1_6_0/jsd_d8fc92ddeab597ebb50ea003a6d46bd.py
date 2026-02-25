@@ -66,10 +66,6 @@ class JSONSchemaValidatorD8Fc92DDeab597EBb50Ea003A6D46Bd(object):
                 "type": "array"
                 }
                 },
-                "required": [
-                "domain",
-                "subDomains"
-                ],
                 "type": "object"
                 },
                 "type": "array"
@@ -105,9 +101,6 @@ class JSONSchemaValidatorD8Fc92DDeab597EBb50Ea003A6D46Bd(object):
                 "type": "array"
                 }
                 },
-                "required": [
-                "eventIds"
-                ],
                 "type": "object"
                 },
                 "name": {
@@ -125,16 +118,9 @@ class JSONSchemaValidatorD8Fc92DDeab597EBb50Ea003A6D46Bd(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "connectorType"
-                ],
                 "type": "object"
                 }
                 },
-                "required": [
-                "instanceId",
-                "subscriptionDetails"
-                ],
                 "type": "object"
                 },
                 "type": "array"
@@ -146,12 +132,6 @@ class JSONSchemaValidatorD8Fc92DDeab597EBb50Ea003A6D46Bd(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "subscriptionId",
-                "name",
-                "subscriptionEndpoints",
-                "filter"
-                ],
                 "type": "object"
                 },
                 "type": "array"

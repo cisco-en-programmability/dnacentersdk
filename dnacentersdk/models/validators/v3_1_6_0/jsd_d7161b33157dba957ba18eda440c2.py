@@ -61,9 +61,6 @@ class JSONSchemaValidatorD7161B33157DbA957Ba18Eda440C2(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "id"
-                ],
                 "type": "object"
                 },
                 "httpsRead": {
@@ -84,9 +81,6 @@ class JSONSchemaValidatorD7161B33157DbA957Ba18Eda440C2(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "id"
-                ],
                 "type": "object"
                 },
                 "httpsWrite": {
@@ -122,9 +116,6 @@ class JSONSchemaValidatorD7161B33157DbA957Ba18Eda440C2(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "id"
-                ],
                 "type": "object"
                 },
                 "snmpV2cWrite": {
@@ -140,9 +131,6 @@ class JSONSchemaValidatorD7161B33157DbA957Ba18Eda440C2(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "id"
-                ],
                 "type": "object"
                 },
                 "snmpV3": {
@@ -173,18 +161,12 @@ class JSONSchemaValidatorD7161B33157DbA957Ba18Eda440C2(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "id"
-                ],
                 "type": "object"
                 }
                 },
                 "type": "object"
                 }
                 },
-                "required": [
-                "settings"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

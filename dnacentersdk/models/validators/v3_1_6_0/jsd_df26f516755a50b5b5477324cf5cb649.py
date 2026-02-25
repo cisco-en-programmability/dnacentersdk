@@ -47,9 +47,6 @@ class JSONSchemaValidatorDf26F516755A50B5B5477324Cf5Cb649(object):
                 "type": "array"
                 }
                 },
-                "required": [
-                "device_uuids"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

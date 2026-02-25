@@ -84,10 +84,6 @@ class JSONSchemaValidatorAc6E63199Fb05Bcf89106A22502C2197(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "faultyDeviceId",
-                "replacementStatus"
-                ],
                 "type": "object"
                 },
                 "type": "array"

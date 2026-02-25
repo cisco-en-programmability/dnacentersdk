@@ -92,21 +92,11 @@ class JSONSchemaValidatorB11Aa4De387251C794665E030Fa815Da(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "instanceId",
-                "bandwidthPercentage",
-                "trafficClass"
-                ],
                 "type": "object"
                 },
                 "type": "array"
                 }
                 },
-                "required": [
-                "instanceId",
-                "interfaceSpeed",
-                "tcBandwidthSettings"
-                ],
                 "type": "object"
                 },
                 "type": "array"
@@ -141,11 +131,6 @@ class JSONSchemaValidatorB11Aa4De387251C794665E030Fa815Da(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "instanceId",
-                "dscp",
-                "trafficClass"
-                ],
                 "type": "object"
                 },
                 "type": "array"
@@ -158,10 +143,6 @@ class JSONSchemaValidatorB11Aa4De387251C794665E030Fa815Da(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "instanceId",
-                "type"
-                ],
                 "type": "object"
                 },
                 "type": "array"
@@ -177,11 +158,6 @@ class JSONSchemaValidatorB11Aa4De387251C794665E030Fa815Da(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "id",
-                "name",
-                "clause"
-                ],
                 "type": "object"
                 },
                 "type": "array"

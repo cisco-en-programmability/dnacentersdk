@@ -73,9 +73,6 @@ class JSONSchemaValidatorCc1599012A5A59C8AbddA5376B5Cc583(object):
                 "type": "boolean"
                 }
                 },
-                "required": [
-                "controlPlaneNetworkDeviceIds"
-                ],
                 "type": "object"
                 },
                 "siteId": {
@@ -90,12 +87,6 @@ class JSONSchemaValidatorCc1599012A5A59C8AbddA5376B5Cc583(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "id",
-                "name",
-                "type",
-                "sdaTransitSettings"
-                ],
                 "type": "object"
                 },
                 "type": "array"

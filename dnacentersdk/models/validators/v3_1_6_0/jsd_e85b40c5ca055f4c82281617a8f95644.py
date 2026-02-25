@@ -50,10 +50,6 @@ class JSONSchemaValidatorE85B40C5Ca055F4C82281617A8F95644(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "deviceId",
-                "password"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

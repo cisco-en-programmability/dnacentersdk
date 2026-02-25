@@ -76,11 +76,6 @@ class JSONSchemaValidatorE328F7D015535897877F3Ecb0C927453(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "subnet",
-                "prefixLength",
-                "globalPoolId"
-                ],
                 "type": "object"
                 },
                 "ipV6AddressSpace": {
@@ -119,11 +114,6 @@ class JSONSchemaValidatorE328F7D015535897877F3Ecb0C927453(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "subnet",
-                "prefixLength",
-                "globalPoolId"
-                ],
                 "type": "object"
                 },
                 "name": {
@@ -143,12 +133,6 @@ class JSONSchemaValidatorE328F7D015535897877F3Ecb0C927453(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "ipV4AddressSpace",
-                "name",
-                "poolType",
-                "siteId"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

@@ -166,10 +166,6 @@ class JSONSchemaValidatorBf80823752BaBa63A8849Fd521Cd(object):
                 "type": "array"
                 }
                 },
-                "required": [
-                "ruleName",
-                "ruleType"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

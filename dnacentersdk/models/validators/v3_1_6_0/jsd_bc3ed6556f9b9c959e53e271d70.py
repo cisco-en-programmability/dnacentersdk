@@ -97,9 +97,6 @@ class JSONSchemaValidatorBc3Ed6556F9B9C959E53E271D70(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "rpDeviceLocation"
-                ],
                 "type": "object"
                 },
                 "type": "array"
@@ -108,12 +105,6 @@ class JSONSchemaValidatorBc3Ed6556F9B9C959E53E271D70(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "id",
-                "fabricId",
-                "virtualNetworkName",
-                "ipPoolName"
-                ],
                 "type": "object"
                 },
                 "type": "array"

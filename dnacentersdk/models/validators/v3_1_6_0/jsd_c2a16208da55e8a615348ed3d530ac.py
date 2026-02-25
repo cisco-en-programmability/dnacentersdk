@@ -249,9 +249,6 @@ class JSONSchemaValidatorC2A16208Da55E8A615348Ed3D530Ac(object):
                 "type": "integer"
                 }
                 },
-                "required": [
-                "passphrase"
-                ],
                 "type": "object"
                 },
                 "type": "array"
@@ -338,9 +335,6 @@ class JSONSchemaValidatorC2A16208Da55E8A615348Ed3D530Ac(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "wlanType"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

@@ -57,17 +57,11 @@ class JSONSchemaValidatorD73Cd5Be487A36D0A01D6Cdc3(object):
                 "type": "array"
                 }
                 },
-                "required": [
-                "id"
-                ],
                 "type": "object"
                 },
                 "type": "array"
                 }
                 },
-                "required": [
-                "networkDevices"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

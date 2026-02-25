@@ -47,10 +47,6 @@ class JSONSchemaValidatorC7F28C3D23Ba5384Be5E769Ae0505D00(object):
                 "type": "boolean"
                 }
                 },
-                "required": [
-                "autocorrectTelemetryConfig",
-                "deviceControllability"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

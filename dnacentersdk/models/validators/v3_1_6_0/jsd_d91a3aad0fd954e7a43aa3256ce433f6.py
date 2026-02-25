@@ -130,9 +130,6 @@ class JSONSchemaValidatorD91A3Aad0Fd954E7A43AA3256Ce433F6(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "wirelessProfileName"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

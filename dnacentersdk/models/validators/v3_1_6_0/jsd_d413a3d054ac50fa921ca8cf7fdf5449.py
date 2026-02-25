@@ -48,10 +48,6 @@ class JSONSchemaValidatorD413A3D054Ac50Fa921CA8Cf7Fdf5449(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "deviceManagementIPAddress",
-                "newLoopback0IPAddress"
-                ],
                 "type": "object"
                 },
                 "type": "array"

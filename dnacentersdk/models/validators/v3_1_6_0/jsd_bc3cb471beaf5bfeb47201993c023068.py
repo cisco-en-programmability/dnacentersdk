@@ -73,11 +73,6 @@ class JSONSchemaValidatorBc3Cb471Beaf5BfeB47201993C023068(object):
                 "type": "boolean"
                 }
                 },
-                "required": [
-                "addressFqdn",
-                "addressIpV4",
-                "addressIpV6"
-                ],
                 "type": "object"
                 },
                 "smartAccountId": {

@@ -52,9 +52,6 @@ class JSONSchemaValidatorA15A2F83F975A6A9964E7Da79A605De(object):
                 "type": "object"
                 }
                 },
-                "required": [
-                "dhcp"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

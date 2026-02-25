@@ -72,9 +72,6 @@ class JSONSchemaValidatorAba18F6E605Ce28A112B34Dcb4Fe82(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "macAddress"
-                ],
                 "type": "object"
                 },
                 "type": "array"

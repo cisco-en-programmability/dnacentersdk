@@ -96,17 +96,11 @@ class JSONSchemaValidatorEe7664344F50Cb8F2C94Beaa01629D(object):
                 "type": "boolean"
                 }
                 },
-                "required": [
-                "interfaceName"
-                ],
                 "type": "object"
                 },
                 "type": "array"
                 }
                 },
-                "required": [
-                "items"
-                ],
                 "type": "object"
                 },
                 "dhcpSnoopingGlobalConfig": {
@@ -305,9 +299,6 @@ class JSONSchemaValidatorEe7664344F50Cb8F2C94Beaa01629D(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "interfaceName"
-                ],
                 "type": "object"
                 },
                 "type": "array"
@@ -432,9 +423,6 @@ class JSONSchemaValidatorEe7664344F50Cb8F2C94Beaa01629D(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "interfaceName"
-                ],
                 "type": "object"
                 },
                 "type": "array"
@@ -558,9 +546,6 @@ class JSONSchemaValidatorEe7664344F50Cb8F2C94Beaa01629D(object):
                 "type": "integer"
                 }
                 },
-                "required": [
-                "vlanId"
-                ],
                 "type": "object"
                 },
                 "type": "array"
@@ -1029,10 +1014,6 @@ class JSONSchemaValidatorEe7664344F50Cb8F2C94Beaa01629D(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "cost",
-                "vlans"
-                ],
                 "type": "object"
                 },
                 "type": "array"
@@ -1075,9 +1056,6 @@ class JSONSchemaValidatorEe7664344F50Cb8F2C94Beaa01629D(object):
                 "type": "integer"
                 }
                 },
-                "required": [
-                "interfaceName"
-                ],
                 "type": "object"
                 }
                 },
@@ -1190,9 +1168,6 @@ class JSONSchemaValidatorEe7664344F50Cb8F2C94Beaa01629D(object):
                 "type": "integer"
                 }
                 },
-                "required": [
-                "vlanId"
-                ],
                 "type": "object"
                 },
                 "type": "array"

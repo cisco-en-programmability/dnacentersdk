@@ -56,17 +56,9 @@ class JSONSchemaValidatorE5E51BcDa0B5Fec984BA8120F743Fe2(object):
                 "type": "boolean"
                 }
                 },
-                "required": [
-                "enableRollingApUpgrade",
-                "apRebootPercentage"
-                ],
                 "type": "object"
                 }
                 },
-                "required": [
-                "id",
-                "enableWireless"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

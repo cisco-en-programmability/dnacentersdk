@@ -47,10 +47,6 @@ class JSONSchemaValidatorE3A724A35854758D65A83823C88435(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "virtualNetworkName",
-                "siteNameHierarchy"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

@@ -88,12 +88,6 @@ class JSONSchemaValidatorD6B58F378895114839682Dceed1A9B5(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "fabricId",
-                "networkDeviceId",
-                "interfaceName",
-                "connectedDeviceType"
-                ],
                 "type": "object"
                 },
                 "type": "array"

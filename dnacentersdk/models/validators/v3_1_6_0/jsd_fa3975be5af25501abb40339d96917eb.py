@@ -73,13 +73,6 @@ class JSONSchemaValidatorFa3975Be5Af25501Abb40339D96917Eb(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "fqdn",
-                "password",
-                "ipAddress",
-                "subscriberName",
-                "userName"
-                ],
                 "type": "object"
                 },
                 "type": "array"
@@ -155,14 +148,6 @@ class JSONSchemaValidatorFa3975Be5Af25501Abb40339D96917Eb(object):
                 "type": "boolean"
                 }
                 },
-                "required": [
-                "ipAddress",
-                "protocol",
-                "retries",
-                "role",
-                "sharedSecret",
-                "timeoutSeconds"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

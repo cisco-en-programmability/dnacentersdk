@@ -68,9 +68,6 @@ class JSONSchemaValidatorF5645E6E819558FA08761Dee45Ca406(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "netconfPort"
-                ],
                 "type": "object"
                 },
                 "type": "array"

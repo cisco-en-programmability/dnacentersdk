@@ -59,11 +59,6 @@ class JSONSchemaValidatorFccc089E04B557AA7478De3D8Fe472F(object):
                 "type": "number"
                 }
                 },
-                "required": [
-                "x",
-                "y",
-                "z"
-                ],
                 "type": "object"
                 },
                 "radios": {
@@ -81,11 +76,6 @@ class JSONSchemaValidatorFccc089E04B557AA7478De3D8Fe472F(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "name",
-                "azimuth",
-                "elevation"
-                ],
                 "type": "object"
                 },
                 "bands": {
@@ -101,12 +91,6 @@ class JSONSchemaValidatorFccc089E04B557AA7478De3D8Fe472F(object):
                 "type": "integer"
                 }
                 },
-                "required": [
-                "bands",
-                "channel",
-                "txPower",
-                "antenna"
-                ],
                 "type": "object"
                 },
                 "type": "array"
@@ -115,12 +99,6 @@ class JSONSchemaValidatorFccc089E04B557AA7478De3D8Fe472F(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "name",
-                "type",
-                "position",
-                "radios"
-                ],
                 "type": "object"
                 },
                 "type": "array"

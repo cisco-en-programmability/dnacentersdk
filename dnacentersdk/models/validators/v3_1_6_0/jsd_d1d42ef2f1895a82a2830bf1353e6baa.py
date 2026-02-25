@@ -54,10 +54,6 @@ class JSONSchemaValidatorD1D42Ef2F1895A82A2830Bf1353E6Baa(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "siteNameHierarchy",
-                "authenticateTemplateName"
-                ],
                 "type": "object"
                 },
                 "type": "array"

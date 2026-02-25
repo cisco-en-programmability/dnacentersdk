@@ -50,10 +50,6 @@ class JSONSchemaValidatorAac9BA55E5043B4D5E0995C566Dce(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "deviceManagementIPAddress",
-                "newHostName"
-                ],
                 "type": "object"
                 },
                 "type": "array"
@@ -76,12 +72,6 @@ class JSONSchemaValidatorAac9BA55E5043B4D5E0995C566Dce(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "sourceDeviceManagementIPAddress",
-                "sourceDeviceInterfaceName",
-                "destinationDeviceManagementIPAddress",
-                "destinationDeviceInterfaceName"
-                ],
                 "type": "object"
                 },
                 "loopbackUpdateDeviceList": {
@@ -94,10 +84,6 @@ class JSONSchemaValidatorAac9BA55E5043B4D5E0995C566Dce(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "deviceManagementIPAddress",
-                "newLoopback0IPAddress"
-                ],
                 "type": "object"
                 },
                 "type": "array"

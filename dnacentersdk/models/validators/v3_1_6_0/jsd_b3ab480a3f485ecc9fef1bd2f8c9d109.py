@@ -47,10 +47,6 @@ class JSONSchemaValidatorB3Ab480A3F485Ecc9Fef1Bd2F8C9D109(object):
                 "type": "boolean"
                 }
                 },
-                "required": [
-                "requireItsmApproval",
-                "requirePreview"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

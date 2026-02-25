@@ -61,9 +61,6 @@ class JSONSchemaValidatorFa27CcBaf55711849381A707E1Edfa(object):
                 "type": "array"
                 }
                 },
-                "required": [
-                "groupId"
-                ],
                 "type": "object"
                 },
                 "type": "array"
@@ -72,10 +69,6 @@ class JSONSchemaValidatorFa27CcBaf55711849381A707E1Edfa(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "name",
-                "advancedPolicyScopeElement"
-                ],
                 "type": "object"
                 },
                 "consumer": {
@@ -87,17 +80,11 @@ class JSONSchemaValidatorFa27CcBaf55711849381A707E1Edfa(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "idRef"
-                ],
                 "type": "object"
                 },
                 "type": "array"
                 }
                 },
-                "required": [
-                "scalableGroup"
-                ],
                 "type": "object"
                 },
                 "contract": {
@@ -106,9 +93,6 @@ class JSONSchemaValidatorFa27CcBaf55711849381A707E1Edfa(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "idRef"
-                ],
                 "type": "object"
                 },
                 "deletePolicyStatus": {
@@ -151,17 +135,11 @@ class JSONSchemaValidatorFa27CcBaf55711849381A707E1Edfa(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "type"
-                ],
                 "type": "object"
                 },
                 "type": "array"
                 }
                 },
-                "required": [
-                "clause"
-                ],
                 "type": "object"
                 },
                 "name": {
@@ -182,27 +160,14 @@ class JSONSchemaValidatorFa27CcBaf55711849381A707E1Edfa(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "idRef"
-                ],
                 "type": "object"
                 },
                 "type": "array"
                 }
                 },
-                "required": [
-                "scalableGroup"
-                ],
                 "type": "object"
                 }
                 },
-                "required": [
-                "name",
-                "deletePolicyStatus",
-                "policyScope",
-                "priority",
-                "advancedPolicyScope"
-                ],
                 "type": "object"
                 },
                 "type": "array"
@@ -237,10 +202,6 @@ class JSONSchemaValidatorFa27CcBaf55711849381A707E1Edfa(object):
                 "type": "array"
                 }
                 },
-                "required": [
-                "id",
-                "groupId"
-                ],
                 "type": "object"
                 },
                 "type": "array"
@@ -252,11 +213,6 @@ class JSONSchemaValidatorFa27CcBaf55711849381A707E1Edfa(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "id",
-                "name",
-                "advancedPolicyScopeElement"
-                ],
                 "type": "object"
                 },
                 "consumer": {
@@ -271,18 +227,11 @@ class JSONSchemaValidatorFa27CcBaf55711849381A707E1Edfa(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "idRef"
-                ],
                 "type": "object"
                 },
                 "type": "array"
                 }
                 },
-                "required": [
-                "id",
-                "scalableGroup"
-                ],
                 "type": "object"
                 },
                 "contract": {
@@ -291,9 +240,6 @@ class JSONSchemaValidatorFa27CcBaf55711849381A707E1Edfa(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "idRef"
-                ],
                 "type": "object"
                 },
                 "deletePolicyStatus": {
@@ -339,10 +285,6 @@ class JSONSchemaValidatorFa27CcBaf55711849381A707E1Edfa(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "id",
-                "type"
-                ],
                 "type": "object"
                 },
                 "type": "array"
@@ -351,10 +293,6 @@ class JSONSchemaValidatorFa27CcBaf55711849381A707E1Edfa(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "id",
-                "clause"
-                ],
                 "type": "object"
                 },
                 "id": {
@@ -381,28 +319,14 @@ class JSONSchemaValidatorFa27CcBaf55711849381A707E1Edfa(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "idRef"
-                ],
                 "type": "object"
                 },
                 "type": "array"
                 }
                 },
-                "required": [
-                "id",
-                "scalableGroup"
-                ],
                 "type": "object"
                 }
                 },
-                "required": [
-                "id",
-                "name",
-                "policyScope",
-                "priority",
-                "advancedPolicyScope"
-                ],
                 "type": "object"
                 },
                 "type": "array"

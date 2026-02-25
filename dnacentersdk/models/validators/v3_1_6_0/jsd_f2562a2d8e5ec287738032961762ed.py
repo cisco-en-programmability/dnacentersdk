@@ -51,11 +51,6 @@ class JSONSchemaValidatorF2562A2D8E5Ec287738032961762Ed(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "ipAddress",
-                "username",
-                "password"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

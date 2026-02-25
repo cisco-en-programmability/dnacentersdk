@@ -42,7 +42,6 @@ class JSONSchemaValidatorAc7Ce690E0F55A469B0A9Bfa3D2C165E(object):
                 "properties": {
                 "aggregateAttributes": {
                 "items": {
-                "type": "string"
                 },
                 "type": "array"
                 },
@@ -74,7 +73,6 @@ class JSONSchemaValidatorAc7Ce690E0F55A469B0A9Bfa3D2C165E(object):
                 },
                 "groupBy": {
                 "items": {
-                "type": "string"
                 },
                 "type": "array"
                 },
@@ -99,9 +97,6 @@ class JSONSchemaValidatorAc7Ce690E0F55A469B0A9Bfa3D2C165E(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "trendInterval"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

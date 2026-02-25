@@ -44,9 +44,6 @@ class JSONSchemaValidatorB5A94Fd2D97514B8A9CF73Df4E154B8(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "encryptionPassphrase"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

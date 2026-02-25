@@ -44,9 +44,6 @@ class JSONSchemaValidatorCb98464Ddb5Ee9Ba7EBb4428443Ba9(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "newIP"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

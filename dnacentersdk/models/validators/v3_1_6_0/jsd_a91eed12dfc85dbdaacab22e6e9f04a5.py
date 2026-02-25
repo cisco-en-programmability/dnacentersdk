@@ -70,9 +70,6 @@ class JSONSchemaValidatorA91Eed12Dfc85DbdAacaB22E6E9F04A5(object):
                 "type": "integer"
                 }
                 },
-                "required": [
-                "deviceFamily"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

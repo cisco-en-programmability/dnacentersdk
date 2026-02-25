@@ -82,12 +82,6 @@ class JSONSchemaValidatorC6774Ff9549A53D4B41FDd2D88F1D0F5(object):
                 "type": "boolean"
                 }
                 },
-                "required": [
-                "addressFqdn",
-                "addressIpV4",
-                "addressIpV6",
-                "name"
-                ],
                 "type": "object"
                 },
                 "smartAccountId": {
@@ -149,12 +143,6 @@ class JSONSchemaValidatorC6774Ff9549A53D4B41FDd2D88F1D0F5(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "profile",
-                "smartAccountId",
-                "syncStatus",
-                "virtualAccountId"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

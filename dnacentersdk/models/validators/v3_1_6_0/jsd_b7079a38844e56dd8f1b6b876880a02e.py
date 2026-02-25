@@ -79,10 +79,6 @@ class JSONSchemaValidatorB7079A38844E56Dd8F1B6B876880A02E(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "ssmGroupRange",
-                "ssmWildcardMask"
-                ],
                 "type": "object"
                 },
                 "type": "array"
@@ -91,13 +87,6 @@ class JSONSchemaValidatorB7079A38844E56Dd8F1B6B876880A02E(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "virtualNetworkName",
-                "ipPoolName",
-                "internalRpIpAddress",
-                "externalRpIpAddress",
-                "ssmInfo"
-                ],
                 "type": "object"
                 },
                 "type": "array"
@@ -106,12 +95,6 @@ class JSONSchemaValidatorB7079A38844E56Dd8F1B6B876880A02E(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "siteNameHierarchy",
-                "multicastMethod",
-                "multicastType",
-                "multicastVnInfo"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

@@ -45,7 +45,6 @@ class JSONSchemaValidatorFa310Ab095148Bdb00D7D3D5E1676(object):
                 },
                 "deliveries": {
                 "items": {
-                "type": "string"
                 },
                 "type": "array"
                 },
@@ -53,7 +52,6 @@ class JSONSchemaValidatorFa310Ab095148Bdb00D7D3D5E1676(object):
                 "type": "string"
                 },
                 "schedule": {
-                "type": "object"
                 },
                 "tags": {
                 "items": {
@@ -104,10 +102,6 @@ class JSONSchemaValidatorFa310Ab095148Bdb00D7D3D5E1676(object):
                 "type": "string"
                 },
                 "value": {
-                "items": {
-                "type": "object"
-                },
-                "type": "array"
                 }
                 },
                 "type": "object"
@@ -123,10 +117,6 @@ class JSONSchemaValidatorFa310Ab095148Bdb00D7D3D5E1676(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "formatType",
-                "name"
-                ],
                 "type": "object"
                 },
                 "name": {
@@ -136,13 +126,6 @@ class JSONSchemaValidatorFa310Ab095148Bdb00D7D3D5E1676(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "fieldGroups",
-                "filters",
-                "format",
-                "name",
-                "viewId"
-                ],
                 "type": "object"
                 },
                 "viewGroupId": {
@@ -152,15 +135,6 @@ class JSONSchemaValidatorFa310Ab095148Bdb00D7D3D5E1676(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "deliveries",
-                "name",
-                "schedule",
-                "view",
-                "viewGroupId",
-                "viewGroupVersion",
-                "dataCategory"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

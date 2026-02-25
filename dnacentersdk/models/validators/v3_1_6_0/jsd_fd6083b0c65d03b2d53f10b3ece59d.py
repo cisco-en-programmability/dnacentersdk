@@ -95,11 +95,6 @@ class JSONSchemaValidatorFd6083B0C65D03B2D53F10B3Ece59D(object):
                 "type": "boolean"
                 }
                 },
-                "required": [
-                "name",
-                "ipv6AddressSpace",
-                "ipv6Prefix"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

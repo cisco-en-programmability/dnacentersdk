@@ -80,9 +80,6 @@ class JSONSchemaValidatorB0Aa8E79D21F5E579908825E70Aaccf6(object):
                 "type": "array"
                 }
                 },
-                "required": [
-                "editFeatureTemplates"
-                ],
                 "type": "object"
                 },
                 "interfaces": {
@@ -107,10 +104,6 @@ class JSONSchemaValidatorB0Aa8E79D21F5E579908825E70Aaccf6(object):
                 "type": "integer"
                 }
                 },
-                "required": [
-                "interfaceName",
-                "vlanId"
-                ],
                 "type": "object"
                 },
                 "type": "array"

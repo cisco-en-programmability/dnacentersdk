@@ -47,9 +47,6 @@ class JSONSchemaValidatorDcc43Be0514E50FeA80CFa827F13Ee5C(object):
                 "type": "array"
                 }
                 },
-                "required": [
-                "memberType"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

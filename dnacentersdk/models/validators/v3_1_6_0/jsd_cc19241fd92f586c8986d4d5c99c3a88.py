@@ -66,20 +66,13 @@ class JSONSchemaValidatorCc19241FD92F586C8986D4D5C99C3A88(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "name"
-                ],
                 "type": "object"
                 },
                 "type": "array"
                 },
                 "templates": {
-                "type": "object"
                 }
                 },
-                "required": [
-                "name"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

@@ -76,16 +76,6 @@ class JSONSchemaValidatorBfb1005F4D265F8BB340637175A5841F(object):
                 "type": "number"
                 }
                 },
-                "required": [
-                "parentId",
-                "name",
-                "floorNumber",
-                "rfModel",
-                "width",
-                "length",
-                "height",
-                "unitsOfMeasure"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

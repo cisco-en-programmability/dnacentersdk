@@ -97,13 +97,6 @@ class JSONSchemaValidatorB07F187B7456C8Bbb6088A2F24Dcee(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "siteNameHierarchy",
-                "virtualNetworkName",
-                "vlanName",
-                "trafficType",
-                "poolType"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

@@ -60,9 +60,6 @@ class JSONSchemaValidatorDc5D352DFaeb5B17800B0Af2858C2F5C(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "deviceSerialNumber"
-                ],
                 "type": "object"
                 },
                 "type": "array"
@@ -89,10 +86,6 @@ class JSONSchemaValidatorDc5D352DFaeb5B17800B0Af2858C2F5C(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "ipPoolName",
-                "ipPoolRole"
-                ],
                 "type": "object"
                 },
                 "type": "array"
@@ -119,12 +112,6 @@ class JSONSchemaValidatorDc5D352DFaeb5B17800B0Af2858C2F5C(object):
                 "type": "boolean"
                 }
                 },
-                "required": [
-                "discoveredDeviceSiteNameHierarchy",
-                "primaryDeviceManagmentIPAddress",
-                "primaryDeviceInterfaceNames",
-                "ipPools"
-                ],
                 "type": "object"
                 },
                 "type": "array"

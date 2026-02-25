@@ -41,12 +41,8 @@ class JSONSchemaValidatorA93D01238De0537DBb3D358F9Cce0Bd2(object):
                 "$schema": "http://json-schema.org/draft-04/schema#",
                 "properties": {
                 "schedule": {
-                "type": "object"
                 }
                 },
-                "required": [
-                "schedule"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

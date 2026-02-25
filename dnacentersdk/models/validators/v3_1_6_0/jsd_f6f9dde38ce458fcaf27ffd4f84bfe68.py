@@ -73,12 +73,6 @@ class JSONSchemaValidatorF6F9Dde38Ce458FcAf27Ffd4F84Bfe68(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "id",
-                "macAddress",
-                "name",
-                "typeString"
-                ],
                 "type": "object"
                 },
                 "isSensor": {
@@ -110,11 +104,6 @@ class JSONSchemaValidatorF6F9Dde38Ce458FcAf27Ffd4F84Bfe68(object):
                 "type": "number"
                 }
                 },
-                "required": [
-                "x",
-                "y",
-                "z"
-                ],
                 "type": "object"
                 },
                 "radioCount": {
@@ -147,11 +136,6 @@ class JSONSchemaValidatorF6F9Dde38Ce458FcAf27Ffd4F84Bfe68(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "azimuthAngle",
-                "elevationAngle",
-                "name"
-                ],
                 "type": "object"
                 },
                 "attributes": {
@@ -190,32 +174,17 @@ class JSONSchemaValidatorF6F9Dde38Ce458FcAf27Ffd4F84Bfe68(object):
                 "type": "number"
                 }
                 },
-                "required": [
-                "id",
-                "ifTypeSubband",
-                "slotId"
-                ],
                 "type": "object"
                 },
                 "isSensor": {
                 "type": "boolean"
                 }
                 },
-                "required": [
-                "antenna",
-                "attributes"
-                ],
                 "type": "object"
                 },
                 "type": "array"
                 }
                 },
-                "required": [
-                "attributes",
-                "position",
-                "radioCount",
-                "radios"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

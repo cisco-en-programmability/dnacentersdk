@@ -673,10 +673,6 @@ class JSONSchemaValidatorF7Dd6A6Cf8D57499168Aae05847Ad34(object):
                 "type": "integer"
                 }
                 },
-                "required": [
-                "name",
-                "ssids"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

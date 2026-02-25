@@ -47,9 +47,6 @@ class JSONSchemaValidatorFe62979A925778Bdb0A974A7D86A12(object):
                 "type": "integer"
                 }
                 },
-                "required": [
-                "macAddress"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

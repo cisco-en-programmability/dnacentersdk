@@ -63,12 +63,6 @@ class JSONSchemaValidatorCcd75F80Ece59F08CadDa085402Cef5(object):
                 "type": "array"
                 }
                 },
-                "required": [
-                "id",
-                "extranetPolicyName",
-                "providerVirtualNetworkName",
-                "subscriberVirtualNetworkNames"
-                ],
                 "type": "object"
                 },
                 "type": "array"

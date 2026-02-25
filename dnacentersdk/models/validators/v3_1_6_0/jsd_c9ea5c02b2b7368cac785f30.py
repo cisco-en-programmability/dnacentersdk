@@ -61,11 +61,6 @@ class JSONSchemaValidatorC9Ea5C02B2B7368Cac785F30(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "description",
-                "instanceUuid",
-                "writeCommunity"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

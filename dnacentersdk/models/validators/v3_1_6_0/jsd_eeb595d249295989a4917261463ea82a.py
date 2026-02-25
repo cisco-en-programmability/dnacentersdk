@@ -60,18 +60,11 @@ class JSONSchemaValidatorEeb595D249295989A4917261463Ea82A(object):
                 "type": "array"
                 }
                 },
-                "required": [
-                "siteIds",
-                "policyTagName"
-                ],
                 "type": "object"
                 },
                 "type": "array"
                 }
                 },
-                "required": [
-                "items"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

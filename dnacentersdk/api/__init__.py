@@ -997,7 +997,7 @@ class DNACenterAPI(object):
             self.users = Users_v3_1_3_0(self._session, object_factory, _validator)
             self.wired = Wired_v3_1_3_0(self._session, object_factory, _validator)
             self.wireless = Wireless_v3_1_3_0(self._session, object_factory, _validator)
-        self.custom_caller = CustomCaller(self._session, object_factory)
+
         if version == '3.1.6.0':
             self.ai_endpoint_analytics = \
                 AiEndpointAnalytics_v3_1_6_0(
@@ -1195,6 +1195,7 @@ class DNACenterAPI(object):
                 Wireless_v3_1_6_0(
                     self._session, object_factory, _validator
                 )
+        
         self.custom_caller = \
             CustomCaller(self._session, object_factory)
 

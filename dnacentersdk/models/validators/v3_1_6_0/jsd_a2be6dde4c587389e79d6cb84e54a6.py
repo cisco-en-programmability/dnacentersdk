@@ -44,9 +44,6 @@ class JSONSchemaValidatorA2Be6DDe4C587389E79D6Cb84E54A6(object):
                 "type": "boolean"
                 }
                 },
-                "required": [
-                "multicastEnabled"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

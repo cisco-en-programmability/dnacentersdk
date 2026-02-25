@@ -120,21 +120,6 @@ class JSONSchemaValidatorF486694F3Da57B4921B7F2036A1B754(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "id",
-                "fabricId",
-                "virtualNetworkName",
-                "ipPoolName",
-                "vlanName",
-                "vlanId",
-                "trafficType",
-                "isCriticalPool",
-                "isLayer2FloodingEnabled",
-                "isWirelessPool",
-                "isIpDirectedBroadcast",
-                "isIntraSubnetRoutingEnabled",
-                "isMultipleIpToMacAddresses"
-                ],
                 "type": "object"
                 },
                 "type": "array"

@@ -240,10 +240,6 @@ class JSONSchemaValidator438D5B72Acb418347Ec1E1Fa(object):
                 "type": "array"
                 }
                 },
-                "required": [
-                "designName",
-                "featureAttributes"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

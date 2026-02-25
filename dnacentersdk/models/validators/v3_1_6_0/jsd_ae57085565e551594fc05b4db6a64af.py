@@ -70,9 +70,6 @@ class JSONSchemaValidatorAe57085565E551594Fc05B4Db6A64Af(object):
                 "type": "boolean"
                 }
                 },
-                "required": [
-                "controlPlaneNetworkDeviceIds"
-                ],
                 "type": "object"
                 },
                 "siteId": {
@@ -87,10 +84,6 @@ class JSONSchemaValidatorAe57085565E551594Fc05B4Db6A64Af(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "name",
-                "type"
-                ],
                 "type": "object"
                 },
                 "type": "array"

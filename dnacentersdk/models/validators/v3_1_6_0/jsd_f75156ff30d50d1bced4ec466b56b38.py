@@ -74,10 +74,6 @@ class JSONSchemaValidatorF75156FF30D50D1Bced4Ec466B56B38(object):
                 "type": "array"
                 }
                 },
-                "required": [
-                "designName",
-                "featureAttributes"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

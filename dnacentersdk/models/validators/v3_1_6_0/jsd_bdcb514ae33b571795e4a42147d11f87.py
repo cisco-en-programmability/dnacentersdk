@@ -48,10 +48,6 @@ class JSONSchemaValidatorBdcb514AE33B571795E4A42147D11F87(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "siteId",
-                "networkDeviceId"
-                ],
                 "type": "object"
                 },
                 "type": "array"

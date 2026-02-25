@@ -79,13 +79,6 @@ class JSONSchemaValidatorF2B137487385De6925B7B6136D4B027(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "fabricId",
-                "networkDeviceId",
-                "interfaceNames",
-                "connectedDeviceType",
-                "protocol"
-                ],
                 "type": "object"
                 },
                 "type": "array"

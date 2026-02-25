@@ -48,9 +48,6 @@ class JSONSchemaValidatorB4635C45C3B5E44A30D84Daa1D5Fb69(object):
                 "type": "array"
                 }
                 },
-                "required": [
-                "networkDeviceIds"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

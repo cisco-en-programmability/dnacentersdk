@@ -56,13 +56,6 @@ class JSONSchemaValidatorDb0F8E07Ae0D5Ecc83E34D29E5E57B41(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "serverAddress",
-                "username",
-                "portNumber",
-                "rootLocation",
-                "password"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

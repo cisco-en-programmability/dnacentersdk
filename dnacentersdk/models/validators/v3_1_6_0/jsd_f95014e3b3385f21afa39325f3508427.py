@@ -64,11 +64,6 @@ class JSONSchemaValidatorF95014E3B3385F21Afa39325F3508427(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "networkDeviceId",
-                "fabricId",
-                "transitNetworkId"
-                ],
                 "type": "object"
                 },
                 "type": "array"

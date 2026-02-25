@@ -97,11 +97,6 @@ class JSONSchemaValidatorD292147221524A96616D982B0147C0(object):
                 "type": "number"
                 }
                 },
-                "required": [
-                "parentNameHierarchy",
-                "name",
-                "type"
-                ],
                 "type": "object"
                 },
                 "type": "array"

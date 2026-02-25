@@ -735,13 +735,6 @@ class JSONSchemaValidatorE2F9718DE3D050819Cdc6355A3A43200(object):
                 "type": "array"
                 }
                 },
-                "required": [
-                "templateName",
-                "name",
-                "_id",
-                "ssids",
-                "locationInfoList"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

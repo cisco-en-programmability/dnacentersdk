@@ -60,11 +60,6 @@ class JSONSchemaValidatorE9C39175D785A0EB9D6F402F378A2Ba(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "nfsVersion",
-                "server",
-                "sourcePath"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

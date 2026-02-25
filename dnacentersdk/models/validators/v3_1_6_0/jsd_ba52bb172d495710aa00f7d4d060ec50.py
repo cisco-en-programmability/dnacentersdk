@@ -44,9 +44,6 @@ class JSONSchemaValidatorBa52Bb172D495710Aa00F7D4D060Ec50(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "apPnPLocation"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

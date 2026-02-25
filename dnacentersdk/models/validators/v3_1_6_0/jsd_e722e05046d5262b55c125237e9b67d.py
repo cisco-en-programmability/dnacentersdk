@@ -90,9 +90,6 @@ class JSONSchemaValidatorE722E05046D5262B55C125237E9B67D(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "deviceId"
-                ],
                 "type": "object"
                 },
                 "type": "array"
@@ -116,9 +113,6 @@ class JSONSchemaValidatorE722E05046D5262B55C125237E9B67D(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "deviceClaimList"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

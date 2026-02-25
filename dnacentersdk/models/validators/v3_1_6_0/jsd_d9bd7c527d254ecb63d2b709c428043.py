@@ -47,9 +47,6 @@ class JSONSchemaValidatorD9Bd7C527D254EcB63D2B709C428043(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "defaultSmartAccountId"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

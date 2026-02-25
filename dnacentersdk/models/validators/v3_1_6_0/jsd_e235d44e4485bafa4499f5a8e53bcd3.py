@@ -64,10 +64,6 @@ class JSONSchemaValidatorE235D44E4485BafA4499F5A8E53Bcd3(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "subnet",
-                "prefixLength"
-                ],
                 "type": "object"
                 },
                 "name": {
@@ -81,11 +77,6 @@ class JSONSchemaValidatorE235D44E4485BafA4499F5A8E53Bcd3(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "addressSpace",
-                "name",
-                "poolType"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

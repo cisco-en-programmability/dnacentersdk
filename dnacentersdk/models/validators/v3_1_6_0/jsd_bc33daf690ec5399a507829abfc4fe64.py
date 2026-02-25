@@ -128,9 +128,6 @@ class JSONSchemaValidatorBc33Daf690Ec5399A507829Abfc4Fe64(object):
                 "type": "integer"
                 }
                 },
-                "required": [
-                "passphrase"
-                ],
                 "type": "object"
                 },
                 "type": "array"
@@ -206,10 +203,6 @@ class JSONSchemaValidatorBc33Daf690Ec5399A507829Abfc4Fe64(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "name",
-                "securityLevel"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

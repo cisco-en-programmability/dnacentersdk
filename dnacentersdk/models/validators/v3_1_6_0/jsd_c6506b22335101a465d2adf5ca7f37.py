@@ -60,19 +60,11 @@ class JSONSchemaValidatorC6506B22335101A465D2Adf5Ca7F37(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "siteIds",
-                "siteTagName",
-                "apProfileName"
-                ],
                 "type": "object"
                 },
                 "type": "array"
                 }
                 },
-                "required": [
-                "items"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

@@ -54,10 +54,6 @@ class JSONSchemaValidatorCf0F416Ef5C25A159F4C3E376741A(object):
                 "type": "array"
                 }
                 },
-                "required": [
-                "cli",
-                "productSeriesOrdinals"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

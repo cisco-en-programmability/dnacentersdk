@@ -50,10 +50,6 @@ class JSONSchemaValidatorC279Ba052250D883Ef87775A415089(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "deviceIds",
-                "siteId"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

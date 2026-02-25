@@ -49,9 +49,6 @@ class JSONSchemaValidatorC17432D928F755F8Bb9F4Edb83089D3E(object):
                 "type": "object"
                 }
                 },
-                "required": [
-                "timeZone"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

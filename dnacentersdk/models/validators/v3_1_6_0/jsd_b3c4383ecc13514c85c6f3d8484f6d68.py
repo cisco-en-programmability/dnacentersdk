@@ -56,9 +56,6 @@ class JSONSchemaValidatorB3C4383ECc13514C85C6F3D8484F6D68(object):
                 "type": "object"
                 }
                 },
-                "required": [
-                "banner"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

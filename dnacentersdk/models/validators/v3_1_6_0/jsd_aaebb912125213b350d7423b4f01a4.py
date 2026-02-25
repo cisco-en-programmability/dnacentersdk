@@ -64,9 +64,6 @@ class JSONSchemaValidatorAaebb912125213B350D7423B4F01A4(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "hostName"
-                ],
                 "type": "object"
                 },
                 "secondarySMTPConfig": {
@@ -87,9 +84,6 @@ class JSONSchemaValidatorAaebb912125213B350D7423B4F01A4(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "hostName"
-                ],
                 "type": "object"
                 },
                 "subject": {
@@ -99,9 +93,6 @@ class JSONSchemaValidatorAaebb912125213B350D7423B4F01A4(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "primarySMTPConfig"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

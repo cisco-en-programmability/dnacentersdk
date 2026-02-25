@@ -159,16 +159,9 @@ class JSONSchemaValidatorF04B76067507B9384E409E9431Ef3(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "serialNumber",
-                "pid"
-                ],
                 "type": "object"
                 }
                 },
-                "required": [
-                "deviceInfo"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

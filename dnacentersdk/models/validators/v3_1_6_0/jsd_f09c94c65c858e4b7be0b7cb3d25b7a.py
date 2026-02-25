@@ -83,11 +83,6 @@ class JSONSchemaValidatorF09C94C65C858E4B7Be0B7Cb3D25B7A(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "fabricId",
-                "vlanName",
-                "trafficType"
-                ],
                 "type": "object"
                 },
                 "type": "array"

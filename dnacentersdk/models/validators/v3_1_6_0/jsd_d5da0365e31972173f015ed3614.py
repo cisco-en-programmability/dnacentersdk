@@ -76,16 +76,6 @@ class JSONSchemaValidatorD5DA0365E31972173F015Ed3614(object):
                 "type": "number"
                 }
                 },
-                "required": [
-                "parentId",
-                "name",
-                "floorNumber",
-                "rfModel",
-                "width",
-                "length",
-                "height",
-                "unitsOfMeasure"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

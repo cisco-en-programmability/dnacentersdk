@@ -59,11 +59,6 @@ class JSONSchemaValidatorCd16DAa50533EB0F5873B7601Abb2(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "parentId",
-                "name",
-                "country"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

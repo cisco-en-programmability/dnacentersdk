@@ -54,11 +54,6 @@ class JSONSchemaValidatorF99C96C3A9B45DdaAbc2C75Ff8Efa67F(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "ssid",
-                "site",
-                "passPhrase"
-                ],
                 "type": "object"
                 },
                 "type": "array"

@@ -57,7 +57,6 @@ class JSONSchemaValidatorC5C273290Fae513DA209Ec2C9270E46D(object):
                 },
                 "attributes": {
                 "items": {
-                "type": "string"
                 },
                 "type": "array"
                 },
@@ -122,10 +121,6 @@ class JSONSchemaValidatorC5C273290Fae513DA209Ec2C9270E46D(object):
                 "type": "integer"
                 }
                 },
-                "required": [
-                "topN",
-                "groupBy"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

@@ -52,9 +52,6 @@ class JSONSchemaValidatorDf9Ec5Aa58815A849B4853B223343E5E(object):
                 "type": "object"
                 }
                 },
-                "required": [
-                "ntp"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

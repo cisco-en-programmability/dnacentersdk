@@ -59,9 +59,6 @@ class JSONSchemaValidatorB3323A24B275402B97C7E9Ccfd78C91(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "id"
-                ],
                 "type": "object"
                 },
                 "httpsRead": {
@@ -83,9 +80,6 @@ class JSONSchemaValidatorB3323A24B275402B97C7E9Ccfd78C91(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "id"
-                ],
                 "type": "object"
                 },
                 "httpsWrite": {
@@ -107,9 +101,6 @@ class JSONSchemaValidatorB3323A24B275402B97C7E9Ccfd78C91(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "id"
-                ],
                 "type": "object"
                 },
                 "snmpV2cRead": {
@@ -125,9 +116,6 @@ class JSONSchemaValidatorB3323A24B275402B97C7E9Ccfd78C91(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "id"
-                ],
                 "type": "object"
                 },
                 "snmpV2cWrite": {
@@ -143,9 +131,6 @@ class JSONSchemaValidatorB3323A24B275402B97C7E9Ccfd78C91(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "id"
-                ],
                 "type": "object"
                 },
                 "snmpV3": {
@@ -176,9 +161,6 @@ class JSONSchemaValidatorB3323A24B275402B97C7E9Ccfd78C91(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "id"
-                ],
                 "type": "object"
                 }
                 },

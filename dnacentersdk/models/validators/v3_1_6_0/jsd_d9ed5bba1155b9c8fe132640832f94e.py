@@ -50,9 +50,6 @@ class JSONSchemaValidatorD9Ed5BbA1155B9C8Fe132640832F94E(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "macAddress"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

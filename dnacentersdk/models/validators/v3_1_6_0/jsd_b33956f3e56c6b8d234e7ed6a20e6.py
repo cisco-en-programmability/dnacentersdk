@@ -108,10 +108,6 @@ class JSONSchemaValidatorB33956F3E56C6B8D234E7Ed6A20E6(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "siteIds",
-                "trendInterval"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

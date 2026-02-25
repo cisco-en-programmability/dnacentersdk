@@ -47,10 +47,6 @@ class JSONSchemaValidatorC4Befbd77A452A9B7873Ffc360A1F20(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "deviceName",
-                "siteNameHierarchy"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

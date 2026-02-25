@@ -58,23 +58,14 @@ class JSONSchemaValidatorE0B654C39Dc6E19Cd6F5194D(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "oldProfileName"
-                ],
                 "type": "object"
                 },
                 "type": "array"
                 }
                 },
-                "required": [
-                "qos"
-                ],
                 "type": "object"
                 }
                 },
-                "required": [
-                "settings"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

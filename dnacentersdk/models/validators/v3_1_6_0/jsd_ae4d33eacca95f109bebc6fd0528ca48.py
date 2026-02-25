@@ -54,10 +54,6 @@ class JSONSchemaValidatorAe4D33EaCca95F109BebC6Fd0528Ca48(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "siteId",
-                "authenticationProfileName"
-                ],
                 "type": "object"
                 },
                 "type": "array"

@@ -81,9 +81,6 @@ class JSONSchemaValidatorF5A13405Ba69F3957B98Db8663A(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "deviceId"
-                ],
                 "type": "object"
                 },
                 "type": "array"
@@ -95,9 +92,6 @@ class JSONSchemaValidatorF5A13405Ba69F3957B98Db8663A(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "deviceResetList"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

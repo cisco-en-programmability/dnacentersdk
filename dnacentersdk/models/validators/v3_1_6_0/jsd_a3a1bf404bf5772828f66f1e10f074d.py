@@ -59,10 +59,6 @@ class JSONSchemaValidatorA3A1Bf404Bf5772828F66F1E10F074D(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "description",
-                "writeCommunity"
-                ],
                 "type": "object"
                 },
                 "type": "array"

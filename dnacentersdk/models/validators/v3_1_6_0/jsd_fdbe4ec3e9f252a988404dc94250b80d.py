@@ -73,11 +73,6 @@ class JSONSchemaValidatorFdbe4Ec3E9F252A988404Dc94250B80D(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "password",
-                "port",
-                "username"
-                ],
                 "type": "object"
                 },
                 "httpWriteCredential": {
@@ -95,11 +90,6 @@ class JSONSchemaValidatorFdbe4Ec3E9F252A988404Dc94250B80D(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "password",
-                "port",
-                "username"
-                ],
                 "type": "object"
                 },
                 "ipAddressList": {
@@ -178,12 +168,6 @@ class JSONSchemaValidatorFdbe4Ec3E9F252A988404Dc94250B80D(object):
                 "type": "array"
                 }
                 },
-                "required": [
-                "discoveryType",
-                "ipAddressList",
-                "name",
-                "snmpVersion"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

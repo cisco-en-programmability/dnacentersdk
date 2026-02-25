@@ -87,12 +87,6 @@ class JSONSchemaValidatorBfd1Cc1403C951A99C0FCafd59Eaabf3(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "privateIpAddress",
-                "peerNetworkDeviceId",
-                "mobilityGroupName",
-                "memberMacAddress"
-                ],
                 "type": "object"
                 },
                 "type": "array"
@@ -101,12 +95,6 @@ class JSONSchemaValidatorBfd1Cc1403C951A99C0FCafd59Eaabf3(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "mobilityGroupName",
-                "macAddress",
-                "managementIp",
-                "networkDeviceId"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

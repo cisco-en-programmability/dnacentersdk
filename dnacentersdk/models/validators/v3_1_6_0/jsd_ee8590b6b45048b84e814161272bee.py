@@ -120,19 +120,6 @@ class JSONSchemaValidatorEe8590B6B45048B84E814161272Bee(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "fabricId",
-                "virtualNetworkName",
-                "ipPoolName",
-                "trafficType",
-                "isCriticalPool",
-                "isLayer2FloodingEnabled",
-                "isWirelessPool",
-                "isIpDirectedBroadcast",
-                "isIntraSubnetRoutingEnabled",
-                "isMultipleIpToMacAddresses",
-                "autoGenerateVlanName"
-                ],
                 "type": "object"
                 },
                 "type": "array"

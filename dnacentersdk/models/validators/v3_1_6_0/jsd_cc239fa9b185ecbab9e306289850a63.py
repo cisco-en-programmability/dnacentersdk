@@ -97,21 +97,11 @@ class JSONSchemaValidatorCc239Fa9B185EcbAb9E306289850A63(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "interfaceType",
-                "interfaceId",
-                "parameterType",
-                "parameterValue"
-                ],
                 "type": "object"
                 },
                 "type": "array"
                 }
                 },
-                "required": [
-                "profileName",
-                "rules"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

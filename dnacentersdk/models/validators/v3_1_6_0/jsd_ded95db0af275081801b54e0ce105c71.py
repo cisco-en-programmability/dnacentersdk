@@ -123,9 +123,6 @@ class JSONSchemaValidatorDed95Db0Af275081801B54E0Ce105C71(object):
                 "type": "integer"
                 }
                 },
-                "required": [
-                "siteIds"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

@@ -47,10 +47,6 @@ class JSONSchemaValidatorFb5E152D4D3D59F5Afd92F717F3A1Eea(object):
                 "type": "integer"
                 }
                 },
-                "required": [
-                "interfaceName",
-                "vlanId"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

@@ -57,11 +57,6 @@ class JSONSchemaValidatorB843A90C86875472Af1F351E78Dd5521(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "dataRetention",
-                "mountPath",
-                "type"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

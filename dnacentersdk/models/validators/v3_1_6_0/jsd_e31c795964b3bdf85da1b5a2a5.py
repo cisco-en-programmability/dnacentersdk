@@ -80,11 +80,6 @@ class JSONSchemaValidatorE31C795964B3BdF85Da1B5A2A5(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "deviceName",
-                "site",
-                "managedAPLocations"
-                ],
                 "type": "object"
                 },
                 "type": "array"

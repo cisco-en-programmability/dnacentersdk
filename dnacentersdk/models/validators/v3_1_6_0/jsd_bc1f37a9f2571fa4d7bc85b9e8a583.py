@@ -52,18 +52,11 @@ class JSONSchemaValidatorBc1F37A9F2571FA4D7Bc85B9E8A583(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "id"
-                ],
                 "type": "object"
                 },
                 "type": "array"
                 }
                 },
-                "required": [
-                "id",
-                "tags"
-                ],
                 "type": "object"
                 },
                 "type": "array"

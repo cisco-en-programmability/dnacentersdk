@@ -73,9 +73,6 @@ class JSONSchemaValidatorBfab2E1D87654AfB88C77Fcfae4E407(object):
                 "type": "boolean"
                 }
                 },
-                "required": [
-                "radioBand"
-                ],
                 "type": "object"
                 },
                 "unlockedAttributes": {
@@ -85,10 +82,6 @@ class JSONSchemaValidatorBfab2E1D87654AfB88C77Fcfae4E407(object):
                 "type": "array"
                 }
                 },
-                "required": [
-                "designName",
-                "featureAttributes"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

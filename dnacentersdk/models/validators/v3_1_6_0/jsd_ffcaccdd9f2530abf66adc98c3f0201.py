@@ -77,11 +77,6 @@ class JSONSchemaValidatorFfcaccdD9F2530ABf66Adc98C3F0201(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "password",
-                "port",
-                "username"
-                ],
                 "type": "object"
                 },
                 "type": "array"

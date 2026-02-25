@@ -249,9 +249,6 @@ class JSONSchemaValidatorAa663Ca2Bd1F5A3DB67C405987495112(object):
                 "type": "integer"
                 }
                 },
-                "required": [
-                "passphrase"
-                ],
                 "type": "object"
                 },
                 "type": "array"
@@ -338,11 +335,6 @@ class JSONSchemaValidatorAa663Ca2Bd1F5A3DB67C405987495112(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "ssid",
-                "authType",
-                "wlanType"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

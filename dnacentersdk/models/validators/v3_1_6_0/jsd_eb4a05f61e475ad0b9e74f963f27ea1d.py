@@ -51,10 +51,6 @@ class JSONSchemaValidatorEb4A05F61E475Ad0B9E74F963F27Ea1D(object):
                 "type": "array"
                 }
                 },
-                "required": [
-                "productNameOrdinal",
-                "siteIds"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

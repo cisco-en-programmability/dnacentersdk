@@ -54,9 +54,6 @@ class JSONSchemaValidatorB08F499F995F5F46Ba52E0385B54721A(object):
                 "type": "number"
                 }
                 },
-                "required": [
-                "id"
-                ],
                 "type": "object"
                 },
                 "type": "array"

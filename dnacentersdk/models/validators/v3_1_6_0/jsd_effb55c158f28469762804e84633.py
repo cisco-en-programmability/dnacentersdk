@@ -60,12 +60,6 @@ class JSONSchemaValidatorEffb55C158F28469762804E84633(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "id",
-                "siteId",
-                "authenticationProfileName",
-                "isPubSubEnabled"
-                ],
                 "type": "object"
                 },
                 "type": "array"

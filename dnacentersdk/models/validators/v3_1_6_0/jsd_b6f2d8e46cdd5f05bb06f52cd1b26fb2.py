@@ -92,10 +92,6 @@ class JSONSchemaValidatorB6F2D8E46Cdd5F05Bb06F52Cd1B26Fb2(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "virtualNetworkName",
-                "vlanName"
-                ],
                 "type": "object"
                 },
                 "type": "array"
@@ -112,25 +108,14 @@ class JSONSchemaValidatorB6F2D8E46Cdd5F05Bb06F52Cd1B26Fb2(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "virtualNetworkName"
-                ],
                 "type": "object"
                 }
                 },
-                "required": [
-                "virtualNetwork"
-                ],
                 "type": "object"
                 },
                 "type": "array"
                 }
                 },
-                "required": [
-                "interfaceName",
-                "interfaceDescription",
-                "externalAutonomouSystemNumber"
-                ],
                 "type": "object"
                 },
                 "type": "array"
@@ -154,18 +139,6 @@ class JSONSchemaValidatorB6F2D8E46Cdd5F05Bb06F52Cd1B26Fb2(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "deviceManagementIpAddress",
-                "siteNameHierarchy",
-                "deviceRole",
-                "externalDomainRoutingProtocolName",
-                "externalConnectivityIpPoolName",
-                "internalAutonomouSystemNumber",
-                "borderSessionType",
-                "connectedToInternet",
-                "borderWithExternalConnectivity",
-                "externalConnectivitySettings"
-                ],
                 "type": "object"
                 },
                 "type": "array"

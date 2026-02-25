@@ -50,11 +50,6 @@ class JSONSchemaValidatorC49A8488Cd52158790Aac513E7184A(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "username",
-                "portNumber",
-                "password"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

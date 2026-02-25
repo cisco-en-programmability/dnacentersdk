@@ -69,11 +69,6 @@ class JSONSchemaValidatorCd2E825A78B6De087E991F6Fe0(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "serverType",
-                "protocol",
-                "primaryServerIp"
-                ],
                 "type": "object"
                 },
                 "aaaNetwork": {
@@ -105,18 +100,9 @@ class JSONSchemaValidatorCd2E825A78B6De087E991F6Fe0(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "serverType",
-                "protocol",
-                "primaryServerIp"
-                ],
                 "type": "object"
                 }
                 },
-                "required": [
-                "aaaNetwork",
-                "aaaClient"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

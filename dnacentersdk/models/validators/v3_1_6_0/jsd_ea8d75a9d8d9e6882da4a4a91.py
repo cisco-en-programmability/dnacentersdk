@@ -107,11 +107,6 @@ class JSONSchemaValidatorEA8D75A9D8D9E6882Da4A4A91(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "action",
-                "protocol",
-                "port"
-                ],
                 "type": "object"
                 },
                 "type": "array"
@@ -131,23 +126,12 @@ class JSONSchemaValidatorEA8D75A9D8D9E6882Da4A4A91(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "enabled"
-                ],
                 "type": "object"
                 },
                 "wakeOnLan": {
                 "type": "boolean"
                 }
                 },
-                "required": [
-                "id",
-                "authenticationProfileName",
-                "authenticationOrder",
-                "dot1xToMabFallbackTimeout",
-                "wakeOnLan",
-                "numberOfHosts"
-                ],
                 "type": "object"
                 },
                 "type": "array"

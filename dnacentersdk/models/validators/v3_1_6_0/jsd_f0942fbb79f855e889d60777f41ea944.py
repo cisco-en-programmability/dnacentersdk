@@ -82,17 +82,6 @@ class JSONSchemaValidatorF0942Fbb79F855E889D60777F41Ea944(object):
                 "type": "integer"
                 }
                 },
-                "required": [
-                "id",
-                "networkDeviceId",
-                "fabricId",
-                "transitNetworkId",
-                "interfaceName",
-                "virtualNetworkName",
-                "vlanId",
-                "localIpAddress",
-                "remoteIpAddress"
-                ],
                 "type": "object"
                 },
                 "type": "array"

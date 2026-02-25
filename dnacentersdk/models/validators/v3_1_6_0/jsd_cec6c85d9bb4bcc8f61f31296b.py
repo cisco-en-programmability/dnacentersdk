@@ -120,12 +120,6 @@ class JSONSchemaValidatorCeC6C85D9BB4BcC8F61F31296B(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "name",
-                "type",
-                "ipv4GlobalPool",
-                "ipv4Prefix"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

@@ -60,13 +60,6 @@ class JSONSchemaValidatorBa98Ed72975099B39DD2Dc4Cb65Ed8(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "serverName",
-                "serverUrl",
-                "password",
-                "userName",
-                "view"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

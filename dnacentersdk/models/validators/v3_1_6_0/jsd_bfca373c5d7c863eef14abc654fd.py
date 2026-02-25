@@ -57,11 +57,6 @@ class JSONSchemaValidatorBfca373C5D7C863EEf14Abc654Fd(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "siteId",
-                "authenticationProfileName",
-                "isPubSubEnabled"
-                ],
                 "type": "object"
                 },
                 "type": "array"

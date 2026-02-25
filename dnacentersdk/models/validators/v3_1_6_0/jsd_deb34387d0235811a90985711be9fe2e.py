@@ -56,9 +56,6 @@ class JSONSchemaValidatorDeb34387D0235811A90985711Be9Fe2E(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "macAddress"
-                ],
                 "type": "object"
                 },
                 "type": "array"
@@ -232,10 +229,6 @@ class JSONSchemaValidatorDeb34387D0235811A90985711Be9Fe2E(object):
                 "type": "object"
                 }
                 },
-                "required": [
-                "apList",
-                "radioConfigurations"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

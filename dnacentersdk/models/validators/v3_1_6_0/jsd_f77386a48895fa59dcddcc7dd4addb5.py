@@ -77,11 +77,6 @@ class JSONSchemaValidatorF77386A48895Fa59DcdDcc7Dd4Addb5(object):
                 "type": "string"
                 }
                 },
-                "required": [
-                "password",
-                "port",
-                "username"
-                ],
                 "type": "object"
                 },
                 "type": "array"

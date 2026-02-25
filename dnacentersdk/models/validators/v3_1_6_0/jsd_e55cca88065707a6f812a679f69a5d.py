@@ -78,9 +78,6 @@ class JSONSchemaValidatorE55Cca88065707A6F812A679F69A5D(object):
                 "type": "object"
                 }
                 },
-                "required": [
-                "apAuthorizationListName"
-                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))
