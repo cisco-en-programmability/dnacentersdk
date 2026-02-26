@@ -830,9 +830,9 @@ class ApplicationPolicy(object):
             application_registry_sync_status(str): applicationRegistrySyncStatus query parameter. Indicates whether
                 the latest definitions from application registry have been synchronized with the network
                 device or not. Available values: SYNCING, IN_SYNC, OUT_OF_SYNC, NOT_APPLICABLE .
-            offset(str): offset query parameter. The first record to show for this page; the first record is
+            offset(int): offset query parameter. The first record to show for this page; the first record is
                 numbered 1. Default value is: 1. .
-            limit(str): limit query parameter. The number of records to show for this page. Minimum value is: 1,
+            limit(int): limit query parameter. The number of records to show for this page. Minimum value is: 1,
                 Maximum value is: 500 .
             sort_by(str): sortBy query parameter. A property within the response to sort by. .
             order(str): order query parameter. Whether ascending or descending order should be used to sort the
@@ -865,8 +865,8 @@ class ApplicationPolicy(object):
         check_type(protocol_pack_status, str)
         check_type(protocol_pack_update_status, str)
         check_type(application_registry_sync_status, str)
-        check_type(offset, str)
-        check_type(limit, str)
+        check_type(offset, int)
+        check_type(limit, int)
         check_type(sort_by, str)
         check_type(order, str)
         if headers is not None:

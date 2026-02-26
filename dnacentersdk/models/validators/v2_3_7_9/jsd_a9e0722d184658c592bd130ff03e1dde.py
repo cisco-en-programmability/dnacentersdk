@@ -76,7 +76,7 @@ class JSONSchemaValidatorA9E0722D184658C592Bd130Ff03E1Dde(object):
                 "type": "integer"
                 },
                 "offset": {
-                "type": "number"
+                "type": "integer"
                 },
                 "orderBy": {
                 "items": {

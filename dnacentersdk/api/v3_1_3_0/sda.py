@@ -10374,7 +10374,7 @@ class Sda(object):
         """Retrieves a list of all Security Service Insertions (SSIs) configured across fabric sites. .
 
         Args:
-            limit(str): limit query parameter. Maximum number of records to return. Default value is 100, minimum
+            limit(int): limit query parameter. Maximum number of records to return. Default value is 100, minimum
                 value is 1 and maximum value is 100. .
             offset(int): offset query parameter. Starting record for pagination. The first record is numbered 1. .
             order(str): order query parameter. The sorting order for the response can be specified as either
@@ -10398,7 +10398,7 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!security-service-insertions
         """
         check_type(headers, dict)
-        check_type(limit, str)
+        check_type(limit, int)
         check_type(offset, int)
         check_type(order, str)
         check_type(fabric_site_name, str)

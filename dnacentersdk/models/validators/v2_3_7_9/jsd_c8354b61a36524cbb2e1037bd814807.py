@@ -46,10 +46,10 @@ class JSONSchemaValidatorC8354B61A36524CBb2E1037Bd814807(object):
                 "type": "number"
                 },
                 "limit": {
-                "type": "number"
+                "type": "integer"
                 },
                 "offset": {
-                "type": "number"
+                "type": "integer"
                 },
                 "siteId": {
                 "items": {

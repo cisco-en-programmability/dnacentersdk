@@ -8,11 +8,39 @@ Changelog <https://keepachangelog.com/en/1.0.0/>`__, and this project
 adheres to `Semantic
 Versioning <https://semver.org/spec/v2.0.0.html>`__.
 
-`Unreleased <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.11.1...develop>`__
+`Unreleased <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.11.2...develop>`__
 ---------------------------------------------------------------------------------------------------
+
+`2.11.2 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.11.1...v2.11.2>`__ - 2026-02-26
+------------------------------------------------------------------------------------------------------------
+
+Fixed
+~~~~~
+
+- **``limit`` and ``offset`` parameter types (v2.3.7.9, v3.1.3.0)**:
+  Changed ``limit`` and ``offset`` query parameters from ``str`` to
+  ``int`` type in ``check_type`` validations and docstrings across
+  multiple modules, matching the corrected types already applied in
+  v3.1.6.0. Affected modules:
+
+  - ``application_policy`` (v2.3.7.9, v3.1.3.0)
+  - ``devices`` (v2.3.7.9, v3.1.3.0)
+  - ``lan_automation`` (v2.3.7.9, v3.1.3.0)
+  - ``sda`` (v2.3.7.9, v3.1.3.0)
+  - ``sites`` (v2.3.7.9, v3.1.3.0)
+  - ``wireless`` (v2.3.7.9, v3.1.3.0)
+
+- **Validator schema types (v2.3.7.9, v3.1.3.0)**: Fixed ``limit`` and
+  ``offset`` JSON schema types from ``"number"`` to ``"integer"`` in
+  ``GetDeviceInterfaceStatsInfoV2`` and ``RogueAdditionalDetails``
+  request validators.
+
+.. _section-1:
 
 `2.11.1 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.11.0...v2.11.1>`__ - 2026-02-25
 ------------------------------------------------------------------------------------------------------------
+
+.. _fixed-1:
 
 Fixed
 ~~~~~
@@ -34,7 +62,7 @@ Changed
   the previous ``.replace("\\n" + " " * 16, "")`` workaround. No
   functional change.
 
-.. _section-1:
+.. _section-2:
 
 `2.11.0 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.10.6...v2.11.0>`__ - 2026-02-04
 ------------------------------------------------------------------------------------------------------------
@@ -55,12 +83,12 @@ Changed
 
 - SDK is now compatible with Cisco Catalyst Center 3.1.6.0’s API.
 
-.. _section-2:
+.. _section-3:
 
 `2.10.6 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.10.5...v2.10.6>`__ - 2025-12-15
 ------------------------------------------------------------------------------------------------------------
 
-.. _fixed-1:
+.. _fixed-2:
 
 Fixed
 ~~~~~
@@ -97,12 +125,12 @@ Changed
   v2.3.7.9” in the User API Doc to properly separate v2.3.7.9 classes
   from v2.3.7.6, improving documentation clarity and navigation.
 
-.. _section-3:
+.. _section-4:
 
 `2.10.5 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.10.4...v2.10.5>`__ - 2025-10-29
 ------------------------------------------------------------------------------------------------------------
 
-.. _fixed-2:
+.. _fixed-3:
 
 Fixed
 ~~~~~
@@ -111,7 +139,7 @@ Fixed
   ``object`` to ``array`` in ``CreateOrScheduleAReport`` validator
   (``jsd_fa310ab095148bdb00d7d3d5e1676.py``).
 
-.. _section-4:
+.. _section-5:
 
 `2.10.4 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.10.3...v2.10.4>`__ - 2025-07-30
 ------------------------------------------------------------------------------------------------------------
@@ -232,7 +260,7 @@ Added
       →
       ``get_trend_analytics_data_for_thousand_eyes_test_results_in_the_specified_time_range``
 
-.. _fixed-3:
+.. _fixed-4:
 
 Fixed
 ~~~~~
@@ -313,12 +341,12 @@ Changed
 - **Documentation Consistency**: Function names now properly align with
   their respective API documentation and operation IDs.
 
-.. _section-5:
+.. _section-6:
 
 `2.10.3 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.10.2...v2.10.3>`__ - 2025-07-29
 ------------------------------------------------------------------------------------------------------------
 
-.. _fixed-4:
+.. _fixed-5:
 
 Fixed
 ~~~~~
@@ -382,12 +410,12 @@ Changed
   - Maintained backward compatibility where applicable through alias
     functions
 
-.. _section-6:
+.. _section-7:
 
 `2.10.2 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.10.1...v2.10.2>`__ - 2025-07-22
 ------------------------------------------------------------------------------------------------------------
 
-.. _fixed-5:
+.. _fixed-6:
 
 Fixed
 ~~~~~
@@ -420,12 +448,12 @@ Documentation
   explicit close methods, and migration guidance for updating existing
   code to use new resource management patterns.
 
-.. _section-7:
+.. _section-8:
 
 `2.10.1 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.10.0...v2.10.1>`__ - 2025-07-04
 ------------------------------------------------------------------------------------------------------------
 
-.. _fixed-6:
+.. _fixed-7:
 
 Fixed
 ~~~~~
@@ -439,7 +467,7 @@ Fixed
   ``download_unmaskedraw_device_configuration_as_z_ip`` to
   ``download_unmaskedraw_device_configuration_as_zip``.
 
-.. _section-8:
+.. _section-9:
 
 `2.10.0 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.9.1...v2.10.0>`__ - 2025-06-09
 -----------------------------------------------------------------------------------------------------------
@@ -466,7 +494,7 @@ Added
 - The v1 alias functions were all removed. Example… if your using
   “application_v1” you must be able to change it to “application”.
 
-.. _section-9:
+.. _section-10:
 
 `2.9.1 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.9.0...v2.9.1>`__ - 2025-05-09
 ---------------------------------------------------------------------------------------------------------
@@ -476,7 +504,7 @@ Fix
 
 - Modification of the get_reserve_ip_subpool_v1 function.
 
-.. _section-10:
+.. _section-11:
 
 `2.9.0 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.8.14...v2.9.0>`__ - 2025-05-09
 ----------------------------------------------------------------------------------------------------------
@@ -490,7 +518,7 @@ Added
 - Adds modules for v3_1_3_0
 - Modules 2_2_2_3, 2_2_3_3, 2_3_3_0 were removed
 
-.. _section-11:
+.. _section-12:
 
 `2.8.14 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.8.13...v2.8.14>`__ - 2025-05-05
 ------------------------------------------------------------------------------------------------------------
@@ -504,7 +532,7 @@ Fix
   download_unmaskedraw_device_configuration_as_z_ip_v1 function to
   correctly respond with a binary.
 
-.. _section-12:
+.. _section-13:
 
 `2.8.13 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.8.12...v2.8.13>`__ - 2025-04-25
 ------------------------------------------------------------------------------------------------------------
@@ -534,7 +562,7 @@ Fix
   get_the_interface_data_for_the_given_interface_idinstance_uuid_along_with_the_statistics_data_v1
   )
 
-.. _section-13:
+.. _section-14:
 
 `2.8.12 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.8.11...v2.8.12>`__ - 2025-04-08
 ------------------------------------------------------------------------------------------------------------
@@ -547,7 +575,7 @@ Fix
 - Fix in ignore_the_given_list_of_issues_v1 function in versions 2.3.7.6
   and 2.3.7.9.
 
-.. _section-14:
+.. _section-15:
 
 `2.8.11 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.8.10...v2.8.11>`__ - 2025-04-03
 ------------------------------------------------------------------------------------------------------------
@@ -561,7 +589,7 @@ Fix
 - sync_devices functionality has been added to devices.
 - Adjusted function names to avoid looping.
 
-.. _section-15:
+.. _section-16:
 
 `2.8.10 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.8.9...v2.8.10>`__ - 2025-04-01
 -----------------------------------------------------------------------------------------------------------
@@ -575,7 +603,7 @@ Fix
   downloads_a_specific_i_cap_packet_capture_file_v1 function to
   correctly respond with a binary.
 
-.. _section-16:
+.. _section-17:
 
 `2.8.9 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.8.8...v2.8.9>`__ - 2025-03-13
 ---------------------------------------------------------------------------------------------------------
@@ -590,7 +618,7 @@ Fix
   set_time_zone_for_a_site, set_d_n_s_settings_for_a_site,
   set_telemetry_settings_for_a_site, set_aaa_settings_for_a_site. #174
 
-.. _section-17:
+.. _section-18:
 
 `2.8.8 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.8.7...v2.8.8>`__ - 2025-03-10
 ---------------------------------------------------------------------------------------------------------
@@ -603,7 +631,7 @@ Fix
 - Modification of the data type in offset and limit. In the
   get_ap_profiles function of the wireless family.
 
-.. _section-18:
+.. _section-19:
 
 `2.8.7 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.8.6...v2.8.7>`__ - 2025-03-05
 ---------------------------------------------------------------------------------------------------------
@@ -615,7 +643,7 @@ Fix
 
 - Error correction in the user_and_roles module
 
-.. _section-19:
+.. _section-20:
 
 `2.8.6 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.8.5...v2.8.6>`__ - 2025-02-27
 ---------------------------------------------------------------------------------------------------------
@@ -627,7 +655,7 @@ Added
 
 - Add support of DNA Center versions (‘2.3.7.7’)
 
-.. _section-20:
+.. _section-21:
 
 `2.8.5 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.8.4...v2.8.5>`__ - 2025-02-21
 ---------------------------------------------------------------------------------------------------------
@@ -641,7 +669,7 @@ Fix
   deploy_template functions in version 1 and 2. In 2.3.5.3, 2.3.7.6 and
   2.3.7.9.
 
-.. _section-21:
+.. _section-22:
 
 `2.8.4 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.8.3...v2.8.4>`__ - 2025-02-17
 ---------------------------------------------------------------------------------------------------------
@@ -654,7 +682,7 @@ Fix
 - fix in create_webhook_destination, update_webhook_destination,
   get_webhook_destination functions. In versions 2.3.7.6 and 2.3.7.9.
 
-.. _section-22:
+.. _section-23:
 
 `2.8.3 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.8.2...v2.8.3>`__ - 2025-01-23
 ---------------------------------------------------------------------------------------------------------
@@ -676,7 +704,7 @@ Added
 
 - Cisco_IMC module added
 
-.. _section-23:
+.. _section-24:
 
 `2.8.2 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.8.1...v2.8.2>`__ - 2025-01-15
 ---------------------------------------------------------------------------------------------------------
@@ -693,7 +721,7 @@ Fix
   and 2.3.7.9.
 - issues #186
 
-.. _section-24:
+.. _section-25:
 
 `2.8.1 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.8.0...v2.8.1>`__ - 2025-01-13
 ---------------------------------------------------------------------------------------------------------
@@ -709,7 +737,7 @@ Fix
 - Fixed a bug in site_design in the uploads_floor_image function in
   versions 2.3.7.6 and 2.3.7.9.
 
-.. _section-25:
+.. _section-26:
 
 `2.8.0 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.7.7...v2.8.0>`__ - 2024-12-11
 ---------------------------------------------------------------------------------------------------------
@@ -722,7 +750,7 @@ Added
 - Add support of DNA Center versions (‘2.3.7.9’)
 - Adds modules for v2_3_7_9
 
-.. _section-26:
+.. _section-27:
 
 `2.7.7 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.7.6...v2.7.7>`__ - 2024-11-19
 ---------------------------------------------------------------------------------------------------------
@@ -733,7 +761,7 @@ Bug fix
 - The get_templates_details function was added because it was named
   incorrectly.There was an “s” missing from the word templates.
 
-.. _section-27:
+.. _section-28:
 
 `2.7.6 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.7.5...v2.7.6>`__ - 2024-11-12
 ---------------------------------------------------------------------------------------------------------
@@ -743,7 +771,7 @@ ADD
 
 - authentication_management module added
 
-.. _section-28:
+.. _section-29:
 
 `2.7.5 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.7.4...v2.7.5>`__ - 2024-11-11
 ---------------------------------------------------------------------------------------------------------
@@ -758,7 +786,7 @@ ADD
 - New Modules Such As (ai_endpoint_analytics,
   cisco_trusted_certificates, disaster_revery) were Added
 
-.. _section-29:
+.. _section-30:
 
 `2.7.4 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.7.3...v2.7.4>`__ - 2024-09-17
 ---------------------------------------------------------------------------------------------------------
@@ -766,7 +794,7 @@ ADD
 - Add multipart parameter for file upload in
   site_design:uploads_floor_image.
 
-.. _section-30:
+.. _section-31:
 
 `2.7.3 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.7.2...v2.7.3>`__ - 2024-08-19
 ---------------------------------------------------------------------------------------------------------
@@ -780,7 +808,7 @@ ADD
 - Update memberToTags from list to object in ``updates_tag_membership``
 - Update offset and limit parameter type to support int and str value
 
-.. _section-31:
+.. _section-32:
 
 `2.7.2 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.7.1...v2.7.2>`__ - 2024-08-09
 ---------------------------------------------------------------------------------------------------------
@@ -814,12 +842,12 @@ ADD
   - From delete_a_a_a_attribute_ap_i to delete_aaa_attribute_api
   - From get_a_a_a_attribute_ap_i to get_aaa_attribute_api
 
-.. _section-32:
+.. _section-33:
 
 `2.7.1 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.7.0...v2.7.1>`__ - 2024-05-31
 ---------------------------------------------------------------------------------------------------------
 
-.. _fixed-7:
+.. _fixed-8:
 
 Fixed
 ~~~~~
@@ -827,7 +855,7 @@ Fixed
 - Updated package version retrieval method from pkg_resources to
   importlib.metadata.
 
-.. _section-33:
+.. _section-34:
 
 `2.7.0 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.11...v2.7.0>`__ - 2024-05-31
 ----------------------------------------------------------------------------------------------------------
@@ -846,12 +874,12 @@ Added
 - Fix headers in ``create_webhook_destination`` and
   ``update_webhook_destination``
 
-.. _section-34:
+.. _section-35:
 
 `2.6.11 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.10...v2.6.11>`__ - 2023-01-10
 ------------------------------------------------------------------------------------------------------------
 
-.. _fixed-8:
+.. _fixed-9:
 
 Fixed
 ~~~~~
@@ -860,12 +888,12 @@ Fixed
   Fixing required schema.
 - Updating request version. Issue #132
 
-.. _section-35:
+.. _section-36:
 
 `2.6.10 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.9...v2.6.10>`__ - 2023-11-10
 -----------------------------------------------------------------------------------------------------------
 
-.. _fixed-9:
+.. _fixed-10:
 
 Fixed
 ~~~~~
@@ -874,7 +902,7 @@ Fixed
   ipInterfaceName
 - Fixed params in 2.3.5.3 claim_a_device_to_a_site from vlanID to vlanId
 
-.. _section-36:
+.. _section-37:
 
 `2.6.9 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.8...v2.6.9>`__ - 2023-09-20
 ---------------------------------------------------------------------------------------------------------
@@ -887,7 +915,7 @@ Changed
 - AP port assignment API not working with DNAC APIs of 2.3.3.0 #126,
   Documetion bug, extra-space in enum.
 
-.. _section-37:
+.. _section-38:
 
 `2.6.8 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.7...v2.6.8>`__ - 2023-09-12
 ---------------------------------------------------------------------------------------------------------
@@ -899,7 +927,7 @@ Changed
 
 - 2_3_3_0 sda sevice ``add_vn`` method update.
 
-.. _section-38:
+.. _section-39:
 
 `2.6.7 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.6...v2.6.7>`__ - 2023-08-25
 ---------------------------------------------------------------------------------------------------------
@@ -911,7 +939,7 @@ Changed
 
 - Update readthedocs settings
 
-.. _section-39:
+.. _section-40:
 
 `2.6.6 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.5...v2.6.6>`__ - 2023-07-10
 ---------------------------------------------------------------------------------------------------------
@@ -923,7 +951,7 @@ Changed
 
 - Change requests-toolbelt minimum version #101
 
-.. _section-40:
+.. _section-41:
 
 `2.6.5 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.4...v2.6.5>`__ - 2023-05-29
 ---------------------------------------------------------------------------------------------------------
@@ -935,7 +963,7 @@ Changed
 
 - user_and_roles::Unable to use user and roles module. #112
 
-.. _section-41:
+.. _section-42:
 
 `2.6.4 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.3...v2.6.4>`__ - 2023-05-25
 ---------------------------------------------------------------------------------------------------------
@@ -964,7 +992,7 @@ Changed
 - Poor naming of function: v2_3_5_3/authentication_management.py :
   ``authentication_ap_i( #102``
 
-.. _section-42:
+.. _section-43:
 
 `2.6.3 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.2...v2.6.3>`__ - 2023-04-28
 ---------------------------------------------------------------------------------------------------------
@@ -992,14 +1020,14 @@ Changed
 
   .. rubric:: `2.6.2 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.1...v2.6.2>`__
      - 2023-04-25
-     :name: section-43
+     :name: section-44
 
   .. rubric:: Changed
      :name: changed-13
 
 - Add ``issue`` family on 2.3.3.0
 
-.. _section-44:
+.. _section-45:
 
 `2.6.1 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.0...v2.6.1>`__ - 2023-04-12
 ---------------------------------------------------------------------------------------------------------
@@ -1013,7 +1041,7 @@ Changed
 - Correct families names in 2.3.5.3
 - Removing duplicate params
 
-.. _section-45:
+.. _section-46:
 
 `2.6.0 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.5.6...v2.6.0>`__ - 2023-04-12
 ---------------------------------------------------------------------------------------------------------
@@ -1026,7 +1054,7 @@ Added
 - Add support of DNA Center versions (‘2.3.5.3’)
 - Adds modules for v2_3_5_3
 
-.. _section-46:
+.. _section-47:
 
 `2.5.6 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.5.5...v2.5.6>`__ - 2023-01-10
 ---------------------------------------------------------------------------------------------------------
@@ -1038,7 +1066,7 @@ Added
 
 - Compatibility matrix added in ``readme.rst``
 
-.. _fixed-10:
+.. _fixed-11:
 
 Fixed
 ~~~~~
@@ -1065,12 +1093,12 @@ Fixed
   - dnacentersdk.api.v2_3_3_0.tag
   - dnacentersdk.api.v2_3_3_0.task
 
-.. _section-47:
+.. _section-48:
 
 `2.5.5 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.5.4...v2.5.5>`__ - 2022-11-17
 ---------------------------------------------------------------------------------------------------------
 
-.. _fixed-11:
+.. _fixed-12:
 
 Fixed
 ~~~~~
@@ -1082,7 +1110,7 @@ Fixed
 
 - Added Dict_of_str function call in custom_caller headers
 
-.. _section-48:
+.. _section-49:
 
 `2.5.4 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.5.3...v2.5.4>`__ - 2022-08-11
 ---------------------------------------------------------------------------------------------------------
@@ -1096,12 +1124,12 @@ Added
 
   - ``add_ssid_to_ip_pool_mapping``
 
-.. _section-49:
+.. _section-50:
 
 `2.5.3 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.5.2...v2.5.3>`__ - 2022-08-09
 ---------------------------------------------------------------------------------------------------------
 
-.. _fixed-12:
+.. _fixed-13:
 
 Fixed
 ~~~~~
@@ -1112,12 +1140,12 @@ Fixed
   ``connectedToInternet`` on ``sda.adds_border_device`` comes from
   ``boolean`` to ``string``.
 
-.. _section-50:
+.. _section-51:
 
 `2.5.2 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.5.1...v2.5.2>`__ - 2022-07-29
 ---------------------------------------------------------------------------------------------------------
 
-.. _fixed-13:
+.. _fixed-14:
 
 Fixed
 ~~~~~
@@ -1149,12 +1177,12 @@ Fixed
   - network
   - servers
 
-.. _section-51:
+.. _section-52:
 
 `2.5.1 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.5.0...v2.5.1>`__ - 2022-07-12
 ---------------------------------------------------------------------------------------------------------
 
-.. _fixed-14:
+.. _fixed-15:
 
 Fixed
 ~~~~~
@@ -1163,7 +1191,7 @@ Fixed
 
   - IpAddressSpace
 
-.. _section-52:
+.. _section-53:
 
 `2.5.0 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.11...v2.5.0>`__ - 2022-06-20
 ----------------------------------------------------------------------------------------------------------
@@ -1176,12 +1204,12 @@ Added
 - Add support of DNA Center versions (‘2.3.3.0’)
 - Adds modules for v2_3_3_0
 
-.. _section-53:
+.. _section-54:
 
 `2.4.11 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.10...v2.4.11>`__ - 2022-06-15
 ------------------------------------------------------------------------------------------------------------
 
-.. _fixed-15:
+.. _fixed-16:
 
 Fixed
 ~~~~~
@@ -1192,7 +1220,7 @@ Fixed
   - verify
   - debug
 
-.. _section-54:
+.. _section-55:
 
 `2.4.10 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.9...v2.4.10>`__ - 2022-05-12
 -----------------------------------------------------------------------------------------------------------
@@ -1208,7 +1236,7 @@ Added
 
   - site_name_hierarchy
 
-.. _section-55:
+.. _section-56:
 
 `2.4.9 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.8...v2.4.9>`__ - 2022-04-20
 ---------------------------------------------------------------------------------------------------------
@@ -1228,7 +1256,7 @@ Added
   - subnetMask
   - vlanId
 
-.. _section-56:
+.. _section-57:
 
 `2.4.8 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.7...v2.4.8>`__ - 2022-03-23
 ---------------------------------------------------------------------------------------------------------
@@ -1274,7 +1302,7 @@ Changed
   - dnacentersdk.api.v2_2_3_3.file.File.download_a_file_by_fileid
   - dnacentersdk.api.v2_2_3_3.reports.Reports.download_report_content
 
-.. _section-57:
+.. _section-58:
 
 `2.4.7 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.6...v2.4.7>`__ - 2022-03-22
 ---------------------------------------------------------------------------------------------------------
@@ -1287,7 +1315,7 @@ Added
 - Add ``rfProfile`` parameter for request body struct of
   ``claim_a_device_to_a_site``.
 
-.. _section-58:
+.. _section-59:
 
 `2.4.6 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.5...v2.4.6>`__ - 2022-03-14
 ---------------------------------------------------------------------------------------------------------
@@ -1318,7 +1346,7 @@ Changed
 
   - sda.adds_border_device
 
-.. _section-59:
+.. _section-60:
 
 `2.4.5 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.4...v2.4.5>`__ - 2022-02-01
 ---------------------------------------------------------------------------------------------------------
@@ -1344,7 +1372,7 @@ Changed
 
   - devices.sync_devices
 
-.. _section-60:
+.. _section-61:
 
 `2.4.4 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.3...v2.4.4>`__ - 2022-01-31
 ---------------------------------------------------------------------------------------------------------
@@ -1372,7 +1400,7 @@ Changed
   - site_design.update_floormap
   - application_policy.create_application
 
-.. _fixed-16:
+.. _fixed-17:
 
 Fixed
 ~~~~~
@@ -1388,12 +1416,12 @@ Added
 - Adds parameters ``hostname``, ``imageInfo`` and ``configInfo`` to
   device_onboarding_pnp.pnp_device_claim_to_site
 
-.. _section-61:
+.. _section-62:
 
 `2.4.3 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.2...v2.4.3>`__ - 2022-01-19
 ---------------------------------------------------------------------------------------------------------
 
-.. _fixed-17:
+.. _fixed-18:
 
 Fixed
 ~~~~~
@@ -1411,12 +1439,12 @@ Changed
   DNACenterAPI
 - Adds tests for env variables before/after DNACenterAPI import
 
-.. _section-62:
+.. _section-63:
 
 `2.4.2 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.1...v2.4.2>`__ - 2021-12-14
 ---------------------------------------------------------------------------------------------------------
 
-.. _fixed-18:
+.. _fixed-19:
 
 Fixed
 ~~~~~
@@ -1426,7 +1454,7 @@ Fixed
 - Update json schemas for models/validators and
   tests/models/models/validators
 
-.. _section-63:
+.. _section-64:
 
 `2.4.1 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.0...v2.4.1>`__ - 2021-12-01
 ---------------------------------------------------------------------------------------------------------
@@ -1438,7 +1466,7 @@ Changed
 
 - Update to match checksum
 
-.. _section-64:
+.. _section-65:
 
 `2.4.0 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.3.3...v2.4.0>`__ - 2021-12-01
 ---------------------------------------------------------------------------------------------------------
@@ -1469,7 +1497,7 @@ Changed
 
 - Update missing dnac 2.2.3.3 files
 
-.. _section-65:
+.. _section-66:
 
 `2.3.3 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.3.2...v2.3.3>`__ - 2021-11-24
 ---------------------------------------------------------------------------------------------------------
@@ -1501,7 +1529,7 @@ Changed
   - Add ``isGuestVirtualNetwork`` parameter to
     ``update_virtual_network_with_scalable_groups`` function
 
-.. _section-66:
+.. _section-67:
 
 `2.3.2 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.3.1...v2.3.2>`__ - 2021-09-14
 ---------------------------------------------------------------------------------------------------------
@@ -1513,12 +1541,12 @@ Changed
 
 - Disable verify=False warnings of urllib3
 
-.. _section-67:
+.. _section-68:
 
 `2.3.1 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.3.0...v2.3.1>`__ - 2021-08-10
 ---------------------------------------------------------------------------------------------------------
 
-.. _fixed-19:
+.. _fixed-20:
 
 Fixed
 ~~~~~
@@ -1526,7 +1554,7 @@ Fixed
 - Fix devices param definition & schemas [``aba32f3``]
 - Remove unnecesary path_params [``25c4e99``]
 
-.. _section-68:
+.. _section-69:
 
 `2.3.0 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.2.5...v2.3.0>`__ - 2021-08-09
 ---------------------------------------------------------------------------------------------------------
@@ -1551,7 +1579,7 @@ Changed
 - Updates restsession.py to handle downloads using Content-Disposition
   header rather than custom fileName header
 
-.. _section-69:
+.. _section-70:
 
 `2.2.5 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.2.4...v2.2.5>`__ - 2021-08-05
 ---------------------------------------------------------------------------------------------------------
@@ -1570,12 +1598,12 @@ Changed
 - Removes minus char from docstrings.
 - Adds check_type conditions for ‘X-Auth-Token’ for v2_2_1 operations.
 
-.. _section-70:
+.. _section-71:
 
 `2.2.4 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.2.3...v2.2.4>`__ - 2021-06-08
 ---------------------------------------------------------------------------------------------------------
 
-.. _fixed-20:
+.. _fixed-21:
 
 Fixed
 ~~~~~
@@ -1583,7 +1611,7 @@ Fixed
 - Fixes download_a_file_by_fileid and import_local_software_image for
   v2_2_1
 
-.. _section-71:
+.. _section-72:
 
 `2.2.3 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.2.2...v2.2.3>`__ - 2021-06-08
 ---------------------------------------------------------------------------------------------------------
@@ -1606,7 +1634,7 @@ Changed
 - Patch adds one function that was missing from previous release
 - Patch adds models/validators for v2_2_1 with new ids
 
-.. _section-72:
+.. _section-73:
 
 `2.2.2 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.0.2...v2.2.2>`__ - 2021-05-10
 ---------------------------------------------------------------------------------------------------------
@@ -1625,7 +1653,7 @@ Changed
 
 - Updates requirements files
 
-.. _section-73:
+.. _section-74:
 
 `2.0.2 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.0.0...v2.0.2>`__ - 2020-11-01
 ---------------------------------------------------------------------------------------------------------
@@ -1654,7 +1682,7 @@ Removed
 
 - Removed requirements.lock
 
-.. _section-74:
+.. _section-75:
 
 `2.0.0 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v1.3.0...v2.0.0>`__ - 2020-07-17
 ---------------------------------------------------------------------------------------------------------
@@ -1677,7 +1705,7 @@ Changed
 - Changed setup from versioneer to setuptools_scm
 - Changed version management to include patch (major, minor, patch)
 
-.. _fixed-21:
+.. _fixed-22:
 
 Fixed
 ~~~~~
@@ -1694,7 +1722,7 @@ Removed
 - Removed Webex Teams Space Community reference from README
 - Removed Token refresh when changing base_url
 
-.. _section-75:
+.. _section-76:
 
 `1.3.0 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v1.2.10...v1.3.0>`__ - 2019-08-19
 ----------------------------------------------------------------------------------------------------------
@@ -1706,7 +1734,7 @@ Added
 
 - Add support for multiple versions of DNA Center (‘1.2.10’, ‘1.3.0’)
 
-.. _fixed-22:
+.. _fixed-23:
 
 Fixed
 ~~~~~
@@ -1715,7 +1743,7 @@ Fixed
 - Fix error in setter in ``api/__init__.py``
 - Fix errors for readthedocs
 
-.. _section-76:
+.. _section-77:
 
 `1.2.10 <https://github.com/cisco-en-programmability/dnacentersdk/releases/v1.2.10>`__ - 2019-07-18
 ---------------------------------------------------------------------------------------------------

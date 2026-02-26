@@ -6,6 +6,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.11.2] - 2026-02-26
+### Fixed
+- **`limit` and `offset` parameter types (v2.3.7.9, v3.1.3.0)**: Changed `limit` and `offset` query parameters from `str` to `int` type in `check_type` validations and docstrings across multiple modules, matching the corrected types already applied in v3.1.6.0. Affected modules:
+  - `application_policy` (v2.3.7.9, v3.1.3.0)
+  - `devices` (v2.3.7.9, v3.1.3.0)
+  - `lan_automation` (v2.3.7.9, v3.1.3.0)
+  - `sda` (v2.3.7.9, v3.1.3.0)
+  - `sites` (v2.3.7.9, v3.1.3.0)
+  - `wireless` (v2.3.7.9, v3.1.3.0)
+- **Validator schema types (v2.3.7.9, v3.1.3.0)**: Fixed `limit` and `offset` JSON schema types from `"number"` to `"integer"` in `GetDeviceInterfaceStatsInfoV2` and `RogueAdditionalDetails` request validators.
+
 ## [2.11.1] - 2026-02-25
 ### Fixed
 - **Validator `required` fields (v3.1.6.0)**: Removed incorrectly added `required` blocks from v3.1.6.0 validators that were not present in the stable v3.1.3.0 baseline, preventing false validation failures on valid optional fields.
@@ -849,4 +860,5 @@ respond with a binary.
 [2.10.6]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.10.5...v2.10.6
 [2.11.0]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.10.6...v2.11.0
 [2.11.1]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.11.0...v2.11.1
-[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.11.1...develop
+[2.11.2]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.11.1...v2.11.2
+[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.11.2...develop
