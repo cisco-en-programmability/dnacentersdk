@@ -36,140 +36,136 @@ class JSONSchemaValidatorD7161B33157DbA957Ba18Eda440C2(object):
     """UpdateDeviceCredentials request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorD7161B33157DbA957Ba18Eda440C2, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "settings": {
-                "properties": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "settings": {
+            "properties": {
                 "cliCredential": {
-                "properties": {
-                "description":
-                 {
-                "type": "string"
-                },
-                "enablePassword": {
-                "type": "string"
-                },
-                "id": {
-                "type": "string"
-                },
-                "password": {
-                "type": "string"
-                },
-                "username": {
-                "type": "string"
-                }
-                },
-                "type": "object"
+                    "properties": {
+                        "description": {
+                            "type": "string"
+                        },
+                        "enablePassword": {
+                            "type": "string"
+                        },
+                        "id": {
+                            "type": "string"
+                        },
+                        "password": {
+                            "type": "string"
+                        },
+                        "username": {
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
                 },
                 "httpsRead": {
-                "properties": {
-                "id": {
-                "type": "string"
-                },
-                "name": {
-                "type": "string"
-                },
-                "password": {
-                "type": "string"
-                },
-                "port": {
-                "type": "string"
-                },
-                "username": {
-                "type": "string"
-                }
-                },
-                "type": "object"
+                    "properties": {
+                        "id": {
+                            "type": "string"
+                        },
+                        "name": {
+                            "type": "string"
+                        },
+                        "password": {
+                            "type": "string"
+                        },
+                        "port": {
+                            "type": "string"
+                        },
+                        "username": {
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
                 },
                 "httpsWrite": {
-                "properties": {
-                "id": {
-                "type": "string"
-                },
-                "name": {
-                "type": "string"
-                },
-                "password": {
-                "type": "string"
-                },
-                "port": {
-                "type": "string"
-                },
-                "username": {
-                "type": "string"
-                }
-                },
-                "type": "object"
+                    "properties": {
+                        "id": {
+                            "type": "string"
+                        },
+                        "name": {
+                            "type": "string"
+                        },
+                        "password": {
+                            "type": "string"
+                        },
+                        "port": {
+                            "type": "string"
+                        },
+                        "username": {
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
                 },
                 "snmpV2cRead": {
-                "properties": {
-                "description":
-                 {
-                "type": "string"
-                },
-                "id": {
-                "type": "string"
-                },
-                "readCommunity": {
-                "type": "string"
-                }
-                },
-                "type": "object"
+                    "properties": {
+                        "description": {
+                            "type": "string"
+                        },
+                        "id": {
+                            "type": "string"
+                        },
+                        "readCommunity": {
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
                 },
                 "snmpV2cWrite": {
-                "properties": {
-                "description":
-                 {
-                "type": "string"
-                },
-                "id": {
-                "type": "string"
-                },
-                "writeCommunity": {
-                "type": "string"
-                }
-                },
-                "type": "object"
+                    "properties": {
+                        "description": {
+                            "type": "string"
+                        },
+                        "id": {
+                            "type": "string"
+                        },
+                        "writeCommunity": {
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
                 },
                 "snmpV3": {
-                "properties": {
-                "authPassword": {
-                "type": "string"
-                },
-                "authType": {
-                "type": "string"
-                },
-                "description":
-                 {
-                "type": "string"
-                },
-                "id": {
-                "type": "string"
-                },
-                "privacyPassword": {
-                "type": "string"
-                },
-                "privacyType": {
-                "type": "string"
-                },
-                "snmpMode": {
-                "type": "string"
-                },
-                "username": {
-                "type": "string"
+                    "properties": {
+                        "authPassword": {
+                            "type": "string"
+                        },
+                        "authType": {
+                            "type": "string"
+                        },
+                        "description": {
+                            "type": "string"
+                        },
+                        "id": {
+                            "type": "string"
+                        },
+                        "privacyPassword": {
+                            "type": "string"
+                        },
+                        "privacyType": {
+                            "type": "string"
+                        },
+                        "snmpMode": {
+                            "type": "string"
+                        },
+                        "username": {
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
                 }
-                },
-                "type": "object"
-                }
-                },
-                "type": "object"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "object"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

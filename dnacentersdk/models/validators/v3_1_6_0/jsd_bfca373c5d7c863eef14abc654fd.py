@@ -36,32 +36,32 @@ class JSONSchemaValidatorBfca373C5D7C863EEf14Abc654Fd(object):
     """AddFabricSite request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorBfca373C5D7C863EEf14Abc654Fd, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "items": {
-                "properties": {
-                "authenticationProfileName": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "items": {
+        "properties": {
+            "authenticationProfileName": {
                 "enum": [
-                "Closed Authentication",
-                "Low Impact",
-                "No Authentication",
-                "Open Authentication"
+                    "Closed Authentication",
+                    "Low Impact",
+                    "No Authentication",
+                    "Open Authentication"
                 ],
                 "type": "string"
-                },
-                "isPubSubEnabled": {
+            },
+            "isPubSubEnabled": {
                 "type": "boolean"
-                },
-                "siteId": {
+            },
+            "siteId": {
                 "type": "string"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            }
+        },
+        "type": "object"
+    },
+    "type": "array"
+}
+'''))
 
     def validate(self, request):
         try:

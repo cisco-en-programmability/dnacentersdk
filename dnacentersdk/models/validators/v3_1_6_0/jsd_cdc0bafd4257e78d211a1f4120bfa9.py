@@ -36,77 +36,77 @@ class JSONSchemaValidatorCdc0BaFd4257E78D211A1F4120Bfa9(object):
     """AddMulticastVirtualNetworks request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorCdc0BaFd4257E78D211A1F4120Bfa9, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "items": {
+        "properties": {
+            "fabricId": {
+                "type": "string"
+            },
+            "ipPoolName": {
+                "type": "string"
+            },
+            "ipv4SsmRanges": {
                 "items": {
-                "properties": {
-                "fabricId": {
-                "type": "string"
-                },
-                "ipPoolName": {
-                "type": "string"
-                },
-                "ipv4SsmRanges": {
-                "items": {
-                "type": "string"
+                    "type": "string"
                 },
                 "type": "array"
-                },
-                "multicastRPs": {
+            },
+            "multicastRPs": {
                 "items": {
-                "properties": {
-                "ipv4Address": {
-                "type": "string"
-                },
-                "ipv4AsmRanges": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "ipv6Address": {
-                "type": "string"
-                },
-                "ipv6AsmRanges": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "isDefaultV4RP": {
-                "type": "boolean"
-                },
-                "isDefaultV6RP": {
-                "type": "boolean"
-                },
-                "networkDeviceIds": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "rpDeviceLocation": {
-                "enum": [
-                "EXTERNAL",
-                "FABRIC"
-                ],
-                "type": "string"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                },
-                "virtualNetworkName": {
-                "type": "string"
-                }
-                },
-                "type": "object"
+                    "properties": {
+                        "ipv4Address": {
+                            "type": "string"
+                        },
+                        "ipv4AsmRanges": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "ipv6Address": {
+                            "type": "string"
+                        },
+                        "ipv6AsmRanges": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "isDefaultV4RP": {
+                            "type": "boolean"
+                        },
+                        "isDefaultV6RP": {
+                            "type": "boolean"
+                        },
+                        "networkDeviceIds": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "rpDeviceLocation": {
+                            "enum": [
+                                "EXTERNAL",
+                                "FABRIC"
+                            ],
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
                 },
                 "type": "array"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "virtualNetworkName": {
+                "type": "string"
+            }
+        },
+        "type": "object"
+    },
+    "type": "array"
+}
+'''))
 
     def validate(self, request):
         try:

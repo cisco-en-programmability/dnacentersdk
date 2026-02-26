@@ -37,46 +37,45 @@ class JSONSchemaValidatorE5Bb87A955E33A7Ee46F1085Fd880(object):
     definition."""
     def __init__(self):
         super(JSONSchemaValidatorE5Bb87A955E33A7Ee46F1085Fd880, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "description":
-                 {
-                "type": "string"
-                },
-                "maintenanceSchedule": {
-                "properties": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "description": {
+            "type": "string"
+        },
+        "maintenanceSchedule": {
+            "properties": {
                 "endTime": {
-                "type": "number"
+                    "type": "number"
                 },
                 "recurrence": {
-                "properties": {
-                "interval": {
-                "type": "integer"
-                },
-                "recurrenceEndTime": {
-                "type": "number"
-                }
-                },
-                "type": "object"
+                    "properties": {
+                        "interval": {
+                            "type": "integer"
+                        },
+                        "recurrenceEndTime": {
+                            "type": "number"
+                        }
+                    },
+                    "type": "object"
                 },
                 "startTime": {
-                "type": "number"
+                    "type": "number"
                 }
-                },
-                "type": "object"
-                },
-                "networkDeviceIds": {
-                "items": {
+            },
+            "type": "object"
+        },
+        "networkDeviceIds": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

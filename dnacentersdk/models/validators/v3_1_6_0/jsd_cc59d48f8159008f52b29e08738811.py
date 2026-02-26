@@ -36,103 +36,103 @@ class JSONSchemaValidatorCc59D48F8159008F52B29E08738811(object):
     """CreateWirelessProfileConnectivity request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorCc59D48F8159008F52B29E08738811, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "additionalInterfaces": {
+            "items": {
+                "type": "string"
+            },
+            "type": "array"
+        },
+        "apZones": {
+            "items": {
                 "properties": {
-                "additionalInterfaces": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "apZones": {
-                "items": {
-                "properties": {
-                "apZoneName": {
-                "type": "string"
-                },
-                "rfProfileName": {
-                "type": "string"
-                },
-                "ssids": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                }
+                    "apZoneName": {
+                        "type": "string"
+                    },
+                    "rfProfileName": {
+                        "type": "string"
+                    },
+                    "ssids": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
                 },
                 "type": "object"
-                },
-                "type": "array"
-                },
-                "featureTemplates": {
-                "items": {
+            },
+            "type": "array"
+        },
+        "featureTemplates": {
+            "items": {
                 "properties": {
-                "id": {
-                "type": "string"
-                },
-                "ssids": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                }
+                    "id": {
+                        "type": "string"
+                    },
+                    "ssids": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
                 },
                 "type": "object"
-                },
-                "type": "array"
-                },
-                "ssidDetails": {
-                "items": {
+            },
+            "type": "array"
+        },
+        "ssidDetails": {
+            "items": {
                 "properties": {
-                "anchorGroupName": {
-                "type": "string"
-                },
-                "dot11beProfileId": {
-                "type": "string"
-                },
-                "enableFabric": {
-                "type": "boolean"
-                },
-                "flexConnect": {
-                "properties": {
-                "enableFlexConnect": {
-                "type": "boolean"
-                },
-                "localToVlan": {
-                "type": "integer"
-                }
-                },
-                "type": "object"
-                },
-                "interfaceName": {
-                "type": "string"
-                },
-                "policyProfileName": {
-                "type": "string"
-                },
-                "ssidName": {
-                "type": "string"
-                },
-                "vlanGroupName": {
-                "type": "string"
-                },
-                "wlanProfileName": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                },
-                "wirelessProfileName": {
-                "type": "string"
-                }
+                    "anchorGroupName": {
+                        "type": "string"
+                    },
+                    "dot11beProfileId": {
+                        "type": "string"
+                    },
+                    "enableFabric": {
+                        "type": "boolean"
+                    },
+                    "flexConnect": {
+                        "properties": {
+                            "enableFlexConnect": {
+                                "type": "boolean"
+                            },
+                            "localToVlan": {
+                                "type": "integer"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "interfaceName": {
+                        "type": "string"
+                    },
+                    "policyProfileName": {
+                        "type": "string"
+                    },
+                    "ssidName": {
+                        "type": "string"
+                    },
+                    "vlanGroupName": {
+                        "type": "string"
+                    },
+                    "wlanProfileName": {
+                        "type": "string"
+                    }
                 },
                 "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        },
+        "wirelessProfileName": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

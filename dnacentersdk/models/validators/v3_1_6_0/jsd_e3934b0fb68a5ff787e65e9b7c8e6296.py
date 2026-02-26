@@ -36,28 +36,28 @@ class JSONSchemaValidatorE3934B0FB68A5Ff787E65E9B7C8E6296(object):
     """UpdateTagMembership request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorE3934B0FB68A5Ff787E65E9B7C8E6296, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "memberToTags": {
-                "properties": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "memberToTags": {
+            "properties": {
                 "key": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
                 }
-                },
-                "type": "object"
-                },
-                "memberType": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "object"
+        },
+        "memberType": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

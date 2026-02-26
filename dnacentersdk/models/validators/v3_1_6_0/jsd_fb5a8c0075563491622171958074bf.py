@@ -36,107 +36,106 @@ class JSONSchemaValidatorFb5A8C0075563491622171958074Bf(object):
     """CreateSyslogEventSubscription request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorFb5A8C0075563491622171958074Bf, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "items": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "items": {
+        "properties": {
+            "description": {
+                "type": "string"
+            },
+            "filter": {
                 "properties": {
-                "description":
-                 {
-                "type": "string"
-                },
-                "filter": {
-                "properties": {
-                "categories": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "domainsSubdomains": {
-                "items": {
-                "properties": {
-                "domain": {
-                "type": "string"
-                },
-                "subDomains": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                }
+                    "categories": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "domainsSubdomains": {
+                        "items": {
+                            "properties": {
+                                "domain": {
+                                    "type": "string"
+                                },
+                                "subDomains": {
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "type": "array"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "type": "array"
+                    },
+                    "eventIds": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "severities": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "siteIds": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "sources": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "types": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
                 },
                 "type": "object"
-                },
-                "type": "array"
-                },
-                "eventIds": {
+            },
+            "name": {
+                "type": "string"
+            },
+            "subscriptionEndpoints": {
                 "items": {
-                "type": "string"
+                    "properties": {
+                        "instanceId": {
+                            "type": "string"
+                        },
+                        "subscriptionDetails": {
+                            "properties": {
+                                "connectorType": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    },
+                    "type": "object"
                 },
                 "type": "array"
-                },
-                "severities": {
-                "items": {
+            },
+            "subscriptionId": {
                 "type": "string"
-                },
-                "type": "array"
-                },
-                "siteIds": {
-                "items": {
+            },
+            "version": {
                 "type": "string"
-                },
-                "type": "array"
-                },
-                "sources": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "types": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                }
-                },
-                "type": "object"
-                },
-                "name": {
-                "type": "string"
-                },
-                "subscriptionEndpoints": {
-                "items": {
-                "properties": {
-                "instanceId": {
-                "type": "string"
-                },
-                "subscriptionDetails": {
-                "properties": {
-                "connectorType": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                },
-                "subscriptionId": {
-                "type": "string"
-                },
-                "version": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            }
+        },
+        "type": "object"
+    },
+    "type": "array"
+}
+'''))
 
     def validate(self, request):
         try:

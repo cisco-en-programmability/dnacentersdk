@@ -36,299 +36,292 @@ class JSONSchemaValidatorCf82058FEef35CfaBe601C3D51F01740(object):
     """EditsDiscovery request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorCf82058FEef35CfaBe601C3D51F01740, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "credentials": {
-                "properties": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "credentials": {
+            "properties": {
                 "cli": {
-                "properties": {
-                "description":
-                 {
-                "type": "string"
-                },
-                "globalCredentialIdList": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "protocolOrder": {
-                "enum": [
-                "SSH,TELNET"
-                ],
-                "type": "string"
-                },
-                "username": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "description",
-                "username"
-                ],
-                "type": "object"
+                    "properties": {
+                        "description": {
+                            "type": "string"
+                        },
+                        "globalCredentialIdList": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "protocolOrder": {
+                            "enum": [
+                                "SSH,TELNET"
+                            ],
+                            "type": "string"
+                        },
+                        "username": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "description",
+                        "username"
+                    ],
+                    "type": "object"
                 },
                 "httpRead": {
-                "properties": {
-                "description":
-                 {
-                "type": "string"
-                },
-                "globalCredentialIdList": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "port": {
-                "type": "integer"
-                },
-                "protocol": {
-                "type": "string"
-                },
-                "username": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "description",
-                "username"
-                ],
-                "type": "object"
+                    "properties": {
+                        "description": {
+                            "type": "string"
+                        },
+                        "globalCredentialIdList": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "port": {
+                            "type": "integer"
+                        },
+                        "protocol": {
+                            "type": "string"
+                        },
+                        "username": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "description",
+                        "username"
+                    ],
+                    "type": "object"
                 },
                 "httpWrite": {
-                "properties": {
-                "description":
-                 {
-                "type": "string"
-                },
-                "globalCredentialIdList": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "port": {
-                "type": "integer"
-                },
-                "protocol": {
-                "type": "string"
-                },
-                "username": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "description",
-                "username",
-                "port"
-                ],
-                "type": "object"
+                    "properties": {
+                        "description": {
+                            "type": "string"
+                        },
+                        "globalCredentialIdList": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "port": {
+                            "type": "integer"
+                        },
+                        "protocol": {
+                            "type": "string"
+                        },
+                        "username": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "description",
+                        "username",
+                        "port"
+                    ],
+                    "type": "object"
                 },
                 "netconf": {
-                "properties": {
-                "description":
-                 {
-                "type": "string"
-                },
-                "globalCredentialIdList": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "port": {
-                "type": "integer"
-                }
-                },
-                "type": "object"
+                    "properties": {
+                        "description": {
+                            "type": "string"
+                        },
+                        "globalCredentialIdList": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "port": {
+                            "type": "integer"
+                        }
+                    },
+                    "type": "object"
                 },
                 "snmp": {
-                "properties": {
-                "retries": {
-                "type": "integer"
-                },
-                "snmpV2Read": {
-                "properties": {
-                "description":
-                 {
-                "type": "string"
-                },
-                "globalCredentialIdList": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
+                    "properties": {
+                        "retries": {
+                            "type": "integer"
+                        },
+                        "snmpV2Read": {
+                            "properties": {
+                                "description": {
+                                    "type": "string"
+                                },
+                                "globalCredentialIdList": {
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "type": "array"
+                                }
+                            },
+                            "required": [
+                                "description"
+                            ],
+                            "type": "object"
+                        },
+                        "snmpV2Write": {
+                            "properties": {
+                                "description": {
+                                    "type": "string"
+                                },
+                                "globalCredentialIdList": {
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "type": "array"
+                                }
+                            },
+                            "required": [
+                                "description"
+                            ],
+                            "type": "object"
+                        },
+                        "snmpV3": {
+                            "properties": {
+                                "authType": {
+                                    "enum": [
+                                        "SHA,MD5, SHA256"
+                                    ],
+                                    "type": "string"
+                                },
+                                "description": {
+                                    "type": "string"
+                                },
+                                "globalCredentialIdList": {
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "type": "array"
+                                },
+                                "mode": {
+                                    "enum": [
+                                        "AUTHPRIV, AUTHNOPRIV, NOAUTHNOPRIV"
+                                    ],
+                                    "type": "string"
+                                },
+                                "privacyType": {
+                                    "enum": [
+                                        "AES128, AES192, AES256, CISCOAES192, CISCOAES256"
+                                    ],
+                                    "type": "string"
+                                },
+                                "username": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "description",
+                                "mode",
+                                "username"
+                            ],
+                            "type": "object"
+                        },
+                        "timeout": {
+                            "type": "integer"
+                        }
+                    },
+                    "required": [
+                        "snmpV2Read",
+                        "snmpV2Write",
+                        "snmpV3"
+                    ],
+                    "type": "object"
                 }
-                },
-                "required": [
-                "description"
-                ],
-                "type": "object"
-                },
-                "snmpV2Write": {
-                "properties": {
-                "description":
-                 {
-                "type": "string"
-                },
-                "globalCredentialIdList": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                }
-                },
-                "required": [
-                "description"
-                ],
-                "type": "object"
-                },
-                "snmpV3": {
-                "properties": {
-                "authType": {
-                "enum": [
-                "SHA,MD5, SHA256"
-                ],
-                "type": "string"
-                },
-                "description":
-                 {
-                "type": "string"
-                },
-                "globalCredentialIdList": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "mode": {
-                "enum": [
-                "AUTHPRIV, AUTHNOPRIV, NOAUTHNOPRIV"
-                ],
-                "type": "string"
-                },
-                "privacyType": {
-                "enum": [
-                "AES128, AES192, AES256, CISCOAES192, CISCOAES256"
-                ],
-                "type": "string"
-                },
-                "username": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "description",
-                "mode",
-                "username"
-                ],
-                "type": "object"
-                },
-                "timeout": {
-                "type": "integer"
-                }
-                },
-                "required": [
-                "snmpV2Read",
-                "snmpV2Write",
-                "snmpV3"
-                ],
-                "type": "object"
-                }
-                },
-                "required": [
+            },
+            "required": [
                 "cli",
                 "snmp"
-                ],
-                "type": "object"
-                },
-                "discoveryTypeDetails": {
-                "properties": {
+            ],
+            "type": "object"
+        },
+        "discoveryTypeDetails": {
+            "properties": {
                 "cidrAddress": {
-                "properties": {
-                "cidrPrefix": {
-                "type": "string"
-                },
-                "cidrSuffix": {
-                "type": "integer"
-                }
-                },
-                "type": "object"
+                    "properties": {
+                        "cidrPrefix": {
+                            "type": "string"
+                        },
+                        "cidrSuffix": {
+                            "type": "integer"
+                        }
+                    },
+                    "type": "object"
                 },
                 "hopCount": {
-                "type": "integer"
+                    "type": "integer"
                 },
                 "ipAddress": {
-                "type": "string"
+                    "type": "string"
                 },
                 "range": {
-                "items": {
-                "properties": {
-                "ipAddressEnd": {
-                "type": "string"
-                },
-                "ipAddressStart": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
+                    "items": {
+                        "properties": {
+                            "ipAddressEnd": {
+                                "type": "string"
+                            },
+                            "ipAddressStart": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
                 },
                 "subnetFilter": {
-                "properties": {
-                "cidrAddress": {
-                "properties": {
-                "cidrPrefix": {
-                "type": "string"
-                },
-                "cidrSuffix": {
-                "type": "integer"
-                }
-                },
-                "type": "object"
-                },
-                "ipAddress": {
-                "type": "string"
-                }
-                },
-                "type": "object"
+                    "properties": {
+                        "cidrAddress": {
+                            "properties": {
+                                "cidrPrefix": {
+                                    "type": "string"
+                                },
+                                "cidrSuffix": {
+                                    "type": "integer"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "ipAddress": {
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
                 },
                 "type": {
-                "enum": [
-                "SINGLE,RANGE,CIDR,CDP,LLDP"
-                ],
-                "type": "string"
+                    "enum": [
+                        "SINGLE,RANGE,CIDR,CDP,LLDP"
+                    ],
+                    "type": "string"
                 }
-                },
-                "required": [
+            },
+            "required": [
                 "type"
-                ],
-                "type": "object"
-                },
-                "managementIpSelectionMethod": {
-                "enum": [
+            ],
+            "type": "object"
+        },
+        "managementIpSelectionMethod": {
+            "enum": [
                 "DEFAULT, LOOPBACK"
-                ],
-                "type": "string"
-                },
-                "onlyNewDevice": {
-                "type": "boolean"
-                },
-                "updateManagementIp": {
-                "type": "boolean"
-                }
-                },
-                "required": [
-                "discoveryTypeDetails",
-                "credentials"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            ],
+            "type": "string"
+        },
+        "onlyNewDevice": {
+            "type": "boolean"
+        },
+        "updateManagementIp": {
+            "type": "boolean"
+        }
+    },
+    "required": [
+        "discoveryTypeDetails",
+        "credentials"
+    ],
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

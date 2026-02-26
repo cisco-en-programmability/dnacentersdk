@@ -36,17 +36,17 @@ class JSONSchemaValidatorCfadc5E4C912588389F4F63D2Fb6E4Ed(object):
     """RunNowSensorTest request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorCfadc5E4C912588389F4F63D2Fb6E4Ed, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "templateName": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "templateName": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

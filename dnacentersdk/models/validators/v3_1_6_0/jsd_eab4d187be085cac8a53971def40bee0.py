@@ -36,49 +36,49 @@ class JSONSchemaValidatorEab4D187Be085Cac8A53971Def40Bee0(object):
     """APProvisionConnectivity request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorEab4D187Be085Cac8A53971Def40Bee0, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "apZoneName": {
+            "type": "string"
+        },
+        "networkDevices": {
+            "items": {
                 "properties": {
-                "apZoneName": {
-                "type": "string"
-                },
-                "networkDevices": {
-                "items": {
-                "properties": {
-                "beamState": {
-                "enum": [
-                "BORESIGHT",
-                "WIDE",
-                "FRONT_AND_BACK"
-                ],
-                "type": "string"
-                },
-                "deviceId": {
-                "type": "string"
-                },
-                "meshRole": {
-                "enum": [
-                "MAP",
-                "RAP"
-                ],
-                "type": "string"
-                }
+                    "beamState": {
+                        "enum": [
+                            "BORESIGHT",
+                            "WIDE",
+                            "FRONT_AND_BACK"
+                        ],
+                        "type": "string"
+                    },
+                    "deviceId": {
+                        "type": "string"
+                    },
+                    "meshRole": {
+                        "enum": [
+                            "MAP",
+                            "RAP"
+                        ],
+                        "type": "string"
+                    }
                 },
                 "type": "object"
-                },
-                "type": "array"
-                },
-                "rfProfileName": {
-                "type": "string"
-                },
-                "siteId": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        },
+        "rfProfileName": {
+            "type": "string"
+        },
+        "siteId": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

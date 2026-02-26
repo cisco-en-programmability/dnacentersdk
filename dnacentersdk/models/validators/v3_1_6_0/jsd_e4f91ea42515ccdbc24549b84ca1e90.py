@@ -36,32 +36,32 @@ class JSONSchemaValidatorE4F91Ea42515CcdBc24549B84Ca1E90(object):
     """AssignDeviceCredentialToSite request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorE4F91Ea42515CcdBc24549B84Ca1E90, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "cliId": {
-                "type": "string"
-                },
-                "httpRead": {
-                "type": "string"
-                },
-                "httpWrite": {
-                "type": "string"
-                },
-                "snmpV2ReadId": {
-                "type": "string"
-                },
-                "snmpV2WriteId": {
-                "type": "string"
-                },
-                "snmpV3Id": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "cliId": {
+            "type": "string"
+        },
+        "httpRead": {
+            "type": "string"
+        },
+        "httpWrite": {
+            "type": "string"
+        },
+        "snmpV2ReadId": {
+            "type": "string"
+        },
+        "snmpV2WriteId": {
+            "type": "string"
+        },
+        "snmpV3Id": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

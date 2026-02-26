@@ -36,23 +36,23 @@ class JSONSchemaValidatorD413A3D054Ac50Fa921CA8Cf7Fdf5449(object):
     """LANAutomationStopAndUpdateDevices request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorD413A3D054Ac50Fa921CA8Cf7Fdf5449, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "items": {
-                "properties": {
-                "deviceManagementIPAddress": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "items": {
+        "properties": {
+            "deviceManagementIPAddress": {
                 "type": "string"
-                },
-                "newLoopback0IPAddress": {
+            },
+            "newLoopback0IPAddress": {
                 "type": "string"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            }
+        },
+        "type": "object"
+    },
+    "type": "array"
+}
+'''))
 
     def validate(self, request):
         try:

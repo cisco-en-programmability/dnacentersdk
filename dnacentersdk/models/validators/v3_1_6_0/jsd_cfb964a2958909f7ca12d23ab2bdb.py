@@ -36,27 +36,27 @@ class JSONSchemaValidatorCfb964A2958909F7CA12D23Ab2Bdb(object):
     """UpdateMulticast request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorCfb964A2958909F7CA12D23Ab2Bdb, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "items": {
-                "properties": {
-                "fabricId": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "items": {
+        "properties": {
+            "fabricId": {
                 "type": "string"
-                },
-                "replicationMode": {
+            },
+            "replicationMode": {
                 "enum": [
-                "NATIVE_MULTICAST",
-                "HEADEND_REPLICATION"
+                    "NATIVE_MULTICAST",
+                    "HEADEND_REPLICATION"
                 ],
                 "type": "string"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            }
+        },
+        "type": "object"
+    },
+    "type": "array"
+}
+'''))
 
     def validate(self, request):
         try:

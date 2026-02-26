@@ -36,23 +36,23 @@ class JSONSchemaValidatorB107800544384C1Ddad7B60C237(object):
     """UpdateARegisteredEndpoint request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorB107800544384C1Ddad7B60C237, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "deviceType": {
-                "type": "string"
-                },
-                "hardwareManufacturer": {
-                "type": "string"
-                },
-                "hardwareModel": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "deviceType": {
+            "type": "string"
+        },
+        "hardwareManufacturer": {
+            "type": "string"
+        },
+        "hardwareModel": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

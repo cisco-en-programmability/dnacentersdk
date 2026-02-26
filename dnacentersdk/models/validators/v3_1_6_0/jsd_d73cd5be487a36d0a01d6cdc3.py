@@ -37,34 +37,34 @@ class JSONSchemaValidatorD73Cd5Be487A36D0A01D6Cdc3(object):
     schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorD73Cd5Be487A36D0A01D6Cdc3, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "networkDevices": {
+            "items": {
                 "properties": {
-                "networkDevices": {
-                "items": {
-                "properties": {
-                "id": {
-                "type": "string"
-                },
-                "includeGuestSsids": {
-                "type": "boolean"
-                },
-                "includeWlanModes": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                }
+                    "id": {
+                        "type": "string"
+                    },
+                    "includeGuestSsids": {
+                        "type": "boolean"
+                    },
+                    "includeWlanModes": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
                 },
                 "type": "object"
-                },
-                "type": "array"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

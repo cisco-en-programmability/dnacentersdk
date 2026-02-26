@@ -36,107 +36,107 @@ class JSONSchemaValidatorE1781A990C6B5A4B895D56Bcfda2B7Cb(object):
     """CreateApplication request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorE1781A990C6B5A4B895D56Bcfda2B7Cb, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "items": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "items": {
+        "properties": {
+            "applicationSet": {
                 "properties": {
-                "applicationSet": {
-                "properties": {
-                "idRef": {
-                "type": "string"
-                }
+                    "idRef": {
+                        "type": "string"
+                    }
                 },
                 "type": "object"
-                },
-                "name": {
+            },
+            "name": {
                 "type": "string"
-                },
-                "networkApplications": {
+            },
+            "networkApplications": {
                 "items": {
-                "properties": {
-                "appProtocol": {
-                "type": "string"
-                },
-                "applicationSubType": {
-                "type": "string"
-                },
-                "applicationType": {
-                "type": "string"
-                },
-                "categoryId": {
-                "type": "string"
-                },
-                "displayName": {
-                "type": "string"
-                },
-                "dscp": {
-                "type": "string"
-                },
-                "engineId": {
-                "type": "string"
-                },
-                "helpString": {
-                "type": "string"
-                },
-                "ignoreConflict": {
-                "type": "string"
-                },
-                "longDescription": {
-                "type": "string"
-                },
-                "name": {
-                "type": "string"
-                },
-                "popularity": {
-                "type": "string"
-                },
-                "rank": {
-                "type": "string"
-                },
-                "serverName": {
-                "type": "string"
-                },
-                "trafficClass": {
-                "type": "string"
-                },
-                "url": {
-                "type": "string"
-                }
-                },
-                "type": "object"
+                    "properties": {
+                        "appProtocol": {
+                            "type": "string"
+                        },
+                        "applicationSubType": {
+                            "type": "string"
+                        },
+                        "applicationType": {
+                            "type": "string"
+                        },
+                        "categoryId": {
+                            "type": "string"
+                        },
+                        "displayName": {
+                            "type": "string"
+                        },
+                        "dscp": {
+                            "type": "string"
+                        },
+                        "engineId": {
+                            "type": "string"
+                        },
+                        "helpString": {
+                            "type": "string"
+                        },
+                        "ignoreConflict": {
+                            "type": "string"
+                        },
+                        "longDescription": {
+                            "type": "string"
+                        },
+                        "name": {
+                            "type": "string"
+                        },
+                        "popularity": {
+                            "type": "string"
+                        },
+                        "rank": {
+                            "type": "string"
+                        },
+                        "serverName": {
+                            "type": "string"
+                        },
+                        "trafficClass": {
+                            "type": "string"
+                        },
+                        "url": {
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
                 },
                 "type": "array"
-                },
-                "networkIdentity": {
+            },
+            "networkIdentity": {
                 "items": {
-                "properties": {
-                "displayName": {
-                "type": "string"
-                },
-                "lowerPort": {
-                "type": "string"
-                },
-                "ports": {
-                "type": "string"
-                },
-                "protocol": {
-                "type": "string"
-                },
-                "upperPort": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                }
-                },
-                "type": "object"
+                    "properties": {
+                        "displayName": {
+                            "type": "string"
+                        },
+                        "lowerPort": {
+                            "type": "string"
+                        },
+                        "ports": {
+                            "type": "string"
+                        },
+                        "protocol": {
+                            "type": "string"
+                        },
+                        "upperPort": {
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
                 },
                 "type": "array"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            }
+        },
+        "type": "object"
+    },
+    "type": "array"
+}
+'''))
 
     def validate(self, request):
         try:

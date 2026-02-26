@@ -38,117 +38,117 @@ class JSONSchemaValidatorF667322836D5527482Ad2100Bec7Feb4(object):
     mplexFiltersAndAggregationFunctions request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorF667322836D5527482Ad2100Bec7Feb4, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "aggregateAttributes": {
+            "items": {
                 "properties": {
-                "aggregateAttributes": {
-                "items": {
-                "properties": {
-                "function": {
-                "type": "string"
-                },
-                "name": {
-                "type": "string"
-                }
+                    "function": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    }
                 },
                 "type": "object"
-                },
-                "type": "array"
-                },
-                "attributes": {
-                "items": {
+            },
+            "type": "array"
+        },
+        "attributes": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                },
-                "endTime": {
-                "type": "integer"
-                },
-                "filters": {
-                "items": {
+            },
+            "type": "array"
+        },
+        "endTime": {
+            "type": "integer"
+        },
+        "filters": {
+            "items": {
                 "properties": {
-                "filters": {
-                "items": {
-                "properties": {
-                "filters": {
-                "items": {
-                "type": "string"
+                    "filters": {
+                        "items": {
+                            "properties": {
+                                "filters": {
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "type": "array"
+                                },
+                                "key": {
+                                    "type": "string"
+                                },
+                                "logicalOperator": {
+                                    "type": "string"
+                                },
+                                "operator": {
+                                    "type": "string"
+                                },
+                                "value": {
+                                    "type": "object"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "type": "array"
+                    },
+                    "key": {
+                        "type": "string"
+                    },
+                    "logicalOperator": {
+                        "type": "string"
+                    },
+                    "operator": {
+                        "type": "string"
+                    },
+                    "value": {
+                        "type": "object"
+                    }
                 },
-                "type": "array"
-                },
-                "key": {
-                "type": "string"
-                },
-                "logicalOperator": {
-                "type": "string"
-                },
-                "operator": {
-                "type": "string"
-                },
-                "value": {
                 "type": "object"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                },
-                "key": {
-                "type": "string"
-                },
-                "logicalOperator": {
-                "type": "string"
-                },
-                "operator": {
-                "type": "string"
-                },
-                "value": {
-                "type": "object"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                },
-                "page": {
-                "properties": {
+            },
+            "type": "array"
+        },
+        "page": {
+            "properties": {
                 "limit": {
-                "type": "integer"
+                    "type": "integer"
                 },
                 "offset": {
-                "type": "integer"
+                    "type": "integer"
                 },
                 "sortBy": {
-                "items": {
-                "properties": {
-                "name": {
-                "type": "string"
-                },
-                "order": {
-                "type": "string"
+                    "items": {
+                        "properties": {
+                            "name": {
+                                "type": "string"
+                            },
+                            "order": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
                 }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                }
-                },
-                "type": "object"
-                },
-                "startTime": {
-                "type": "integer"
-                },
-                "views": {
-                "items": {
+            },
+            "type": "object"
+        },
+        "startTime": {
+            "type": "integer"
+        },
+        "views": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

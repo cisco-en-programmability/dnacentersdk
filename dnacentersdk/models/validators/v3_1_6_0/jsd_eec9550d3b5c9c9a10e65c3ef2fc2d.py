@@ -36,23 +36,23 @@ class JSONSchemaValidatorEec9550D3B5C9C9A10E65C3Ef2Fc2D(object):
     """SetSiteAssignmentsForPolicy request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorEec9550D3B5C9C9A10E65C3Ef2Fc2D, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "siteIds": {
-                "items": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "siteIds": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                }
-                },
-                "required": [
-                "siteIds"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        }
+    },
+    "required": [
+        "siteIds"
+    ],
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

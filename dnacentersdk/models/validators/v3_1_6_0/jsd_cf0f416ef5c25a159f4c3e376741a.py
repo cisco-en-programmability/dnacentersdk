@@ -36,27 +36,26 @@ class JSONSchemaValidatorCf0F416Ef5C25A159F4C3E376741A(object):
     """UpdateCustomNetworkDeviceValidation request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorCf0F416Ef5C25A159F4C3E376741A, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "cli": {
-                "type": "string"
-                },
-                "description":
-                 {
-                "type": "string"
-                },
-                "productSeriesOrdinals": {
-                "items": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "cli": {
+            "type": "string"
+        },
+        "description": {
+            "type": "string"
+        },
+        "productSeriesOrdinals": {
+            "items": {
                 "type": "number"
-                },
-                "type": "array"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

@@ -36,84 +36,84 @@ class JSONSchemaValidatorBac0C488707959C182DfEf18681Bceda(object):
     """SetTelemetrySettingsForASite request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorBac0C488707959C182DfEf18681Bceda, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "applicationVisibility": {
-                "properties": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "applicationVisibility": {
+            "properties": {
                 "collector": {
-                "properties": {
-                "address": {
-                "type": "string"
-                },
-                "collectorType": {
-                "enum": [
-                "Builtin",
-                "TelemetryBrokerOrUDPDirector"
-                ],
-                "type": "string"
-                },
-                "port": {
-                "type": "integer"
-                }
-                },
-                "type": "object"
+                    "properties": {
+                        "address": {
+                            "type": "string"
+                        },
+                        "collectorType": {
+                            "enum": [
+                                "Builtin",
+                                "TelemetryBrokerOrUDPDirector"
+                            ],
+                            "type": "string"
+                        },
+                        "port": {
+                            "type": "integer"
+                        }
+                    },
+                    "type": "object"
                 },
                 "enableOnWiredAccessDevices": {
-                "type": "boolean"
+                    "type": "boolean"
                 }
-                },
-                "type": "object"
-                },
-                "snmpTraps": {
-                "properties": {
+            },
+            "type": "object"
+        },
+        "snmpTraps": {
+            "properties": {
                 "externalTrapServers": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
                 },
                 "useBuiltinTrapServer": {
-                "type": "boolean"
+                    "type": "boolean"
                 }
-                },
-                "type": "object"
-                },
-                "syslogs": {
-                "properties": {
+            },
+            "type": "object"
+        },
+        "syslogs": {
+            "properties": {
                 "externalSyslogServers": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
                 },
                 "useBuiltinSyslogServer": {
-                "type": "boolean"
+                    "type": "boolean"
                 }
-                },
-                "type": "object"
-                },
-                "wiredDataCollection": {
-                "properties": {
+            },
+            "type": "object"
+        },
+        "wiredDataCollection": {
+            "properties": {
                 "enableWiredDataCollection": {
-                "type": "boolean"
+                    "type": "boolean"
                 }
-                },
-                "type": "object"
-                },
-                "wirelessTelemetry": {
-                "properties": {
+            },
+            "type": "object"
+        },
+        "wirelessTelemetry": {
+            "properties": {
                 "enableWirelessTelemetry": {
-                "type": "boolean"
+                    "type": "boolean"
                 }
-                },
-                "type": "object"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "object"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

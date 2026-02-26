@@ -36,196 +36,195 @@ class JSONSchemaValidatorA0F799D5Ec6954D1Bd7A25853080A9F1(object):
     """CreateAPProfile request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorA0F799D5Ec6954D1Bd7A25853080A9F1, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "apPowerProfileName": {
-                "type": "string"
-                },
-                "apProfileName": {
-                "type": "string"
-                },
-                "awipsEnabled": {
-                "type": "boolean"
-                },
-                "awipsForensicEnabled": {
-                "type": "boolean"
-                },
-                "calendarPowerProfiles": {
-                "properties": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "apPowerProfileName": {
+            "type": "string"
+        },
+        "apProfileName": {
+            "type": "string"
+        },
+        "awipsEnabled": {
+            "type": "boolean"
+        },
+        "awipsForensicEnabled": {
+            "type": "boolean"
+        },
+        "calendarPowerProfiles": {
+            "properties": {
                 "duration": {
-                "properties": {
-                "schedulerDate": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "schedulerDay": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "schedulerEndTime": {
-                "type": "string"
-                },
-                "schedulerStartTime": {
-                "type": "string"
-                }
-                },
-                "type": "object"
+                    "properties": {
+                        "schedulerDate": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "schedulerDay": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "schedulerEndTime": {
+                            "type": "string"
+                        },
+                        "schedulerStartTime": {
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
                 },
                 "powerProfileName": {
-                "type": "string"
+                    "type": "string"
                 },
                 "schedulerType": {
-                "enum": [
-                "DAILY",
-                "WEEKLY",
-                "MONTHLY"
-                ],
-                "type": "string"
+                    "enum": [
+                        "DAILY",
+                        "WEEKLY",
+                        "MONTHLY"
+                    ],
+                    "type": "string"
                 }
-                },
-                "type": "object"
-                },
-                "clientLimit": {
-                "type": "integer"
-                },
-                "countryCode": {
-                "enum": [
+            },
+            "type": "object"
+        },
+        "clientLimit": {
+            "type": "integer"
+        },
+        "countryCode": {
+            "enum": [
                 "(AF|AE|AL|AR|AT|AO|AU|BD|BA|BB|BE|BG|BH|BM|BN|BO|BR|BT|BY|CA|CD|CH|CI|CL|CM|CN|CO|CR|CU|CY|CZ|DE|DK|DO|DZ|EC|EE|EG|EL|ES|ET|FI|FJ|FR|GB|GH|GI|GE|GR|GT|HK|HN|HR|HU|ID|IE|IL|IN|IQ|IS|IT|J2|J4|JM|JO|KE|KH|KN|KW|KZ|LA|LB|LI|LK|LT|LU|LV|LY|MA|MC|MD|ME|MK|MN|MM|MO|MT|MX|MY|NG|NI|NL|NO|NP|NZ|OM|PA|PE|PH|PK|PL|PR|PT|PY|QA|RO|RS|RU|SA|SD|SE|SG|SI|SK|SM|TH|TI|TN|TR|TW|TZ|UA|US|UY|VA|VE|VN|XK|YE|ZA|ZW|MU|ZM|BI|NA|BW|GA|UG|UZ)"
-                ],
-                "type": "string"
-                },
-                "description":
-                 {
-                "type": "string"
-                },
-                "managementSetting": {
-                "properties": {
+            ],
+            "type": "string"
+        },
+        "description": {
+            "type": "string"
+        },
+        "managementSetting": {
+            "properties": {
                 "authType": {
-                "enum": [
-                "NO-AUTH",
-                "EAP-TLS",
-                "EAP-PEAP",
-                "EAP-FAST"
-                ],
-                "type": "string"
+                    "enum": [
+                        "NO-AUTH",
+                        "EAP-TLS",
+                        "EAP-PEAP",
+                        "EAP-FAST"
+                    ],
+                    "type": "string"
                 },
                 "cdpState": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "dot1xPassword": {
-                "type": "string"
+                    "type": "string"
                 },
                 "dot1xUsername": {
-                "type": "string"
+                    "type": "string"
                 },
                 "managementEnablePassword": {
-                "type": "string"
+                    "type": "string"
                 },
                 "managementPassword": {
-                "type": "string"
+                    "type": "string"
                 },
                 "managementUserName": {
-                "type": "string"
+                    "type": "string"
                 },
                 "sshEnabled": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "telnetEnabled": {
-                "type": "boolean"
+                    "type": "boolean"
                 }
-                },
-                "type": "object"
-                },
-                "meshEnabled": {
-                "type": "boolean"
-                },
-                "meshSetting": {
-                "properties": {
+            },
+            "type": "object"
+        },
+        "meshEnabled": {
+            "type": "boolean"
+        },
+        "meshSetting": {
+            "properties": {
                 "backhaulClientAccess": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "bridgeGroupName": {
-                "type": "string"
+                    "type": "string"
                 },
                 "ghz24BackhaulDataRates": {
-                "enum": [
-                "auto",
-                "802.11abg",
-                "802.11ax",
-                "802.11n"
-                ],
-                "type": "string"
+                    "enum": [
+                        "auto",
+                        "802.11abg",
+                        "802.11ax",
+                        "802.11n"
+                    ],
+                    "type": "string"
                 },
                 "ghz5BackhaulDataRates": {
-                "enum": [
-                "auto",
-                "802.11abg",
-                "802.12ac",
-                "802.11ax",
-                "802.11n"
-                ],
-                "type": "string"
+                    "enum": [
+                        "auto",
+                        "802.11abg",
+                        "802.12ac",
+                        "802.11ax",
+                        "802.11n"
+                    ],
+                    "type": "string"
                 },
                 "range": {
-                "type": "integer"
+                    "type": "integer"
                 },
                 "rapDownlinkBackhaul": {
-                "enum": [
-                "5 GHz",
-                "2.4 GHz"
-                ],
-                "type": "string"
+                    "enum": [
+                        "5 GHz",
+                        "2.4 GHz"
+                    ],
+                    "type": "string"
                 }
-                },
-                "type": "object"
-                },
-                "pmfDenialEnabled": {
-                "type": "boolean"
-                },
-                "remoteWorkerEnabled": {
-                "type": "boolean"
-                },
-                "rogueDetectionSetting": {
-                "properties": {
+            },
+            "type": "object"
+        },
+        "pmfDenialEnabled": {
+            "type": "boolean"
+        },
+        "remoteWorkerEnabled": {
+            "type": "boolean"
+        },
+        "rogueDetectionSetting": {
+            "properties": {
                 "rogueDetection": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "rogueDetectionMinRssi": {
-                "type": "integer"
+                    "type": "integer"
                 },
                 "rogueDetectionReportInterval": {
-                "type": "integer"
+                    "type": "integer"
                 },
                 "rogueDetectionTransientInterval": {
-                "type": "integer"
+                    "type": "integer"
                 }
-                },
-                "type": "object"
-                },
-                "timeZone": {
-                "enum": [
+            },
+            "type": "object"
+        },
+        "timeZone": {
+            "enum": [
                 "Not Configured",
                 "Controller",
                 "Delta from Controller"
-                ],
-                "type": "string"
-                },
-                "timeZoneOffsetHour": {
-                "type": "integer"
-                },
-                "timeZoneOffsetMinutes": {
-                "type": "integer"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            ],
+            "type": "string"
+        },
+        "timeZoneOffsetHour": {
+            "type": "integer"
+        },
+        "timeZoneOffsetMinutes": {
+            "type": "integer"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

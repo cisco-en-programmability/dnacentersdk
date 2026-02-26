@@ -36,63 +36,63 @@ class JSONSchemaValidatorD6B58F378895114839682Dceed1A9B5(object):
     """AddPortAssignments request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorD6B58F378895114839682Dceed1A9B5, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "items": {
-                "properties": {
-                "allowedVlanRanges": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "items": {
+        "properties": {
+            "allowedVlanRanges": {
                 "type": "string"
-                },
-                "authenticateTemplateName": {
+            },
+            "authenticateTemplateName": {
                 "enum": [
-                "No Authentication",
-                "Open Authentication",
-                "Closed Authentication",
-                "Low Impact"
+                    "No Authentication",
+                    "Open Authentication",
+                    "Closed Authentication",
+                    "Low Impact"
                 ],
                 "type": "string"
-                },
-                "connectedDeviceType": {
+            },
+            "connectedDeviceType": {
                 "enum": [
-                "USER_DEVICE",
-                "ACCESS_POINT",
-                "TRUNKING_DEVICE",
-                "AUTHENTICATOR_SWITCH",
-                "SUPPLICANT_BASED_EXTENDED_NODE"
+                    "USER_DEVICE",
+                    "ACCESS_POINT",
+                    "TRUNKING_DEVICE",
+                    "AUTHENTICATOR_SWITCH",
+                    "SUPPLICANT_BASED_EXTENDED_NODE"
                 ],
                 "type": "string"
-                },
-                "dataVlanName": {
+            },
+            "dataVlanName": {
                 "type": "string"
-                },
-                "fabricId": {
+            },
+            "fabricId": {
                 "type": "string"
-                },
-                "interfaceDescription": {
+            },
+            "interfaceDescription": {
                 "type": "string"
-                },
-                "interfaceName": {
+            },
+            "interfaceName": {
                 "type": "string"
-                },
-                "nativeVlanId": {
+            },
+            "nativeVlanId": {
                 "type": "integer"
-                },
-                "networkDeviceId": {
+            },
+            "networkDeviceId": {
                 "type": "string"
-                },
-                "securityGroupName": {
+            },
+            "securityGroupName": {
                 "type": "string"
-                },
-                "voiceVlanName": {
+            },
+            "voiceVlanName": {
                 "type": "string"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            }
+        },
+        "type": "object"
+    },
+    "type": "array"
+}
+'''))
 
     def validate(self, request):
         try:

@@ -36,23 +36,23 @@ class JSONSchemaValidatorAe7F02A3D051F2Baf7Cc087990D658(object):
     """AddControlPlaneDevice request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorAe7F02A3D051F2Baf7Cc087990D658, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "deviceManagementIpAddress": {
-                "type": "string"
-                },
-                "routeDistributionProtocol": {
-                "type": "string"
-                },
-                "siteNameHierarchy": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "deviceManagementIpAddress": {
+            "type": "string"
+        },
+        "routeDistributionProtocol": {
+            "type": "string"
+        },
+        "siteNameHierarchy": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

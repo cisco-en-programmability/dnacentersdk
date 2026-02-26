@@ -37,31 +37,31 @@ class JSONSchemaValidatorE5E51BcDa0B5Fec984BA8120F743Fe2(object):
     definition."""
     def __init__(self):
         super(JSONSchemaValidatorE5E51BcDa0B5Fec984BA8120F743Fe2, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "enableWireless": {
-                "type": "boolean"
-                },
-                "id": {
-                "type": "string"
-                },
-                "rollingApUpgrade": {
-                "properties": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "enableWireless": {
+            "type": "boolean"
+        },
+        "id": {
+            "type": "string"
+        },
+        "rollingApUpgrade": {
+            "properties": {
                 "apRebootPercentage": {
-                "type": "integer"
+                    "type": "integer"
                 },
                 "enableRollingApUpgrade": {
-                "type": "boolean"
+                    "type": "boolean"
                 }
-                },
-                "type": "object"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "object"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

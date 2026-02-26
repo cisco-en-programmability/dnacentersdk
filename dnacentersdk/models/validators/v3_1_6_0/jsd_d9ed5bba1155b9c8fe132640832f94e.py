@@ -36,23 +36,23 @@ class JSONSchemaValidatorD9Ed5BbA1155B9C8Fe132640832F94E(object):
     """StopWirelessRogueAPContainment request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorD9Ed5BbA1155B9C8Fe132640832F94E, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "macAddress": {
-                "type": "string"
-                },
-                "type": {
-                "type": "integer"
-                },
-                "wlcIp": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "macAddress": {
+            "type": "string"
+        },
+        "type": {
+            "type": "integer"
+        },
+        "wlcIp": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

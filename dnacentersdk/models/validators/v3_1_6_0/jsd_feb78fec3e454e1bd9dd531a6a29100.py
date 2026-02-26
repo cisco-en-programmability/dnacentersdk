@@ -36,58 +36,57 @@ class JSONSchemaValidatorFeb78FeC3E454E1Bd9DD531A6A29100(object):
     """UpdateAnExistingRule request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorFeb78FeC3E454E1Bd9DD531A6A29100, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "description": {
+            "type": "string"
+        },
+        "deviceTypes": {
+            "items": {
                 "properties": {
-                "description":
-                 {
-                "type": "string"
-                },
-                "deviceTypes": {
-                "items": {
-                "properties": {
-                "deviceFamily": {
-                "type": "string"
-                },
-                "deviceModel": {
-                "type": "string"
-                },
-                "deviceSeries": {
-                "type": "string"
-                }
+                    "deviceFamily": {
+                        "type": "string"
+                    },
+                    "deviceModel": {
+                        "type": "string"
+                    },
+                    "deviceSeries": {
+                        "type": "string"
+                    }
                 },
                 "required": [
-                "deviceFamily"
+                    "deviceFamily"
                 ],
                 "type": "object"
-                },
-                "type": "array"
-                },
-                "impact": {
-                "type": "string"
-                },
-                "name": {
-                "type": "string"
-                },
-                "softwareType": {
-                "enum": [
+            },
+            "type": "array"
+        },
+        "impact": {
+            "type": "string"
+        },
+        "name": {
+            "type": "string"
+        },
+        "softwareType": {
+            "enum": [
                 "IOS, IOS_XE, CISCO_CONTROLLER"
-                ],
-                "type": "string"
-                },
-                "suggestedFix": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "name",
-                "softwareType",
-                "deviceTypes"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            ],
+            "type": "string"
+        },
+        "suggestedFix": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "name",
+        "softwareType",
+        "deviceTypes"
+    ],
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

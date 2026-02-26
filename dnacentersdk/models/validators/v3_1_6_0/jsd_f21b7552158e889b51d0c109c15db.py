@@ -36,55 +36,55 @@ class JSONSchemaValidatorF21B7552158E889B51D0C109C15Db(object):
     """BulkUpdateImagesOnNetworkDevices request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorF21B7552158E889B51D0C109C15Db, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "items": {
+        "properties": {
+            "compatibleFeatures": {
                 "items": {
-                "properties": {
-                "compatibleFeatures": {
-                "items": {
-                "properties": {
-                "key": {
-                "type": "string"
-                },
-                "value": {
-                "enum": [
-                "ENABLE",
-                "DISABLE"
-                ],
-                "type": "string"
-                }
-                },
-                "type": "object"
+                    "properties": {
+                        "key": {
+                            "type": "string"
+                        },
+                        "value": {
+                            "enum": [
+                                "ENABLE",
+                                "DISABLE"
+                            ],
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
                 },
                 "type": "array"
-                },
-                "id": {
+            },
+            "id": {
                 "type": "string"
-                },
-                "installedImages": {
+            },
+            "installedImages": {
                 "items": {
-                "properties": {
-                "id": {
-                "type": "string"
-                }
-                },
-                "type": "object"
+                    "properties": {
+                        "id": {
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
                 },
                 "type": "array"
-                },
-                "networkValidationIds": {
+            },
+            "networkValidationIds": {
                 "items": {
-                "type": "string"
+                    "type": "string"
                 },
                 "type": "array"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            }
+        },
+        "type": "object"
+    },
+    "type": "array"
+}
+'''))
 
     def validate(self, request):
         try:

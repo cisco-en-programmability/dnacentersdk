@@ -36,17 +36,17 @@ class JSONSchemaValidatorA64Bd4956649De3A61E10F0637E(object):
     """UpdateGlobalResyncInterval request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorA64Bd4956649De3A61E10F0637E, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "interval": {
-                "type": "integer"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "interval": {
+            "type": "integer"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

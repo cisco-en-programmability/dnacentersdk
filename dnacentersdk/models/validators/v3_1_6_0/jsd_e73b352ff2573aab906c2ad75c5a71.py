@@ -36,23 +36,23 @@ class JSONSchemaValidatorE73B352Ff2573AAb906C2Ad75C5A71(object):
     """SyncNetworkDevicesCredential request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorE73B352Ff2573AAb906C2Ad75C5A71, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "configureDevice": {
-                "type": "boolean"
-                },
-                "deviceCredentialId": {
-                "type": "string"
-                },
-                "siteId": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "configureDevice": {
+            "type": "boolean"
+        },
+        "deviceCredentialId": {
+            "type": "string"
+        },
+        "siteId": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

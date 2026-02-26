@@ -36,55 +36,55 @@ class JSONSchemaValidatorBc3Cb471Beaf5BfeB47201993C023068(object):
     """UpdatePnPServerProfile request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorBc3Cb471Beaf5BfeB47201993C023068, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "ccoUser": {
-                "type": "string"
-                },
-                "profile": {
-                "properties": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "ccoUser": {
+            "type": "string"
+        },
+        "profile": {
+            "properties": {
                 "addressFqdn": {
-                "type": "string"
+                    "type": "string"
                 },
                 "addressIpV4": {
-                "type": "string"
+                    "type": "string"
                 },
                 "addressIpV6": {
-                "type": "string"
+                    "type": "string"
                 },
                 "cert": {
-                "type": "string"
+                    "type": "string"
                 },
                 "makeDefault": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "name": {
-                "type": "string"
+                    "type": "string"
                 },
                 "port": {
-                "type": "number"
+                    "type": "number"
                 },
                 "profileId": {
-                "type": "string"
+                    "type": "string"
                 },
                 "proxy": {
-                "type": "boolean"
+                    "type": "boolean"
                 }
-                },
-                "type": "object"
-                },
-                "smartAccountId": {
-                "type": "string"
-                },
-                "virtualAccountId": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "object"
+        },
+        "smartAccountId": {
+            "type": "string"
+        },
+        "virtualAccountId": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

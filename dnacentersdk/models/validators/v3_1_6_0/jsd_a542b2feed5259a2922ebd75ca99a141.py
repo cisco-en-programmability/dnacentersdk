@@ -36,29 +36,29 @@ class JSONSchemaValidatorA542B2FeEd5259A2922EBd75Ca99A141(object):
     """ExportsTheCredentialsOfNetworkDevices request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorA542B2FeEd5259A2922EBd75Ca99A141, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "exportSshKey": {
-                "type": "boolean"
-                },
-                "networkDeviceIds": {
-                "items": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "exportSshKey": {
+            "type": "boolean"
+        },
+        "networkDeviceIds": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                },
-                "password": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "password"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        },
+        "password": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "password"
+    ],
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

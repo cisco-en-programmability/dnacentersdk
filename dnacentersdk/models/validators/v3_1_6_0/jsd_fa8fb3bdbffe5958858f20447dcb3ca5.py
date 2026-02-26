@@ -36,34 +36,34 @@ class JSONSchemaValidatorFa8Fb3BdBffe5958858F20447Dcb3Ca5(object):
     """AddALANAutomatedLinkToAPortChannel request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorFa8Fb3BdBffe5958858F20447Dcb3Ca5, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "portChannelMembers": {
+            "items": {
                 "properties": {
-                "portChannelMembers": {
-                "items": {
-                "properties": {
-                "device1Interface": {
-                "type": "string"
-                },
-                "device1InterfaceUuid": {
-                "type": "string"
-                },
-                "device2Interface": {
-                "type": "string"
-                },
-                "device2InterfaceUuid": {
-                "type": "string"
-                }
+                    "device1Interface": {
+                        "type": "string"
+                    },
+                    "device1InterfaceUuid": {
+                        "type": "string"
+                    },
+                    "device2Interface": {
+                        "type": "string"
+                    },
+                    "device2InterfaceUuid": {
+                        "type": "string"
+                    }
                 },
                 "type": "object"
-                },
-                "type": "array"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

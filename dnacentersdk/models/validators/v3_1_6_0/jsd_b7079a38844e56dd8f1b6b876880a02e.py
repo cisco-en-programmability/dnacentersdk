@@ -36,68 +36,68 @@ class JSONSchemaValidatorB7079A38844E56Dd8F1B6B876880A02E(object):
     """AddMulticastInSDAFabric request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorB7079A38844E56Dd8F1B6B876880A02E, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "multicastMethod": {
-                "enum": [
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "multicastMethod": {
+            "enum": [
                 "native_multicast"
-                ],
-                "type": "string"
-                },
-                "multicastType": {
-                "enum": [
+            ],
+            "type": "string"
+        },
+        "multicastType": {
+            "enum": [
                 "ssm",
                 "asm_with_internal_rp",
                 "asm_with_external_rp"
-                ],
-                "type": "string"
-                },
-                "multicastVnInfo": {
-                "items": {
+            ],
+            "type": "string"
+        },
+        "multicastVnInfo": {
+            "items": {
                 "properties": {
-                "externalRpIpAddress": {
-                "type": "string"
-                },
-                "internalRpIpAddress": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "ipPoolName": {
-                "type": "string"
-                },
-                "ssmInfo": {
-                "items": {
-                "properties": {
-                "ssmGroupRange": {
-                "type": "string"
-                },
-                "ssmWildcardMask": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                },
-                "virtualNetworkName": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                },
-                "siteNameHierarchy": {
-                "type": "string"
-                }
+                    "externalRpIpAddress": {
+                        "type": "string"
+                    },
+                    "internalRpIpAddress": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "ipPoolName": {
+                        "type": "string"
+                    },
+                    "ssmInfo": {
+                        "items": {
+                            "properties": {
+                                "ssmGroupRange": {
+                                    "type": "string"
+                                },
+                                "ssmWildcardMask": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "type": "array"
+                    },
+                    "virtualNetworkName": {
+                        "type": "string"
+                    }
                 },
                 "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        },
+        "siteNameHierarchy": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

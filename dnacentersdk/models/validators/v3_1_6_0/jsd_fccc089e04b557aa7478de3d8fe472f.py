@@ -36,74 +36,74 @@ class JSONSchemaValidatorFccc089E04B557AA7478De3D8Fe472F(object):
     """AddPlannedAccessPointsPositionsV2 request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorFccc089E04B557AA7478De3D8Fe472F, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "items": {
-                "properties": {
-                "macAddress": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "items": {
+        "properties": {
+            "macAddress": {
                 "type": "string"
-                },
-                "name": {
+            },
+            "name": {
                 "type": "string"
-                },
-                "position": {
+            },
+            "position": {
                 "properties": {
-                "x": {
-                "type": "number"
-                },
-                "y": {
-                "type": "number"
-                },
-                "z": {
-                "type": "number"
-                }
+                    "x": {
+                        "type": "number"
+                    },
+                    "y": {
+                        "type": "number"
+                    },
+                    "z": {
+                        "type": "number"
+                    }
                 },
                 "type": "object"
-                },
-                "radios": {
+            },
+            "radios": {
                 "items": {
-                "properties": {
-                "antenna": {
-                "properties": {
-                "azimuth": {
-                "type": "integer"
-                },
-                "elevation": {
-                "type": "integer"
-                },
-                "name": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                },
-                "bands": {
-                "items": {
-                "type": "number"
+                    "properties": {
+                        "antenna": {
+                            "properties": {
+                                "azimuth": {
+                                    "type": "integer"
+                                },
+                                "elevation": {
+                                    "type": "integer"
+                                },
+                                "name": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "bands": {
+                            "items": {
+                                "type": "number"
+                            },
+                            "type": "array"
+                        },
+                        "channel": {
+                            "type": "integer"
+                        },
+                        "txPower": {
+                            "type": "integer"
+                        }
+                    },
+                    "type": "object"
                 },
                 "type": "array"
-                },
-                "channel": {
-                "type": "integer"
-                },
-                "txPower": {
-                "type": "integer"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                },
-                "type": {
+            },
+            "type": {
                 "type": "string"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            }
+        },
+        "type": "object"
+    },
+    "type": "array"
+}
+'''))
 
     def validate(self, request):
         try:

@@ -36,88 +36,88 @@ class JSONSchemaValidatorE11Daa984F535A08Bc1EB01Bc84Bc399(object):
     """ClaimADeviceToASite request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorE11Daa984F535A08Bc1EB01Bc84Bc399, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "configInfo": {
-                "properties": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "configInfo": {
+            "properties": {
                 "configId": {
-                "type": "string"
+                    "type": "string"
                 },
                 "configParameters": {
-                "items": {
-                "properties": {
-                "key": {
-                "type": "string"
-                },
-                "value": {
-                "type": "string"
+                    "items": {
+                        "properties": {
+                            "key": {
+                                "type": "string"
+                            },
+                            "value": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
                 }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                }
-                },
-                "type": "object"
-                },
-                "deviceId": {
-                "type": "string"
-                },
-                "gateway": {
-                "type": "string"
-                },
-                "hostname": {
-                "type": "string"
-                },
-                "imageInfo": {
-                "properties": {
+            },
+            "type": "object"
+        },
+        "deviceId": {
+            "type": "string"
+        },
+        "gateway": {
+            "type": "string"
+        },
+        "hostname": {
+            "type": "string"
+        },
+        "imageInfo": {
+            "properties": {
                 "imageId": {
-                "type": "string"
+                    "type": "string"
                 },
                 "skip": {
-                "type": "boolean"
+                    "type": "boolean"
                 }
-                },
-                "type": "object"
-                },
-                "ipInterfaceName": {
-                "type": "string"
-                },
-                "rfProfile": {
-                "type": "string"
-                },
-                "sensorProfile": {
-                "type": "string"
-                },
-                "siteId": {
-                "type": "string"
-                },
-                "staticIP": {
-                "type": "string"
-                },
-                "subnetMask": {
-                "type": "string"
-                },
-                "type": {
-                "enum": [
+            },
+            "type": "object"
+        },
+        "ipInterfaceName": {
+            "type": "string"
+        },
+        "rfProfile": {
+            "type": "string"
+        },
+        "sensorProfile": {
+            "type": "string"
+        },
+        "siteId": {
+            "type": "string"
+        },
+        "staticIP": {
+            "type": "string"
+        },
+        "subnetMask": {
+            "type": "string"
+        },
+        "type": {
+            "enum": [
                 "Default",
                 "StackSwitch",
                 "AccessPoint",
                 "Sensor",
                 "CatalystWLC",
                 "MobilityExpress"
-                ],
-                "type": "string"
-                },
-                "vlanId": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            ],
+            "type": "string"
+        },
+        "vlanId": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

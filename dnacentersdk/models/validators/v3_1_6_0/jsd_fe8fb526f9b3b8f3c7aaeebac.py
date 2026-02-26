@@ -37,57 +37,57 @@ class JSONSchemaValidatorFE8Fb526F9B3B8F3C7Aaeebac(object):
     definition."""
     def __init__(self):
         super(JSONSchemaValidatorFE8Fb526F9B3B8F3C7Aaeebac, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "designName": {
-                "type": "string"
-                },
-                "featureAttributes": {
-                "properties": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "designName": {
+            "type": "string"
+        },
+        "featureAttributes": {
+            "properties": {
                 "coverageHoleDetection": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "monitoringChannels": {
-                "enum": [
-                "MONITORING_CHANNELS_ALL",
-                "MONITORING_CHANNELS_COUNTRY",
-                "MONITORING_CHANNELS_DCA"
-                ],
-                "type": "string"
+                    "enum": [
+                        "MONITORING_CHANNELS_ALL",
+                        "MONITORING_CHANNELS_COUNTRY",
+                        "MONITORING_CHANNELS_DCA"
+                    ],
+                    "type": "string"
                 },
                 "neighborDiscoverType": {
-                "enum": [
-                "NEIGHBOR_DISCOVER_TYPE_TRANSPARENT",
-                "NEIGHBOR_DISCOVER_TYPE_PROTECTED"
-                ],
-                "type": "string"
+                    "enum": [
+                        "NEIGHBOR_DISCOVER_TYPE_TRANSPARENT",
+                        "NEIGHBOR_DISCOVER_TYPE_PROTECTED"
+                    ],
+                    "type": "string"
                 },
                 "radioBand": {
-                "enum": [
-                "2_4GHZ",
-                "5GHZ",
-                "6GHZ"
-                ],
-                "type": "string"
+                    "enum": [
+                        "2_4GHZ",
+                        "5GHZ",
+                        "6GHZ"
+                    ],
+                    "type": "string"
                 },
                 "throughputThreshold": {
-                "type": "integer"
+                    "type": "integer"
                 }
-                },
-                "type": "object"
-                },
-                "unlockedAttributes": {
-                "items": {
+            },
+            "type": "object"
+        },
+        "unlockedAttributes": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

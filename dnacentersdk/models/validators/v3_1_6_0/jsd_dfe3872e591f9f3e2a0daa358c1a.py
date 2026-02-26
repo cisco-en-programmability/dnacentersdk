@@ -37,39 +37,39 @@ class JSONSchemaValidatorDfe3872E591F9F3E2A0Daa358C1A(object):
     definition."""
     def __init__(self):
         super(JSONSchemaValidatorDfe3872E591F9F3E2A0Daa358C1A, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "designName": {
-                "type": "string"
-                },
-                "featureAttributes": {
-                "properties": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "designName": {
+            "type": "string"
+        },
+        "featureAttributes": {
+            "properties": {
                 "dot11beStatus": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "radioBand": {
-                "enum": [
-                "2_4GHZ",
-                "5GHZ",
-                "6GHZ"
-                ],
-                "type": "string"
+                    "enum": [
+                        "2_4GHZ",
+                        "5GHZ",
+                        "6GHZ"
+                    ],
+                    "type": "string"
                 }
-                },
-                "type": "object"
-                },
-                "unlockedAttributes": {
-                "items": {
+            },
+            "type": "object"
+        },
+        "unlockedAttributes": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

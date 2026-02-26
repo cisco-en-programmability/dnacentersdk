@@ -36,20 +36,20 @@ class JSONSchemaValidatorB3Ab480A3F485Ecc9Fef1Bd2F8C9D109(object):
     """SetProvisioningSettings request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorB3Ab480A3F485Ecc9Fef1Bd2F8C9D109, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "requireItsmApproval": {
-                "type": "boolean"
-                },
-                "requirePreview": {
-                "type": "boolean"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "requireItsmApproval": {
+            "type": "boolean"
+        },
+        "requirePreview": {
+            "type": "boolean"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

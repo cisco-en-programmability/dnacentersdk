@@ -36,114 +36,114 @@ class JSONSchemaValidatorB6F2D8E46Cdd5F05Bb06F52Cd1B26Fb2(object):
     """AddsBorderDevice request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorB6F2D8E46Cdd5F05Bb06F52Cd1B26Fb2, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "items": {
-                "properties": {
-                "borderPriority": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "items": {
+        "properties": {
+            "borderPriority": {
                 "type": "string"
-                },
-                "borderSessionType": {
+            },
+            "borderSessionType": {
                 "enum": [
-                "EXTERNAL",
-                "INTERNAL",
-                "ANYWHERE"
+                    "EXTERNAL",
+                    "INTERNAL",
+                    "ANYWHERE"
                 ],
                 "type": "string"
-                },
-                "borderWithExternalConnectivity": {
+            },
+            "borderWithExternalConnectivity": {
                 "type": "boolean"
-                },
-                "connectedToInternet": {
+            },
+            "connectedToInternet": {
                 "type": "boolean"
-                },
-                "deviceManagementIpAddress": {
+            },
+            "deviceManagementIpAddress": {
                 "type": "string"
-                },
-                "deviceRole": {
+            },
+            "deviceRole": {
                 "items": {
-                "type": "string"
+                    "type": "string"
                 },
                 "type": "array"
-                },
-                "externalConnectivityIpPoolName": {
+            },
+            "externalConnectivityIpPoolName": {
                 "type": "string"
-                },
-                "externalConnectivitySettings": {
+            },
+            "externalConnectivitySettings": {
                 "items": {
-                "properties": {
-                "externalAutonomouSystemNumber": {
-                "type": "string"
-                },
-                "interfaceDescription": {
-                "type": "string"
-                },
-                "interfaceName": {
-                "type": "string"
-                },
-                "l2Handoff": {
-                "items": {
-                "properties": {
-                "virtualNetworkName": {
-                "type": "string"
-                },
-                "vlanName": {
-                "type": "string"
-                }
-                },
-                "type": "object"
+                    "properties": {
+                        "externalAutonomouSystemNumber": {
+                            "type": "string"
+                        },
+                        "interfaceDescription": {
+                            "type": "string"
+                        },
+                        "interfaceName": {
+                            "type": "string"
+                        },
+                        "l2Handoff": {
+                            "items": {
+                                "properties": {
+                                    "virtualNetworkName": {
+                                        "type": "string"
+                                    },
+                                    "vlanName": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "l3Handoff": {
+                            "items": {
+                                "properties": {
+                                    "virtualNetwork": {
+                                        "properties": {
+                                            "virtualNetworkName": {
+                                                "type": "string"
+                                            },
+                                            "vlanId": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
                 },
                 "type": "array"
-                },
-                "l3Handoff": {
-                "items": {
-                "properties": {
-                "virtualNetwork": {
-                "properties": {
-                "virtualNetworkName": {
-                "type": "string"
-                },
-                "vlanId": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                },
-                "externalDomainRoutingProtocolName": {
+            },
+            "externalDomainRoutingProtocolName": {
                 "enum": [
-                "BGP"
+                    "BGP"
                 ],
                 "type": "string"
-                },
-                "internalAutonomouSystemNumber": {
+            },
+            "internalAutonomouSystemNumber": {
                 "type": "string"
-                },
-                "routeDistributionProtocol": {
+            },
+            "routeDistributionProtocol": {
                 "type": "string"
-                },
-                "sdaTransitNetworkName": {
+            },
+            "sdaTransitNetworkName": {
                 "type": "string"
-                },
-                "siteNameHierarchy": {
+            },
+            "siteNameHierarchy": {
                 "type": "string"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            }
+        },
+        "type": "object"
+    },
+    "type": "array"
+}
+'''))
 
     def validate(self, request):
         try:

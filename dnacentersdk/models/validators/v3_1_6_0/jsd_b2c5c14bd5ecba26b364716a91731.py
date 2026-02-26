@@ -36,170 +36,170 @@ class JSONSchemaValidatorB2C5C14Bd5EcbA26B364716A91731(object):
     """PartiallyUpdatesAnExistingNetworkDevice request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorB2C5C14Bd5EcbA26B364716A91731, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "category": {
-                "enum": [
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "category": {
+            "enum": [
                 "NETWORK_DEVICE",
                 "COMPUTE_DEVICE",
                 "THIRD_PARTY_DEVICE",
                 "MERAKI_DASHBOARD",
                 "FIREWALL_MANAGEMENT_CENTER"
-                ],
-                "type": "string"
-                },
-                "credentials": {
-                "properties": {
+            ],
+            "type": "string"
+        },
+        "credentials": {
+            "properties": {
                 "cli": {
-                "properties": {
-                "enablePassword": {
-                "type": "string"
-                },
-                "password": {
-                "type": "string"
-                },
-                "protocol": {
-                "enum": [
-                "SSH",
-                "TELNET"
-                ],
-                "type": "string"
-                },
-                "username": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "username",
-                "password"
-                ],
-                "type": "object"
+                    "properties": {
+                        "enablePassword": {
+                            "type": "string"
+                        },
+                        "password": {
+                            "type": "string"
+                        },
+                        "protocol": {
+                            "enum": [
+                                "SSH",
+                                "TELNET"
+                            ],
+                            "type": "string"
+                        },
+                        "username": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "username",
+                        "password"
+                    ],
+                    "type": "object"
                 },
                 "http": {
-                "properties": {
-                "password": {
-                "type": "string"
-                },
-                "port": {
-                "type": "integer"
-                },
-                "protocol": {
-                "enum": [
-                "HTTPS",
-                "HTTP"
-                ],
-                "type": "string"
-                },
-                "username": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "username",
-                "password",
-                "port"
-                ],
-                "type": "object"
+                    "properties": {
+                        "password": {
+                            "type": "string"
+                        },
+                        "port": {
+                            "type": "integer"
+                        },
+                        "protocol": {
+                            "enum": [
+                                "HTTPS",
+                                "HTTP"
+                            ],
+                            "type": "string"
+                        },
+                        "username": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "username",
+                        "password",
+                        "port"
+                    ],
+                    "type": "object"
                 },
                 "meraki": {
-                "properties": {
-                "apiKey": {
-                "type": "string"
-                },
-                "orgIds": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                }
-                },
-                "required": [
-                "apiKey"
-                ],
-                "type": "object"
+                    "properties": {
+                        "apiKey": {
+                            "type": "string"
+                        },
+                        "orgIds": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "required": [
+                        "apiKey"
+                    ],
+                    "type": "object"
                 },
                 "netconf": {
-                "properties": {
-                "port": {
-                "type": "integer"
-                }
-                },
-                "required": [
-                "port"
-                ],
-                "type": "object"
+                    "properties": {
+                        "port": {
+                            "type": "integer"
+                        }
+                    },
+                    "required": [
+                        "port"
+                    ],
+                    "type": "object"
                 },
                 "snmp": {
-                "properties": {
-                "authPassword": {
-                "type": "string"
-                },
-                "authType": {
-                "enum": [
-                "SHA256",
-                "SHA",
-                "MD5"
-                ],
-                "type": "string"
-                },
-                "mode": {
-                "enum": [
-                "AUTHPRIV",
-                "AUTHNOPRIV",
-                "NOAUTHNOPRIV"
-                ],
-                "type": "string"
-                },
-                "privacyPassword": {
-                "type": "string"
-                },
-                "privacyType": {
-                "enum": [
-                "AES128",
-                "CISCOAES192",
-                "CISCOAES256",
-                "AES192",
-                "AES256"
-                ],
-                "type": "string"
-                },
-                "readCommunity": {
-                "type": "string"
-                },
-                "username": {
-                "type": "string"
-                },
-                "version": {
-                "enum": [
-                "v2",
-                "v3"
-                ],
-                "type": "string"
-                },
-                "writeCommunity": {
-                "type": "string"
+                    "properties": {
+                        "authPassword": {
+                            "type": "string"
+                        },
+                        "authType": {
+                            "enum": [
+                                "SHA256",
+                                "SHA",
+                                "MD5"
+                            ],
+                            "type": "string"
+                        },
+                        "mode": {
+                            "enum": [
+                                "AUTHPRIV",
+                                "AUTHNOPRIV",
+                                "NOAUTHNOPRIV"
+                            ],
+                            "type": "string"
+                        },
+                        "privacyPassword": {
+                            "type": "string"
+                        },
+                        "privacyType": {
+                            "enum": [
+                                "AES128",
+                                "CISCOAES192",
+                                "CISCOAES256",
+                                "AES192",
+                                "AES256"
+                            ],
+                            "type": "string"
+                        },
+                        "readCommunity": {
+                            "type": "string"
+                        },
+                        "username": {
+                            "type": "string"
+                        },
+                        "version": {
+                            "enum": [
+                                "v2",
+                                "v3"
+                            ],
+                            "type": "string"
+                        },
+                        "writeCommunity": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "version"
+                    ],
+                    "type": "object"
                 }
-                },
-                "required": [
-                "version"
-                ],
-                "type": "object"
-                }
-                },
-                "type": "object"
-                },
-                "managementAddress": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "category"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "object"
+        },
+        "managementAddress": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "category"
+    ],
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

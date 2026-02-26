@@ -36,69 +36,69 @@ class JSONSchemaValidatorEa59Df3DAf2A57A0B48044Cc49C8A1Ca(object):
     """UpdateQosDeviceInterfaceInfo request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorEa59Df3DAf2A57A0B48044Cc49C8A1Ca, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "items": {
+        "properties": {
+            "excludedInterfaces": {
                 "items": {
-                "properties": {
-                "excludedInterfaces": {
-                "items": {
-                "type": "string"
+                    "type": "string"
                 },
                 "type": "array"
-                },
-                "id": {
+            },
+            "id": {
                 "type": "string"
-                },
-                "name": {
+            },
+            "name": {
                 "type": "string"
-                },
-                "networkDeviceId": {
+            },
+            "networkDeviceId": {
                 "type": "string"
-                },
-                "qosDeviceInterfaceInfo": {
+            },
+            "qosDeviceInterfaceInfo": {
                 "items": {
-                "properties": {
-                "dmvpnRemoteSitesBw": {
-                "items": {
-                "type": "integer"
+                    "properties": {
+                        "dmvpnRemoteSitesBw": {
+                            "items": {
+                                "type": "integer"
+                            },
+                            "type": "array"
+                        },
+                        "instanceId": {
+                            "type": "integer"
+                        },
+                        "interfaceId": {
+                            "type": "string"
+                        },
+                        "interfaceName": {
+                            "type": "string"
+                        },
+                        "label": {
+                            "type": "string"
+                        },
+                        "role": {
+                            "enum": [
+                                "WAN",
+                                "DMVPN_HUB",
+                                "DMVPN_SPOKE"
+                            ],
+                            "type": "string"
+                        },
+                        "uploadBW": {
+                            "type": "integer"
+                        }
+                    },
+                    "type": "object"
                 },
                 "type": "array"
-                },
-                "instanceId": {
-                "type": "integer"
-                },
-                "interfaceId": {
-                "type": "string"
-                },
-                "interfaceName": {
-                "type": "string"
-                },
-                "label": {
-                "type": "string"
-                },
-                "role": {
-                "enum": [
-                "WAN",
-                "DMVPN_HUB",
-                "DMVPN_SPOKE"
-                ],
-                "type": "string"
-                },
-                "uploadBW": {
-                "type": "integer"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            }
+        },
+        "type": "object"
+    },
+    "type": "array"
+}
+'''))
 
     def validate(self, request):
         try:

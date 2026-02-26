@@ -36,34 +36,33 @@ class JSONSchemaValidatorE3D7Ad943D3A50Fb8C3BE7327669E557(object):
     """UpdateSNMPReadCommunity request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorE3D7Ad943D3A50Fb8C3BE7327669E557, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "comments": {
-                "type": "string"
-                },
-                "credentialType": {
-                "enum": [
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "comments": {
+            "type": "string"
+        },
+        "credentialType": {
+            "enum": [
                 "GLOBAL",
                 "APP"
-                ],
-                "type": "string"
-                },
-                "description":
-                 {
-                "type": "string"
-                },
-                "instanceUuid": {
-                "type": "string"
-                },
-                "readCommunity": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            ],
+            "type": "string"
+        },
+        "description": {
+            "type": "string"
+        },
+        "instanceUuid": {
+            "type": "string"
+        },
+        "readCommunity": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

@@ -36,33 +36,33 @@ class JSONSchemaValidatorBbc4Dab8193C546AB116E19863Dff621(object):
     """ConfigureAREPRingOnNONFABRICDeployment request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorBbc4Dab8193C546AB116E19863Dff621, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "deploymentMode": {
-                "enum": [
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "deploymentMode": {
+            "enum": [
                 "FABRIC",
                 "NON_FABRIC"
-                ],
+            ],
+            "type": "string"
+        },
+        "ringName": {
+            "type": "string"
+        },
+        "rootNeighbourNetworkDeviceIds": {
+            "items": {
                 "type": "string"
-                },
-                "ringName": {
-                "type": "string"
-                },
-                "rootNeighbourNetworkDeviceIds": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "rootNetworkDeviceId": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        },
+        "rootNetworkDeviceId": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

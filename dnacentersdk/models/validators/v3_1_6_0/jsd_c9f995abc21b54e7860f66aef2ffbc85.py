@@ -36,67 +36,66 @@ class JSONSchemaValidatorC9F995AbC21B54E7860F66Aef2Ffbc85(object):
     """UpdateTag request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorC9F995AbC21B54E7860F66Aef2Ffbc85, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "description": {
+            "type": "string"
+        },
+        "dynamicRules": {
+            "items": {
                 "properties": {
-                "description":
-                 {
-                "type": "string"
-                },
-                "dynamicRules": {
-                "items": {
-                "properties": {
-                "memberType": {
-                "type": "string"
-                },
-                "rules": {
-                "properties": {
-                "items": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "name": {
-                "type": "string"
-                },
-                "operation": {
-                "type": "string"
-                },
-                "value": {
-                "type": "string"
-                },
-                "values": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                }
+                    "memberType": {
+                        "type": "string"
+                    },
+                    "rules": {
+                        "properties": {
+                            "items": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "operation": {
+                                "type": "string"
+                            },
+                            "value": {
+                                "type": "string"
+                            },
+                            "values": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "type": "object"
+                    }
                 },
                 "type": "object"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                },
-                "id": {
-                "type": "string"
-                },
-                "instanceTenantId": {
-                "type": "string"
-                },
-                "name": {
-                "type": "string"
-                },
-                "systemTag": {
-                "type": "boolean"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        },
+        "id": {
+            "type": "string"
+        },
+        "instanceTenantId": {
+            "type": "string"
+        },
+        "name": {
+            "type": "string"
+        },
+        "systemTag": {
+            "type": "boolean"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

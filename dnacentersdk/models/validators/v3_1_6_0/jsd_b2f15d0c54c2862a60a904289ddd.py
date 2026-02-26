@@ -36,20 +36,20 @@ class JSONSchemaValidatorB2F15D0C54C2862A60A904289Ddd(object):
     """DeviceDeregistration request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorB2F15D0C54C2862A60A904289Ddd, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "device_uuids": {
-                "items": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "device_uuids": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

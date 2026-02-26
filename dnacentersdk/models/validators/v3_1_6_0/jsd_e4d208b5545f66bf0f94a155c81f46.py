@@ -36,43 +36,43 @@ class JSONSchemaValidatorE4D208B5545F66Bf0F94A155C81F46(object):
     """CreateApplicationSetsV2 request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorE4D208B5545F66Bf0F94A155C81F46, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "items": {
-                "properties": {
-                "defaultBusinessRelevance": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "items": {
+        "properties": {
+            "defaultBusinessRelevance": {
                 "enum": [
-                "BUSINESS_RELEVANT",
-                "BUSINESS_IRRELEVANT",
-                "DEFAULT"
+                    "BUSINESS_RELEVANT",
+                    "BUSINESS_IRRELEVANT",
+                    "DEFAULT"
                 ],
                 "type": "string"
-                },
-                "name": {
+            },
+            "name": {
                 "type": "string"
-                },
-                "namespace": {
+            },
+            "namespace": {
                 "type": "string"
-                },
-                "qualifier": {
+            },
+            "qualifier": {
                 "type": "string"
-                },
-                "scalableGroupExternalHandle": {
+            },
+            "scalableGroupExternalHandle": {
                 "type": "string"
-                },
-                "scalableGroupType": {
+            },
+            "scalableGroupType": {
                 "type": "string"
-                },
-                "type": {
+            },
+            "type": {
                 "type": "string"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            }
+        },
+        "type": "object"
+    },
+    "type": "array"
+}
+'''))
 
     def validate(self, request):
         try:

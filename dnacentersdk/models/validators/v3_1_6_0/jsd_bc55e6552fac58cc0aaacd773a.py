@@ -36,20 +36,20 @@ class JSONSchemaValidatorBc55E6552FAc58Cc0Aaacd773A(object):
     """ExecuteSuggestedActionsCommands request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorBc55E6552FAc58Cc0Aaacd773A, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "entity_type": {
-                "type": "string"
-                },
-                "entity_value": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "entity_type": {
+            "type": "string"
+        },
+        "entity_value": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

@@ -36,16 +36,15 @@ class JSONSchemaValidatorA93D01238De0537DBb3D358F9Cce0Bd2(object):
     """UpdateScheduleOfFlexibleReport request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorA93D01238De0537DBb3D358F9Cce0Bd2, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "schedule": {
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "schedule": {}
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

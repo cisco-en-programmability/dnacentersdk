@@ -36,31 +36,31 @@ class JSONSchemaValidatorE4Ddf9B60Efb59Ac8F6A200A563D9D72(object):
     """UpdateDownloadedRelease request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorE4Ddf9B60Efb59Ac8F6A200A563D9D72, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "optionalPackages": {
-                "items": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "optionalPackages": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                },
-                "releaseName": {
-                "type": "string"
-                },
-                "releaseVersion": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "optionalPackages",
-                "releaseName",
-                "releaseVersion"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        },
+        "releaseName": {
+            "type": "string"
+        },
+        "releaseVersion": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "optionalPackages",
+        "releaseName",
+        "releaseVersion"
+    ],
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

@@ -36,29 +36,29 @@ class JSONSchemaValidatorD1D42Ef2F1895A82A2830Bf1353E6Baa(object):
     """AddDefaultAuthenticationProfile request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorD1D42Ef2F1895A82A2830Bf1353E6Baa, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "items": {
-                "properties": {
-                "authenticateTemplateName": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "items": {
+        "properties": {
+            "authenticateTemplateName": {
                 "enum": [
-                "No Authentication",
-                "Open Authentication",
-                "Closed Authentication",
-                "Low Impact"
+                    "No Authentication",
+                    "Open Authentication",
+                    "Closed Authentication",
+                    "Low Impact"
                 ],
                 "type": "string"
-                },
-                "siteNameHierarchy": {
+            },
+            "siteNameHierarchy": {
                 "type": "string"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            }
+        },
+        "type": "object"
+    },
+    "type": "array"
+}
+'''))
 
     def validate(self, request):
         try:

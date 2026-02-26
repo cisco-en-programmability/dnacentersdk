@@ -37,23 +37,23 @@ class JSONSchemaValidatorF624469D5E448E9EBa137Fe533E8(object):
     definition."""
     def __init__(self):
         super(JSONSchemaValidatorF624469D5E448E9EBa137Fe533E8, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "items": {
-                "properties": {
-                "accessPointId": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "items": {
+        "properties": {
+            "accessPointId": {
                 "type": "string"
-                },
-                "plannedAccessPointId": {
+            },
+            "plannedAccessPointId": {
                 "type": "string"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            }
+        },
+        "type": "object"
+    },
+    "type": "array"
+}
+'''))
 
     def validate(self, request):
         try:

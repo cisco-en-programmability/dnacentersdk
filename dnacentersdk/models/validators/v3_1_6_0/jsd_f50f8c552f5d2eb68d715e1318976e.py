@@ -36,20 +36,20 @@ class JSONSchemaValidatorF50F8C552F5D2EB68D715E1318976E(object):
     """UpdatesAnArea request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorF50F8C552F5D2EB68D715E1318976E, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "name": {
-                "type": "string"
-                },
-                "parentId": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "name": {
+            "type": "string"
+        },
+        "parentId": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

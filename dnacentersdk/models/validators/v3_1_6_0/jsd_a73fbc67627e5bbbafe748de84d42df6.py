@@ -36,23 +36,23 @@ class JSONSchemaValidatorA73Fbc67627E5BbbAfe748De84D42Df6(object):
     """AddUserDefinedFieldToDevice request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorA73Fbc67627E5BbbAfe748De84D42Df6, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "items": {
-                "properties": {
-                "name": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "items": {
+        "properties": {
+            "name": {
                 "type": "string"
-                },
-                "value": {
+            },
+            "value": {
                 "type": "string"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            }
+        },
+        "type": "object"
+    },
+    "type": "array"
+}
+'''))
 
     def validate(self, request):
         try:

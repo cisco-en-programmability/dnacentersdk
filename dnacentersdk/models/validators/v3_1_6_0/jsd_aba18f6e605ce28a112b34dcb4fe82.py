@@ -36,47 +36,47 @@ class JSONSchemaValidatorAba18F6E605Ce28A112B34Dcb4Fe82(object):
     """ProcessCMDBEndpoints request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorAba18F6E605Ce28A112B34Dcb4Fe82, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "items": {
-                "properties": {
-                "assetTag": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "items": {
+        "properties": {
+            "assetTag": {
                 "type": "string"
-                },
-                "department": {
+            },
+            "department": {
                 "type": "string"
-                },
-                "displayName": {
+            },
+            "displayName": {
                 "type": "string"
-                },
-                "lastUpdateTimestamp": {
+            },
+            "lastUpdateTimestamp": {
                 "type": "integer"
-                },
-                "location": {
+            },
+            "location": {
                 "type": "string"
-                },
-                "macAddress": {
+            },
+            "macAddress": {
                 "type": "string"
-                },
-                "managedBy": {
+            },
+            "managedBy": {
                 "type": "string"
-                },
-                "model": {
+            },
+            "model": {
                 "type": "string"
-                },
-                "modelCategory": {
+            },
+            "modelCategory": {
                 "type": "string"
-                },
-                "serialNumber": {
+            },
+            "serialNumber": {
                 "type": "string"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            }
+        },
+        "type": "object"
+    },
+    "type": "array"
+}
+'''))
 
     def validate(self, request):
         try:

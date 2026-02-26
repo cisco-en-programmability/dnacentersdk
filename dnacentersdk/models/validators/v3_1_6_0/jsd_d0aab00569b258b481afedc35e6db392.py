@@ -36,52 +36,52 @@ class JSONSchemaValidatorD0Aab00569B258B481AfEdc35E6Db392(object):
     """ProvisionUpdate request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorD0Aab00569B258B481AfEdc35E6Db392, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "items": {
+        "properties": {
+            "deviceName": {
+                "type": "string"
+            },
+            "dynamicInterfaces": {
                 "items": {
-                "properties": {
-                "deviceName": {
-                "type": "string"
-                },
-                "dynamicInterfaces": {
-                "items": {
-                "properties": {
-                "interfaceGateway": {
-                "type": "string"
-                },
-                "interfaceIPAddress": {
-                "type": "string"
-                },
-                "interfaceName": {
-                "type": "string"
-                },
-                "interfaceNetmaskInCIDR": {
-                "type": "integer"
-                },
-                "lagOrPortNumber": {
-                "type": "integer"
-                },
-                "vlanId": {
-                "type": "integer"
-                }
-                },
-                "type": "object"
+                    "properties": {
+                        "interfaceGateway": {
+                            "type": "string"
+                        },
+                        "interfaceIPAddress": {
+                            "type": "string"
+                        },
+                        "interfaceName": {
+                            "type": "string"
+                        },
+                        "interfaceNetmaskInCIDR": {
+                            "type": "integer"
+                        },
+                        "lagOrPortNumber": {
+                            "type": "integer"
+                        },
+                        "vlanId": {
+                            "type": "integer"
+                        }
+                    },
+                    "type": "object"
                 },
                 "type": "array"
-                },
-                "managedAPLocations": {
+            },
+            "managedAPLocations": {
                 "items": {
-                "type": "string"
+                    "type": "string"
                 },
                 "type": "array"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            }
+        },
+        "type": "object"
+    },
+    "type": "array"
+}
+'''))
 
     def validate(self, request):
         try:

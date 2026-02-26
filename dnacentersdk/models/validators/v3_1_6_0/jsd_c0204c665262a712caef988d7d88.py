@@ -37,56 +37,55 @@ class JSONSchemaValidatorC0204C665262A712Caef988D7D88(object):
     schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorC0204C665262A712Caef988D7D88, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "description": {
+            "type": "string"
+        },
+        "isEnabled": {
+            "type": "boolean"
+        },
+        "isNotificationEnabled": {
+            "type": "boolean"
+        },
+        "name": {
+            "type": "string"
+        },
+        "priority": {
+            "type": "string"
+        },
+        "rules": {
+            "items": {
                 "properties": {
-                "description":
-                 {
-                "type": "string"
-                },
-                "isEnabled": {
-                "type": "boolean"
-                },
-                "isNotificationEnabled": {
-                "type": "boolean"
-                },
-                "name": {
-                "type": "string"
-                },
-                "priority": {
-                "type": "string"
-                },
-                "rules": {
-                "items": {
-                "properties": {
-                "durationInMinutes": {
-                "type": "integer"
-                },
-                "facility": {
-                "type": "string"
-                },
-                "mnemonic": {
-                "type": "string"
-                },
-                "occurrences": {
-                "type": "integer"
-                },
-                "pattern": {
-                "type": "string"
-                },
-                "severity": {
-                "type": "integer"
-                }
+                    "durationInMinutes": {
+                        "type": "integer"
+                    },
+                    "facility": {
+                        "type": "string"
+                    },
+                    "mnemonic": {
+                        "type": "string"
+                    },
+                    "occurrences": {
+                        "type": "integer"
+                    },
+                    "pattern": {
+                        "type": "string"
+                    },
+                    "severity": {
+                        "type": "integer"
+                    }
                 },
                 "type": "object"
-                },
-                "type": "array"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

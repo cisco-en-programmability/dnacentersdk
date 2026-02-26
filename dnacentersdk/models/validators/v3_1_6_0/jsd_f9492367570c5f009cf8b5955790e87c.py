@@ -36,29 +36,29 @@ class JSONSchemaValidatorF9492367570C5F009Cf8B5955790E87C(object):
     """UpdateVirtualNetworkWithScalableGroups request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorF9492367570C5F009Cf8B5955790E87C, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "isGuestVirtualNetwork": {
-                "type": "boolean"
-                },
-                "scalableGroupNames": {
-                "items": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "isGuestVirtualNetwork": {
+            "type": "boolean"
+        },
+        "scalableGroupNames": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                },
-                "vManageVpnId": {
-                "type": "string"
-                },
-                "virtualNetworkName": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        },
+        "vManageVpnId": {
+            "type": "string"
+        },
+        "virtualNetworkName": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

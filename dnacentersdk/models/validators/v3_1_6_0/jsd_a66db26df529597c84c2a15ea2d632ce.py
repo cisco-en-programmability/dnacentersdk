@@ -36,36 +36,36 @@ class JSONSchemaValidatorA66Db26DF529597C84C2A15Ea2D632Ce(object):
     """CreateSPProfileV2 request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorA66Db26DF529597C84C2A15Ea2D632Ce, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "settings": {
-                "properties": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "settings": {
+            "properties": {
                 "qos": {
-                "items": {
-                "properties": {
-                "model": {
-                "type": "string"
-                },
-                "profileName": {
-                "type": "string"
-                },
-                "wanProvider": {
-                "type": "string"
+                    "items": {
+                        "properties": {
+                            "model": {
+                                "type": "string"
+                            },
+                            "profileName": {
+                                "type": "string"
+                            },
+                            "wanProvider": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
                 }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                }
-                },
-                "type": "object"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "object"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

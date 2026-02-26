@@ -36,41 +36,41 @@ class JSONSchemaValidatorD82755E5E03510DAf0951C1F42C2702(object):
     """AddUser request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorD82755E5E03510DAf0951C1F42C2702, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "accessGroups": {
-                "items": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "accessGroups": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                },
-                "email": {
+            },
+            "type": "array"
+        },
+        "email": {
+            "type": "string"
+        },
+        "firstName": {
+            "type": "string"
+        },
+        "lastName": {
+            "type": "string"
+        },
+        "password": {
+            "type": "string"
+        },
+        "roleList": {
+            "items": {
                 "type": "string"
-                },
-                "firstName": {
-                "type": "string"
-                },
-                "lastName": {
-                "type": "string"
-                },
-                "password": {
-                "type": "string"
-                },
-                "roleList": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "username": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        },
+        "username": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

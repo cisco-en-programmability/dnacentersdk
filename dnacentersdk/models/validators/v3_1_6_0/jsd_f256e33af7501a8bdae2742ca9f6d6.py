@@ -36,20 +36,20 @@ class JSONSchemaValidatorF256E33Af7501A8BdaE2742Ca9F6D6(object):
     """DeployDeviceReplacementWorkflow request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorF256E33Af7501A8BdaE2742Ca9F6D6, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "faultyDeviceSerialNumber": {
-                "type": "string"
-                },
-                "replacementDeviceSerialNumber": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "faultyDeviceSerialNumber": {
+            "type": "string"
+        },
+        "replacementDeviceSerialNumber": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

@@ -36,23 +36,23 @@ class JSONSchemaValidatorE85B40C5Ca055F4C82281617A8F95644(object):
     """ExportDeviceConfigurations request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorE85B40C5Ca055F4C82281617A8F95644, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "deviceId": {
-                "items": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "deviceId": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                },
-                "password": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        },
+        "password": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

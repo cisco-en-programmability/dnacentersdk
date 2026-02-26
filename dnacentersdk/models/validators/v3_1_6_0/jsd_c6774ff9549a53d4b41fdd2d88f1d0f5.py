@@ -36,116 +36,116 @@ class JSONSchemaValidatorC6774Ff9549A53D4B41FDd2D88F1D0F5(object):
     """AddVirtualAccount request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorC6774Ff9549A53D4B41FDd2D88F1D0F5, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "autoSyncPeriod": {
-                "type": "integer"
-                },
-                "ccoUser": {
-                "type": "string"
-                },
-                "expiry": {
-                "type": "integer"
-                },
-                "lastSync": {
-                "type": "integer"
-                },
-                "profile": {
-                "properties": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "autoSyncPeriod": {
+            "type": "integer"
+        },
+        "ccoUser": {
+            "type": "string"
+        },
+        "expiry": {
+            "type": "integer"
+        },
+        "lastSync": {
+            "type": "integer"
+        },
+        "profile": {
+            "properties": {
                 "addressFqdn": {
-                "type": "string"
+                    "type": "string"
                 },
                 "addressIpV4": {
-                "type": "string"
+                    "type": "string"
                 },
                 "addressIpV6": {
-                "type": "string"
+                    "type": "string"
                 },
                 "cert": {
-                "type": "string"
+                    "type": "string"
                 },
                 "makeDefault": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "name": {
-                "type": "string"
+                    "type": "string"
                 },
                 "port": {
-                "type": "integer"
+                    "type": "integer"
                 },
                 "profileId": {
-                "type": "string"
+                    "type": "string"
                 },
                 "proxy": {
-                "type": "boolean"
+                    "type": "boolean"
                 }
-                },
-                "type": "object"
-                },
-                "smartAccountId": {
-                "type": "string"
-                },
-                "syncResult": {
-                "properties": {
+            },
+            "type": "object"
+        },
+        "smartAccountId": {
+            "type": "string"
+        },
+        "syncResult": {
+            "properties": {
                 "syncList": {
-                "items": {
-                "properties": {
-                "deviceSnList": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "syncType": {
-                "enum": [
-                "Add",
-                "Update",
-                "Delete",
-                "MismatchError"
-                ],
-                "type": "string"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
+                    "items": {
+                        "properties": {
+                            "deviceSnList": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "syncType": {
+                                "enum": [
+                                    "Add",
+                                    "Update",
+                                    "Delete",
+                                    "MismatchError"
+                                ],
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
                 },
                 "syncMsg": {
-                "type": "string"
+                    "type": "string"
                 }
-                },
-                "type": "object"
-                },
-                "syncResultStr": {
-                "type": "string"
-                },
-                "syncStartTime": {
-                "type": "integer"
-                },
-                "syncStatus": {
-                "enum": [
+            },
+            "type": "object"
+        },
+        "syncResultStr": {
+            "type": "string"
+        },
+        "syncStartTime": {
+            "type": "integer"
+        },
+        "syncStatus": {
+            "enum": [
                 "NOT_SYNCED",
                 "SYNCING",
                 "SUCCESS",
                 "FAILURE"
-                ],
-                "type": "string"
-                },
-                "tenantId": {
-                "type": "string"
-                },
-                "token": {
-                "type": "string"
-                },
-                "virtualAccountId": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            ],
+            "type": "string"
+        },
+        "tenantId": {
+            "type": "string"
+        },
+        "token": {
+            "type": "string"
+        },
+        "virtualAccountId": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

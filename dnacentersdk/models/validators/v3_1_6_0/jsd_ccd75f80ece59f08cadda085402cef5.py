@@ -36,38 +36,38 @@ class JSONSchemaValidatorCcd75F80Ece59F08CadDa085402Cef5(object):
     """UpdateExtranetPolicy request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorCcd75F80Ece59F08CadDa085402Cef5, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "items": {
-                "properties": {
-                "extranetPolicyName": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "items": {
+        "properties": {
+            "extranetPolicyName": {
                 "type": "string"
-                },
-                "fabricIds": {
+            },
+            "fabricIds": {
                 "items": {
-                "type": "string"
+                    "type": "string"
                 },
                 "type": "array"
-                },
-                "id": {
+            },
+            "id": {
                 "type": "string"
-                },
-                "providerVirtualNetworkName": {
+            },
+            "providerVirtualNetworkName": {
                 "type": "string"
-                },
-                "subscriberVirtualNetworkNames": {
+            },
+            "subscriberVirtualNetworkNames": {
                 "items": {
-                "type": "string"
+                    "type": "string"
                 },
                 "type": "array"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            }
+        },
+        "type": "object"
+    },
+    "type": "array"
+}
+'''))
 
     def validate(self, request):
         try:

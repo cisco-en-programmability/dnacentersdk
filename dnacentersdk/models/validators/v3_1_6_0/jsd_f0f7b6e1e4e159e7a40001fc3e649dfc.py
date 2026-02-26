@@ -36,75 +36,74 @@ class JSONSchemaValidatorF0F7B6E1E4E159E7A40001Fc3E649Dfc(object):
     """UpdatePowerProfileByID request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorF0F7B6E1E4E159E7A40001Fc3E649Dfc, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "description": {
+            "type": "string"
+        },
+        "profileName": {
+            "type": "string"
+        },
+        "rules": {
+            "items": {
                 "properties": {
-                "description":
-                 {
-                "type": "string"
-                },
-                "profileName": {
-                "type": "string"
-                },
-                "rules": {
-                "items": {
-                "properties": {
-                "interfaceID": {
-                "enum": [
-                "GIGABITETHERNET0",
-                "GIGABITETHERNET1",
-                "LAN1",
-                "LAN2",
-                "LAN3",
-                "6GHZ",
-                "5GHZ",
-                "SECONDARY_5GHZ",
-                "2_4GHZ",
-                "USB0"
-                ],
-                "type": "string"
-                },
-                "interfaceType": {
-                "enum": [
-                "ETHERNET",
-                "RADIO",
-                "USB"
-                ],
-                "type": "string"
-                },
-                "parameterType": {
-                "enum": [
-                "SPEED",
-                "SPATIALSTREAM",
-                "STATE"
-                ],
-                "type": "string"
-                },
-                "parameterValue": {
-                "enum": [
-                "5000MBPS",
-                "2500MBPS",
-                "1000MBPS",
-                "100MBPS",
-                "EIGHT_BY_EIGHT",
-                "FOUR_BY_FOUR",
-                "THREE_BY_THREE",
-                "TWO_BY_TWO",
-                "ONE_BY_ONE",
-                "DISABLE"
-                ],
-                "type": "string"
-                }
+                    "interfaceID": {
+                        "enum": [
+                            "GIGABITETHERNET0",
+                            "GIGABITETHERNET1",
+                            "LAN1",
+                            "LAN2",
+                            "LAN3",
+                            "6GHZ",
+                            "5GHZ",
+                            "SECONDARY_5GHZ",
+                            "2_4GHZ",
+                            "USB0"
+                        ],
+                        "type": "string"
+                    },
+                    "interfaceType": {
+                        "enum": [
+                            "ETHERNET",
+                            "RADIO",
+                            "USB"
+                        ],
+                        "type": "string"
+                    },
+                    "parameterType": {
+                        "enum": [
+                            "SPEED",
+                            "SPATIALSTREAM",
+                            "STATE"
+                        ],
+                        "type": "string"
+                    },
+                    "parameterValue": {
+                        "enum": [
+                            "5000MBPS",
+                            "2500MBPS",
+                            "1000MBPS",
+                            "100MBPS",
+                            "EIGHT_BY_EIGHT",
+                            "FOUR_BY_FOUR",
+                            "THREE_BY_THREE",
+                            "TWO_BY_TWO",
+                            "ONE_BY_ONE",
+                            "DISABLE"
+                        ],
+                        "type": "string"
+                    }
                 },
                 "type": "object"
-                },
-                "type": "array"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

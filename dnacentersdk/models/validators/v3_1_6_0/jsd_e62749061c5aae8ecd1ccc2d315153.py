@@ -37,37 +37,37 @@ class JSONSchemaValidatorE62749061C5Aae8Ecd1Ccc2D315153(object):
     definition."""
     def __init__(self):
         super(JSONSchemaValidatorE62749061C5Aae8Ecd1Ccc2D315153, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "networkDevices": {
+            "items": {
                 "properties": {
-                "networkDevices": {
-                "items": {
-                "properties": {
-                "excludeInterfaceIds": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "excludeWlanModes": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "id": {
-                "type": "string"
-                }
+                    "excludeInterfaceIds": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "excludeWlanModes": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "id": {
+                        "type": "string"
+                    }
                 },
                 "type": "object"
-                },
-                "type": "array"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

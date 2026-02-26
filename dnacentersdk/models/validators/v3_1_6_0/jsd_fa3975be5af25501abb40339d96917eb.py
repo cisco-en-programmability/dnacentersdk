@@ -37,120 +37,119 @@ class JSONSchemaValidatorFa3975Be5Af25501Abb40339D96917Eb(object):
     definition."""
     def __init__(self):
         super(JSONSchemaValidatorFa3975Be5Af25501Abb40339D96917Eb, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "accountingPort": {
+            "type": "integer"
+        },
+        "authenticationPort": {
+            "type": "integer"
+        },
+        "ciscoIseDtos": {
+            "items": {
                 "properties": {
-                "accountingPort": {
-                "type": "integer"
-                },
-                "authenticationPort": {
-                "type": "integer"
-                },
-                "ciscoIseDtos": {
-                "items": {
-                "properties": {
-                "description":
-                 {
-                "type": "string"
-                },
-                "fqdn": {
-                "type": "string"
-                },
-                "ipAddress": {
-                "type": "string"
-                },
-                "password": {
-                "type": "string"
-                },
-                "sshkey": {
-                "type": "string"
-                },
-                "subscriberName": {
-                "type": "string"
-                },
-                "userName": {
-                "type": "string"
-                }
+                    "description": {
+                        "type": "string"
+                    },
+                    "fqdn": {
+                        "type": "string"
+                    },
+                    "ipAddress": {
+                        "type": "string"
+                    },
+                    "password": {
+                        "type": "string"
+                    },
+                    "sshkey": {
+                        "type": "string"
+                    },
+                    "subscriberName": {
+                        "type": "string"
+                    },
+                    "userName": {
+                        "type": "string"
+                    }
                 },
                 "type": "object"
-                },
-                "type": "array"
-                },
-                "encryptionKey": {
-                "type": "string"
-                },
-                "encryptionScheme": {
-                "enum": [
+            },
+            "type": "array"
+        },
+        "encryptionKey": {
+            "type": "string"
+        },
+        "encryptionScheme": {
+            "enum": [
                 "KEYWRAP",
                 "RADSEC"
-                ],
-                "type": "string"
-                },
-                "externalCiscoIseIpAddrDtos": {
-                "items": {
+            ],
+            "type": "string"
+        },
+        "externalCiscoIseIpAddrDtos": {
+            "items": {
                 "properties": {
-                "externalCiscoIseIpAddresses": {
-                "items": {
-                "properties": {
-                "externalIpAddress": {
-                "type": "string"
-                }
+                    "externalCiscoIseIpAddresses": {
+                        "items": {
+                            "properties": {
+                                "externalIpAddress": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "type": "array"
+                    },
+                    "type": {
+                        "type": "string"
+                    }
                 },
                 "type": "object"
-                },
-                "type": "array"
-                },
-                "type": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                },
-                "ipAddress": {
-                "type": "string"
-                },
-                "isIseEnabled": {
-                "type": "boolean"
-                },
-                "messageKey": {
-                "type": "string"
-                },
-                "port": {
-                "type": "integer"
-                },
-                "protocol": {
-                "enum": [
+            },
+            "type": "array"
+        },
+        "ipAddress": {
+            "type": "string"
+        },
+        "isIseEnabled": {
+            "type": "boolean"
+        },
+        "messageKey": {
+            "type": "string"
+        },
+        "port": {
+            "type": "integer"
+        },
+        "protocol": {
+            "enum": [
                 "TACACS",
                 "RADIUS",
                 "RADIUS_TACACS"
-                ],
-                "type": "string"
-                },
-                "pxgridEnabled": {
-                "type": "boolean"
-                },
-                "retries": {
-                "type": "string"
-                },
-                "role": {
-                "type": "string"
-                },
-                "sharedSecret": {
-                "type": "string"
-                },
-                "timeoutSeconds": {
-                "type": "string"
-                },
-                "useDnacCertForPxgrid": {
-                "type": "boolean"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            ],
+            "type": "string"
+        },
+        "pxgridEnabled": {
+            "type": "boolean"
+        },
+        "retries": {
+            "type": "string"
+        },
+        "role": {
+            "type": "string"
+        },
+        "sharedSecret": {
+            "type": "string"
+        },
+        "timeoutSeconds": {
+            "type": "string"
+        },
+        "useDnacCertForPxgrid": {
+            "type": "boolean"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

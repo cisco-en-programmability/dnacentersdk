@@ -36,71 +36,70 @@ class JSONSchemaValidatorD69B1CffFdda5Bd1828A5A89A262Cbdd(object):
     """CreateSNMPDestination request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorD69B1CffFdda5Bd1828A5A89A262Cbdd, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "authPassword": {
-                "type": "string"
-                },
-                "community": {
-                "type": "string"
-                },
-                "description":
-                 {
-                "type": "string"
-                },
-                "ipAddress": {
-                "type": "string"
-                },
-                "name": {
-                "type": "string"
-                },
-                "port": {
-                "type": "string"
-                },
-                "privacyPassword": {
-                "type": "string"
-                },
-                "snmpAuthType": {
-                "enum": [
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "authPassword": {
+            "type": "string"
+        },
+        "community": {
+            "type": "string"
+        },
+        "description": {
+            "type": "string"
+        },
+        "ipAddress": {
+            "type": "string"
+        },
+        "name": {
+            "type": "string"
+        },
+        "port": {
+            "type": "string"
+        },
+        "privacyPassword": {
+            "type": "string"
+        },
+        "snmpAuthType": {
+            "enum": [
                 "SHA",
                 "MD5",
                 "NONE"
-                ],
-                "type": "string"
-                },
-                "snmpMode": {
-                "enum": [
+            ],
+            "type": "string"
+        },
+        "snmpMode": {
+            "enum": [
                 "AUTH_PRIVACY",
                 "AUTH_NO_PRIVACY",
                 "NO_AUTH_NO_PRIVACY",
                 "NONE"
-                ],
-                "type": "string"
-                },
-                "snmpPrivacyType": {
-                "enum": [
+            ],
+            "type": "string"
+        },
+        "snmpPrivacyType": {
+            "enum": [
                 "AES128",
                 "DES",
                 "NONE"
-                ],
-                "type": "string"
-                },
-                "snmpVersion": {
-                "enum": [
+            ],
+            "type": "string"
+        },
+        "snmpVersion": {
+            "enum": [
                 "V2C",
                 "V3"
-                ],
-                "type": "string"
-                },
-                "userName": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            ],
+            "type": "string"
+        },
+        "userName": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

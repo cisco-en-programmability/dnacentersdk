@@ -36,102 +36,102 @@ class JSONSchemaValidatorB0Aa8E79D21F5E579908825E70Aaccf6(object):
     """WirelessControllerProvision request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorB0Aa8E79D21F5E579908825E70Aaccf6, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "apAuthorizationListName": {
-                "type": "string"
-                },
-                "authorizeMeshAndNonMeshAccessPoints": {
-                "type": "boolean"
-                },
-                "featureTemplatesOverridenAttributes": {
-                "properties": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "apAuthorizationListName": {
+            "type": "string"
+        },
+        "authorizeMeshAndNonMeshAccessPoints": {
+            "type": "boolean"
+        },
+        "featureTemplatesOverridenAttributes": {
+            "properties": {
                 "editFeatureTemplates": {
-                "items": {
-                "properties": {
-                "additionalIdentifiers": {
-                "properties": {
-                "siteUuid": {
-                "type": "string"
-                },
-                "wlanProfileName": {
-                "type": "string"
+                    "items": {
+                        "properties": {
+                            "additionalIdentifiers": {
+                                "properties": {
+                                    "siteUuid": {
+                                        "type": "string"
+                                    },
+                                    "wlanProfileName": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "attributes": {
+                                "type": "object"
+                            },
+                            "excludedAttributes": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "featureTemplateId": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
                 }
-                },
-                "type": "object"
-                },
-                "attributes": {
-                "type": "object"
-                },
-                "excludedAttributes": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "featureTemplateId": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                }
-                },
-                "type": "object"
-                },
-                "interfaces": {
-                "items": {
+            },
+            "type": "object"
+        },
+        "interfaces": {
+            "items": {
                 "properties": {
-                "interfaceGateway": {
-                "type": "string"
-                },
-                "interfaceIPAddress": {
-                "type": "string"
-                },
-                "interfaceName": {
-                "type": "string"
-                },
-                "interfaceNetmaskInCIDR": {
-                "type": "integer"
-                },
-                "lagOrPortNumber": {
-                "type": "integer"
-                },
-                "vlanId": {
-                "type": "integer"
-                }
+                    "interfaceGateway": {
+                        "type": "string"
+                    },
+                    "interfaceIPAddress": {
+                        "type": "string"
+                    },
+                    "interfaceName": {
+                        "type": "string"
+                    },
+                    "interfaceNetmaskInCIDR": {
+                        "type": "integer"
+                    },
+                    "lagOrPortNumber": {
+                        "type": "integer"
+                    },
+                    "vlanId": {
+                        "type": "integer"
+                    }
                 },
                 "type": "object"
-                },
-                "type": "array"
-                },
-                "lscPercentage": {
-                "type": "integer"
-                },
-                "lscProfileName": {
-                "type": "string"
-                },
-                "rollingApUpgrade": {
-                "properties": {
+            },
+            "type": "array"
+        },
+        "lscPercentage": {
+            "type": "integer"
+        },
+        "lscProfileName": {
+            "type": "string"
+        },
+        "rollingApUpgrade": {
+            "properties": {
                 "apRebootPercentage": {
-                "type": "integer"
+                    "type": "integer"
                 },
                 "enableRollingApUpgrade": {
-                "type": "boolean"
+                    "type": "boolean"
                 }
-                },
-                "type": "object"
-                },
-                "skipApProvision": {
-                "type": "boolean"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "object"
+        },
+        "skipApProvision": {
+            "type": "boolean"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

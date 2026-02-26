@@ -36,58 +36,58 @@ class JSONSchemaValidatorA5E4452CB2E05682933349833A01D14B(object):
     """CreateAnchorGroup request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorA5E4452CB2E05682933349833A01D14B, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "anchorGroupName": {
+            "type": "string"
+        },
+        "mobilityAnchors": {
+            "items": {
                 "properties": {
-                "anchorGroupName": {
-                "type": "string"
-                },
-                "mobilityAnchors": {
-                "items": {
-                "properties": {
-                "anchorPriority": {
-                "enum": [
-                "PRIMARY",
-                "SECONDARY",
-                "TERTIARY"
-                ],
-                "type": "string"
-                },
-                "deviceName": {
-                "type": "string"
-                },
-                "ipAddress": {
-                "type": "string"
-                },
-                "macAddress": {
-                "type": "string"
-                },
-                "managedAnchorWlc": {
-                "type": "boolean"
-                },
-                "mobilityGroupName": {
-                "type": "string"
-                },
-                "peerDeviceType": {
-                "enum": [
-                "IOS-XE",
-                "AIREOS"
-                ],
-                "type": "string"
-                },
-                "privateIp": {
-                "type": "string"
-                }
+                    "anchorPriority": {
+                        "enum": [
+                            "PRIMARY",
+                            "SECONDARY",
+                            "TERTIARY"
+                        ],
+                        "type": "string"
+                    },
+                    "deviceName": {
+                        "type": "string"
+                    },
+                    "ipAddress": {
+                        "type": "string"
+                    },
+                    "macAddress": {
+                        "type": "string"
+                    },
+                    "managedAnchorWlc": {
+                        "type": "boolean"
+                    },
+                    "mobilityGroupName": {
+                        "type": "string"
+                    },
+                    "peerDeviceType": {
+                        "enum": [
+                            "IOS-XE",
+                            "AIREOS"
+                        ],
+                        "type": "string"
+                    },
+                    "privateIp": {
+                        "type": "string"
+                    }
                 },
                 "type": "object"
-                },
-                "type": "array"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

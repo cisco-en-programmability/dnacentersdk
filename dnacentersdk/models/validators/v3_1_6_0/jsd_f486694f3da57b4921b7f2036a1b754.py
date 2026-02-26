@@ -36,95 +36,95 @@ class JSONSchemaValidatorF486694F3Da57B4921B7F2036A1B754(object):
     """UpdateAnycastGateways request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorF486694F3Da57B4921B7F2036A1B754, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "items": {
-                "properties": {
-                "fabricId": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "items": {
+        "properties": {
+            "fabricId": {
                 "type": "string"
-                },
-                "id": {
+            },
+            "id": {
                 "type": "string"
-                },
-                "ipPoolName": {
+            },
+            "ipPoolName": {
                 "type": "string"
-                },
-                "isCriticalPool": {
+            },
+            "isCriticalPool": {
                 "type": "boolean"
-                },
-                "isGroupBasedPolicyEnforcementEnabled": {
+            },
+            "isGroupBasedPolicyEnforcementEnabled": {
                 "type": "boolean"
-                },
-                "isIntraSubnetRoutingEnabled": {
+            },
+            "isIntraSubnetRoutingEnabled": {
                 "type": "boolean"
-                },
-                "isIpDirectedBroadcast": {
+            },
+            "isIpDirectedBroadcast": {
                 "type": "boolean"
-                },
-                "isLayer2FloodingEnabled": {
+            },
+            "isLayer2FloodingEnabled": {
                 "type": "boolean"
-                },
-                "isMultipleIpToMacAddresses": {
+            },
+            "isMultipleIpToMacAddresses": {
                 "type": "boolean"
-                },
-                "isResourceGuardEnabled": {
+            },
+            "isResourceGuardEnabled": {
                 "type": "boolean"
-                },
-                "isSupplicantBasedExtendedNodeOnboarding": {
+            },
+            "isSupplicantBasedExtendedNodeOnboarding": {
                 "type": "boolean"
-                },
-                "isWirelessFloodingEnabled": {
+            },
+            "isWirelessFloodingEnabled": {
                 "type": "boolean"
-                },
-                "isWirelessPool": {
+            },
+            "isWirelessPool": {
                 "type": "boolean"
-                },
-                "layer2FloodingAddress": {
+            },
+            "layer2FloodingAddress": {
                 "type": "string"
-                },
-                "layer2FloodingAddressAssignment": {
+            },
+            "layer2FloodingAddressAssignment": {
                 "enum": [
-                "SHARED",
-                "CUSTOM"
+                    "SHARED",
+                    "CUSTOM"
                 ],
                 "type": "string"
-                },
-                "poolType": {
+            },
+            "poolType": {
                 "enum": [
-                "EXTENDED_NODE",
-                "FABRIC_AP"
+                    "EXTENDED_NODE",
+                    "FABRIC_AP"
                 ],
                 "type": "string"
-                },
-                "securityGroupName": {
+            },
+            "securityGroupName": {
                 "type": "string"
-                },
-                "tcpMssAdjustment": {
+            },
+            "tcpMssAdjustment": {
                 "type": "integer"
-                },
-                "trafficType": {
+            },
+            "trafficType": {
                 "enum": [
-                "DATA",
-                "VOICE"
+                    "DATA",
+                    "VOICE"
                 ],
                 "type": "string"
-                },
-                "virtualNetworkName": {
+            },
+            "virtualNetworkName": {
                 "type": "string"
-                },
-                "vlanId": {
+            },
+            "vlanId": {
                 "type": "integer"
-                },
-                "vlanName": {
+            },
+            "vlanName": {
                 "type": "string"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            }
+        },
+        "type": "object"
+    },
+    "type": "array"
+}
+'''))
 
     def validate(self, request):
         try:

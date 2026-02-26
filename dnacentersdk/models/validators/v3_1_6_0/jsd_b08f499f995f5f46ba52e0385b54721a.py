@@ -36,29 +36,29 @@ class JSONSchemaValidatorB08F499F995F5F46Ba52E0385B54721A(object):
     """UpdateHealthScoreDefinitions request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorB08F499F995F5F46Ba52E0385B54721A, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "items": {
-                "properties": {
-                "id": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "items": {
+        "properties": {
+            "id": {
                 "type": "string"
-                },
-                "includeForOverallHealth": {
+            },
+            "includeForOverallHealth": {
                 "type": "boolean"
-                },
-                "synchronizeToIssueThreshold": {
+            },
+            "synchronizeToIssueThreshold": {
                 "type": "boolean"
-                },
-                "thresholdValue": {
+            },
+            "thresholdValue": {
                 "type": "number"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            }
+        },
+        "type": "object"
+    },
+    "type": "array"
+}
+'''))
 
     def validate(self, request):
         try:

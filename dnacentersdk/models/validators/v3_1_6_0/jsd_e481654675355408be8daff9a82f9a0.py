@@ -36,62 +36,62 @@ class JSONSchemaValidatorE481654675355408Be8Daff9A82F9A0(object):
     """UpdateDeviceCredentialSettingsForASite request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorE481654675355408Be8Daff9A82F9A0, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "cliCredentialsId": {
-                "properties": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "cliCredentialsId": {
+            "properties": {
                 "credentialsId": {
-                "type": "string"
+                    "type": "string"
                 }
-                },
-                "type": "object"
-                },
-                "httpReadCredentialsId": {
-                "properties": {
+            },
+            "type": "object"
+        },
+        "httpReadCredentialsId": {
+            "properties": {
                 "credentialsId": {
-                "type": "string"
+                    "type": "string"
                 }
-                },
-                "type": "object"
-                },
-                "httpWriteCredentialsId": {
-                "properties": {
+            },
+            "type": "object"
+        },
+        "httpWriteCredentialsId": {
+            "properties": {
                 "credentialsId": {
-                "type": "string"
+                    "type": "string"
                 }
-                },
-                "type": "object"
-                },
-                "snmpv2cReadCredentialsId": {
-                "properties": {
+            },
+            "type": "object"
+        },
+        "snmpv2cReadCredentialsId": {
+            "properties": {
                 "credentialsId": {
-                "type": "string"
+                    "type": "string"
                 }
-                },
-                "type": "object"
-                },
-                "snmpv2cWriteCredentialsId": {
-                "properties": {
+            },
+            "type": "object"
+        },
+        "snmpv2cWriteCredentialsId": {
+            "properties": {
                 "credentialsId": {
-                "type": "string"
+                    "type": "string"
                 }
-                },
-                "type": "object"
-                },
-                "snmpv3CredentialsId": {
-                "properties": {
+            },
+            "type": "object"
+        },
+        "snmpv3CredentialsId": {
+            "properties": {
                 "credentialsId": {
-                "type": "string"
+                    "type": "string"
                 }
-                },
-                "type": "object"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "object"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

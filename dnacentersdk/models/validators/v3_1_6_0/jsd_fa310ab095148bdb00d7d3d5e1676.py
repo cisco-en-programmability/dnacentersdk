@@ -36,108 +36,105 @@ class JSONSchemaValidatorFa310Ab095148Bdb00D7D3D5E1676(object):
     """CreateOrScheduleAReport request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorFa310Ab095148Bdb00D7D3D5E1676, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "dataCategory": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "dataCategory": {
+            "type": "string"
+        },
+        "deliveries": {
+            "items": {},
+            "type": "array"
+        },
+        "name": {
+            "type": "string"
+        },
+        "schedule": {},
+        "tags": {
+            "items": {
                 "type": "string"
-                },
-                "deliveries": {
-                "items": {
-                },
-                "type": "array"
-                },
-                "name": {
-                "type": "string"
-                },
-                "schedule": {
-                },
-                "tags": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "view": {
-                "properties": {
+            },
+            "type": "array"
+        },
+        "view": {
+            "properties": {
                 "fieldGroups": {
-                "items": {
-                "properties": {
-                "fieldGroupDisplayName": {
-                "type": "string"
-                },
-                "fieldGroupName": {
-                "type": "string"
-                },
-                "fields": {
-                "items": {
-                "properties": {
-                "displayName": {
-                "type": "string"
-                },
-                "name": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
+                    "items": {
+                        "properties": {
+                            "fieldGroupDisplayName": {
+                                "type": "string"
+                            },
+                            "fieldGroupName": {
+                                "type": "string"
+                            },
+                            "fields": {
+                                "items": {
+                                    "properties": {
+                                        "displayName": {
+                                            "type": "string"
+                                        },
+                                        "name": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
                 },
                 "filters": {
-                "items": {
-                "properties": {
-                "displayName": {
-                "type": "string"
-                },
-                "name": {
-                "type": "string"
-                },
-                "type": {
-                "type": "string"
-                },
-                "value": {
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
+                    "items": {
+                        "properties": {
+                            "displayName": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "type": {
+                                "type": "string"
+                            },
+                            "value": {}
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
                 },
                 "format": {
-                "properties": {
-                "formatType": {
-                "type": "string"
+                    "properties": {
+                        "formatType": {
+                            "type": "string"
+                        },
+                        "name": {
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
                 },
                 "name": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                },
-                "name": {
-                "type": "string"
+                    "type": "string"
                 },
                 "viewId": {
-                "type": "string"
+                    "type": "string"
                 }
-                },
-                "type": "object"
-                },
-                "viewGroupId": {
-                "type": "string"
-                },
-                "viewGroupVersion": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "object"
+        },
+        "viewGroupId": {
+            "type": "string"
+        },
+        "viewGroupVersion": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

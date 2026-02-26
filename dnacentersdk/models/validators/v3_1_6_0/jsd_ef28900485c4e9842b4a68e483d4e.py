@@ -36,52 +36,52 @@ class JSONSchemaValidatorEf28900485C4E9842B4A68E483D4E(object):
     """Update80211beProfile request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorEf28900485C4E9842B4A68E483D4E, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "default": {
-                "type": "boolean"
-                },
-                "mloGroup": {
-                "properties": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "default": {
+            "type": "boolean"
+        },
+        "mloGroup": {
+            "properties": {
                 "primary24GhzEnable": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "primary5GhzEnable": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "primary6GhzEnable": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "secondary5GhzEnable": {
-                "type": "boolean"
+                    "type": "boolean"
                 }
-                },
-                "type": "object"
-                },
-                "muMimoDownLink": {
-                "type": "boolean"
-                },
-                "muMimoUpLink": {
-                "type": "boolean"
-                },
-                "ofdmaDownLink": {
-                "type": "boolean"
-                },
-                "ofdmaMultiRu": {
-                "type": "boolean"
-                },
-                "ofdmaUpLink": {
-                "type": "boolean"
-                },
-                "profileName": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "object"
+        },
+        "muMimoDownLink": {
+            "type": "boolean"
+        },
+        "muMimoUpLink": {
+            "type": "boolean"
+        },
+        "ofdmaDownLink": {
+            "type": "boolean"
+        },
+        "ofdmaMultiRu": {
+            "type": "boolean"
+        },
+        "ofdmaUpLink": {
+            "type": "boolean"
+        },
+        "profileName": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

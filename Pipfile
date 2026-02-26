@@ -3,6 +3,9 @@ url = "https://pypi.python.org/simple"
 verify_ssl = true
 name = "pypi"
 
+[requires]
+python_version = "3.12"
+
 [packages] # Here goes your package requirements for running the application and its versions (which packages you will use when running the application).
 requests = ">=2.32.0, <3.0.0"
 requests-toolbelt = ">=1.0.0"

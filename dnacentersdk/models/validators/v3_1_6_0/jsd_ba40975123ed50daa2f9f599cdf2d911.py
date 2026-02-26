@@ -36,20 +36,20 @@ class JSONSchemaValidatorBa40975123Ed50DaA2F9F599Cdf2D911(object):
     """CommitDeviceConfiguration request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorBa40975123Ed50DaA2F9F599Cdf2D911, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "deviceId": {
-                "items": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "deviceId": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

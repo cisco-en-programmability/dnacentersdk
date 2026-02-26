@@ -36,38 +36,38 @@ class JSONSchemaValidatorE4A09Bf566F35BabAd9E27F5Eb61A86D(object):
     """AddPortAssignmentForAccessPoint request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorE4A09Bf566F35BabAd9E27F5Eb61A86D, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "authenticateTemplateName": {
-                "enum": [
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "authenticateTemplateName": {
+            "enum": [
                 "No Authentication",
                 "Open Authentication",
                 "Closed Authentication ",
                 "Low Impact "
-                ],
-                "type": "string"
-                },
-                "dataIpAddressPoolName": {
-                "type": "string"
-                },
-                "deviceManagementIpAddress": {
-                "type": "string"
-                },
-                "interfaceDescription": {
-                "type": "string"
-                },
-                "interfaceName": {
-                "type": "string"
-                },
-                "siteNameHierarchy": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            ],
+            "type": "string"
+        },
+        "dataIpAddressPoolName": {
+            "type": "string"
+        },
+        "deviceManagementIpAddress": {
+            "type": "string"
+        },
+        "interfaceDescription": {
+            "type": "string"
+        },
+        "interfaceName": {
+            "type": "string"
+        },
+        "siteNameHierarchy": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

@@ -36,38 +36,38 @@ class JSONSchemaValidatorE6Eed78CB55D51A1Bfe669729Df25689(object):
     """ThreatSummary request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorE6Eed78CB55D51A1Bfe669729Df25689, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "endTime": {
-                "type": "integer"
-                },
-                "siteId": {
-                "items": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "endTime": {
+            "type": "integer"
+        },
+        "siteId": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                },
-                "startTime": {
-                "type": "integer"
-                },
-                "threatLevel": {
-                "items": {
+            },
+            "type": "array"
+        },
+        "startTime": {
+            "type": "integer"
+        },
+        "threatLevel": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                },
-                "threatType": {
-                "items": {
+            },
+            "type": "array"
+        },
+        "threatType": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

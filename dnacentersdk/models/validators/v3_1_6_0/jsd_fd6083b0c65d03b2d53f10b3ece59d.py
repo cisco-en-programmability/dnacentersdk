@@ -36,68 +36,68 @@ class JSONSchemaValidatorFd6083B0C65D03B2D53F10B3Ece59D(object):
     """UpdateReserveIPSubpool request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorFd6083B0C65D03B2D53F10B3Ece59D, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "ipv4DhcpServers": {
-                "items": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "ipv4DhcpServers": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                },
-                "ipv4DnsServers": {
-                "items": {
+            },
+            "type": "array"
+        },
+        "ipv4DnsServers": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                },
-                "ipv4GateWay": {
+            },
+            "type": "array"
+        },
+        "ipv4GateWay": {
+            "type": "string"
+        },
+        "ipv6AddressSpace": {
+            "type": "boolean"
+        },
+        "ipv6DhcpServers": {
+            "items": {
                 "type": "string"
-                },
-                "ipv6AddressSpace": {
-                "type": "boolean"
-                },
-                "ipv6DhcpServers": {
-                "items": {
+            },
+            "type": "array"
+        },
+        "ipv6DnsServers": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                },
-                "ipv6DnsServers": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "ipv6GateWay": {
-                "type": "string"
-                },
-                "ipv6GlobalPool": {
-                "type": "string"
-                },
-                "ipv6Prefix": {
-                "type": "boolean"
-                },
-                "ipv6PrefixLength": {
-                "type": "integer"
-                },
-                "ipv6Subnet": {
-                "type": "string"
-                },
-                "ipv6TotalHost": {
-                "type": "integer"
-                },
-                "name": {
-                "type": "string"
-                },
-                "slaacSupport": {
-                "type": "boolean"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        },
+        "ipv6GateWay": {
+            "type": "string"
+        },
+        "ipv6GlobalPool": {
+            "type": "string"
+        },
+        "ipv6Prefix": {
+            "type": "boolean"
+        },
+        "ipv6PrefixLength": {
+            "type": "integer"
+        },
+        "ipv6Subnet": {
+            "type": "string"
+        },
+        "ipv6TotalHost": {
+            "type": "integer"
+        },
+        "name": {
+            "type": "string"
+        },
+        "slaacSupport": {
+            "type": "boolean"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

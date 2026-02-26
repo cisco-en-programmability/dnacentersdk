@@ -36,58 +36,58 @@ class JSONSchemaValidatorF09C94C65C858E4B7Be0B7Cb3D25B7A(object):
     """AddLayer2VirtualNetworks request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorF09C94C65C858E4B7Be0B7Cb3D25B7A, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "items": {
-                "properties": {
-                "associatedLayer3VirtualNetworkName": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "items": {
+        "properties": {
+            "associatedLayer3VirtualNetworkName": {
                 "type": "string"
-                },
-                "fabricId": {
+            },
+            "fabricId": {
                 "type": "string"
-                },
-                "isFabricEnabledWireless": {
+            },
+            "isFabricEnabledWireless": {
                 "type": "boolean"
-                },
-                "isMultipleIpToMacAddresses": {
+            },
+            "isMultipleIpToMacAddresses": {
                 "type": "boolean"
-                },
-                "isResourceGuardEnabled": {
+            },
+            "isResourceGuardEnabled": {
                 "type": "boolean"
-                },
-                "isWirelessFloodingEnabled": {
+            },
+            "isWirelessFloodingEnabled": {
                 "type": "boolean"
-                },
-                "layer2FloodingAddress": {
+            },
+            "layer2FloodingAddress": {
                 "type": "string"
-                },
-                "layer2FloodingAddressAssignment": {
+            },
+            "layer2FloodingAddressAssignment": {
                 "enum": [
-                "SHARED",
-                "CUSTOM"
+                    "SHARED",
+                    "CUSTOM"
                 ],
                 "type": "string"
-                },
-                "trafficType": {
+            },
+            "trafficType": {
                 "enum": [
-                "DATA",
-                "VOICE"
+                    "DATA",
+                    "VOICE"
                 ],
                 "type": "string"
-                },
-                "vlanId": {
+            },
+            "vlanId": {
                 "type": "integer"
-                },
-                "vlanName": {
+            },
+            "vlanName": {
                 "type": "string"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            }
+        },
+        "type": "object"
+    },
+    "type": "array"
+}
+'''))
 
     def validate(self, request):
         try:

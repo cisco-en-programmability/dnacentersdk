@@ -36,44 +36,44 @@ class JSONSchemaValidatorC8354B61A36524CBb2E1037Bd814807(object):
     """RogueAdditionalDetails request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorC8354B61A36524CBb2E1037Bd814807, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "endTime": {
-                "type": "number"
-                },
-                "limit": {
-                "type": "number"
-                },
-                "offset": {
-                "type": "number"
-                },
-                "siteId": {
-                "items": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "endTime": {
+            "type": "number"
+        },
+        "limit": {
+            "type": "number"
+        },
+        "offset": {
+            "type": "number"
+        },
+        "siteId": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                },
-                "startTime": {
-                "type": "number"
-                },
-                "threatLevel": {
-                "items": {
+            },
+            "type": "array"
+        },
+        "startTime": {
+            "type": "number"
+        },
+        "threatLevel": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                },
-                "threatType": {
-                "items": {
+            },
+            "type": "array"
+        },
+        "threatType": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

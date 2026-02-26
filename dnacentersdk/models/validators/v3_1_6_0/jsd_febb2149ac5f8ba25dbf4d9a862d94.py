@@ -36,32 +36,32 @@ class JSONSchemaValidatorFebb2149Ac5F8BA25DBf4D9A862D94(object):
     """TaggingGoldenImage request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorFebb2149Ac5F8BA25DBf4D9A862D94, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "deviceRoles": {
-                "items": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "deviceRoles": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                },
-                "deviceTags": {
-                "items": {
+            },
+            "type": "array"
+        },
+        "deviceTags": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                },
-                "productNameOrdinal": {
-                "type": "number"
-                },
-                "supervisorProductNameOrdinal": {
-                "type": "number"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        },
+        "productNameOrdinal": {
+            "type": "number"
+        },
+        "supervisorProductNameOrdinal": {
+            "type": "number"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

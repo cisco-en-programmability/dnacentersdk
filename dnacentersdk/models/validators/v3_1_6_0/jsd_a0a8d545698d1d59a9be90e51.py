@@ -36,29 +36,29 @@ class JSONSchemaValidatorA0A8D545698D1D59A9Be90E51(object):
     """RunCompliance request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorA0A8D545698D1D59A9Be90E51, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "categories": {
-                "items": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "categories": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                },
-                "deviceUuids": {
-                "items": {
+            },
+            "type": "array"
+        },
+        "deviceUuids": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                },
-                "triggerFull": {
-                "type": "boolean"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        },
+        "triggerFull": {
+            "type": "boolean"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

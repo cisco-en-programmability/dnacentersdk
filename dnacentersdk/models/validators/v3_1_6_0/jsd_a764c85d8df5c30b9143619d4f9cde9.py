@@ -36,23 +36,23 @@ class JSONSchemaValidatorA764C85D8Df5C30B9143619D4F9Cde9(object):
     """AddSite request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorA764C85D8Df5C30B9143619D4F9Cde9, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "fabricName": {
-                "type": "string"
-                },
-                "fabricType": {
-                "type": "string"
-                },
-                "siteNameHierarchy": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "fabricName": {
+            "type": "string"
+        },
+        "fabricType": {
+            "type": "string"
+        },
+        "siteNameHierarchy": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

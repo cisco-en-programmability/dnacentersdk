@@ -36,62 +36,62 @@ class JSONSchemaValidatorAac9BA55E5043B4D5E0995C566Dce(object):
     """LANAutomationDeviceUpdate request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorAac9BA55E5043B4D5E0995C566Dce, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "hostnameUpdateDevices": {
+            "items": {
                 "properties": {
-                "hostnameUpdateDevices": {
-                "items": {
-                "properties": {
-                "deviceManagementIPAddress": {
-                "type": "string"
-                },
-                "newHostName": {
-                "type": "string"
-                }
+                    "deviceManagementIPAddress": {
+                        "type": "string"
+                    },
+                    "newHostName": {
+                        "type": "string"
+                    }
                 },
                 "type": "object"
-                },
-                "type": "array"
-                },
-                "linkUpdate": {
-                "properties": {
+            },
+            "type": "array"
+        },
+        "linkUpdate": {
+            "properties": {
                 "destinationDeviceInterfaceName": {
-                "type": "string"
+                    "type": "string"
                 },
                 "destinationDeviceManagementIPAddress": {
-                "type": "string"
+                    "type": "string"
                 },
                 "ipPoolName": {
-                "type": "string"
+                    "type": "string"
                 },
                 "sourceDeviceInterfaceName": {
-                "type": "string"
+                    "type": "string"
                 },
                 "sourceDeviceManagementIPAddress": {
-                "type": "string"
+                    "type": "string"
                 }
-                },
-                "type": "object"
-                },
-                "loopbackUpdateDeviceList": {
-                "items": {
+            },
+            "type": "object"
+        },
+        "loopbackUpdateDeviceList": {
+            "items": {
                 "properties": {
-                "deviceManagementIPAddress": {
-                "type": "string"
-                },
-                "newLoopback0IPAddress": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                }
+                    "deviceManagementIPAddress": {
+                        "type": "string"
+                    },
+                    "newLoopback0IPAddress": {
+                        "type": "string"
+                    }
                 },
                 "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

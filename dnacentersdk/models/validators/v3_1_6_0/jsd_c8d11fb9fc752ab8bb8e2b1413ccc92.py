@@ -36,23 +36,23 @@ class JSONSchemaValidatorC8D11Fb9Fc752Ab8Bb8E2B1413Ccc92(object):
     """TriggerSoftwareImageDistribution request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorC8D11Fb9Fc752Ab8Bb8E2B1413Ccc92, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "items": {
-                "properties": {
-                "deviceUuid": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "items": {
+        "properties": {
+            "deviceUuid": {
                 "type": "string"
-                },
-                "imageUuid": {
+            },
+            "imageUuid": {
                 "type": "string"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            }
+        },
+        "type": "object"
+    },
+    "type": "array"
+}
+'''))
 
     def validate(self, request):
         try:

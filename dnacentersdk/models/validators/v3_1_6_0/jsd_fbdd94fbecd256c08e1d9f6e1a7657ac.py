@@ -37,95 +37,94 @@ class JSONSchemaValidatorFbdd94FbEcd256C08E1D9F6E1A7657Ac(object):
     schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorFbdd94FbEcd256C08E1D9F6E1A7657Ac, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "accountingPort": {
+            "type": "integer"
+        },
+        "authenticationPort": {
+            "type": "integer"
+        },
+        "ciscoIseDtos": {
+            "items": {
                 "properties": {
-                "accountingPort": {
-                "type": "integer"
-                },
-                "authenticationPort": {
-                "type": "integer"
-                },
-                "ciscoIseDtos": {
-                "items": {
-                "properties": {
-                "description":
-                 {
-                "type": "string"
-                },
-                "fqdn": {
-                "type": "string"
-                },
-                "ipAddress": {
-                "type": "string"
-                },
-                "password": {
-                "type": "string"
-                },
-                "sshkey": {
-                "type": "string"
-                },
-                "subscriberName": {
-                "type": "string"
-                },
-                "userName": {
-                "type": "string"
-                }
+                    "description": {
+                        "type": "string"
+                    },
+                    "fqdn": {
+                        "type": "string"
+                    },
+                    "ipAddress": {
+                        "type": "string"
+                    },
+                    "password": {
+                        "type": "string"
+                    },
+                    "sshkey": {
+                        "type": "string"
+                    },
+                    "subscriberName": {
+                        "type": "string"
+                    },
+                    "userName": {
+                        "type": "string"
+                    }
                 },
                 "type": "object"
-                },
-                "type": "array"
-                },
-                "externalCiscoIseIpAddrDtos": {
-                "items": {
+            },
+            "type": "array"
+        },
+        "externalCiscoIseIpAddrDtos": {
+            "items": {
                 "properties": {
-                "externalCiscoIseIpAddresses": {
-                "items": {
-                "properties": {
-                "externalIpAddress": {
-                "type": "string"
-                }
+                    "externalCiscoIseIpAddresses": {
+                        "items": {
+                            "properties": {
+                                "externalIpAddress": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "type": "array"
+                    },
+                    "type": {
+                        "type": "string"
+                    }
                 },
                 "type": "object"
-                },
-                "type": "array"
-                },
-                "type": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                },
-                "port": {
-                "type": "integer"
-                },
-                "protocol": {
-                "enum": [
+            },
+            "type": "array"
+        },
+        "port": {
+            "type": "integer"
+        },
+        "protocol": {
+            "enum": [
                 "TACACS",
                 "RADIUS",
                 "RADIUS_TACACS"
-                ],
-                "type": "string"
-                },
-                "pxgridEnabled": {
-                "type": "boolean"
-                },
-                "retries": {
-                "type": "string"
-                },
-                "timeoutSeconds": {
-                "type": "string"
-                },
-                "useDnacCertForPxgrid": {
-                "type": "boolean"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            ],
+            "type": "string"
+        },
+        "pxgridEnabled": {
+            "type": "boolean"
+        },
+        "retries": {
+            "type": "string"
+        },
+        "timeoutSeconds": {
+            "type": "string"
+        },
+        "useDnacCertForPxgrid": {
+            "type": "boolean"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

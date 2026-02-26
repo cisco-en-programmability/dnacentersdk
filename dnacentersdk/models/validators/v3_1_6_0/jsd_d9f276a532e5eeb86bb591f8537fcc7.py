@@ -36,24 +36,24 @@ class JSONSchemaValidatorD9F276A532E5Eeb86Bb591F8537Fcc7(object):
     """RetrievesTheCountOfREPRings request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorD9F276A532E5Eeb86Bb591F8537Fcc7, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "deploymentMode": {
-                "enum": [
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "deploymentMode": {
+            "enum": [
                 "FABRIC",
                 "NON_FABRIC"
-                ],
-                "type": "string"
-                },
-                "networkDeviceId": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            ],
+            "type": "string"
+        },
+        "networkDeviceId": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

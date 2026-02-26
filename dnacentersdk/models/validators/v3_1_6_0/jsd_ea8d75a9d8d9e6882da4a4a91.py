@@ -36,107 +36,106 @@ class JSONSchemaValidatorEA8D75A9D8D9E6882Da4A4A91(object):
     """UpdateAuthenticationProfile request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorEA8D75A9D8D9E6882Da4A4A91, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "items": {
-                "properties": {
-                "authenticationOrder": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "items": {
+        "properties": {
+            "authenticationOrder": {
                 "enum": [
-                "dot1x",
-                "mac"
+                    "dot1x",
+                    "mac"
                 ],
                 "type": "string"
-                },
-                "authenticationProfileName": {
+            },
+            "authenticationProfileName": {
                 "enum": [
-                "Closed Authentication",
-                "Low Impact",
-                "Open Authentication"
+                    "Closed Authentication",
+                    "Low Impact",
+                    "Open Authentication"
                 ],
                 "type": "string"
-                },
-                "dot1xToMabFallbackTimeout": {
+            },
+            "dot1xToMabFallbackTimeout": {
                 "type": "integer"
-                },
-                "fabricId": {
+            },
+            "fabricId": {
                 "type": "string"
-                },
-                "id": {
+            },
+            "id": {
                 "type": "string"
-                },
-                "isBpduGuardEnabled": {
+            },
+            "isBpduGuardEnabled": {
                 "type": "boolean"
-                },
-                "isVoiceVlanEnabled": {
+            },
+            "isVoiceVlanEnabled": {
                 "type": "boolean"
-                },
-                "numberOfHosts": {
+            },
+            "numberOfHosts": {
                 "enum": [
-                "Single",
-                "Unlimited"
+                    "Single",
+                    "Unlimited"
                 ],
                 "type": "string"
-                },
-                "preAuthAcl": {
+            },
+            "preAuthAcl": {
                 "properties": {
-                "accessContracts": {
-                "items": {
-                "properties": {
-                "action": {
-                "enum": [
-                "PERMIT",
-                "DENY"
-                ],
-                "type": "string"
-                },
-                "port": {
-                "enum": [
-                "domain",
-                "bootpc",
-                "bootps"
-                ],
-                "type": "string"
-                },
-                "protocol": {
-                "enum": [
-                "UDP",
-                "TCP",
-                "TCP_UDP"
-                ],
-                "type": "string"
-                }
+                    "accessContracts": {
+                        "items": {
+                            "properties": {
+                                "action": {
+                                    "enum": [
+                                        "PERMIT",
+                                        "DENY"
+                                    ],
+                                    "type": "string"
+                                },
+                                "port": {
+                                    "enum": [
+                                        "domain",
+                                        "bootpc",
+                                        "bootps"
+                                    ],
+                                    "type": "string"
+                                },
+                                "protocol": {
+                                    "enum": [
+                                        "UDP",
+                                        "TCP",
+                                        "TCP_UDP"
+                                    ],
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "type": "array"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "enabled": {
+                        "type": "boolean"
+                    },
+                    "implicitAction": {
+                        "enum": [
+                            "PERMIT",
+                            "DENY"
+                        ],
+                        "type": "string"
+                    }
                 },
                 "type": "object"
-                },
-                "type": "array"
-                },
-                "description":
-                 {
-                "type": "string"
-                },
-                "enabled": {
+            },
+            "wakeOnLan": {
                 "type": "boolean"
-                },
-                "implicitAction": {
-                "enum": [
-                "PERMIT",
-                "DENY"
-                ],
-                "type": "string"
-                }
-                },
-                "type": "object"
-                },
-                "wakeOnLan": {
-                "type": "boolean"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            }
+        },
+        "type": "object"
+    },
+    "type": "array"
+}
+'''))
 
     def validate(self, request):
         try:

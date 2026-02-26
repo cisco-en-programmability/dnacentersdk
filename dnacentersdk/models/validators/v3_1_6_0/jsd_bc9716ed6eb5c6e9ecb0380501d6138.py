@@ -36,17 +36,17 @@ class JSONSchemaValidatorBc9716ED6Eb5C6E9Ecb0380501D6138(object):
     """UpdatesTheApplicationQoSPolicySetting request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorBc9716ED6Eb5C6E9Ecb0380501D6138, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "deployByDefaultOnWiredDevices": {
-                "type": "boolean"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "deployByDefaultOnWiredDevices": {
+            "type": "boolean"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

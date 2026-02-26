@@ -36,20 +36,20 @@ class JSONSchemaValidatorD9Bd7C527D254EcB63D2B709C428043(object):
     """UpdateLicenseSetting request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorD9Bd7C527D254EcB63D2B709C428043, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "autoRegistrationVirtualAccountId": {
-                "type": "string"
-                },
-                "defaultSmartAccountId": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "autoRegistrationVirtualAccountId": {
+            "type": "string"
+        },
+        "defaultSmartAccountId": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

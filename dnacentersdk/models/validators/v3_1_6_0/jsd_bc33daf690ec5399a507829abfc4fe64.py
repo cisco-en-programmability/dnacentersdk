@@ -36,130 +36,130 @@ class JSONSchemaValidatorBc33Daf690Ec5399A507829Abfc4Fe64(object):
     """CreateEnterpriseSSID request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorBc33Daf690Ec5399A507829Abfc4Fe64, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "aaaOverride": {
-                "type": "boolean"
-                },
-                "authKeyMgmt": {
-                "items": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "aaaOverride": {
+            "type": "boolean"
+        },
+        "authKeyMgmt": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                },
-                "basicServiceSetClientIdleTimeout": {
-                "type": "integer"
-                },
-                "clientExclusionTimeout": {
-                "type": "integer"
-                },
-                "clientRateLimit": {
-                "type": "number"
-                },
-                "coverageHoleDetectionEnable": {
-                "type": "boolean"
-                },
-                "enableBasicServiceSetMaxIdle": {
-                "type": "boolean"
-                },
-                "enableBroadcastSSID": {
-                "type": "boolean"
-                },
-                "enableClientExclusion": {
-                "type": "boolean"
-                },
-                "enableDirectedMulticastService": {
-                "type": "boolean"
-                },
-                "enableFastLane": {
-                "type": "boolean"
-                },
-                "enableMACFiltering": {
-                "type": "boolean"
-                },
-                "enableNeighborList": {
-                "type": "boolean"
-                },
-                "enableSessionTimeOut": {
-                "type": "boolean"
-                },
-                "fastTransition": {
-                "enum": [
+            },
+            "type": "array"
+        },
+        "basicServiceSetClientIdleTimeout": {
+            "type": "integer"
+        },
+        "clientExclusionTimeout": {
+            "type": "integer"
+        },
+        "clientRateLimit": {
+            "type": "number"
+        },
+        "coverageHoleDetectionEnable": {
+            "type": "boolean"
+        },
+        "enableBasicServiceSetMaxIdle": {
+            "type": "boolean"
+        },
+        "enableBroadcastSSID": {
+            "type": "boolean"
+        },
+        "enableClientExclusion": {
+            "type": "boolean"
+        },
+        "enableDirectedMulticastService": {
+            "type": "boolean"
+        },
+        "enableFastLane": {
+            "type": "boolean"
+        },
+        "enableMACFiltering": {
+            "type": "boolean"
+        },
+        "enableNeighborList": {
+            "type": "boolean"
+        },
+        "enableSessionTimeOut": {
+            "type": "boolean"
+        },
+        "fastTransition": {
+            "enum": [
                 "Adaptive",
                 "Enable",
                 "Disable"
-                ],
-                "type": "string"
-                },
-                "ghz24Policy": {
-                "enum": [
+            ],
+            "type": "string"
+        },
+        "ghz24Policy": {
+            "enum": [
                 "dot11-g-only",
                 "dot11-bg-only"
-                ],
-                "type": "string"
-                },
-                "ghz6PolicyClientSteering": {
-                "type": "boolean"
-                },
-                "mfpClientProtection": {
-                "enum": [
+            ],
+            "type": "string"
+        },
+        "ghz6PolicyClientSteering": {
+            "type": "boolean"
+        },
+        "mfpClientProtection": {
+            "enum": [
                 "Optional",
                 "Disabled",
                 "Required"
-                ],
-                "type": "string"
-                },
-                "multiPSKSettings": {
-                "items": {
+            ],
+            "type": "string"
+        },
+        "multiPSKSettings": {
+            "items": {
                 "properties": {
-                "passphrase": {
-                "type": "string"
-                },
-                "passphraseType": {
-                "enum": [
-                "ASCII",
-                "HEX"
-                ],
-                "type": "string"
-                },
-                "priority": {
-                "type": "integer"
-                }
+                    "passphrase": {
+                        "type": "string"
+                    },
+                    "passphraseType": {
+                        "enum": [
+                            "ASCII",
+                            "HEX"
+                        ],
+                        "type": "string"
+                    },
+                    "priority": {
+                        "type": "integer"
+                    }
                 },
                 "type": "object"
-                },
-                "type": "array"
-                },
-                "name": {
+            },
+            "type": "array"
+        },
+        "name": {
+            "type": "string"
+        },
+        "nasOptions": {
+            "items": {
                 "type": "string"
-                },
-                "nasOptions": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "passphrase": {
-                "type": "string"
-                },
-                "policyProfileName": {
-                "type": "string"
-                },
-                "profileName": {
-                "type": "string"
-                },
-                "protectedManagementFrame": {
-                "enum": [
+            },
+            "type": "array"
+        },
+        "passphrase": {
+            "type": "string"
+        },
+        "policyProfileName": {
+            "type": "string"
+        },
+        "profileName": {
+            "type": "string"
+        },
+        "protectedManagementFrame": {
+            "enum": [
                 "Optional",
                 "Disabled",
                 "Required"
-                ],
-                "type": "string"
-                },
-                "radioPolicy": {
-                "enum": [
+            ],
+            "type": "string"
+        },
+        "radioPolicy": {
+            "enum": [
                 "Triple band operation(2.4GHz, 5GHz and 6GHz)",
                 "5GHz only",
                 "2.4GHz only",
@@ -167,20 +167,20 @@ class JSONSchemaValidatorBc33Daf690Ec5399A507829Abfc4Fe64(object):
                 "2.4 and 5 GHz",
                 "2.4 and 6 GHz",
                 "5 and 6 GHz"
-                ],
-                "type": "string"
-                },
-                "rsnCipherSuiteCcmp256": {
-                "type": "boolean"
-                },
-                "rsnCipherSuiteGcmp128": {
-                "type": "boolean"
-                },
-                "rsnCipherSuiteGcmp256": {
-                "type": "boolean"
-                },
-                "securityLevel": {
-                "enum": [
+            ],
+            "type": "string"
+        },
+        "rsnCipherSuiteCcmp256": {
+            "type": "boolean"
+        },
+        "rsnCipherSuiteGcmp128": {
+            "type": "boolean"
+        },
+        "rsnCipherSuiteGcmp256": {
+            "type": "boolean"
+        },
+        "securityLevel": {
+            "enum": [
                 "WPA2_ENTERPRISE",
                 "WPA2_PERSONAL",
                 "OPEN",
@@ -189,23 +189,23 @@ class JSONSchemaValidatorBc33Daf690Ec5399A507829Abfc4Fe64(object):
                 "WPA2_WPA3_PERSONAL",
                 "WPA2_WPA3_ENTERPRISE",
                 "OPEN_SECURED"
-                ],
-                "type": "string"
-                },
-                "sessionTimeOut": {
-                "type": "integer"
-                },
-                "trafficType": {
-                "enum": [
+            ],
+            "type": "string"
+        },
+        "sessionTimeOut": {
+            "type": "integer"
+        },
+        "trafficType": {
+            "enum": [
                 "voicedata",
                 "data"
-                ],
-                "type": "string"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            ],
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

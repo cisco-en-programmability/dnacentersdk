@@ -36,23 +36,23 @@ class JSONSchemaValidatorC49A8488Cd52158790Aac513E7184A(object):
     """UpdateRemoteImageDistributionServer request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorC49A8488Cd52158790Aac513E7184A, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "password": {
-                "type": "string"
-                },
-                "portNumber": {
-                "type": "number"
-                },
-                "username": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "password": {
+            "type": "string"
+        },
+        "portNumber": {
+            "type": "number"
+        },
+        "username": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

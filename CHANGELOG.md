@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.11.1] - 2026-02-25
+### Fixed
+- **Validator `required` fields (v3.1.6.0)**: Removed incorrectly added `required` blocks from v3.1.6.0 validators that were not present in the stable v3.1.3.0 baseline, preventing false validation failures on valid optional fields.
+- **`any` type validation (v3.1.6.0)**: Fixed multiple validator files where fields annotated as `any` in the API spec were incorrectly constrained to specific types. Affected fields now accept any valid JSON value (string, number, boolean, array, object, or null).
+
+### Changed
+- **Validator JSON formatting (v3.1.6.0)**: Reformatted all 483 v3.1.6.0 validator JSON schemas to use clean 4-space indented format, replacing the previous `.replace("\\n" + " " * 16, "")` workaround. No functional change.
+
 ## [2.11.0] - 2026-02-04
 ### Added
 - Add support of Cisco Catalyst Center version ('3.1.6.0')
@@ -840,4 +848,5 @@ respond with a binary.
 [2.10.5]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.10.4...v2.10.5
 [2.10.6]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.10.5...v2.10.6
 [2.11.0]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.10.6...v2.11.0
-[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.11.0...develop
+[2.11.1]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.11.0...v2.11.1
+[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.11.1...develop

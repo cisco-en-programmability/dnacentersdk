@@ -36,25 +36,25 @@ class JSONSchemaValidatorD02614492A2251C18De2E36C097E40Ff(object):
     """SetImageDistributionSettingsForASite request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorD02614492A2251C18De2E36C097E40Ff, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "imageDistribution": {
-                "properties": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "imageDistribution": {
+            "properties": {
                 "servers": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
                 }
-                },
-                "type": "object"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "object"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

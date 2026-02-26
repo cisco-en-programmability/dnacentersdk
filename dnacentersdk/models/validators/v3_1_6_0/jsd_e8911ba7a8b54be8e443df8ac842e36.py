@@ -37,111 +37,110 @@ class JSONSchemaValidatorE8911Ba7A8B54Be8E443Df8Ac842E36(object):
     definition."""
     def __init__(self):
         super(JSONSchemaValidatorE8911Ba7A8B54Be8E443Df8Ac842E36, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "designName": {
-                "type": "string"
-                },
-                "featureAttributes": {
-                "properties": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "designName": {
+            "type": "string"
+        },
+        "featureAttributes": {
+            "properties": {
                 "cleanAir": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "cleanAirDeviceReporting": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
-                "description":
-                 {
-                "type": "string"
+                "description": {
+                    "type": "string"
                 },
                 "interferersFeatures": {
-                "properties": {
-                "bleBeacon": {
-                "type": "boolean"
-                },
-                "bluetoothPagingInquiry": {
-                "type": "boolean"
-                },
-                "bluetoothScoAcl": {
-                "type": "boolean"
-                },
-                "continuousTransmitter": {
-                "type": "boolean"
-                },
-                "genericDect": {
-                "type": "boolean"
-                },
-                "genericTdd": {
-                "type": "boolean"
-                },
-                "jammer": {
-                "type": "boolean"
-                },
-                "microwaveOven": {
-                "type": "boolean"
-                },
-                "motorolaCanopy": {
-                "type": "boolean"
-                },
-                "siFhss": {
-                "type": "boolean"
-                },
-                "spectrum80211Fh": {
-                "type": "boolean"
-                },
-                "spectrum80211NonStandardChannel": {
-                "type": "boolean"
-                },
-                "spectrum802154": {
-                "type": "boolean"
-                },
-                "spectrumInverted": {
-                "type": "boolean"
-                },
-                "superAg": {
-                "type": "boolean"
-                },
-                "videoCamera": {
-                "type": "boolean"
-                },
-                "wimaxFixed": {
-                "type": "boolean"
-                },
-                "wimaxMobile": {
-                "type": "boolean"
-                },
-                "xbox": {
-                "type": "boolean"
-                }
-                },
-                "type": "object"
+                    "properties": {
+                        "bleBeacon": {
+                            "type": "boolean"
+                        },
+                        "bluetoothPagingInquiry": {
+                            "type": "boolean"
+                        },
+                        "bluetoothScoAcl": {
+                            "type": "boolean"
+                        },
+                        "continuousTransmitter": {
+                            "type": "boolean"
+                        },
+                        "genericDect": {
+                            "type": "boolean"
+                        },
+                        "genericTdd": {
+                            "type": "boolean"
+                        },
+                        "jammer": {
+                            "type": "boolean"
+                        },
+                        "microwaveOven": {
+                            "type": "boolean"
+                        },
+                        "motorolaCanopy": {
+                            "type": "boolean"
+                        },
+                        "siFhss": {
+                            "type": "boolean"
+                        },
+                        "spectrum80211Fh": {
+                            "type": "boolean"
+                        },
+                        "spectrum80211NonStandardChannel": {
+                            "type": "boolean"
+                        },
+                        "spectrum802154": {
+                            "type": "boolean"
+                        },
+                        "spectrumInverted": {
+                            "type": "boolean"
+                        },
+                        "superAg": {
+                            "type": "boolean"
+                        },
+                        "videoCamera": {
+                            "type": "boolean"
+                        },
+                        "wimaxFixed": {
+                            "type": "boolean"
+                        },
+                        "wimaxMobile": {
+                            "type": "boolean"
+                        },
+                        "xbox": {
+                            "type": "boolean"
+                        }
+                    },
+                    "type": "object"
                 },
                 "persistentDevicePropagation": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "radioBand": {
-                "enum": [
-                "2_4GHZ",
-                "5GHZ",
-                "6GHZ"
-                ],
-                "type": "string"
+                    "enum": [
+                        "2_4GHZ",
+                        "5GHZ",
+                        "6GHZ"
+                    ],
+                    "type": "string"
                 }
-                },
-                "type": "object"
-                },
-                "unlockedAttributes": {
-                "items": {
+            },
+            "type": "object"
+        },
+        "unlockedAttributes": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

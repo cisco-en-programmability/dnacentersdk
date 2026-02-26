@@ -36,26 +36,26 @@ class JSONSchemaValidatorF25C825Ca6E58A5B1C2294B11558E7B(object):
     """IssueTriggerDefinitionUpdate request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorF25C825Ca6E58A5B1C2294B11558E7B, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "issueEnabled": {
-                "type": "boolean"
-                },
-                "priority": {
-                "type": "string"
-                },
-                "synchronizeToHealthThreshold": {
-                "type": "boolean"
-                },
-                "thresholdValue": {
-                "type": "number"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "issueEnabled": {
+            "type": "boolean"
+        },
+        "priority": {
+            "type": "string"
+        },
+        "synchronizeToHealthThreshold": {
+            "type": "boolean"
+        },
+        "thresholdValue": {
+            "type": "number"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

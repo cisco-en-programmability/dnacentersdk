@@ -36,93 +36,93 @@ class JSONSchemaValidatorCeC6C85D9BB4BcC8F61F31296B(object):
     """ReserveIPSubpool request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorCeC6C85D9BB4BcC8F61F31296B, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "ipv4DhcpServers": {
-                "items": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "ipv4DhcpServers": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                },
-                "ipv4DnsServers": {
-                "items": {
+            },
+            "type": "array"
+        },
+        "ipv4DnsServers": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                },
-                "ipv4GateWay": {
+            },
+            "type": "array"
+        },
+        "ipv4GateWay": {
+            "type": "string"
+        },
+        "ipv4GlobalPool": {
+            "type": "string"
+        },
+        "ipv4Prefix": {
+            "type": "boolean"
+        },
+        "ipv4PrefixLength": {
+            "type": "integer"
+        },
+        "ipv4Subnet": {
+            "type": "string"
+        },
+        "ipv4TotalHost": {
+            "type": "integer"
+        },
+        "ipv6AddressSpace": {
+            "type": "boolean"
+        },
+        "ipv6DhcpServers": {
+            "items": {
                 "type": "string"
-                },
-                "ipv4GlobalPool": {
+            },
+            "type": "array"
+        },
+        "ipv6DnsServers": {
+            "items": {
                 "type": "string"
-                },
-                "ipv4Prefix": {
-                "type": "boolean"
-                },
-                "ipv4PrefixLength": {
-                "type": "integer"
-                },
-                "ipv4Subnet": {
-                "type": "string"
-                },
-                "ipv4TotalHost": {
-                "type": "integer"
-                },
-                "ipv6AddressSpace": {
-                "type": "boolean"
-                },
-                "ipv6DhcpServers": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "ipv6DnsServers": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "ipv6GateWay": {
-                "type": "string"
-                },
-                "ipv6GlobalPool": {
-                "type": "string"
-                },
-                "ipv6Prefix": {
-                "type": "boolean"
-                },
-                "ipv6PrefixLength": {
-                "type": "integer"
-                },
-                "ipv6Subnet": {
-                "type": "string"
-                },
-                "ipv6TotalHost": {
-                "type": "integer"
-                },
-                "name": {
-                "type": "string"
-                },
-                "slaacSupport": {
-                "type": "boolean"
-                },
-                "type": {
-                "enum": [
+            },
+            "type": "array"
+        },
+        "ipv6GateWay": {
+            "type": "string"
+        },
+        "ipv6GlobalPool": {
+            "type": "string"
+        },
+        "ipv6Prefix": {
+            "type": "boolean"
+        },
+        "ipv6PrefixLength": {
+            "type": "integer"
+        },
+        "ipv6Subnet": {
+            "type": "string"
+        },
+        "ipv6TotalHost": {
+            "type": "integer"
+        },
+        "name": {
+            "type": "string"
+        },
+        "slaacSupport": {
+            "type": "boolean"
+        },
+        "type": {
+            "enum": [
                 "Generic",
                 "LAN",
                 "WAN",
                 "management",
                 "service"
-                ],
-                "type": "string"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            ],
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

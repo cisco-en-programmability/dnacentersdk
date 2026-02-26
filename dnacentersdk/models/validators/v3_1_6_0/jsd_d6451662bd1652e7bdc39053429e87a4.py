@@ -37,51 +37,51 @@ class JSONSchemaValidatorD6451662Bd1652E7Bdc39053429E87A4(object):
     definition."""
     def __init__(self):
         super(JSONSchemaValidatorD6451662Bd1652E7Bdc39053429E87A4, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "designName": {
-                "type": "string"
-                },
-                "featureAttributes": {
-                "properties": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "designName": {
+            "type": "string"
+        },
+        "featureAttributes": {
+            "properties": {
                 "globalMulticastEnabled": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "multicastIpv4Address": {
-                "type": "string"
+                    "type": "string"
                 },
                 "multicastIpv4Mode": {
-                "enum": [
-                "UNICAST",
-                "MULTICAST"
-                ],
-                "type": "string"
+                    "enum": [
+                        "UNICAST",
+                        "MULTICAST"
+                    ],
+                    "type": "string"
                 },
                 "multicastIpv6Address": {
-                "type": "string"
+                    "type": "string"
                 },
                 "multicastIpv6Mode": {
-                "enum": [
-                "UNICAST",
-                "MULTICAST"
-                ],
-                "type": "string"
+                    "enum": [
+                        "UNICAST",
+                        "MULTICAST"
+                    ],
+                    "type": "string"
                 }
-                },
-                "type": "object"
-                },
-                "unlockedAttributes": {
-                "items": {
+            },
+            "type": "object"
+        },
+        "unlockedAttributes": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

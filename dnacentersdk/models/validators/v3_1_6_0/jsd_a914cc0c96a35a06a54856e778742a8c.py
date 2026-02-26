@@ -36,31 +36,31 @@ class JSONSchemaValidatorA914Cc0C96A35A06A54856E778742A8C(object):
     """DistributeImagesOnTheNetworkDevice request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorA914Cc0C96A35A06A54856E778742A8C, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "distributedImages": {
+            "items": {
                 "properties": {
-                "distributedImages": {
-                "items": {
-                "properties": {
-                "id": {
-                "type": "string"
-                }
+                    "id": {
+                        "type": "string"
+                    }
                 },
                 "type": "object"
-                },
-                "type": "array"
-                },
-                "networkValidationIds": {
-                "items": {
+            },
+            "type": "array"
+        },
+        "networkValidationIds": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

@@ -36,37 +36,36 @@ class JSONSchemaValidatorA9F5796226051218Eac559Ab5211384(object):
     """UpdateSyslogDestination request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorA9F5796226051218Eac559Ab5211384, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "configId": {
-                "type": "string"
-                },
-                "description":
-                 {
-                "type": "string"
-                },
-                "host": {
-                "type": "string"
-                },
-                "name": {
-                "type": "string"
-                },
-                "port": {
-                "type": "integer"
-                },
-                "protocol": {
-                "enum": [
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "configId": {
+            "type": "string"
+        },
+        "description": {
+            "type": "string"
+        },
+        "host": {
+            "type": "string"
+        },
+        "name": {
+            "type": "string"
+        },
+        "port": {
+            "type": "integer"
+        },
+        "protocol": {
+            "enum": [
                 "UDP",
                 "TCP"
-                ],
-                "type": "string"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            ],
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

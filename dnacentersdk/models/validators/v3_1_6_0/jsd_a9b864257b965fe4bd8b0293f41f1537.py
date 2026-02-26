@@ -36,26 +36,26 @@ class JSONSchemaValidatorA9B864257B965Fe4Bd8B0293F41F1537(object):
     """TagAsGoldenImage request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorA9B864257B965Fe4Bd8B0293F41F1537, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "deviceFamilyIdentifier": {
-                "type": "string"
-                },
-                "deviceRole": {
-                "type": "string"
-                },
-                "imageId": {
-                "type": "string"
-                },
-                "siteId": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "deviceFamilyIdentifier": {
+            "type": "string"
+        },
+        "deviceRole": {
+            "type": "string"
+        },
+        "imageId": {
+            "type": "string"
+        },
+        "siteId": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

@@ -36,60 +36,60 @@ class JSONSchemaValidatorD77719C37558F694E5545A21406275(object):
     """AddFabricDevices request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorD77719C37558F694E5545A21406275, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "items": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "items": {
+        "properties": {
+            "borderDeviceSettings": {
                 "properties": {
-                "borderDeviceSettings": {
-                "properties": {
-                "borderTypes": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "layer3Settings": {
-                "properties": {
-                "borderPriority": {
-                "type": "integer"
-                },
-                "importExternalRoutes": {
-                "type": "boolean"
-                },
-                "isDefaultExit": {
-                "type": "boolean"
-                },
-                "localAutonomousSystemNumber": {
-                "type": "string"
-                },
-                "prependAutonomousSystemCount": {
-                "type": "integer"
-                }
+                    "borderTypes": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "layer3Settings": {
+                        "properties": {
+                            "borderPriority": {
+                                "type": "integer"
+                            },
+                            "importExternalRoutes": {
+                                "type": "boolean"
+                            },
+                            "isDefaultExit": {
+                                "type": "boolean"
+                            },
+                            "localAutonomousSystemNumber": {
+                                "type": "string"
+                            },
+                            "prependAutonomousSystemCount": {
+                                "type": "integer"
+                            }
+                        },
+                        "type": "object"
+                    }
                 },
                 "type": "object"
-                }
-                },
-                "type": "object"
-                },
-                "deviceRoles": {
+            },
+            "deviceRoles": {
                 "items": {
-                "type": "string"
+                    "type": "string"
                 },
                 "type": "array"
-                },
-                "fabricId": {
+            },
+            "fabricId": {
                 "type": "string"
-                },
-                "networkDeviceId": {
+            },
+            "networkDeviceId": {
                 "type": "string"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            }
+        },
+        "type": "object"
+    },
+    "type": "array"
+}
+'''))
 
     def validate(self, request):
         try:

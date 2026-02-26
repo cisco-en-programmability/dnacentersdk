@@ -36,70 +36,70 @@ class JSONSchemaValidatorB07F187B7456C8Bbb6088A2F24Dcee(object):
     """AddIPPoolInSDAVirtualNetwork request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorB07F187B7456C8Bbb6088A2F24Dcee, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "autoGenerateVlanName": {
-                "type": "boolean"
-                },
-                "ipPoolName": {
-                "type": "string"
-                },
-                "isBridgeModeVm": {
-                "type": "boolean"
-                },
-                "isCommonPool": {
-                "type": "boolean"
-                },
-                "isIpDirectedBroadcast": {
-                "type": "boolean"
-                },
-                "isL2FloodingEnabled": {
-                "type": "boolean"
-                },
-                "isLayer2Only": {
-                "type": "boolean"
-                },
-                "isThisCriticalPool": {
-                "type": "boolean"
-                },
-                "isWirelessPool": {
-                "type": "boolean"
-                },
-                "poolType": {
-                "enum": [
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "autoGenerateVlanName": {
+            "type": "boolean"
+        },
+        "ipPoolName": {
+            "type": "string"
+        },
+        "isBridgeModeVm": {
+            "type": "boolean"
+        },
+        "isCommonPool": {
+            "type": "boolean"
+        },
+        "isIpDirectedBroadcast": {
+            "type": "boolean"
+        },
+        "isL2FloodingEnabled": {
+            "type": "boolean"
+        },
+        "isLayer2Only": {
+            "type": "boolean"
+        },
+        "isThisCriticalPool": {
+            "type": "boolean"
+        },
+        "isWirelessPool": {
+            "type": "boolean"
+        },
+        "poolType": {
+            "enum": [
                 "AP",
                 "Extended"
-                ],
-                "type": "string"
-                },
-                "scalableGroupName": {
-                "type": "string"
-                },
-                "siteNameHierarchy": {
-                "type": "string"
-                },
-                "trafficType": {
-                "enum": [
+            ],
+            "type": "string"
+        },
+        "scalableGroupName": {
+            "type": "string"
+        },
+        "siteNameHierarchy": {
+            "type": "string"
+        },
+        "trafficType": {
+            "enum": [
                 "Data",
                 "Voice"
-                ],
-                "type": "string"
-                },
-                "virtualNetworkName": {
-                "type": "string"
-                },
-                "vlanId": {
-                "type": "string"
-                },
-                "vlanName": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            ],
+            "type": "string"
+        },
+        "virtualNetworkName": {
+            "type": "string"
+        },
+        "vlanId": {
+            "type": "string"
+        },
+        "vlanName": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

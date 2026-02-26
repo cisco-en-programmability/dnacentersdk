@@ -36,50 +36,50 @@ class JSONSchemaValidatorD833C51C4F5Cd2879D3E69F773295C(object):
     """CreateAGlobalIPAddressPool request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorD833C51C4F5Cd2879D3E69F773295C, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "addressSpace": {
-                "properties": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "addressSpace": {
+            "properties": {
                 "dhcpServers": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
                 },
                 "dnsServers": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
                 },
                 "gatewayIpAddress": {
-                "type": "string"
+                    "type": "string"
                 },
                 "prefixLength": {
-                "type": "number"
+                    "type": "number"
                 },
                 "subnet": {
-                "type": "string"
+                    "type": "string"
                 }
-                },
-                "type": "object"
-                },
-                "name": {
-                "type": "string"
-                },
-                "poolType": {
-                "enum": [
+            },
+            "type": "object"
+        },
+        "name": {
+            "type": "string"
+        },
+        "poolType": {
+            "enum": [
                 "Generic",
                 "Tunnel"
-                ],
-                "type": "string"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            ],
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

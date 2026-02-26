@@ -36,80 +36,80 @@ class JSONSchemaValidatorEf94C2C20Ba15Fd38E129Ac75067De1E(object):
     """QueryAssuranceEventsWithFilters request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorEf94C2C20Ba15Fd38E129Ac75067De1E, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "attributes": {
+            "items": {
+                "type": "string"
+            },
+            "type": "array"
+        },
+        "deviceFamily": {
+            "items": {
+                "type": "string"
+            },
+            "type": "array"
+        },
+        "endTime": {
+            "type": "integer"
+        },
+        "filters": {
+            "items": {
                 "properties": {
-                "attributes": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "deviceFamily": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "endTime": {
-                "type": "integer"
-                },
-                "filters": {
-                "items": {
-                "properties": {
-                "key": {
-                "type": "string"
-                },
-                "operator": {
-                "type": "string"
-                },
-                "value": {
-                "type": "string"
-                }
+                    "key": {
+                        "type": "string"
+                    },
+                    "operator": {
+                        "type": "string"
+                    },
+                    "value": {
+                        "type": "string"
+                    }
                 },
                 "type": "object"
-                },
-                "type": "array"
-                },
-                "page": {
-                "properties": {
+            },
+            "type": "array"
+        },
+        "page": {
+            "properties": {
                 "limit": {
-                "type": "integer"
+                    "type": "integer"
                 },
                 "offset": {
-                "type": "integer"
+                    "type": "integer"
                 },
                 "sortBy": {
-                "items": {
-                "properties": {
-                "name": {
-                "type": "string"
-                },
-                "order": {
-                "type": "string"
+                    "items": {
+                        "properties": {
+                            "name": {
+                                "type": "string"
+                            },
+                            "order": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
                 }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                }
-                },
-                "type": "object"
-                },
-                "startTime": {
-                "type": "integer"
-                },
-                "views": {
-                "items": {
+            },
+            "type": "object"
+        },
+        "startTime": {
+            "type": "integer"
+        },
+        "views": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

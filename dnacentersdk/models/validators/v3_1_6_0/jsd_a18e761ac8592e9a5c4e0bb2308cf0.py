@@ -37,17 +37,17 @@ class JSONSchemaValidatorA18E761Ac8592E9A5C4E0Bb2308Cf0(object):
     definition."""
     def __init__(self):
         super(JSONSchemaValidatorA18E761Ac8592E9A5C4E0Bb2308Cf0, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "id": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "id": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

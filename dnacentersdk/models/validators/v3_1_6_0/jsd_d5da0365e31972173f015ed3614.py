@@ -36,49 +36,49 @@ class JSONSchemaValidatorD5DA0365E31972173F015Ed3614(object):
     """UpdatesAFloorV2 request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorD5DA0365E31972173F015Ed3614, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "floorNumber": {
-                "type": "integer"
-                },
-                "height": {
-                "type": "number"
-                },
-                "length": {
-                "type": "number"
-                },
-                "name": {
-                "type": "string"
-                },
-                "parentId": {
-                "type": "string"
-                },
-                "rfModel": {
-                "enum": [
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "floorNumber": {
+            "type": "integer"
+        },
+        "height": {
+            "type": "number"
+        },
+        "length": {
+            "type": "number"
+        },
+        "name": {
+            "type": "string"
+        },
+        "parentId": {
+            "type": "string"
+        },
+        "rfModel": {
+            "enum": [
                 "Free Space",
                 "Outdoor Open Space",
                 "Cubes And Walled Offices",
                 "Indoor High Ceiling",
                 "Drywall Office Only"
-                ],
-                "type": "string"
-                },
-                "unitsOfMeasure": {
-                "enum": [
+            ],
+            "type": "string"
+        },
+        "unitsOfMeasure": {
+            "enum": [
                 "feet",
                 "meters"
-                ],
-                "type": "string"
-                },
-                "width": {
-                "type": "number"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            ],
+            "type": "string"
+        },
+        "width": {
+            "type": "number"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

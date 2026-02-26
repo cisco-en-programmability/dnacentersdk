@@ -36,25 +36,24 @@ class JSONSchemaValidatorCcbf614B4B355Cac929F12Cc61272C1C(object):
     """PreviewTemplate request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorCcbf614B4B355Cac929F12Cc61272C1C, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "deviceId": {
-                "type": "string"
-                },
-                "params": {
-                "type": "object"
-                },
-                "resourceParams": {
-                },
-                "templateId": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "deviceId": {
+            "type": "string"
+        },
+        "params": {
+            "type": "object"
+        },
+        "resourceParams": {},
+        "templateId": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

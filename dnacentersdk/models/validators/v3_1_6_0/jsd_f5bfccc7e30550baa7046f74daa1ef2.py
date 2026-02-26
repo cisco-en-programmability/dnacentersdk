@@ -36,17 +36,17 @@ class JSONSchemaValidatorF5Bfccc7E30550BAa7046F74Daa1Ef2(object):
     """AddAndUpdateAAAAttributeAPI request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorF5Bfccc7E30550BAa7046F74Daa1Ef2, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "attributeName": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "attributeName": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

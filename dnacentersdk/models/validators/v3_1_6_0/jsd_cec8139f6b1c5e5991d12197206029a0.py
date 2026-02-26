@@ -36,43 +36,43 @@ class JSONSchemaValidatorCec8139F6B1C5E5991D12197206029A0(object):
     """UpdateDevice request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorCec8139F6B1C5E5991D12197206029A0, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "deviceInfo": {
-                "properties": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "deviceInfo": {
+            "properties": {
                 "hostname": {
-                "type": "string"
+                    "type": "string"
                 },
                 "pid": {
-                "type": "string"
+                    "type": "string"
                 },
                 "serialNumber": {
-                "type": "string"
+                    "type": "string"
                 },
                 "stack": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "sudiRequired": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "userSudiSerialNos": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
                 }
-                },
-                "type": "object"
-                },
-                "id": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "object"
+        },
+        "id": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

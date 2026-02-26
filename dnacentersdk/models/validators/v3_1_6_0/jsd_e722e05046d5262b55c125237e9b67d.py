@@ -36,86 +36,86 @@ class JSONSchemaValidatorE722E05046D5262B55C125237E9B67D(object):
     """ClaimDevice request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorE722E05046D5262B55C125237E9B67D, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "authorizationNeeded": {
+            "type": "boolean"
+        },
+        "configFileUrl": {
+            "type": "string"
+        },
+        "configId": {
+            "type": "string"
+        },
+        "deviceClaimList": {
+            "items": {
                 "properties": {
-                "authorizationNeeded": {
-                "type": "boolean"
-                },
-                "configFileUrl": {
-                "type": "string"
-                },
-                "configId": {
-                "type": "string"
-                },
-                "deviceClaimList": {
-                "items": {
-                "properties": {
-                "configList": {
-                "items": {
-                "properties": {
-                "configId": {
-                "type": "string"
-                },
-                "configParameters": {
-                "items": {
-                "properties": {
-                "key": {
-                "type": "string"
-                },
-                "value": {
-                "type": "string"
-                }
+                    "configList": {
+                        "items": {
+                            "properties": {
+                                "configId": {
+                                    "type": "string"
+                                },
+                                "configParameters": {
+                                    "items": {
+                                        "properties": {
+                                            "key": {
+                                                "type": "string"
+                                            },
+                                            "value": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    },
+                                    "type": "array"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "type": "array"
+                    },
+                    "deviceId": {
+                        "type": "string"
+                    },
+                    "licenseLevel": {
+                        "type": "string"
+                    },
+                    "licenseType": {
+                        "type": "string"
+                    },
+                    "topOfStackSerialNumber": {
+                        "type": "string"
+                    }
                 },
                 "type": "object"
-                },
-                "type": "array"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                },
-                "deviceId": {
-                "type": "string"
-                },
-                "licenseLevel": {
-                "type": "string"
-                },
-                "licenseType": {
-                "type": "string"
-                },
-                "topOfStackSerialNumber": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                },
-                "fileServiceId": {
-                "type": "string"
-                },
-                "imageId": {
-                "type": "string"
-                },
-                "imageUrl": {
-                "type": "string"
-                },
-                "populateInventory": {
-                "type": "boolean"
-                },
-                "projectId": {
-                "type": "string"
-                },
-                "workflowId": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        },
+        "fileServiceId": {
+            "type": "string"
+        },
+        "imageId": {
+            "type": "string"
+        },
+        "imageUrl": {
+            "type": "string"
+        },
+        "populateInventory": {
+            "type": "boolean"
+        },
+        "projectId": {
+            "type": "string"
+        },
+        "workflowId": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

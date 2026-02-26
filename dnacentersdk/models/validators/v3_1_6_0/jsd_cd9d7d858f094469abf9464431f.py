@@ -36,49 +36,49 @@ class JSONSchemaValidatorCd9D7D858F094469Abf9464431F(object):
     """UpdateImagesOnTheNetworkDevice request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorCd9D7D858F094469Abf9464431F, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "compatibleFeatures": {
+            "items": {
                 "properties": {
-                "compatibleFeatures": {
-                "items": {
-                "properties": {
-                "key": {
-                "type": "string"
-                },
-                "value": {
-                "enum": [
-                "ENABLE",
-                "DISABLE"
-                ],
-                "type": "string"
-                }
+                    "key": {
+                        "type": "string"
+                    },
+                    "value": {
+                        "enum": [
+                            "ENABLE",
+                            "DISABLE"
+                        ],
+                        "type": "string"
+                    }
                 },
                 "type": "object"
-                },
-                "type": "array"
-                },
-                "installedImages": {
-                "items": {
+            },
+            "type": "array"
+        },
+        "installedImages": {
+            "items": {
                 "properties": {
-                "id": {
-                "type": "string"
-                }
+                    "id": {
+                        "type": "string"
+                    }
                 },
                 "type": "object"
-                },
-                "type": "array"
-                },
-                "networkValidationIds": {
-                "items": {
+            },
+            "type": "array"
+        },
+        "networkValidationIds": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

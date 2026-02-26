@@ -36,60 +36,59 @@ class JSONSchemaValidatorB8699619F95A24Bd2D81F12F048235(object):
     """CreateWebhookDestination request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorB8699619F95A24Bd2D81F12F048235, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "description": {
+            "type": "string"
+        },
+        "headers": {
+            "items": {
                 "properties": {
-                "description":
-                 {
-                "type": "string"
-                },
-                "headers": {
-                "items": {
-                "properties": {
-                "defaultValue": {
-                "type": "string"
-                },
-                "encrypt": {
-                "type": "boolean"
-                },
-                "name": {
-                "type": "string"
-                },
-                "value": {
-                "type": "string"
-                }
+                    "defaultValue": {
+                        "type": "string"
+                    },
+                    "encrypt": {
+                        "type": "boolean"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "value": {
+                        "type": "string"
+                    }
                 },
                 "type": "object"
-                },
-                "type": "array"
-                },
-                "isProxyRoute": {
-                "type": "boolean"
-                },
-                "method": {
-                "enum": [
+            },
+            "type": "array"
+        },
+        "isProxyRoute": {
+            "type": "boolean"
+        },
+        "method": {
+            "enum": [
                 "POST",
                 "PUT"
-                ],
-                "type": "string"
-                },
-                "name": {
-                "type": "string"
-                },
-                "trustCert": {
-                "type": "boolean"
-                },
-                "url": {
-                "type": "string"
-                },
-                "webhookId": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            ],
+            "type": "string"
+        },
+        "name": {
+            "type": "string"
+        },
+        "trustCert": {
+            "type": "boolean"
+        },
+        "url": {
+            "type": "string"
+        },
+        "webhookId": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

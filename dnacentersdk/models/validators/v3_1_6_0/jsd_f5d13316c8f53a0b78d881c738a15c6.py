@@ -36,20 +36,20 @@ class JSONSchemaValidatorF5D13316C8F53A0B78D881C738A15C6(object):
     """UpdateGlobalCredentials request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorF5D13316C8F53A0B78D881C738A15C6, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "siteUuids": {
-                "items": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "siteUuids": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

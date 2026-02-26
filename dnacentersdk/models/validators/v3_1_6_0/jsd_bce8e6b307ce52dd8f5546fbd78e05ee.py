@@ -36,93 +36,93 @@ class JSONSchemaValidatorBce8E6B307Ce52Dd8F5546Fbd78E05Ee(object):
     """CreateSite request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorBce8E6B307Ce52Dd8F5546Fbd78E05Ee, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "site": {
-                "properties": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "site": {
+            "properties": {
                 "area": {
-                "properties": {
-                "name": {
-                "type": "string"
-                },
-                "parentName": {
-                "type": "string"
-                }
-                },
-                "type": "object"
+                    "properties": {
+                        "name": {
+                            "type": "string"
+                        },
+                        "parentName": {
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
                 },
                 "building": {
-                "properties": {
-                "address": {
-                "type": "string"
-                },
-                "country": {
-                "type": "string"
-                },
-                "latitude": {
-                "type": "number"
-                },
-                "longitude": {
-                "type": "number"
-                },
-                "name": {
-                "type": "string"
-                },
-                "parentName": {
-                "type": "string"
-                }
-                },
-                "type": "object"
+                    "properties": {
+                        "address": {
+                            "type": "string"
+                        },
+                        "country": {
+                            "type": "string"
+                        },
+                        "latitude": {
+                            "type": "number"
+                        },
+                        "longitude": {
+                            "type": "number"
+                        },
+                        "name": {
+                            "type": "string"
+                        },
+                        "parentName": {
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
                 },
                 "floor": {
-                "properties": {
-                "floorNumber": {
-                "type": "number"
-                },
-                "height": {
-                "type": "number"
-                },
-                "length": {
-                "type": "number"
-                },
-                "name": {
-                "type": "string"
-                },
-                "parentName": {
-                "type": "string"
-                },
-                "rfModel": {
-                "enum": [
-                "Cubes And Walled Offices",
-                "Drywall Office Only",
-                "Indoor High Ceiling",
-                "Outdoor Open Space"
-                ],
-                "type": "string"
-                },
-                "width": {
-                "type": "number"
+                    "properties": {
+                        "floorNumber": {
+                            "type": "number"
+                        },
+                        "height": {
+                            "type": "number"
+                        },
+                        "length": {
+                            "type": "number"
+                        },
+                        "name": {
+                            "type": "string"
+                        },
+                        "parentName": {
+                            "type": "string"
+                        },
+                        "rfModel": {
+                            "enum": [
+                                "Cubes And Walled Offices",
+                                "Drywall Office Only",
+                                "Indoor High Ceiling",
+                                "Outdoor Open Space"
+                            ],
+                            "type": "string"
+                        },
+                        "width": {
+                            "type": "number"
+                        }
+                    },
+                    "type": "object"
                 }
-                },
-                "type": "object"
-                }
-                },
-                "type": "object"
-                },
-                "type": {
-                "enum": [
+            },
+            "type": "object"
+        },
+        "type": {
+            "enum": [
                 "area",
                 "building",
                 "floor"
-                ],
-                "type": "string"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            ],
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

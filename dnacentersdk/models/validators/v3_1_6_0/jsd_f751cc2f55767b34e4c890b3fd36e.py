@@ -36,20 +36,20 @@ class JSONSchemaValidatorF751CC2F55767B34E4C890B3Fd36E(object):
     """QueryTheTagsAssociatedWithInterfaces request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorF751CC2F55767B34E4C890B3Fd36E, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "ids": {
-                "items": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "ids": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

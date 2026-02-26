@@ -36,12 +36,12 @@ class JSONSchemaValidatorC937494318F952Ba92EaEb82B144C338(object):
     """ExportMapArchive request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorC937494318F952Ba92EaEb82B144C338, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "type": "string"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "string"
+}
+'''))
 
     def validate(self, request):
         try:
