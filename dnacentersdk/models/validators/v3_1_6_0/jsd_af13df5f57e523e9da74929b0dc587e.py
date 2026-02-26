@@ -36,68 +36,68 @@ class JSONSchemaValidatorAf13Df5F57E523E9Da74929B0Dc587E(object):
     """UpdateLSCCertificateRenewalProfile request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorAf13Df5F57E523E9Da74929B0Dc587E, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "CalendarProfileSetting": {
-                "properties": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "CalendarProfileSetting": {
+            "properties": {
                 "duration": {
-                "properties": {
-                "schedulerDate": {
-                "type": "string"
-                },
-                "schedulerDay": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "schedulerEndTime": {
-                "type": "string"
-                },
-                "schedulerStartTime": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "schedulerStartTime"
-                ],
-                "type": "object"
+                    "properties": {
+                        "schedulerDate": {
+                            "type": "string"
+                        },
+                        "schedulerDay": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "schedulerEndTime": {
+                            "type": "string"
+                        },
+                        "schedulerStartTime": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "schedulerStartTime"
+                    ],
+                    "type": "object"
                 },
                 "schedulerType": {
-                "enum": [
-                "DAILY, WEEKLY, MONTHLY"
-                ],
-                "type": "string"
+                    "enum": [
+                        "DAILY, WEEKLY, MONTHLY"
+                    ],
+                    "type": "string"
                 }
-                },
-                "required": [
+            },
+            "required": [
                 "schedulerType",
                 "duration"
-                ],
-                "type": "object"
-                },
-                "lscProfileName": {
-                "type": "string"
-                },
-                "renewalDueInDays": {
-                "type": "integer"
-                },
-                "renewalType": {
-                "enum": [
+            ],
+            "type": "object"
+        },
+        "lscProfileName": {
+            "type": "string"
+        },
+        "renewalDueInDays": {
+            "type": "integer"
+        },
+        "renewalType": {
+            "enum": [
                 "ONESHOT, STAGGERED"
-                ],
-                "type": "string"
-                }
-                },
-                "required": [
-                "renewalType",
-                "renewalDueInDays"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            ],
+            "type": "string"
+        }
+    },
+    "required": [
+        "renewalType",
+        "renewalDueInDays"
+    ],
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

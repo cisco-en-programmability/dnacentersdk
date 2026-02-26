@@ -36,37 +36,37 @@ class JSONSchemaValidatorD6866F768B05F8AA12A142Ec526F432(object):
     """CreateFilterGroup request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorD6866F768B05F8AA12A142Ec526F432, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "filters": {
+            "items": {
                 "properties": {
-                "filters": {
-                "items": {
-                "properties": {
-                "key": {
-                "type": "string"
-                },
-                "operator": {
-                "type": "string"
-                },
-                "value": {
-                "type": "string"
-                }
+                    "key": {
+                        "type": "string"
+                    },
+                    "operator": {
+                        "type": "string"
+                    },
+                    "value": {
+                        "type": "string"
+                    }
                 },
                 "type": "object"
-                },
-                "type": "array"
-                },
-                "name": {
-                "type": "string"
-                },
-                "type": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        },
+        "name": {
+            "type": "string"
+        },
+        "type": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

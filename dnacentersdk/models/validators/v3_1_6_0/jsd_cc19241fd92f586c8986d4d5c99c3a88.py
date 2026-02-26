@@ -36,53 +36,44 @@ class JSONSchemaValidatorCc19241FD92F586C8986D4D5C99C3A88(object):
     """UpdateProject request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorCc19241FD92F586C8986D4D5C99C3A88, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "createTime": {
+            "type": "integer"
+        },
+        "description": {
+            "type": "string"
+        },
+        "id": {
+            "type": "string"
+        },
+        "lastUpdateTime": {
+            "type": "integer"
+        },
+        "name": {
+            "type": "string"
+        },
+        "tags": {
+            "items": {
                 "properties": {
-                "createTime": {
-                "type": "integer"
+                    "id": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    }
                 },
-                "description":
-                 {
-                "type": "string"
-                },
-                "id": {
-                "type": "string"
-                },
-                "lastUpdateTime": {
-                "type": "integer"
-                },
-                "name": {
-                "type": "string"
-                },
-                "tags": {
-                "items": {
-                "properties": {
-                "id": {
-                "type": "string"
-                },
-                "name": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "name"
-                ],
                 "type": "object"
-                },
-                "type": "array"
-                },
-                "templates": {
-                "type": "object"
-                }
-                },
-                "required": [
-                "name"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        },
+        "templates": {}
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

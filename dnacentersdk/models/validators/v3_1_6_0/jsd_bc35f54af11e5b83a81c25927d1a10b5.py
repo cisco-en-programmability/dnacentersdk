@@ -36,26 +36,26 @@ class JSONSchemaValidatorBc35F54AF11E5B83A81C25927D1A10B5(object):
     """CreateFilterGroupAssociation request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorBc35F54AF11E5B83A81C25927D1A10B5, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "entityId": {
-                "type": "string"
-                },
-                "entityName": {
-                "type": "string"
-                },
-                "entityType": {
-                "type": "string"
-                },
-                "filterGroupId": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "entityId": {
+            "type": "string"
+        },
+        "entityName": {
+            "type": "string"
+        },
+        "entityType": {
+            "type": "string"
+        },
+        "filterGroupId": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

@@ -36,24 +36,20 @@ class JSONSchemaValidatorFd488Ff002115F3B8F0EE165E5347609(object):
     """ReProvisionWiredDevice request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorFd488Ff002115F3B8F0EE165E5347609, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "deviceManagementIpAddress": {
-                "type": "string"
-                },
-                "siteNameHierarchy": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "deviceManagementIpAddress",
-                "siteNameHierarchy"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "deviceManagementIpAddress": {
+            "type": "string"
+        },
+        "siteNameHierarchy": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

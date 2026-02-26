@@ -36,20 +36,20 @@ class JSONSchemaValidatorD2Ea814BFae85Da1B77872D095Fc8221(object):
     """CustomPromptPOSTAPI request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorD2Ea814BFae85Da1B77872D095Fc8221, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "passwordPrompt": {
-                "type": "string"
-                },
-                "usernamePrompt": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "passwordPrompt": {
+            "type": "string"
+        },
+        "usernamePrompt": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

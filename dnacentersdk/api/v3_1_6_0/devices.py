@@ -5473,7 +5473,7 @@ class Devices(object):
 
         Args:
             aggregateAttributes(list): Devices's aggregateAttributes (list of objects).
-            attributes(list): Devices's Attributes (list of strings).
+            attributes(list): Devices's Attributes (list of any).
             endTime(integer): Devices's End Time.
             filters(list): Devices's filters (list of objects).
             groupBy(list): Devices's Group By (list of strings).
@@ -5573,11 +5573,11 @@ class Devices(object):
         specs/blob/main/Assurance/CE_Cat_Center_Org-AssuranceNetworkDevices-2.0.1-resolved.yaml.
 
         Args:
-            aggregateAttributes(list): Devices's Aggregate Attributes (list of strings).
+            aggregateAttributes(list): Devices's Aggregate Attributes (list of any).
             attributes(list): Devices's Attributes (list of strings).
             endTime(integer): Devices's End Time.
             filters(list): Devices's filters (list of objects).
-            groupBy(list): Devices's Group By (list of strings).
+            groupBy(list): Devices's Group By (list of any).
             page(object): Devices's page.
             startTime(integer): Devices's Start Time.
             trendInterval(string): Devices's Trend Interval.

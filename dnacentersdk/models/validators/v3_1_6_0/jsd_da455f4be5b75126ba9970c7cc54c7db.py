@@ -36,403 +36,396 @@ class JSONSchemaValidatorDa455F4BE5B75126Ba9970C7Cc54C7Db(object):
     """UpdateRFProfile request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorDa455F4BE5B75126Ba9970C7Cc54C7Db, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "defaultRfProfile": {
-                "type": "boolean"
-                },
-                "enableRadioType6GHz": {
-                "type": "boolean"
-                },
-                "enableRadioTypeA": {
-                "type": "boolean"
-                },
-                "enableRadioTypeB": {
-                "type": "boolean"
-                },
-                "radioType6GHzProperties": {
-                "properties": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "defaultRfProfile": {
+            "type": "boolean"
+        },
+        "enableRadioType6GHz": {
+            "type": "boolean"
+        },
+        "enableRadioTypeA": {
+            "type": "boolean"
+        },
+        "enableRadioTypeB": {
+            "type": "boolean"
+        },
+        "radioType6GHzProperties": {
+            "properties": {
                 "broadcastProbeResponseInterval": {
-                "type": "integer"
+                    "type": "integer"
                 },
                 "coverageHoleDetectionProperties": {
-                "properties": {
-                "chdClientLevel": {
-                "type": "integer"
-                },
-                "chdDataRssiThreshold": {
-                "type": "integer"
-                },
-                "chdExceptionLevel": {
-                "type": "integer"
-                },
-                "chdVoiceRssiThreshold": {
-                "type": "integer"
-                }
-                },
-                "type": "object"
+                    "properties": {
+                        "chdClientLevel": {
+                            "type": "integer"
+                        },
+                        "chdDataRssiThreshold": {
+                            "type": "integer"
+                        },
+                        "chdExceptionLevel": {
+                            "type": "integer"
+                        },
+                        "chdVoiceRssiThreshold": {
+                            "type": "integer"
+                        }
+                    },
+                    "type": "object"
                 },
                 "customRxSopThreshold": {
-                "type": "integer"
+                    "type": "integer"
                 },
                 "dataRates": {
-                "type": "string"
+                    "type": "string"
                 },
                 "discoveryFrames6GHz": {
-                "enum": [
-                "None",
-                "Broadcast Probe Response",
-                "FILS Discovery"
-                ],
-                "type": "string"
+                    "enum": [
+                        "None",
+                        "Broadcast Probe Response",
+                        "FILS Discovery"
+                    ],
+                    "type": "string"
                 },
                 "enableStandardPowerService": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "fraPropertiesC": {
-                "properties": {
-                "clientResetCount": {
-                "type": "integer"
-                },
-                "clientUtilizationThreshold": {
-                "type": "integer"
-                }
-                },
-                "type": "object"
+                    "properties": {
+                        "clientResetCount": {
+                            "type": "integer"
+                        },
+                        "clientUtilizationThreshold": {
+                            "type": "integer"
+                        }
+                    },
+                    "type": "object"
                 },
                 "mandatoryDataRates": {
-                "type": "string"
+                    "type": "string"
                 },
                 "maxDbsWidth": {
-                "type": "integer"
+                    "type": "integer"
                 },
                 "maxPowerLevel": {
-                "type": "integer"
+                    "type": "integer"
                 },
                 "maxRadioClients": {
-                "type": "integer"
+                    "type": "integer"
                 },
                 "minDbsWidth": {
-                "type": "integer"
+                    "type": "integer"
                 },
                 "minPowerLevel": {
-                "type": "integer"
+                    "type": "integer"
                 },
                 "multiBssidProperties": {
-                "properties": {
-                "dot11axParameters": {
-                "properties": {
-                "muMimoDownLink": {
-                "type": "boolean"
-                },
-                "muMimoUpLink": {
-                "type": "boolean"
-                },
-                "ofdmaDownLink": {
-                "type": "boolean"
-                },
-                "ofdmaUpLink": {
-                "type": "boolean"
-                }
-                },
-                "type": "object"
-                },
-                "dot11beParameters": {
-                "properties": {
-                "muMimoDownLink": {
-                "type": "boolean"
-                },
-                "muMimoUpLink": {
-                "type": "boolean"
-                },
-                "ofdmaDownLink": {
-                "type": "boolean"
-                },
-                "ofdmaMultiRu": {
-                "type": "boolean"
-                },
-                "ofdmaUpLink": {
-                "type": "boolean"
-                }
-                },
-                "type": "object"
-                },
-                "targetWakeTime": {
-                "type": "boolean"
-                },
-                "twtBroadcastSupport": {
-                "type": "boolean"
-                }
-                },
-                "type": "object"
+                    "properties": {
+                        "dot11axParameters": {
+                            "properties": {
+                                "muMimoDownLink": {
+                                    "type": "boolean"
+                                },
+                                "muMimoUpLink": {
+                                    "type": "boolean"
+                                },
+                                "ofdmaDownLink": {
+                                    "type": "boolean"
+                                },
+                                "ofdmaUpLink": {
+                                    "type": "boolean"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "dot11beParameters": {
+                            "properties": {
+                                "muMimoDownLink": {
+                                    "type": "boolean"
+                                },
+                                "muMimoUpLink": {
+                                    "type": "boolean"
+                                },
+                                "ofdmaDownLink": {
+                                    "type": "boolean"
+                                },
+                                "ofdmaMultiRu": {
+                                    "type": "boolean"
+                                },
+                                "ofdmaUpLink": {
+                                    "type": "boolean"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "targetWakeTime": {
+                            "type": "boolean"
+                        },
+                        "twtBroadcastSupport": {
+                            "type": "boolean"
+                        }
+                    },
+                    "type": "object"
                 },
                 "parentProfile": {
-                "enum": [
-                "CUSTOM"
-                ],
-                "type": "string"
+                    "enum": [
+                        "CUSTOM"
+                    ],
+                    "type": "string"
                 },
                 "powerThresholdV1": {
-                "type": "integer"
+                    "type": "integer"
                 },
                 "preamblePuncture": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "pscEnforcingEnabled": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "radioChannels": {
-                "type": "string"
+                    "type": "string"
                 },
                 "rxSopThreshold": {
-                "enum": [
-                "HIGH",
-                "MEDIUM",
-                "LOW",
-                "AUTO",
-                "CUSTOM"
-                ],
-                "type": "string"
+                    "enum": [
+                        "HIGH",
+                        "MEDIUM",
+                        "LOW",
+                        "AUTO",
+                        "CUSTOM"
+                    ],
+                    "type": "string"
                 },
                 "spatialReuseProperties": {
-                "properties": {
-                "dot11axNonSrgObssPacketDetect": {
-                "type": "boolean"
-                },
-                "dot11axNonSrgObssPacketDetectMaxThreshold": {
-                "type": "integer"
-                },
-                "dot11axSrgObssPacketDetect": {
-                "type": "boolean"
-                },
-                "dot11axSrgObssPacketDetectMaxThreshold": {
-                "type": "integer"
-                },
-                "dot11axSrgObssPacketDetectMinThreshold": {
-                "type": "integer"
+                    "properties": {
+                        "dot11axNonSrgObssPacketDetect": {
+                            "type": "boolean"
+                        },
+                        "dot11axNonSrgObssPacketDetectMaxThreshold": {
+                            "type": "integer"
+                        },
+                        "dot11axSrgObssPacketDetect": {
+                            "type": "boolean"
+                        },
+                        "dot11axSrgObssPacketDetectMaxThreshold": {
+                            "type": "integer"
+                        },
+                        "dot11axSrgObssPacketDetectMinThreshold": {
+                            "type": "integer"
+                        }
+                    },
+                    "type": "object"
                 }
-                },
-                "type": "object"
-                }
-                },
-                "type": "object"
-                },
-                "radioTypeAProperties": {
-                "properties": {
+            },
+            "type": "object"
+        },
+        "radioTypeAProperties": {
+            "properties": {
                 "channelWidth": {
-                "enum": [
-                "20",
-                "40",
-                "80",
-                "160",
-                "best"
-                ],
-                "type": "string"
+                    "enum": [
+                        "20",
+                        "40",
+                        "80",
+                        "160",
+                        "best"
+                    ],
+                    "type": "string"
                 },
                 "coverageHoleDetectionProperties": {
-                "properties": {
-                "chdClientLevel": {
-                "type": "integer"
-                },
-                "chdDataRssiThreshold": {
-                "type": "integer"
-                },
-                "chdExceptionLevel": {
-                "type": "integer"
-                },
-                "chdVoiceRssiThreshold": {
-                "type": "integer"
-                }
-                },
-                "type": "object"
+                    "properties": {
+                        "chdClientLevel": {
+                            "type": "integer"
+                        },
+                        "chdDataRssiThreshold": {
+                            "type": "integer"
+                        },
+                        "chdExceptionLevel": {
+                            "type": "integer"
+                        },
+                        "chdVoiceRssiThreshold": {
+                            "type": "integer"
+                        }
+                    },
+                    "type": "object"
                 },
                 "customRxSopThreshold": {
-                "type": "integer"
+                    "type": "integer"
                 },
                 "dataRates": {
-                "type": "string"
+                    "type": "string"
                 },
                 "fraPropertiesA": {
-                "properties": {
-                "clientAware": {
-                "type": "boolean"
-                },
-                "clientReset": {
-                "type": "integer"
-                },
-                "clientSelect": {
-                "type": "integer"
-                }
-                },
-                "type": "object"
+                    "properties": {
+                        "clientAware": {
+                            "type": "boolean"
+                        },
+                        "clientReset": {
+                            "type": "integer"
+                        },
+                        "clientSelect": {
+                            "type": "integer"
+                        }
+                    },
+                    "type": "object"
                 },
                 "mandatoryDataRates": {
-                "type": "string"
+                    "type": "string"
                 },
                 "maxPowerLevel": {
-                "type": "integer"
+                    "type": "integer"
                 },
                 "maxRadioClients": {
-                "type": "integer"
+                    "type": "integer"
                 },
                 "minPowerLevel": {
-                "type": "integer"
+                    "type": "integer"
                 },
                 "parentProfile": {
-                "enum": [
-                "HIGH",
-                "TYPICAL",
-                "LOW",
-                "CUSTOM"
-                ],
-                "type": "string"
+                    "enum": [
+                        "HIGH",
+                        "TYPICAL",
+                        "LOW",
+                        "CUSTOM"
+                    ],
+                    "type": "string"
                 },
                 "powerThresholdV1": {
-                "type": "integer"
+                    "type": "integer"
                 },
                 "preamblePuncture": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "radioChannels": {
-                "type": "string"
+                    "type": "string"
                 },
                 "rxSopThreshold": {
-                "enum": [
-                "HIGH",
-                "MEDIUM",
-                "LOW",
-                "AUTO",
-                "CUSTOM"
-                ],
-                "type": "string"
+                    "enum": [
+                        "HIGH",
+                        "MEDIUM",
+                        "LOW",
+                        "AUTO",
+                        "CUSTOM"
+                    ],
+                    "type": "string"
                 },
                 "spatialReuseProperties": {
-                "properties": {
-                "dot11axNonSrgObssPacketDetect": {
-                "type": "boolean"
-                },
-                "dot11axNonSrgObssPacketDetectMaxThreshold": {
-                "type": "integer"
-                },
-                "dot11axSrgObssPacketDetect": {
-                "type": "boolean"
-                },
-                "dot11axSrgObssPacketDetectMaxThreshold": {
-                "type": "integer"
-                },
-                "dot11axSrgObssPacketDetectMinThreshold": {
-                "type": "integer"
-                }
-                },
-                "type": "object"
+                    "properties": {
+                        "dot11axNonSrgObssPacketDetect": {
+                            "type": "boolean"
+                        },
+                        "dot11axNonSrgObssPacketDetectMaxThreshold": {
+                            "type": "integer"
+                        },
+                        "dot11axSrgObssPacketDetect": {
+                            "type": "boolean"
+                        },
+                        "dot11axSrgObssPacketDetectMaxThreshold": {
+                            "type": "integer"
+                        },
+                        "dot11axSrgObssPacketDetectMinThreshold": {
+                            "type": "integer"
+                        }
+                    },
+                    "type": "object"
                 },
                 "zeroWaitDfsEnable": {
-                "type": "boolean"
+                    "type": "boolean"
                 }
-                },
-                "type": "object"
-                },
-                "radioTypeBProperties": {
-                "properties": {
+            },
+            "type": "object"
+        },
+        "radioTypeBProperties": {
+            "properties": {
                 "coverageHoleDetectionProperties": {
-                "properties": {
-                "chdClientLevel": {
-                "type": "integer"
-                },
-                "chdDataRssiThreshold": {
-                "type": "integer"
-                },
-                "chdExceptionLevel": {
-                "type": "integer"
-                },
-                "chdVoiceRssiThreshold": {
-                "type": "integer"
-                }
-                },
-                "type": "object"
+                    "properties": {
+                        "chdClientLevel": {
+                            "type": "integer"
+                        },
+                        "chdDataRssiThreshold": {
+                            "type": "integer"
+                        },
+                        "chdExceptionLevel": {
+                            "type": "integer"
+                        },
+                        "chdVoiceRssiThreshold": {
+                            "type": "integer"
+                        }
+                    },
+                    "type": "object"
                 },
                 "customRxSopThreshold": {
-                "type": "integer"
+                    "type": "integer"
                 },
                 "dataRates": {
-                "type": "string"
+                    "type": "string"
                 },
                 "mandatoryDataRates": {
-                "type": "string"
+                    "type": "string"
                 },
                 "maxPowerLevel": {
-                "type": "integer"
+                    "type": "integer"
                 },
                 "maxRadioClients": {
-                "type": "integer"
+                    "type": "integer"
                 },
                 "minPowerLevel": {
-                "type": "integer"
+                    "type": "integer"
                 },
                 "parentProfile": {
-                "enum": [
-                "HIGH",
-                "TYPICAL",
-                "LOW",
-                "CUSTOM"
-                ],
-                "type": "string"
+                    "enum": [
+                        "HIGH",
+                        "TYPICAL",
+                        "LOW",
+                        "CUSTOM"
+                    ],
+                    "type": "string"
                 },
                 "powerThresholdV1": {
-                "type": "integer"
+                    "type": "integer"
                 },
                 "radioChannels": {
-                "type": "string"
+                    "type": "string"
                 },
                 "rxSopThreshold": {
-                "enum": [
-                "HIGH",
-                "MEDIUM",
-                "LOW",
-                "AUTO",
-                "CUSTOM"
-                ],
-                "type": "string"
+                    "enum": [
+                        "HIGH",
+                        "MEDIUM",
+                        "LOW",
+                        "AUTO",
+                        "CUSTOM"
+                    ],
+                    "type": "string"
                 },
                 "spatialReuseProperties": {
-                "properties": {
-                "dot11axNonSrgObssPacketDetect": {
-                "type": "boolean"
-                },
-                "dot11axNonSrgObssPacketDetectMaxThreshold": {
-                "type": "integer"
-                },
-                "dot11axSrgObssPacketDetect": {
-                "type": "boolean"
-                },
-                "dot11axSrgObssPacketDetectMaxThreshold": {
-                "type": "integer"
-                },
-                "dot11axSrgObssPacketDetectMinThreshold": {
-                "type": "integer"
+                    "properties": {
+                        "dot11axNonSrgObssPacketDetect": {
+                            "type": "boolean"
+                        },
+                        "dot11axNonSrgObssPacketDetectMaxThreshold": {
+                            "type": "integer"
+                        },
+                        "dot11axSrgObssPacketDetect": {
+                            "type": "boolean"
+                        },
+                        "dot11axSrgObssPacketDetectMaxThreshold": {
+                            "type": "integer"
+                        },
+                        "dot11axSrgObssPacketDetectMinThreshold": {
+                            "type": "integer"
+                        }
+                    },
+                    "type": "object"
                 }
-                },
-                "type": "object"
-                }
-                },
-                "type": "object"
-                },
-                "rfProfileName": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "rfProfileName",
-                "defaultRfProfile",
-                "enableRadioTypeA",
-                "enableRadioTypeB",
-                "enableRadioType6GHz"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "object"
+        },
+        "rfProfileName": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

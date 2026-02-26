@@ -36,34 +36,29 @@ class JSONSchemaValidatorAd96E712F4525A128368B1Bfe3Afc21C(object):
     """AddSSIDToIPPoolMapping request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorAd96E712F4525A128368B1Bfe3Afc21C, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "scalableGroupName": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "scalableGroupName": {
+            "type": "string"
+        },
+        "siteNameHierarchy": {
+            "type": "string"
+        },
+        "ssidNames": {
+            "items": {
                 "type": "string"
-                },
-                "siteNameHierarchy": {
-                "type": "string"
-                },
-                "ssidNames": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "vlanName": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "vlanName",
-                "ssidNames",
-                "siteNameHierarchy"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        },
+        "vlanName": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

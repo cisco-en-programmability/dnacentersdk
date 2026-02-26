@@ -36,20 +36,17 @@ class JSONSchemaValidatorE4F57E8F06856Ee9A7E490D01F7F692(object):
     """ManageExternalAuthenticationSettingAPI request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorE4F57E8F06856Ee9A7E490D01F7F692, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "enable": {
-                "type": "boolean"
-                }
-                },
-                "required": [
-                "enable"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "enable": {
+            "type": "boolean"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

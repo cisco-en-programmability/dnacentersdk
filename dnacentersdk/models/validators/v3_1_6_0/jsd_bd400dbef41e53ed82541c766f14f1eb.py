@@ -36,54 +36,51 @@ class JSONSchemaValidatorBd400DbeF41E53Ed82541C766F14F1Eb(object):
     """CreateAPAuthorizationList request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorBd400DbeF41E53Ed82541C766F14F1Eb, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "apAuthorizationListName": {
-                "type": "string"
-                },
-                "localAuthorization": {
-                "properties": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "apAuthorizationListName": {
+            "type": "string"
+        },
+        "localAuthorization": {
+            "properties": {
                 "apMacEntries": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
                 },
                 "apSerialNumberEntries": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
                 }
-                },
-                "type": "object"
-                },
-                "remoteAuthorization": {
-                "properties": {
+            },
+            "type": "object"
+        },
+        "remoteAuthorization": {
+            "properties": {
                 "aaaServers": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
                 },
                 "authorizeApWithMac": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "authorizeApWithSerialNumber": {
-                "type": "boolean"
+                    "type": "boolean"
                 }
-                },
-                "type": "object"
-                }
-                },
-                "required": [
-                "apAuthorizationListName"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "object"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

@@ -36,42 +36,39 @@ class JSONSchemaValidatorC85B39D6Bae0536695992Ddbb91Ea96D(object):
     """UpdateCSSMConnectionMode request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorC85B39D6Bae0536695992Ddbb91Ea96D, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "connectionMode": {
-                "enum": [
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "connectionMode": {
+            "enum": [
                 "DIRECT",
                 "ON_PREMISE",
                 "SMART_PROXY"
-                ],
-                "type": "string"
-                },
-                "parameters": {
-                "properties": {
+            ],
+            "type": "string"
+        },
+        "parameters": {
+            "properties": {
                 "clientId": {
-                "type": "string"
+                    "type": "string"
                 },
                 "clientSecret": {
-                "type": "string"
+                    "type": "string"
                 },
                 "onPremiseHost": {
-                "type": "string"
+                    "type": "string"
                 },
                 "smartAccountName": {
-                "type": "string"
+                    "type": "string"
                 }
-                },
-                "type": "object"
-                }
-                },
-                "required": [
-                "connectionMode"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "object"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

@@ -36,116 +36,109 @@ class JSONSchemaValidatorFff3662537E538F82BfB5809E30B3Df(object):
     """QueryNetworkDevicesWithFilters request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorFff3662537E538F82BfB5809E30B3Df, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "filter": {
-                "properties": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "filter": {
+            "properties": {
                 "filters": {
-                "items": {
-                "properties": {
-                "key": {
-                "type": "string"
-                },
-                "operator": {
-                "enum": [
-                "eq",
-                "lt",
-                "gt",
-                "lte",
-                "gte",
-                "contains",
-                "in"
-                ],
-                "type": "string"
-                },
-                "value": {
-                "type": "object"
-                }
-                },
-                "required": [
-                "key",
-                "operator",
-                "value"
-                ],
-                "type": "object"
-                },
-                "type": "array"
+                    "items": {
+                        "properties": {
+                            "key": {
+                                "type": "string"
+                            },
+                            "operator": {
+                                "enum": [
+                                    "eq",
+                                    "lt",
+                                    "gt",
+                                    "lte",
+                                    "gte",
+                                    "contains",
+                                    "in"
+                                ],
+                                "type": "string"
+                            },
+                            "value": {}
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
                 },
                 "logicalOperator": {
-                "enum": [
-                "AND",
-                "OR"
-                ],
-                "type": "string"
+                    "enum": [
+                        "AND",
+                        "OR"
+                    ],
+                    "type": "string"
                 }
-                },
-                "type": "object"
-                },
-                "page": {
-                "properties": {
+            },
+            "type": "object"
+        },
+        "page": {
+            "properties": {
                 "limit": {
-                "type": "integer"
+                    "type": "integer"
                 },
                 "offset": {
-                "type": "integer"
+                    "type": "integer"
                 },
                 "sortBy": {
-                "properties": {
-                "name": {
-                "enum": [
-                "id",
-                "managementAddress",
-                "dnsResolvedManagementIpAddress",
-                "hostname",
-                "macAddress",
-                "type",
-                "platformids",
-                "softwareType",
-                "softwareVersion",
-                "vendor",
-                "bootTime",
-                "role",
-                "roleSource",
-                "apEthernetMacAddress",
-                "apManagerInterfaceIpAddress",
-                "apWlcIpAddress",
-                "deviceSupportLevel",
-                "reachabilityFailureReason",
-                "resyncStartTime",
-                "resyncEndTime",
-                "resyncReasons",
-                "pendingResyncRequestCount",
-                "pendingResyncRequestReasons",
-                "resyncIntervalSource",
-                "resyncIntervalMinutes"
-                ],
-                "type": "string"
-                },
-                "order": {
-                "enum": [
-                "asc",
-                "des"
-                ],
-                "type": "string"
+                    "properties": {
+                        "name": {
+                            "enum": [
+                                "id",
+                                "managementAddress",
+                                "dnsResolvedManagementIpAddress",
+                                "hostname",
+                                "macAddress",
+                                "type",
+                                "platformids",
+                                "softwareType",
+                                "softwareVersion",
+                                "vendor",
+                                "bootTime",
+                                "role",
+                                "roleSource",
+                                "apEthernetMacAddress",
+                                "apManagerInterfaceIpAddress",
+                                "apWlcIpAddress",
+                                "deviceSupportLevel",
+                                "reachabilityFailureReason",
+                                "resyncStartTime",
+                                "resyncEndTime",
+                                "resyncReasons",
+                                "pendingResyncRequestCount",
+                                "pendingResyncRequestReasons",
+                                "resyncIntervalSource",
+                                "resyncIntervalMinutes"
+                            ],
+                            "type": "string"
+                        },
+                        "order": {
+                            "enum": [
+                                "asc",
+                                "des"
+                            ],
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
                 }
-                },
-                "type": "object"
-                }
-                },
-                "type": "object"
-                },
-                "views": {
-                "items": {
+            },
+            "type": "object"
+        },
+        "views": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

@@ -37,39 +37,32 @@ class JSONSchemaValidatorBa98Ed72975099B39DD2Dc4Cb65Ed8(object):
     definition."""
     def __init__(self):
         super(JSONSchemaValidatorBa98Ed72975099B39DD2Dc4Cb65Ed8, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "password": {
-                "type": "string"
-                },
-                "serverName": {
-                "type": "string"
-                },
-                "serverUrl": {
-                "type": "string"
-                },
-                "syncView": {
-                "type": "boolean"
-                },
-                "userName": {
-                "type": "string"
-                },
-                "view": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "serverName",
-                "serverUrl",
-                "password",
-                "userName",
-                "view"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "password": {
+            "type": "string"
+        },
+        "serverName": {
+            "type": "string"
+        },
+        "serverUrl": {
+            "type": "string"
+        },
+        "syncView": {
+            "type": "boolean"
+        },
+        "userName": {
+            "type": "string"
+        },
+        "view": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

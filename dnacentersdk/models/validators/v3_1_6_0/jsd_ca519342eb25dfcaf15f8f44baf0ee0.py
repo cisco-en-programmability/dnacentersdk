@@ -36,51 +36,43 @@ class JSONSchemaValidatorCa519342Eb25DfcAf15F8F44Baf0Ee0(object):
     """CreateCustomNetworkDeviceValidation request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorCa519342Eb25DfcAf15F8F44Baf0Ee0, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "cli": {
-                "type": "string"
-                },
-                "description":
-                 {
-                "type": "string"
-                },
-                "name": {
-                "type": "string"
-                },
-                "operationType": {
-                "enum": [
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "cli": {
+            "type": "string"
+        },
+        "description": {
+            "type": "string"
+        },
+        "name": {
+            "type": "string"
+        },
+        "operationType": {
+            "enum": [
                 "DISTRIBUTION",
                 "ACTIVATION"
-                ],
-                "type": "string"
-                },
-                "productSeriesOrdinals": {
-                "items": {
+            ],
+            "type": "string"
+        },
+        "productSeriesOrdinals": {
+            "items": {
                 "type": "number"
-                },
-                "type": "array"
-                },
-                "type": {
-                "enum": [
+            },
+            "type": "array"
+        },
+        "type": {
+            "enum": [
                 "PRE_VALIDATION",
                 "POST_VALIDATION"
-                ],
-                "type": "string"
-                }
-                },
-                "required": [
-                "name",
-                "type",
-                "operationType",
-                "cli",
-                "productSeriesOrdinals"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            ],
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

@@ -37,47 +37,47 @@ class JSONSchemaValidatorCb38886D0236502783D431455E3Fb880(object):
     definition."""
     def __init__(self):
         super(JSONSchemaValidatorCb38886D0236502783D431455E3Fb880, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "items": {
+        "properties": {
+            "apId": {
+                "type": "string"
+            },
+            "captureType": {
+                "type": "string"
+            },
+            "clientMac": {
+                "type": "string"
+            },
+            "durationInMins": {
+                "type": "integer"
+            },
+            "otaBand": {
+                "type": "string"
+            },
+            "otaChannel": {
+                "type": "integer"
+            },
+            "otaChannelWidth": {
+                "type": "integer"
+            },
+            "slot": {
                 "items": {
-                "properties": {
-                "apId": {
-                "type": "string"
-                },
-                "captureType": {
-                "type": "string"
-                },
-                "clientMac": {
-                "type": "string"
-                },
-                "durationInMins": {
-                "type": "integer"
-                },
-                "otaBand": {
-                "type": "string"
-                },
-                "otaChannel": {
-                "type": "integer"
-                },
-                "otaChannelWidth": {
-                "type": "integer"
-                },
-                "slot": {
-                "items": {
-                "type": "number"
+                    "type": "number"
                 },
                 "type": "array"
-                },
-                "wlcId": {
+            },
+            "wlcId": {
                 "type": "string"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            }
+        },
+        "type": "object"
+    },
+    "type": "array"
+}
+'''))
 
     def validate(self, request):
         try:

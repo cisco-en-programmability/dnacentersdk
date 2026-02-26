@@ -37,57 +37,50 @@ class JSONSchemaValidatorB9Fbd53Af6A5B46B34B17E601680801(object):
     definition."""
     def __init__(self):
         super(JSONSchemaValidatorB9Fbd53Af6A5B46B34B17E601680801, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "designName": {
-                "type": "string"
-                },
-                "featureAttributes": {
-                "properties": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "designName": {
+            "type": "string"
+        },
+        "featureAttributes": {
+            "properties": {
                 "eventDrivenRrmCustomThresholdVal": {
-                "type": "integer"
+                    "type": "integer"
                 },
                 "eventDrivenRrmEnable": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "eventDrivenRrmThresholdLevel": {
-                "enum": [
-                "LOW",
-                "MEDIUM",
-                "HIGH",
-                "CUSTOM"
-                ],
-                "type": "string"
+                    "enum": [
+                        "LOW",
+                        "MEDIUM",
+                        "HIGH",
+                        "CUSTOM"
+                    ],
+                    "type": "string"
                 },
                 "radioBand": {
-                "enum": [
-                "2_4GHZ",
-                "5GHZ"
-                ],
-                "type": "string"
+                    "enum": [
+                        "2_4GHZ",
+                        "5GHZ"
+                    ],
+                    "type": "string"
                 }
-                },
-                "required": [
-                "radioBand"
-                ],
-                "type": "object"
-                },
-                "unlockedAttributes": {
-                "items": {
+            },
+            "type": "object"
+        },
+        "unlockedAttributes": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                }
-                },
-                "required": [
-                "designName",
-                "featureAttributes"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

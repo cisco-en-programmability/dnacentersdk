@@ -36,41 +36,38 @@ class JSONSchemaValidatorD2Bd5F05Bd535A89EbAdb30E2Ede9E(object):
     """UpdateUser request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorD2Bd5F05Bd535A89EbAdb30E2Ede9E, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "accessGroups": {
-                "items": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "accessGroups": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                },
-                "email": {
+            },
+            "type": "array"
+        },
+        "email": {
+            "type": "string"
+        },
+        "firstName": {
+            "type": "string"
+        },
+        "lastName": {
+            "type": "string"
+        },
+        "roleList": {
+            "items": {
                 "type": "string"
-                },
-                "firstName": {
-                "type": "string"
-                },
-                "lastName": {
-                "type": "string"
-                },
-                "roleList": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "userId": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "userId"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        },
+        "userId": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

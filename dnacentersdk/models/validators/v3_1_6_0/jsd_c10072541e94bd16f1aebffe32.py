@@ -36,20 +36,20 @@ class JSONSchemaValidatorC10072541E94Bd16F1Aebffe32(object):
     """ResolveTheGivenListsOfIssues request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorC10072541E94Bd16F1Aebffe32, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "issueIds": {
-                "items": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "issueIds": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

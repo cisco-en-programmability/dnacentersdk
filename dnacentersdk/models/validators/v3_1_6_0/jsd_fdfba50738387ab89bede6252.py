@@ -36,24 +36,23 @@ class JSONSchemaValidatorFDfba50738387Ab89Bede6252(object):
     """CreateANewPolicy request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorFDfba50738387Ab89Bede6252, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "description":
-                 {
-                "type": "string"
-                },
-                "name": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "name"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "description": {
+            "type": "string"
+        },
+        "name": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "name"
+    ],
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

@@ -36,74 +36,69 @@ class JSONSchemaValidatorEcdb2D14C29B5Bf3Ad79Ed2E3Cc70715(object):
     """CreateSNMPv3Credentials request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorEcdb2D14C29B5Bf3Ad79Ed2E3Cc70715, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "items": {
-                "properties": {
-                "authPassword": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "items": {
+        "properties": {
+            "authPassword": {
                 "type": "string"
-                },
-                "authType": {
+            },
+            "authType": {
                 "enum": [
-                "SHA",
-                "MD5"
+                    "SHA",
+                    "MD5"
                 ],
                 "type": "string"
-                },
-                "comments": {
+            },
+            "comments": {
                 "type": "string"
-                },
-                "credentialType": {
+            },
+            "credentialType": {
                 "enum": [
-                "GLOBAL",
-                "APP"
+                    "GLOBAL",
+                    "APP"
                 ],
                 "type": "string"
-                },
-                "description":
-                 {
+            },
+            "description": {
                 "type": "string"
-                },
-                "id": {
+            },
+            "id": {
                 "type": "string"
-                },
-                "instanceTenantId": {
+            },
+            "instanceTenantId": {
                 "type": "string"
-                },
-                "instanceUuid": {
+            },
+            "instanceUuid": {
                 "type": "string"
-                },
-                "privacyPassword": {
+            },
+            "privacyPassword": {
                 "type": "string"
-                },
-                "privacyType": {
+            },
+            "privacyType": {
                 "enum": [
-                "AES128"
+                    "AES128"
                 ],
                 "type": "string"
-                },
-                "snmpMode": {
+            },
+            "snmpMode": {
                 "enum": [
-                "AUTHPRIV",
-                "AUTHNOPRIV",
-                "NOAUTHNOPRIV"
+                    "AUTHPRIV",
+                    "AUTHNOPRIV",
+                    "NOAUTHNOPRIV"
                 ],
                 "type": "string"
-                },
-                "username": {
+            },
+            "username": {
                 "type": "string"
-                }
-                },
-                "required": [
-                "snmpMode",
-                "username"
-                ],
-                "type": "object"
-                },
-                "type": "array"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            }
+        },
+        "type": "object"
+    },
+    "type": "array"
+}
+'''))
 
     def validate(self, request):
         try:

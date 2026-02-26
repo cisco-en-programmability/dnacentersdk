@@ -36,46 +36,45 @@ class JSONSchemaValidatorAe10EC6705F368476F7B35918122C(object):
     """AddRoleV2 request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorAe10EC6705F368476F7B35918122C, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "description": {
+            "type": "string"
+        },
+        "name": {
+            "type": "string"
+        },
+        "permissions": {
+            "items": {
                 "properties": {
-                "description":
-                 {
-                "type": "string"
-                },
-                "name": {
-                "type": "string"
-                },
-                "permissions": {
-                "items": {
-                "properties": {
-                "operations": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "type": {
-                "type": "string"
-                }
+                    "operations": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "type": {
+                        "type": "string"
+                    }
                 },
                 "required": [
-                "type",
-                "operations"
+                    "type",
+                    "operations"
                 ],
                 "type": "object"
-                },
-                "type": "array"
-                }
-                },
-                "required": [
-                "name",
-                "permissions"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        }
+    },
+    "required": [
+        "name",
+        "permissions"
+    ],
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

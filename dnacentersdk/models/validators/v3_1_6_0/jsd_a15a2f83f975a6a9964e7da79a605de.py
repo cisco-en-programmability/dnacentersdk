@@ -36,28 +36,25 @@ class JSONSchemaValidatorA15A2F83F975A6A9964E7Da79A605De(object):
     """SetDhcpSettingsForASite request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorA15A2F83F975A6A9964E7Da79A605De, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "dhcp": {
-                "properties": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "dhcp": {
+            "properties": {
                 "servers": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
                 }
-                },
-                "type": "object"
-                }
-                },
-                "required": [
-                "dhcp"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "object"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

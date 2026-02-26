@@ -36,189 +36,158 @@ class JSONSchemaValidatorCa2Fe989A227585086452D24D32867A6(object):
     """CreatePlannedAccessPointForFloor request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorCa2Fe989A227585086452D24D32867A6, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "attributes": {
-                "properties": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "attributes": {
+            "properties": {
                 "createDate": {
-                "type": "number"
+                    "type": "number"
                 },
                 "domain": {
-                "type": "string"
+                    "type": "string"
                 },
                 "heirarchyName": {
-                "type": "string"
+                    "type": "string"
                 },
                 "id": {
-                "type": "number"
+                    "type": "number"
                 },
                 "instanceUuid": {
-                "type": "string"
+                    "type": "string"
                 },
                 "macAddress": {
-                "type": "string"
+                    "type": "string"
                 },
                 "name": {
-                "type": "string"
+                    "type": "string"
                 },
                 "source": {
-                "enum": [
-                "EKAHAU,MANUAL,UNKNOWN"
-                ],
-                "type": "string"
+                    "enum": [
+                        "EKAHAU,MANUAL,UNKNOWN"
+                    ],
+                    "type": "string"
                 },
                 "typeString": {
-                "type": "string"
+                    "type": "string"
                 }
-                },
-                "required": [
-                "id",
-                "macAddress",
-                "name",
-                "typeString"
-                ],
-                "type": "object"
-                },
-                "isSensor": {
-                "type": "boolean"
-                },
-                "location": {
-                "properties": {
+            },
+            "type": "object"
+        },
+        "isSensor": {
+            "type": "boolean"
+        },
+        "location": {
+            "properties": {
                 "altitude": {
-                "type": "number"
+                    "type": "number"
                 },
                 "lattitude": {
-                "type": "number"
+                    "type": "number"
                 },
                 "longtitude": {
-                "type": "number"
+                    "type": "number"
                 }
-                },
-                "type": "object"
-                },
-                "position": {
-                "properties": {
+            },
+            "type": "object"
+        },
+        "position": {
+            "properties": {
                 "x": {
-                "type": "number"
+                    "type": "number"
                 },
                 "y": {
-                "type": "number"
+                    "type": "number"
                 },
                 "z": {
-                "type": "number"
+                    "type": "number"
                 }
-                },
-                "required": [
-                "x",
-                "y",
-                "z"
-                ],
-                "type": "object"
-                },
-                "radioCount": {
-                "type": "integer"
-                },
-                "radios": {
-                "items": {
+            },
+            "type": "object"
+        },
+        "radioCount": {
+            "type": "integer"
+        },
+        "radios": {
+            "items": {
                 "properties": {
-                "antenna": {
-                "properties": {
-                "azimuthAngle": {
-                "type": "number"
+                    "antenna": {
+                        "properties": {
+                            "azimuthAngle": {
+                                "type": "number"
+                            },
+                            "elevationAngle": {
+                                "type": "number"
+                            },
+                            "gain": {
+                                "type": "number"
+                            },
+                            "mode": {
+                                "enum": [
+                                    "sector_a, sector_b, omni, unknown"
+                                ],
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "type": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "attributes": {
+                        "properties": {
+                            "channel": {
+                                "type": "number"
+                            },
+                            "channelString": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "integer"
+                            },
+                            "ifMode": {
+                                "enum": [
+                                    "A, B, ABGN, Monitor, Sniffer, XorMonitor, Xor24, Xor5, Xor6, XorUnknown, _6GHZ, XOR56GHZ, Unknown"
+                                ],
+                                "type": "string"
+                            },
+                            "ifTypeString": {
+                                "type": "string"
+                            },
+                            "ifTypeSubband": {
+                                "enum": [
+                                    "A, B, ABGN, _6GHZ, _XOR_5_6GHZ, Unknown"
+                                ],
+                                "type": "string"
+                            },
+                            "instanceUuid": {
+                                "type": "string"
+                            },
+                            "slotId": {
+                                "type": "number"
+                            },
+                            "txPowerLevel": {
+                                "type": "number"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "isSensor": {
+                        "type": "boolean"
+                    }
                 },
-                "elevationAngle": {
-                "type": "number"
-                },
-                "gain": {
-                "type": "number"
-                },
-                "mode": {
-                "enum": [
-                "sector_a, sector_b, omni, unknown"
-                ],
-                "type": "string"
-                },
-                "name": {
-                "type": "string"
-                },
-                "type": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "azimuthAngle",
-                "elevationAngle",
-                "name"
-                ],
                 "type": "object"
-                },
-                "attributes": {
-                "properties": {
-                "channel": {
-                "type": "number"
-                },
-                "channelString": {
-                "type": "string"
-                },
-                "id": {
-                "type": "integer"
-                },
-                "ifMode": {
-                "enum": [
-                "A, B, ABGN, Monitor, Sniffer, XorMonitor, Xor24, Xor5, Xor6, XorUnknown, _6GHZ, XOR56GHZ, Unknown"
-                ],
-                "type": "string"
-                },
-                "ifTypeString": {
-                "type": "string"
-                },
-                "ifTypeSubband": {
-                "enum": [
-                "A, B, ABGN, _6GHZ, _XOR_5_6GHZ, Unknown"
-                ],
-                "type": "string"
-                },
-                "instanceUuid": {
-                "type": "string"
-                },
-                "slotId": {
-                "type": "number"
-                },
-                "txPowerLevel": {
-                "type": "number"
-                }
-                },
-                "required": [
-                "id",
-                "ifTypeSubband",
-                "slotId"
-                ],
-                "type": "object"
-                },
-                "isSensor": {
-                "type": "boolean"
-                }
-                },
-                "required": [
-                "antenna",
-                "attributes"
-                ],
-                "type": "object"
-                },
-                "type": "array"
-                }
-                },
-                "required": [
-                "attributes",
-                "position",
-                "radioCount",
-                "radios"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

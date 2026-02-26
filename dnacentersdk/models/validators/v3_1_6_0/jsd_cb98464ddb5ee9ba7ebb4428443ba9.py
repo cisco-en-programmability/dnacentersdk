@@ -36,20 +36,17 @@ class JSONSchemaValidatorCb98464Ddb5Ee9Ba7EBb4428443Ba9(object):
     """UpdateDeviceManagementAddress request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorCb98464Ddb5Ee9Ba7EBb4428443Ba9, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "newIP": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "newIP"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "newIP": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

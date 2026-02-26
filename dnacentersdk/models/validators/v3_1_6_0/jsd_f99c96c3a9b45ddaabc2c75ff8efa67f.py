@@ -36,34 +36,29 @@ class JSONSchemaValidatorF99C96C3A9B45DdaAbc2C75Ff8Efa67F(object):
     """PskOverride request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorF99C96C3A9B45DdaAbc2C75Ff8Efa67F, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "items": {
-                "properties": {
-                "passPhrase": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "items": {
+        "properties": {
+            "passPhrase": {
                 "type": "string"
-                },
-                "site": {
+            },
+            "site": {
                 "type": "string"
-                },
-                "ssid": {
+            },
+            "ssid": {
                 "type": "string"
-                },
-                "wlanProfileName": {
+            },
+            "wlanProfileName": {
                 "type": "string"
-                }
-                },
-                "required": [
-                "ssid",
-                "site",
-                "passPhrase"
-                ],
-                "type": "object"
-                },
-                "type": "array"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            }
+        },
+        "type": "object"
+    },
+    "type": "array"
+}
+'''))
 
     def validate(self, request):
         try:

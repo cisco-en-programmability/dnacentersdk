@@ -36,45 +36,41 @@ class JSONSchemaValidatorA54Fce1A0C305BdaBfe91A8A6161E539(object):
     """InitiateANewPathtrace request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorA54Fce1A0C305BdaBfe91A8A6161E539, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "controlPath": {
-                "type": "boolean"
-                },
-                "destIP": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "controlPath": {
+            "type": "boolean"
+        },
+        "destIP": {
+            "type": "string"
+        },
+        "destPort": {
+            "type": "string"
+        },
+        "inclusions": {
+            "items": {
                 "type": "string"
-                },
-                "destPort": {
-                "type": "string"
-                },
-                "inclusions": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "periodicRefresh": {
-                "type": "boolean"
-                },
-                "protocol": {
-                "type": "string"
-                },
-                "sourceIP": {
-                "type": "string"
-                },
-                "sourcePort": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "destIP",
-                "sourceIP"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        },
+        "periodicRefresh": {
+            "type": "boolean"
+        },
+        "protocol": {
+            "type": "string"
+        },
+        "sourceIP": {
+            "type": "string"
+        },
+        "sourcePort": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

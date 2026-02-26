@@ -36,100 +36,77 @@ class JSONSchemaValidatorEb209544555E43Ae2BC909499F3900(object):
     """EditPlannedAccessPointsPositionsV2 request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorEb209544555E43Ae2BC909499F3900, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "items": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "items": {
+        "properties": {
+            "id": {
+                "type": "string"
+            },
+            "macAddress": {
+                "type": "string"
+            },
+            "name": {
+                "type": "string"
+            },
+            "position": {
                 "properties": {
-                "id": {
-                "type": "string"
+                    "x": {
+                        "type": "number"
+                    },
+                    "y": {
+                        "type": "number"
+                    },
+                    "z": {
+                        "type": "number"
+                    }
                 },
-                "macAddress": {
-                "type": "string"
-                },
-                "name": {
-                "type": "string"
-                },
-                "position": {
-                "properties": {
-                "x": {
-                "type": "number"
-                },
-                "y": {
-                "type": "number"
-                },
-                "z": {
-                "type": "number"
-                }
-                },
-                "required": [
-                "x",
-                "y",
-                "z"
-                ],
                 "type": "object"
-                },
-                "radios": {
+            },
+            "radios": {
                 "items": {
-                "properties": {
-                "antenna": {
-                "properties": {
-                "azimuth": {
-                "type": "integer"
-                },
-                "elevation": {
-                "type": "integer"
-                },
-                "name": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "name",
-                "azimuth",
-                "elevation"
-                ],
-                "type": "object"
-                },
-                "bands": {
-                "items": {
-                "type": "number"
+                    "properties": {
+                        "antenna": {
+                            "properties": {
+                                "azimuth": {
+                                    "type": "integer"
+                                },
+                                "elevation": {
+                                    "type": "integer"
+                                },
+                                "name": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "bands": {
+                            "items": {
+                                "type": "number"
+                            },
+                            "type": "array"
+                        },
+                        "channel": {
+                            "type": "integer"
+                        },
+                        "txPower": {
+                            "type": "integer"
+                        }
+                    },
+                    "type": "object"
                 },
                 "type": "array"
-                },
-                "channel": {
-                "type": "integer"
-                },
-                "txPower": {
-                "type": "integer"
-                }
-                },
-                "required": [
-                "bands",
-                "channel",
-                "txPower",
-                "antenna"
-                ],
-                "type": "object"
-                },
-                "type": "array"
-                },
-                "type": {
+            },
+            "type": {
                 "type": "string"
-                }
-                },
-                "required": [
-                "name",
-                "type",
-                "position",
-                "radios",
-                "id"
-                ],
-                "type": "object"
-                },
-                "type": "array"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            }
+        },
+        "type": "object"
+    },
+    "type": "array"
+}
+'''))
 
     def validate(self, request):
         try:

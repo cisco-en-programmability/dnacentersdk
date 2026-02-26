@@ -37,51 +37,51 @@ class JSONSchemaValidatorF71D0B2527B8Cd13123F9A68Cf3(object):
     schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorF71D0B2527B8Cd13123F9A68Cf3, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "endTime": {
+            "type": "integer"
+        },
+        "filters": {
+            "items": {
                 "properties": {
-                "endTime": {
-                "type": "integer"
-                },
-                "filters": {
-                "items": {
-                "properties": {
-                "key": {
-                "type": "string"
-                },
-                "operator": {
-                "type": "string"
-                },
-                "value": {
-                "type": "integer"
-                }
+                    "key": {
+                        "type": "string"
+                    },
+                    "operator": {
+                        "type": "string"
+                    },
+                    "value": {
+                        "type": "integer"
+                    }
                 },
                 "type": "object"
-                },
-                "type": "array"
-                },
-                "page": {
-                "properties": {
+            },
+            "type": "array"
+        },
+        "page": {
+            "properties": {
                 "limit": {
-                "type": "integer"
+                    "type": "integer"
                 },
                 "offset": {
-                "type": "integer"
+                    "type": "integer"
                 },
                 "timeSortOrder": {
-                "type": "string"
+                    "type": "string"
                 }
-                },
-                "type": "object"
-                },
-                "startTime": {
-                "type": "integer"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "object"
+        },
+        "startTime": {
+            "type": "integer"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

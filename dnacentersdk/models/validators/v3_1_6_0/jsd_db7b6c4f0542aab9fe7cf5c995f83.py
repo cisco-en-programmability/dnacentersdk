@@ -36,690 +36,680 @@ class JSONSchemaValidatorDb7B6C4F0542AAb9FE7Cf5C995F83(object):
     """ImportsTheTemplatesProvided request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorDb7B6C4F0542AAb9FE7Cf5C995F83, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "items": {
-                "properties": {
-                "author": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "items": {
+        "properties": {
+            "author": {
                 "type": "string"
-                },
-                "composite": {
+            },
+            "composite": {
                 "type": "boolean"
-                },
-                "containingTemplates": {
+            },
+            "containingTemplates": {
                 "items": {
-                "properties": {
-                "composite": {
-                "type": "boolean"
-                },
-                "description":
-                 {
-                "type": "string"
-                },
-                "deviceTypes": {
-                "items": {
-                "properties": {
-                "productFamily": {
-                "type": "string"
-                },
-                "productSeries": {
-                "type": "string"
-                },
-                "productType": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "productFamily"
-                ],
-                "type": "object"
+                    "properties": {
+                        "composite": {
+                            "type": "boolean"
+                        },
+                        "description": {
+                            "type": "string"
+                        },
+                        "deviceTypes": {
+                            "items": {
+                                "properties": {
+                                    "productFamily": {
+                                        "type": "string"
+                                    },
+                                    "productSeries": {
+                                        "type": "string"
+                                    },
+                                    "productType": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "productFamily"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "id": {
+                            "type": "string"
+                        },
+                        "language": {
+                            "type": "string"
+                        },
+                        "name": {
+                            "type": "string"
+                        },
+                        "projectName": {
+                            "type": "string"
+                        },
+                        "rollbackTemplateParams": {
+                            "items": {
+                                "properties": {
+                                    "binding": {
+                                        "type": "string"
+                                    },
+                                    "customOrder": {
+                                        "type": "integer"
+                                    },
+                                    "dataType": {
+                                        "enum": [
+                                            "STRING",
+                                            "INTEGER",
+                                            "IPADDRESS",
+                                            "MACADDRESS",
+                                            "SECTIONDIVIDER"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "defaultValue": {
+                                        "type": "string"
+                                    },
+                                    "description": {
+                                        "type": "string"
+                                    },
+                                    "displayName": {
+                                        "type": "string"
+                                    },
+                                    "group": {
+                                        "type": "string"
+                                    },
+                                    "id": {
+                                        "type": "string"
+                                    },
+                                    "instructionText": {
+                                        "type": "string"
+                                    },
+                                    "key": {
+                                        "type": "string"
+                                    },
+                                    "notParam": {
+                                        "type": "boolean"
+                                    },
+                                    "order": {
+                                        "type": "integer"
+                                    },
+                                    "paramArray": {
+                                        "type": "boolean"
+                                    },
+                                    "parameterName": {
+                                        "type": "string"
+                                    },
+                                    "provider": {
+                                        "type": "string"
+                                    },
+                                    "range": {
+                                        "items": {
+                                            "properties": {
+                                                "id": {
+                                                    "type": "string"
+                                                },
+                                                "maxValue": {
+                                                    "type": "integer"
+                                                },
+                                                "minValue": {
+                                                    "type": "integer"
+                                                }
+                                            },
+                                            "required": [
+                                                "maxValue",
+                                                "minValue"
+                                            ],
+                                            "type": "object"
+                                        },
+                                        "type": "array"
+                                    },
+                                    "required": {
+                                        "type": "boolean"
+                                    },
+                                    "selection": {
+                                        "properties": {
+                                            "defaultSelectedValues": {
+                                                "items": {
+                                                    "type": "string"
+                                                },
+                                                "type": "array"
+                                            },
+                                            "id": {
+                                                "type": "string"
+                                            },
+                                            "selectionType": {
+                                                "enum": [
+                                                    "SINGLE_SELECT",
+                                                    "MULTI_SELECT"
+                                                ],
+                                                "type": "string"
+                                            },
+                                            "selectionValues": {
+                                                "type": "object"
+                                            }
+                                        },
+                                        "required": [
+                                            "selectionType",
+                                            "selectionValues"
+                                        ],
+                                        "type": "object"
+                                    }
+                                },
+                                "required": [
+                                    "dataType",
+                                    "parameterName"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "tags": {
+                            "items": {
+                                "properties": {
+                                    "id": {
+                                        "type": "string"
+                                    },
+                                    "name": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "name"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "templateContent": {
+                            "type": "string"
+                        },
+                        "templateParams": {
+                            "items": {
+                                "properties": {
+                                    "binding": {
+                                        "type": "string"
+                                    },
+                                    "customOrder": {
+                                        "type": "integer"
+                                    },
+                                    "dataType": {
+                                        "enum": [
+                                            "STRING",
+                                            "INTEGER",
+                                            "IPADDRESS",
+                                            "MACADDRESS",
+                                            "SECTIONDIVIDER"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "defaultValue": {
+                                        "type": "string"
+                                    },
+                                    "description": {
+                                        "type": "string"
+                                    },
+                                    "displayName": {
+                                        "type": "string"
+                                    },
+                                    "group": {
+                                        "type": "string"
+                                    },
+                                    "id": {
+                                        "type": "string"
+                                    },
+                                    "instructionText": {
+                                        "type": "string"
+                                    },
+                                    "key": {
+                                        "type": "string"
+                                    },
+                                    "notParam": {
+                                        "type": "boolean"
+                                    },
+                                    "order": {
+                                        "type": "integer"
+                                    },
+                                    "paramArray": {
+                                        "type": "boolean"
+                                    },
+                                    "parameterName": {
+                                        "type": "string"
+                                    },
+                                    "provider": {
+                                        "type": "string"
+                                    },
+                                    "range": {
+                                        "items": {
+                                            "properties": {
+                                                "id": {
+                                                    "type": "string"
+                                                },
+                                                "maxValue": {
+                                                    "type": "integer"
+                                                },
+                                                "minValue": {
+                                                    "type": "integer"
+                                                }
+                                            },
+                                            "required": [
+                                                "maxValue",
+                                                "minValue"
+                                            ],
+                                            "type": "object"
+                                        },
+                                        "type": "array"
+                                    },
+                                    "required": {
+                                        "type": "boolean"
+                                    },
+                                    "selection": {
+                                        "properties": {
+                                            "defaultSelectedValues": {
+                                                "items": {
+                                                    "type": "string"
+                                                },
+                                                "type": "array"
+                                            },
+                                            "id": {
+                                                "type": "string"
+                                            },
+                                            "selectionType": {
+                                                "enum": [
+                                                    "SINGLE_SELECT",
+                                                    "MULTI_SELECT"
+                                                ],
+                                                "type": "string"
+                                            },
+                                            "selectionValues": {
+                                                "type": "object"
+                                            }
+                                        },
+                                        "required": [
+                                            "selectionType",
+                                            "selectionValues"
+                                        ],
+                                        "type": "object"
+                                    }
+                                },
+                                "required": [
+                                    "dataType",
+                                    "parameterName"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "version": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "deviceTypes",
+                        "language",
+                        "name",
+                        "projectName"
+                    ],
+                    "type": "object"
                 },
                 "type": "array"
-                },
-                "id": {
-                "type": "string"
-                },
-                "language": {
-                "type": "string"
-                },
-                "name": {
-                "type": "string"
-                },
-                "projectName": {
-                "type": "string"
-                },
-                "rollbackTemplateParams": {
-                "items": {
-                "properties": {
-                "binding": {
-                "type": "string"
-                },
-                "customOrder": {
+            },
+            "createTime": {
                 "type": "integer"
+            },
+            "customParamsOrder": {
+                "type": "boolean"
+            },
+            "description": {
+                "type": "string"
+            },
+            "deviceTypes": {
+                "items": {
+                    "properties": {
+                        "productFamily": {
+                            "type": "string"
+                        },
+                        "productSeries": {
+                            "type": "string"
+                        },
+                        "productType": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "productFamily"
+                    ],
+                    "type": "object"
                 },
-                "dataType": {
+                "type": "array"
+            },
+            "failurePolicy": {
                 "enum": [
-                "STRING",
-                "INTEGER",
-                "IPADDRESS",
-                "MACADDRESS",
-                "SECTIONDIVIDER"
+                    "ABORT_ON_ERROR",
+                    "CONTINUE_ON_ERROR",
+                    "ROLLBACK_ON_ERROR",
+                    "ROLLBACK_TARGET_ON_ERROR",
+                    "ABORT_TARGET_ON_ERROR"
                 ],
                 "type": "string"
-                },
-                "defaultValue": {
+            },
+            "id": {
                 "type": "string"
-                },
-                "description":
-                 {
+            },
+            "language": {
                 "type": "string"
-                },
-                "displayName": {
-                "type": "string"
-                },
-                "group": {
-                "type": "string"
-                },
-                "id": {
-                "type": "string"
-                },
-                "instructionText": {
-                "type": "string"
-                },
-                "key": {
-                "type": "string"
-                },
-                "notParam": {
-                "type": "boolean"
-                },
-                "order": {
+            },
+            "lastUpdateTime": {
                 "type": "integer"
-                },
-                "paramArray": {
-                "type": "boolean"
-                },
-                "parameterName": {
+            },
+            "latestVersionTime": {
+                "type": "integer"
+            },
+            "name": {
                 "type": "string"
-                },
-                "provider": {
+            },
+            "parentTemplateId": {
                 "type": "string"
-                },
-                "range": {
+            },
+            "projectId": {
+                "type": "string"
+            },
+            "projectName": {
+                "type": "string"
+            },
+            "rollbackTemplateContent": {
+                "type": "string"
+            },
+            "rollbackTemplateParams": {
                 "items": {
-                "properties": {
-                "id": {
-                "type": "string"
-                },
-                "maxValue": {
-                "type": "integer"
-                },
-                "minValue": {
-                "type": "integer"
-                }
-                },
-                "required": [
-                "maxValue",
-                "minValue"
-                ],
-                "type": "object"
+                    "properties": {
+                        "binding": {
+                            "type": "string"
+                        },
+                        "customOrder": {
+                            "type": "integer"
+                        },
+                        "dataType": {
+                            "enum": [
+                                "STRING",
+                                "INTEGER",
+                                "IPADDRESS",
+                                "MACADDRESS",
+                                "SECTIONDIVIDER"
+                            ],
+                            "type": "string"
+                        },
+                        "defaultValue": {
+                            "type": "string"
+                        },
+                        "description": {
+                            "type": "string"
+                        },
+                        "displayName": {
+                            "type": "string"
+                        },
+                        "group": {
+                            "type": "string"
+                        },
+                        "id": {
+                            "type": "string"
+                        },
+                        "instructionText": {
+                            "type": "string"
+                        },
+                        "key": {
+                            "type": "string"
+                        },
+                        "notParam": {
+                            "type": "boolean"
+                        },
+                        "order": {
+                            "type": "integer"
+                        },
+                        "paramArray": {
+                            "type": "boolean"
+                        },
+                        "parameterName": {
+                            "type": "string"
+                        },
+                        "provider": {
+                            "type": "string"
+                        },
+                        "range": {
+                            "items": {
+                                "properties": {
+                                    "id": {
+                                        "type": "string"
+                                    },
+                                    "maxValue": {
+                                        "type": "integer"
+                                    },
+                                    "minValue": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "required": [
+                                    "maxValue",
+                                    "minValue"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "required": {
+                            "type": "boolean"
+                        },
+                        "selection": {
+                            "properties": {
+                                "defaultSelectedValues": {
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "type": "array"
+                                },
+                                "id": {
+                                    "type": "string"
+                                },
+                                "selectionType": {
+                                    "enum": [
+                                        "SINGLE_SELECT",
+                                        "MULTI_SELECT"
+                                    ],
+                                    "type": "string"
+                                },
+                                "selectionValues": {
+                                    "type": "object"
+                                }
+                            },
+                            "required": [
+                                "selectionType",
+                                "selectionValues"
+                            ],
+                            "type": "object"
+                        }
+                    },
+                    "required": [
+                        "dataType",
+                        "parameterName"
+                    ],
+                    "type": "object"
                 },
                 "type": "array"
-                },
-                "required": {
-                "type": "boolean"
-                },
-                "selection": {
-                "properties": {
-                "defaultSelectedValues": {
+            },
+            "softwareType": {
+                "type": "string"
+            },
+            "softwareVariant": {
+                "type": "string"
+            },
+            "softwareVersion": {
+                "type": "string"
+            },
+            "tags": {
                 "items": {
-                "type": "string"
+                    "properties": {
+                        "id": {
+                            "type": "string"
+                        },
+                        "name": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "name"
+                    ],
+                    "type": "object"
                 },
                 "type": "array"
-                },
-                "id": {
+            },
+            "templateContent": {
                 "type": "string"
-                },
-                "selectionType": {
-                "enum": [
-                "SINGLE_SELECT",
-                "MULTI_SELECT"
-                ],
-                "type": "string"
-                },
-                "selectionValues": {
-                "type": "object"
-                }
-                },
-                "required": [
-                "selectionType",
-                "selectionValues"
-                ],
-                "type": "object"
-                }
-                },
-                "required": [
-                "dataType",
-                "parameterName"
-                ],
-                "type": "object"
-                },
-                "type": "array"
-                },
-                "tags": {
+            },
+            "templateParams": {
                 "items": {
+                    "properties": {
+                        "binding": {
+                            "type": "string"
+                        },
+                        "customOrder": {
+                            "type": "integer"
+                        },
+                        "dataType": {
+                            "enum": [
+                                "STRING",
+                                "INTEGER",
+                                "IPADDRESS",
+                                "MACADDRESS",
+                                "SECTIONDIVIDER"
+                            ],
+                            "type": "string"
+                        },
+                        "defaultValue": {
+                            "type": "string"
+                        },
+                        "description": {
+                            "type": "string"
+                        },
+                        "displayName": {
+                            "type": "string"
+                        },
+                        "group": {
+                            "type": "string"
+                        },
+                        "id": {
+                            "type": "string"
+                        },
+                        "instructionText": {
+                            "type": "string"
+                        },
+                        "key": {
+                            "type": "string"
+                        },
+                        "notParam": {
+                            "type": "boolean"
+                        },
+                        "order": {
+                            "type": "integer"
+                        },
+                        "paramArray": {
+                            "type": "boolean"
+                        },
+                        "parameterName": {
+                            "type": "string"
+                        },
+                        "provider": {
+                            "type": "string"
+                        },
+                        "range": {
+                            "items": {
+                                "properties": {
+                                    "id": {
+                                        "type": "string"
+                                    },
+                                    "maxValue": {
+                                        "type": "integer"
+                                    },
+                                    "minValue": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "required": [
+                                    "maxValue",
+                                    "minValue"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "required": {
+                            "type": "boolean"
+                        },
+                        "selection": {
+                            "properties": {
+                                "defaultSelectedValues": {
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "type": "array"
+                                },
+                                "id": {
+                                    "type": "string"
+                                },
+                                "selectionType": {
+                                    "enum": [
+                                        "SINGLE_SELECT",
+                                        "MULTI_SELECT"
+                                    ],
+                                    "type": "string"
+                                },
+                                "selectionValues": {
+                                    "type": "object"
+                                }
+                            },
+                            "required": [
+                                "selectionType",
+                                "selectionValues"
+                            ],
+                            "type": "object"
+                        }
+                    },
+                    "required": [
+                        "dataType",
+                        "parameterName"
+                    ],
+                    "type": "object"
+                },
+                "type": "array"
+            },
+            "validationErrors": {
                 "properties": {
-                "id": {
-                "type": "string"
-                },
-                "name": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "name"
-                ],
-                "type": "object"
-                },
-                "type": "array"
-                },
-                "templateContent": {
-                "type": "string"
-                },
-                "templateParams": {
-                "items": {
-                "properties": {
-                "binding": {
-                "type": "string"
-                },
-                "customOrder": {
-                "type": "integer"
-                },
-                "dataType": {
-                "enum": [
-                "STRING",
-                "INTEGER",
-                "IPADDRESS",
-                "MACADDRESS",
-                "SECTIONDIVIDER"
-                ],
-                "type": "string"
-                },
-                "defaultValue": {
-                "type": "string"
-                },
-                "description":
-                 {
-                "type": "string"
-                },
-                "displayName": {
-                "type": "string"
-                },
-                "group": {
-                "type": "string"
-                },
-                "id": {
-                "type": "string"
-                },
-                "instructionText": {
-                "type": "string"
-                },
-                "key": {
-                "type": "string"
-                },
-                "notParam": {
-                "type": "boolean"
-                },
-                "order": {
-                "type": "integer"
-                },
-                "paramArray": {
-                "type": "boolean"
-                },
-                "parameterName": {
-                "type": "string"
-                },
-                "provider": {
-                "type": "string"
-                },
-                "range": {
-                "items": {
-                "properties": {
-                "id": {
-                "type": "string"
-                },
-                "maxValue": {
-                "type": "integer"
-                },
-                "minValue": {
-                "type": "integer"
-                }
-                },
-                "required": [
-                "maxValue",
-                "minValue"
-                ],
-                "type": "object"
-                },
-                "type": "array"
-                },
-                "required": {
-                "type": "boolean"
-                },
-                "selection": {
-                "properties": {
-                "defaultSelectedValues": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "id": {
-                "type": "string"
-                },
-                "selectionType": {
-                "enum": [
-                "SINGLE_SELECT",
-                "MULTI_SELECT"
-                ],
-                "type": "string"
-                },
-                "selectionValues": {
-                "type": "object"
-                }
-                },
-                "required": [
-                "selectionType",
-                "selectionValues"
-                ],
-                "type": "object"
-                }
-                },
-                "required": [
-                "dataType",
-                "parameterName"
-                ],
-                "type": "object"
-                },
-                "type": "array"
-                },
-                "version": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "deviceTypes",
-                "language",
-                "name",
-                "projectName"
-                ],
-                "type": "object"
-                },
-                "type": "array"
-                },
-                "createTime": {
-                "type": "integer"
-                },
-                "customParamsOrder": {
-                "type": "boolean"
-                },
-                "description":
-                 {
-                "type": "string"
-                },
-                "deviceTypes": {
-                "items": {
-                "properties": {
-                "productFamily": {
-                "type": "string"
-                },
-                "productSeries": {
-                "type": "string"
-                },
-                "productType": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "productFamily"
-                ],
-                "type": "object"
-                },
-                "type": "array"
-                },
-                "failurePolicy": {
-                "enum": [
-                "ABORT_ON_ERROR",
-                "CONTINUE_ON_ERROR",
-                "ROLLBACK_ON_ERROR",
-                "ROLLBACK_TARGET_ON_ERROR",
-                "ABORT_TARGET_ON_ERROR"
-                ],
-                "type": "string"
-                },
-                "id": {
-                "type": "string"
-                },
-                "language": {
-                "type": "string"
-                },
-                "lastUpdateTime": {
-                "type": "integer"
-                },
-                "latestVersionTime": {
-                "type": "integer"
-                },
-                "name": {
-                "type": "string"
-                },
-                "parentTemplateId": {
-                "type": "string"
-                },
-                "projectId": {
-                "type": "string"
-                },
-                "projectName": {
-                "type": "string"
-                },
-                "rollbackTemplateContent": {
-                "type": "string"
-                },
-                "rollbackTemplateParams": {
-                "items": {
-                "properties": {
-                "binding": {
-                "type": "string"
-                },
-                "customOrder": {
-                "type": "integer"
-                },
-                "dataType": {
-                "enum": [
-                "STRING",
-                "INTEGER",
-                "IPADDRESS",
-                "MACADDRESS",
-                "SECTIONDIVIDER"
-                ],
-                "type": "string"
-                },
-                "defaultValue": {
-                "type": "string"
-                },
-                "description":
-                 {
-                "type": "string"
-                },
-                "displayName": {
-                "type": "string"
-                },
-                "group": {
-                "type": "string"
-                },
-                "id": {
-                "type": "string"
-                },
-                "instructionText": {
-                "type": "string"
-                },
-                "key": {
-                "type": "string"
-                },
-                "notParam": {
-                "type": "boolean"
-                },
-                "order": {
-                "type": "integer"
-                },
-                "paramArray": {
-                "type": "boolean"
-                },
-                "parameterName": {
-                "type": "string"
-                },
-                "provider": {
-                "type": "string"
-                },
-                "range": {
-                "items": {
-                "properties": {
-                "id": {
-                "type": "string"
-                },
-                "maxValue": {
-                "type": "integer"
-                },
-                "minValue": {
-                "type": "integer"
-                }
-                },
-                "required": [
-                "maxValue",
-                "minValue"
-                ],
-                "type": "object"
-                },
-                "type": "array"
-                },
-                "required": {
-                "type": "boolean"
-                },
-                "selection": {
-                "properties": {
-                "defaultSelectedValues": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "id": {
-                "type": "string"
-                },
-                "selectionType": {
-                "enum": [
-                "SINGLE_SELECT",
-                "MULTI_SELECT"
-                ],
-                "type": "string"
-                },
-                "selectionValues": {
-                "type": "object"
-                }
-                },
-                "required": [
-                "selectionType",
-                "selectionValues"
-                ],
-                "type": "object"
-                }
-                },
-                "required": [
-                "dataType",
-                "parameterName"
-                ],
-                "type": "object"
-                },
-                "type": "array"
-                },
-                "softwareType": {
-                "type": "string"
-                },
-                "softwareVariant": {
-                "type": "string"
-                },
-                "softwareVersion": {
-                "type": "string"
-                },
-                "tags": {
-                "items": {
-                "properties": {
-                "id": {
-                "type": "string"
-                },
-                "name": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "name"
-                ],
-                "type": "object"
-                },
-                "type": "array"
-                },
-                "templateContent": {
-                "type": "string"
-                },
-                "templateParams": {
-                "items": {
-                "properties": {
-                "binding": {
-                "type": "string"
-                },
-                "customOrder": {
-                "type": "integer"
-                },
-                "dataType": {
-                "enum": [
-                "STRING",
-                "INTEGER",
-                "IPADDRESS",
-                "MACADDRESS",
-                "SECTIONDIVIDER"
-                ],
-                "type": "string"
-                },
-                "defaultValue": {
-                "type": "string"
-                },
-                "description":
-                 {
-                "type": "string"
-                },
-                "displayName": {
-                "type": "string"
-                },
-                "group": {
-                "type": "string"
-                },
-                "id": {
-                "type": "string"
-                },
-                "instructionText": {
-                "type": "string"
-                },
-                "key": {
-                "type": "string"
-                },
-                "notParam": {
-                "type": "boolean"
-                },
-                "order": {
-                "type": "integer"
-                },
-                "paramArray": {
-                "type": "boolean"
-                },
-                "parameterName": {
-                "type": "string"
-                },
-                "provider": {
-                "type": "string"
-                },
-                "range": {
-                "items": {
-                "properties": {
-                "id": {
-                "type": "string"
-                },
-                "maxValue": {
-                "type": "integer"
-                },
-                "minValue": {
-                "type": "integer"
-                }
-                },
-                "required": [
-                "maxValue",
-                "minValue"
-                ],
-                "type": "object"
-                },
-                "type": "array"
-                },
-                "required": {
-                "type": "boolean"
-                },
-                "selection": {
-                "properties": {
-                "defaultSelectedValues": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "id": {
-                "type": "string"
-                },
-                "selectionType": {
-                "enum": [
-                "SINGLE_SELECT",
-                "MULTI_SELECT"
-                ],
-                "type": "string"
-                },
-                "selectionValues": {
-                "type": "object"
-                }
-                },
-                "required": [
-                "selectionType",
-                "selectionValues"
-                ],
-                "type": "object"
-                }
-                },
-                "required": [
-                "dataType",
-                "parameterName"
-                ],
-                "type": "object"
-                },
-                "type": "array"
-                },
-                "validationErrors": {
-                "properties": {
-                "rollbackTemplateErrors": {
-                "type": "object"
-                },
-                "templateErrors": {
-                "type": "object"
-                },
-                "templateId": {
-                "type": "string"
-                },
-                "templateVersion": {
-                "type": "string"
-                }
+                    "rollbackTemplateErrors": {},
+                    "templateErrors": {},
+                    "templateId": {
+                        "type": "string"
+                    },
+                    "templateVersion": {
+                        "type": "string"
+                    }
                 },
                 "type": "object"
-                },
-                "version": {
+            },
+            "version": {
                 "type": "string"
-                }
-                },
-                "required": [
-                "deviceTypes",
-                "language",
-                "name",
-                "projectName",
-                "softwareType"
-                ],
-                "type": "object"
-                },
-                "type": "array"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            }
+        },
+        "required": [
+            "deviceTypes",
+            "language",
+            "name",
+            "projectName",
+            "softwareType"
+        ],
+        "type": "object"
+    },
+    "type": "array"
+}
+'''))
 
     def validate(self, request):
         try:

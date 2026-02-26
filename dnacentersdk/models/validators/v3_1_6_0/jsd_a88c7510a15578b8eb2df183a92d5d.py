@@ -36,46 +36,37 @@ class JSONSchemaValidatorA88C7510A15578B8Eb2Df183A92D5D(object):
     """AddRoleAPI request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorA88C7510A15578B8Eb2Df183A92D5D, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "description": {
+            "type": "string"
+        },
+        "resourceTypes": {
+            "items": {
                 "properties": {
-                "description":
-                 {
-                "type": "string"
+                    "operations": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "type": {
+                        "type": "string"
+                    }
                 },
-                "resourceTypes": {
-                "items": {
-                "properties": {
-                "operations": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "type": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "type",
-                "operations"
-                ],
                 "type": "object"
-                },
-                "type": "array"
-                },
-                "role": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "role",
-                "resourceTypes"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        },
+        "role": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

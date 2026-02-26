@@ -36,35 +36,32 @@ class JSONSchemaValidatorB3Ff5F865F1C8122A0Ec8Ca73921(object):
     """UntaggingGoldenImage request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorB3Ff5F865F1C8122A0Ec8Ca73921, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "deviceRoles": {
-                "items": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "deviceRoles": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                },
-                "deviceTags": {
-                "items": {
+            },
+            "type": "array"
+        },
+        "deviceTags": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                },
-                "productNameOrdinal": {
-                "type": "number"
-                },
-                "supervisorProductNameOrdinal": {
-                "type": "number"
-                }
-                },
-                "required": [
-                "productNameOrdinal"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        },
+        "productNameOrdinal": {
+            "type": "number"
+        },
+        "supervisorProductNameOrdinal": {
+            "type": "number"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

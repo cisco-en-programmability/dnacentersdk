@@ -36,71 +36,61 @@ class JSONSchemaValidatorB119A4D455E35Cc3B2Cc6695A045Cbfa(object):
     """LANAutomationStart request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorB119A4D455E35Cc3B2Cc6695A045Cbfa, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "items": {
+        "properties": {
+            "discoveredDeviceSiteNameHierarchy": {
+                "type": "string"
+            },
+            "hostNameFileId": {
+                "type": "string"
+            },
+            "hostNamePrefix": {
+                "type": "string"
+            },
+            "ipPools": {
                 "items": {
-                "properties": {
-                "discoveredDeviceSiteNameHierarchy": {
-                "type": "string"
-                },
-                "hostNameFileId": {
-                "type": "string"
-                },
-                "hostNamePrefix": {
-                "type": "string"
-                },
-                "ipPools": {
-                "items": {
-                "properties": {
-                "ipPoolName": {
-                "type": "string"
-                },
-                "ipPoolRole": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "ipPoolName",
-                "ipPoolRole"
-                ],
-                "type": "object"
+                    "properties": {
+                        "ipPoolName": {
+                            "type": "string"
+                        },
+                        "ipPoolRole": {
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
                 },
                 "type": "array"
-                },
-                "isisDomainPwd": {
+            },
+            "isisDomainPwd": {
                 "type": "string"
-                },
-                "mulitcastEnabled": {
+            },
+            "mulitcastEnabled": {
                 "type": "boolean"
-                },
-                "peerDeviceManagmentIPAddress": {
+            },
+            "peerDeviceManagmentIPAddress": {
                 "type": "string"
-                },
-                "primaryDeviceInterfaceNames": {
+            },
+            "primaryDeviceInterfaceNames": {
                 "items": {
-                "type": "string"
+                    "type": "string"
                 },
                 "type": "array"
-                },
-                "primaryDeviceManagmentIPAddress": {
+            },
+            "primaryDeviceManagmentIPAddress": {
                 "type": "string"
-                },
-                "redistributeIsisToBgp": {
+            },
+            "redistributeIsisToBgp": {
                 "type": "boolean"
-                }
-                },
-                "required": [
-                "discoveredDeviceSiteNameHierarchy",
-                "primaryDeviceManagmentIPAddress",
-                "primaryDeviceInterfaceNames",
-                "ipPools"
-                ],
-                "type": "object"
-                },
-                "type": "array"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            }
+        },
+        "type": "object"
+    },
+    "type": "array"
+}
+'''))
 
     def validate(self, request):
         try:

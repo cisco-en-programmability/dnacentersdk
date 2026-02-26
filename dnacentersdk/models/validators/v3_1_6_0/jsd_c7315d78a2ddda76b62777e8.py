@@ -36,149 +36,133 @@ class JSONSchemaValidatorC7315D78A2DdDa76B62777E8(object):
     """ReservecreateIPAddressSubpools request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorC7315D78A2DdDa76B62777E8, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "ipV4AddressSpace": {
-                "properties": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "ipV4AddressSpace": {
+            "properties": {
                 "addressSpaceId": {
-                "type": "string"
+                    "type": "string"
                 },
                 "assignedAddresses": {
-                "type": "string"
+                    "type": "string"
                 },
                 "defaultAssignedAddresses": {
-                "type": "string"
+                    "type": "string"
                 },
                 "dhcpServers": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
                 },
                 "dnsServers": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
                 },
                 "gatewayIpAddress": {
-                "type": "string"
+                    "type": "string"
                 },
                 "globalPoolId": {
-                "type": "string"
+                    "type": "string"
                 },
                 "overlapping": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "prefixLength": {
-                "type": "number"
+                    "type": "number"
                 },
                 "slaacSupport": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "subnet": {
-                "type": "string"
+                    "type": "string"
                 },
                 "totalAddresses": {
-                "type": "string"
+                    "type": "string"
                 },
                 "unassignableAddresses": {
-                "type": "string"
+                    "type": "string"
                 }
-                },
-                "required": [
-                "subnet",
-                "prefixLength",
-                "globalPoolId"
-                ],
-                "type": "object"
-                },
-                "ipV6AddressSpace": {
-                "properties": {
+            },
+            "type": "object"
+        },
+        "ipV6AddressSpace": {
+            "properties": {
                 "addressSpaceId": {
-                "type": "string"
+                    "type": "string"
                 },
                 "assignedAddresses": {
-                "type": "string"
+                    "type": "string"
                 },
                 "defaultAssignedAddresses": {
-                "type": "string"
+                    "type": "string"
                 },
                 "dhcpServers": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
                 },
                 "dnsServers": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
                 },
                 "gatewayIpAddress": {
-                "type": "string"
+                    "type": "string"
                 },
                 "globalPoolId": {
-                "type": "string"
+                    "type": "string"
                 },
                 "overlapping": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "prefixLength": {
-                "type": "number"
+                    "type": "number"
                 },
                 "slaacSupport": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "subnet": {
-                "type": "string"
+                    "type": "string"
                 },
                 "totalAddresses": {
-                "type": "string"
+                    "type": "string"
                 },
                 "unassignableAddresses": {
-                "type": "string"
+                    "type": "string"
                 }
-                },
-                "required": [
-                "subnet",
-                "prefixLength",
-                "globalPoolId"
-                ],
-                "type": "object"
-                },
-                "name": {
-                "type": "string"
-                },
-                "poolType": {
-                "enum": [
+            },
+            "type": "object"
+        },
+        "name": {
+            "type": "string"
+        },
+        "poolType": {
+            "enum": [
                 "Generic",
                 "LAN",
                 "Management",
                 "Service",
                 "WAN"
-                ],
-                "type": "string"
-                },
-                "siteId": {
-                "type": "string"
-                },
-                "siteName": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "ipV4AddressSpace",
-                "name",
-                "poolType",
-                "siteId"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            ],
+            "type": "string"
+        },
+        "siteId": {
+            "type": "string"
+        },
+        "siteName": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

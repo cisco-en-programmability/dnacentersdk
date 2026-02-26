@@ -36,24 +36,20 @@ class JSONSchemaValidatorFb5E152D4D3D59F5Afd92F717F3A1Eea(object):
     """CreateInterface request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorFb5E152D4D3D59F5Afd92F717F3A1Eea, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "interfaceName": {
-                "type": "string"
-                },
-                "vlanId": {
-                "type": "integer"
-                }
-                },
-                "required": [
-                "interfaceName",
-                "vlanId"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "interfaceName": {
+            "type": "string"
+        },
+        "vlanId": {
+            "type": "integer"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

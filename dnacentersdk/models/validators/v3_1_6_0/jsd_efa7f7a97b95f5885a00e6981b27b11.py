@@ -36,27 +36,23 @@ class JSONSchemaValidatorEfa7F7A97B95F5885A00E6981B27B11(object):
     """FactoryResetAccessPoints request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorEfa7F7A97B95F5885A00E6981B27B11, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "apMacAddresses": {
-                "items": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "apMacAddresses": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                },
-                "keepStaticIPConfig": {
-                "type": "boolean"
-                }
-                },
-                "required": [
-                "keepStaticIPConfig",
-                "apMacAddresses"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        },
+        "keepStaticIPConfig": {
+            "type": "boolean"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

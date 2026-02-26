@@ -36,23 +36,20 @@ class JSONSchemaValidatorE1A76C121857A085149E62E56Caadd(object):
     """VersionTemplate request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorE1A76C121857A085149E62E56Caadd, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "comments": {
-                "type": "string"
-                },
-                "templateId": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "templateId"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "comments": {
+            "type": "string"
+        },
+        "templateId": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

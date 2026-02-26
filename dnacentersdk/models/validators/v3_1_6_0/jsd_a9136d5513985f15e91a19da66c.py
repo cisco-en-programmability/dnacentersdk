@@ -36,41 +36,41 @@ class JSONSchemaValidatorA9136D5513985F15E91A19Da66C(object):
     """TriggerSoftwareImageActivation request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorA9136D5513985F15E91A19Da66C, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "items": {
-                "properties": {
-                "activateLowerImageVersion": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "items": {
+        "properties": {
+            "activateLowerImageVersion": {
                 "type": "boolean"
-                },
-                "deviceUpgradeMode": {
+            },
+            "deviceUpgradeMode": {
                 "type": "string"
-                },
-                "deviceUuid": {
+            },
+            "deviceUuid": {
                 "type": "string"
-                },
-                "distributeIfNeeded": {
+            },
+            "distributeIfNeeded": {
                 "type": "boolean"
-                },
-                "imageUuidList": {
+            },
+            "imageUuidList": {
                 "items": {
-                "type": "string"
+                    "type": "string"
                 },
                 "type": "array"
-                },
-                "smuImageUuidList": {
+            },
+            "smuImageUuidList": {
                 "items": {
-                "type": "string"
+                    "type": "string"
                 },
                 "type": "array"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            }
+        },
+        "type": "object"
+    },
+    "type": "array"
+}
+'''))
 
     def validate(self, request):
         try:

@@ -36,60 +36,60 @@ class JSONSchemaValidatorEdc44E0E7A513191Cc16Dc2B4Da88E(object):
     """SubmitRequestForSiteAnalyticsTrendData request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorEdc44E0E7A513191Cc16Dc2B4Da88E, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "attributes": {
+            "items": {
+                "type": "string"
+            },
+            "type": "array"
+        },
+        "endTime": {
+            "type": "integer"
+        },
+        "filters": {
+            "items": {
                 "properties": {
-                "attributes": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "endTime": {
-                "type": "integer"
-                },
-                "filters": {
-                "items": {
-                "properties": {
-                "key": {
-                "type": "string"
-                },
-                "operator": {
-                "type": "string"
-                },
-                "value": {
-                "type": "string"
-                }
+                    "key": {
+                        "type": "string"
+                    },
+                    "operator": {
+                        "type": "string"
+                    },
+                    "value": {
+                        "type": "string"
+                    }
                 },
                 "type": "object"
-                },
-                "type": "array"
-                },
-                "page": {
-                "properties": {
+            },
+            "type": "array"
+        },
+        "page": {
+            "properties": {
                 "limit": {
-                "type": "integer"
+                    "type": "integer"
                 },
                 "offset": {
-                "type": "integer"
+                    "type": "integer"
                 },
                 "timestampOrder": {
-                "type": "string"
+                    "type": "string"
                 }
-                },
-                "type": "object"
-                },
-                "startTime": {
-                "type": "integer"
-                },
-                "trendInterval": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "object"
+        },
+        "startTime": {
+            "type": "integer"
+        },
+        "trendInterval": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

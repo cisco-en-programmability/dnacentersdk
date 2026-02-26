@@ -36,24 +36,21 @@ class JSONSchemaValidatorAd936677C99A58F6B532359D66Fe98A7(object):
     """UpdatesFloorSettingsV2 request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorAd936677C99A58F6B532359D66Fe98A7, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "unitsOfMeasure": {
-                "enum": [
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "unitsOfMeasure": {
+            "enum": [
                 "feet",
                 "meters"
-                ],
-                "type": "string"
-                }
-                },
-                "required": [
-                "unitsOfMeasure"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            ],
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

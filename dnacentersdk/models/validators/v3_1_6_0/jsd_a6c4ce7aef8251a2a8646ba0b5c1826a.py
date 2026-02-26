@@ -36,20 +36,17 @@ class JSONSchemaValidatorA6C4Ce7AEf8251A2A8646Ba0B5C1826A(object):
     """MobilityReset request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorA6C4Ce7AEf8251A2A8646Ba0B5C1826A, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "networkDeviceId": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "networkDeviceId"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "networkDeviceId": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

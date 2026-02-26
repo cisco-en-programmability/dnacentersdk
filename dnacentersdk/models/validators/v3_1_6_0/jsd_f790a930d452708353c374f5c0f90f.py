@@ -36,44 +36,38 @@ class JSONSchemaValidatorF790A930D452708353C374F5C0F90F(object):
     """APProvision request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorF790A930D452708353C374F5C0F90F, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "items": {
-                "properties": {
-                "customApGroupName": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "items": {
+        "properties": {
+            "customApGroupName": {
                 "type": "string"
-                },
-                "customFlexGroupName": {
+            },
+            "customFlexGroupName": {
                 "items": {
-                "type": "string"
+                    "type": "string"
                 },
                 "type": "array"
-                },
-                "deviceName": {
+            },
+            "deviceName": {
                 "type": "string"
-                },
-                "rfProfile": {
+            },
+            "rfProfile": {
                 "type": "string"
-                },
-                "siteNameHierarchy": {
+            },
+            "siteNameHierarchy": {
                 "type": "string"
-                },
-                "type": {
+            },
+            "type": {
                 "type": "string"
-                }
-                },
-                "required": [
-                "rfProfile",
-                "deviceName",
-                "type",
-                "siteNameHierarchy"
-                ],
-                "type": "object"
-                },
-                "type": "array"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            }
+        },
+        "type": "object"
+    },
+    "type": "array"
+}
+'''))
 
     def validate(self, request):
         try:

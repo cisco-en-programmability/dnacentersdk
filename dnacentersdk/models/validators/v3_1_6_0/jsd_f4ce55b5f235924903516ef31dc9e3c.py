@@ -36,47 +36,47 @@ class JSONSchemaValidatorF4Ce55B5F235924903516Ef31Dc9E3C(object):
     """ThreatDetails request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorF4Ce55B5F235924903516Ef31Dc9E3C, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "endTime": {
-                "type": "integer"
-                },
-                "isNewThreat": {
-                "type": "boolean"
-                },
-                "limit": {
-                "type": "integer"
-                },
-                "offset": {
-                "type": "integer"
-                },
-                "siteId": {
-                "items": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "endTime": {
+            "type": "integer"
+        },
+        "isNewThreat": {
+            "type": "boolean"
+        },
+        "limit": {
+            "type": "integer"
+        },
+        "offset": {
+            "type": "integer"
+        },
+        "siteId": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                },
-                "startTime": {
-                "type": "integer"
-                },
-                "threatLevel": {
-                "items": {
+            },
+            "type": "array"
+        },
+        "startTime": {
+            "type": "integer"
+        },
+        "threatLevel": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                },
-                "threatType": {
-                "items": {
+            },
+            "type": "array"
+        },
+        "threatType": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

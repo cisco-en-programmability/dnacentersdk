@@ -37,34 +37,29 @@ class JSONSchemaValidatorBa9E0F3A5Db5972A55D4B3Fcf2B5432(object):
     definition."""
     def __init__(self):
         super(JSONSchemaValidatorBa9E0F3A5Db5972A55D4B3Fcf2B5432, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "apProfileName": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "apProfileName": {
+            "type": "string"
+        },
+        "flexProfileName": {
+            "type": "string"
+        },
+        "siteIds": {
+            "items": {
                 "type": "string"
-                },
-                "flexProfileName": {
-                "type": "string"
-                },
-                "siteIds": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "siteTagName": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "siteIds",
-                "siteTagName",
-                "apProfileName"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        },
+        "siteTagName": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

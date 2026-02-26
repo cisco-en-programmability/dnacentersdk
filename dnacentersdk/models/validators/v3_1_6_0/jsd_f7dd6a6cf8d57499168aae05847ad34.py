@@ -36,650 +36,646 @@ class JSONSchemaValidatorF7Dd6A6Cf8D57499168Aae05847Ad34(object):
     """CreateSensorTestTemplate request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorF7Dd6A6Cf8D57499168Aae05847Ad34, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "apCoverage": {
+            "items": {
                 "properties": {
-                "apCoverage": {
-                "items": {
+                    "bands": {
+                        "type": "string"
+                    },
+                    "numberOfApsToTest": {
+                        "type": "integer"
+                    },
+                    "rssiThreshold": {
+                        "type": "integer"
+                    }
+                },
+                "type": "object"
+            },
+            "type": "array"
+        },
+        "connection": {
+            "type": "string"
+        },
+        "encryptionMode": {
+            "type": "string"
+        },
+        "locationInfoList": {
+            "items": {
                 "properties": {
-                "bands": {
-                "type": "string"
-                },
-                "numberOfApsToTest": {
-                "type": "integer"
-                },
-                "rssiThreshold": {
-                "type": "integer"
-                }
+                    "allSensors": {
+                        "type": "boolean"
+                    },
+                    "customManagementVlan": {
+                        "type": "boolean"
+                    },
+                    "locationId": {
+                        "type": "string"
+                    },
+                    "locationType": {
+                        "type": "string"
+                    },
+                    "macAddressList": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "managementVlan": {
+                        "type": "string"
+                    },
+                    "siteHierarchy": {
+                        "type": "string"
+                    }
                 },
                 "type": "object"
-                },
-                "type": "array"
-                },
-                "connection": {
-                "type": "string"
-                },
-                "encryptionMode": {
-                "type": "string"
-                },
-                "locationInfoList": {
-                "items": {
+            },
+            "type": "array"
+        },
+        "modelVersion": {
+            "type": "integer"
+        },
+        "name": {
+            "type": "string"
+        },
+        "profiles": {
+            "items": {
                 "properties": {
-                "allSensors": {
-                "type": "boolean"
-                },
-                "customManagementVlan": {
-                "type": "boolean"
-                },
-                "locationId": {
-                "type": "string"
-                },
-                "locationType": {
-                "type": "string"
-                },
-                "macAddressList": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "managementVlan": {
-                "type": "string"
-                },
-                "siteHierarchy": {
-                "type": "string"
-                }
+                    "authProtocol": {
+                        "type": "string"
+                    },
+                    "authType": {
+                        "type": "string"
+                    },
+                    "certdownloadurl": {
+                        "type": "string"
+                    },
+                    "certfilename": {
+                        "type": "string"
+                    },
+                    "certpassphrase": {
+                        "type": "string"
+                    },
+                    "certstatus": {
+                        "type": "string"
+                    },
+                    "certxferprotocol": {
+                        "type": "string"
+                    },
+                    "deviceType": {
+                        "type": "string"
+                    },
+                    "eapMethod": {
+                        "type": "string"
+                    },
+                    "extWebAuth": {
+                        "type": "boolean"
+                    },
+                    "extWebAuthAccessUrl": {
+                        "type": "string"
+                    },
+                    "extWebAuthHtmlTag": {
+                        "items": {
+                            "properties": {
+                                "label": {
+                                    "type": "string"
+                                },
+                                "tag": {
+                                    "type": "string"
+                                },
+                                "value": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "type": "array"
+                    },
+                    "extWebAuthPortal": {
+                        "type": "string"
+                    },
+                    "extWebAuthVirtualIp": {
+                        "type": "string"
+                    },
+                    "locationVlanList": {
+                        "items": {
+                            "properties": {
+                                "locationId": {
+                                    "type": "string"
+                                },
+                                "vlans": {
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "type": "array"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "type": "array"
+                    },
+                    "password": {
+                        "type": "string"
+                    },
+                    "passwordType": {
+                        "type": "string"
+                    },
+                    "profileName": {
+                        "type": "string"
+                    },
+                    "psk": {
+                        "type": "string"
+                    },
+                    "qosPolicy": {
+                        "type": "string"
+                    },
+                    "scep": {
+                        "type": "boolean"
+                    },
+                    "tests": {
+                        "items": {
+                            "properties": {
+                                "config": {
+                                    "items": {
+                                        "properties": {
+                                            "direction": {
+                                                "type": "string"
+                                            },
+                                            "domains": {
+                                                "items": {
+                                                    "type": "string"
+                                                },
+                                                "type": "array"
+                                            },
+                                            "downlinkTest": {
+                                                "type": "boolean"
+                                            },
+                                            "endPort": {
+                                                "type": "integer"
+                                            },
+                                            "exitCommand": {
+                                                "type": "string"
+                                            },
+                                            "finalPrompt": {
+                                                "type": "string"
+                                            },
+                                            "ndtServer": {
+                                                "type": "string"
+                                            },
+                                            "ndtServerPath": {
+                                                "type": "string"
+                                            },
+                                            "ndtServerPort": {
+                                                "type": "string"
+                                            },
+                                            "numPackets": {
+                                                "type": "string"
+                                            },
+                                            "password": {
+                                                "type": "string"
+                                            },
+                                            "passwordPrompt": {
+                                                "type": "string"
+                                            },
+                                            "pathToDownload": {
+                                                "type": "string"
+                                            },
+                                            "port": {
+                                                "type": "integer"
+                                            },
+                                            "probeType": {
+                                                "type": "string"
+                                            },
+                                            "protocol": {
+                                                "type": "string"
+                                            },
+                                            "proxyPassword": {
+                                                "type": "string"
+                                            },
+                                            "proxyPort": {
+                                                "type": "string"
+                                            },
+                                            "proxyServer": {
+                                                "type": "string"
+                                            },
+                                            "proxyUserName": {
+                                                "type": "string"
+                                            },
+                                            "server": {
+                                                "type": "string"
+                                            },
+                                            "servers": {
+                                                "items": {
+                                                    "type": "string"
+                                                },
+                                                "type": "array"
+                                            },
+                                            "sharedSecret": {
+                                                "type": "string"
+                                            },
+                                            "startPort": {
+                                                "type": "integer"
+                                            },
+                                            "transferType": {
+                                                "type": "string"
+                                            },
+                                            "udpBandwidth": {
+                                                "type": "integer"
+                                            },
+                                            "uplinkTest": {
+                                                "type": "boolean"
+                                            },
+                                            "url": {
+                                                "type": "string"
+                                            },
+                                            "userName": {
+                                                "type": "string"
+                                            },
+                                            "userNamePrompt": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    },
+                                    "type": "array"
+                                },
+                                "name": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "type": "array"
+                    },
+                    "username": {
+                        "type": "string"
+                    },
+                    "vlan": {
+                        "type": "string"
+                    },
+                    "whiteList": {
+                        "type": "boolean"
+                    }
                 },
                 "type": "object"
-                },
-                "type": "array"
-                },
-                "modelVersion": {
-                "type": "integer"
-                },
-                "name": {
-                "type": "string"
-                },
-                "profiles": {
-                "items": {
+            },
+            "type": "array"
+        },
+        "runNow": {
+            "type": "string"
+        },
+        "sensors": {
+            "items": {
                 "properties": {
-                "authProtocol": {
-                "type": "string"
+                    "allSensorAddition": {
+                        "type": "boolean"
+                    },
+                    "assigned": {
+                        "type": "boolean"
+                    },
+                    "configUpdated": {
+                        "type": "string"
+                    },
+                    "hostName": {
+                        "type": "string"
+                    },
+                    "iPerfInfo": {
+                        "type": "object"
+                    },
+                    "id": {
+                        "type": "string"
+                    },
+                    "ipAddress": {
+                        "type": "string"
+                    },
+                    "locationId": {
+                        "type": "string"
+                    },
+                    "macAddress": {
+                        "type": "string"
+                    },
+                    "markedForUninstall": {
+                        "type": "boolean"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "runNow": {
+                        "type": "string"
+                    },
+                    "sensorType": {
+                        "type": "string"
+                    },
+                    "servicePolicy": {
+                        "type": "string"
+                    },
+                    "status": {
+                        "type": "string"
+                    },
+                    "switchMac": {
+                        "type": "string"
+                    },
+                    "switchSerialNumber": {
+                        "type": "string"
+                    },
+                    "switchUuid": {
+                        "type": "string"
+                    },
+                    "targetAPs": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "testMacAddresses": {
+                        "type": "object"
+                    },
+                    "wiredApplicationMessage": {
+                        "type": "string"
+                    },
+                    "wiredApplicationStatus": {
+                        "type": "string"
+                    },
+                    "xorSensor": {
+                        "type": "boolean"
+                    }
                 },
-                "authType": {
-                "type": "string"
-                },
-                "certdownloadurl": {
-                "type": "string"
-                },
-                "certfilename": {
-                "type": "string"
-                },
-                "certpassphrase": {
-                "type": "string"
-                },
-                "certstatus": {
-                "type": "string"
-                },
-                "certxferprotocol": {
-                "type": "string"
-                },
-                "deviceType": {
-                "type": "string"
-                },
-                "eapMethod": {
-                "type": "string"
-                },
-                "extWebAuth": {
-                "type": "boolean"
-                },
-                "extWebAuthAccessUrl": {
-                "type": "string"
-                },
-                "extWebAuthHtmlTag": {
-                "items": {
+                "type": "object"
+            },
+            "type": "array"
+        },
+        "ssids": {
+            "items": {
                 "properties": {
-                "label": {
-                "type": "string"
-                },
-                "tag": {
-                "type": "string"
-                },
-                "value": {
-                "type": "string"
-                }
+                    "authProtocol": {
+                        "type": "string"
+                    },
+                    "authType": {
+                        "type": "string"
+                    },
+                    "bands": {
+                        "type": "string"
+                    },
+                    "certdownloadurl": {
+                        "type": "string"
+                    },
+                    "certfilename": {
+                        "type": "string"
+                    },
+                    "certpassphrase": {
+                        "type": "string"
+                    },
+                    "certstatus": {
+                        "type": "string"
+                    },
+                    "certxferprotocol": {
+                        "type": "string"
+                    },
+                    "eapMethod": {
+                        "type": "string"
+                    },
+                    "extWebAuth": {
+                        "type": "boolean"
+                    },
+                    "extWebAuthAccessUrl": {
+                        "type": "string"
+                    },
+                    "extWebAuthHtmlTag": {
+                        "items": {
+                            "properties": {
+                                "label": {
+                                    "type": "string"
+                                },
+                                "tag": {
+                                    "type": "string"
+                                },
+                                "value": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "type": "array"
+                    },
+                    "extWebAuthPortal": {
+                        "type": "string"
+                    },
+                    "extWebAuthVirtualIp": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "type": "integer"
+                    },
+                    "layer3webAuthEmailAddress": {
+                        "type": "string"
+                    },
+                    "layer3webAuthpassword": {
+                        "type": "string"
+                    },
+                    "layer3webAuthsecurity": {
+                        "type": "string"
+                    },
+                    "layer3webAuthuserName": {
+                        "type": "string"
+                    },
+                    "numAps": {
+                        "type": "integer"
+                    },
+                    "numSensors": {
+                        "type": "integer"
+                    },
+                    "password": {
+                        "type": "string"
+                    },
+                    "passwordType": {
+                        "type": "string"
+                    },
+                    "profileName": {
+                        "type": "string"
+                    },
+                    "proxyPassword": {
+                        "type": "string"
+                    },
+                    "proxyPort": {
+                        "type": "string"
+                    },
+                    "proxyServer": {
+                        "type": "string"
+                    },
+                    "proxyUserName": {
+                        "type": "string"
+                    },
+                    "psk": {
+                        "type": "string"
+                    },
+                    "qosPolicy": {
+                        "type": "string"
+                    },
+                    "scep": {
+                        "type": "boolean"
+                    },
+                    "ssid": {
+                        "type": "string"
+                    },
+                    "status": {
+                        "type": "string"
+                    },
+                    "tests": {
+                        "items": {
+                            "properties": {
+                                "config": {
+                                    "items": {
+                                        "properties": {
+                                            "direction": {
+                                                "type": "string"
+                                            },
+                                            "domains": {
+                                                "items": {
+                                                    "type": "string"
+                                                },
+                                                "type": "array"
+                                            },
+                                            "downlinkTest": {
+                                                "type": "boolean"
+                                            },
+                                            "endPort": {
+                                                "type": "integer"
+                                            },
+                                            "exitCommand": {
+                                                "type": "string"
+                                            },
+                                            "finalPrompt": {
+                                                "type": "string"
+                                            },
+                                            "ndtServer": {
+                                                "type": "string"
+                                            },
+                                            "ndtServerPath": {
+                                                "type": "string"
+                                            },
+                                            "ndtServerPort": {
+                                                "type": "string"
+                                            },
+                                            "numPackets": {
+                                                "type": "string"
+                                            },
+                                            "password": {
+                                                "type": "string"
+                                            },
+                                            "passwordPrompt": {
+                                                "type": "string"
+                                            },
+                                            "pathToDownload": {
+                                                "type": "string"
+                                            },
+                                            "port": {
+                                                "type": "integer"
+                                            },
+                                            "probeType": {
+                                                "type": "string"
+                                            },
+                                            "protocol": {
+                                                "type": "string"
+                                            },
+                                            "proxyPassword": {
+                                                "type": "string"
+                                            },
+                                            "proxyPort": {
+                                                "type": "string"
+                                            },
+                                            "proxyServer": {
+                                                "type": "string"
+                                            },
+                                            "proxyUserName": {
+                                                "type": "string"
+                                            },
+                                            "server": {
+                                                "type": "string"
+                                            },
+                                            "servers": {
+                                                "items": {
+                                                    "type": "string"
+                                                },
+                                                "type": "array"
+                                            },
+                                            "sharedSecret": {
+                                                "type": "string"
+                                            },
+                                            "startPort": {
+                                                "type": "integer"
+                                            },
+                                            "transferType": {
+                                                "type": "string"
+                                            },
+                                            "udpBandwidth": {
+                                                "type": "integer"
+                                            },
+                                            "uplinkTest": {
+                                                "type": "boolean"
+                                            },
+                                            "url": {
+                                                "type": "string"
+                                            },
+                                            "userName": {
+                                                "type": "string"
+                                            },
+                                            "userNamePrompt": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    },
+                                    "type": "array"
+                                },
+                                "name": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "type": "array"
+                    },
+                    "thirdParty": {
+                        "properties": {
+                            "selected": {
+                                "type": "boolean"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "username": {
+                        "type": "string"
+                    },
+                    "validFrom": {
+                        "type": "integer"
+                    },
+                    "validTo": {
+                        "type": "integer"
+                    },
+                    "whiteList": {
+                        "type": "boolean"
+                    },
+                    "wlanId": {
+                        "type": "integer"
+                    },
+                    "wlc": {
+                        "type": "string"
+                    }
                 },
                 "type": "object"
-                },
-                "type": "array"
-                },
-                "extWebAuthPortal": {
-                "type": "string"
-                },
-                "extWebAuthVirtualIp": {
-                "type": "string"
-                },
-                "locationVlanList": {
-                "items": {
-                "properties": {
-                "locationId": {
-                "type": "string"
-                },
-                "vlans": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                },
-                "password": {
-                "type": "string"
-                },
-                "passwordType": {
-                "type": "string"
-                },
-                "profileName": {
-                "type": "string"
-                },
-                "psk": {
-                "type": "string"
-                },
-                "qosPolicy": {
-                "type": "string"
-                },
-                "scep": {
-                "type": "boolean"
-                },
-                "tests": {
-                "items": {
-                "properties": {
-                "config": {
-                "items": {
-                "properties": {
-                "direction": {
-                "type": "string"
-                },
-                "domains": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "downlinkTest": {
-                "type": "boolean"
-                },
-                "endPort": {
-                "type": "integer"
-                },
-                "exitCommand": {
-                "type": "string"
-                },
-                "finalPrompt": {
-                "type": "string"
-                },
-                "ndtServer": {
-                "type": "string"
-                },
-                "ndtServerPath": {
-                "type": "string"
-                },
-                "ndtServerPort": {
-                "type": "string"
-                },
-                "numPackets": {
-                "type": "string"
-                },
-                "password": {
-                "type": "string"
-                },
-                "passwordPrompt": {
-                "type": "string"
-                },
-                "pathToDownload": {
-                "type": "string"
-                },
-                "port": {
-                "type": "integer"
-                },
-                "probeType": {
-                "type": "string"
-                },
-                "protocol": {
-                "type": "string"
-                },
-                "proxyPassword": {
-                "type": "string"
-                },
-                "proxyPort": {
-                "type": "string"
-                },
-                "proxyServer": {
-                "type": "string"
-                },
-                "proxyUserName": {
-                "type": "string"
-                },
-                "server": {
-                "type": "string"
-                },
-                "servers": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "sharedSecret": {
-                "type": "string"
-                },
-                "startPort": {
-                "type": "integer"
-                },
-                "transferType": {
-                "type": "string"
-                },
-                "udpBandwidth": {
-                "type": "integer"
-                },
-                "uplinkTest": {
-                "type": "boolean"
-                },
-                "url": {
-                "type": "string"
-                },
-                "userName": {
-                "type": "string"
-                },
-                "userNamePrompt": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                },
-                "name": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                },
-                "username": {
-                "type": "string"
-                },
-                "vlan": {
-                "type": "string"
-                },
-                "whiteList": {
-                "type": "boolean"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                },
-                "runNow": {
-                "type": "string"
-                },
-                "sensors": {
-                "items": {
-                "properties": {
-                "allSensorAddition": {
-                "type": "boolean"
-                },
-                "assigned": {
-                "type": "boolean"
-                },
-                "configUpdated": {
-                "type": "string"
-                },
-                "hostName": {
-                "type": "string"
-                },
-                "iPerfInfo": {
-                "type": "object"
-                },
-                "id": {
-                "type": "string"
-                },
-                "ipAddress": {
-                "type": "string"
-                },
-                "locationId": {
-                "type": "string"
-                },
-                "macAddress": {
-                "type": "string"
-                },
-                "markedForUninstall": {
-                "type": "boolean"
-                },
-                "name": {
-                "type": "string"
-                },
-                "runNow": {
-                "type": "string"
-                },
-                "sensorType": {
-                "type": "string"
-                },
-                "servicePolicy": {
-                "type": "string"
-                },
-                "status": {
-                "type": "string"
-                },
-                "switchMac": {
-                "type": "string"
-                },
-                "switchSerialNumber": {
-                "type": "string"
-                },
-                "switchUuid": {
-                "type": "string"
-                },
-                "targetAPs": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "testMacAddresses": {
-                "type": "object"
-                },
-                "wiredApplicationMessage": {
-                "type": "string"
-                },
-                "wiredApplicationStatus": {
-                "type": "string"
-                },
-                "xorSensor": {
-                "type": "boolean"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                },
-                "ssids": {
-                "items": {
-                "properties": {
-                "authProtocol": {
-                "type": "string"
-                },
-                "authType": {
-                "type": "string"
-                },
-                "bands": {
-                "type": "string"
-                },
-                "certdownloadurl": {
-                "type": "string"
-                },
-                "certfilename": {
-                "type": "string"
-                },
-                "certpassphrase": {
-                "type": "string"
-                },
-                "certstatus": {
-                "type": "string"
-                },
-                "certxferprotocol": {
-                "type": "string"
-                },
-                "eapMethod": {
-                "type": "string"
-                },
-                "extWebAuth": {
-                "type": "boolean"
-                },
-                "extWebAuthAccessUrl": {
-                "type": "string"
-                },
-                "extWebAuthHtmlTag": {
-                "items": {
-                "properties": {
-                "label": {
-                "type": "string"
-                },
-                "tag": {
-                "type": "string"
-                },
-                "value": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                },
-                "extWebAuthPortal": {
-                "type": "string"
-                },
-                "extWebAuthVirtualIp": {
-                "type": "string"
-                },
-                "id": {
-                "type": "integer"
-                },
-                "layer3webAuthEmailAddress": {
-                "type": "string"
-                },
-                "layer3webAuthpassword": {
-                "type": "string"
-                },
-                "layer3webAuthsecurity": {
-                "type": "string"
-                },
-                "layer3webAuthuserName": {
-                "type": "string"
-                },
-                "numAps": {
-                "type": "integer"
-                },
-                "numSensors": {
-                "type": "integer"
-                },
-                "password": {
-                "type": "string"
-                },
-                "passwordType": {
-                "type": "string"
-                },
-                "profileName": {
-                "type": "string"
-                },
-                "proxyPassword": {
-                "type": "string"
-                },
-                "proxyPort": {
-                "type": "string"
-                },
-                "proxyServer": {
-                "type": "string"
-                },
-                "proxyUserName": {
-                "type": "string"
-                },
-                "psk": {
-                "type": "string"
-                },
-                "qosPolicy": {
-                "type": "string"
-                },
-                "scep": {
-                "type": "boolean"
-                },
-                "ssid": {
-                "type": "string"
-                },
-                "status": {
-                "type": "string"
-                },
-                "tests": {
-                "items": {
-                "properties": {
-                "config": {
-                "items": {
-                "properties": {
-                "direction": {
-                "type": "string"
-                },
-                "domains": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "downlinkTest": {
-                "type": "boolean"
-                },
-                "endPort": {
-                "type": "integer"
-                },
-                "exitCommand": {
-                "type": "string"
-                },
-                "finalPrompt": {
-                "type": "string"
-                },
-                "ndtServer": {
-                "type": "string"
-                },
-                "ndtServerPath": {
-                "type": "string"
-                },
-                "ndtServerPort": {
-                "type": "string"
-                },
-                "numPackets": {
-                "type": "string"
-                },
-                "password": {
-                "type": "string"
-                },
-                "passwordPrompt": {
-                "type": "string"
-                },
-                "pathToDownload": {
-                "type": "string"
-                },
-                "port": {
-                "type": "integer"
-                },
-                "probeType": {
-                "type": "string"
-                },
-                "protocol": {
-                "type": "string"
-                },
-                "proxyPassword": {
-                "type": "string"
-                },
-                "proxyPort": {
-                "type": "string"
-                },
-                "proxyServer": {
-                "type": "string"
-                },
-                "proxyUserName": {
-                "type": "string"
-                },
-                "server": {
-                "type": "string"
-                },
-                "servers": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "sharedSecret": {
-                "type": "string"
-                },
-                "startPort": {
-                "type": "integer"
-                },
-                "transferType": {
-                "type": "string"
-                },
-                "udpBandwidth": {
-                "type": "integer"
-                },
-                "uplinkTest": {
-                "type": "boolean"
-                },
-                "url": {
-                "type": "string"
-                },
-                "userName": {
-                "type": "string"
-                },
-                "userNamePrompt": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                },
-                "name": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                },
-                "thirdParty": {
-                "properties": {
-                "selected": {
-                "type": "boolean"
-                }
-                },
-                "type": "object"
-                },
-                "username": {
-                "type": "string"
-                },
-                "validFrom": {
-                "type": "integer"
-                },
-                "validTo": {
-                "type": "integer"
-                },
-                "whiteList": {
-                "type": "boolean"
-                },
-                "wlanId": {
-                "type": "integer"
-                },
-                "wlc": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                },
-                "version": {
-                "type": "integer"
-                }
-                },
-                "required": [
-                "name",
-                "ssids"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        },
+        "version": {
+            "type": "integer"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

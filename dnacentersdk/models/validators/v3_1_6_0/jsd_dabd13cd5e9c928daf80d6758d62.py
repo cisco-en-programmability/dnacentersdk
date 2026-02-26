@@ -36,32 +36,29 @@ class JSONSchemaValidatorDabd13Cd5E9C928DAf80D6758D62(object):
     """AddLayer3VirtualNetworks request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorDabd13Cd5E9C928DAf80D6758D62, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "items": {
-                "properties": {
-                "anchoredSiteId": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "items": {
+        "properties": {
+            "anchoredSiteId": {
                 "type": "string"
-                },
-                "fabricIds": {
+            },
+            "fabricIds": {
                 "items": {
-                "type": "string"
+                    "type": "string"
                 },
                 "type": "array"
-                },
-                "virtualNetworkName": {
+            },
+            "virtualNetworkName": {
                 "type": "string"
-                }
-                },
-                "required": [
-                "virtualNetworkName"
-                ],
-                "type": "object"
-                },
-                "type": "array"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            }
+        },
+        "type": "object"
+    },
+    "type": "array"
+}
+'''))
 
     def validate(self, request):
         try:

@@ -36,23 +36,20 @@ class JSONSchemaValidatorDf26F516755A50B5B5477324Cf5Cb649(object):
     """DeviceRegistration request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorDf26F516755A50B5B5477324Cf5Cb649, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "device_uuids": {
-                "items": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "device_uuids": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                }
-                },
-                "required": [
-                "device_uuids"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

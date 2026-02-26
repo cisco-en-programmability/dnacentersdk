@@ -36,20 +36,17 @@ class JSONSchemaValidatorDa24Bdb30635515395471Fe644Cdc7B5(object):
     """UpdateNativeVlanSettingsBySite request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorDa24Bdb30635515395471Fe644Cdc7B5, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "nativeVlanId": {
-                "type": "integer"
-                }
-                },
-                "required": [
-                "nativeVlanId"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "nativeVlanId": {
+            "type": "integer"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

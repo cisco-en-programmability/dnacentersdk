@@ -37,61 +37,54 @@ class JSONSchemaValidatorAd487B01Cede5Cb4Bdd5Ee06695A6020(object):
     definition."""
     def __init__(self):
         super(JSONSchemaValidatorAd487B01Cede5Cb4Bdd5Ee06695A6020, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "designName": {
-                "type": "string"
-                },
-                "featureAttributes": {
-                "properties": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "designName": {
+            "type": "string"
+        },
+        "featureAttributes": {
+            "properties": {
                 "bssColor": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "multipleBssid": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "nonSRGObssPdMaxThreshold": {
-                "type": "integer"
+                    "type": "integer"
                 },
                 "obssPd": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "radioBand": {
-                "enum": [
-                "2_4GHZ",
-                "5GHZ",
-                "6GHZ"
-                ],
-                "type": "string"
+                    "enum": [
+                        "2_4GHZ",
+                        "5GHZ",
+                        "6GHZ"
+                    ],
+                    "type": "string"
                 },
                 "targetWakeUpTime11ax": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "targetWaketimeBroadcast": {
-                "type": "boolean"
+                    "type": "boolean"
                 }
-                },
-                "required": [
-                "radioBand"
-                ],
-                "type": "object"
-                },
-                "unlockedAttributes": {
-                "items": {
+            },
+            "type": "object"
+        },
+        "unlockedAttributes": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                }
-                },
-                "required": [
-                "designName",
-                "featureAttributes"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

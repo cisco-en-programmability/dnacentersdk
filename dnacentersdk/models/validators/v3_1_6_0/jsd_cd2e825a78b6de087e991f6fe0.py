@@ -36,90 +36,76 @@ class JSONSchemaValidatorCd2E825A78B6De087E991F6Fe0(object):
     """SetAAASettingsForASite request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorCd2E825A78B6De087E991F6Fe0, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "aaaClient": {
-                "properties": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "aaaClient": {
+            "properties": {
                 "pan": {
-                "type": "string"
+                    "type": "string"
                 },
                 "primaryServerIp": {
-                "type": "string"
+                    "type": "string"
                 },
                 "protocol": {
-                "enum": [
-                "RADIUS",
-                "TACACS"
-                ],
-                "type": "string"
+                    "enum": [
+                        "RADIUS",
+                        "TACACS"
+                    ],
+                    "type": "string"
                 },
                 "secondaryServerIp": {
-                "type": "string"
+                    "type": "string"
                 },
                 "serverType": {
-                "enum": [
-                "ISE",
-                "AAA"
-                ],
-                "type": "string"
+                    "enum": [
+                        "ISE",
+                        "AAA"
+                    ],
+                    "type": "string"
                 },
                 "sharedSecret": {
-                "type": "string"
+                    "type": "string"
                 }
-                },
-                "required": [
-                "serverType",
-                "protocol",
-                "primaryServerIp"
-                ],
-                "type": "object"
-                },
-                "aaaNetwork": {
-                "properties": {
+            },
+            "type": "object"
+        },
+        "aaaNetwork": {
+            "properties": {
                 "pan": {
-                "type": "string"
+                    "type": "string"
                 },
                 "primaryServerIp": {
-                "type": "string"
+                    "type": "string"
                 },
                 "protocol": {
-                "enum": [
-                "RADIUS",
-                "TACACS"
-                ],
-                "type": "string"
+                    "enum": [
+                        "RADIUS",
+                        "TACACS"
+                    ],
+                    "type": "string"
                 },
                 "secondaryServerIp": {
-                "type": "string"
+                    "type": "string"
                 },
                 "serverType": {
-                "enum": [
-                "ISE",
-                "AAA"
-                ],
-                "type": "string"
+                    "enum": [
+                        "ISE",
+                        "AAA"
+                    ],
+                    "type": "string"
                 },
                 "sharedSecret": {
-                "type": "string"
+                    "type": "string"
                 }
-                },
-                "required": [
-                "serverType",
-                "protocol",
-                "primaryServerIp"
-                ],
-                "type": "object"
-                }
-                },
-                "required": [
-                "aaaNetwork",
-                "aaaClient"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "object"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

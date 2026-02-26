@@ -36,57 +36,48 @@ class JSONSchemaValidatorC380301E3E05423Bdc1857Ff00Ae77A(object):
     """UpdateGlobalPool request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorC380301E3E05423Bdc1857Ff00Ae77A, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "settings": {
-                "properties": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "settings": {
+            "properties": {
                 "ippool": {
-                "items": {
-                "properties": {
-                "dhcpServerIps": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "dnsServerIps": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "gateway": {
-                "type": "string"
-                },
-                "id": {
-                "type": "string"
-                },
-                "ipPoolName": {
-                "type": "string"
+                    "items": {
+                        "properties": {
+                            "dhcpServerIps": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "dnsServerIps": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "gateway": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "string"
+                            },
+                            "ipPoolName": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
                 }
-                },
-                "required": [
-                "id"
-                ],
-                "type": "object"
-                },
-                "type": "array"
-                }
-                },
-                "required": [
-                "ippool"
-                ],
-                "type": "object"
-                }
-                },
-                "required": [
-                "settings"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "object"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

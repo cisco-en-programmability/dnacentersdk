@@ -37,50 +37,46 @@ class JSONSchemaValidatorF8Db651A7Bb5F85A936C9Fdadf3A9D9(object):
     schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorF8Db651A7Bb5F85A936C9Fdadf3A9D9, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "designName": {
-                "type": "string"
-                },
-                "featureAttributes": {
-                "properties": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "designName": {
+            "type": "string"
+        },
+        "featureAttributes": {
+            "properties": {
                 "calledStationId": {
-                "enum": [
-                "AP_ETHMAC_ONLY",
-                "AP_ETHMAC_SSID",
-                "AP_GROUP_NAME",
-                "AP_LABEL_ADDRESS",
-                "AP_LABEL_ADDRESS_SSID",
-                "AP_LOCATION",
-                "AP_MACADDRESS",
-                "AP_MACADDRESS_SSID",
-                "AP_NAME",
-                "AP_NAME_SSID",
-                "IPADDRESS",
-                "MACADDRESS",
-                "VLAN_ID"
-                ],
-                "type": "string"
+                    "enum": [
+                        "AP_ETHMAC_ONLY",
+                        "AP_ETHMAC_SSID",
+                        "AP_GROUP_NAME",
+                        "AP_LABEL_ADDRESS",
+                        "AP_LABEL_ADDRESS_SSID",
+                        "AP_LOCATION",
+                        "AP_MACADDRESS",
+                        "AP_MACADDRESS_SSID",
+                        "AP_NAME",
+                        "AP_NAME_SSID",
+                        "IPADDRESS",
+                        "MACADDRESS",
+                        "VLAN_ID"
+                    ],
+                    "type": "string"
                 }
-                },
-                "type": "object"
-                },
-                "unlockedAttributes": {
-                "items": {
+            },
+            "type": "object"
+        },
+        "unlockedAttributes": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                }
-                },
-                "required": [
-                "designName",
-                "featureAttributes"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

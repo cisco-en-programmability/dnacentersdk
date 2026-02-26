@@ -36,105 +36,105 @@ class JSONSchemaValidatorC536Ac5A318629Fc3D6B3Dc236(object):
     """QueryClientsEnergy request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorC536Ac5A318629Fc3D6B3Dc236, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "aggregateAttributes": {
+            "items": {
                 "properties": {
-                "aggregateAttributes": {
-                "items": {
-                "properties": {
-                "function": {
-                "type": "string"
-                },
-                "name": {
-                "type": "string"
-                }
+                    "function": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    }
                 },
                 "type": "object"
-                },
-                "type": "array"
-                },
-                "attributes": {
-                "items": {
+            },
+            "type": "array"
+        },
+        "attributes": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                },
-                "endTime": {
-                "type": "integer"
-                },
-                "filters": {
-                "items": {
+            },
+            "type": "array"
+        },
+        "endTime": {
+            "type": "integer"
+        },
+        "filters": {
+            "items": {
                 "properties": {
-                "filters": {
-                "items": {
-                "properties": {
-                "key": {
-                "type": "string"
-                },
-                "operator": {
-                "type": "string"
-                },
-                "value": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                }
+                    "filters": {
+                        "items": {
+                            "properties": {
+                                "key": {
+                                    "type": "string"
+                                },
+                                "operator": {
+                                    "type": "string"
+                                },
+                                "value": {
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "type": "array"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "type": "array"
+                    },
+                    "logicalOperator": {
+                        "type": "string"
+                    }
                 },
                 "type": "object"
-                },
-                "type": "array"
-                },
-                "logicalOperator": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                },
-                "page": {
-                "properties": {
+            },
+            "type": "array"
+        },
+        "page": {
+            "properties": {
                 "cursor": {
-                "type": "string"
+                    "type": "string"
                 },
                 "limit": {
-                "type": "integer"
+                    "type": "integer"
                 },
                 "sortBy": {
-                "items": {
-                "properties": {
-                "function": {
-                "type": "string"
-                },
-                "name": {
-                "type": "string"
-                },
-                "order": {
-                "type": "string"
+                    "items": {
+                        "properties": {
+                            "function": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "order": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
                 }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                }
-                },
-                "type": "object"
-                },
-                "startTime": {
-                "type": "integer"
-                },
-                "views": {
-                "items": {
+            },
+            "type": "object"
+        },
+        "startTime": {
+            "type": "integer"
+        },
+        "views": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

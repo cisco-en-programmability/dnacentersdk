@@ -36,35 +36,30 @@ class JSONSchemaValidatorFc416739F3C655Ed911884Aec0130E83(object):
     """PreviewConfig request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorFc416739F3C655Ed911884Aec0130E83, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "deviceId": {
-                "type": "string"
-                },
-                "siteId": {
-                "type": "string"
-                },
-                "type": {
-                "enum": [
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "deviceId": {
+            "type": "string"
+        },
+        "siteId": {
+            "type": "string"
+        },
+        "type": {
+            "enum": [
                 "Default",
                 "AccessPoint",
                 "StackSwitch",
                 "Sensor",
                 "MobilityExpress"
-                ],
-                "type": "string"
-                }
-                },
-                "required": [
-                "deviceId",
-                "siteId",
-                "type"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            ],
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

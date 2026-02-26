@@ -36,28 +36,25 @@ class JSONSchemaValidatorDf9Ec5Aa58815A849B4853B223343E5E(object):
     """SetNTPSettingsForASite request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorDf9Ec5Aa58815A849B4853B223343E5E, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "ntp": {
-                "properties": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "ntp": {
+            "properties": {
                 "servers": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
                 }
-                },
-                "type": "object"
-                }
-                },
-                "required": [
-                "ntp"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "object"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

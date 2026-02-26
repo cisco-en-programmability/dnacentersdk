@@ -36,75 +36,66 @@ class JSONSchemaValidatorAaebb912125213B350D7423B4F01A4(object):
     """UpdateEmailDestination request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorAaebb912125213B350D7423B4F01A4, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "emailConfigId": {
-                "type": "string"
-                },
-                "fromEmail": {
-                "type": "string"
-                },
-                "primarySMTPConfig": {
-                "properties": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "emailConfigId": {
+            "type": "string"
+        },
+        "fromEmail": {
+            "type": "string"
+        },
+        "primarySMTPConfig": {
+            "properties": {
                 "hostName": {
-                "type": "string"
+                    "type": "string"
                 },
                 "password": {
-                "type": "string"
+                    "type": "string"
                 },
                 "port": {
-                "type": "string"
+                    "type": "string"
                 },
                 "smtpType": {
-                "type": "string"
+                    "type": "string"
                 },
                 "userName": {
-                "type": "string"
+                    "type": "string"
                 }
-                },
-                "required": [
-                "hostName"
-                ],
-                "type": "object"
-                },
-                "secondarySMTPConfig": {
-                "properties": {
+            },
+            "type": "object"
+        },
+        "secondarySMTPConfig": {
+            "properties": {
                 "hostName": {
-                "type": "string"
+                    "type": "string"
                 },
                 "password": {
-                "type": "string"
+                    "type": "string"
                 },
                 "port": {
-                "type": "string"
+                    "type": "string"
                 },
                 "smtpType": {
-                "type": "string"
+                    "type": "string"
                 },
                 "userName": {
-                "type": "string"
+                    "type": "string"
                 }
-                },
-                "required": [
-                "hostName"
-                ],
-                "type": "object"
-                },
-                "subject": {
-                "type": "string"
-                },
-                "toEmail": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "primarySMTPConfig"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "object"
+        },
+        "subject": {
+            "type": "string"
+        },
+        "toEmail": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

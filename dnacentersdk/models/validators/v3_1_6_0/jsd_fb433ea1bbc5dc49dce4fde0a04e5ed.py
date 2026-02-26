@@ -36,34 +36,34 @@ class JSONSchemaValidatorFb433Ea1Bbc5Dc49Dce4Fde0A04E5Ed(object):
     """RemoveALinkFromPortChannel request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorFb433Ea1Bbc5Dc49Dce4Fde0A04E5Ed, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "portChannelMembers": {
+            "items": {
                 "properties": {
-                "portChannelMembers": {
-                "items": {
-                "properties": {
-                "device1Interface": {
-                "type": "string"
-                },
-                "device1InterfaceUuid": {
-                "type": "string"
-                },
-                "device2Interface": {
-                "type": "string"
-                },
-                "device2InterfaceUuid": {
-                "type": "string"
-                }
+                    "device1Interface": {
+                        "type": "string"
+                    },
+                    "device1InterfaceUuid": {
+                        "type": "string"
+                    },
+                    "device2Interface": {
+                        "type": "string"
+                    },
+                    "device2InterfaceUuid": {
+                        "type": "string"
+                    }
                 },
                 "type": "object"
-                },
-                "type": "array"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

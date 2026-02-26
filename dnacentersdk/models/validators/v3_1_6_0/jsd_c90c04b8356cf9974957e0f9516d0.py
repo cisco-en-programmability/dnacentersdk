@@ -37,43 +37,38 @@ class JSONSchemaValidatorC90C04B8356Cf9974957E0F9516D0(object):
     definition."""
     def __init__(self):
         super(JSONSchemaValidatorC90C04B8356Cf9974957E0F9516D0, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "items": {
-                "properties": {
-                "affinityIdDecider": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "items": {
+        "properties": {
+            "affinityIdDecider": {
                 "type": "integer"
-                },
-                "affinityIdPrime": {
+            },
+            "affinityIdPrime": {
                 "type": "integer"
-                },
-                "connectedToInternet": {
+            },
+            "connectedToInternet": {
                 "type": "boolean"
-                },
-                "fabricId": {
+            },
+            "fabricId": {
                 "type": "string"
-                },
-                "isMulticastOverTransitEnabled": {
+            },
+            "isMulticastOverTransitEnabled": {
                 "type": "boolean"
-                },
-                "networkDeviceId": {
+            },
+            "networkDeviceId": {
                 "type": "string"
-                },
-                "transitNetworkId": {
+            },
+            "transitNetworkId": {
                 "type": "string"
-                }
-                },
-                "required": [
-                "networkDeviceId",
-                "fabricId",
-                "transitNetworkId"
-                ],
-                "type": "object"
-                },
-                "type": "array"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            }
+        },
+        "type": "object"
+    },
+    "type": "array"
+}
+'''))
 
     def validate(self, request):
         try:

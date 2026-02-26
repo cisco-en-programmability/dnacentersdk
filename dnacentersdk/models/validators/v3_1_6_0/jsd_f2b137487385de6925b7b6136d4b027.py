@@ -36,61 +36,53 @@ class JSONSchemaValidatorF2B137487385De6925B7B6136D4B027(object):
     """AddPortChannels request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorF2B137487385De6925B7B6136D4B027, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "items": {
-                "properties": {
-                "allowedVlanRanges": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "items": {
+        "properties": {
+            "allowedVlanRanges": {
                 "type": "string"
-                },
-                "connectedDeviceType": {
+            },
+            "connectedDeviceType": {
                 "enum": [
-                "TRUNK",
-                "EXTENDED_NODE"
+                    "TRUNK",
+                    "EXTENDED_NODE"
                 ],
                 "type": "string"
-                },
-                "description":
-                 {
+            },
+            "description": {
                 "type": "string"
-                },
-                "fabricId": {
+            },
+            "fabricId": {
                 "type": "string"
-                },
-                "interfaceNames": {
+            },
+            "interfaceNames": {
                 "items": {
-                "type": "string"
+                    "type": "string"
                 },
                 "type": "array"
-                },
-                "nativeVlanId": {
+            },
+            "nativeVlanId": {
                 "type": "integer"
-                },
-                "networkDeviceId": {
+            },
+            "networkDeviceId": {
                 "type": "string"
-                },
-                "protocol": {
+            },
+            "protocol": {
                 "enum": [
-                true,
-                "LACP",
-                "PAGP"
+                    true,
+                    "LACP",
+                    "PAGP"
                 ],
                 "type": "string"
-                }
-                },
-                "required": [
-                "fabricId",
-                "networkDeviceId",
-                "interfaceNames",
-                "connectedDeviceType",
-                "protocol"
-                ],
-                "type": "object"
-                },
-                "type": "array"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            }
+        },
+        "type": "object"
+    },
+    "type": "array"
+}
+'''))
 
     def validate(self, request):
         try:

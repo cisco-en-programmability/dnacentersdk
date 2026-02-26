@@ -36,56 +36,48 @@ class JSONSchemaValidatorD999A1D36Ee52BaBb6B619877Dad734(object):
     """UpdateDefaultAuthenticationProfile request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorD999A1D36Ee52BaBb6B619877Dad734, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "items": {
-                "properties": {
-                "authenticateTemplateName": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "items": {
+        "properties": {
+            "authenticateTemplateName": {
                 "enum": [
-                "Open Authentication",
-                "Closed Authentication",
-                "Low  Impact"
+                    "Open Authentication",
+                    "Closed Authentication",
+                    "Low  Impact"
                 ],
                 "type": "string"
-                },
-                "authenticationOrder": {
+            },
+            "authenticationOrder": {
                 "enum": [
-                "dot1x ",
-                "mab"
+                    "dot1x ",
+                    "mab"
                 ],
                 "type": "string"
-                },
-                "dot1xToMabFallbackTimeout": {
+            },
+            "dot1xToMabFallbackTimeout": {
                 "type": "string"
-                },
-                "numberOfHosts": {
+            },
+            "numberOfHosts": {
                 "enum": [
-                "Unlimited",
-                "Single"
+                    "Unlimited",
+                    "Single"
                 ],
                 "type": "string"
-                },
-                "siteNameHierarchy": {
+            },
+            "siteNameHierarchy": {
                 "type": "string"
-                },
-                "wakeOnLan": {
+            },
+            "wakeOnLan": {
                 "type": "boolean"
-                }
-                },
-                "required": [
-                "siteNameHierarchy",
-                "authenticateTemplateName",
-                "authenticationOrder",
-                "dot1xToMabFallbackTimeout",
-                "wakeOnLan",
-                "numberOfHosts"
-                ],
-                "type": "object"
-                },
-                "type": "array"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            }
+        },
+        "type": "object"
+    },
+    "type": "array"
+}
+'''))
 
     def validate(self, request):
         try:

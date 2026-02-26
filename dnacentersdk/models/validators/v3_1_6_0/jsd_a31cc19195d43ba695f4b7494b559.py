@@ -36,20 +36,17 @@ class JSONSchemaValidatorA31Cc19195D43Ba695F4B7494B559(object):
     """AttachNetworkProfileToADayNCLITemplate request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorA31Cc19195D43Ba695F4B7494B559, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "profileId": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "profileId"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "profileId": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

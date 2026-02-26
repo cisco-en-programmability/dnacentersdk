@@ -36,204 +36,176 @@ class JSONSchemaValidatorA14E71C1B98E51EeA41255720025B519(object):
     """CreateApplicationsV2 request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorA14E71C1B98E51EeA41255720025B519, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "items": {
+        "properties": {
+            "indicativeNetworkIdentity": {
                 "items": {
+                    "properties": {
+                        "ipv4Subnet": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "ipv6Subnet": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "lowerPort": {
+                            "type": "number"
+                        },
+                        "ports": {
+                            "type": "string"
+                        },
+                        "protocol": {
+                            "enum": [
+                                "TCP_OR_UDP",
+                                "TCP",
+                                "UDP",
+                                "IP"
+                            ],
+                            "type": "string"
+                        },
+                        "upperPort": {
+                            "type": "number"
+                        }
+                    },
+                    "type": "object"
+                },
+                "type": "array"
+            },
+            "name": {
+                "type": "string"
+            },
+            "networkApplications": {
+                "items": {
+                    "properties": {
+                        "appProtocol": {
+                            "enum": [
+                                "TCP",
+                                "UDP",
+                                "TCP/UDP",
+                                "IP"
+                            ],
+                            "type": "string"
+                        },
+                        "applicationType": {
+                            "enum": [
+                                "CUSTOM"
+                            ],
+                            "type": "string"
+                        },
+                        "categoryId": {
+                            "type": "string"
+                        },
+                        "dscp": {
+                            "type": "string"
+                        },
+                        "engineId": {
+                            "type": "integer"
+                        },
+                        "helpString": {
+                            "type": "string"
+                        },
+                        "ignoreConflict": {
+                            "type": "boolean"
+                        },
+                        "rank": {
+                            "type": "integer"
+                        },
+                        "serverName": {
+                            "type": "string"
+                        },
+                        "trafficClass": {
+                            "enum": [
+                                "BROADCAST_VIDEO",
+                                "BULK_DATA",
+                                "MULTIMEDIA_CONFERENCING",
+                                "MULTIMEDIA_STREAMING",
+                                "NETWORK_CONTROL",
+                                "OPS_ADMIN_MGMT",
+                                "REAL_TIME_INTERACTIVE",
+                                "SIGNALING",
+                                "TRANSACTIONAL_DATA",
+                                "VOIP_TELEPHONY",
+                                "BEST_EFFORT",
+                                "SCAVENGER"
+                            ],
+                            "type": "string"
+                        },
+                        "type": {
+                            "enum": [
+                                "_servername",
+                                "_url",
+                                "_server-ip"
+                            ],
+                            "type": "string"
+                        },
+                        "url": {
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "type": "array"
+            },
+            "networkIdentity": {
+                "items": {
+                    "properties": {
+                        "ipv4Subnet": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "lowerPort": {
+                            "type": "number"
+                        },
+                        "ports": {
+                            "type": "string"
+                        },
+                        "protocol": {
+                            "enum": [
+                                "TCP_OR_UDP",
+                                "TCP",
+                                "UDP",
+                                "IP"
+                            ],
+                            "type": "string"
+                        },
+                        "upperPort": {
+                            "type": "number"
+                        }
+                    },
+                    "type": "object"
+                },
+                "type": "array"
+            },
+            "parentScalableGroup": {
                 "properties": {
-                "indicativeNetworkIdentity": {
-                "items": {
-                "properties": {
-                "ipv4Subnet": {
-                "items": {
-                "type": "string"
+                    "idRef": {
+                        "type": "string"
+                    }
                 },
-                "type": "array"
-                },
-                "ipv6Subnet": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "lowerPort": {
-                "type": "number"
-                },
-                "ports": {
-                "type": "string"
-                },
-                "protocol": {
-                "enum": [
-                "TCP_OR_UDP",
-                "TCP",
-                "UDP",
-                "IP"
-                ],
-                "type": "string"
-                },
-                "upperPort": {
-                "type": "number"
-                }
-                },
-                "required": [
-                "protocol"
-                ],
                 "type": "object"
-                },
-                "type": "array"
-                },
-                "name": {
+            },
+            "scalableGroupType": {
                 "type": "string"
-                },
-                "networkApplications": {
-                "items": {
-                "properties": {
-                "appProtocol": {
-                "enum": [
-                "TCP",
-                "UDP",
-                "TCP/UDP",
-                "IP"
-                ],
+            },
+            "type": {
                 "type": "string"
-                },
-                "applicationType": {
-                "enum": [
-                "CUSTOM"
-                ],
-                "type": "string"
-                },
-                "categoryId": {
-                "type": "string"
-                },
-                "dscp": {
-                "type": "string"
-                },
-                "engineId": {
-                "type": "integer"
-                },
-                "helpString": {
-                "type": "string"
-                },
-                "ignoreConflict": {
-                "type": "boolean"
-                },
-                "rank": {
-                "type": "integer"
-                },
-                "serverName": {
-                "type": "string"
-                },
-                "trafficClass": {
-                "enum": [
-                "BROADCAST_VIDEO",
-                "BULK_DATA",
-                "MULTIMEDIA_CONFERENCING",
-                "MULTIMEDIA_STREAMING",
-                "NETWORK_CONTROL",
-                "OPS_ADMIN_MGMT",
-                "REAL_TIME_INTERACTIVE",
-                "SIGNALING",
-                "TRANSACTIONAL_DATA",
-                "VOIP_TELEPHONY",
-                "BEST_EFFORT",
-                "SCAVENGER"
-                ],
-                "type": "string"
-                },
-                "type": {
-                "enum": [
-                "_servername",
-                "_url",
-                "_server-ip"
-                ],
-                "type": "string"
-                },
-                "url": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "helpString",
-                "applicationType",
-                "type",
-                "trafficClass",
-                "categoryId",
-                "ignoreConflict",
-                "rank",
-                "engineId"
-                ],
-                "type": "object"
-                },
-                "type": "array"
-                },
-                "networkIdentity": {
-                "items": {
-                "properties": {
-                "ipv4Subnet": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "lowerPort": {
-                "type": "number"
-                },
-                "ports": {
-                "type": "string"
-                },
-                "protocol": {
-                "enum": [
-                "TCP_OR_UDP",
-                "TCP",
-                "UDP",
-                "IP"
-                ],
-                "type": "string"
-                },
-                "upperPort": {
-                "type": "number"
-                }
-                },
-                "required": [
-                "protocol",
-                "ports",
-                "ipv4Subnet"
-                ],
-                "type": "object"
-                },
-                "type": "array"
-                },
-                "parentScalableGroup": {
-                "properties": {
-                "idRef": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "idRef"
-                ],
-                "type": "object"
-                },
-                "scalableGroupType": {
-                "type": "string"
-                },
-                "type": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "name",
-                "networkApplications",
-                "parentScalableGroup",
-                "scalableGroupType",
-                "type"
-                ],
-                "type": "object"
-                },
-                "type": "array"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            }
+        },
+        "type": "object"
+    },
+    "type": "array"
+}
+'''))
 
     def validate(self, request):
         try:

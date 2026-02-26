@@ -37,62 +37,55 @@ class JSONSchemaValidatorA25F176554FB407Fbe4952F1C4E(object):
     definition."""
     def __init__(self):
         super(JSONSchemaValidatorA25F176554FB407Fbe4952F1C4E, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "designName": {
-                "type": "string"
-                },
-                "featureAttributes": {
-                "properties": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "designName": {
+            "type": "string"
+        },
+        "featureAttributes": {
+            "properties": {
                 "fraFreeze": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "fraInterval": {
-                "type": "integer"
+                    "type": "integer"
                 },
                 "fraSensitivity": {
-                "enum": [
-                "LOW",
-                "MEDIUM",
-                "HIGH",
-                "HIGHER",
-                "EVEN_HIGHER",
-                "SUPER_HIGH"
-                ],
-                "type": "string"
+                    "enum": [
+                        "LOW",
+                        "MEDIUM",
+                        "HIGH",
+                        "HIGHER",
+                        "EVEN_HIGHER",
+                        "SUPER_HIGH"
+                    ],
+                    "type": "string"
                 },
                 "fraStatus": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "radioBand": {
-                "enum": [
-                "2_4GHZ_5GHZ",
-                "5GHZ_6GHZ"
-                ],
-                "type": "string"
+                    "enum": [
+                        "2_4GHZ_5GHZ",
+                        "5GHZ_6GHZ"
+                    ],
+                    "type": "string"
                 }
-                },
-                "required": [
-                "radioBand"
-                ],
-                "type": "object"
-                },
-                "unlockedAttributes": {
-                "items": {
+            },
+            "type": "object"
+        },
+        "unlockedAttributes": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                }
-                },
-                "required": [
-                "designName",
-                "featureAttributes"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

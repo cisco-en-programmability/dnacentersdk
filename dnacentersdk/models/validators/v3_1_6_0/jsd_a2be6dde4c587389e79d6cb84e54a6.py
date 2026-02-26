@@ -36,20 +36,17 @@ class JSONSchemaValidatorA2Be6DDe4C587389E79D6Cb84E54A6(object):
     """UpdateSDAWirelessMulticast request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorA2Be6DDe4C587389E79D6Cb84E54A6, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "multicastEnabled": {
-                "type": "boolean"
-                }
-                },
-                "required": [
-                "multicastEnabled"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "multicastEnabled": {
+            "type": "boolean"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

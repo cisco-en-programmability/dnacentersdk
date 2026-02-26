@@ -36,104 +36,104 @@ class JSONSchemaValidatorFe3Ec7651E79D891Fce37A0D860(object):
     """AddDevice request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorFe3Ec7651E79D891Fce37A0D860, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "cliTransport": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "cliTransport": {
+            "type": "string"
+        },
+        "computeDevice": {
+            "type": "boolean"
+        },
+        "enablePassword": {
+            "type": "string"
+        },
+        "extendedDiscoveryInfo": {
+            "type": "string"
+        },
+        "httpPassword": {
+            "type": "string"
+        },
+        "httpPort": {
+            "type": "string"
+        },
+        "httpSecure": {
+            "type": "boolean"
+        },
+        "httpUserName": {
+            "type": "string"
+        },
+        "ipAddress": {
+            "items": {
                 "type": "string"
-                },
-                "computeDevice": {
-                "type": "boolean"
-                },
-                "enablePassword": {
+            },
+            "type": "array"
+        },
+        "merakiOrgId": {
+            "items": {
                 "type": "string"
-                },
-                "extendedDiscoveryInfo": {
-                "type": "string"
-                },
-                "httpPassword": {
-                "type": "string"
-                },
-                "httpPort": {
-                "type": "string"
-                },
-                "httpSecure": {
-                "type": "boolean"
-                },
-                "httpUserName": {
-                "type": "string"
-                },
-                "ipAddress": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "merakiOrgId": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "netconfPort": {
-                "type": "string"
-                },
-                "password": {
-                "type": "string"
-                },
-                "serialNumber": {
-                "type": "string"
-                },
-                "snmpAuthPassphrase": {
-                "type": "string"
-                },
-                "snmpAuthProtocol": {
-                "type": "string"
-                },
-                "snmpMode": {
-                "type": "string"
-                },
-                "snmpPrivPassphrase": {
-                "type": "string"
-                },
-                "snmpPrivProtocol": {
-                "type": "string"
-                },
-                "snmpROCommunity": {
-                "type": "string"
-                },
-                "snmpRWCommunity": {
-                "type": "string"
-                },
-                "snmpRetry": {
-                "type": "integer"
-                },
-                "snmpTimeout": {
-                "type": "integer"
-                },
-                "snmpUserName": {
-                "type": "string"
-                },
-                "snmpVersion": {
-                "type": "string"
-                },
-                "type": {
-                "enum": [
+            },
+            "type": "array"
+        },
+        "netconfPort": {
+            "type": "string"
+        },
+        "password": {
+            "type": "string"
+        },
+        "serialNumber": {
+            "type": "string"
+        },
+        "snmpAuthPassphrase": {
+            "type": "string"
+        },
+        "snmpAuthProtocol": {
+            "type": "string"
+        },
+        "snmpMode": {
+            "type": "string"
+        },
+        "snmpPrivPassphrase": {
+            "type": "string"
+        },
+        "snmpPrivProtocol": {
+            "type": "string"
+        },
+        "snmpROCommunity": {
+            "type": "string"
+        },
+        "snmpRWCommunity": {
+            "type": "string"
+        },
+        "snmpRetry": {
+            "type": "integer"
+        },
+        "snmpTimeout": {
+            "type": "integer"
+        },
+        "snmpUserName": {
+            "type": "string"
+        },
+        "snmpVersion": {
+            "type": "string"
+        },
+        "type": {
+            "enum": [
                 "COMPUTE_DEVICE",
                 "MERAKI_DASHBOARD",
                 "THIRD_PARTY_DEVICE",
                 "NETWORK_DEVICE"
-                ],
-                "type": "string"
-                },
-                "userName": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            ],
+            "type": "string"
+        },
+        "userName": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

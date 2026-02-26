@@ -36,40 +36,35 @@ class JSONSchemaValidatorB2Dae3B41636596AA02C3Ad0A4Bcb8D7(object):
     """RunReadOnlyCommandsOnDevices request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorB2Dae3B41636596AA02C3Ad0A4Bcb8D7, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "commands": {
-                "items": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "commands": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                },
-                "description":
-                 {
+            },
+            "type": "array"
+        },
+        "description": {
+            "type": "string"
+        },
+        "deviceUuids": {
+            "items": {
                 "type": "string"
-                },
-                "deviceUuids": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "name": {
-                "type": "string"
-                },
-                "timeout": {
-                "type": "integer"
-                }
-                },
-                "required": [
-                "commands",
-                "deviceUuids"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        },
+        "name": {
+            "type": "string"
+        },
+        "timeout": {
+            "type": "integer"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

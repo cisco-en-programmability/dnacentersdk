@@ -36,142 +36,134 @@ class JSONSchemaValidatorF04B76067507B9384E409E9431Ef3(object):
     """AddDevice request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorF04B76067507B9384E409E9431Ef3, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "deviceInfo": {
-                "properties": {
-                "description":
-                 {
-                "type": "string"
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "deviceInfo": {
+            "properties": {
+                "description": {
+                    "type": "string"
                 },
                 "deviceSudiSerialNos": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
                 },
                 "hostname": {
-                "type": "string"
+                    "type": "string"
                 },
                 "macAddress": {
-                "type": "string"
+                    "type": "string"
                 },
                 "pid": {
-                "type": "string"
+                    "type": "string"
                 },
                 "serialNumber": {
-                "type": "string"
+                    "type": "string"
                 },
                 "siteId": {
-                "type": "string"
+                    "type": "string"
                 },
                 "stack": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "stackInfo": {
-                "properties": {
-                "isFullRing": {
-                "type": "boolean"
-                },
-                "stackMemberList": {
-                "items": {
-                "properties": {
-                "hardwareVersion": {
-                "type": "string"
-                },
-                "licenseLevel": {
-                "type": "string"
-                },
-                "licenseType": {
-                "type": "string"
-                },
-                "macAddress": {
-                "type": "string"
-                },
-                "pid": {
-                "type": "string"
-                },
-                "priority": {
-                "type": "number"
-                },
-                "role": {
-                "type": "string"
-                },
-                "serialNumber": {
-                "type": "string"
-                },
-                "softwareVersion": {
-                "type": "string"
-                },
-                "stackNumber": {
-                "type": "number"
-                },
-                "state": {
-                "type": "string"
-                },
-                "sudiSerialNumber": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                },
-                "stackRingProtocol": {
-                "type": "string"
-                },
-                "supportsStackWorkflows": {
-                "type": "boolean"
-                },
-                "totalMemberCount": {
-                "type": "number"
-                },
-                "validLicenseLevels": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                }
-                },
-                "type": "object"
+                    "properties": {
+                        "isFullRing": {
+                            "type": "boolean"
+                        },
+                        "stackMemberList": {
+                            "items": {
+                                "properties": {
+                                    "hardwareVersion": {
+                                        "type": "string"
+                                    },
+                                    "licenseLevel": {
+                                        "type": "string"
+                                    },
+                                    "licenseType": {
+                                        "type": "string"
+                                    },
+                                    "macAddress": {
+                                        "type": "string"
+                                    },
+                                    "pid": {
+                                        "type": "string"
+                                    },
+                                    "priority": {
+                                        "type": "number"
+                                    },
+                                    "role": {
+                                        "type": "string"
+                                    },
+                                    "serialNumber": {
+                                        "type": "string"
+                                    },
+                                    "softwareVersion": {
+                                        "type": "string"
+                                    },
+                                    "stackNumber": {
+                                        "type": "number"
+                                    },
+                                    "state": {
+                                        "type": "string"
+                                    },
+                                    "sudiSerialNumber": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "stackRingProtocol": {
+                            "type": "string"
+                        },
+                        "supportsStackWorkflows": {
+                            "type": "boolean"
+                        },
+                        "totalMemberCount": {
+                            "type": "number"
+                        },
+                        "validLicenseLevels": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
                 },
                 "sudiRequired": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "userMicNumbers": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
                 },
                 "userSudiSerialNos": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
                 },
                 "workflowId": {
-                "type": "string"
+                    "type": "string"
                 },
                 "workflowName": {
-                "type": "string"
+                    "type": "string"
                 }
-                },
-                "required": [
-                "serialNumber",
-                "pid"
-                ],
-                "type": "object"
-                }
-                },
-                "required": [
-                "deviceInfo"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "object"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

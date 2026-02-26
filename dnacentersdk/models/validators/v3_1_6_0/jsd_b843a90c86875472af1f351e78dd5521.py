@@ -36,35 +36,30 @@ class JSONSchemaValidatorB843A90C86875472Af1F351E78Dd5521(object):
     """CreateBackupConfiguration request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorB843A90C86875472Af1F351E78Dd5521, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "dataRetention": {
-                "type": "integer"
-                },
-                "encryptionPassphrase": {
-                "type": "string"
-                },
-                "mountPath": {
-                "type": "string"
-                },
-                "type": {
-                "enum": [
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "dataRetention": {
+            "type": "integer"
+        },
+        "encryptionPassphrase": {
+            "type": "string"
+        },
+        "mountPath": {
+            "type": "string"
+        },
+        "type": {
+            "enum": [
                 "PHYSICAL_DISK",
                 "NFS"
-                ],
-                "type": "string"
-                }
-                },
-                "required": [
-                "dataRetention",
-                "mountPath",
-                "type"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            ],
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

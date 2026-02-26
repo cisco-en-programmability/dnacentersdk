@@ -36,15 +36,15 @@ class JSONSchemaValidatorE6Ea8C5D425Cf9Ac77006F5593725F(object):
     """ExportProjects request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorE6Ea8C5D425Cf9Ac77006F5593725F, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "items": {
-                "type": "object"
-                },
-                "type": "array"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "items": {
+        "type": "object"
+    },
+    "type": "array"
+}
+'''))
 
     def validate(self, request):
         try:

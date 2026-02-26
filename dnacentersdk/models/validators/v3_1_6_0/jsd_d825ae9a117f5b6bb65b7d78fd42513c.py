@@ -36,133 +36,123 @@ class JSONSchemaValidatorD825Ae9A117F5B6BB65B7D78Fd42513C(object):
     """CreateAndProvisionSSID request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorD825Ae9A117F5B6BB65B7D78Fd42513C, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "enableFabric": {
-                "type": "boolean"
-                },
-                "flexConnect": {
-                "properties": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "enableFabric": {
+            "type": "boolean"
+        },
+        "flexConnect": {
+            "properties": {
                 "enableFlexConnect": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "localToVlan": {
-                "type": "integer"
+                    "type": "integer"
                 }
-                },
-                "type": "object"
-                },
-                "managedAPLocations": {
-                "items": {
+            },
+            "type": "object"
+        },
+        "managedAPLocations": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                },
-                "ssidDetails": {
-                "properties": {
+            },
+            "type": "array"
+        },
+        "ssidDetails": {
+            "properties": {
                 "authKeyMgmt": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
                 },
                 "enableBroadcastSSID": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "enableFastLane": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "enableMACFiltering": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "fastTransition": {
-                "enum": [
-                "Adaptive",
-                "Enable",
-                "Disable"
-                ],
-                "type": "string"
+                    "enum": [
+                        "Adaptive",
+                        "Enable",
+                        "Disable"
+                    ],
+                    "type": "string"
                 },
                 "ghz24Policy": {
-                "enum": [
-                "dot11-g-only",
-                "dot11-bg-only"
-                ],
-                "type": "string"
+                    "enum": [
+                        "dot11-g-only",
+                        "dot11-bg-only"
+                    ],
+                    "type": "string"
                 },
                 "ghz6PolicyClientSteering": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "name": {
-                "type": "string"
+                    "type": "string"
                 },
                 "passphrase": {
-                "type": "string"
+                    "type": "string"
                 },
                 "radioPolicy": {
-                "enum": [
-                "Triple band operation(2.4GHz, 5GHz and 6GHz)",
-                "Triple band operation with band select",
-                "5GHz only",
-                "2.4GHz only",
-                "6GHz only"
-                ],
-                "type": "string"
+                    "enum": [
+                        "Triple band operation(2.4GHz, 5GHz and 6GHz)",
+                        "Triple band operation with band select",
+                        "5GHz only",
+                        "2.4GHz only",
+                        "6GHz only"
+                    ],
+                    "type": "string"
                 },
                 "rsnCipherSuiteCcmp256": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "rsnCipherSuiteGcmp128": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "rsnCipherSuiteGcmp256": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "securityLevel": {
-                "enum": [
-                "WPA2_ENTERPRISE",
-                "WPA2_PERSONAL",
-                "OPEN",
-                "WEB_AUTH"
-                ],
-                "type": "string"
+                    "enum": [
+                        "WPA2_ENTERPRISE",
+                        "WPA2_PERSONAL",
+                        "OPEN",
+                        "WEB_AUTH"
+                    ],
+                    "type": "string"
                 },
                 "trafficType": {
-                "enum": [
-                "data",
-                "voicedata"
-                ],
-                "type": "string"
+                    "enum": [
+                        "data",
+                        "voicedata"
+                    ],
+                    "type": "string"
                 },
                 "webAuthURL": {
-                "type": "string"
+                    "type": "string"
                 }
-                },
-                "required": [
-                "name",
-                "securityLevel"
-                ],
-                "type": "object"
-                },
-                "ssidType": {
-                "enum": [
+            },
+            "type": "object"
+        },
+        "ssidType": {
+            "enum": [
                 "Guest",
                 "Enterprise"
-                ],
-                "type": "string"
-                }
-                },
-                "required": [
-                "managedAPLocations",
-                "ssidDetails",
-                "ssidType",
-                "enableFabric"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            ],
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

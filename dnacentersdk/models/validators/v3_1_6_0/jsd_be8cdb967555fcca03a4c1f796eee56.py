@@ -36,32 +36,32 @@ class JSONSchemaValidatorBe8Cdb967555FccA03A4C1F796Eee56(object):
     """ImportSoftwareImageViaURL request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorBe8Cdb967555FccA03A4C1F796Eee56, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "items": {
-                "properties": {
-                "applicationType": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "items": {
+        "properties": {
+            "applicationType": {
                 "type": "string"
-                },
-                "imageFamily": {
+            },
+            "imageFamily": {
                 "type": "string"
-                },
-                "sourceURL": {
+            },
+            "sourceURL": {
                 "type": "string"
-                },
-                "thirdParty": {
+            },
+            "thirdParty": {
                 "type": "boolean"
-                },
-                "vendor": {
+            },
+            "vendor": {
                 "type": "string"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            }
+        },
+        "type": "object"
+    },
+    "type": "array"
+}
+'''))
 
     def validate(self, request):
         try:

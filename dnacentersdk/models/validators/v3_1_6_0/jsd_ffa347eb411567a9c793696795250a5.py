@@ -36,47 +36,36 @@ class JSONSchemaValidatorFfa347EB411567A9C793696795250A5(object):
     """CreateSPProfile request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorFfa347EB411567A9C793696795250A5, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "settings": {
-                "properties": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "settings": {
+            "properties": {
                 "qos": {
-                "items": {
-                "properties": {
-                "model": {
-                "type": "string"
-                },
-                "profileName": {
-                "type": "string"
-                },
-                "wanProvider": {
-                "type": "string"
+                    "items": {
+                        "properties": {
+                            "model": {
+                                "type": "string"
+                            },
+                            "profileName": {
+                                "type": "string"
+                            },
+                            "wanProvider": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
                 }
-                },
-                "required": [
-                "profileName",
-                "model",
-                "wanProvider"
-                ],
-                "type": "object"
-                },
-                "type": "array"
-                }
-                },
-                "required": [
-                "qos"
-                ],
-                "type": "object"
-                }
-                },
-                "required": [
-                "settings"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "object"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

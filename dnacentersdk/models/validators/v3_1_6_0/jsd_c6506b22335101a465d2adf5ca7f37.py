@@ -37,45 +37,37 @@ class JSONSchemaValidatorC6506B22335101A465D2Adf5Ca7F37(object):
     definition."""
     def __init__(self):
         super(JSONSchemaValidatorC6506B22335101A465D2Adf5Ca7F37, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "items": {
+            "items": {
                 "properties": {
-                "items": {
-                "items": {
-                "properties": {
-                "apProfileName": {
-                "type": "string"
+                    "apProfileName": {
+                        "type": "string"
+                    },
+                    "flexProfileName": {
+                        "type": "string"
+                    },
+                    "siteIds": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "siteTagName": {
+                        "type": "string"
+                    }
                 },
-                "flexProfileName": {
-                "type": "string"
-                },
-                "siteIds": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "siteTagName": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "siteIds",
-                "siteTagName",
-                "apProfileName"
-                ],
                 "type": "object"
-                },
-                "type": "array"
-                }
-                },
-                "required": [
-                "items"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

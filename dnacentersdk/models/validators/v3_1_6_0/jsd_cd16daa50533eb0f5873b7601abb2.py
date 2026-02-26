@@ -36,37 +36,32 @@ class JSONSchemaValidatorCd16DAa50533EB0F5873B7601Abb2(object):
     """UpdatesABuildingV2 request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorCd16DAa50533EB0F5873B7601Abb2, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "address": {
-                "type": "string"
-                },
-                "country": {
-                "type": "string"
-                },
-                "latitude": {
-                "type": "number"
-                },
-                "longitude": {
-                "type": "number"
-                },
-                "name": {
-                "type": "string"
-                },
-                "parentId": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "parentId",
-                "name",
-                "country"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "address": {
+            "type": "string"
+        },
+        "country": {
+            "type": "string"
+        },
+        "latitude": {
+            "type": "number"
+        },
+        "longitude": {
+            "type": "number"
+        },
+        "name": {
+            "type": "string"
+        },
+        "parentId": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

@@ -36,24 +36,20 @@ class JSONSchemaValidatorA352F6280E445075B3Ea7Cbf868C2D94(object):
     """DuplicateSensorTestTemplate request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorA352F6280E445075B3Ea7Cbf868C2D94, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "newTemplateName": {
-                "type": "string"
-                },
-                "templateName": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "templateName",
-                "newTemplateName"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "newTemplateName": {
+            "type": "string"
+        },
+        "templateName": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

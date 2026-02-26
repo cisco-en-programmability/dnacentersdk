@@ -36,23 +36,20 @@ class JSONSchemaValidatorDcc43Be0514E50FeA80CFa827F13Ee5C(object):
     """AddMembersToTheTag request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorDcc43Be0514E50FeA80CFa827F13Ee5C, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "memberType": {
-                "items": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "memberType": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                }
-                },
-                "required": [
-                "memberType"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

@@ -36,39 +36,36 @@ class JSONSchemaValidatorE6Ec627D3C587288978990Aae75228(object):
     """ExportDeviceList request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorE6Ec627D3C587288978990Aae75228, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "deviceUuids": {
-                "items": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "deviceUuids": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                },
-                "operationEnum": {
-                "enum": [
+            },
+            "type": "array"
+        },
+        "operationEnum": {
+            "enum": [
                 "CREDENTIALDETAILS",
                 "DEVICEDETAILS"
-                ],
+            ],
+            "type": "string"
+        },
+        "parameters": {
+            "items": {
                 "type": "string"
-                },
-                "parameters": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "password": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "deviceUuids"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        },
+        "password": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

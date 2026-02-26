@@ -36,27 +36,23 @@ class JSONSchemaValidatorC279Ba052250D883Ef87775A415089(object):
     """AssignNetworkDevicesToASite request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorC279Ba052250D883Ef87775A415089, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "deviceIds": {
-                "items": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "deviceIds": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                },
-                "siteId": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "deviceIds",
-                "siteId"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        },
+        "siteId": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

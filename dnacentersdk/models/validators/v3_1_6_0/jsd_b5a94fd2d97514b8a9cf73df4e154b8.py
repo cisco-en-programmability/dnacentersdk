@@ -36,20 +36,17 @@ class JSONSchemaValidatorB5A94Fd2D97514B8A9CF73Df4E154B8(object):
     """RestoreBackup request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorB5A94Fd2D97514B8A9CF73Df4E154B8, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "encryptionPassphrase": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "encryptionPassphrase"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "encryptionPassphrase": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

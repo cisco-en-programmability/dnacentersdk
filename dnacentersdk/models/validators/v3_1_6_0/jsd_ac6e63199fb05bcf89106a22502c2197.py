@@ -36,63 +36,59 @@ class JSONSchemaValidatorAc6E63199Fb05Bcf89106A22502C2197(object):
     """MarkDeviceForReplacement request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorAc6E63199Fb05Bcf89106A22502C2197, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "items": {
-                "properties": {
-                "creationTime": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "items": {
+        "properties": {
+            "creationTime": {
                 "type": "integer"
-                },
-                "family": {
+            },
+            "family": {
                 "type": "string"
-                },
-                "faultyDeviceId": {
+            },
+            "faultyDeviceId": {
                 "type": "string"
-                },
-                "faultyDeviceName": {
+            },
+            "faultyDeviceName": {
                 "type": "string"
-                },
-                "faultyDevicePlatform": {
+            },
+            "faultyDevicePlatform": {
                 "type": "string"
-                },
-                "faultyDeviceSerialNumber": {
+            },
+            "faultyDeviceSerialNumber": {
                 "type": "string"
-                },
-                "id": {
+            },
+            "id": {
                 "type": "string"
-                },
-                "neighbourDeviceId": {
+            },
+            "neighbourDeviceId": {
                 "type": "string"
-                },
-                "networkReadinessTaskId": {
+            },
+            "networkReadinessTaskId": {
                 "type": "string"
-                },
-                "replacementDevicePlatform": {
+            },
+            "replacementDevicePlatform": {
                 "type": "string"
-                },
-                "replacementDeviceSerialNumber": {
+            },
+            "replacementDeviceSerialNumber": {
                 "type": "string"
-                },
-                "replacementStatus": {
+            },
+            "replacementStatus": {
                 "type": "string"
-                },
-                "replacementTime": {
+            },
+            "replacementTime": {
                 "type": "integer"
-                },
-                "workflowId": {
+            },
+            "workflowId": {
                 "type": "string"
-                }
-                },
-                "required": [
-                "faultyDeviceId",
-                "replacementStatus"
-                ],
-                "type": "object"
-                },
-                "type": "array"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            }
+        },
+        "type": "object"
+    },
+    "type": "array"
+}
+'''))
 
     def validate(self, request):
         try:

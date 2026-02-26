@@ -36,56 +36,42 @@ class JSONSchemaValidatorC9B5B83E67195B649077A05E42897Cc4(object):
     """UpdateITSMIntegrationSetting request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorC9B5B83E67195B649077A05E42897Cc4, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "data": {
-                "properties": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "data": {
+            "properties": {
                 "ConnectionSettings": {
-                "properties": {
-                "Auth_Password": {
-                "type": "string"
-                },
-                "Auth_UserName": {
-                "type": "string"
-                },
-                "Url": {
-                "type": "string"
+                    "properties": {
+                        "Auth_Password": {
+                            "type": "string"
+                        },
+                        "Auth_UserName": {
+                            "type": "string"
+                        },
+                        "Url": {
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
                 }
-                },
-                "required": [
-                "Url",
-                "Auth_UserName",
-                "Auth_Password"
-                ],
-                "type": "object"
-                }
-                },
-                "required": [
-                "ConnectionSettings"
-                ],
-                "type": "object"
-                },
-                "description":
-                 {
-                "type": "string"
-                },
-                "dypName": {
-                "type": "string"
-                },
-                "name": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "name",
-                "data",
-                "dypName"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "object"
+        },
+        "description": {
+            "type": "string"
+        },
+        "dypName": {
+            "type": "string"
+        },
+        "name": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

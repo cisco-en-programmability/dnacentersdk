@@ -36,77 +36,69 @@ class JSONSchemaValidatorBf40Cea4982C54278A52Ac2E7B0C458A(object):
     """DeployTemplateV2 request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorBf40Cea4982C54278A52Ac2E7B0C458A, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "forcePushTemplate": {
+            "type": "boolean"
+        },
+        "isComposite": {
+            "type": "boolean"
+        },
+        "mainTemplateId": {
+            "type": "string"
+        },
+        "memberTemplateDeploymentInfo": {
+            "items": {
+                "type": "string"
+            },
+            "type": "array"
+        },
+        "targetInfo": {
+            "items": {
                 "properties": {
-                "forcePushTemplate": {
-                "type": "boolean"
+                    "hostName": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "type": "string"
+                    },
+                    "params": {
+                        "type": "object"
+                    },
+                    "resourceParams": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "type": {
+                        "enum": [
+                            "MANAGED_DEVICE_IP",
+                            "MANAGED_DEVICE_UUID",
+                            "PRE_PROVISIONED_SERIAL",
+                            "PRE_PROVISIONED_MAC",
+                            "DEFAULT",
+                            "MANAGED_DEVICE_HOSTNAME"
+                        ],
+                        "type": "string"
+                    },
+                    "versionedTemplateId": {
+                        "type": "string"
+                    }
                 },
-                "isComposite": {
-                "type": "boolean"
-                },
-                "mainTemplateId": {
-                "type": "string"
-                },
-                "memberTemplateDeploymentInfo": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "targetInfo": {
-                "items": {
-                "properties": {
-                "hostName": {
-                "type": "string"
-                },
-                "id": {
-                "type": "string"
-                },
-                "params": {
                 "type": "object"
-                },
-                "resourceParams": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "type": {
-                "enum": [
-                "MANAGED_DEVICE_IP",
-                "MANAGED_DEVICE_UUID",
-                "PRE_PROVISIONED_SERIAL",
-                "PRE_PROVISIONED_MAC",
-                "DEFAULT",
-                "MANAGED_DEVICE_HOSTNAME"
-                ],
-                "type": "string"
-                },
-                "versionedTemplateId": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "type",
-                "versionedTemplateId"
-                ],
-                "type": "object"
-                },
-                "type": "array"
-                },
-                "templateId": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "targetInfo",
-                "templateId"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        },
+        "templateId": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

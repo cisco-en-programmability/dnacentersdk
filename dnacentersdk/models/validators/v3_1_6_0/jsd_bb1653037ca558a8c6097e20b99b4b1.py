@@ -36,17 +36,17 @@ class JSONSchemaValidatorBb1653037Ca558A8C6097E20B99B4B1(object):
     """CommitTemplateForANewVersion request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorBb1653037Ca558A8C6097E20B99B4B1, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "commitNote": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "commitNote": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

@@ -36,27 +36,23 @@ class JSONSchemaValidatorBdcb514AE33B571795E4A42147D11F87(object):
     """ProvisionDevices request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorBdcb514AE33B571795E4A42147D11F87, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "items": {
-                "properties": {
-                "networkDeviceId": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "items": {
+        "properties": {
+            "networkDeviceId": {
                 "type": "string"
-                },
-                "siteId": {
+            },
+            "siteId": {
                 "type": "string"
-                }
-                },
-                "required": [
-                "siteId",
-                "networkDeviceId"
-                ],
-                "type": "object"
-                },
-                "type": "array"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            }
+        },
+        "type": "object"
+    },
+    "type": "array"
+}
+'''))
 
     def validate(self, request):
         try:

@@ -37,216 +37,212 @@ class JSONSchemaValidatorD9C01903D0645A3D8B56172Bb9549Be3(object):
     definition."""
     def __init__(self):
         super(JSONSchemaValidatorD9C01903D0645A3D8B56172Bb9549Be3, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "designName": {
-                "type": "string"
-                },
-                "featureAttributes": {
-                "properties": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "designName": {
+            "type": "string"
+        },
+        "featureAttributes": {
+            "properties": {
                 "advertisePCAnalyticsSupport": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "advertiseSupport": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "aironetIESupport": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "callSnooping": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "deferPriority0": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "deferPriority1": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "deferPriority2": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "deferPriority3": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "deferPriority4": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "deferPriority5": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "deferPriority6": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "deferPriority7": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "dhcpOpt82RemoteIDSubOption": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "dhcpRequired": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "dhcpServer": {
-                "type": "string"
+                    "type": "string"
                 },
                 "dot11ax": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "dot11vBSSMaxIdleProtected": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "downlinkMuMimo": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "downlinkOfdma": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "dtimPeriod24GHz": {
-                "type": "integer"
+                    "type": "integer"
                 },
                 "dtimPeriod5GHz": {
-                "type": "integer"
+                    "type": "integer"
                 },
                 "dualBandNeighborList": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "fastTransitionReassociationTimeout": {
-                "type": "integer"
+                    "type": "integer"
                 },
                 "fastlaneASR": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "flexLocalAuth": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "idleThreshold": {
-                "type": "integer"
+                    "type": "integer"
                 },
                 "ipMacBinding": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "ipSourceGuard": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "loadBalancing": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "mDNSMode": {
-                "enum": [
-                "MDNS_SD_BRIDGING",
-                "MDNS_SD_DROP",
-                "MDNS_SD_GATEWAY"
-                ],
-                "type": "string"
+                    "enum": [
+                        "MDNS_SD_BRIDGING",
+                        "MDNS_SD_DROP",
+                        "MDNS_SD_GATEWAY"
+                    ],
+                    "type": "string"
                 },
                 "maxClients": {
-                "type": "integer"
+                    "type": "integer"
                 },
                 "maxClientsPerAp": {
-                "type": "integer"
+                    "type": "integer"
                 },
                 "maxClientsPerRadio": {
-                "type": "integer"
+                    "type": "integer"
                 },
                 "mediaStreamMulticastDirect": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "muMimo11ac": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "multicastBuffer": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "multicastBufferValue": {
-                "type": "integer"
+                    "type": "integer"
                 },
                 "opportunisticKeyCaching": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "passiveClient": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "peer2peerblocking": {
-                "enum": [
-                "DISABLE",
-                "DROP",
-                "FORWARD_UP",
-                "ALLOW_PVT_GROUP"
-                ],
-                "type": "string"
+                    "enum": [
+                        "DISABLE",
+                        "DROP",
+                        "FORWARD_UP",
+                        "ALLOW_PVT_GROUP"
+                    ],
+                    "type": "string"
                 },
                 "predictionOptimization": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "radiusNacState": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "scanDeferTime": {
-                "type": "integer"
+                    "type": "integer"
                 },
                 "sendBeaconOnAssociation": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "sendBeaconOnRoam": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "sendDisassociate": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "sent486Busy": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "shareDataWithClient": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "targetWakeupTime": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "universalAPAdmin": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "uplinkMuMimo": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "uplinkOfdma": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "vlanCentralSwitching": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "wifiAllianceAgileMultiband": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "wifiToCellularSteering": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "wmmPolicy": {
-                "enum": [
-                "DISABLED",
-                "ALLOWED",
-                "REQUIRED"
-                ],
-                "type": "string"
+                    "enum": [
+                        "DISABLED",
+                        "ALLOWED",
+                        "REQUIRED"
+                    ],
+                    "type": "string"
                 }
-                },
-                "type": "object"
-                },
-                "unlockedAttributes": {
-                "items": {
+            },
+            "type": "object"
+        },
+        "unlockedAttributes": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                }
-                },
-                "required": [
-                "designName",
-                "featureAttributes"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

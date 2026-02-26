@@ -36,46 +36,42 @@ class JSONSchemaValidatorF5645E6E819558FA08761Dee45Ca406(object):
     """CreateNetconfCredentials request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorF5645E6E819558FA08761Dee45Ca406, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "items": {
-                "properties": {
-                "comments": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "items": {
+        "properties": {
+            "comments": {
                 "type": "string"
-                },
-                "credentialType": {
+            },
+            "credentialType": {
                 "enum": [
-                "GLOBAL",
-                "APP"
+                    "GLOBAL",
+                    "APP"
                 ],
                 "type": "string"
-                },
-                "description":
-                 {
+            },
+            "description": {
                 "type": "string"
-                },
-                "id": {
+            },
+            "id": {
                 "type": "string"
-                },
-                "instanceTenantId": {
+            },
+            "instanceTenantId": {
                 "type": "string"
-                },
-                "instanceUuid": {
+            },
+            "instanceUuid": {
                 "type": "string"
-                },
-                "netconfPort": {
+            },
+            "netconfPort": {
                 "type": "string"
-                }
-                },
-                "required": [
-                "netconfPort"
-                ],
-                "type": "object"
-                },
-                "type": "array"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            }
+        },
+        "type": "object"
+    },
+    "type": "array"
+}
+'''))
 
     def validate(self, request):
         try:

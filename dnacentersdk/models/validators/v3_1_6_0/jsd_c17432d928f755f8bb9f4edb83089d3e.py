@@ -36,25 +36,22 @@ class JSONSchemaValidatorC17432D928F755F8Bb9F4Edb83089D3E(object):
     """SetTimeZoneForASite request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorC17432D928F755F8Bb9F4Edb83089D3E, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "timeZone": {
-                "properties": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "timeZone": {
+            "properties": {
                 "identifier": {
-                "type": "string"
+                    "type": "string"
                 }
-                },
-                "type": "object"
-                }
-                },
-                "required": [
-                "timeZone"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "object"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

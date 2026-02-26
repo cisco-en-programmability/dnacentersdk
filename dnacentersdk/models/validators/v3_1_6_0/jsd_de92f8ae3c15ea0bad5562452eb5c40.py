@@ -36,31 +36,31 @@ class JSONSchemaValidatorDe92F8AE3C15Ea0Bad5562452Eb5C40(object):
     """ApplyANCPolicy request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorDe92F8AE3C15Ea0Bad5562452Eb5C40, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "ancPolicy": {
+            "type": "string"
+        },
+        "granularAncPolicy": {
+            "items": {
                 "properties": {
-                "ancPolicy": {
-                "type": "string"
-                },
-                "granularAncPolicy": {
-                "items": {
-                "properties": {
-                "name": {
-                "type": "string"
-                },
-                "nasIpAddress": {
-                "type": "string"
-                }
+                    "name": {
+                        "type": "string"
+                    },
+                    "nasIpAddress": {
+                        "type": "string"
+                    }
                 },
                 "type": "object"
-                },
-                "type": "array"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

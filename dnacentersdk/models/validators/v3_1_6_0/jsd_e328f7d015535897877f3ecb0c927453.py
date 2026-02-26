@@ -36,122 +36,106 @@ class JSONSchemaValidatorE328F7D015535897877F3Ecb0C927453(object):
     """UpdatesAnIPAddressSubpool request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorE328F7D015535897877F3Ecb0C927453, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "ipV4AddressSpace": {
-                "properties": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "ipV4AddressSpace": {
+            "properties": {
                 "addressSpaceId": {
-                "type": "string"
+                    "type": "string"
                 },
                 "dhcpServers": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
                 },
                 "dnsServers": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
                 },
                 "gatewayIpAddress": {
-                "type": "string"
+                    "type": "string"
                 },
                 "globalPoolId": {
-                "type": "string"
+                    "type": "string"
                 },
                 "overlapping": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "prefixLength": {
-                "type": "number"
+                    "type": "number"
                 },
                 "slaacSupport": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "subnet": {
-                "type": "string"
+                    "type": "string"
                 }
-                },
-                "required": [
-                "subnet",
-                "prefixLength",
-                "globalPoolId"
-                ],
-                "type": "object"
-                },
-                "ipV6AddressSpace": {
-                "properties": {
+            },
+            "type": "object"
+        },
+        "ipV6AddressSpace": {
+            "properties": {
                 "addressSpaceId": {
-                "type": "string"
+                    "type": "string"
                 },
                 "dhcpServers": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
                 },
                 "dnsServers": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
                 },
                 "gatewayIpAddress": {
-                "type": "string"
+                    "type": "string"
                 },
                 "globalPoolId": {
-                "type": "string"
+                    "type": "string"
                 },
                 "overlapping": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "prefixLength": {
-                "type": "number"
+                    "type": "number"
                 },
                 "slaacSupport": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "subnet": {
-                "type": "string"
+                    "type": "string"
                 }
-                },
-                "required": [
-                "subnet",
-                "prefixLength",
-                "globalPoolId"
-                ],
-                "type": "object"
-                },
-                "name": {
-                "type": "string"
-                },
-                "poolType": {
-                "enum": [
+            },
+            "type": "object"
+        },
+        "name": {
+            "type": "string"
+        },
+        "poolType": {
+            "enum": [
                 "Generic",
                 "LAN",
                 "Management",
                 "Service",
                 "WAN"
-                ],
-                "type": "string"
-                },
-                "siteId": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "ipV4AddressSpace",
-                "name",
-                "poolType",
-                "siteId"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            ],
+            "type": "string"
+        },
+        "siteId": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

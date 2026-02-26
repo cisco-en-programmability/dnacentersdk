@@ -36,40 +36,35 @@ class JSONSchemaValidatorA0C237C8Fc115B6F98B87Cc7A1360Dd0(object):
     """AddExtranetPolicy request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorA0C237C8Fc115B6F98B87Cc7A1360Dd0, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "items": {
-                "properties": {
-                "extranetPolicyName": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "items": {
+        "properties": {
+            "extranetPolicyName": {
                 "type": "string"
-                },
-                "fabricIds": {
+            },
+            "fabricIds": {
                 "items": {
-                "type": "string"
+                    "type": "string"
                 },
                 "type": "array"
-                },
-                "providerVirtualNetworkName": {
+            },
+            "providerVirtualNetworkName": {
                 "type": "string"
-                },
-                "subscriberVirtualNetworkNames": {
+            },
+            "subscriberVirtualNetworkNames": {
                 "items": {
-                "type": "string"
+                    "type": "string"
                 },
                 "type": "array"
-                }
-                },
-                "required": [
-                "extranetPolicyName",
-                "providerVirtualNetworkName",
-                "subscriberVirtualNetworkNames"
-                ],
-                "type": "object"
-                },
-                "type": "array"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            }
+        },
+        "type": "object"
+    },
+    "type": "array"
+}
+'''))
 
     def validate(self, request):
         try:

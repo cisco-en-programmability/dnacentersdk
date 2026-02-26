@@ -36,20 +36,20 @@ class JSONSchemaValidatorE702D5786552992Aa76B930780569(object):
     """ClearMacAddressTable request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorE702D5786552992Aa76B930780569, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "operation": {
-                "type": "string"
-                },
-                "payload": {
-                "type": "object"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "operation": {
+            "type": "string"
+        },
+        "payload": {
+            "type": "object"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

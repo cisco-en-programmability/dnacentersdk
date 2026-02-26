@@ -36,24 +36,20 @@ class JSONSchemaValidatorC7F28C3D23Ba5384Be5E769Ae0505D00(object):
     """UpdateDeviceControllabilitySettings request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorC7F28C3D23Ba5384Be5E769Ae0505D00, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "autocorrectTelemetryConfig": {
-                "type": "boolean"
-                },
-                "deviceControllability": {
-                "type": "boolean"
-                }
-                },
-                "required": [
-                "autocorrectTelemetryConfig",
-                "deviceControllability"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "autocorrectTelemetryConfig": {
+            "type": "boolean"
+        },
+        "deviceControllability": {
+            "type": "boolean"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

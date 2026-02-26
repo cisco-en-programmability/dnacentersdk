@@ -36,38 +36,38 @@ class JSONSchemaValidatorDe4C9B685250DfA8556Ab1Ec20407C(object):
     """RogueAdditionalDetailCount request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorDe4C9B685250DfA8556Ab1Ec20407C, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "endTime": {
-                "type": "number"
-                },
-                "siteId": {
-                "items": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "endTime": {
+            "type": "number"
+        },
+        "siteId": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                },
-                "startTime": {
-                "type": "number"
-                },
-                "threatLevel": {
-                "items": {
+            },
+            "type": "array"
+        },
+        "startTime": {
+            "type": "number"
+        },
+        "threatLevel": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                },
-                "threatType": {
-                "items": {
+            },
+            "type": "array"
+        },
+        "threatType": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

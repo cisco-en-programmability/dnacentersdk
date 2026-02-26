@@ -37,46 +37,39 @@ class JSONSchemaValidatorA2Da4C1E5224542E8474F09Eb8D4F32D(object):
     definition."""
     def __init__(self):
         super(JSONSchemaValidatorA2Da4C1E5224542E8474F09Eb8D4F32D, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "designName": {
-                "type": "string"
-                },
-                "featureAttributes": {
-                "properties": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "designName": {
+            "type": "string"
+        },
+        "featureAttributes": {
+            "properties": {
                 "dot11beStatus": {
-                "type": "boolean"
+                    "type": "boolean"
                 },
                 "radioBand": {
-                "enum": [
-                "2_4GHZ",
-                "5GHZ",
-                "6GHZ"
-                ],
-                "type": "string"
+                    "enum": [
+                        "2_4GHZ",
+                        "5GHZ",
+                        "6GHZ"
+                    ],
+                    "type": "string"
                 }
-                },
-                "required": [
-                "radioBand"
-                ],
-                "type": "object"
-                },
-                "unlockedAttributes": {
-                "items": {
+            },
+            "type": "object"
+        },
+        "unlockedAttributes": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                }
-                },
-                "required": [
-                "designName",
-                "featureAttributes"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

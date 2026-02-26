@@ -36,23 +36,23 @@ class JSONSchemaValidatorD0456Ad1D5Bda99F7D9254F8A1Ec3(object):
     """UninstallOptionalPackages request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorD0456Ad1D5Bda99F7D9254F8A1Ec3, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "optionalPackages": {
-                "items": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "optionalPackages": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                }
-                },
-                "required": [
-                "optionalPackages"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        }
+    },
+    "required": [
+        "optionalPackages"
+    ],
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

@@ -36,44 +36,36 @@ class JSONSchemaValidatorDece7A9B353B49084A8Ffa4F18C91(object):
     """CreateSyslogDestination request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorDece7A9B353B49084A8Ffa4F18C91, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "configId": {
-                "type": "string"
-                },
-                "description":
-                 {
-                "type": "string"
-                },
-                "host": {
-                "type": "string"
-                },
-                "name": {
-                "type": "string"
-                },
-                "port": {
-                "type": "integer"
-                },
-                "protocol": {
-                "enum": [
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "configId": {
+            "type": "string"
+        },
+        "description": {
+            "type": "string"
+        },
+        "host": {
+            "type": "string"
+        },
+        "name": {
+            "type": "string"
+        },
+        "port": {
+            "type": "integer"
+        },
+        "protocol": {
+            "enum": [
                 "UDP",
                 "TCP"
-                ],
-                "type": "string"
-                }
-                },
-                "required": [
-                "configId",
-                "name",
-                "host",
-                "protocol",
-                "port"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            ],
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

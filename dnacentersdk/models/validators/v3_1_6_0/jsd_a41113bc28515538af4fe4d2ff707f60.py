@@ -36,23 +36,20 @@ class JSONSchemaValidatorA41113Bc28515538Af4FE4D2Ff707F60(object):
     """UnassignNetworkDevicesFromSites request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorA41113Bc28515538Af4FE4D2Ff707F60, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "deviceIds": {
-                "items": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "deviceIds": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                }
-                },
-                "required": [
-                "deviceIds"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

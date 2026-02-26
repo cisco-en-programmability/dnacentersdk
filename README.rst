@@ -177,7 +177,7 @@ Compatibility Matrix
    * - 3.1.3.0
      - 2.10.6
    * - 3.1.6.0
-     - 2.11.0
+     - 2.11.x
 
 Documentation
 -------------

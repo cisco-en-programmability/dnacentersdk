@@ -36,66 +36,59 @@ class JSONSchemaValidatorAe57085565E551594Fc05B4Db6A64Af(object):
     """AddTransitNetworks request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorAe57085565E551594Fc05B4Db6A64Af, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "items": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "items": {
+        "properties": {
+            "ipTransitSettings": {
                 "properties": {
-                "ipTransitSettings": {
-                "properties": {
-                "autonomousSystemNumber": {
-                "type": "string"
+                    "autonomousSystemNumber": {
+                        "type": "string"
+                    },
+                    "routingProtocolName": {
+                        "enum": [
+                            "BGP"
+                        ],
+                        "type": "string"
+                    }
                 },
-                "routingProtocolName": {
+                "type": "object"
+            },
+            "name": {
+                "type": "string"
+            },
+            "sdaTransitSettings": {
+                "properties": {
+                    "controlPlaneNetworkDeviceIds": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "isMulticastOverTransitEnabled": {
+                        "type": "boolean"
+                    }
+                },
+                "type": "object"
+            },
+            "siteId": {
+                "type": "string"
+            },
+            "type": {
                 "enum": [
-                "BGP"
+                    "IP_BASED_TRANSIT",
+                    "SDA_LISP_PUB_SUB_TRANSIT",
+                    "SDA_LISP_BGP_TRANSIT"
                 ],
                 "type": "string"
-                }
-                },
-                "type": "object"
-                },
-                "name": {
-                "type": "string"
-                },
-                "sdaTransitSettings": {
-                "properties": {
-                "controlPlaneNetworkDeviceIds": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "isMulticastOverTransitEnabled": {
-                "type": "boolean"
-                }
-                },
-                "required": [
-                "controlPlaneNetworkDeviceIds"
-                ],
-                "type": "object"
-                },
-                "siteId": {
-                "type": "string"
-                },
-                "type": {
-                "enum": [
-                "IP_BASED_TRANSIT",
-                "SDA_LISP_PUB_SUB_TRANSIT",
-                "SDA_LISP_BGP_TRANSIT"
-                ],
-                "type": "string"
-                }
-                },
-                "required": [
-                "name",
-                "type"
-                ],
-                "type": "object"
-                },
-                "type": "array"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            }
+        },
+        "type": "object"
+    },
+    "type": "array"
+}
+'''))
 
     def validate(self, request):
         try:

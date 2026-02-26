@@ -37,61 +37,53 @@ class JSONSchemaValidatorC45C1C55D498D03A72933690098(object):
     definition."""
     def __init__(self):
         super(JSONSchemaValidatorC45C1C55D498D03A72933690098, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "items": {
-                "properties": {
-                "externalConnectivityIpPoolName": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "items": {
+        "properties": {
+            "externalConnectivityIpPoolName": {
                 "type": "string"
-                },
-                "fabricId": {
+            },
+            "fabricId": {
                 "type": "string"
-                },
-                "interfaceName": {
+            },
+            "interfaceName": {
                 "type": "string"
-                },
-                "localIpAddress": {
+            },
+            "localIpAddress": {
                 "type": "string"
-                },
-                "localIpv6Address": {
+            },
+            "localIpv6Address": {
                 "type": "string"
-                },
-                "networkDeviceId": {
+            },
+            "networkDeviceId": {
                 "type": "string"
-                },
-                "remoteIpAddress": {
+            },
+            "remoteIpAddress": {
                 "type": "string"
-                },
-                "remoteIpv6Address": {
+            },
+            "remoteIpv6Address": {
                 "type": "string"
-                },
-                "tcpMssAdjustment": {
+            },
+            "tcpMssAdjustment": {
                 "type": "integer"
-                },
-                "transitNetworkId": {
+            },
+            "transitNetworkId": {
                 "type": "string"
-                },
-                "virtualNetworkName": {
+            },
+            "virtualNetworkName": {
                 "type": "string"
-                },
-                "vlanId": {
+            },
+            "vlanId": {
                 "type": "integer"
-                }
-                },
-                "required": [
-                "networkDeviceId",
-                "fabricId",
-                "transitNetworkId",
-                "interfaceName",
-                "virtualNetworkName",
-                "vlanId"
-                ],
-                "type": "object"
-                },
-                "type": "array"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            }
+        },
+        "type": "object"
+    },
+    "type": "array"
+}
+'''))
 
     def validate(self, request):
         try:

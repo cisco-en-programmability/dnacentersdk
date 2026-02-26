@@ -36,24 +36,20 @@ class JSONSchemaValidatorE0C7B28D55C85D49A84C1403Ca14Bd5F(object):
     """AddEdgeDevice request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorE0C7B28D55C85D49A84C1403Ca14Bd5F, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "deviceManagementIpAddress": {
-                "type": "string"
-                },
-                "siteNameHierarchy": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "deviceManagementIpAddress",
-                "siteNameHierarchy"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "deviceManagementIpAddress": {
+            "type": "string"
+        },
+        "siteNameHierarchy": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

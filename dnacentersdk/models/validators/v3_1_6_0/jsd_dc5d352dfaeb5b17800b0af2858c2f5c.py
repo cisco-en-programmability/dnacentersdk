@@ -36,100 +36,87 @@ class JSONSchemaValidatorDc5D352DFaeb5B17800B0Af2858C2F5C(object):
     """LANAutomationStartV2 request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorDc5D352DFaeb5B17800B0Af2858C2F5C, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "items": {
+        "properties": {
+            "discoveredDeviceSiteNameHierarchy": {
+                "type": "string"
+            },
+            "discoveryDevices": {
                 "items": {
-                "properties": {
-                "discoveredDeviceSiteNameHierarchy": {
-                "type": "string"
-                },
-                "discoveryDevices": {
-                "items": {
-                "properties": {
-                "deviceHostName": {
-                "type": "string"
-                },
-                "deviceManagementIPAddress": {
-                "type": "string"
-                },
-                "deviceSerialNumber": {
-                "type": "string"
-                },
-                "deviceSiteNameHierarchy": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "deviceSerialNumber"
-                ],
-                "type": "object"
+                    "properties": {
+                        "deviceHostName": {
+                            "type": "string"
+                        },
+                        "deviceManagementIPAddress": {
+                            "type": "string"
+                        },
+                        "deviceSerialNumber": {
+                            "type": "string"
+                        },
+                        "deviceSiteNameHierarchy": {
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
                 },
                 "type": "array"
-                },
-                "discoveryLevel": {
+            },
+            "discoveryLevel": {
                 "type": "integer"
-                },
-                "discoveryTimeout": {
+            },
+            "discoveryTimeout": {
                 "type": "integer"
-                },
-                "hostNameFileId": {
+            },
+            "hostNameFileId": {
                 "type": "string"
-                },
-                "hostNamePrefix": {
+            },
+            "hostNamePrefix": {
                 "type": "string"
-                },
-                "ipPools": {
+            },
+            "ipPools": {
                 "items": {
-                "properties": {
-                "ipPoolName": {
-                "type": "string"
-                },
-                "ipPoolRole": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "ipPoolName",
-                "ipPoolRole"
-                ],
-                "type": "object"
+                    "properties": {
+                        "ipPoolName": {
+                            "type": "string"
+                        },
+                        "ipPoolRole": {
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
                 },
                 "type": "array"
-                },
-                "isisDomainPwd": {
+            },
+            "isisDomainPwd": {
                 "type": "string"
-                },
-                "multicastEnabled": {
+            },
+            "multicastEnabled": {
                 "type": "boolean"
-                },
-                "peerDeviceManagmentIPAddress": {
+            },
+            "peerDeviceManagmentIPAddress": {
                 "type": "string"
-                },
-                "primaryDeviceInterfaceNames": {
+            },
+            "primaryDeviceInterfaceNames": {
                 "items": {
-                "type": "string"
+                    "type": "string"
                 },
                 "type": "array"
-                },
-                "primaryDeviceManagmentIPAddress": {
+            },
+            "primaryDeviceManagmentIPAddress": {
                 "type": "string"
-                },
-                "redistributeIsisToBgp": {
+            },
+            "redistributeIsisToBgp": {
                 "type": "boolean"
-                }
-                },
-                "required": [
-                "discoveredDeviceSiteNameHierarchy",
-                "primaryDeviceManagmentIPAddress",
-                "primaryDeviceInterfaceNames",
-                "ipPools"
-                ],
-                "type": "object"
-                },
-                "type": "array"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            }
+        },
+        "type": "object"
+    },
+    "type": "array"
+}
+'''))
 
     def validate(self, request):
         try:

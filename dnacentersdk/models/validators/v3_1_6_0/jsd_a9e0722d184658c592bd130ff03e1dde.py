@@ -36,73 +36,71 @@ class JSONSchemaValidatorA9E0722D184658C592Bd130Ff03E1Dde(object):
     """GetDeviceInterfaceStatsInfoV2 request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorA9E0722D184658C592Bd130Ff03E1Dde, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "endTime": {
-                "type": "integer"
-                },
-                "query": {
-                "properties": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "endTime": {
+            "type": "integer"
+        },
+        "query": {
+            "properties": {
                 "fields": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
+                    "items": {},
+                    "type": "array"
                 },
                 "filters": {
-                "items": {
-                "properties": {
-                "key": {
-                "type": "string"
-                },
-                "operator": {
-                "type": "string"
-                },
-                "value": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
+                    "items": {
+                        "properties": {
+                            "key": {
+                                "type": "string"
+                            },
+                            "operator": {
+                                "type": "string"
+                            },
+                            "value": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
                 },
                 "page": {
-                "properties": {
-                "limit": {
-                "type": "integer"
-                },
-                "offset": {
-                "type": "number"
-                },
-                "orderBy": {
-                "items": {
-                "properties": {
-                "name": {
-                "type": "string"
-                },
-                "order": {
-                "type": "string"
+                    "properties": {
+                        "limit": {
+                            "type": "integer"
+                        },
+                        "offset": {
+                            "type": "number"
+                        },
+                        "orderBy": {
+                            "items": {
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "order": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
                 }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                }
-                },
-                "type": "object"
-                }
-                },
-                "type": "object"
-                },
-                "startTime": {
-                "type": "integer"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "object"
+        },
+        "startTime": {
+            "type": "integer"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

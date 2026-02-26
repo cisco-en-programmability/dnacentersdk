@@ -36,75 +36,68 @@ class JSONSchemaValidatorAc7Ce690E0F55A469B0A9Bfa3D2C165E(object):
     """GetsTheTrendAnalyticsData request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorAc7Ce690E0F55A469B0A9Bfa3D2C165E, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "aggregateAttributes": {
+            "items": {},
+            "type": "array"
+        },
+        "attributes": {
+            "items": {
+                "type": "string"
+            },
+            "type": "array"
+        },
+        "endTime": {
+            "type": "integer"
+        },
+        "filters": {
+            "items": {
                 "properties": {
-                "aggregateAttributes": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "attributes": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "endTime": {
-                "type": "integer"
-                },
-                "filters": {
-                "items": {
-                "properties": {
-                "key": {
-                "type": "string"
-                },
-                "operator": {
-                "type": "string"
-                },
-                "value": {
-                "type": "string"
-                }
+                    "key": {
+                        "type": "string"
+                    },
+                    "operator": {
+                        "type": "string"
+                    },
+                    "value": {
+                        "type": "string"
+                    }
                 },
                 "type": "object"
-                },
-                "type": "array"
-                },
-                "groupBy": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "page": {
-                "properties": {
+            },
+            "type": "array"
+        },
+        "groupBy": {
+            "items": {},
+            "type": "array"
+        },
+        "page": {
+            "properties": {
                 "limit": {
-                "type": "integer"
+                    "type": "integer"
                 },
                 "offset": {
-                "type": "integer"
+                    "type": "integer"
                 },
                 "timestampOrder": {
-                "type": "string"
+                    "type": "string"
                 }
-                },
-                "type": "object"
-                },
-                "startTime": {
-                "type": "integer"
-                },
-                "trendInterval": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "trendInterval"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "object"
+        },
+        "startTime": {
+            "type": "integer"
+        },
+        "trendInterval": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

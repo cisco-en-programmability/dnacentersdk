@@ -38,20 +38,20 @@ class JSONSchemaValidatorC224Ae3007D5486Bbc5Abb1F88E95E6(object):
     twareImage request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorC224Ae3007D5486Bbc5Abb1F88E95E6, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "siteIds": {
-                "items": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "siteIds": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

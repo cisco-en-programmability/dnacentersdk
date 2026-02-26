@@ -36,155 +36,131 @@ class JSONSchemaValidatorB3323A24B275402B97C7E9Ccfd78C91(object):
     """UpdateGlobalCredentialsV2 request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorB3323A24B275402B97C7E9Ccfd78C91, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "cliCredential": {
-                "properties": {
-                "description":
-                 {
-                "type": "string"
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "cliCredential": {
+            "properties": {
+                "description": {
+                    "type": "string"
                 },
                 "enablePassword": {
-                "type": "string"
+                    "type": "string"
                 },
                 "id": {
-                "type": "string"
+                    "type": "string"
                 },
                 "password": {
-                "type": "string"
+                    "type": "string"
                 },
                 "username": {
-                "type": "string"
+                    "type": "string"
                 }
-                },
-                "required": [
-                "id"
-                ],
-                "type": "object"
-                },
-                "httpsRead": {
-                "properties": {
-                "description":
-                 {
-                "type": "string"
+            },
+            "type": "object"
+        },
+        "httpsRead": {
+            "properties": {
+                "description": {
+                    "type": "string"
                 },
                 "id": {
-                "type": "string"
+                    "type": "string"
                 },
                 "password": {
-                "type": "string"
+                    "type": "string"
                 },
                 "port": {
-                "type": "integer"
+                    "type": "integer"
                 },
                 "username": {
-                "type": "string"
+                    "type": "string"
                 }
-                },
-                "required": [
-                "id"
-                ],
-                "type": "object"
-                },
-                "httpsWrite": {
-                "properties": {
-                "description":
-                 {
-                "type": "string"
+            },
+            "type": "object"
+        },
+        "httpsWrite": {
+            "properties": {
+                "description": {
+                    "type": "string"
                 },
                 "id": {
-                "type": "string"
+                    "type": "string"
                 },
                 "password": {
-                "type": "string"
+                    "type": "string"
                 },
                 "port": {
-                "type": "integer"
+                    "type": "integer"
                 },
                 "username": {
-                "type": "string"
+                    "type": "string"
                 }
-                },
-                "required": [
-                "id"
-                ],
-                "type": "object"
-                },
-                "snmpV2cRead": {
-                "properties": {
-                "description":
-                 {
-                "type": "string"
+            },
+            "type": "object"
+        },
+        "snmpV2cRead": {
+            "properties": {
+                "description": {
+                    "type": "string"
                 },
                 "id": {
-                "type": "string"
+                    "type": "string"
                 },
                 "readCommunity": {
-                "type": "string"
+                    "type": "string"
                 }
-                },
-                "required": [
-                "id"
-                ],
-                "type": "object"
-                },
-                "snmpV2cWrite": {
-                "properties": {
-                "description":
-                 {
-                "type": "string"
+            },
+            "type": "object"
+        },
+        "snmpV2cWrite": {
+            "properties": {
+                "description": {
+                    "type": "string"
                 },
                 "id": {
-                "type": "string"
+                    "type": "string"
                 },
                 "writeCommunity": {
-                "type": "string"
+                    "type": "string"
                 }
-                },
-                "required": [
-                "id"
-                ],
-                "type": "object"
-                },
-                "snmpV3": {
-                "properties": {
+            },
+            "type": "object"
+        },
+        "snmpV3": {
+            "properties": {
                 "authPassword": {
-                "type": "string"
+                    "type": "string"
                 },
                 "authType": {
-                "type": "string"
+                    "type": "string"
                 },
-                "description":
-                 {
-                "type": "string"
+                "description": {
+                    "type": "string"
                 },
                 "id": {
-                "type": "string"
+                    "type": "string"
                 },
                 "privacyPassword": {
-                "type": "string"
+                    "type": "string"
                 },
                 "privacyType": {
-                "type": "string"
+                    "type": "string"
                 },
                 "snmpMode": {
-                "type": "string"
+                    "type": "string"
                 },
                 "username": {
-                "type": "string"
+                    "type": "string"
                 }
-                },
-                "required": [
-                "id"
-                ],
-                "type": "object"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "object"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

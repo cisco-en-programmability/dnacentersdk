@@ -36,137 +36,117 @@ class JSONSchemaValidatorBd31Fcbd1Ecd5A2C8B812088B27Bfcea(object):
     """CreateApplicationPolicyQueuingProfile request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorBd31Fcbd1Ecd5A2C8B812088B27Bfcea, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "items": {
+        "properties": {
+            "clause": {
                 "items": {
-                "properties": {
-                "clause": {
-                "items": {
-                "properties": {
-                "interfaceSpeedBandwidthClauses": {
-                "items": {
-                "properties": {
-                "interfaceSpeed": {
-                "enum": [
-                "ALL",
-                "HUNDRED_GBPS",
-                "TEN_GBPS",
-                "ONE_GBPS",
-                "HUNDRED_MBPS",
-                "TEN_MBPS",
-                "ONE_MBPS"
-                ],
-                "type": "string"
-                },
-                "tcBandwidthSettings": {
-                "items": {
-                "properties": {
-                "bandwidthPercentage": {
-                "type": "integer"
-                },
-                "trafficClass": {
-                "enum": [
-                "BROADCAST_VIDEO",
-                "REAL_TIME_INTERACTIVE",
-                "VOIP_TELEPHONY",
-                "SCAVENGER",
-                "TRANSACTIONAL_DATA",
-                "MULTIMEDIA_CONFERENCING",
-                "NETWORK_CONTROL",
-                "MULTIMEDIA_STREAMING",
-                "BEST_EFFORT",
-                "SIGNALING",
-                "BULK_DATA",
-                "OPS_ADMIN_MGMT"
-                ],
-                "type": "string"
-                }
-                },
-                "required": [
-                "bandwidthPercentage",
-                "trafficClass"
-                ],
-                "type": "object"
+                    "properties": {
+                        "interfaceSpeedBandwidthClauses": {
+                            "items": {
+                                "properties": {
+                                    "interfaceSpeed": {
+                                        "enum": [
+                                            "ALL",
+                                            "HUNDRED_GBPS",
+                                            "TEN_GBPS",
+                                            "ONE_GBPS",
+                                            "HUNDRED_MBPS",
+                                            "TEN_MBPS",
+                                            "ONE_MBPS"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "tcBandwidthSettings": {
+                                        "items": {
+                                            "properties": {
+                                                "bandwidthPercentage": {
+                                                    "type": "integer"
+                                                },
+                                                "trafficClass": {
+                                                    "enum": [
+                                                        "BROADCAST_VIDEO",
+                                                        "REAL_TIME_INTERACTIVE",
+                                                        "VOIP_TELEPHONY",
+                                                        "SCAVENGER",
+                                                        "TRANSACTIONAL_DATA",
+                                                        "MULTIMEDIA_CONFERENCING",
+                                                        "NETWORK_CONTROL",
+                                                        "MULTIMEDIA_STREAMING",
+                                                        "BEST_EFFORT",
+                                                        "SIGNALING",
+                                                        "BULK_DATA",
+                                                        "OPS_ADMIN_MGMT"
+                                                    ],
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "type": "array"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "isCommonBetweenAllInterfaceSpeeds": {
+                            "type": "boolean"
+                        },
+                        "tcDscpSettings": {
+                            "items": {
+                                "properties": {
+                                    "dscp": {
+                                        "type": "string"
+                                    },
+                                    "trafficClass": {
+                                        "enum": [
+                                            "BROADCAST_VIDEO",
+                                            "REAL_TIME_INTERACTIVE",
+                                            "VOIP_TELEPHONY",
+                                            "SCAVENGER",
+                                            "TRANSACTIONAL_DATA",
+                                            "MULTIMEDIA_CONFERENCING",
+                                            "NETWORK_CONTROL",
+                                            "MULTIMEDIA_STREAMING",
+                                            "BEST_EFFORT",
+                                            "SIGNALING",
+                                            "BULK_DATA",
+                                            "OPS_ADMIN_MGMT"
+                                        ],
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "type": {
+                            "enum": [
+                                "BANDWIDTH",
+                                "DSCP_CUSTOMIZATION"
+                            ],
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
                 },
                 "type": "array"
-                }
-                },
-                "required": [
-                "interfaceSpeed",
-                "tcBandwidthSettings"
-                ],
-                "type": "object"
-                },
-                "type": "array"
-                },
-                "isCommonBetweenAllInterfaceSpeeds": {
-                "type": "boolean"
-                },
-                "tcDscpSettings": {
-                "items": {
-                "properties": {
-                "dscp": {
+            },
+            "description": {
                 "type": "string"
-                },
-                "trafficClass": {
-                "enum": [
-                "BROADCAST_VIDEO",
-                "REAL_TIME_INTERACTIVE",
-                "VOIP_TELEPHONY",
-                "SCAVENGER",
-                "TRANSACTIONAL_DATA",
-                "MULTIMEDIA_CONFERENCING",
-                "NETWORK_CONTROL",
-                "MULTIMEDIA_STREAMING",
-                "BEST_EFFORT",
-                "SIGNALING",
-                "BULK_DATA",
-                "OPS_ADMIN_MGMT"
-                ],
+            },
+            "name": {
                 "type": "string"
-                }
-                },
-                "required": [
-                "dscp",
-                "trafficClass"
-                ],
-                "type": "object"
-                },
-                "type": "array"
-                },
-                "type": {
-                "enum": [
-                "BANDWIDTH",
-                "DSCP_CUSTOMIZATION"
-                ],
-                "type": "string"
-                }
-                },
-                "required": [
-                "type"
-                ],
-                "type": "object"
-                },
-                "type": "array"
-                },
-                "description":
-                 {
-                "type": "string"
-                },
-                "name": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "name",
-                "clause"
-                ],
-                "type": "object"
-                },
-                "type": "array"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            }
+        },
+        "type": "object"
+    },
+    "type": "array"
+}
+'''))
 
     def validate(self, request):
         try:

@@ -36,381 +36,305 @@ class JSONSchemaValidatorFa27CcBaf55711849381A707E1Edfa(object):
     """ApplicationPolicyIntent request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorFa27CcBaf55711849381A707E1Edfa, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "createList": {
+            "items": {
                 "properties": {
-                "createList": {
-                "items": {
-                "properties": {
-                "advancedPolicyScope": {
-                "properties": {
-                "advancedPolicyScopeElement": {
-                "items": {
-                "properties": {
-                "groupId": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "ssid": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                }
-                },
-                "required": [
-                "groupId"
-                ],
-                "type": "object"
-                },
-                "type": "array"
-                },
-                "name": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "name",
-                "advancedPolicyScopeElement"
-                ],
-                "type": "object"
-                },
-                "consumer": {
-                "properties": {
-                "scalableGroup": {
-                "items": {
-                "properties": {
-                "idRef": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "idRef"
-                ],
-                "type": "object"
-                },
-                "type": "array"
-                }
-                },
-                "required": [
-                "scalableGroup"
-                ],
-                "type": "object"
-                },
-                "contract": {
-                "properties": {
-                "idRef": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "idRef"
-                ],
-                "type": "object"
-                },
-                "deletePolicyStatus": {
-                "enum": [
-                "NONE",
-                "DELETED",
-                "RESTORED"
-                ],
-                "type": "string"
-                },
-                "exclusiveContract": {
-                "properties": {
-                "clause": {
-                "items": {
-                "properties": {
-                "deviceRemovalBehavior": {
-                "enum": [
-                "DELETE",
-                "RESTORE",
-                "IGNORE"
-                ],
-                "type": "string"
-                },
-                "hostTrackingEnabled": {
-                "type": "boolean"
-                },
-                "relevanceLevel": {
-                "enum": [
-                "BUSINESS_RELEVANT",
-                "BUSINESS_IRRELEVANT",
-                "DEFAULT"
-                ],
-                "type": "string"
-                },
-                "type": {
-                "enum": [
-                "BUSINESS_RELEVANCE",
-                "APPLICATION_POLICY_KNOBS"
-                ],
-                "type": "string"
-                }
-                },
-                "required": [
-                "type"
-                ],
-                "type": "object"
-                },
-                "type": "array"
-                }
-                },
-                "required": [
-                "clause"
-                ],
-                "type": "object"
-                },
-                "name": {
-                "type": "string"
-                },
-                "policyScope": {
-                "type": "string"
-                },
-                "priority": {
-                "type": "string"
-                },
-                "producer": {
-                "properties": {
-                "scalableGroup": {
-                "items": {
-                "properties": {
-                "idRef": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "idRef"
-                ],
-                "type": "object"
-                },
-                "type": "array"
-                }
-                },
-                "required": [
-                "scalableGroup"
-                ],
-                "type": "object"
-                }
-                },
-                "required": [
-                "name",
-                "deletePolicyStatus",
-                "policyScope",
-                "priority",
-                "advancedPolicyScope"
-                ],
-                "type": "object"
-                },
-                "type": "array"
-                },
-                "deleteList": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "updateList": {
-                "items": {
-                "properties": {
-                "advancedPolicyScope": {
-                "properties": {
-                "advancedPolicyScopeElement": {
-                "items": {
-                "properties": {
-                "groupId": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "id": {
-                "type": "string"
-                },
-                "ssid": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                }
-                },
-                "required": [
-                "id",
-                "groupId"
-                ],
-                "type": "object"
-                },
-                "type": "array"
-                },
-                "id": {
-                "type": "string"
-                },
-                "name": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "id",
-                "name",
-                "advancedPolicyScopeElement"
-                ],
-                "type": "object"
-                },
-                "consumer": {
-                "properties": {
-                "id": {
-                "type": "string"
-                },
-                "scalableGroup": {
-                "items": {
-                "properties": {
-                "idRef": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "idRef"
-                ],
-                "type": "object"
-                },
-                "type": "array"
-                }
-                },
-                "required": [
-                "id",
-                "scalableGroup"
-                ],
-                "type": "object"
-                },
-                "contract": {
-                "properties": {
-                "idRef": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "idRef"
-                ],
-                "type": "object"
-                },
-                "deletePolicyStatus": {
-                "enum": [
-                "NONE",
-                "DELETED",
-                "RESTORED"
-                ],
-                "type": "string"
-                },
-                "exclusiveContract": {
-                "properties": {
-                "clause": {
-                "items": {
-                "properties": {
-                "deviceRemovalBehavior": {
-                "enum": [
-                "DELETE",
-                "RESTORE",
-                "IGNORE"
-                ],
-                "type": "string"
-                },
-                "hostTrackingEnabled": {
-                "type": "boolean"
-                },
-                "id": {
-                "type": "string"
-                },
-                "relevanceLevel": {
-                "enum": [
-                "BUSINESS_RELEVANT",
-                "BUSINESS_IRRELEVANT",
-                "DEFAULT"
-                ],
-                "type": "string"
-                },
-                "type": {
-                "enum": [
-                "BUSINESS_RELEVANCE",
-                "APPLICATION_POLICY_KNOBS"
-                ],
-                "type": "string"
-                }
-                },
-                "required": [
-                "id",
-                "type"
-                ],
-                "type": "object"
-                },
-                "type": "array"
-                },
-                "id": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "id",
-                "clause"
-                ],
-                "type": "object"
-                },
-                "id": {
-                "type": "string"
-                },
-                "name": {
-                "type": "string"
-                },
-                "policyScope": {
-                "type": "string"
-                },
-                "priority": {
-                "type": "string"
-                },
-                "producer": {
-                "properties": {
-                "id": {
-                "type": "string"
-                },
-                "scalableGroup": {
-                "items": {
-                "properties": {
-                "idRef": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "idRef"
-                ],
-                "type": "object"
-                },
-                "type": "array"
-                }
-                },
-                "required": [
-                "id",
-                "scalableGroup"
-                ],
-                "type": "object"
-                }
-                },
-                "required": [
-                "id",
-                "name",
-                "policyScope",
-                "priority",
-                "advancedPolicyScope"
-                ],
-                "type": "object"
-                },
-                "type": "array"
-                }
+                    "advancedPolicyScope": {
+                        "properties": {
+                            "advancedPolicyScopeElement": {
+                                "items": {
+                                    "properties": {
+                                        "groupId": {
+                                            "items": {
+                                                "type": "string"
+                                            },
+                                            "type": "array"
+                                        },
+                                        "ssid": {
+                                            "items": {
+                                                "type": "string"
+                                            },
+                                            "type": "array"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "name": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "consumer": {
+                        "properties": {
+                            "scalableGroup": {
+                                "items": {
+                                    "properties": {
+                                        "idRef": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "contract": {
+                        "properties": {
+                            "idRef": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "deletePolicyStatus": {
+                        "enum": [
+                            "NONE",
+                            "DELETED",
+                            "RESTORED"
+                        ],
+                        "type": "string"
+                    },
+                    "exclusiveContract": {
+                        "properties": {
+                            "clause": {
+                                "items": {
+                                    "properties": {
+                                        "deviceRemovalBehavior": {
+                                            "enum": [
+                                                "DELETE",
+                                                "RESTORE",
+                                                "IGNORE"
+                                            ],
+                                            "type": "string"
+                                        },
+                                        "hostTrackingEnabled": {
+                                            "type": "boolean"
+                                        },
+                                        "relevanceLevel": {
+                                            "enum": [
+                                                "BUSINESS_RELEVANT",
+                                                "BUSINESS_IRRELEVANT",
+                                                "DEFAULT"
+                                            ],
+                                            "type": "string"
+                                        },
+                                        "type": {
+                                            "enum": [
+                                                "BUSINESS_RELEVANCE",
+                                                "APPLICATION_POLICY_KNOBS"
+                                            ],
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "policyScope": {
+                        "type": "string"
+                    },
+                    "priority": {
+                        "type": "string"
+                    },
+                    "producer": {
+                        "properties": {
+                            "scalableGroup": {
+                                "items": {
+                                    "properties": {
+                                        "idRef": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "type": "object"
+                    }
                 },
                 "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        },
+        "deleteList": {
+            "items": {
+                "type": "string"
+            },
+            "type": "array"
+        },
+        "updateList": {
+            "items": {
+                "properties": {
+                    "advancedPolicyScope": {
+                        "properties": {
+                            "advancedPolicyScopeElement": {
+                                "items": {
+                                    "properties": {
+                                        "groupId": {
+                                            "items": {
+                                                "type": "string"
+                                            },
+                                            "type": "array"
+                                        },
+                                        "id": {
+                                            "type": "string"
+                                        },
+                                        "ssid": {
+                                            "items": {
+                                                "type": "string"
+                                            },
+                                            "type": "array"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "id": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "consumer": {
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            },
+                            "scalableGroup": {
+                                "items": {
+                                    "properties": {
+                                        "idRef": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "contract": {
+                        "properties": {
+                            "idRef": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "deletePolicyStatus": {
+                        "enum": [
+                            "NONE",
+                            "DELETED",
+                            "RESTORED"
+                        ],
+                        "type": "string"
+                    },
+                    "exclusiveContract": {
+                        "properties": {
+                            "clause": {
+                                "items": {
+                                    "properties": {
+                                        "deviceRemovalBehavior": {
+                                            "enum": [
+                                                "DELETE",
+                                                "RESTORE",
+                                                "IGNORE"
+                                            ],
+                                            "type": "string"
+                                        },
+                                        "hostTrackingEnabled": {
+                                            "type": "boolean"
+                                        },
+                                        "id": {
+                                            "type": "string"
+                                        },
+                                        "relevanceLevel": {
+                                            "enum": [
+                                                "BUSINESS_RELEVANT",
+                                                "BUSINESS_IRRELEVANT",
+                                                "DEFAULT"
+                                            ],
+                                            "type": "string"
+                                        },
+                                        "type": {
+                                            "enum": [
+                                                "BUSINESS_RELEVANCE",
+                                                "APPLICATION_POLICY_KNOBS"
+                                            ],
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "id": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "id": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "policyScope": {
+                        "type": "string"
+                    },
+                    "priority": {
+                        "type": "string"
+                    },
+                    "producer": {
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            },
+                            "scalableGroup": {
+                                "items": {
+                                    "properties": {
+                                        "idRef": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "type": "object"
+                    }
+                },
+                "type": "object"
+            },
+            "type": "array"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

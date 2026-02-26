@@ -36,54 +36,48 @@ class JSONSchemaValidatorC524F0Ec199E5435BcaeE56B423532E7(object):
     """CreateCLICredentials request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorC524F0Ec199E5435BcaeE56B423532E7, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "items": {
-                "properties": {
-                "comments": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "items": {
+        "properties": {
+            "comments": {
                 "type": "string"
-                },
-                "credentialType": {
+            },
+            "credentialType": {
                 "enum": [
-                "GLOBAL",
-                "APP"
+                    "GLOBAL",
+                    "APP"
                 ],
                 "type": "string"
-                },
-                "description":
-                 {
+            },
+            "description": {
                 "type": "string"
-                },
-                "enablePassword": {
+            },
+            "enablePassword": {
                 "type": "string"
-                },
-                "id": {
+            },
+            "id": {
                 "type": "string"
-                },
-                "instanceTenantId": {
+            },
+            "instanceTenantId": {
                 "type": "string"
-                },
-                "instanceUuid": {
+            },
+            "instanceUuid": {
                 "type": "string"
-                },
-                "password": {
+            },
+            "password": {
                 "type": "string"
-                },
-                "username": {
+            },
+            "username": {
                 "type": "string"
-                }
-                },
-                "required": [
-                "enablePassword",
-                "password",
-                "username"
-                ],
-                "type": "object"
-                },
-                "type": "array"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            }
+        },
+        "type": "object"
+    },
+    "type": "array"
+}
+'''))
 
     def validate(self, request):
         try:

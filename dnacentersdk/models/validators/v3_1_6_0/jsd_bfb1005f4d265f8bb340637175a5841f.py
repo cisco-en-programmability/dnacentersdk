@@ -36,59 +36,49 @@ class JSONSchemaValidatorBfb1005F4D265F8BB340637175A5841F(object):
     """CreatesAFloorV2 request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorBfb1005F4D265F8BB340637175A5841F, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "floorNumber": {
-                "type": "integer"
-                },
-                "height": {
-                "type": "number"
-                },
-                "length": {
-                "type": "number"
-                },
-                "name": {
-                "type": "string"
-                },
-                "parentId": {
-                "type": "string"
-                },
-                "rfModel": {
-                "enum": [
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "floorNumber": {
+            "type": "integer"
+        },
+        "height": {
+            "type": "number"
+        },
+        "length": {
+            "type": "number"
+        },
+        "name": {
+            "type": "string"
+        },
+        "parentId": {
+            "type": "string"
+        },
+        "rfModel": {
+            "enum": [
                 "Free Space",
                 "Outdoor Open Space",
                 "Cubes And Walled Offices",
                 "Indoor High Ceiling",
                 "Drywall Office Only"
-                ],
-                "type": "string"
-                },
-                "unitsOfMeasure": {
-                "enum": [
+            ],
+            "type": "string"
+        },
+        "unitsOfMeasure": {
+            "enum": [
                 "feet",
                 "meters"
-                ],
-                "type": "string"
-                },
-                "width": {
-                "type": "number"
-                }
-                },
-                "required": [
-                "parentId",
-                "name",
-                "floorNumber",
-                "rfModel",
-                "width",
-                "length",
-                "height",
-                "unitsOfMeasure"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            ],
+            "type": "string"
+        },
+        "width": {
+            "type": "number"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

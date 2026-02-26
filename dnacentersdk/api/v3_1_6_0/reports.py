@@ -315,7 +315,7 @@ class Reports(object):
         """Update schedule of flexible report.
 
         Args:
-            schedule(object): Reports's Schedule information.
+            schedule(any): Reports's Schedule information.
             report_id(str): reportId path parameter. Id of the report.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -517,9 +517,9 @@ class Reports(object):
 
         Args:
             dataCategory(string): Reports's category of viewgroup for the report.
-            deliveries(list): Reports's Array of available delivery channels (list of strings).
+            deliveries(list): Reports's Array of available delivery channels.
             name(string): Reports's report name.
-            schedule(object): Reports's schedule.
+            schedule(any): Reports's schedule.
             tags(list): Reports's array of tags for report (list of strings).
             view(object): Reports's view.
             viewGroupId(string): Reports's viewGroupId of the viewgroup for the report.

@@ -36,71 +36,65 @@ class JSONSchemaValidatorF5A13405Ba69F3957B98Db8663A(object):
     """ResetDevice request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorF5A13405Ba69F3957B98Db8663A, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "deviceResetList": {
+            "items": {
                 "properties": {
-                "deviceResetList": {
-                "items": {
-                "properties": {
-                "configList": {
-                "items": {
-                "properties": {
-                "configId": {
-                "type": "string"
-                },
-                "configParameters": {
-                "items": {
-                "properties": {
-                "key": {
-                "type": "string"
-                },
-                "value": {
-                "type": "string"
-                }
+                    "configList": {
+                        "items": {
+                            "properties": {
+                                "configId": {
+                                    "type": "string"
+                                },
+                                "configParameters": {
+                                    "items": {
+                                        "properties": {
+                                            "key": {
+                                                "type": "string"
+                                            },
+                                            "value": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    },
+                                    "type": "array"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "type": "array"
+                    },
+                    "deviceId": {
+                        "type": "string"
+                    },
+                    "licenseLevel": {
+                        "type": "string"
+                    },
+                    "licenseType": {
+                        "type": "string"
+                    },
+                    "topOfStackSerialNumber": {
+                        "type": "string"
+                    }
                 },
                 "type": "object"
-                },
-                "type": "array"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                },
-                "deviceId": {
-                "type": "string"
-                },
-                "licenseLevel": {
-                "type": "string"
-                },
-                "licenseType": {
-                "type": "string"
-                },
-                "topOfStackSerialNumber": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "deviceId"
-                ],
-                "type": "object"
-                },
-                "type": "array"
-                },
-                "projectId": {
-                "type": "string"
-                },
-                "workflowId": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "deviceResetList"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        },
+        "projectId": {
+            "type": "string"
+        },
+        "workflowId": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

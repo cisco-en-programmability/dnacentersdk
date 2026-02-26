@@ -36,38 +36,33 @@ class JSONSchemaValidatorE9C39175D785A0EB9D6F402F378A2Ba(object):
     """CreateNFSConfiguration request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorE9C39175D785A0EB9D6F402F378A2Ba, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "nfsPort": {
-                "type": "integer"
-                },
-                "nfsVersion": {
-                "enum": [
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "nfsPort": {
+            "type": "integer"
+        },
+        "nfsVersion": {
+            "enum": [
                 "nfs3",
                 "nfs4"
-                ],
-                "type": "string"
-                },
-                "portMapperPort": {
-                "type": "integer"
-                },
-                "server": {
-                "type": "string"
-                },
-                "sourcePath": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "nfsVersion",
-                "server",
-                "sourcePath"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            ],
+            "type": "string"
+        },
+        "portMapperPort": {
+            "type": "integer"
+        },
+        "server": {
+            "type": "string"
+        },
+        "sourcePath": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

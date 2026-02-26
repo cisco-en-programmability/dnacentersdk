@@ -36,55 +36,50 @@ class JSONSchemaValidatorAf29516F0C8591DA2A92523B5Ab3386(object):
     """AddPortAssignmentForUserDevice request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorAf29516F0C8591DA2A92523B5Ab3386, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "authenticateTemplateName": {
-                "enum": [
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "authenticateTemplateName": {
+            "enum": [
                 "Open Authentication",
                 "Closed Authentication",
                 "Low Impact",
                 "No Authentication"
-                ],
+            ],
+            "type": "string"
+        },
+        "dataIpAddressPoolName": {
+            "type": "string"
+        },
+        "deviceManagementIpAddress": {
+            "type": "string"
+        },
+        "interfaceDescription": {
+            "type": "string"
+        },
+        "interfaceName": {
+            "type": "string"
+        },
+        "interfaceNames": {
+            "items": {
                 "type": "string"
-                },
-                "dataIpAddressPoolName": {
-                "type": "string"
-                },
-                "deviceManagementIpAddress": {
-                "type": "string"
-                },
-                "interfaceDescription": {
-                "type": "string"
-                },
-                "interfaceName": {
-                "type": "string"
-                },
-                "interfaceNames": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "scalableGroupName": {
-                "type": "string"
-                },
-                "siteNameHierarchy": {
-                "type": "string"
-                },
-                "voiceIpAddressPoolName": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "siteNameHierarchy",
-                "deviceManagementIpAddress",
-                "interfaceName"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        },
+        "scalableGroupName": {
+            "type": "string"
+        },
+        "siteNameHierarchy": {
+            "type": "string"
+        },
+        "voiceIpAddressPoolName": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

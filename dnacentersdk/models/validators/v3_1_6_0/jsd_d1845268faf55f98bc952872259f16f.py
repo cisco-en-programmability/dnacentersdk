@@ -36,55 +36,48 @@ class JSONSchemaValidatorD1845268Faf55F98Bc952872259F16F(object):
     """UpdateHTTPReadCredential request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorD1845268Faf55F98Bc952872259F16F, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "comments": {
-                "type": "string"
-                },
-                "credentialType": {
-                "enum": [
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "comments": {
+            "type": "string"
+        },
+        "credentialType": {
+            "enum": [
                 "GLOBAL",
                 "APP"
-                ],
-                "type": "string"
-                },
-                "description":
-                 {
-                "type": "string"
-                },
-                "id": {
-                "type": "string"
-                },
-                "instanceTenantId": {
-                "type": "string"
-                },
-                "instanceUuid": {
-                "type": "string"
-                },
-                "password": {
-                "type": "string"
-                },
-                "port": {
-                "type": "integer"
-                },
-                "secure": {
-                "type": "boolean"
-                },
-                "username": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "id",
-                "password",
-                "port",
-                "username"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            ],
+            "type": "string"
+        },
+        "description": {
+            "type": "string"
+        },
+        "id": {
+            "type": "string"
+        },
+        "instanceTenantId": {
+            "type": "string"
+        },
+        "instanceUuid": {
+            "type": "string"
+        },
+        "password": {
+            "type": "string"
+        },
+        "port": {
+            "type": "integer"
+        },
+        "secure": {
+            "type": "boolean"
+        },
+        "username": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

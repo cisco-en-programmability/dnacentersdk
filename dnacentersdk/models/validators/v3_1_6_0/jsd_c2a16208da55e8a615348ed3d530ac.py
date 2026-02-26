@@ -36,38 +36,38 @@ class JSONSchemaValidatorC2A16208Da55E8A615348Ed3D530Ac(object):
     """UpdateOrOverrideSSID request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorC2A16208Da55E8A615348Ed3D530Ac, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "aaaOverride": {
-                "type": "boolean"
-                },
-                "acctServers": {
-                "items": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "aaaOverride": {
+            "type": "boolean"
+        },
+        "acctServers": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                },
-                "aclName": {
-                "type": "string"
-                },
-                "authServer": {
-                "enum": [
+            },
+            "type": "array"
+        },
+        "aclName": {
+            "type": "string"
+        },
+        "authServer": {
+            "enum": [
                 "auth_ise",
                 "auth_external",
                 "auth_internal"
-                ],
+            ],
+            "type": "string"
+        },
+        "authServers": {
+            "items": {
                 "type": "string"
-                },
-                "authServers": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "authType": {
-                "enum": [
+            },
+            "type": "array"
+        },
+        "authType": {
+            "enum": [
                 "WPA2_ENTERPRISE",
                 "WPA2_PERSONAL",
                 "OPEN",
@@ -76,244 +76,241 @@ class JSONSchemaValidatorC2A16208Da55E8A615348Ed3D530Ac(object):
                 "WPA2_WPA3_PERSONAL",
                 "WPA2_WPA3_ENTERPRISE",
                 "OPEN-SECURED"
-                ],
-                "type": "string"
-                },
-                "basicServiceSetClientIdleTimeout": {
-                "type": "integer"
-                },
-                "basicServiceSetMaxIdleEnable": {
-                "type": "boolean"
-                },
-                "cckmTsfTolerance": {
-                "type": "integer"
-                },
-                "clientExclusionEnable": {
-                "type": "boolean"
-                },
-                "clientExclusionTimeout": {
-                "type": "integer"
-                },
-                "clientRateLimit": {
-                "type": "integer"
-                },
-                "coverageHoleDetectionEnable": {
-                "type": "boolean"
-                },
-                "directedMulticastServiceEnable": {
-                "type": "boolean"
-                },
-                "egressQos": {
-                "enum": [
+            ],
+            "type": "string"
+        },
+        "basicServiceSetClientIdleTimeout": {
+            "type": "integer"
+        },
+        "basicServiceSetMaxIdleEnable": {
+            "type": "boolean"
+        },
+        "cckmTsfTolerance": {
+            "type": "integer"
+        },
+        "clientExclusionEnable": {
+            "type": "boolean"
+        },
+        "clientExclusionTimeout": {
+            "type": "integer"
+        },
+        "clientRateLimit": {
+            "type": "integer"
+        },
+        "coverageHoleDetectionEnable": {
+            "type": "boolean"
+        },
+        "directedMulticastServiceEnable": {
+            "type": "boolean"
+        },
+        "egressQos": {
+            "enum": [
                 "PLATINUM",
                 "SILVER",
                 "GOLD",
                 "BRONZE"
-                ],
-                "type": "string"
-                },
-                "externalAuthIpAddress": {
-                "type": "string"
-                },
-                "fastTransition": {
-                "enum": [
+            ],
+            "type": "string"
+        },
+        "externalAuthIpAddress": {
+            "type": "string"
+        },
+        "fastTransition": {
+            "enum": [
                 "ADAPTIVE",
                 "ENABLE",
                 "DISABLE"
-                ],
-                "type": "string"
-                },
-                "fastTransitionOverTheDistributedSystemEnable": {
-                "type": "boolean"
-                },
-                "ghz24Policy": {
-                "enum": [
+            ],
+            "type": "string"
+        },
+        "fastTransitionOverTheDistributedSystemEnable": {
+            "type": "boolean"
+        },
+        "ghz24Policy": {
+            "enum": [
                 "dot11-bg-only",
                 "dot11-g-only"
-                ],
-                "type": "string"
-                },
-                "ghz6PolicyClientSteering": {
-                "type": "boolean"
-                },
-                "ingressQos": {
-                "enum": [
+            ],
+            "type": "string"
+        },
+        "ghz6PolicyClientSteering": {
+            "type": "boolean"
+        },
+        "ingressQos": {
+            "enum": [
                 "PLATINUM-UP",
                 "SILVER-UP",
                 "GOLD-UP",
                 "BRONZE-UP"
-                ],
-                "type": "string"
-                },
-                "isApBeaconProtectionEnabled": {
-                "type": "boolean"
-                },
-                "isAuthKey8021x": {
-                "type": "boolean"
-                },
-                "isAuthKey8021xPlusFT": {
-                "type": "boolean"
-                },
-                "isAuthKey8021x_SHA256": {
-                "type": "boolean"
-                },
-                "isAuthKeyEasyPSK": {
-                "type": "boolean"
-                },
-                "isAuthKeyOWE": {
-                "type": "boolean"
-                },
-                "isAuthKeyPSK": {
-                "type": "boolean"
-                },
-                "isAuthKeyPSKPlusFT": {
-                "type": "boolean"
-                },
-                "isAuthKeyPSKSHA256": {
-                "type": "boolean"
-                },
-                "isAuthKeySae": {
-                "type": "boolean"
-                },
-                "isAuthKeySaeExt": {
-                "type": "boolean"
-                },
-                "isAuthKeySaeExtPlusFT": {
-                "type": "boolean"
-                },
-                "isAuthKeySaePlusFT": {
-                "type": "boolean"
-                },
-                "isAuthKeySuiteB1921x": {
-                "type": "boolean"
-                },
-                "isAuthKeySuiteB1x": {
-                "type": "boolean"
-                },
-                "isBroadcastSSID": {
-                "type": "boolean"
-                },
-                "isCckmEnabled": {
-                "type": "boolean"
-                },
-                "isEnabled": {
-                "type": "boolean"
-                },
-                "isFastLaneEnabled": {
-                "type": "boolean"
-                },
-                "isHex": {
-                "type": "boolean"
-                },
-                "isMacFilteringEnabled": {
-                "type": "boolean"
-                },
-                "isPosturingEnabled": {
-                "type": "boolean"
-                },
-                "isRadiusProfilingEnabled": {
-                "type": "boolean"
-                },
-                "isRandomMacFilterEnabled": {
-                "type": "boolean"
-                },
-                "l3AuthType": {
-                "enum": [
+            ],
+            "type": "string"
+        },
+        "isApBeaconProtectionEnabled": {
+            "type": "boolean"
+        },
+        "isAuthKey8021x": {
+            "type": "boolean"
+        },
+        "isAuthKey8021xPlusFT": {
+            "type": "boolean"
+        },
+        "isAuthKey8021x_SHA256": {
+            "type": "boolean"
+        },
+        "isAuthKeyEasyPSK": {
+            "type": "boolean"
+        },
+        "isAuthKeyOWE": {
+            "type": "boolean"
+        },
+        "isAuthKeyPSK": {
+            "type": "boolean"
+        },
+        "isAuthKeyPSKPlusFT": {
+            "type": "boolean"
+        },
+        "isAuthKeyPSKSHA256": {
+            "type": "boolean"
+        },
+        "isAuthKeySae": {
+            "type": "boolean"
+        },
+        "isAuthKeySaeExt": {
+            "type": "boolean"
+        },
+        "isAuthKeySaeExtPlusFT": {
+            "type": "boolean"
+        },
+        "isAuthKeySaePlusFT": {
+            "type": "boolean"
+        },
+        "isAuthKeySuiteB1921x": {
+            "type": "boolean"
+        },
+        "isAuthKeySuiteB1x": {
+            "type": "boolean"
+        },
+        "isBroadcastSSID": {
+            "type": "boolean"
+        },
+        "isCckmEnabled": {
+            "type": "boolean"
+        },
+        "isEnabled": {
+            "type": "boolean"
+        },
+        "isFastLaneEnabled": {
+            "type": "boolean"
+        },
+        "isHex": {
+            "type": "boolean"
+        },
+        "isMacFilteringEnabled": {
+            "type": "boolean"
+        },
+        "isPosturingEnabled": {
+            "type": "boolean"
+        },
+        "isRadiusProfilingEnabled": {
+            "type": "boolean"
+        },
+        "isRandomMacFilterEnabled": {
+            "type": "boolean"
+        },
+        "l3AuthType": {
+            "enum": [
                 "open",
                 "web_auth"
-                ],
-                "type": "string"
-                },
-                "managementFrameProtectionClientprotection": {
-                "enum": [
+            ],
+            "type": "string"
+        },
+        "managementFrameProtectionClientprotection": {
+            "enum": [
                 "OPTIONAL",
                 "DISABLED",
                 "REQUIRED"
-                ],
-                "type": "string"
-                },
-                "multiPSKSettings": {
-                "items": {
+            ],
+            "type": "string"
+        },
+        "multiPSKSettings": {
+            "items": {
                 "properties": {
-                "passphrase": {
-                "type": "string"
+                    "passphrase": {
+                        "type": "string"
+                    },
+                    "passphraseType": {
+                        "enum": [
+                            "ASCII",
+                            "HEX"
+                        ],
+                        "type": "string"
+                    },
+                    "priority": {
+                        "type": "integer"
+                    }
                 },
-                "passphraseType": {
-                "enum": [
-                "ASCII",
-                "HEX"
-                ],
-                "type": "string"
-                },
-                "priority": {
-                "type": "integer"
-                }
-                },
-                "required": [
-                "passphrase"
-                ],
                 "type": "object"
-                },
-                "type": "array"
-                },
-                "nasOptions": {
-                "items": {
+            },
+            "type": "array"
+        },
+        "nasOptions": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                },
-                "neighborListEnable": {
-                "type": "boolean"
-                },
-                "openSsid": {
-                "type": "string"
-                },
-                "passphrase": {
-                "type": "string"
-                },
-                "policyProfileName": {
-                "type": "string"
-                },
-                "profileName": {
-                "type": "string"
-                },
-                "protectedManagementFrame": {
-                "enum": [
+            },
+            "type": "array"
+        },
+        "neighborListEnable": {
+            "type": "boolean"
+        },
+        "openSsid": {
+            "type": "string"
+        },
+        "passphrase": {
+            "type": "string"
+        },
+        "policyProfileName": {
+            "type": "string"
+        },
+        "profileName": {
+            "type": "string"
+        },
+        "protectedManagementFrame": {
+            "enum": [
                 "OPTIONAL",
                 "DISABLED",
                 "REQUIRED"
-                ],
-                "type": "string"
-                },
-                "rsnCipherSuiteCcmp128": {
-                "type": "boolean"
-                },
-                "rsnCipherSuiteCcmp256": {
-                "type": "boolean"
-                },
-                "rsnCipherSuiteGcmp128": {
-                "type": "boolean"
-                },
-                "rsnCipherSuiteGcmp256": {
-                "type": "boolean"
-                },
-                "sessionTimeOut": {
-                "type": "integer"
-                },
-                "sessionTimeOutEnable": {
-                "type": "boolean"
-                },
-                "sleepingClientEnable": {
-                "type": "boolean"
-                },
-                "sleepingClientTimeout": {
-                "type": "integer"
-                },
-                "ssid": {
-                "type": "string"
-                },
-                "ssidRadioType": {
-                "enum": [
+            ],
+            "type": "string"
+        },
+        "rsnCipherSuiteCcmp128": {
+            "type": "boolean"
+        },
+        "rsnCipherSuiteCcmp256": {
+            "type": "boolean"
+        },
+        "rsnCipherSuiteGcmp128": {
+            "type": "boolean"
+        },
+        "rsnCipherSuiteGcmp256": {
+            "type": "boolean"
+        },
+        "sessionTimeOut": {
+            "type": "integer"
+        },
+        "sessionTimeOutEnable": {
+            "type": "boolean"
+        },
+        "sleepingClientEnable": {
+            "type": "boolean"
+        },
+        "sleepingClientTimeout": {
+            "type": "integer"
+        },
+        "ssid": {
+            "type": "string"
+        },
+        "ssidRadioType": {
+            "enum": [
                 "Triple band operation(2.4GHz, 5GHz and 6GHz)",
                 "5GHz only",
                 "2.4GHz only",
@@ -321,29 +318,26 @@ class JSONSchemaValidatorC2A16208Da55E8A615348Ed3D530Ac(object):
                 "2.4 and 5 GHz",
                 "2.4 and 6 GHz",
                 "5 and 6 GHz"
-                ],
-                "type": "string"
-                },
-                "webPassthrough": {
-                "type": "boolean"
-                },
-                "wlanBandSelectEnable": {
-                "type": "boolean"
-                },
-                "wlanType": {
-                "enum": [
+            ],
+            "type": "string"
+        },
+        "webPassthrough": {
+            "type": "boolean"
+        },
+        "wlanBandSelectEnable": {
+            "type": "boolean"
+        },
+        "wlanType": {
+            "enum": [
                 "Enterprise",
                 "Guest"
-                ],
-                "type": "string"
-                }
-                },
-                "required": [
-                "wlanType"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            ],
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

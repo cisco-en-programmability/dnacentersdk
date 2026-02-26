@@ -36,24 +36,20 @@ class JSONSchemaValidatorE3A724A35854758D65A83823C88435(object):
     """AddVN request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorE3A724A35854758D65A83823C88435, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "siteNameHierarchy": {
-                "type": "string"
-                },
-                "virtualNetworkName": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "virtualNetworkName",
-                "siteNameHierarchy"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "siteNameHierarchy": {
+            "type": "string"
+        },
+        "virtualNetworkName": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

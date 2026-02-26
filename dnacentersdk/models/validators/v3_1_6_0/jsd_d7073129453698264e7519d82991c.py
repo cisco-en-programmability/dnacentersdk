@@ -36,73 +36,58 @@ class JSONSchemaValidatorD7073129453698264E7519D82991C(object):
     """AddTransitPeerNetwork request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorD7073129453698264E7519D82991C, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "ipTransitSettings": {
-                "properties": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "ipTransitSettings": {
+            "properties": {
                 "autonomousSystemNumber": {
-                "type": "string"
+                    "type": "string"
                 },
                 "routingProtocolName": {
-                "enum": [
-                "BGP"
-                ],
-                "type": "string"
+                    "enum": [
+                        "BGP"
+                    ],
+                    "type": "string"
                 }
-                },
-                "required": [
-                "routingProtocolName",
-                "autonomousSystemNumber"
-                ],
-                "type": "object"
-                },
-                "sdaTransitSettings": {
-                "properties": {
+            },
+            "type": "object"
+        },
+        "sdaTransitSettings": {
+            "properties": {
                 "transitControlPlaneSettings": {
-                "items": {
-                "properties": {
-                "deviceManagementIpAddress": {
-                "type": "string"
-                },
-                "siteNameHierarchy": {
-                "type": "string"
+                    "items": {
+                        "properties": {
+                            "deviceManagementIpAddress": {
+                                "type": "string"
+                            },
+                            "siteNameHierarchy": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
                 }
-                },
-                "required": [
-                "siteNameHierarchy",
-                "deviceManagementIpAddress"
-                ],
-                "type": "object"
-                },
-                "type": "array"
-                }
-                },
-                "required": [
-                "transitControlPlaneSettings"
-                ],
-                "type": "object"
-                },
-                "transitPeerNetworkName": {
-                "type": "string"
-                },
-                "transitPeerNetworkType": {
-                "enum": [
+            },
+            "type": "object"
+        },
+        "transitPeerNetworkName": {
+            "type": "string"
+        },
+        "transitPeerNetworkType": {
+            "enum": [
                 "ip_transit",
                 "sda_transit_with_lisp_bgp",
                 "sda_transit_with_pub_sub"
-                ],
-                "type": "string"
-                }
-                },
-                "required": [
-                "transitPeerNetworkName",
-                "transitPeerNetworkType"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            ],
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

@@ -36,134 +36,125 @@ class JSONSchemaValidatorF24F6C07641580BA6Ed710E92C2Da16(object):
     """CreateOrUpdateRFProfile request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorF24F6C07641580BA6Ed710E92C2Da16, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "channelWidth": {
-                "type": "string"
-                },
-                "defaultRfProfile": {
-                "type": "boolean"
-                },
-                "enableBrownField": {
-                "type": "boolean"
-                },
-                "enableCustom": {
-                "type": "boolean"
-                },
-                "enableRadioTypeA": {
-                "type": "boolean"
-                },
-                "enableRadioTypeB": {
-                "type": "boolean"
-                },
-                "enableRadioTypeC": {
-                "type": "boolean"
-                },
-                "name": {
-                "type": "string"
-                },
-                "radioTypeAProperties": {
-                "properties": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "channelWidth": {
+            "type": "string"
+        },
+        "defaultRfProfile": {
+            "type": "boolean"
+        },
+        "enableBrownField": {
+            "type": "boolean"
+        },
+        "enableCustom": {
+            "type": "boolean"
+        },
+        "enableRadioTypeA": {
+            "type": "boolean"
+        },
+        "enableRadioTypeB": {
+            "type": "boolean"
+        },
+        "enableRadioTypeC": {
+            "type": "boolean"
+        },
+        "name": {
+            "type": "string"
+        },
+        "radioTypeAProperties": {
+            "properties": {
                 "dataRates": {
-                "type": "string"
+                    "type": "string"
                 },
                 "mandatoryDataRates": {
-                "type": "string"
+                    "type": "string"
                 },
                 "maxPowerLevel": {
-                "type": "number"
+                    "type": "number"
                 },
                 "minPowerLevel": {
-                "type": "number"
+                    "type": "number"
                 },
                 "parentProfile": {
-                "type": "string"
+                    "type": "string"
                 },
                 "powerThresholdV1": {
-                "type": "number"
+                    "type": "number"
                 },
                 "radioChannels": {
-                "type": "string"
+                    "type": "string"
                 },
                 "rxSopThreshold": {
-                "type": "string"
+                    "type": "string"
                 }
-                },
-                "type": "object"
-                },
-                "radioTypeBProperties": {
-                "properties": {
+            },
+            "type": "object"
+        },
+        "radioTypeBProperties": {
+            "properties": {
                 "dataRates": {
-                "type": "string"
+                    "type": "string"
                 },
                 "mandatoryDataRates": {
-                "type": "string"
+                    "type": "string"
                 },
                 "maxPowerLevel": {
-                "type": "number"
+                    "type": "number"
                 },
                 "minPowerLevel": {
-                "type": "number"
+                    "type": "number"
                 },
                 "parentProfile": {
-                "type": "string"
+                    "type": "string"
                 },
                 "powerThresholdV1": {
-                "type": "number"
+                    "type": "number"
                 },
                 "radioChannels": {
-                "type": "string"
+                    "type": "string"
                 },
                 "rxSopThreshold": {
-                "type": "string"
+                    "type": "string"
                 }
-                },
-                "type": "object"
-                },
-                "radioTypeCProperties": {
-                "properties": {
+            },
+            "type": "object"
+        },
+        "radioTypeCProperties": {
+            "properties": {
                 "dataRates": {
-                "type": "string"
+                    "type": "string"
                 },
                 "mandatoryDataRates": {
-                "type": "string"
+                    "type": "string"
                 },
                 "maxPowerLevel": {
-                "type": "number"
+                    "type": "number"
                 },
                 "minPowerLevel": {
-                "type": "number"
+                    "type": "number"
                 },
                 "parentProfile": {
-                "type": "string"
+                    "type": "string"
                 },
                 "powerThresholdV1": {
-                "type": "number"
+                    "type": "number"
                 },
                 "radioChannels": {
-                "type": "string"
+                    "type": "string"
                 },
                 "rxSopThreshold": {
-                "type": "string"
+                    "type": "string"
                 }
-                },
-                "type": "object"
-                }
-                },
-                "required": [
-                "name",
-                "defaultRfProfile",
-                "enableRadioTypeA",
-                "enableRadioTypeB",
-                "channelWidth",
-                "enableCustom",
-                "enableBrownField"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "object"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

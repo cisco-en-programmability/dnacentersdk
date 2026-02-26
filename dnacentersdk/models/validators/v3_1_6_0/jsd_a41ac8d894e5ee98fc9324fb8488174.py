@@ -36,27 +36,23 @@ class JSONSchemaValidatorA41Ac8D894E5Ee98Fc9324Fb8488174(object):
     """UpdateAAAOverrideVlanSettingsBySite request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorA41Ac8D894E5Ee98Fc9324Fb8488174, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "items": {
-                "properties": {
-                "vlanId": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "items": {
+        "properties": {
+            "vlanId": {
                 "type": "integer"
-                },
-                "vlanName": {
+            },
+            "vlanName": {
                 "type": "string"
-                }
-                },
-                "required": [
-                "vlanId",
-                "vlanName"
-                ],
-                "type": "object"
-                },
-                "type": "array"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            }
+        },
+        "type": "object"
+    },
+    "type": "array"
+}
+'''))
 
     def validate(self, request):
         try:

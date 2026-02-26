@@ -36,23 +36,20 @@ class JSONSchemaValidatorAf893464E53D2Abc8922F4F3310Ea(object):
     """AssignAnchorManagedAPLocationsForWLC request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorAf893464E53D2Abc8922F4F3310Ea, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "anchorManagedAPLocationsSiteIds": {
-                "items": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "anchorManagedAPLocationsSiteIds": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                }
-                },
-                "required": [
-                "anchorManagedAPLocationsSiteIds"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

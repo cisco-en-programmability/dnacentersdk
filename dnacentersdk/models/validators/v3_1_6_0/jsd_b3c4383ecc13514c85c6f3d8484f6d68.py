@@ -36,32 +36,29 @@ class JSONSchemaValidatorB3C4383ECc13514C85C6F3D8484F6D68(object):
     """SetBannerSettingsForASite request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorB3C4383ECc13514C85C6F3D8484F6D68, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "banner": {
-                "properties": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "banner": {
+            "properties": {
                 "message": {
-                "type": "string"
+                    "type": "string"
                 },
                 "type": {
-                "enum": [
-                "Builtin",
-                "Custom"
-                ],
-                "type": "string"
+                    "enum": [
+                        "Builtin",
+                        "Custom"
+                    ],
+                    "type": "string"
                 }
-                },
-                "type": "object"
-                }
-                },
-                "required": [
-                "banner"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "object"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

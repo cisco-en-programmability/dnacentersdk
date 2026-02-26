@@ -36,23 +36,20 @@ class JSONSchemaValidatorBd5B507F58A50AaB614E3D7409Eec4C(object):
     """ChangeVirtualAccount request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorBd5B507F58A50AaB614E3D7409Eec4C, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "device_uuids": {
-                "items": {
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "device_uuids": {
+            "items": {
                 "type": "string"
-                },
-                "type": "array"
-                }
-                },
-                "required": [
-                "device_uuids"
-                ],
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            },
+            "type": "array"
+        }
+    },
+    "type": "object"
+}
+'''))
 
     def validate(self, request):
         try:

@@ -36,37 +36,34 @@ class JSONSchemaValidatorA3D2432AE8C55Fe793C5180D8D5Fce25(object):
     """Add_UpdateOrRemoveSSIDMappingToAVLAN request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorA3D2432AE8C55Fe793C5180D8D5Fce25, self).__init__()
-        self._validator = fastjsonschema.compile(json.loads(
-            '''{
-                "$schema": "http://json-schema.org/draft-04/schema#",
+        self._validator = fastjsonschema.compile(json.loads('''
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "items": {
+        "properties": {
+            "ssidDetails": {
                 "items": {
-                "properties": {
-                "ssidDetails": {
-                "items": {
-                "properties": {
-                "name": {
-                "type": "string"
-                },
-                "securityGroupTag": {
-                "type": "string"
-                }
-                },
-                "required": [
-                "name"
-                ],
-                "type": "object"
+                    "properties": {
+                        "name": {
+                            "type": "string"
+                        },
+                        "securityGroupTag": {
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
                 },
                 "type": "array"
-                },
-                "vlanName": {
+            },
+            "vlanName": {
                 "type": "string"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            }
+        },
+        "type": "object"
+    },
+    "type": "array"
+}
+'''))
 
     def validate(self, request):
         try:
