@@ -826,8 +826,8 @@ class LanAutomation(object):
             device2_management_ipaddress(str): device2ManagementIPAddress query parameter. The management IP address
                 of the device2. .
             device2_uuid(str): device2Uuid query parameter. Unique identifier for the network device2 .
-            offset(str): offset query parameter. Starting record for pagination. .
-            limit(str): limit query parameter. Maximum number of Port Channel to return. .
+            offset(int): offset query parameter. Starting record for pagination. .
+            limit(int): limit query parameter. Maximum number of Port Channel to return. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -849,8 +849,8 @@ class LanAutomation(object):
         check_type(device1_uuid, str)
         check_type(device2_management_ipaddress, str)
         check_type(device2_uuid, str)
-        check_type(offset, str)
-        check_type(limit, str)
+        check_type(offset, int)
+        check_type(limit, int)
         if headers is not None:
             if "X-Auth-Token" in headers:
                 check_type(headers.get("X-Auth-Token"), str, may_be_none=False)

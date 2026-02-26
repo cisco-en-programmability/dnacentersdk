@@ -9993,9 +9993,9 @@ class Wireless(object):
         """This API allows the user to get AnchorGroups that captured in wireless settings design. .
 
         Args:
-            limit(str): limit query parameter. The number of records to show for this page. Default is 500 if not
+            limit(int): limit query parameter. The number of records to show for this page. Default is 500 if not
                 specified. Maximum allowed limit is 500. .
-            offset(str): offset query parameter. The first record to show for this page, the first record is
+            offset(int): offset query parameter. The first record to show for this page, the first record is
                 numbered 1. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -10014,8 +10014,8 @@ class Wireless(object):
             https://developer.cisco.com/docs/dna-center/#!get-anchor-groups
         """
         check_type(headers, dict)
-        check_type(limit, str)
-        check_type(offset, str)
+        check_type(limit, int)
+        check_type(offset, int)
         if headers is not None:
             if "X-Auth-Token" in headers:
                 check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
@@ -10304,9 +10304,9 @@ class Wireless(object):
             ap_authorization_list_name(str): apAuthorizationListName query parameter. Employ this query parameter to
                 obtain the details of the AP Authorization List corresponding to the provided
                 apAuthorizationListName. .
-            offset(str): offset query parameter. The first record to show for this page. The first record is
+            offset(int): offset query parameter. The first record to show for this page. The first record is
                 numbered 1. .
-            limit(str): limit query parameter. The number of records to show for this page. Default is 500 if not
+            limit(int): limit query parameter. The number of records to show for this page. Default is 500 if not
                 specified. Maximum allowed limit is 500. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -10326,8 +10326,8 @@ class Wireless(object):
         """
         check_type(headers, dict)
         check_type(ap_authorization_list_name, str)
-        check_type(offset, str)
-        check_type(limit, str)
+        check_type(offset, int)
+        check_type(limit, int)
         if headers is not None:
             if "X-Auth-Token" in headers:
                 check_type(headers.get("X-Auth-Token"), str, may_be_none=False)
@@ -10845,9 +10845,9 @@ class Wireless(object):
         """This API allows the user to get AP Profiles that captured in wireless settings design. .
 
         Args:
-            limit(str): limit query parameter. The number of records to show for this page. Default is 500 if not
+            limit(int): limit query parameter. The number of records to show for this page. Default is 500 if not
                 specified. Maximum allowed limit is 500. .
-            offset(str): offset query parameter. The first record to show for this page, the first record is
+            offset(int): offset query parameter. The first record to show for this page, the first record is
                 numbered 1. .
             ap_profile_name(str): apProfileName query parameter. Employ this query parameter to obtain the details
                 of the apProfiles corresponding to the provided apProfileName. .
@@ -10868,8 +10868,8 @@ class Wireless(object):
             https://developer.cisco.com/docs/dna-center/#!get-a-p-profiles
         """
         check_type(headers, dict)
-        check_type(limit, str)
-        check_type(offset, str)
+        check_type(limit, int)
+        check_type(offset, int)
         check_type(ap_profile_name, str)
         if headers is not None:
             if "X-Auth-Token" in headers:
