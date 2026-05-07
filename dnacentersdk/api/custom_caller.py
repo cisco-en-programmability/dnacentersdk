@@ -129,6 +129,9 @@ class CustomCaller(object):
                 immediately downloaded.
             cert(str, tuple) (optional): if String, path to ssl client
                 cert file (.pem). If Tuple, (‘cert’, ‘key’) pair
+            expected_codes(list) (optional): List of acceptable HTTP response codes. 
+                If the response code is not in this list, an HTTPError will be raised 
+                if raise_exception is True. Defaults to 2xx status codes.
 
         Returns:
             MyDict or object: If original_response is True returns the
@@ -146,35 +149,50 @@ class CustomCaller(object):
 
         # Ensure the url is an absolute URL
         abs_url = self._session.abs_url(resource_path)
+        request_headers = kwargs.pop("headers", None)
         headers = self._session.headers
-
-        if "headers" in kwargs:
-            headers.update(kwargs.pop("headers"))
+        if request_headers:
+            headers.update(request_headers)
 
         verify = kwargs.pop("verify", self._session.verify)
-        if not self._session.authenticated:
-            logger.debug("Session not authenticated. Authenticating now.")
-            self._session.refresh_token()
-            
         logger.debug(pprint_request_info(abs_url, method, headers, **kwargs))
-        response = self._session._req_session.request(
-            method, abs_url, headers=headers, verify=verify, **kwargs
-        )
-        if response.status_code == 401:
-            logger.debug("Received 401 Unauthorized. Attempting to re-authenticate.")
-            self._session.refresh_token()
-            logger.debug("Retrying the API call after re-authentication.")
-            response = self._session._req_session.request(
-                method, abs_url, headers=headers, verify=verify, **kwargs
-            )
         
+        expected_codes = kwargs.pop("expected_codes", list(range(200, 300)))
 
+        request_kwargs = dict(kwargs)
+        if request_headers is not None:
+            request_kwargs["headers"] = request_headers
+        
         if raise_exception:
+            response = self._session.request(
+                method,
+                resource_path,
+                expected_codes,
+                0,
+                verify=verify,
+                **request_kwargs,
+            )
+        else:
+            # Catch SDK exceptions and return response anyway for compatibility
             try:
-                response.raise_for_status()
-            except HTTPError as e:
-                logger.debug(pprint_response_info(e.response))
-                raise e
+                response = self._session.request(
+                    method,
+                    resource_path,
+                    expected_codes,
+                    0,
+                    verify=verify,
+                    **request_kwargs,
+                )
+            except Exception:
+                # If RestSession raises an exception but user wants to suppress it,
+                # fall back to direct session call but ensure authentication
+                self._session._ensure_authenticated()
+                response = self._session.request(
+                    method,
+                    abs_url,
+                    verify=verify,
+                    **request_kwargs,
+                )
 
         logger.debug(pprint_response_info(response))
         if original_response:

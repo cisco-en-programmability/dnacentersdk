@@ -563,6 +563,7 @@ class DNACenterAPI(object):
             object_factory,
             single_request_timeout=single_request_timeout,
             verify=verify,
+            session=session,
         )
 
         # Check if the user has provided the required basicAuth parameters

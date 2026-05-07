@@ -54,7 +54,7 @@ class Authentication(object):
     """
 
     def __init__(
-        self, base_url, object_factory, single_request_timeout=None, verify=True
+        self, base_url, object_factory, single_request_timeout=None, verify=True, session=None
     ):
         """Initialize an Authentication
         object with the provided RestSession.
@@ -69,6 +69,8 @@ class Authentication(object):
             verify(bool,str): Controls whether we verify the server's
                 TLS certificate, or a string, in which case it must be a path
                 to a CA bundle to use.
+            session(requests.Session): Optionally inject a `requests.Session`
+                object to be used for HTTP operations.
 
         Raises:
             TypeError: If the parameter types are incorrect.
@@ -85,6 +87,9 @@ class Authentication(object):
         self._verify = verify
         self._request_kwargs = {"timeout": single_request_timeout, "verify": verify}
         self._object_factory = object_factory
+        
+        # Use the injected `requests` session, build a new one if not provided
+        self._session = session or requests.session()
 
         if verify is False:
             requests.packages.urllib3.disable_warnings()
@@ -156,23 +161,22 @@ class Authentication(object):
             check_type(encoded_auth, str, may_be_none=False)
             if isinstance(encoded_auth, str):
                 encoded_auth = bytes(encoded_auth, "utf-8")
-            # API request
-            response = requests.post(
-                self._endpoint_url,
-                data=None,
-                headers={"authorization": b"Basic " + encoded_auth},
-                **self._request_kwargs
-            )
+            request_headers = {"authorization": b"Basic " + encoded_auth}
+            request_auth = None
         else:
             check_type(username, str, may_be_none=False)
             check_type(password, str, may_be_none=False)
-            # API request
-            response = requests.post(
-                self._endpoint_url,
-                data=None,
-                auth=(username, password),
-                **self._request_kwargs
-            )
+            request_headers = None
+            request_auth = (username, password)
+
+        # API request using session (retries handled by urllib3.Retry configuration)
+        response = self._session.post(
+            self._endpoint_url,
+            data=None,
+            headers=request_headers,
+            auth=request_auth,
+            **self._request_kwargs
+        )
 
         check_response_code(response, EXPECTED_RESPONSE_CODE["POST"])
         json_data = extract_and_parse_json(response)
