@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.11.4] - 2026-05-07
+### Fixed
+- **Authorization retries not applying to auth requests (PR #248)**: The `Authentication` class was issuing token requests via bare `requests.post()` calls, bypassing any `urllib3.Retry` adapter configured on the session. This meant user-configured retry logic — intended to handle intermittent network issues — was silently ignored during authentication. `Authentication` now accepts an optional `requests.Session` and uses it for token requests, so retry adapters apply uniformly across all SDK calls.
+
 ## [2.11.3] - 2026-05-05
 ### Fixed
 - **Download config methods missing stream support (Issue #246 equivalent / Issue #17)**: Fixed `download_masked_device_configuration()` and `download_unmaskedraw_device_configuration_as_zip()` in Configuration Archive module for v3.1.6.0. These methods were missing `stream=True`, `dirpath`, `save_file`, and `filename` parameters, causing binary file responses to be parsed as JSON and raising `JSONDecodeError`. The fix restores the correct `DownloadResponse`-based implementation present in v2.3.7.9 and v3.1.3.0.
@@ -871,4 +875,5 @@ respond with a binary.
 [2.11.1]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.11.0...v2.11.1
 [2.11.2]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.11.1...v2.11.2
 [2.11.3]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.11.2...v2.11.3
-[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.11.3...develop
+[2.11.4]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.11.3...v2.11.4
+[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.11.4...develop

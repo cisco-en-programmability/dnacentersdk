@@ -184,10 +184,11 @@ class CustomCaller(object):
                     **request_kwargs,
                 )
             except Exception:
-                # If RestSession raises an exception but user wants to suppress it,
-                # fall back to direct session call but ensure authentication
+                # RestSession.request() raised (e.g. ApiError on bad status).
+                # User opted out of exceptions, so call the underlying requests.Session
+                # directly — bypassing check_response_code — after ensuring auth.
                 self._session._ensure_authenticated()
-                response = self._session.request(
+                response = self._session._req_session.request(
                     method,
                     abs_url,
                     verify=verify,
